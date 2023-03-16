@@ -1,0 +1,95 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视",CCTV 1
+https://epg.pm/stream/9f8f927713d114e0257f090d975308861300acdc63c7acd5c4cc376d740b6d9e.m3u8
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视",CCTV 2
+https://epg.pm/stream/818380b1603b2b58f899ae01181ac2d54e727f1220ef547f35d80d431921969e.m3u8
+#EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png" group-title="央视",CCTV 3
+https://epg.pm/stream/f0beb937bc5e1f582aa6cfff6bf576abe1064101790314b4a3bd5e04469aa93f.m3u8
+#EXTINF:-1 tvg-id="4" tvg-name="CCTV4" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png" group-title="央视",CCTV 4
+https://epg.pm/stream/c516596c789b8745308d6ffd0b2b081a9d5affd09a6f3e072bd4098793e06184.m3u8
+#EXTINF:-1 tvg-id="5" tvg-name="CCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png" group-title="央视",CCTV 5
+https://epg.pm/stream/63e9b7385501114116e645eecda7258263d38adb22494ae0838d1b49dcf158d7.m3u8
+#EXTINF:-1 tvg-id="7" tvg-name="CCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png" group-title="央视",CCTV 6
+https://epg.pm/stream/a5e7472ec4ef769a14e11558e58237ac436122a7e8cb3aba0b925bcdec0ceeee.m3u8
+#EXTINF:-1 tvg-id="8" tvg-name="CCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png" group-title="央视",CCTV 7
+https://epg.pm/stream/3bd5a8fe828e07353d8a81f26f95b4385f384d9e1a9904111118dc79b307965f.m3u8
+#EXTINF:-1 tvg-id="9" tvg-name="CCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png" group-title="央视",CCTV 8
+https://epg.pm/stream/2e88402d695306f60192d7210cf11b4c7c3e77f54f730c2c8f5feae0037879a1.m3u8
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV9" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png" group-title="央视",CCTV 9
+https://epg.pm/stream/afe8c60bbcee5276a050e0544ae45dd1c59d0c0d9caa85b107ba2ca1dd5a5b1b.m3u8
+#EXTINF:-1 tvg-id="11" tvg-name="CCTV10" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png" group-title="央视",CCTV 10
+https://epg.pm/stream/ec20d7f65e8ccda68f439823069858954a81daa533e4f72d4685b68bdee80fc3.m3u8
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV11" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png" group-title="央视",CCTV 11
+https://epg.pm/stream/e0091b5fce2bc55d9b136788d39d67e0fe4c759b6ef61fcf40446dd779b3cc10.m3u8
+#EXTINF:-1 tvg-id="13" tvg-name="CCTV12" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png" group-title="央视",CCTV 12
+https://epg.pm/stream/de6d47ed52078c9c2589d3e2293068d62902f54f812ee87a7fd3d5ade74ee061.m3u8
+#EXTINF:-1 tvg-id="14" tvg-name="CCTV13" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="央视",CCTV 13
+https://epg.pm/stream/babf659416a14794d8173f5e84dbcb0c39b1eb306321d336422f5f56dd99d880.m3u8
+#EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png" group-title="央视",CCTV 14
+https://epg.pm/stream/1472cd6033626e5e273259b9d785baedf3f577b570b711270c2df9c05b5ca45d.m3u8
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png" group-title="央视",CCTV 15
+https://epg.pm/stream/beaab98ec00087733a46bb78c059b6995c2a4236c23eb9907776bbb847ede211.m3u8
+#EXTINF:-1 tvg-id="7249" tvg-name="CCTV16" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV16.png" group-title="央视",CCTV 16 - 4k
+https://epg.pm/stream/8a41b3c81e4bd195d19e408db3a3ca7b711a7a71c77932ddb0ca22a002d3f604.m3u8
+#EXTINF:-1 tvg-id="53" tvg-name="宁夏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/ningxia.png" group-title="卫视",宁夏卫视
+https://epg.pm/stream/31595b28ddcfca2198260264736641d0473e947b7ddd3ac650d7569b69f823c6.m3u8
+#EXTINF:-1 tvg-id="30" tvg-name="北京卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/beijing.png" group-title="卫视",北京卫视
+https://epg.pm/stream/e3bc35e85d52f801b8add4ebeff8325746789396001bc6d5866d9d11b96cbd09.m3u8
+#EXTINF:-1 tvg-id="39" tvg-name="天津卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/tianjin.png" group-title="卫视",天津卫视
+https://epg.pm/stream/57fae4580ccd427c7e6484df44591d338b265fb6140f7678ae544100fd6384ee.m3u8
+#EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongfang.png" group-title="卫视",东方卫视
+https://epg.pm/stream/5a5b9df7f04334f027bc981d706feefbdf754c50c65eace16a909233db347f65.m3u8
+#EXTINF:-1 tvg-id="40" tvg-name="重庆卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/chongqing.png" group-title="卫视",重庆卫视
+https://epg.pm/stream/4f75cf2a54afc428e8fbdeda9738220a9fc51c28de200931738474036bb729ed.m3u8
+#EXTINF:-1 tvg-id="46" tvg-name="黑龙江卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png" group-title="卫视",黑龙江卫视
+https://epg.pm/stream/213a6fd992a3a3a5102990172f703a42438736ca2d1c9ddd40419df482952130.m3u8
+#EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jilin.png" group-title="卫视",吉林卫视
+https://epg.pm/stream/9f1f0b755185bc3e1db315afdb61380f69b381fd8fe8d3eeb468070bb0913577.m3u8
+#EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png" group-title="卫视",辽宁卫视
+https://epg.pm/stream/97bcc277b422dda96a94adbf7f8700c0d8669f73a4e1b5ea2e5790feaa3e54b3.m3u8
+#EXTINF:-1 tvg-id="38" tvg-name="山东卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shandong.png" group-title="卫视",山东卫视
+https://epg.pm/stream/4c9099eceeab910d82a0a55ce97a491d7ac7bb4c2fe35a0a59024ea2a5087986.m3u8
+#EXTINF:-1 tvg-id="45" tvg-name="河北卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hebei.png" group-title="卫视",河北卫视
+https://epg.pm/stream/57e97e44721e9b767bbe226384925d9270183ed051217a271852114fa4058f88.m3u8
+#EXTINF:-1 tvg-id="29" tvg-name="江苏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangsu.png" group-title="卫视",江苏卫视
+https://epg.pm/stream/4d97597db8eb39c0fa7fe0736b5156aef90def187406bd67dc8c3995184e30b1.m3u8
+#EXTINF:-1 tvg-id="28" tvg-name="浙江卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/zhejiang.png" group-title="卫视",浙江卫视
+https://epg.pm/stream/472d2390204b38578c9142e65abb6a90110a42e683f78c81ac67efe7f65bccce.m3u8
+#EXTINF:-1 tvg-id="41" tvg-name="东南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongnan.png" group-title="卫视",东南卫视
+https://epg.pm/stream/9984f19f54e85af82e880d3ce57767295945e1d2d99e0ea54bf4a294275be835.m3u8
+#EXTINF:-1 tvg-id="33" tvg-name="广东卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangdong.png" group-title="卫视",广东卫视
+https://epg.pm/stream/c1326d540aaa2d464e54632081ec1a21f2f67e768e8d4fd9ba4115a1bfddc89b.m3u8
+#EXTINF:-1 tvg-id="34" tvg-name="深圳卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shenzhen.png" group-title="卫视",深圳卫视
+https://epg.pm/stream/8d1e8dcedfa4909e82677fc925a111be3f594e1aa74f3ad127d1d682f3ec0f93.m3u8
+#EXTINF:-1 tvg-id="50" tvg-name="江西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangxi.png" group-title="卫视",江西卫视
+https://epg.pm/stream/0b18815e4320f75173b680c3ba37dc5682ccaf99254148967c1be44df047bf7c.m3u8
+#EXTINF:-1 tvg-id="32" tvg-name="安徽卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/anhui.png" group-title="卫视",安徽卫视
+https://epg.pm/stream/d11486f9396ff82f846f08a7493694d4cd70ee16eb6d3c7a44637e3cbac3a1e7.m3u8
+#EXTINF:-1 tvg-id="47" tvg-name="河南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/henan.png" group-title="卫视",河南卫视
+https://epg.pm/stream/fd3a8b5a8f83b8a179ca2e356d814bc60cd5287b08110ece7ffc55b281cd4657.m3u8
+#EXTINF:-1 tvg-id="54" tvg-name="山西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi_.png" group-title="卫视",山西卫视
+https://epg.pm/stream/0bc52ae83081e15bcc40b55b3e02526516dde62ba0712a67218ea5706368fafd.m3u8
+#EXTINF:-1 tvg-id="52" tvg-name="内蒙古卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/neimeng.png" group-title="卫视",内蒙古卫视
+https://epg.pm/stream/606d6dc5782ed460850f50654f5f720e526ff9dab7a1d9eeaa12c8d67baad61d.m3u8
+#EXTINF:-1 tvg-id="55" tvg-name="陕西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi.png" group-title="卫视",陕西卫视
+https://epg.pm/stream/403b2a7cb7b9f5420c780ac27d86d803e748af4a4604d03ada33aa836c5f4823.m3u8
+#EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="卫视",湖北卫视
+https://epg.pm/stream/26ed79f04c7caa40c8346f1e2d482db617e8310a68eeac58e7a959915919efe9.m3u8
+#EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hunan.png" group-title="卫视",湖南卫视
+https://epg.pm/stream/1aad031be38d6c28878ae172e5d5e3240da53d506d6d46521678f9b913e83e93.m3u8
+#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangxi.png" group-title="卫视",广西卫视
+https://epg.pm/stream/8aa1ff6848ffa2db8f7cc4858775af78220798f609643af19beb0f58e6958464.m3u8
+#EXTINF:-1 tvg-id="44" tvg-name="贵州卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guizhou.png" group-title="卫视",贵州卫视
+https://epg.pm/stream/b04e8a668be9d10e54446670d16037496642667c99c78b878db2627ccde14c69.m3u8
+#EXTINF:-1 tvg-id="56" tvg-name="四川卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sichuan.png" group-title="卫视",四川卫视
+https://epg.pm/stream/1ed2f3c13367709c957178b7fba4b899a1d063237b5a2e8ae19bb99567d08fa4.m3u8
+#EXTINF:-1 tvg-id="42" tvg-name="甘肃卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/gansu.png" group-title="卫视",甘肃卫视
+https://epg.pm/stream/16c904da513cc8b8f333d86e8374205ef7976665fba5fd13b73c4c1c12a222bd.m3u8
+#EXTINF:-1 tvg-id="59" tvg-name="青海卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/qinghai.png" group-title="卫视",青海卫视
+https://epg.pm/stream/c950d6a05b10930a396a3ed515c66adc36f1f42ea73b788ae24d7cea7707ecf8.m3u8
+#EXTINF:-1 tvg-id="58" tvg-name="云南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/yunnan.png" group-title="卫视",云南卫视
+https://epg.pm/stream/029361dc4b15f1cd34deeb7205f00767f0f3ec567f154ebc1e6d69d7aa8696bb.m3u8
+#EXTINF:-1 tvg-id="71" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="卫视",西藏卫视
+https://epg.pm/stream/322f08205a2ff5164924fac45ab9195b003bf26ac1f7bfe3026654adc23d7e69.m3u8
+#EXTINF:-1 tvg-id="57" tvg-name="新疆卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xinjiang.png" group-title="卫视",新疆卫视
+https://epg.pm/stream/4a67a2cfa6bb27c18d5caca4ea4740ab36abee400fdde701a2eeb07a91ea000b.m3u8
