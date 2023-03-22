@@ -18,7 +18,7 @@
 
 "sites":[
 ##聚合展示
-{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/","searchable":0,"quickSearch":0,"filterable":1},
+//{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/","searchable":0,"quickSearch":0,"filterable":1},
 {"key":"dr_豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","ext":"https://gitcode.net/jak00/dr_py/-/raw/master/js/drpy.js","searchable": 0,"quickSearch": 0,"filterable": 1},
 {"key": "dr_我的哔哩","name":"🅱我的哔哩┃DR","type": 3,"api": "https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "https://gitcode.net/jak00/dr_py/-/raw/master/js/我的哔哩.js"},
 //{"key": "csp_LocalFile","name": "📂本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1},
