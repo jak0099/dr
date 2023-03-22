@@ -3,7 +3,7 @@
 ##2.俊佬版本多jar链接写法：{"key":"","name":"","type":3,"api":"***","searchable":1,"quickSearch":1,"filterable":1,"jar":"your_other_jar"}
 {
 ##爬虫文件
-"spider":"https://gitcode.net/jak00/dr/-/raw/master/jar/fty.jar?inline=false?inline=false", 
+"spider":"https://ghproxy.com/https://raw.githubusercontent.com/jak0099/dr/main/jar/fty.jar", 
 
 ##壁纸
 "wallpaper":"http://www.kf666888.cn/api/tvbox/img",
