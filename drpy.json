@@ -3,7 +3,7 @@
 ##2.俊佬版本多jar链接写法：{"key":"","name":"","type":3,"api":"***","searchable":1,"quickSearch":1,"filterable":1,"jar":"your_other_jar"}
 {
 ##爬虫文件
-"spider":"https://ghproxy.com/https://raw.githubusercontent.com/jak0099/dr/main/jar/fty.jar", 
+"spider":"https://gitcode.net/jak00/dr/-/raw/master/jar/fty.jar?inline=false?inline=false", 
 
 ##壁纸
 "wallpaper":"http://www.kf666888.cn/api/tvbox/img",
@@ -18,10 +18,54 @@
 
 "sites":[
 ##聚合展示
-//{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/","searchable":0,"quickSearch":0,"filterable":1},
+{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/","searchable":0,"quickSearch":0,"filterable":1},
 {"key":"dr_豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","ext":"https://gitcode.net/jak00/dr_py/-/raw/master/js/drpy.js","searchable": 0,"quickSearch": 0,"filterable": 1},
 {"key": "dr_我的哔哩","name":"🅱我的哔哩┃DR","type": 3,"api": "https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "https://gitcode.net/jak00/dr_py/-/raw/master/js/我的哔哩.js"},
 //{"key": "csp_LocalFile","name": "📂本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1},
+
+##spider源
+#饭太硬sp
+{"key":"csp_kuaikan","name":"👀快看┃SP","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_YQKAPP","name":"🎉一起看┃SP","type":3,"api":"csp_YQKAPP","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://api-tx.shumaxc.xyz"},
+{"key":"csp_AppTT","name":"🐰图图┃影视","type":3,"api":"csp_AppTT","searchable":1,"quickSearch":1,"filterable":1,"ext":"tv$$$dlJYWXFYbkgqbmlsU1JLIyNkMFZ0OE1JdzRJQW1yY3I=$$$Y2hpbkpaUzdiKnpYbzZzWQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
+{"key":"csp_77","name":"👒七七┃影视","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_BuLei","name":"💢布雷┃影视","type":3,"api":"csp_BuLei","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.bulei.cc"},
+{"key":"csp_AppMr","name":"👻明明┃影视","type":3,"api":"csp_AppMr","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_apple","name":"🍎苹果┃SP","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Yht","name":"🍀野荷塘┃SP","type":3,"api":"csp_Yht","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://yehetang.cc"},
+{"key":"csp_fantuan","name":"🍙饭团┃SP","type":3,"api":"csp_Fantuan","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.fantuanhd.com"},
+{"key":"csp_Vofl","name":"🎈Voflix┃SP","type":3,"api":"csp_Voflix","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Xinsj","name":"🐼新视觉┃SP","type":3,"api":"csp_Xinsj","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.6080dy2.com"},
+{"key":"csp_Czsapp","name":"📔厂长┃SP","type":3,"api":"csp_Czsapp","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
+{"key": "csp_FanYY","name":"💦剥饭┃4K","type": 3,"api": "csp_FanYY","searchable": 1,"quickSearch": 1,"filterable": 0,"ext":"http://ali.饭太硬.ml/alitoken"},
+{"key":"csp_Paper","name":"📜纸条┃4K","type":3,"api":"csp_Paper","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
+{"key":"csp_DiDuan","name":"⏮️低端┃SP","type":3,"api":"csp_Ddrk","searchable":1,"quickSearch":1,"filterable":0},
+{"key":"csp_Cokemv","name":"📕可乐┃SP","type":3,"api":"csp_Cokemv","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Auete","name":"🏝Auete┃SP","type":3,"api":"csp_Auete","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Bttoo","name":"✌BTtwo┃SP","type":3,"api":"csp_Bttwoo","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Lib","name":"🌟Libvio┃SP","type":3,"api":"csp_Libvio","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://tv.libvio.cc"},
+{"key":"csp_zxzj","name":"📗在线┃SP","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Lgyy","name":"🌀蓝光┃SP","type":3,"api":"csp_Lgyy","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.lgyy.tv"},
+{"key":"csp_Smdyy","name":"🐴神马┃SP","type":3,"api":"csp_Smdyy","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Bd","name":"💥哔嘀┃SP","type":3,"api":"csp_Bdys01","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Ysgc","name":"🏭工厂┃SP","type":3,"api":"csp_Ysgc","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.ysgc.vip"},
+{"key":"csp_panghu","name":"🐯胖虎┃SP","type":3,"api":"csp_Panghu","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_555","name":"5️⃣️555┃SP","type":3,"api":"csp_Ys555","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.555dyy1.com"},
+{"key":"csp_Nkdy","name":"👓耐看┃SP","type":3,"api":"csp_Nkdy","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_SP360","name":"📺360┃SP","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
+{"key":"teng","name":"🐧腾腾┃SP","type":3,"api":"csp_QQ","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
+{"key":"ai","name":"🥝爱爱┃SP","type":3,"api":"csp_IQIYI","quickSearch":1,"searchable":1,"filterable":1,"changeable":0},
+{"key":"MGT","name":"🍋芒芒┃SP","type":3,"api":"csp_Mgtv","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
+{"key":"csp_Dm84","name":"🚌动漫巴士┃SP","type":3,"api":"csp_Dm84","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Ying","name":"💮樱花动漫┃SP","type":3,"api":"csp_Ying","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Ysj","name":"🎀异界动漫┃SP","type":3,"api":"csp_Ysj","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Anime1","name":"🐾日本动漫┃SP","type":3,"api":"csp_Anime1","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Yj1211","name":"📽️网红直播┃SP","type":3,"api":"csp_Yj1211","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"Zhaozy","name":"🐺找资源┃4K","type":3,"api":"csp_Zhaozy","playerType":1,"searchable":1,"quickSearch":0,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken$$$自己去注册$$$qq112233"},
+{"key":"YiSo","name":"😹易搜┃4K","type":3,"api":"csp_YiSo","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
+{"key":"PanSou","name":"🦊盘搜┃4K","type":3,"api":"csp_PanSou","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
+{"key":"UpYun","name":"😻Up搜┃4K","type":3,"api":"csp_UpYun","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
+{"key":"push_agent","name":"🛴手机┃推送","type":3,"api":"csp_Push","searchable":0,"quickSearch":0,"filterable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
 
         
 ##js源
@@ -360,50 +404,6 @@
 {"key": "dr_萍果DJ","name": "🍑萍果DJ[DR]","type": 3,"api": "https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "https://gitcode.net/jak00/dr_py/-/raw/master/js/萍果DJ.js"},
 {"key": "dr_清风DJ","name": "🍑清风DJ[DR]","type": 3,"api": "https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "https://gitcode.net/jak00/dr_py/-/raw/master/js/清风DJ.js"},
 {"key": "dr_JangoIndex","name": "🍑JangoIndex[DR]","type": 3,"api": "https://gitcode.net/jak00/dr_py/-/raw/master/libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "https://gitcode.net/jak00/dr_py/-/raw/master/js/JangoIndex.js"},
-
-
-##spider源
-#饭太硬sp
-{"key":"csp_kuaikan","name":"👀快看┃SP","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_YQKAPP","name":"🎉一起看┃SP","type":3,"api":"csp_YQKAPP","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://api-tx.shumaxc.xyz"},
-{"key":"csp_AppTT","name":"🐰图图┃影视","type":3,"api":"csp_AppTT","searchable":1,"quickSearch":1,"filterable":1,"ext":"tv$$$dlJYWXFYbkgqbmlsU1JLIyNkMFZ0OE1JdzRJQW1yY3I=$$$Y2hpbkpaUzdiKnpYbzZzWQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
-{"key":"csp_77","name":"👒七七┃影视","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_BuLei","name":"💢布雷┃影视","type":3,"api":"csp_BuLei","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.bulei.cc"},
-{"key":"csp_AppMr","name":"👻明明┃影视","type":3,"api":"csp_AppMr","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_apple","name":"🍎苹果┃SP","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Yht","name":"🍀野荷塘┃SP","type":3,"api":"csp_Yht","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://yehetang.cc"},
-{"key":"csp_fantuan","name":"🍙饭团┃SP","type":3,"api":"csp_Fantuan","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.fantuanhd.com"},
-{"key":"csp_Vofl","name":"🎈Voflix┃SP","type":3,"api":"csp_Voflix","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Xinsj","name":"🐼新视觉┃SP","type":3,"api":"csp_Xinsj","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.6080dy2.com"},
-{"key":"csp_Czsapp","name":"📔厂长┃SP","type":3,"api":"csp_Czsapp","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Paper","name":"📜纸条┃4K","type":3,"api":"csp_Paper","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
-{"key":"csp_DiDuan","name":"⏮️低端┃SP","type":3,"api":"csp_Ddrk","searchable":1,"quickSearch":1,"filterable":0},
-{"key":"csp_Cokemv","name":"📕可乐┃SP","type":3,"api":"csp_Cokemv","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Auete","name":"🏝Auete┃SP","type":3,"api":"csp_Auete","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Bttoo","name":"✌BTtwo┃SP","type":3,"api":"csp_Bttwoo","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Lib","name":"🌟Libvio┃SP","type":3,"api":"csp_Libvio","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://tv.libvio.cc"},
-{"key":"csp_zxzj","name":"📗在线┃SP","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Lgyy","name":"🌀蓝光┃SP","type":3,"api":"csp_Lgyy","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.lgyy.tv"},
-{"key":"csp_Smdyy","name":"🐴神马┃SP","type":3,"api":"csp_Smdyy","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Bd","name":"💥哔嘀┃SP","type":3,"api":"csp_Bdys01","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Ysgc","name":"🏭工厂┃SP","type":3,"api":"csp_Ysgc","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.ysgc.vip"},
-{"key":"csp_panghu","name":"🐯胖虎┃SP","type":3,"api":"csp_Panghu","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_555","name":"5️⃣️555┃SP","type":3,"api":"csp_Ys555","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.555dyy1.com"},
-{"key":"csp_Nkdy","name":"👓耐看┃SP","type":3,"api":"csp_Nkdy","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_SP360","name":"📺360┃SP","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
-{"key":"teng","name":"🐧腾腾┃SP","type":3,"api":"csp_QQ","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
-{"key":"ai","name":"🥝爱爱┃SP","type":3,"api":"csp_IQIYI","quickSearch":1,"searchable":1,"filterable":1,"changeable":0},
-{"key":"MGT","name":"🍋芒芒┃SP","type":3,"api":"csp_Mgtv","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
-{"key":"csp_Dm84","name":"🚌动漫巴士┃SP","type":3,"api":"csp_Dm84","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Ying","name":"💮樱花动漫┃SP","type":3,"api":"csp_Ying","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Ysj","name":"🎀异界动漫┃SP","type":3,"api":"csp_Ysj","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Anime1","name":"🐾日本动漫┃SP","type":3,"api":"csp_Anime1","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Yj1211","name":"📽️网红直播┃SP","type":3,"api":"csp_Yj1211","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"Zhaozy","name":"🐺找资源┃4K","type":3,"api":"csp_Zhaozy","playerType":1,"searchable":1,"quickSearch":0,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken$$$自己去注册$$$qq112233"},
-{"key":"YiSo","name":"😹易搜┃4K","type":3,"api":"csp_YiSo","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
-{"key":"PanSou","name":"🦊盘搜┃4K","type":3,"api":"csp_PanSou","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
-{"key":"UpYun","name":"😻Up搜┃4K","type":3,"api":"csp_UpYun","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
-{"key":"push_agent","name":"🛴手机┃推送","type":3,"api":"csp_Push","searchable":0,"quickSearch":0,"filterable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
 
 ##勿信广告
 {"key": "dr_请勿信任何广告","name": "请勿信任何广告","type": 3,"api": "","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": ""}
