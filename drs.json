@@ -328,7 +328,7 @@
 {"key": "dr_影视之家","name": "🍒影视之家[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视之家.js"},
 {"key": "dr_人人","name": "🍒人人[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/人人.js"},
 {"key": "dr_星空影视","name": "🍒星空影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/星空影视.js"},
-{"key": "dr_网飞TV","name": "🍒网飞影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/网飞影视.js"},
+{"key": "dr_网飞TV","name": "🍒网飞TV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/网飞TV.js"},
 {"key": "dr_139影视","name": "🍒139影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/139影视.js"},
 {"key": "dr_FreeOK","name": "🍒FreeOK[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/FreeOK.js"},
 {"key": "dr_二次萌影视","name": "🍒二次萌影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/二次萌影视.js"},
