@@ -41,7 +41,7 @@ function pre(){
 
 let rule = {};
 let vercode = typeof(pdfl) ==='function'?'drpy2.1':'drpy2';
-const VERSION = vercode+' 3.9.37beta1 20230306';
+const VERSION = vercode+' 3.9.39beta1 20230316';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -52,6 +52,7 @@ const VERSION = vercode+' 3.9.37beta1 20230306';
  * 6.base64Encode,base64Decode,md5函数还没有实现 (抄影魔代码实现了)
  * 7.eval(getCryptoJS());还没有实现 (可以空实现了,以后遇到能忽略)
  * done:  jsp:{pdfa,pdfh,pd},json:{pdfa,pdfh,pd},jq:{pdfa,pdfh,pd}
+ * 8.req函数不支持传递字符串的data参数 {'content-type':'text/plain'} 类型数据，因此无法直接调用alist的ocr接口
  *  * 电脑看日志调试
  adb tcpip 5555
  adb connect 192.168.10.192
@@ -78,7 +79,7 @@ const OCR_RETRY = 3;//ocr验证重试次数
 // const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
 // const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
 // const OCR_API = 'http://cms.nokia.press/parse/ocr';//ocr在线识别接口
-const OCR_API = 'http://cms.nokia.press:5706/parse/ocr';//ocr在线识别接口
+const OCR_API = 'http://cms.nokia.press:5707/parse/ocr';//ocr在线识别接口
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
 }
@@ -735,7 +736,12 @@ var OcrApi={
             let html = request(this.api,{data:{img:img},headers:{'User-Agent':PC_UA},'method':'POST'},true);
             html = JSON.parse(html);
             code = html.url||'';
-        }catch (e) {}
+            // log('通过alist验证码接口过验证...');
+            // let html = request('https://api.nn.ci/ocr/b64/text',{data:img,headers:{'User-Agent':PC_UA},'method':'POST'},true);
+            // code = html||'';
+        }catch (e) {
+            log(`OCR识别验证码发生错误:${e.message}`)
+        }
         return code
     }
 };
@@ -1855,7 +1861,7 @@ function detailParse(detailObj){
     if(rule.图片来源 && vod.vod_pic && vod.vod_pic.startsWith('http')){
         vod.vod_pic = vod.vod_pic + rule.图片来源;
     }
-    if(!vod.vod_id){
+    if(!vod.vod_id||(vod_id.includes('$')&&vod.vod_id!==vod_id)){
         vod.vod_id = vod_id;
     }
     let t2 = (new Date()).getTime();
@@ -2112,6 +2118,7 @@ function category(tid, pg, filter, extend) {
 function detail(vod_url) {
     let orId = vod_url;
     let fyclass = '';
+    log('orId:'+orId);
     if(vod_url.indexOf('$')>-1){
         let tmp = vod_url.split('$');
         fyclass = tmp[0];
