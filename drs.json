@@ -15,11 +15,12 @@
 
 "sites":[
 ##聚合展示
-//{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/?sites=all&ali_token=59744816075f4729bc00cd23b98e3447&timeout=8","searchable":0,"quickSearch":0,"filterable":1,"jar":"./jar/fty.jar"},
+//{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/?sites=all&ali_token=59744816075f4729bc00cd23b98e3447&timeout=8","searchable":0,"quickSearch":0,"filterable":1},
 {"key":"dr_drpy豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"./libs/drpy.min.js","ext":"./js/drpy豆瓣.js","searchable": 0,"quickSearch": 0,"filterable": 1},
 {"key":"csp_Alist1","name":"🅿Alist┃网盘","type":3,"api":"csp_AList","searchable":1,"quickSearch":0,"filterable":0,"ext":"http://饭太硬.ga/x/json/alist.json"},
+{"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json"},
 {"key": "dr_我的哔哩","name":"🅱我的哔哩┃DR","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/我的哔哩.js"},
-{"key": "dr_直播","name": "📺电视直播┃DR","type": 3,"playerType": 1,"api": "./libs/live2mv.js","ext": "./live/live2mv_data.json&&&./img/tb1.png"},
+{"key": "dr_电视直播","name": "📺电视直播┃DR","type": 3,"playerType": 1,"api": "./libs/live2mv.js","ext": "./live/live2mv_data.json&&&./img/tb1.png"},
 
 ##spider源
 #饭太硬sp
