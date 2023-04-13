@@ -3,8 +3,8 @@
 ##2.俊佬版本多jar链接写法：{"key":"","name":"","type":3,"api":"***","searchable":1,"quickSearch":1,"filterable":1,"jar":"your_other_jar"}
 {
 ##爬虫文件
-"spider":"./jar/fty.jar", 
-
+//"spider":"./jar/fty.jar", 
+"spider":"https://files.zohopublic.com.cn/public/workdrive-public/download/uyv0t678c488189af47bb91dc108484d17431", 
 ##壁纸
 "wallpaper":"./img/w2.png",
 
@@ -28,7 +28,7 @@
 {"key":"csp_Paper","name":"📜纸条┃4K","type":3,"api":"csp_Paper","searchable":1,"quickSearch":1,"filterable":1,"changeable":0,"ext":"http://ali.饭太硬.ml/alitoken"},
 {"key":"csp_YQKAPP","name":"🎉一起看┃App","type":3,"api":"csp_YQKAPP","playerType":2,"m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://api-tx.11ty.top"},
 {"key":"csp_kuaikan","name":"👀快看┃App","type":3,"api":"csp_Kuaikan","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_AppTT","name":"🐰图图┃App","type":3,"api":"csp_AppTT","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"tv$$$dlJYWXFYbkgqbmlsU1JLIyNkMFZ0OE1JdzRJQW1yY3I=$$$Y2hpbkpaUzdiKnpYbzZzWQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
+{"key":"csp_AppTT","name":"🐰图图┃App","type":3,"api":"csp_AppTT","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"dk1YWXFYbkhNbmlsU1JLI01kMFZ0OE1JdzRJQW1yY3I=$$$Y2hpbkpaUzdiTXpYbzZzWQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
 {"key":"csp_FanYY","name":"💦剥饭┃4K","type":3,"api":"csp_FanYY","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://ali.饭太硬.ml/alitoken"},
 {"key":"csp_BuLei","name":"💢布雷┃直连","type":3,"api":"csp_BuLei","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_apple","name":"🍎苹果┃App","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
