@@ -3,7 +3,7 @@
 {
 "urls": [
 //{"url": "clan://localhost/tvbox/a.json","name": "🔥本地a"},        
-{"url": "https://ghproxy.com/https://raw.githubusercontent.com/jak0099/dr/master/drs.json","name": "🔥drs"},        
+{"url": "https://raw.gitmirror.com/jak0099/dr/master/drs.json","name": "🔥drs"},        
 {"url": "http://我不是.肥猫.love:63/接口禁止贩卖","name": "🚀肥猫线路"}, 
 {"url": "https://agit.ai/VivoMax/ddtv/raw/branch/master/%E9%BE%99%E9%97%A8%E5%BD%B1%E8%A7%86.json","name": "🚀龙门影视"},         
 {"url": "http://饭太硬.ga/tv","name": "🚀饭太硬线路"},               
