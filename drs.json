@@ -340,6 +340,7 @@
 {"key": "dr_达达龟","name": "🍒达达龟[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/达达龟.js"},
 {"key": "dr_UM电影","name": "🍒UM电影[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/UM电影.js"},
 {"key": "dr_345看片","name": "🍒345看片[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/345看片.js"},
+{"key": "dr_69美剧[V2]","name": "🍒69美剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/69美剧[V2].js"},
 
 
 ##js源模板
