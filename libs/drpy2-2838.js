@@ -1,5 +1,5 @@
-import cheerio from './cheerio.min.js';
-import './crypto-js.js';
+import cheerio from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/cheerio.min.js';
+import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-js.js';
 
 function init_test(){
     // console.log(typeof(CryptoJS));
@@ -374,7 +374,7 @@ function md5(text) {
 }
 
 function getCryptoJS(){
-    // return request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/crypto-hiker.js');
+    // return request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
 
@@ -1867,7 +1867,7 @@ function init(ext) {
     try {
         // make shared jsContext happy muban不能import,不然会造成换源继承后变量被篡改
         if (typeof (globalThis.mubanJs) === 'undefined') {
-            let mubanJs = request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
+            let mubanJs = request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
             mubanJs = mubanJs.replace('export default', '(function() {return muban;}()) // export default');
             // console.log(mubanJs);
             globalThis.mubanJs = mubanJs;

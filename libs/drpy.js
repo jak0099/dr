@@ -1,14 +1,14 @@
-// import 'https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/es6py.js';
+// import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/es6py.js';
 // import {是否正版,urlDeal,setResult,setResult2,setHomeResult,maoss,urlencode} from 'http://192.168.10.103:5705/libs/es6py.js';
 // import 'http://192.168.1.124:5705/libs/es6py.js';
-import cheerio from './cheerio.min.js';
+import cheerio from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/cheerio.min.js';
 // import cheerio from 'http://192.168.10.103:5705/libs/cheerio.min.js';
-import './crypto-js.js';
-import './drT.js';
-import 模板 from './模板.js';
-import {gbkTool} from './gbk.js'
+import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-js.js';
+import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/drT.js';
+import 模板 from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js';
+import {gbkTool} from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/gbk.js'
 // import 'http://192.168.10.103:5705/libs/drT.js';
-// import muban from 'https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/模板.js';
+// import muban from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js';
 // import muban from 'http://192.168.10.103:5705/admin/view/模板.js';
 
 // const key = 'drpy_zbk';
@@ -55,7 +55,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy1 3.9.39beta1 20230316';
+const VERSION = 'drpy1 3.9.41beta1 20230328';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -92,7 +92,8 @@ const OCR_RETRY = 3;//ocr验证重试次数
 // const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
 // const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
 // const OCR_API = 'http://cms.nokia.press/parse/ocr';//ocr在线识别接口
-const OCR_API = 'http://cms.nokia.press:5707/parse/ocr';//ocr在线识别接口
+// const OCR_API = 'http://cms.nokia.press:5707/parse/ocr';//ocr在线识别接口
+const OCR_API = 'http://drpy.nokia.press:8028/ocr/drpy/text';//ocr在线识别接口
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
 }
@@ -426,7 +427,7 @@ function decodeStr(input,encoding){
 }
 
 function getCryptoJS(){
-    // return request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/crypto-hiker.js');
+    // return request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
 
@@ -832,9 +833,12 @@ var OcrApi={
     classification:function (img){ // img是byte类型,这里不方便搞啊
         let code = '';
         try {
-            let html = request(this.api,{data:{img:img},headers:{'User-Agent':PC_UA},'method':'POST'},true);
-            html = JSON.parse(html);
-            code = html.url||'';
+            // let html = request(this.api,{data:{img:img},headers:{'User-Agent':PC_UA},'method':'POST'},true);
+            // html = JSON.parse(html);
+            // code = html.url||'';
+            log('通过drpy_ocr验证码接口过验证...');
+            let html = request(OCR_API,{data:{img:img},headers:{'User-Agent':PC_UA},'method':'POST'},true);
+            code = html||'';
         }catch (e) {}
         return code
     }
@@ -1117,10 +1121,19 @@ function getHtml(url){
     }
     let cookie = getItem(RULE_CK,'');
     if(cookie){
+        // log('有cookie:'+cookie);
         if(obj.headers && ! Object.keys(obj.headers).map(it=>it.toLowerCase()).includes('cookie')){
+            log('历史无cookie,新增过验证后的cookie');
             obj.headers['Cookie'] = cookie;
+        }else if(obj.headers && obj.headers.cookie && obj.headers.cookie!==cookie){
+            obj.headers['Cookie'] = cookie;
+            log('历史有小写过期的cookie,更新过验证后的cookie');
+        }else if(obj.headers && obj.headers.Cookie && obj.headers.Cookie!==cookie){
+            obj.headers['Cookie'] = cookie;
+            log('历史有大写过期的cookie,更新过验证后的cookie');
         }else if(!obj.headers){
             obj.headers = {Cookie:cookie};
+            log('历史无headers,更新过验证后的含cookie的headers');
         }
     }
     let html = getCode(url,obj);
@@ -2100,7 +2113,7 @@ function playParse(playObj){
     try {
         // make shared jsContext happy muban不能import,不然会造成换源继承后变量被篡改
         // if (typeof (globalThis.mubanJs) === 'undefined') {
-        //     let mubanJs = request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
+        //     let mubanJs = request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
         //     mubanJs = mubanJs.replace('export default', '(function() {return muban;}()) // export default');
         //     // console.log(mubanJs);
         //     globalThis.mubanJs = mubanJs;

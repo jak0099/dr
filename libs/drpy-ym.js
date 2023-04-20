@@ -1,7 +1,7 @@
 import './util-ym.js';
-import cheerio from './libs/cheerio.min.js';
-import './libs/crypto-js.js'
-// import muban from 'https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/模板.js';
+import cheerio from 'assets://js/lib/cheerio.min.js';
+import 'assets://js/lib/crypto-js.js'
+// import muban from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js';
 
 // const key = 'drpy_zbk';
 // eval(req('http://192.168.1.124:5705/libs/es6py.js').content);
@@ -1221,7 +1221,7 @@ function init(ext) {
     try {
         // make shared jsContext happy        
         if (typeof (globalThis.mubanJs) === 'undefined') {
-            let mubanJs = request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
+            let mubanJs = request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
             mubanJs = mubanJs.replace('export default', '(function() {return muban;}()) // export default');
             globalThis.mubanJs = mubanJs;
         }
