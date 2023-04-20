@@ -4,7 +4,7 @@ var rule = {
     url:'/vodshow/fyclass--hits------fypage---/',
     searchUrl:'/vodsearch/-------------/?wd=**',
     searchable:2,//是否启用全局搜索,
-    quickSearch:1,//是否启用快速搜索,
+    quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
     headers:{'User-Agent':'MOBILE_UA',},
     class_name:'电影&电视剧&综艺&动漫&纪录片&4K专区',
