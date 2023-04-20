@@ -24,7 +24,7 @@ Cookie设置方法2: 手动替换Cookie
 var rule = {
     title:'我的哔哩',
     host:'https://api.bilibili.com',
-    homeUrl:'/x/web-interface/search/type?search_type=video&keyword=白噪音4K&page=1',
+    homeUrl:'/x/web-interface/search/type?search_type=video&keyword=小姐姐4K&page=1',
     url:'/x/web-interface/search/type?search_type=videofyfilter',
     class_name:'经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV&演唱会&白噪音&知名UP主&说案&解说&演讲&探索发现&纪录片&平面设计教学&软件教程&实用教程&旅游&风景&食谱&美食&搞笑&球星&动物世界&相声小品&戏曲&儿童&小姐姐&荒野求生',
     class_url:'经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV4K&演唱会4K&白噪音4K&知名UP主&说案&解说&演讲&探索发现超清&纪录片超清&平面设计教学&软件教程&实用教程&旅游&风景4K&食谱&美食超清&搞笑&球星&动物世界超清&相声小品&戏曲&儿童&小姐姐4K&荒野求生超清',
@@ -104,8 +104,8 @@ var rule = {
     headers:{
         "User-Agent":"PC_UA",
         "Referer": "https://www.bilibili.com",
-        "Cookie":"DedeUserID=3493076028885079;DedeUserID__ckMd5=60a8757a1f4d6ae9;SESSDATA=42b8ada6,1683277266,4bd05*b2;bili_jct=2dbe39aea02b41324395630a24d4775f"
-        //"Cookie":"https://ghproxy.com/https://github.com/FongMi/CatVodSpider/raw/main/txt/cookie.txt"
+        // "Cookie":"$bili_cookie"
+        "Cookie":"https://ghproxy.com/https://github.com/FongMi/CatVodSpider/raw/main/txt/cookie.txt"
     },
     timeout:5000,
     limit:8,
