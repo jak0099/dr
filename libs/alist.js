@@ -32,6 +32,7 @@ var detail_order = 'name';
 var playRaw = 1; // 播放直链获取,默认0直接拼接/d 填1可以获取阿里oss链接。注意，有时效性
 const request_timeout = 5000;
 const VERSION = 'alist v2/v3 20221223';
+const UA = 'Mozilla/5.0'; //默认请求ua
 /**
  * 打印日志
  * @param any 任意变量
@@ -53,12 +54,41 @@ function print(any){
 	}
 }
 
+/*** js自封装的方法 ***/
+
+/**
+ * 获取链接的host(带http协议的完整链接)
+ * @param url 任意一个正常完整的Url,自动提取根
+ * @returns {string}
+ */
+function getHome(url){
+	if(!url){
+		return ''
+	}
+	let tmp = url.split('//');
+	url = tmp[0] + '//' + tmp[1].split('/')[0];
+	try {
+		url = decodeURIComponent(url);
+	}catch (e) {}
+	return url
+}
+
 const http = function (url, options = {}) {
 	if(options.method ==='POST' && options.data){
 		options.body = JSON.stringify(options.data);
 		options.headers = Object.assign({'content-type':'application/json'}, options.headers);
 	}
 	options.timeout = request_timeout;
+	if(!options.headers){
+		options.headers = {};
+	}
+	let keys = Object.keys(options.headers).map(it=>it.toLowerCase());
+	if(!keys.includes('referer')){
+		options.headers['Referer'] = getHome(url);
+	}
+	if(!keys.includes('user-agent')){
+		options.headers['User-Agent'] = UA;
+	}
 	try {
 		const res = req(url, options);
 		res.json = () => res&&res.content ? JSON.parse(res.content) : null;
