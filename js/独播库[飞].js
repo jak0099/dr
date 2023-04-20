@@ -1,8 +1,3 @@
-//!!!!本站需翻墙!!!!
-//已知问题:除了pluto player无法正常嗅探,其他壳都可以正常嗅探播放(js mode 0 or 1 都OK)
-//其他壳播放遇到嗅探的问题时,试着把"解析"改回"🌐Ⓤ",然后就可以快乐的看片了!
-//{"name":"🌐Ⓤ","type":0,"url":"","header":{"User-Agent":"Mozilla/5.0"}},
-
 muban.首图.二级.title = 'h1&&Text;.data--span:eq(0)&&Text';
 muban.首图.二级.desc = '.score&&Text;;;.data--span:eq(2)&&Text;.data--span:eq(3)&&Text';
 muban.首图.二级.content = '.data:eq(5)&&Text';

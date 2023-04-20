@@ -34,7 +34,7 @@ var rule = {
 	// 	tiyu:{cateId:'tiyu'}
 	// },
 	class_parse: '.fed-pops-list:eq(0)&&li:gt(0):lt(8);a&&Text;a&&href;.*/(.*?).html',
-	cate_exclude:'福利|直播|电影解说|体育频道',
+	cate_exclude:'福利',
 	pagecount:{"movie":1,"tv":1,"zongyi":1,"dongman":1,"fuli":1,"zhibo":1,"dianyingjieshuo":1,"tiyu":1},
 	一级: '.fed-list-item;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
 
