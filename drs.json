@@ -16,7 +16,7 @@
 "sites":[
 ##聚合展示
 //{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/?sites=all&ali_token=59744816075f4729bc00cd23b98e3447&timeout=8","searchable":0,"quickSearch":0,"filterable":1},
-{"key":"dr_drpy豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"./libs/drpy.min.js","ext":"./js/drpy豆瓣.js","searchable": 0,"quickSearch": 0,"filterable": 1},
+{"key":"dr_豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"./libs/drpy.min.js","ext":"./js/drpy豆瓣.js","searchable": 0,"quickSearch": 0,"filterable": 1},
 {"key":"csp_Alist1","name":"🅿Alist┃网盘","type":3,"api":"csp_AList","searchable":1,"quickSearch":0,"filterable":0,"ext":"http://饭太硬.ga/x/json/alist.json"},
 {"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json"},
 {"key": "dr_我的哔哩","name":"🅱我的哔哩┃DR","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/我的哔哩.js"},
@@ -158,7 +158,7 @@
 {"key": "dr_007影视","name": "🍒007影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/007影视.js"},
 {"key": "dr_NY影院","name": "🍒NY影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NY影院.js"},
 {"key": "dr_鸭奈飞","name": "🍒鸭奈飞[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/鸭奈飞.js"},
-{"key": "dr_胖虎影视","name": "🍒胖虎影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/胖虎影视.js"},
+{"key": "dr_胖虎","name": "🍒胖虎影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/胖虎.js"},
 {"key": "dr_看了么","name": "🍒看了么[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/看了么.js"},
 //{"key": "dr_皮皮泡","name": "🍒皮皮泡[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/皮皮泡.js"},
 //{"key": "dr_特狗影视","name": "🍒特狗影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/特狗影视.js"},
