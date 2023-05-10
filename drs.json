@@ -15,12 +15,12 @@
 
 "sites":[
 ##聚合展示
-//{"key":"T4_douban2","name":"☯豆瓣推荐┃T4","type":4,"api":"https://t4.secan.icu/vod/?sites=all&ali_token=59744816075f4729bc00cd23b98e3447&timeout=8","searchable":0,"quickSearch":0,"filterable":1},
 {"key":"dr_豆瓣","name":"☯豆瓣推荐┃DR","type":3,"api":"./libs/drpy.min.js","ext":"./js/drpy豆瓣.js","searchable": 0,"quickSearch": 0,"filterable": 1},
 {"key":"csp_Alist1","name":"🅿Alist┃网盘","type":3,"api":"csp_AList","searchable":1,"quickSearch":0,"filterable":0,"ext":"http://饭太硬.ga/x/json/alist.json"},
 {"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json"},
 {"key": "dr_我的哔哩","name":"🅱我的哔哩┃DR","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/我的哔哩.js"},
 {"key": "dr_电视直播","name": "📺电视直播┃DR","type": 3,"api": "./libs/live2mv.js","ext": "./live/live2mv_data.json&&&./img/tb1.png"},
+{"key": "dr_好趣网","name": "📺好趣网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/好趣网.js"},
 
 ##spider源
 #饭太硬sp
@@ -28,7 +28,7 @@
 {"key":"csp_apple","name":"🍎苹果┃App","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_YQKAPP","name":"🎉一起看┃App","type":3,"api":"csp_YQKAPP","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://api-aws.11ty.top"},
 {"key":"csp_kuaikan","name":"👀快看┃App","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_AppTT","name":"🐰图图┃App","type":3,"api":"csp_AppTT","searchable":1,"quickSearch":1,"filterable":1,"ext":"dldYWXFObkhNTWlsV1pMdFNSSyN0ME1JdzVJQVJyY3I=$$$Q2hpbko5UzdvNnNZbU1WTQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
+//{"key":"csp_AppTT","name":"🐰图图┃App","type":3,"api":"csp_AppTT","searchable":1,"quickSearch":1,"filterable":1,"ext":"dldYWXFObkhNTWlsV1pMdFNSSyN0ME1JdzVJQVJyY3I=$$$Q2hpbko5UzdvNnNZbU1WTQ==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ=="},
 {"key":"csp_BuLei","name":"💢布雷┃直连","type":3,"api":"csp_BuLei","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://v.ilime.cc$$$auto$$$sdlw1111$$$qqaa1122"},
 {"key":"csp_Xinsj","name":"🐼新视觉┃直连","type":3,"api":"csp_Xinsj","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.6080dy3.com"},
 {"key":"csp_Paper","name":"📜纸条┃4K","type":3,"api":"csp_Paper","searchable":1,"quickSearch":1,"filterable":1,"changeable":0,"ext":"./tvbox/pan/tok3.tx"},
@@ -364,7 +364,7 @@
 {"key": "dr_NT动漫","name": "🍇NT动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NT动漫.js"},
 {"key": "dr_曲奇动漫","name": "🍇曲奇动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/曲奇动漫.js"},
 {"key": "dr_NyaFun","name": "🍇NyaFun[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NyaFun.js"},
-
+{"key": "dr_58动漫","name": "🍇58动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/58动漫.js"},
 
 
 #视频直播类🍍
@@ -386,6 +386,7 @@
 #音视像类🍑
 {"key": "dr_酷狗MV","name": "🍑酷狗MV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/酷狗MV.js"},
 {"key": "dr_兔小贝","name": "🍑兔小贝[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/兔小贝.js"},
+{"key": "dr_童趣","name": "🍑童趣[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/童趣.js"},
 {"key": "dr_爱车MV","name": "🍑爱车MV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱车MV.js"},
 {"key": "dr_小品网","name": "🍑小品网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/小品网.js"},
 {"key": "dr_酷奇MV","name": "🍑酷奇MV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/酷奇MV.js"},
