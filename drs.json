@@ -342,6 +342,7 @@
 {"key": "dr_345看片","name": "🍒345看片[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/345看片.js"},
 {"key": "dr_69美剧[V2]","name": "🍒69美剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/69美剧[V2].js"},
 {"key": "dr_8K影视","name": "🍒8K影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/8K影视.js"},
+{"key": "dr_酷影[V2]","name": "🍒酷影[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/酷影[V2].js"},
 
 
 ##js源模板
@@ -412,6 +413,7 @@
 {"key": "dr_萍果DJ","name": "🍑萍果DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/萍果DJ.js"},
 {"key": "dr_清风DJ","name": "🍑清风DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/清风DJ.js"},
 {"key": "dr_JangoIndex","name": "🍑JangoIndex[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/JangoIndex.js"},
+{"key": "dr_啦啦DJ","name": "🍑啦啦DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/JangoIndex.js"},
 
 
 ##勿信广告
