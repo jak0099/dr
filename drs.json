@@ -418,6 +418,8 @@
 {"key": "dr_清风DJ","name": "🍑清风DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/清风DJ.js"},
 {"key": "dr_JangoIndex","name": "🍑JangoIndex[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/JangoIndex.js"},
 {"key": "dr_啦啦DJ","name": "🍑啦啦DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/JangoIndex.js"},
+{"key": "dr_爱上你听书网","name": "🍑爱上你听书网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱上你听书网.js"},
+{"key": "dr_中华听书网","name": "🍑中华听书网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/中华听书网.js"},
 
 
 ##勿信广告
