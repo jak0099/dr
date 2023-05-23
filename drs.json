@@ -27,6 +27,7 @@
 {"key":"csp_WoGG","name":"👽玩偶哥哥┃4K","type":3,"api":"csp_WoGG","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://127.0.0.1:9978/file/tvfan/token.txt"},
 {"key":"csp_apple","name":"🍎苹果┃App","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_YQKAPP","name":"🎉一起┃App","type":3,"api":"csp_YQKAPP","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://api-aws.11ty.top"},
+{"key":"csp_AppTT","name":"🐰┃图图┃影视","type":3,"api": "csp_AppTT","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "SldYWXFabkhXTWlsTlpMdFNSSyN0ek1JdzlJQVJSY00=$$$Q01pbkowUzdvNnNZWk1WVw==$$$aHR0cDovL2FwaS50dDU4LnR2L2NvbmZpZy9uZXd0di5qc29uP3NzPQ==","jar":"http://我不是.肥猫.love:63/Jar/panda230423.jar;md5;36C5A2F03CA68213DADBF4502A2F4174"},
 {"key":"csp_kuaikan","name":"👀快看┃App","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_酷酷","name":"🏵酷酷┃App","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://kuyun.realku.cn/api.php/app/"},
 {"key":"csp_BuLei","name":"💢布雷┃直连","type":3,"api":"csp_BuLei","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://kan.bulei.cc/$$$auto$$$sdlw1111$$$qqaa1122"},
@@ -420,6 +421,7 @@
 {"key": "dr_啦啦DJ","name": "🍑啦啦DJ[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/JangoIndex.js"},
 {"key": "dr_爱上你听书网","name": "🍑爱上你听书网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱上你听书网.js"},
 {"key": "dr_中华听书网","name": "🍑中华听书网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/中华听书网.js"},
+{"key": "dr_广播迷FM","name": "🍑广播迷FMDR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/广播迷FM.js"},
 
 
 ##勿信广告
@@ -500,6 +502,7 @@
 
 ##视频去广告规则
 //"rules":[{"hosts": ["vip.ffzy","vip.lz","hd.lz"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY"]}],
+"rules":[{"name":"量子","hosts":["vip.lz","hd.lz"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},{"name":"非凡","hosts":["vip.ffzy","hd.ffzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},{"name":"火山嗅探","hosts":["huoshan.com"],"regex":["item_id="]},{"name":"抖音嗅探","hosts":["douyin.com"],"regex":["is_play_url="]}],
 
 
 ##解析线路站点标识
