@@ -3,10 +3,15 @@
 //仓库地址：https://raw.gitmirror.com/jak0099/dr/master/jk/ck.json
 {
 "urls": [
-//{"url": "clan://localhost/tvbox/a.json","name": "🔥本地a"},        
+{"url": "clan://localhost/tvbox/a.json","name": "🔥本地a"},        
 {"url": "https://raw.gitmirror.com/jak0099/dr/master/drs.json","name": "🔥drs"},        
 {"url": "http://我不是.肥猫.love:63/接口禁止贩卖","name": "🚀肥猫线路"}, 
 {"url": "http://饭太硬.ga/tv","name": "🚀饭太硬线路"},               
+{"url": "https://d.looks.wang/我爱夜猫子","name": "🚀夜猫子线路"},         
+{"url": "https://weixine.net/ysc.json","name": "🚀运输车线路"},         
+{"url": "http://rihou.cc:88/荷城茶秀","name": "🚀日后线路"},         
+{"url": "https://yydsys.top/duo","name": "🚀多多线路"},         
+{"url": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json","name": "🚀南风线路"},         
 {"url": "https://agit.ai/VivoMax/ddtv/raw/branch/master/%E9%BE%99%E9%97%A8%E5%BD%B1%E8%A7%86.json","name": "🚀龙门影视"},         
 {"url": "https://hutool.ml/tang","name": "🚀唐三线路"},
 {"url": "https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json","name": "🚀蜂蜜线路"},                                                               
