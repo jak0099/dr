@@ -161,7 +161,7 @@
 {"key": "dr_gaze","name": "🍒gaze[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/gaze.js"},
 {"key": "dr_8号影院","name": "🍒8号影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/8号影院.js"},
 {"key": "dr_69美剧","name": "🍒69美剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/69美剧.js"},
-{"key": "dr_555影视","name": "🍒555影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/555影视.js"},
+{"key": "dr_555影视[飞]","name": "🍒555影视[飞][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/555影视[飞].js"},
 {"key": "dr_188看","name": "🍒188看[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/188看.js"},
 {"key": "dr_1080P","name": "🍒1080P[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/1080P.js"},
 {"key": "dr_007影视","name": "🍒007影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/007影视.js"},
