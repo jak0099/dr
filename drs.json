@@ -359,6 +359,8 @@
 {"key": "dr_爱迪[V2]","name": "🍒爱迪[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱迪[V2].js"},
 {"key": "dr_迷你库[V2]","name": "🍒迷你库[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/迷你库[V2].js"},
 {"key": "dr_飞云[V2]","name": "🍒飞云V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/飞云[V2].js"},
+{"key": "dr_咕噜[V2]","name": "🍒咕噜[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/咕噜[V2].js"},
+{"key": "dr_奈飞中文","name": "🍒奈飞中文[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/奈飞中文.js"},
 
 
 ##js源模板
