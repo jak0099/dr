@@ -1,14 +1,14 @@
-// import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/es6py.js';
+// import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/es6py.js';
 // import {是否正版,urlDeal,setResult,setResult2,setHomeResult,maoss,urlencode} from 'http://192.168.10.103:5705/libs/es6py.js';
 // import 'http://192.168.1.124:5705/libs/es6py.js';
-import cheerio from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/cheerio.min.js';
+import cheerio from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js';
 // import cheerio from 'http://192.168.10.103:5705/libs/cheerio.min.js';
-import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-js.js';
-import 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/drT.js';
-import 模板 from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js';
-import {gbkTool} from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/gbk.js'
+import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js';
+import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drT.js';
+import 模板 from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
+import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 // import 'http://192.168.10.103:5705/libs/drT.js';
-// import muban from 'https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js';
+// import muban from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
 // import muban from 'http://192.168.10.103:5705/admin/view/模板.js';
 
 // const key = 'drpy_zbk';
@@ -55,7 +55,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy1 3.9.41beta1 20230328';
+const VERSION = 'drpy1 3.9.43beta1 20230607';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -87,7 +87,7 @@ const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWe
 const RULE_CK = 'cookie'; // 源cookie的key值
 // const KEY = typeof(key)!=='undefined'&&key?key:'drpy_' + (rule.title || rule.host); // 源的唯一标识
 const CATE_EXCLUDE = '首页|留言|APP|下载|资讯|新闻|动态';
-const TAB_EXCLUDE = '猜你|喜欢|APP|下载|剧情|热播';
+const TAB_EXCLUDE = '猜你|喜欢|下载|剧情|热播';
 const OCR_RETRY = 3;//ocr验证重试次数
 // const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
 // const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
@@ -97,6 +97,7 @@ const OCR_API = 'http://drpy.nokia.press:8028/ocr/drpy/text';//ocr在线识别�
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
 }
+var HOST;
 var RKEY; // 源的唯一标识
 var fetch;
 var print;
@@ -427,7 +428,7 @@ function decodeStr(input,encoding){
 }
 
 function getCryptoJS(){
-    // return request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/libs/crypto-hiker.js');
+    // return request('https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
 
@@ -1259,7 +1260,7 @@ function homeVodParse(homeVodObj){
     if(p.startsWith('js:')){
         const TYPE = 'home';
         var input = MY_URL;
-        const HOST = rule.host;
+        HOST = rule.host;
         eval(p.replace('js:',''));
         d = VODS;
     }else {
@@ -1555,7 +1556,7 @@ function categoryParse(cateObj) {
         pagecount = parseInt(rule.pagecount[MY_CATE]);
     }
     let nodata = {
-        list:[{vod_name:'无数据,防无限请求',vod_id:'no_data',vod_remarks:'不要点,会崩的',vod_pic:'https://ghproxy.com/https://raw.githubusercontent.com/hjdhnx/dr_py/main/404.jpg'}],
+        list:[{vod_name:'无数据,防无限请求',vod_id:'no_data',vod_remarks:'不要点,会崩的',vod_pic:'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/404.jpg'}],
         total:1,pagecount:1,page:1,limit:1
     };
     let vod =  d.length<1?JSON.stringify(nodata):JSON.stringify({
@@ -2113,7 +2114,7 @@ function playParse(playObj){
     try {
         // make shared jsContext happy muban不能import,不然会造成换源继承后变量被篡改
         // if (typeof (globalThis.mubanJs) === 'undefined') {
-        //     let mubanJs = request('https://code.gitlink.org.cn/api/v1/repos/hjdhnx/dr_py/raw/master/js/模板.js', { 'User-Agent': MOBILE_UA });
+        //     let mubanJs = request('https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js', { 'User-Agent': MOBILE_UA });
         //     mubanJs = mubanJs.replace('export default', '(function() {return muban;}()) // export default');
         //     // console.log(mubanJs);
         //     globalThis.mubanJs = mubanJs;
@@ -2145,6 +2146,16 @@ function playParse(playObj){
         rule.cate_exclude = rule_cate_excludes.join('|');
         rule.tab_exclude = rule_tab_excludes.join('|');
         rule.host = (rule.host||'').rstrip('/');
+        HOST = rule.host;
+        if(rule.hostJs){
+            console.log(`检测到hostJs,准备执行...`);
+            try {
+                eval(rule.hostJs);
+                rule.host = HOST.rstrip('/');
+            }catch (e) {
+                console.log(`执行${rule.hostJs}获取host发生错误:`+e.message);
+            }
+        }
         rule.url = rule.url||'';
         rule.double = rule.double||false;
         rule.homeUrl = rule.homeUrl||'';
