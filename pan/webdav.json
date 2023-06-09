@@ -1,0 +1,19 @@
+{
+  //"vodPic": "https://avatars.githubusercontent.com/u/3471963?v=4",
+  //"vodPic": "https://s1.ax1x.com/2023/05/04/p9tgI81.png",
+  "vodPic": "http://127.0.0.1:9978/file/tvbox/img/wj.png",
+  "drives": [
+    {
+      "name": "七米藍",
+      "server": "https://al.chirmyram.com/dav",
+      "user": "alist",
+      "pass": "alist"
+    },
+    {
+      "name": "影視庫",
+      "server": "https://esir.eu.org/dav",
+      "user": "alist",
+      "pass": "alist"
+    }
+  ]
+}

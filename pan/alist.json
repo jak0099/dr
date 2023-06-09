@@ -1,34 +1,44 @@
 {
-"秋雨分享":"https://share.laowang.me",
-"小雅网盘":"http://alist.xiaoya.pro",  
-"BBC纪录片":"https://al.chirmyram.com/",  
-"灭火器":"https://alist1.owen10086.repl.co",
-"晴园":"https://alist.52qy.repl.co",  
-"课程搜索":"https://www.souke365.cn",
-"博哥":"http://www.top12345.top/",
-"Eren's":"https://alist.sharefiles.repl.co",
-"梓澪":"https://zi0.cc",
-"资源小站":"https://pan.142856.xyz",
-"小兵网盘":"https://6vv.app",
-"一只鱼":"https://alist.youte.ml",
-"七米蓝":"https://al.chirmyram.com",
-"神族九帝":"https://alist.shenzjd.com",
-"姬路白雪":"https://pan.jlbx.xyz",
-"DISK":"http://124.222.140.243:8080",
-"云播放":"https://quanzi.laoxianghuijia.cn",
-"星梦":"https://pan.bashroot.top",
-"触光":"https://pan.ichuguang.com",
-"好汉吧":"https://8023.haohanba.cn",
-"Alist测试":"https://ali.liucn.repl.co",
-"moepan":"https://www.moepan.cf",
-"米奇妙妙屋":"https://anime.mqmmw.ga",
-"非盘":"http://www.feifwp.top",
-"听闻网盘":"https://wangpan.sangxuesheng.com",
-"小江":"https://dyj.me",  
-"讯维云盘":"https://pan.xwbeta.com"
+  //"vodPic": "https://s1.ax1x.com/2023/05/04/p9tgI81.png",
+  "vodPic": "http://127.0.0.1:9978/file/tvbox/img/wj.png",
+  "drives": [
+    {
+      "name": "小雅",
+      "server": "http://alist.xiaoya.pro"
+    },
+    {
+      "name": "觸光",
+      "server": "https://pan.ichuguang.com"
+    },
+    {
+      "name": "一只魚",
+      "server": "https://vtok.pp.ua/"
+    },
+    {
+      "name": "七米藍",
+      "server": "https://al.chirmyram.com"
+    },
+    {
+      "name": "神族九帝",
+      "server": "https://alist.shenzjd.com"
+    },
+    {
+      "name": "梓澪",
+      "server": "https://zi0.cc"
+    },
+    {
+      "name": "範本",
+      "server": "https://one.fongmi.com",
+      "login": {
+        "username": "fongmi",
+        "password": "fongmi"
+      },
+      "params": [
+        {
+          "path": "/安齋拉拉",
+          "pass": "18181818"
+        }
+      ]
+    }
+  ]
 }
-
-
-
-
-
