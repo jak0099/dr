@@ -362,6 +362,7 @@
 {"key": "dr_咕噜[V2]","name": "🍒咕噜[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/咕噜[V2].js"},
 {"key": "dr_奈飞中文","name": "🍒奈飞中文[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/奈飞中文.js"},
 {"key": "dr_扛把子影院","name": "🍒扛把子影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/扛把子影院.js"},
+{"key": "dr_啊班[V2]","name": "🍒啊班[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/啊班[V2].js"},
 
 
 ##js源模板
