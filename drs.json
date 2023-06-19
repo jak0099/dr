@@ -8,6 +8,9 @@
 ##壁纸
 "wallpaper":"./img/w2.png",
 
+##提示
+"warningText":"💮👉接口完全免费，切勿付费购买👈💮",
+
 #蜂蜜版格式
 "lives":[
 {"name": "TXT","type": 0,"url": "./live/月光宝盒1120.txt","epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png","ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","boot": false}
@@ -361,6 +364,7 @@
 {"key": "dr_啊班[V2]","name": "🍒啊班[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/啊班[V2].js"},
 {"key": "dr_布雷蓝光[V2]","name": "🍒布雷蓝光[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/布雷蓝光[V2].js"},
 {"key": "dr_速看100[V2]","name": "🍒速看100[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/速看100[V2].js"},
+{"key": "dr_UM电影[V2]","name": "🍒UM电影[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/UM电影V2].js"},
 
 
 ##js源模板
