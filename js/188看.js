@@ -1,5 +1,5 @@
 var rule={
-    title:'188看',
+    title:'188影视',
     host:'https://188kan.com',
     // url:'/vod-show{{fl.area}}{{fl.by}}-id-{{fl.cateId}}-page-fypage{{fl.year}}.html',
 	url:'/vod-showfyfilter.html',

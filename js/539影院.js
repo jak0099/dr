@@ -1,7 +1,7 @@
 muban.首图2.二级.desc = '.data:eq(1)&&Text;.data:eq(3)&&Text;.data:eq(2)&&Text;.data:eq(5)&&Text;.data:eq(4)&&Text';
 muban.首图2.二级.tabs = '.nav.nav-tabs&&li';
 var rule = {
-	title:'539影院',
+	title:'539影视',
 	模板:'首图2',
 	host:'https://539539.xyz',
 	// url:'/vodshow/fyclass/page/fypage.html',
