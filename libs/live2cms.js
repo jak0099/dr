@@ -11,6 +11,7 @@
 {"name": "吾爱",     "url": "http://52bsj.vip:81/api/v3/file/get/763/live.txt?sign=87BTGT1_6AOry7FPwy_uuxFTv2Wcb9aDMj46rDdRTD8%3D%3A0"},
 {"name": "饭太硬",     "url": "http://ftyyy.tk/live.txt"}
 ]
+
  * 提示 ext文件格式为json列表,name,url参数
  *	取消加密,减少性能问题
  */
@@ -55,6 +56,7 @@ function clearItem(k){
 }
 
 var showMode = getItem('showMode','groups'); // groups按组分类显示 all全部一条线路展示
+var groupDict = JSON.parse(getItem('groupDict','{}')); // 搜索分组字典
 
 /**
  * 打印日志
@@ -185,6 +187,29 @@ function splitArray(arr,parse) {
   return result;
 }
 
+
+/**
+ * 搜索结果生成分组字典
+ * @param arr
+ * @param parse x=>x.split(',')[0]
+ * @returns {{}}
+ */
+function gen_group_dict(arr,parse){
+	let dict = {};
+	arr.forEach((it)=>{
+		let k = it.split(',')[0];
+		if(parse && typeof(parse)==='function'){
+			k = parse(k);
+		}
+		if(!dict[k]){
+			dict[k] = [it]
+		}else{
+			dict[k].push(it);
+		}
+	});
+	return dict
+}
+
 const http = function (url, options = {}) {
 	if(options.method ==='POST' && options.data){
 		options.body = JSON.stringify(options.data);
@@ -274,15 +299,18 @@ function homeVod(params) {
 		}
         __ext.data_dict[_get_url] = html;
     }
-    let arr = html.match(/.*?,#[\s\S].*?#/g);
+    // let arr = html.match(/.*?,#[\s\S].*?#/g);
+	let arr = html.match(/.*?[,，]#[\s\S].*?#/g); // 可能存在中文逗号
 	let _list = [];
 	try {
 		arr.forEach(it=>{
+			let vname = it.split(/[,，]/)[0];
+			let vtab = it.match(/#(.*?)#/)[0];
 			_list.push({
-				vod_name:it.split(',')[0],
-				vod_id:_get_url+'$'+it.split(',')[0],
+				vod_name:vname,
+				vod_id:_get_url+'$'+vname,
 				vod_pic:def_pic,
-				vod_remarks:it.split(',')[1],
+				vod_remarks:vtab,
 			});
 		});
 	}catch (e) {
@@ -313,15 +341,19 @@ function category(tid, pg, filter, extend) {
 		}
         __ext.data_dict[_get_url] = html;
     }
-    let arr = html.match(/.*?,#[\s\S].*?#/g);
+    // let arr = html.match(/.*?[,，]#[\s\S].*?#/g);
+    let arr = html.match(/.*?[,，]#[\s\S].*?#/g); // 可能存在中文逗号
     let _list = [];
 	try {
 		arr.forEach(it=>{
+			let vname = it.split(/[,，]/)[0];
+			let vtab = it.match(/#(.*?)#/)[0];
 			_list.push({
-				vod_name:it.split(',')[0],
-				vod_id:_get_url+'$'+it.split(',')[0],
+				// vod_name:it.split(',')[0],
+				vod_name:vname,
+				vod_id:_get_url+'$'+vname,
 				vod_pic:def_pic,
-				vod_remarks:it.split(',')[1],
+				vod_remarks:vtab,
 			});
 		});
 	}catch (e) {
@@ -341,16 +373,23 @@ function detail(tid) { // ⛵  港•澳•台
     let _get_url = tid.split('$')[0];
     let _tab = tid.split('$')[1];
 	if(tid.includes('#search#')){
-		let vod_play_url = _tab.replace('#search#','')+'$'+_get_url;
-		print(vod_play_url);
+		let vod_name = _tab.replace('#search#','');
+		let vod_play_from = '来自搜索';
+		vod_play_from+=`:${_get_url}`;
+
+		// let vod_play_url = vod_name+'$'+_get_url;
+		// print(vod_play_url);
+
+		let vod_play_url = groupDict[_get_url].map(x=>x.replace(',','$')).join('#');
+
 		return JSON.stringify({
 			list: [{
 				vod_id: tid,
-        		vod_name: '搜索:'+_tab.replace('#search#',''),
+        		vod_name: '搜索:'+vod_name,
         		type_name: "直播列表",
         		vod_pic: def_pic,
         		vod_content: tid,
-        		vod_play_from: '来自搜索',
+        		vod_play_from: vod_play_from,
         		vod_play_url: vod_play_url,
         		vod_director: tips,
         		vod_remarks: `道长直播转点播js-当前版本${VERSION}`,
@@ -367,11 +406,12 @@ function detail(tid) { // ⛵  港•澳•台
 		}
         __ext.data_dict[_get_url] = html;
     }
-    let a = new RegExp(`.*?${_tab},#[\\s\\S].*?#`);
+    // let a = new RegExp(`.*?${_tab},#[\\s\\S].*?#`);
+    let a = new RegExp(`.*?${_tab.replace('(','\\(').replace(')','\\)')}[,，]#[\\s\\S].*?#`);
     let b = html.match(a)[0];
     let c = html.split(b)[1];
-    if(c.match(/.*?,#[\s\S].*?#/)){
-        let d = c.match(/.*?,#[\s\S].*?#/)[0];
+    if(c.match(/.*?[,，]#[\s\S].*?#/)){
+        let d = c.match(/.*?[,，]#[\s\S].*?#/)[0];
         c = c.split(d)[0];
     }
     let arr = c.trim().split('\n');
@@ -447,7 +487,7 @@ function search(wd, quick) {
 	Object.keys(__ext.data_dict).forEach(()=>{
 		str+=__ext.data_dict[_get_url];
 	});
-	let links = str.split('\n').filter(it=>it.trim() && it.includes(','));
+	let links = str.split('\n').filter(it=>it.trim() && it.includes(',') && it.split(',')[1].trim().startsWith('http'));
 	links = links.map(it=>it.trim());
 	let plays = Array.from(new Set(links));
 	print('搜索关键词:'+wd);
@@ -455,13 +495,27 @@ function search(wd, quick) {
 	plays = plays.filter(it=>it.includes(wd));
 	print('过滤后:'+plays.length);
 	print(plays);
+	let new_group = gen_group_dict(plays);
+	groupDict = Object.assign(groupDict,new_group);
+	// 搜索分组结果存至本地方便二级调用
+	setItem('groupDict',JSON.stringify(groupDict));
 	let _list = [];
-	plays.forEach((it)=>{
+
+
+	// plays.forEach((it)=>{
+	// 	_list.push({
+	// 		'vod_name':it.split(',')[0],
+	// 		'vod_id':it.split(',')[1].trim()+'$'+it.split(',')[0].trim()+'#search#',
+	// 		'vod_pic':def_pic,
+	// 	})
+	// });
+
+	Object.keys(groupDict).forEach((it)=>{
 		_list.push({
-			'vod_name':it.split(',')[0],
-			'vod_id':it.split(',')[1].trim()+'$'+it.split(',')[0].trim()+'#search#',
+			'vod_name':it,
+			'vod_id':it+'$'+wd+'#search#',
 			'vod_pic':def_pic,
-		})
+		});
 	});
 	return JSON.stringify({
 			'list': _list
