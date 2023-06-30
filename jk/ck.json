@@ -4,7 +4,9 @@
 {
 "urls": [
 {"name": "🔥本地a","url":"clan://localhost/tvbox/a.json"},        
-{"name": "☄️drs","url":"https://ghproxy.com/https://raw.githubusercontent.com/jak0099/dr/master/drs.json"},        
+{"name": "☄️drs","url":"https://raw.gitmirror.com/jak0099/dr/master/drs.json"},        
+{"name": "☄️drs|备用①","url":"https://gh.con.sh/https://raw.githubusercontent.com/jak0099/dr/master/drs.json"},        
+{"name": "☄️drs|备用②","url":"https://ghproxy.com/https://github.com/jak0099/dr/blob/master/drs.json"},        
 {"name": "😺肥猫线路","url":"http://我不是.肥猫.love:63/接口禁止贩卖"}, 
 {"name": "🍚饭太硬线路","url":"http://饭太硬.top/tv"},               
 {"name": "🍙饭太硬线路|备用","url":"http://饭太硬.ml/tv"},               
