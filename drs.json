@@ -86,22 +86,17 @@
 //{"key":"高中","name":"📚高中┃SP","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./bili/高中课堂.json"},
 
 #夜猫子s
-{"key": "聚合", "name": "影视聚合┃解析", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.tvkuys.xyz/api.php/app/","jar":"./jar/ymz.jar"},   
+{"key": "聚合", "name": "🎃影视聚合┃解析", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.tvkuys.xyz/api.php/app/"},   
 {"key": "csp_kkj","name": "👑夜猫蓝光","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E7%9C%8B%E7%9C%8B%E5%89%A7.json"},  
-{"key":"csp_xym","name":"👑夜猫云4K👑","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://dpg.laoxie.icu/api.php/app/","categories":["4K蓝光","电视剧","电影","动漫","综艺"],"jar":"./jar/ymz.jar"},                  
-{"key": "csp_appys","name": "👑夜猫子4K👑","type": 3,"api": "csp_AppYsV2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "http://big.lfytyl.com/api.php/app/","categories":["新电影4K","新剧4K","好莱坞精选4K","豆瓣Top250电影4K","豆瓣Top100影视剧4K","明星专辑4K","老电影","电影综合","电视剧综合","动漫","综艺"],"jar":"./jar/ymz.jar"},
-{"key":"csp_ym","name":"👑新夜猫4K👑","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://ys.realdou.cn/api.php/app/","categories":["4K电影","4K电视剧","电影","电视剧","动漫","综艺"],"jar":"./jar/ymz.jar"},
-{"key": "飞","name": "👑夜猫飞云4k👑","type": 3,"api": "csp_XBPQ","playerType": "1","ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A3%9E%E4%BA%914k.json","jar":"./jar/ymz.jar"},          
-{"key": "狐狸", "name": "🦊狐狸┃4k", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.kuin.one/api.php/app/","jar":"./jar/ymz.jar"},           
-{"key": "csp_XYQHikerAL_玩偶哥哥","name":"🤖玩偶弟弟4k","type":3,"api":"csp_XYQHikerAL","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://jihulab.com/ymz1231/json/-/raw/main/%E7%8E%A9%E5%81%B6%E5%93%A5%E5%93%A5.json","jar":"./jar/ymz.jar"},
-{"key": "csp_XYQHikerlg4k","name": "💋玩偶姐姐4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/4KHDR.json","jar":"./jar/ymz.jar"}, 
+{"key":"csp_xym","name":"👑夜猫云4K","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://dpg.laoxie.icu/api.php/app/","categories":["4K蓝光","电视剧","电影","动漫","综艺"]},                  
+{"key": "csp_appys","name": "👑夜猫子4K","type": 3,"api": "csp_AppYsV2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "http://big.lfytyl.com/api.php/app/","categories":["新电影4K","新剧4K","好莱坞精选4K","豆瓣Top250电影4K","豆瓣Top100影视剧4K","明星专辑4K","老电影","电影综合","电视剧综合","动漫","综艺"]},
+{"key":"csp_ym","name":"👑新夜猫4K","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://ys.realdou.cn/api.php/app/","categories":["4K电影","4K电视剧","电影","电视剧","动漫","综艺"]},
+{"key": "飞","name": "👑夜猫飞云4k","type": 3,"api": "csp_XBPQ","playerType": "1","ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A3%9E%E4%BA%914k.json"},          
+{"key": "狐狸", "name": "🦊狐狸┃4k", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.kuin.one/api.php/app/"},           
 {"key": "csp_XYQHiker4klg","name": "💅🏻玩偶妹妹4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E4%B8%AD%E5%9B%BD%E8%93%9D%E5%85%89%E7%BD%91.json","jar":"./jar/ymz.jar"}, 
-{"key":"csp_yt","name":"🥳玩偶表姐┃4K","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.lfytv.cn/api.php/app/","jar":"./jar/ymz.jar"},  
-{"key": "csp_饭团","name": "🦄玩偶表妹┃4K","type": 3,"api": "csp_XBPQ", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A5%AD%E5%9B%A2.json","jar":"./jar/ymz.jar"},     
-{"key": "csp_dbg","name": "👺玩偶表哥","type": 3,"api":"csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1, "ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E5%A4%A7%E8%A1%A8%E5%93%A5%E5%BD%B1%E9%99%A2.json","jar":"./jar/ymz.jar"},  
-{"key": "csp_XYQHikerysw","name": "👿玩偶表弟","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E5%BD%B1%E8%A7%86wang.json","jar":"./jar/ymz.jar"},     
-{"key": "csp_XYQHiker_‍dyx","name": "🚢电影港磁力4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/电影港.json","jar":"./jar/ymz.jar"},  
-{"key": "csp_xpath_yinfans", "name": "💥音范丝4K", "type": 3, "api": "csp_XPath","searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://jihulab.com/ymz1231/json/-/raw/main/音范丝.json","jar":"./jar/ymz.jar"},  
+{"key":"csp_yt","name":"🥳玩偶表姐┃4K","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.lfytv.cn/api.php/app/"},  
+{"key": "csp_饭团","name": "🦄玩偶表妹┃4K","type": 3,"api": "csp_XBPQ", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A5%AD%E5%9B%A2.json"},     
+{"key": "csp_xpath_yinfans", "name": "💥音范丝4K", "type": 3, "api": "csp_XPath","searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://jihulab.com/ymz1231/json/-/raw/main/音范丝.json"},  
 
         
 ##js源
