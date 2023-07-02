@@ -370,6 +370,8 @@
 {"key": "dr_秋霞","name": "🍒秋霞[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/秋霞.js"},
 {"key": "dr_奈飞中文","name": "🍒奈飞中文[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/奈飞中文.js"},
 {"key": "dr_扛把子影院","name": "🍒扛把子影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/扛把子影院.js"},
+{"key": "dr_蘑菇","name": "🍒蘑菇[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蘑菇.js"},
+
 
 
 #js_V2源
@@ -416,6 +418,7 @@
 {"key": "dr_曲奇动漫","name": "🍇曲奇动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/曲奇动漫.js"},
 {"key": "dr_NyaFun","name": "🍇NyaFun[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NyaFun.js"},
 {"key": "dr_58动漫","name": "🍇58动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/58动漫.js"},
+{"key": "dr_宫下动漫","name": "🍇宫下动漫[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/宫下动漫.js"},
 
 
 #视频直播类🍍
