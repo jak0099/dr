@@ -3,7 +3,7 @@
 //仓库地址：https://raw.gitmirror.com/jak0099/dr/master/jk/ck.json
 {
 "urls": [
-{"name": "🔥本地a","url":"clan://localhost/tvbox/a.json"},        
+//{"name": "🔥本地a","url":"clan://localhost/tvbox/a.json"},        
 {"name": "☄️drs","url":"https://raw.gitmirror.com/jak0099/dr/master/drs.json"},        
 {"name": "☄️drs|备用①","url":"https://gh.con.sh/https://raw.githubusercontent.com/jak0099/dr/master/drs.json"},        
 {"name": "☄️drs|备用②","url":"https://ghproxy.com/https://github.com/jak0099/dr/blob/master/drs.json"},        
