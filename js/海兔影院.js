@@ -1,5 +1,5 @@
-muban.mxone5.二级.title = '.lazyload:eq(1)&&alt;.video-info-aux&&Text';
-muban.mxone5.二级.desc = '.video-info-actor:eq(4)&&Text;;;.video-info-actor:eq(0)&&Text;.video-info-actor:eq(1)&&Text';
+muban.mxone5.二级.title = '.video-cover&&img&&alt;.video-info-aux&&Text';
+muban.mxone5.二级.desc = '.video-info-items:eq(3)&&Text;;;.video-info-actor:eq(0)&&Text;.video-info-actor:eq(1)&&Text';
 var rule = {
 	title:'海兔影院',
 	模板:'mxone5',
@@ -26,4 +26,3 @@ var rule = {
 	detailUrl:'/vod/detail/id/fyid.html', //非必填,二级详情拼接链接
 	搜索:'json:list;name;pic;;id',
 }
-
