@@ -371,6 +371,8 @@
 {"key": "dr_奈飞中文","name": "🍒奈飞中文[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/奈飞中文.js"},
 {"key": "dr_扛把子影院","name": "🍒扛把子影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/扛把子影院.js"},
 {"key": "dr_蘑菇","name": "🍒蘑菇[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蘑菇.js"},
+{"key": "dr_ikanbot2","name": "🍒爱看机器人[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot2.js"},
+{"key": "dr_剧迷su","name": "🍒剧迷su[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/剧迷su.js"},
 
 
 
