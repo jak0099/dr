@@ -93,11 +93,11 @@
 {"key":"csp_ym","name":"👑新夜猫4K","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://ys.realdou.cn/api.php/app/","categories":["4K电影","4K电视剧","电影","电视剧","动漫","综艺"]},
 {"key": "飞","name": "👑夜猫飞云4k","type": 3,"api": "csp_XBPQ","playerType": "1","ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A3%9E%E4%BA%914k.json"},          
 {"key": "狐狸", "name": "🦊狐狸┃4k", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.kuin.one/api.php/app/"},           
-{"key": "csp_XYQHikerlg4k","name": "💋玩偶姐姐4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/4KHDR.json","jar":"./jar/ymz.jar"}, 
-{"key": "csp_XYQHiker4klg","name": "💅🏻玩偶妹妹4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E4%B8%AD%E5%9B%BD%E8%93%9D%E5%85%89%E7%BD%91.json","jar":"./jar/ymz.jar"}, 
+//{"key": "csp_XYQHikerlg4k","name": "💋玩偶姐姐4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/4KHDR.json","jar":"./jar/ymz.jar"}, 
+//{"key": "csp_XYQHiker4klg","name": "💅🏻玩偶妹妹4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E4%B8%AD%E5%9B%BD%E8%93%9D%E5%85%89%E7%BD%91.json","jar":"./jar/ymz.jar"}, 
 {"key":"csp_yt","name":"🥳玩偶表姐┃4K","type":3,"api":"csp_AppYsV2","m3u8ads": "hd.youyhn.com","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.lfytv.cn/api.php/app/"},  
 {"key": "csp_饭团","name": "🦄玩偶表妹┃4K","type": 3,"api": "csp_XBPQ", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/%E9%A5%AD%E5%9B%A2.json"},     
-{"key": "csp_XYQHiker_‍dyx","name": "🚢电影港磁力4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/电影港.json","jar":"./jar/ymz.jar"},  
+//{"key": "csp_XYQHiker_‍dyx","name": "🚢电影港磁力4k","type": 3,"api": "csp_XYQHiker", "searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://jihulab.com/ymz1231/json/-/raw/main/电影港.json","jar":"./jar/ymz.jar"},  
 {"key": "csp_xpath_yinfans", "name": "💥音范丝4K", "type": 3, "api": "csp_XPath","searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://jihulab.com/ymz1231/json/-/raw/main/音范丝.json"},  
 
         
