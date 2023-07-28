@@ -55,7 +55,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy1 3.9.43beta1 20230607';
+const VERSION = 'drpy1 3.9.47beta15 20230728';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -110,7 +110,9 @@ var _pdfh;
 var _pdfa;
 var _pd;
 // const DOM_CHECK_ATTR = ['url', 'src', 'href', 'data-original', 'data-src'];
-const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url)$/;
+const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url|style)$/;
+// 过滤特殊链接,不走urlJoin
+const SPECIAL_URL = /^(ftp|magnet|thunder|ws):/;
 const SELECT_REGEX = /:eq|:lt|:gt|#/g;
 const SELECT_REGEX_A = /:eq|:lt|:gt/g;
 
@@ -433,6 +435,18 @@ function getCryptoJS(){
 }
 
 /**
+ * 获取壳子返回的代理地址
+ * @returns {string|*}
+ */
+function getProxyUrl(){
+    if(typeof(getProxy)==='function'){//判断壳子里有getProxy函数就执行取返回结果。否则取默认的本地
+        return getProxy(true)
+    }else{
+        return 'http://127.0.0.1:9978/proxy?do=js'
+    }
+}
+
+/**
  * 强制正序算法
  * @param lists  待正序列表
  * @param key 正序键
@@ -525,7 +539,7 @@ const defaultParser = {
         if(typeof(uri)==='undefined'||!uri){
             uri = '';
         }
-        if(DOM_CHECK_ATTR.test(parse)){
+        if(DOM_CHECK_ATTR.test(parse) && !SPECIAL_URL.test(ret)){
             if(/http/.test(ret)){
                 ret = ret.substr(ret.indexOf('http'));
             }else{
@@ -557,6 +571,8 @@ function pdfh2(html,parse){
     if(/style/.test(option.toLowerCase())&&/url\(/.test(result)){
         try {
             result =  result.match(/url\((.*?)\)/)[1];
+            // 2023/07/28新增 style取内部链接自动去除首尾单双引号
+            result = result.replace(/^['|"](.*)['|"]$/, "$1");
         }catch (e) {}
     }
     return result
@@ -592,7 +608,7 @@ function pd2(html,parse,uri){
     if(typeof(uri)==='undefined'||!uri){
         uri = '';
     }
-    if(DOM_CHECK_ATTR.test(parse)){
+    if(DOM_CHECK_ATTR.test(parse) && !SPECIAL_URL.test(ret)){
         if(/http/.test(ret)){
             ret = ret.substr(ret.indexOf('http'));
         }else{
@@ -715,10 +731,12 @@ const parseTags = {
                     if(/style/.test(option.toLowerCase())&&/url\(/.test(result)){
                         try {
                             result =  result.match(/url\((.*?)\)/)[1];
+                            // 2023/07/28新增 style取内部链接自动去除首尾单双引号
+                            result = result.replace(/^['|"](.*)['|"]$/, "$1");
                         }catch (e) {}
                     }
                 }
-                if (result && base_url && DOM_CHECK_ATTR.test(option)) {
+                if (result && base_url && DOM_CHECK_ATTR.test(option) && !SPECIAL_URL.test(result)) {
                     if (/http/.test(result)) {
                         result = result.substr(result.indexOf('http'));
                     } else {
@@ -2106,6 +2124,56 @@ function playParse(playObj){
 }
 
 /**
+ * 本地代理解析规则
+ * @param params
+ */
+function proxyParse(proxyObj){
+    var input = proxyObj.params;
+    if(proxyObj.proxy_rule){
+        log('准备执行本地代理规则:\n'+proxyObj.proxy_rule);
+        try {
+            eval(proxyObj.proxy_rule);
+            if(input && input!== proxyObj.params && Array.isArray(input) &&input.length===3){
+                return input
+            }else{
+                return [404,'text/plain','Not Found']
+            }
+        }catch (e) {
+            return [500,'text/plain','代理规则错误:'+e.message]
+        }
+
+    }else{
+        return [404,'text/plain','Not Found']
+    }
+}
+
+/**
+ * 辅助嗅探解析规则
+ * @param isVideoObj
+ * @returns {boolean}
+ */
+function isVideoParse(isVideoObj){
+    var input = isVideoObj.url;
+    if(!isVideoObj.t){ // t为假代表默认传的正则字符串
+        let re_matcher =  new RegExp(isVideoObj.isVideo,'i');  // /g匹配多个,/i不区分大小写,/m匹配多行
+        return re_matcher.test(input);
+    }else{
+        // 执行js
+        try {
+            eval(isVideoObj.isVideo);
+            if(typeof(input)==='boolean'){
+                return input
+            }else{
+                return false
+            }
+        }catch (e) {
+            log('执行嗅探规则发生错误:'+e.message);
+            return false
+        }
+    }
+}
+
+/**
  * js源预处理特定返回对象中的函数
  * @param ext
  */
@@ -2179,6 +2247,11 @@ function playParse(playObj){
         rule.图片来源 = rule.图片来源||'';
         rule.play_json = rule.hasOwnProperty('play_json')?rule.play_json:[];
         rule.pagecount = rule.hasOwnProperty('pagecount')?rule.pagecount:{};
+        rule.proxy_rule = rule.hasOwnProperty('proxy_rule')?rule.proxy_rule:'';
+        rule.sniffer = rule.hasOwnProperty('sniffer')?rule.sniffer:'';
+        rule.sniffer = !!(rule.sniffer && rule.sniffer!=='0' && rule.sniffer!=='false');
+
+        rule.isVideo = rule.hasOwnProperty('isVideo')?rule.isVideo:'';
         if(rule.headers && typeof(rule.headers) === 'object'){
             try {
                 let header_keys = Object.keys(rule.headers);
@@ -2342,6 +2415,58 @@ function search(wd, quick) {
     return searchParse(searchObj)
 }
 
+/**
+ * js源本地代理返回的数据列表特定返回对象中的函数
+ * @param params 代理链接参数比如 /proxy?do=js&url=https://wwww.baidu.com => params就是 {do:'js','url':'https://wwww.baidu.com'}
+ * @returns {*}
+ */
+function proxy(params){
+    if(rule.proxy_rule&&rule.proxy_rule.trim()){
+        rule.proxy_rule = rule.proxy_rule.trim();
+    }
+    if(rule.proxy_rule.startsWith(':js')){
+        rule.proxy_rule = rule.proxy_rule.replace(':js','');
+    }
+    let proxyObj = {
+        params:params,
+        proxy_rule:rule.proxy_rule
+    };
+    return proxyParse(proxyObj)
+}
+
+/**
+ * 是否启用辅助嗅探功能,启用后可以根据isVideo函数进行手动识别为视频的链接地址。默认为false
+ * @returns {*|boolean|boolean}
+ */
+function sniffer(){
+    let enable_sniffer =  rule.sniffer || false;
+    if(enable_sniffer){
+        log('准备执行辅助嗅探代理规则:\n'+rule.isVideo);
+    }
+    return enable_sniffer
+}
+
+/**
+ * 启用辅助嗅探功能后根据次函数返回的值识别地址是否为视频，返回true/false
+ * @param url
+ */
+function isVideo(url){
+    let t = 0;
+    if(rule.isVideo &&rule.isVideo.trim()){
+        rule.isVideo = rule.isVideo.trim();
+    }
+    if(rule.isVideo.startsWith(':js')){
+        rule.isVideo = rule.isVideo.replace(':js','');
+        t = 1;
+    }
+    let isVideoObj = {
+        url:url,
+        isVideo:rule.isVideo,
+        t:t,
+    };
+    return isVideoParse(isVideoObj)
+}
+
 function DRPY(){//导出函数
     return {
         init: init,
@@ -2351,17 +2476,33 @@ function DRPY(){//导出函数
         detail: detail,
         play: play,
         search: search,
+        proxy:proxy,
+        sniffer:sniffer,
+        isVideo:isVideo
     }
 }
 
+/**
+ * 导出函数无法简写成下面的形式:
+
+ export default {
+  ...DRPY,
+  DRPY
+ }
+
+ */
+
 // 导出函数对象
 export default {
-    init: init,
-    home: home,
-    homeVod: homeVod,
-    category: category,
-    detail: detail,
-    play: play,
-    search: search,
-    DRPY:DRPY
+    init,
+    home,
+    homeVod,
+    category,
+    detail,
+    play,
+    search,
+    proxy,
+    sniffer,
+    isVideo,
+    DRPY,
 }
