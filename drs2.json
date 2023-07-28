@@ -121,6 +121,7 @@
 {"key": "dr_低端影视","name": "🍒低端影视[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/低端影视.js"},
 {"key": "dr_饭团影视","name": "🍒饭团影视[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/饭团影视.js"},
 {"key": "dr_真不卡","name": "🍒真不卡[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/真不卡.js"},
+{"key": "dr_ikanbot3","name": "🍒爱看机器人3[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot3.js"},
 {"key": "dr_腾云驾雾","name": "🍒腾云驾雾[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/腾云驾雾.js"},
 {"key": "dr_影视工厂","name": "🍒影视工厂[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视工厂.js"},
 {"key": "dr_cokemv","name": "🍒cokemv[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/cokemv.js"},
@@ -392,8 +393,6 @@
 {"key": "dr_往往影视","name": "🍒往往影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/往往影视.js"},
 {"key": "dr_蛋蛋剧","name": "🍒蛋蛋剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蛋蛋剧.js"},
 
-
-
 #js_V2源
 {"key": "dr_555影视[V2]","name": "🌶555影视[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/555影视[V2].js"},
 {"key": "dr_天空影视[V2]","name": "🌶天空影视[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/天空影视[V2].js"},
@@ -418,11 +417,17 @@
 {"key": "dr_影探[V2]","name": "🌶影探[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影探[V2].js"},
 {"key": "dr_看看剧[V2]","name": "🌶看看剧[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/看看剧[V2].js"},
 {"key": "dr_F7好看剧[V2]","name": "🌶F7好看剧[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/F7好看剧[V2].js"},
+{"key": "dr_鸭奈飞[V2]","name": "🌶鸭奈飞[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/鸭奈飞[V2].js"},
+
+##js_磁力源
+{"key": "dr_磁力熊[磁]","name": "🍓磁力熊[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/磁力熊[磁].js"},
 
 
 ##js源模板
 //{"key": "dr_模板","name": "🍒模板[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板.js"},
 //{"key": "dr_模板[V2]","name": "🌶模板[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板[V2].js"},
+//{"key": "dr_模板[磁]","name": "🍓模板[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板[磁].js"},
+//{"key": "dr_模板","name": "🍇模板[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板.js"},
 
 
 #动漫类🍇
