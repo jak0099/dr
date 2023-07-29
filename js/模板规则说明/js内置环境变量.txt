@@ -1,0 +1,2 @@
+js内置变量:
+input,html,VODS,VOD,TABS,LISTS,MY_CATE,MY_FL
