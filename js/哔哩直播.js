@@ -6,8 +6,10 @@ DMBox下载:https://t.me/pipixiawerun
 
 /* Cookie设置
 Cookie获取方法 https://ghproxy.net/https://raw.githubusercontent.com/UndCover/PyramidStore/main/list.md
+
 Cookie设置方法1: DR-PY 后台管理界面
 CMS后台管理 > 设置中心 > 环境变量 > {"bili_cookie":"XXXXXXX","vmid":"XXXXXX"} > 保存
+
 Cookie设置方法2: 手动替换Cookie
 底下代码 headers的
 "Cookie":"$bili_cookie"
@@ -49,7 +51,7 @@ var rule = {
     detailUrl:'https://live.bilibili.com/fyid',//二级详情拼接链接(json格式用)
     // detailUrl:'https://api.live.bilibili.com/xlive/web-room/v1/playUrl/playUrl?cid=fyid&platform=h5&otype=json&quality=0',//二级详情拼接链接(json格式用)
     // searchUrl:'/x/web-interface/search/type?__refresh__=true&page=fypage&page_size=42&order=online&platform=pc&highlight=1&single_column=0&keyword=**&search_type=live&dynamic_offset=0&preload=true',
-    searchUrl:'https://api.bilibili.com/x/web-interface/search/type?search_type=live&keyword=**&page=1',
+    searchUrl:'https://api.bilibili.com/x/web-interface/search/type?search_type=live&keyword=**&page=fypage',
     searchable:2,
     quickSearch:0,
     headers:{
