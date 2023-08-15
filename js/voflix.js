@@ -2,8 +2,8 @@ muban.mxpro.二级.desc = '.module-info-item:eq(4)&&Text;;;.module-info-item-con
 var rule={
     title:'voflix',
     模板:'mxpro',
-    host:'https://www.voflix.com',
-    // host:'https://www.voflix.me',
+    // host:'https://www.voflix.com',
+    host:'https://www.voflix.me',
     homeUrl:'/label/new.html',
     // url:'/show/fyclass--------fypage---.html',
     url:'/show/fyfilter.html',
@@ -44,7 +44,7 @@ var rule={
     `,
 
     // searchUrl:'/search/**----------fypage---.html',
-    searchUrl:'/index.php/ajax/suggest?mid=fypage&wd=**',
+    searchUrl:'/index.php/ajax/suggest?mid=1&wd=**&limit=50',
     detailUrl:'/detail/fyid.html', //非必填,二级详情拼接链接
     搜索:'json:list;name;pic;;id',
 }
