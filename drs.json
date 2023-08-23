@@ -112,6 +112,7 @@
         
 ##js源
 #影视类🍒 	
+{"key": "dr_ikanbot3","name": "🍒爱看机器人3[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot3.js"},
 {"key": "dr_厂长资源","name": "🍒厂长资源[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/厂长资源.js"},
 {"key": "dr_低端影视","name": "🍒低端影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/低端影视.js"},
 {"key": "dr_饭团影视","name": "🍒饭团影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/饭团影视.js"},
@@ -380,7 +381,7 @@
 {"key": "dr_奈飞中文","name": "🍒奈飞中文[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/奈飞中文.js"},
 {"key": "dr_扛把子影院","name": "🍒扛把子影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/扛把子影院.js"},
 {"key": "dr_蘑菇","name": "🍒蘑菇[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蘑菇.js"},
-{"key": "dr_ikanbot2","name": "🍒爱看机器人[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot2.js"},
+{"key": "dr_ikanbot2","name": "🍒爱看机器人2[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot2.js"},
 {"key": "dr_剧迷su","name": "🍒剧迷su[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/剧迷su.js"},
 {"key": "dr_中国人","name": "🍒中国人[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/中国人.js"},
 {"key": "dr_Icio影视","name": "🍒Icio影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/Icio影视.js"},
