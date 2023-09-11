@@ -1,12 +1,12 @@
 // import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/es6py.js';
 // import {是否正版,urlDeal,setResult,setResult2,setHomeResult,maoss,urlencode} from 'http://192.168.10.103:5705/libs/es6py.js';
 // import 'http://192.168.1.124:5705/libs/es6py.js';
-import cheerio from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js';
+import cheerio from './cheerio.min.js';
 // import cheerio from 'http://192.168.10.103:5705/libs/cheerio.min.js';
-import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js';
-import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drT.js';
-import 模板 from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
-import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
+import './crypto-js.js';
+import './drT.js';
+import 模板 from './模板.js';
+import {gbkTool} from './gbk.js'
 // import 'http://192.168.10.103:5705/libs/drT.js';
 // import muban from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
 // import muban from 'http://192.168.10.103:5705/admin/view/模板.js';
@@ -55,7 +55,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy1 3.9.47beta23 20230804';
+const VERSION = 'drpy1 3.9.47beta32 20230911';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -2424,8 +2424,8 @@ function proxy(params){
     if(rule.proxy_rule&&rule.proxy_rule.trim()){
         rule.proxy_rule = rule.proxy_rule.trim();
     }
-    if(rule.proxy_rule.startsWith(':js')){
-        rule.proxy_rule = rule.proxy_rule.replace(':js','');
+    if(rule.proxy_rule.startsWith('js:')){
+        rule.proxy_rule = rule.proxy_rule.replace('js:','');
     }
     let proxyObj = {
         params:params,
@@ -2455,8 +2455,8 @@ function isVideo(url){
     if(rule.isVideo &&rule.isVideo.trim()){
         rule.isVideo = rule.isVideo.trim();
     }
-    if(rule.isVideo.startsWith(':js')){
-        rule.isVideo = rule.isVideo.replace(':js','');
+    if(rule.isVideo.startsWith('js:')){
+        rule.isVideo = rule.isVideo.replace('js:','');
         t = 1;
     }
     let isVideoObj = {
