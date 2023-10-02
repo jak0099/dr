@@ -18,12 +18,19 @@ try {
 	VOD.vod_content = "";
 	log(VOD);
 	var v_tks = '';
-	let script = pdfa(html1,'script').find(it=>it.includes('v_tks+=')).replace(/<script>|<\\/script>/g,'');
+	// let script = pdfa(html1,'script').find(it=>it.includes('v_tks+=')).replace(/<script>|<\\/script>/g,'');
     // print(script);
-    eval(script);
-	print('v_tks:'+v_tks);
+    // eval(script);
+	// print('v_tks:'+v_tks);
 	input = "https://www.ikanbot.com/api/getResN?videoId=" + input.split("/").pop() + "&mtype=2"+"&token="+v_tks;
-	let html = request(input,{headers: {'User-Agent':'PC_UA','Referer': input}});
+	// let html = request(input,{headers: {'User-Agent':'PC_UA','Referer': input}});
+	// let html = request(input,{headers: {'User-Agent':'MOBILE_UA','Referer': input}});
+	let html = request(input, {
+        headers: {
+            'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+            'Referer': input,
+        }
+    });
 	print(html);
 	html = JSON.parse(html);
 	let episodes = html.data.list;
@@ -38,7 +45,7 @@ try {
 			if (!playMap.hasOwnProperty(source)) {
 				playMap[source] = []
 			}
-			playMap[source].push(playurl["url"])
+			playMap[source].push(playurl["url"].replaceAll('##','#'))
 		})
 	});
 	let playFrom = [];
@@ -62,7 +69,8 @@ var rule = {
     host:'https://www.ikanbot.com',
     url:'/hot/index-fyclass-fyfilter-p-fypage.html[/hot/index-fyclass-fyfilter.html]',
     //https://www.ikanbot.com/search?q=%E6%96%97%E7%BD%97%E5%A4%A7&p=2
-    searchUrl:'/search?q=**&p=fypage',
+    // searchUrl:'/search?q=**&p=fypage',
+	searchUrl:'/search?q=**',
     searchable:2,
     quickSearch:0,
     filterable:1,
