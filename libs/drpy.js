@@ -1,12 +1,12 @@
 // import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/es6py.js';
 // import {是否正版,urlDeal,setResult,setResult2,setHomeResult,maoss,urlencode} from 'http://192.168.10.103:5705/libs/es6py.js';
 // import 'http://192.168.1.124:5705/libs/es6py.js';
-import cheerio from './cheerio.min.js';
+import cheerio from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js';
 // import cheerio from 'http://192.168.10.103:5705/libs/cheerio.min.js';
-import './crypto-js.js';
-import './drT.js';
-import 模板 from './模板.js';
-import {gbkTool} from './gbk.js'
+import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js';
+import 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drT.js';
+import 模板 from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
+import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 // import 'http://192.168.10.103:5705/libs/drT.js';
 // import muban from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js';
 // import muban from 'http://192.168.10.103:5705/admin/view/模板.js';
@@ -55,7 +55,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy1 3.9.47beta32 20230911';
+const VERSION = 'drpy1 3.9.48beta4 20231004';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -1605,7 +1605,26 @@ function searchParse(searchObj) {
     }
     p = p.trim();
     let pp = rule.一级.split(';');
-    let url = searchObj.searchUrl.replaceAll('**', searchObj.wd).replaceAll('fypage', searchObj.pg);
+    let url = searchObj.searchUrl.replaceAll('**', searchObj.wd);
+    if(searchObj.pg === 1 && url.includes('[')&&url.includes(']')){
+        url = url.split('[')[1].split(']')[0];
+    }else if(searchObj.pg > 1 && url.includes('[')&&url.includes(']')){
+        url = url.split('[')[0];
+    }
+    if(/fypage/.test(url)){
+        if(url.includes('(')&&url.includes(')')){
+            let url_rep = url.match(/.*?\((.*)\)/)[1];
+            // console.log(url_rep);
+            let cnt_page = url_rep.replaceAll('fypage', searchObj.pg);
+            // console.log(cnt_page);
+            let cnt_pg = eval(cnt_page);
+            // console.log(cnt_pg);
+            url = url.replaceAll(url_rep,cnt_pg).replaceAll('(','').replaceAll(')','');
+        }else{
+            url = url.replaceAll('fypage',searchObj.pg);
+        }
+    }
+
     MY_URL = url;
     console.log(MY_URL);
     // log(searchObj.搜索);
@@ -2032,9 +2051,69 @@ function detailParse(detailObj){
     let t2 = (new Date()).getTime();
     console.log(`加载二级界面${MY_URL}耗时:${t2-t1}毫秒`);
     // print(vod);
+    vod = vodDeal(vod);
+    // print(vod);
     return JSON.stringify({
         list: [vod]
     })
+}
+
+/**
+ * 获取二级待返回的播放线路没处理时的索引关系
+ * @param vod
+ * @returns {{}}
+ */
+function get_tab_index(vod){
+    let obj = {};
+    vod.vod_play_from.split('$$$').forEach((it,index)=>{
+        obj[it] = index;
+    });
+    return obj
+}
+
+/**
+ * 处理待返回的vod数据|线路去除,排序,重命名
+ * @param vod
+ * @returns {*}
+ */
+function vodDeal(vod){
+    let vod_play_from = vod.vod_play_from.split('$$$');
+    let vod_play_url = vod.vod_play_url.split('$$$');
+
+    // 移除指定线路后的列表
+    let tab_removed_list = vod_play_from;
+    // 排序后的线路列表
+    let tab_ordered_list = vod_play_from;
+    // 线路重命名后的列表
+    let tab_renamed_list = vod_play_from;
+    // 选集列表根据线路排序
+    let play_ordered_list = vod_play_url;
+
+    // 判断有移除线路或者线路排序
+    if((rule.tab_remove&&rule.tab_remove.length>0)||(rule.tab_order&&rule.tab_order.length>0)){
+        // 获取原来线路的索引下标
+        let tab_index_dict = get_tab_index(vod);
+
+        if(rule.tab_remove&&rule.tab_remove.length>0){
+            tab_removed_list = vod_play_from.filter(it=>!rule.tab_remove.includes(it));
+        }
+
+        if(rule.tab_order&&rule.tab_order.length>0){
+            let tab_order = rule.tab_order;
+            tab_ordered_list = tab_removed_list.sort((a, b) => {
+            return (tab_order.indexOf(a)===-1?9999:tab_order.indexOf(a)) - (tab_order.indexOf(b)===-1?9999:tab_order.indexOf(b))
+            });
+            play_ordered_list = tab_ordered_list.map(it=>vod_play_url[tab_index_dict[it]]);
+        }
+    }
+
+    if(rule.tab_rename&&typeof(rule.tab_rename)==='object'&Object.keys(rule.tab_rename).length>0){
+        tab_renamed_list = tab_ordered_list.map(it=>rule.tab_rename[it]||it);
+    }
+
+    vod.vod_play_from = tab_renamed_list.join('$$$');
+    vod.vod_play_url = play_ordered_list.join('$$$');
+    return vod
 }
 
 /**
@@ -2239,7 +2318,14 @@ function isVideoParse(isVideoObj){
         }else{
             rule.url = rule.host && rule.url ? urljoin(rule.host,rule.url) : rule.url;
         }
-        rule.searchUrl = rule.host && rule.searchUrl ? urljoin(rule.host,rule.searchUrl) : rule.searchUrl;
+
+        if(rule.searchUrl.includes('[')&&rule.searchUrl.includes(']')){
+            let u1 = rule.searchUrl.split('[')[0]
+            let u2 = rule.searchUrl.split('[')[1].split(']')[0]
+            rule.searchUrl = rule.host && rule.searchUrl?urljoin(rule.host,u1)+'['+urljoin(rule.host,u2)+']':rule.searchUrl;
+        }else{
+            rule.searchUrl = rule.host && rule.searchUrl ? urljoin(rule.host,rule.searchUrl) : rule.searchUrl;
+        }
 
         rule.timeout = rule.timeout||5000;
         rule.encoding = rule.编码||rule.encoding||'utf-8';
@@ -2252,6 +2338,11 @@ function isVideoParse(isVideoObj){
         rule.sniffer = !!(rule.sniffer && rule.sniffer!=='0' && rule.sniffer!=='false');
 
         rule.isVideo = rule.hasOwnProperty('isVideo')?rule.isVideo:'';
+
+        rule.tab_remove = rule.hasOwnProperty('tab_remove')?rule.tab_remove:[];
+        rule.tab_order = rule.hasOwnProperty('tab_order')?rule.tab_order:[];
+        rule.tab_rename = rule.hasOwnProperty('tab_rename')?rule.tab_rename:{};
+
         if(rule.headers && typeof(rule.headers) === 'object'){
             try {
                 let header_keys = Object.keys(rule.headers);
@@ -2452,16 +2543,17 @@ function sniffer(){
  */
 function isVideo(url){
     let t = 0;
+    let is_video;
     if(rule.isVideo &&rule.isVideo.trim()){
-        rule.isVideo = rule.isVideo.trim();
+        is_video = rule.isVideo.trim();
     }
-    if(rule.isVideo.startsWith('js:')){
-        rule.isVideo = rule.isVideo.replace('js:','');
+    if(is_video.startsWith('js:')){
+        is_video = is_video.replace('js:','');
         t = 1;
     }
     let isVideoObj = {
         url:url,
-        isVideo:rule.isVideo,
+        isVideo:is_video,
         t:t,
     };
     return isVideoParse(isVideoObj)
