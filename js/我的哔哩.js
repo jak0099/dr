@@ -1,36 +1,36 @@
-/* 直播弹幕 -> vod_area:'bilidanmu'
-目前只有皮皮虾大佬的DMBox, 支持弹幕
-DMBox下载:https://t.me/pipixiawerun
-设置 > 窗口预览 > 开启
-*/
-
-/* Cookie设置
-Cookie改为预设获取蜂蜜大佬Github的
-https://ghproxy.net/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/txt/cookie.txt
-
-Cookie获取方法
-https://ghproxy.net/https://raw.githubusercontent.com/UndCover/PyramidStore/main/list.md
-
-Cookie设置方法1: DR-PY 后台管理界面
-CMS后台管理 > 设置中心 > 环境变量 > {"bili_cookie":"XXXXXXX","vmid":"XXXXXX"} > 保存
-
-Cookie设置方法2: 手动替换Cookie
-底下代码 headers的
-"Cookie":"$bili_cookie"
-手动替换为
-"Cookie":"将获取的Cookie黏贴在这"
-*/
+/**
+ * 已知问题：
+    * [推荐]页面：'雷电模拟器'播放部份影片会出错，'播放器'改成'ijk' & '解码方式'改成'软解'，即可正常播放
+ * 影视TV 弹幕支持
+    * https://t.me/fongmi_offical/
+    * https://github.com/FongMi/Release/tree/main/apk
+ * 皮皮虾DMBox 弹幕支持
+    * 设置 > 窗口预览 > 开启
+    * https://t.me/pipixiawerun
+    * vod_area:'bilidanmu'
+ * Cookie设置
+    * Cookie获取方法 https://ghproxy.net/https://raw.githubusercontent.com/UndCover/PyramidStore/main/list.md
+ * Cookie设置方法1: DR-PY 后台管理界面
+    * CMS后台管理 > 设置中心 > 环境变量 > {"bili_cookie":"XXXXXXX","vmid":"XXXXXX"} > 保存
+ * Cookie设置方法2: 手动替换Cookie
+    * 底下代码 headers的
+    * "Cookie":"$bili_cookie"
+    * 手动替换为
+    * "Cookie":"将获取的Cookie黏贴在这"
+ */
 
 var rule = {
     title:'我的哔哩',
     host:'https://api.bilibili.com',
-    homeUrl:'/x/web-interface/search/type?search_type=video&keyword=小姐姐4K&page=1',
+    // homeUrl:'/x/web-interface/search/type?search_type=video&keyword=小姐姐4K&page=1',
+    homeUrl:'/x/web-interface/ranking/v2?rid=0&type=origin', // 排行 > 排行榜 > 原创
     url:'/x/web-interface/search/type?search_type=videofyfilter',
-    class_name:'经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV&演唱会&白噪音&知名UP主&说案&解说&演讲&时事&探索发现&纪录片&平面设计教学&软件教程&实用教程&旅游&风景&食谱&美食&搞笑&球星&动物世界&相声小品&戏曲&儿童&小姐姐&热门&旅行探险',
-    class_url:'经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV4K&演唱会4K&白噪音4K&知名UP主&说案&解说&演讲&时事&探索发现超清&纪录片超清&平面设计教学&软件教程&实用教程&旅游&风景4K&食谱&美食超清&搞笑&球星&动物世界超清&相声小品&戏曲&儿童&小姐姐4K&热门&旅行探险',
+    class_name:'推荐&经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV&演唱会&白噪音&知名UP主&说案&解说&演讲&时事&探索发现&纪录片&平面设计教学&软件教程&实用教程&旅游&风景&食谱&美食&搞笑&球星&动物世界&相声小品&戏曲&儿童&小姐姐&热门&旅行探险',
+    class_url:'推荐&经典无损音乐合集&帕梅拉&太极拳&健身&舞蹈&音乐&歌曲&MV4K&演唱会4K&白噪音4K&知名UP主&说案&解说&演讲&时事&探索发现超清&纪录片超清&平面设计教学&软件教程&实用教程&旅游&风景4K&食谱&美食超清&搞笑&球星&动物世界超清&相声小品&戏曲&儿童&小姐姐4K&热门&旅行探险',
     filterable: 1,
     filter_url: '&keyword={{fl.tid}}&page=fypage&duration={{fl.duration}}&order={{fl.order}}',
     filter_def:{
+        推荐:{tid:'推荐'},
         经典无损音乐合集:{tid:'经典无损音乐合集'},
         帕梅拉:{tid:'帕梅拉'},
         太极拳:{tid:'太极拳'},
@@ -100,7 +100,8 @@ var rule = {
         "热门":[{"key":"order","name":"排序","value":[{"n":"综合排序","v":"0"},{"n":"最多点击","v":"click"},{"n":"最新发布","v":"pubdate"},{"n":"最多弹幕","v":"dm"},{"n":"最多收藏","v":"stow"}]},{"key":"tid","name":"分类","value":[{"n":"全部","v":"热门"},{"n":"刀郎","v":"刀郎"},{"n":"罗刹海市","v":"罗刹海市"},{"n":"狂飙","v":"狂飙"},{"n":"淄博烧烤","v":"淄博烧烤"},{"n":"原神","v":"原神"},{"n":"漫长的季节","v":"漫长的季节"},{"n":"AI","v":"AI"},{"n":"俄乌","v":"俄乌"},{"n":"ChatGPT","v":"ChatGPT"},{"n":"重启人生","v":"重启人生"},{"n":"棋手战鹰","v":"棋手战鹰"},{"n":"中国奇谭","v":"中国奇谭"},{"n":"三体","v":"三体"},{"n":"刘慈欣","v":"刘慈欣"},{"n":"鬼吹灯","v":"鬼吹灯"},{"n":"天下霸唱","v":"天下霸唱"}]},{"key":"duration","name":"时长","value":[{"n":"全部","v":"0"},{"n":"60分钟以上","v":"4"},{"n":"30~60分钟","v":"3"},{"n":"10~30分钟","v":"2"},{"n":"10分钟以下","v":"1"}]}],
         "旅行探险":[{"key":"order","name":"排序","value":[{"n":"综合排序","v":"0"},{"n":"最多点击","v":"click"},{"n":"最新发布","v":"pubdate"},{"n":"最多弹幕","v":"dm"},{"n":"最多收藏","v":"stow"}]},{"key":"tid","name":"分类","value":[{"n":"全部","v":"旅行探险"},{"n":"摩旅","v":"摩托车旅游"},{"n":"骑行","v":"骑行旅游"},{"n":"徒步旅游","v":"徒步旅游"},{"n":"自驾旅游","v":"自驾旅游"},{"n":"洞穴探险","v":"洞穴探险"},{"n":"荒野求生","v":"荒野求生"},{"n":"凶宅探险","v":"凶宅探险"},{"n":"灵异探险","v":"灵异探险"},{"n":"户外攀岩","v":"户外攀岩"},{"n":"高空攀爬","v":"高空攀爬"},{"n":"潜水探险","v":"潜水探险"},{"n":"翼装飞行","v":"翼装飞行"},{"n":"极限运动","v":"极限运动"},{"n":"速降","v":"速降"},{"n":"高空跑酷","v":"高空跑酷"},{"n":"冲浪","v":"冲浪"}]},{"key":"duration","name":"时长","value":[{"n":"全部","v":"0"},{"n":"60分钟以上","v":"4"},{"n":"30~60分钟","v":"3"},{"n":"10~30分钟","v":"2"},{"n":"10分钟以下","v":"1"}]}]
     },
-    detailUrl:'/x/web-interface/view?aid=fyid',//二级详情拼接链接(json格式用)
+    // detailUrl:'/x/web-interface/view?aid=fyid',//二级详情拼接链接(json格式用)
+    detailUrl:'/x/web-interface/view/detail?aid=fyid',//二级详情拼接链接(json格式用)
     searchUrl:'/x/web-interface/search/type?search_type=video&keyword=**&page=fypage',
     searchable:2,
     quickSearch:0,
@@ -116,6 +117,7 @@ var rule = {
     play_parse:true,
     lazy:`js:
         let ids = input.split('_');
+        let dan = 'https://api.bilibili.com/x/v1/dm/list.so?oid=' + ids[1];
         let result = {};
         let iurl = 'https://api.bilibili.com:443/x/player/playurl?avid=' + ids[0] + '&cid=' + ids[1] + '&qn=116';
         let html = request(iurl);
@@ -144,20 +146,306 @@ var rule = {
             'Referer': 'https://live.bilibili.com',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
         };
-        result.contentType = 'video/x-flv';
+        if (/\\.flv/.test(purl)) {
+            result.contentType = 'video/x-flv';
+        } else {
+            result.contentType = '';
+        }
+        result.danmaku = dan;
         input = result
     `,
     double:false,
-    推荐:'*',
+    // 推荐:'*',
+    推荐:`js:
+        function stripHtmlTag(src) {
+            return src.replace(/<\\/?[^>]+(>|$)/g, '').replace(/&.{1,5};/g, '').replace(/\\s{2,}/g, ' ');
+        }
+        function turnDHM(duration) {
+            let min = '';
+            let sec = '';
+            try {
+                min = duration.split(':')[0];
+                sec = duration.split(':')[1];
+            } catch (e) {
+                if (duration >= 3600) {
+                    let rSAH = duration % 3600;
+                    min = Math.floor(rSAH / 60);
+                    sec = rSAH % 60;
+                } else {
+                    min = Math.floor(duration / 60);
+                    sec = duration % 60;
+                }
+            }
+            if (isNaN(parseInt(duration))) {
+                return '无效输入';
+            }
+            if (min == 0) {
+                return sec + '秒'
+            } else if (0 < min && min < 60) {
+                return min + '分'
+            } else if (60 <= min && min < 1440) {
+                if (min % 60 == 0) {
+                    let h = min / 60;
+                    return h + '小时'
+                } else {
+                    let h = min / 60;
+                    h = (h + '').split('.')[0];
+                    let m = min % 60;
+                    return h + '小时' + m + '分';
+                }
+            } else if (min >= 1440) {
+                let d = min / 60 / 24;
+                d = (d + '').split('.')[0];
+                let h = min / 60 % 24;
+                h = (h + '').split('.')[0];
+                let m = min % 60;
+                let dhm = '';
+                if (d > 0) {
+                    dhm = d + '天'
+                }
+                if (h >= 1) {
+                    dhm = dhm + h + '小时'
+                }
+                if (m > 0) {
+                    dhm = dhm + m + '分'
+                }
+                return dhm
+            }
+            return null
+        }
+        function ConvertNum(num) {
+            let _ws = Math.pow(10, 1);
+            let _b = 1e4;
+            if (num < _b) {
+                return num.toString();
+            }
+            let _r = '';
+            let _strArg = ['', '万', '亿', '万亿'];
+            let _i = Math.floor(Math.log(num) / Math.log(_b));
+            if (_i > 3) {
+                _i = 3;
+            }
+            _r = Math.floor(num / Math.pow(_b, _i) * _ws) / _ws + _strArg[_i];
+            return _r;
+        }
+        let html = request(input);
+        let vodList = JSON.parse(html).data.list;
+        let videos = [];
+        vodList.forEach(function(vod) {
+            let aid = vod.aid;
+            let title = stripHtmlTag(vod.title);
+            let img = vod.pic;
+            if (img.startsWith('//')) {
+                img = 'https:' + img;
+            }
+            let remark = turnDHM(vod.duration) + ' ▶' + ConvertNum(vod.stat.view) + ' 🆙' + vod.owner.name;
+            videos.push({
+                vod_id: aid,
+                vod_name: title,
+                vod_pic: img,
+                vod_remarks: remark
+            })
+        });
+        VODS = videos
+    `,
     // 一级:'js:let html=request(input);let msg=JSON.parse(html).message;function title_rep(title){if(/keyword/.test(title)){title=title.replace(\'<em class="keyword">\',"").replace("</em>","").replace("&quot;","\'");log("名称替换👉"+title)};return title}if(msg!=="0"){VODS=[{vod_name:KEY+"➢"+msg,vod_id:"no_data",vod_remarks:"别点,缺少bili_cookie",vod_pic:"https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/404.jpg"}]}else{let videos=[];let vodList=JSON.parse(html).data.result;vodList.forEach(function(vod){let aid=vod["aid"];let title=vod["title"].trim();title=title_rep(title);title=title_rep(title);title=title_rep(title);title=title_rep(title);let img="https:"+vod["pic"];let remark=vod["duration"];videos.push({vod_id:aid,vod_name:title,vod_pic:img,vod_remarks:remark})});VODS=videos}',
     一级:`js:
+        function stripHtmlTag(src) {
+            return src.replace(/<\\/?[^>]+(>|$)/g, '').replace(/&.{1,5};/g, '').replace(/\\s{2,}/g, ' ');
+        }
+        function turnDHM(duration) {
+            let min = '';
+            let sec = '';
+            try {
+                min = duration.split(':')[0];
+                sec = duration.split(':')[1];
+            } catch (e) {
+                if (duration >= 3600) {
+                    let rSAH = duration % 3600;
+                    min = Math.floor(rSAH / 60);
+                    sec = rSAH % 60;
+                } else {
+                    min = Math.floor(duration / 60);
+                    sec = duration % 60;
+                }
+            }
+            if (isNaN(parseInt(duration))) {
+                return '无效输入';
+            }
+            if (min == 0) {
+                return sec + '秒'
+            } else if (0 < min && min < 60) {
+                return min + '分'
+            } else if (60 <= min && min < 1440) {
+                if (min % 60 == 0) {
+                    let h = min / 60;
+                    return h + '小时'
+                } else {
+                    let h = min / 60;
+                    h = (h + '').split('.')[0];
+                    let m = min % 60;
+                    return h + '小时' + m + '分';
+                }
+            } else if (min >= 1440) {
+                let d = min / 60 / 24;
+                d = (d + '').split('.')[0];
+                let h = min / 60 % 24;
+                h = (h + '').split('.')[0];
+                let m = min % 60;
+                let dhm = '';
+                if (d > 0) {
+                    dhm = d + '天'
+                }
+                if (h >= 1) {
+                    dhm = dhm + h + '小时'
+                }
+                if (m > 0) {
+                    dhm = dhm + m + '分'
+                }
+                return dhm
+            }
+            return null
+        }
+        function ConvertNum(num) {
+            let _ws = Math.pow(10, 1);
+            let _b = 1e4;
+            if (num < _b) {
+                return num.toString();
+            }
+            let _r = '';
+            let _strArg = ['', '万', '亿', '万亿'];
+            let _i = Math.floor(Math.log(num) / Math.log(_b));
+            if (_i > 3) {
+                _i = 3;
+            }
+            _r = Math.floor(num / Math.pow(_b, _i) * _ws) / _ws + _strArg[_i];
+            return _r;
+        }
+        let data = [];
+        let vodList = [];
+        if (MY_CATE === '推荐') {
+            input = HOST + '/x/web-interface/index/top/rcmd?ps=14&fresh_idx=' + MY_PAGE + '&fresh_idx_1h=' + MY_PAGE;
+            data = JSON.parse(request(input)).data;
+            vodList = data.item;
+        } else {
+            data = JSON.parse(request(input)).data;
+            vodList = data.result;
+        }
+        let videos = [];
+        vodList.forEach(function(vod) {
+            let aid = vod.aid?vod.aid:vod.id;
+            let title = stripHtmlTag(vod.title);
+            let img = vod.pic;
+            if (img.startsWith('//')) {
+                img = 'https:' + img;
+            }
+            let play = '';
+            let danmaku = ''
+            if (MY_CATE === '推荐') {
+                play = ConvertNum(vod.stat.view);
+                danmaku = vod.stat.danmaku;
+            } else {
+                play = ConvertNum(vod.play);
+                danmaku = vod.video_review;
+            }
+            let remark = turnDHM(vod.duration) + ' ▶' + play + ' 💬' + danmaku;
+            videos.push({
+                vod_id: aid,
+                vod_name: title,
+                vod_pic: img,
+                vod_remarks: remark
+            })
+        });
+        VODS = videos
+    `,
+    二级:`js:
+        function stripHtmlTag(src) {
+            return src.replace(/<\\/?[^>]+(>|$)/g, '').replace(/&.{1,5};/g, '').replace(/\\s{2,}/g, ' ');
+        }
+        let html = request(input);
+        let jo = JSON.parse(html).data.View;
+        let stat = jo.stat;
+        let up_info = JSON.parse(html).data.Card;
+        let relation = up_info.following ? '已关注' : '未关注';
+        let aid = jo.aid;
+        let title = stripHtmlTag(jo.title);
+        let pic = jo.pic;
+        let desc = jo.desc;
+
+        let date = new Date(jo.pubdate * 1000);
+        let yy = date.getFullYear().toString();
+        let mm = date.getMonth()+1;
+        mm = mm < 10 ? ('0' + mm) : mm;
+        let dd = date.getDate();
+        dd = dd < 10 ? ('0' + dd) : dd;
+
+        let up_name = jo.owner.name;
+        let typeName = jo.tname;
+        // let remark = jo.duration;
+        let vod = {
+            vod_id: aid,
+            vod_name: title,
+            vod_pic: pic,
+            type_name: typeName,
+            vod_year: yy+mm+dd,
+            vod_area: 'bilidanmu',
+            // vod_remarks: remark,
+            vod_tags: 'mv',
+            vod_director: '🆙 ' + up_name + '　👥 ' + up_info.follower + '　' + relation,
+            vod_actor: '▶' + stat.view + '　' + '💬' + stat.danmaku + '　' + '👍' + stat.like + '　' + '💰' + stat.coin + '　' + '⭐' + stat.favorite,
+            vod_content: desc
+        };
+        let ja = jo.pages;
+        let treeMap = {};
+        let playurls = [];
+        ja.forEach(function(tmpJo) {
+            let cid = tmpJo.cid;
+            let part = tmpJo.part.replace('#', '﹟').replace('$', '﹩');
+            playurls.push(
+                part + '$' + aid + '_' + cid
+            )
+        });
+        treeMap['B站'] = playurls.join('#');
+        let relatedData = JSON.parse(html).data.Related;
+        playurls = [];
+        relatedData.forEach(function(rd) {
+            let ccid = rd.cid;
+            let title = rd.title.replace('#', '﹟').replace('$', '﹩');
+            let aaid = rd.aid;
+            playurls.push(
+                title + '$' + aaid + '_' + ccid
+            )
+        });
+        treeMap['相关推荐'] = playurls.join('#');
+        vod.vod_play_from = Object.keys(treeMap).join("$$$");
+        vod.vod_play_url = Object.values(treeMap).join("$$$");
+        VOD = vod;
+    `,
+    // 搜索:'*',
+    搜索:`js:
         let html = request(input);
         function stripHtmlTag(src) {
             return src.replace(/<\\/?[^>]+(>|$)/g, '').replace(/&.{1,5};/g, '').replace(/\\s{2,}/g, ' ');
         }
         function turnDHM(duration) {
-            let min = duration.split(':')[0];
-            let sec = duration.split(':')[1];
+            let min = '';
+            let sec = '';
+            try {
+                min = duration.split(':')[0];
+                sec = duration.split(':')[1];
+            } catch (e) {
+                if (duration >= 3600) {
+                    let rSAH = duration % 3600;
+                    min = Math.floor(rSAH / 60);
+                    sec = rSAH % 60;
+                } else {
+                    min = Math.floor(duration / 60);
+                    sec = duration % 60;
+                }
+            }
+            if (isNaN(parseInt(duration))) {
+                return '无效输入';
+            }
             if (min == 0) {
                 return sec + '秒'
             } else if (0 < min && min < 60) {
@@ -197,7 +485,10 @@ var rule = {
         vodList.forEach(function(vod) {
             let aid = vod.aid;
             let title = stripHtmlTag(vod.title);
-            let img = 'https:' + vod.pic;
+            let img = vod.pic;
+            if (img.startsWith('//')) {
+                img = 'https:' + img;
+            }
             let remark = turnDHM(vod.duration);
             videos.push({
                 vod_id: aid,
@@ -208,46 +499,5 @@ var rule = {
         });
         VODS = videos
     `,
-    二级:`js:
-        function stripHtmlTag(src) {
-            return src.replace(/<\\/?[^>]+(>|$)/g, '').replace(/&.{1,5};/g, '').replace(/\\s{2,}/g, ' ');
-        }
-        let html = request(input);
-        let jo = JSON.parse(html).data;
-        let aid = jo.aid;
-        let title = stripHtmlTag(jo.title);
-        let pic = jo.pic;
-        let desc = jo.desc;
-        let year = jo.pubdate;
-        let dire = jo.owner.name;
-        let typeName = jo.tname;
-        let remark = jo.duration;
-        let vod = {
-            vod_id: aid,
-            vod_name: title,
-            vod_pic: pic,
-            type_name: typeName,
-            vod_year: year,
-            vod_area: 'bilidanmu',
-            vod_remarks: remark,
-            vod_tags: 'mv',
-            vod_director: dire,
-            vod_content: desc
-        };
-        let ja = jo.pages;
-        let playurls = [];
-        ja.forEach(function(tmpJo) {
-            let cid = tmpJo.cid;
-            let part = tmpJo.part.replace('#', '﹟').replace('$', '﹩');
-            playurls.push(
-                part + '$' + aid + '_' + cid
-            )
-        });
-        let playUrl = playurls.join('#');
-        vod.vod_play_from = 'B站';
-        vod.vod_play_url = playUrl;
-        VOD = vod;
-    `,
-    搜索:'*',
     // 预处理:'if(rule_fetch_params.headers.Cookie.startsWith("http")){rule_fetch_params.headers.Cookie=fetch(rule_fetch_params.headers.Cookie);setItem(RULE_CK,cookie)};log(rule_fetch_params.headers.Cookie)',
 }
