@@ -2,6 +2,7 @@ import cheerio from 'assets://js/lib/cheerio.min.js';
 import 'assets://js/lib/crypto-js.js';
 import 模板 from"../js/模板.js"
 import {gbkTool} from './gbk.js'
+// import './rsa.js'
 
 // import cheerio from "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js";
 // import "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js";
@@ -17,6 +18,31 @@ function init_test(){
     console.log(RKEY);
     console.log(JSON.stringify(rule));
     console.log("init_test_end");
+
+    // console.log(typeof (CryptoJS));
+    // console.log(typeof (JSEncrypt));
+    // var publicKey = "-----BEGIN PUBLIC KEY-----\n" +
+    //     "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDTTt5d1LYtIxiW9ekKFBVonFOT\n" +
+    //     "XJHv4PY4xCDLPYbHWRKa/mRO7J11OJX+cR7bqzNq6uxH1W339wV\n" +
+    //     "lLP/x3Rl1RBh4prj0eYOEIsDVTvLTJONKazRtQrZ7yzSZ69o/3CQv\n" +
+    //     "ex6kb4js+9zho4U9fwIDAQAB\n" +
+    //     "-----END PUBLIC KEY-----";
+    // var text = '你好';
+    // const encryptor = new JSEncrypt();
+    // console.log(typeof (encryptor.setPublicKey));
+    // console.log(typeof (encryptor.encrypt));
+    // encryptor.setPublicKey(publicKey) // 设置公钥
+    // var str = encryptor.encrypt(text) // 对数据进行加密
+    // console.log("加密数据：" + str);
+    // log('rsax:'+typeof(rsax));
+    // log('rsaX:'+typeof(rsaX));
+    // let data = base64Encode('你好');
+    // let publicKey = 'dzyyds';
+    // console.log(typeof (RSA.encode));
+    // let encryptBase64Data = RSA.encode(data,publicKey);
+    // log('encryptBase64Data:'+encryptBase64Data);
+    // let str = RSA.decode(data,publicKey);
+    // log('str:'+str);
 }
 
 /**
@@ -41,7 +67,7 @@ function pre(){
 
 let rule = {};
 let vercode = typeof(pdfl) ==='function'?'drpy2.1':'drpy2';
-const VERSION = vercode+' 3.9.48beta4 20231004';
+const VERSION = vercode+' 3.9.48beta8 20231004';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -422,6 +448,34 @@ function getCryptoJS(){
     // return request('https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
+
+// 封装的RSA加解密类
+const RSA = {
+    encode:function (data,key,option){
+        // log('encode');
+        if(typeof(rsaEncrypt)==='function'){
+            if(!option||typeof(option)!=='object'){
+                return rsaEncrypt(data,key);
+            }else{
+                return rsaEncrypt(data,key,option);
+            }
+        }else{
+            return false
+        }
+    },
+    decode:function (data,key,option){
+        // log('decode');
+        if(typeof(rsaDecrypt)==='function'){
+            if(!option||typeof(option)!=='object'){
+                return rsaDecrypt(data,key);
+            }else{
+                return rsaDecrypt(data,key,option);
+            }
+        }else{
+            return false
+        }
+    }
+};
 
 /**
  * 获取壳子返回的代理地址
@@ -2411,7 +2465,8 @@ function proxy(params){
 function sniffer(){
     let enable_sniffer =  rule.sniffer || false;
     if(enable_sniffer){
-        log('准备执行辅助嗅探代理规则:\n'+rule.isVideo);
+        // log('准备执行辅助嗅探代理规则:\n'+rule.isVideo);
+        log('开始执行辅助嗅探代理规则...');
     }
     return enable_sniffer
 }
@@ -2435,7 +2490,11 @@ function isVideo(url){
         isVideo:is_video,
         t:t,
     };
-    return isVideoParse(isVideoObj)
+    let result = isVideoParse(isVideoObj);
+    if(result){
+        log('成功执行辅助嗅探规则并检测到视频地址:\n'+rule.isVideo);
+    }
+    return result
 }
 
 function DRPY(){//导出函数
