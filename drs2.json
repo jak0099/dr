@@ -102,7 +102,7 @@
 {"key": "狐狸", "name": "🦊狐狸┃4k", "type": 3, "api": "csp_AppYsV2", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://www.kuin.one/api.php/app/"},           
 {"key": "csp_xpath_yinfans", "name": "💥音范丝4K", "type": 3, "api": "csp_XPath","searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "https://jihulab.com/ymz1231/json/-/raw/main/音范丝.json"},  
         
-##js源
+##js_dr格式源
 #影视类🍒 	
 {"key": "dr_爱看机器人","name": "🍒爱看机器人[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱看机器人.js"},
 {"key": "dr_ikanbot2","name": "🍒爱看机器人2[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot2.js"},
@@ -494,6 +494,36 @@
 //{"key": "dr_广播迷FM","name": "🍑广播迷FM[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/广播迷FM.js"},
 {"key": "dr_有声绘本网","name": "🍑有声绘本网[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/有声绘本网.js"},
 //{"key": "dr_播客","name": "🍑播客[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/播客.js"},
+
+
+##js_cat格式源
+{"key":"kunyu77","name":"😺七七┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/kunyu77_open.js"},
+{"key":"ikanbot","name":"😺爱看┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/ikanbot_open.js"},
+{"key":"17kan","name":"😺17看┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/yqktv_open.js"},
+{"key":"czzy","name":"😺厂长①┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/czzy_open.js"},
+{"key":"czzy2","name":"😺厂长②┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/czzy2_open.js"},
+{"key":"czzy3","name":"😺厂长③┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/czzy3_open.js"},
+{"key":"bulei","name":"😺布蕾┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/bulei_open.js"},
+{"key":"sssp","name":"😺速搜┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/sssp_open.js"},
+{"key":"555","name":"😺三五┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/555dy_open.js"},
+{"key":"yzys","name":"😺柚子┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/yzys_open.js"},
+{"key":"yrzj","name":"😺伊人┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/yrzj_open.js"},
+{"key":"kkys","name":"😺快看┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/kkys_open.js"},
+{"key":"mybl","name":"😺哔哩┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/mybili_open.js"},
+{"key":"subaibai","name":"😺素白┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/subaibai_open.js"},
+{"key":"libvio","name":"😺利奥┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/libvio_open.js"},
+{"key":"zxzj","name":"😺在线┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/zxzj_open.js"},
+{"key":"nangua","name":"😺南瓜┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/ng_open.js"},
+{"key":"cntv","name":"😺央视网┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/cntv_open.js"},
+{"key":"ubestkid","name":"😺贝乐虎┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/ubestkid_open.js"},
+{"key":"tuxiaobei","name":"😺兔小贝┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/tuxiaobei_open.js"},
+{"key":"boosj","name":"😺童趣┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/boosj_open.js"},
+{"key":"kuqimv","name":"😺酷奇┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/kuqimv_open.js"},
+{"key":"sharenice","name":"😺短视频┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/sharenice_open.js"},
+{"key":"dj0898","name":"😺世纪DJ┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/dj0898_open.js"},
+{"key":"230ts","name":"😺听书网┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/230ts_open.js"},
+{"key":"duboku","name":"✈️独播①┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku_open.js"},
+{"key":"duboku2","name":"✈️独播②┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku2_open.js"},
 
 
 ##采集切片源
