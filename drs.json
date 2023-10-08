@@ -151,7 +151,7 @@
 {"key": "dr_新视觉影视","name": "🍒新视觉影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/新视觉影视.js"},
 {"key": "dr_快看","name": "🍒快看[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/快看.js"},
 //{"key": "dr_库马伊","name": "🍒库马伊[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/库马伊.js"},
-//{"key": "dr_干饭影视","name": "🍒干饭影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/干饭影视.js"},
+{"key": "dr_干饭影视","name": "🍒干饭影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/干饭影视.js"},
 {"key": "dr_尘落影视","name": "🍒尘落影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/尘落影视.js"},
 //{"key": "dr_小白菜电影","name": "🍒小白菜电影[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/小白菜电影.js"},
 {"key": "dr_小猫咪","name": "🍒小猫咪[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/小猫咪.js"},
@@ -380,6 +380,8 @@
 //{"key": "dr_Icio影视","name": "🍒Icio影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/Icio影视.js"},
 {"key": "dr_往往影视","name": "🍒往往影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/往往影视.js"},
 {"key": "dr_蛋蛋剧","name": "🍒蛋蛋剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蛋蛋剧.js"},
+{"key": "dr_华乐影院","name": "🍒华乐影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/华乐影院.js"},
+{"key": "dr_阿布影院","name": "🍒阿布影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/阿布影院.js"},
 
 #js_V2源
 {"key": "dr_555影视[V2]","name": "🌶555影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/555影视[V2].js"},
@@ -406,6 +408,7 @@
 //{"key": "dr_看看剧[V2]","name": "🌶看看剧[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/看看剧[V2].js"},
 {"key": "dr_F7好看剧[V2]","name": "🌶F7好看剧[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/F7好看剧[V2].js"},
 //{"key": "dr_鸭奈飞[V2]","name": "🌶鸭奈飞[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/鸭奈飞[V2].js"},
+
 
 ##js_磁力源
 {"key": "dr_磁力熊[磁]","name": "🍓磁力熊[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/磁力熊[磁].js"},
