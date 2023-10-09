@@ -407,6 +407,11 @@
 //{"key": "dr_看看剧[V2]","name": "🌶看看剧[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/看看剧[V2].js"},
 {"key": "dr_F7好看剧[V2]","name": "🌶F7好看剧[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/F7好看剧[V2].js"},
 //{"key": "dr_鸭奈飞[V2]","name": "🌶鸭奈飞[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/鸭奈飞[V2].js"},
+{"key": "dr_4K视界[V2]","name": "🌶4K视界[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/4K视界[V2].js"},
+{"key": "dr_EMO蓝光[V2]","name": "🌶EMO蓝光[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/EMO蓝光[V2].js"},
+{"key": "dr_cokemv[V2]","name": "🌶cokemv[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/cokemv[V2].js"},
+{"key": "dr_热剧猫[V2]","name": "🌶热剧猫[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/热剧猫[V2].js"},
+
 
 ##js_磁力源
 {"key": "dr_磁力熊[磁]","name": "🍓磁力熊[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/磁力熊[磁].js"},
