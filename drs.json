@@ -671,7 +671,7 @@
 {"name":"火山嗅探","hosts":["huoshan.com"],"regex":["item_id="]},
 {"name":"抖音嗅探","hosts":["douyin.com"],"regex":["is_play_url="]},
 {"name":"磁力","hosts":["magnet"],"regex":["最 新","直 播","更 新"]},
-{"name": "农民嗅探","hosts": ["toutiaovod.com"],"regex": ["video/tos/cn"]},
+{"name": "农民嗅探","hosts": ["toutiaovod.com"],"regex": ["video/tos/cn"]}
 ],
 
 ##解析线路站点标识
