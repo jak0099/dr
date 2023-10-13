@@ -382,6 +382,8 @@
 {"key": "dr_蛋蛋剧","name": "🍒蛋蛋剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/蛋蛋剧.js"},
 {"key": "dr_华乐影院","name": "🍒华乐影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/华乐影院.js"},
 {"key": "dr_阿布影院","name": "🍒阿布影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/阿布影院.js"},
+{"key": "dr_短剧网","name": "🍒短剧网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/短剧网.js"},
+
 
 #js_V2源
 {"key": "dr_555影视[V2]","name": "🌶555影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/555影视[V2].js"},
@@ -412,6 +414,8 @@
 {"key": "dr_EMO蓝光[V2]","name": "🌶EMO蓝光[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/EMO蓝光[V2].js"},
 {"key": "dr_cokemv[V2]","name": "🌶cokemv[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/cokemv[V2].js"},
 {"key": "dr_热剧猫[V2]","name": "🌶热剧猫[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/热剧猫[V2].js"},
+{"key": "dr_曲奇影视[V2]","name": "🌶曲奇影视[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/曲奇影视[V2].js"},
+{"key": "dr_吼吼[V2]","name": "🌶吼吼[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/吼吼[V2].js"},
 
 
 ##js_磁力源
