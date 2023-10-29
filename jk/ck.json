@@ -3,7 +3,7 @@
 //仓库地址：https://raw.gitmirror.com/jak0099/dr/master/jk/ck.json
 {
 "urls": [
-{"name": "🔥本地源①","url":"clan://localhost/tvbox/drs.json"},        
+//{"name": "🔥本地源①","url":"clan://localhost/tvbox/drs.json"},        
 //{"name": "✨本地源②","url":"clan://localhost/tvbox/drs2.json"},        
 {"name": "☄️drs","url":"https://raw.gitmirror.com/jak0099/dr/master/drs.json"},        
 //{"name": "🛸drs2","url":"https://raw.gitmirror.com/jak0099/dr/master/drs2.json"},        
