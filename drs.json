@@ -109,6 +109,7 @@
         
 ##js_dr格式源
 #影视类🍒 	
+{"key": "dr_酷云77","name": "🍒酷云77[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/酷云77.js"},
 {"key": "dr_爱看机器人","name": "🍒爱看机器人[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/爱看机器人.js"},
 {"key": "dr_ikanbot2","name": "🍒爱看机器人2[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot2.js"},
 {"key": "dr_ikanbot3","name": "🍒爱看机器人3[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/ikanbot3.js"},
@@ -118,6 +119,7 @@
 {"key": "dr_腾云驾雾","name": "🍒腾云驾雾[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/腾云驾雾.js"},
 {"key": "dr_cokemv","name": "🍒cokemv[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/cokemv.js"},
 {"key": "dr_LIBVIO","name": "🍒LIBVIO[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/LIBVIO.js"},
+{"key": "dr_Auete","name": "🍒Auete[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/Auete.js"},
 {"key": "dr_菜狗","name": "🍒菜狗[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/菜狗.js"},
 {"key": "dr_荐片","name": "🍒荐片[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/荐片.js"},
 {"key": "dr_360影视","name": "🍒360影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/360影视.js"},
