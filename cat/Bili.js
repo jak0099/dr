@@ -67,9 +67,28 @@ async function init(cfg) {
     siteKey = cfg.skey;
     siteType = cfg.stype;
     let extend = cfg.ext;
-
-    if (cfg.ext.hasOwnProperty('categories')) extend = cfg.ext.categories;
+    
+    if (typeof cfg.ext == 'string') {
+        if (cfg.ext.indexOf('http') == 0) {
+            const res = await req(cfg.ext, getHeaders());
+            cfg.ext = JSON.parse(res.content);
+        } else {
+            cfg.ext = {type: cfg.ext};
+        }
+        extend = cfg.ext;
+    }
+    
+    if (cfg.ext.hasOwnProperty('categories'))
+        extend = cfg.ext.categories;
+    else if (cfg.ext.hasOwnProperty('type'))
+        extend = cfg.ext.type;
+        
+    if (extend == '')
+        extend = '抖音热歌$$$经典无损音乐合集$$$超清MV$$$Java$$$Android';
+        
+        
     if (cfg.ext.hasOwnProperty('cookie')) cookie = cfg.ext.cookie;
+    
     // 获取csrf
     const cookies = cookie.split(';');
     cookies.forEach(cookie => {
@@ -77,12 +96,13 @@ async function init(cfg) {
             bili_jct = cookie.split('=')[1];
         }
     });
-
+    
     if (_.isEmpty(cookie)) await getCookie();
     let result = JSON.parse(await request('https://api.bilibili.com/x/web-interface/nav', getHeaders()));
     login = result.data.isLogin;
     vip = result.data.vipStatus;
-    const ext = extend.split('#');
+    const ext = extend.split('$$$');
+    console.log("ext: " + ext);
     const jsonData = [
         {
             key: 'order',
@@ -115,16 +135,36 @@ async function init(cfg) {
         land: 1,
         ratio: 1.33,
     }
-    newarr.push(sc);
+    // newarr.push(sc);
     for (const kk of ext) {
+        const cate = kk.split('#');
+        const value = [];
+        for (const item of cate) {
+            const kkk = item.indexOf('$') > 0 ? item : item + "$" + item;
+            const val = kkk.split('$');
+            value.push({n: val[0], v: val[1]});
+        }
         const c = {
-            type_name: kk,
-            type_id: kk,
+            type_name: value[0].n,
+            type_id: value[0].v,
             land: 1,
             ratio: 1.33,
+            type_flag: '0-0-H'
         };
         newarr.push(c);
-        d[kk] = jsonData;
+        const filter = [];
+        if (value.length > 1) {
+            filter.push(
+                {
+                    key: 'tid',
+                    name: '分类',
+                    value: value
+                }
+            );
+        }
+        filter.push(jsonData[0]);
+        filter.push(jsonData[1]);
+        d[value[0].v] = filter;
     }
     if (!_.isEmpty(bili_jct)) {
         const hc = {
@@ -145,6 +185,7 @@ function home(filter) {
     try {
         const jSONObject = {
             class: extendObj.classes,
+            type_flag: '0-0-H'
         };
         if (filter) {
             jSONObject.filters = extendObj.filter;
@@ -156,36 +197,37 @@ function home(filter) {
 }
 
 async function homeVod() {
-    try {
-        const list = [];
-        const url = 'https://api.bilibili.com/x/web-interface/index/top/rcmd?ps=14&fresh_idx=1&fresh_idx_1h=1';
+    return category('白噪音', 1, false, {});
+    // try {
+    //     const list = [];
+    //     const url = 'https://api.bilibili.com/x/web-interface/index/top/rcmd?ps=14&fresh_idx=1&fresh_idx_1h=1';
 
-        const response = await request(url, getHeaders());
-        const responseData = JSON.parse(response);
-        const vods = responseData.data.item;
+    //     const response = await request(url, getHeaders());
+    //     const responseData = JSON.parse(response);
+    //     const vods = responseData.data.item;
 
-        for (const item of vods) {
-            const vod = {};
-            let imageUrl = item.pic;
-            if (imageUrl.startsWith('//')) {
-                imageUrl = 'https:' + imageUrl;
-            }
-            let cd = getFullTime(item.duration);
+    //     for (const item of vods) {
+    //         const vod = {};
+    //         let imageUrl = item.pic;
+    //         if (imageUrl.startsWith('//')) {
+    //             imageUrl = 'https:' + imageUrl;
+    //         }
+    //         let cd = getFullTime(item.duration);
 
-            vod.vod_id = item.bvid;
-            vod.vod_name = removeTags(item.title);
-            vod.vod_pic = imageUrl;
-            vod.vod_remarks = cd;
-            vod.style = {
-                type: 'rect',
-                ratio: 1.33,
-            },
-                list.push(vod);
-        }
+    //         vod.vod_id = item.bvid;
+    //         vod.vod_name = removeTags(item.title);
+    //         vod.vod_pic = imageUrl;
+    //         vod.vod_remarks = cd;
+    //         vod.style = {
+    //             type: 'rect',
+    //             ratio: 1.33,
+    //         },
+    //             list.push(vod);
+    //     }
 
-        const result = { list: list };
-        return JSON.stringify(result);
-    } catch (e) { }
+    //     const result = { list: list };
+    //     return JSON.stringify(result);
+    // } catch (e) { }
 }
 
 async function category(tid, page, filter, ext) {
@@ -314,7 +356,9 @@ async function detail(ids) {
         for (let j = 0; j < jSONArray.length; j++) {
             const jSONObject6 = jSONArray[j];
             const cid = jSONObject6.cid;
-            const playUrl = j + '$' + aid + '+' + cid + '+' + qualitylist.join(':') + '+' + descriptionList.join(':');
+            const title = jSONObject6.part;
+            const duration = jSONObject6.duration;
+            const playUrl = '[' + secondsToTime(duration) + '] ' + title + '$' + aid + '+' + cid + '+' + qualitylist.join(':') + '+' + descriptionList.join(':');
             playList.push(playUrl);
         }
         treeMap['dash'] = playList.join('#');
@@ -335,6 +379,8 @@ async function detail(ids) {
 
         video.vod_play_from = Object.keys(treeMap).join("$$$");
         video.vod_play_url = Object.values(treeMap).join("$$$");
+        
+        // console.log("====>video: " + JSON.stringify(video));
 
         const list = [video];
         const result = { list };
@@ -351,7 +397,6 @@ async function play(flag, id, flags) {
         const cid = ids[1];
         const qualityIds = ids[2].split(':');
         const qualityName = ids[3].split(':');
-        const dan = 'https://api.bilibili.com/x/v1/dm/list.so?oid=' + cid;
         if (flag == 'dash' || flag == '相关') {
             // dash mpd 代理
             const js2Base = await js2Proxy(true, siteType, siteKey, 'dash/', {});
@@ -362,7 +407,6 @@ async function play(flag, id, flags) {
             return JSON.stringify({
                 parse: 0,
                 url: urls,
-                danmaku: dan,
                 header: playHeaders,
             });
         } else if (flag == 'mp4') {
@@ -380,7 +424,6 @@ async function play(flag, id, flags) {
             return JSON.stringify({
                 parse: 0,
                 url: urls,
-                danmaku: dan,
                 header: playHeaders,
             });
         } else {
@@ -606,6 +649,20 @@ function getFullTime(numberSec) {
     }
 }
 
+function secondsToTime(seconds) {
+    var hours = Math.floor(seconds / 3600);
+    var minutes = Math.floor((seconds - (hours * 3600)) / 60);
+    var seconds = seconds - (hours * 3600) - (minutes * 60);
+    
+    // round seconds
+    seconds = Math.round(seconds * 100) / 100
+    
+    var result = (hours < 10 ? "0" + hours : hours);
+    result += ":" + (minutes < 10 ? "0" + minutes : minutes);
+    result += ":" + (seconds  < 10 ? "0" + seconds : seconds);
+    return result;
+}
+
 export function __jsEvalReturn() {
     return {
         init: init,
@@ -618,3 +675,4 @@ export function __jsEvalReturn() {
         search: search,
     };
 }
+

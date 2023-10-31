@@ -1,6 +1,6 @@
-import { load, _ } from "assets://js/lib/cat.js";
+import { load, _ } from "./lib/cat.js";
 
-let key = "世纪DJ音乐网";
+let key = "世纪DJ音乐网_book";
 let HOST = "http://m.dj0898.com";
 let siteKey = "";
 let siteType = 0;
@@ -90,10 +90,16 @@ async function category(tid, pg, filter, extend) {
 async function detail(id) {
     const vod = {
         vod_id: id,
-        vod_remarks: "",
+        type_name: '',
+        vod_year: '',
+        vod_area: '',
+        vod_remarks: '',
+        vod_actor: '',
+        vod_director: '',
+        vod_content: '',
     };
     const playlist = ["点击播放" + "$" + vod.vod_id];
-    vod.vod_play_from = "道长在线";
+    vod.vod_play_from = "DJ";
     vod.vod_play_url = playlist.join("#");
     return JSON.stringify({
         list: [vod],
