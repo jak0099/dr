@@ -24,10 +24,11 @@
 #蜂蜜版格式
 "lives":[
 {"name": "TXT","type": 0,"url": "./live/月光宝盒1120.txt","epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png","ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","boot": false}
-//{"name": "M3U","type": 0,"url": "./live/黑.m3u","epg": "https://epg.112114.xyz/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png","ua": "okhttp/3.15","boot": false},
+//{"name": "M3U","type": 0,"url": "https://live.fanmingming.com/tv/m3u/global.m3u","epg": "https://epg.112114.xyz/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png","ua": "okhttp/3.15","boot": false},
 //{"name": "IJK","type": 0,"url": "./live/live.txt","playerType": 1}
 //{"name": "JSON","type": 1,"url": "./live/zb.json","epg": "http://epg.51zmt.top:8000/api/diyp/?ch={epg}&date={date}","logo": "http://epg.51zmt.top:8000/{logo}","boot": false}
 ],
+
 
 "sites":[
 ##聚合展示
@@ -385,8 +386,61 @@
 {"key":"sharenice_cat","name":"😺短视频┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/sharenice_open.js"},
 {"key":"dj0898_cat","name":"😺世纪DJ┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/dj0898_open.js"},
 {"key":"230ts_cat","name":"😺听书网┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/230ts_open.js"},
-{"key":"duboku_cat","name":"✈️独播①┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku_open.js"},
-{"key":"duboku2_cat","name":"✈️独播②┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku2_open.js"},
+{"key":"sharenice_open_cat","name":"😺短视频┃cat","type":3,"api":"./cat/sharenice_open.js","playerType":"2"},
+{"key":"猫农民_cat","name":"😺农民┃cat","type":3,"api":"./cat/猫农民.js"},
+{"key":"jojo_cat","name":"😺舟舟┃cat","type":3,"api":"./cat/jojo_open.js"},
+{"key":"yqk_cat","name":"😺一起看┃cat","type":3,"api":"./cat/yqktv_open.js"},
+{"key":"livbo_cat","name":"😺荔波┃cat","type":3,"api":"./cat/MyCatLibvio.js"},
+{"key":"bookan_book_open_cat","name":"😺博看┃cat","type":3,"api":"./cat/MyCatBookan.js"},
+{"key":"wogg_cat","name":"😺玩偶┃cat","type":3,"api":"./cat/wogg_open.js","ext":"请在此处输入阿里32位token"},
+{"key":"wobg_cat","name":"😺老表┃cat","type":3,"api":"./cat/wobg_open.js","ext":"请在此处输入阿里32位token"},
+{"key":"dsxys_cat","name":"😺师兄┃cat","type":3,"api":"./cat/dsxys_open.js"},
+{"key":"djwm_cat","name":"😺短剧┃cat","type":3,"api":"./cat/djwm_open.js"},
+{"key":"mimiju_cat","name":"😺迷迷┃cat","type":3,"api":"./cat/mimiju_open.js"},
+{"key":"vsdj_cat","name":"😺VSM┃cat","type":3,"api":"./cat/vsdj_open.js"},
+//{"key":"tutu_cat","name":"😺图图┃cat","type":3,"api":"./cat/tutu_open.js"},
+{"key":"mgys_cat","name":"😺蘑菇┃cat","type":3,"api":"./cat/mgys_open.js"},
+{"key":"miku_cat","name":"😺米酷┃cat","type":3,"api":"./cat/miku_open.js"},
+{"key":"jiohub_cat","name":"😺JOJO┃cat","type":3,"api":"./cat/jiohub_open.js"},
+{"key":"djwm_cat","name":"😺看看┃cat","type":3,"api":"./cat/108kk_open.js"},
+{"key":"douyu_cat","name":"😺斗鱼┃cat","type":3,"api":"./cat/douyu_open.js"},
+{"key":"mybl_cat","name":"😺哔哩┃cat","type":3,"api":"./cat/mybili_open.js"},
+{"key":"anfun_cat","name":"😺Afun┃cat","type":3,"api":"./cat/anfun_open.js"},
+{"key":"58dm_cat","name":"😺五八┃cat","type":3,"api":"./cat/58dm_open.js"},
+{"key":"yjys_cat","name":"😺✈️悠久┃cat","type":3,"api":"./cat/yjys_open.js"},
+{"key":"duboku_cat","name":"😺✈️独播①┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku_open.js"},
+{"key":"duboku2_cat","name":"😺✈️独播②┃cat","type":3,"searchable": 1,"changeable": 1,"api":"./cat/duboku2_open.js"},
+
+{"key":"yt_cat","name":"😺影探┃cat","type":3,"api":"./cat/yt_open.js","ext":"http://ytcms.lyyytv.cn/api.php/app/"},
+{"key":"1080dyw_cat","name":"😺视界┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://www.1080dyw.cc/api.php/v1.vod"},
+{"key":"jialiang_cat","name":"😺嘉靓┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://api.jialiangos.com:81/api.php/app/"},
+{"key":"qiqi_cat","name":"😺骑骑┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://www.gsjtlxy.top/xgapp.php/v3/"},
+{"key":"yaya_cat","name":"😺耐菲┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://yayayaaapp.ynf.icu/api.php/app/"},
+{"key":"EMO_cat","name":"😺蓝光┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://one3.emofun.top/mogai_api.php/v1.vod"},
+{"key":"dytt_cat","name":"😺天堂┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://dytt996.com/api.php/app/"},
+{"key":"sukan_cat","name":"😺速看┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://sk100.tv/api.php/app/"},
+{"key":"69mj_cat","name":"😺美剧┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://www.69mj.com/xgapp.php/v2/"},
+{"key":"aidi_cat","name":"😺爱迪┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://api123.adys.app/xgapp.php/v3/"},
+{"key":"hello_cat","name":"😺哈喽┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://www.miniku.cc/xgapp.php/v2/"},
+{"key":"beijihu_cat","name":"😺极狐┃cat","type":3,"api":"./cat/appysv2.js","ext":"https://www.kuin.one/api.php/app/"},
+{"key":"qtw_cat","name":"😺毛子┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://ys.qtw.asia/lvdou_api.php/v1.vod"},
+{"key":"kuku_cat","name":"😺逗逗┃cat","type":3,"api":"./cat/appysv2.js","ext":"http://cms.realdou.cn:35264/api.php/app/"},
+{"key":"jisu_cat","name":"😺极速┃cat","type":3,"api":"./cat/caiji.js","ext":"https://jszyapi.com/api.php/provide/vod/from/jsm3u8/"},
+{"key":"360_cat","name":"😺360┃cat","type":3,"api":"./cat/caiji.js","ext":"https://caiji.qhzyapi.com/api.php/provide/vod/from/qhm3u8/"},
+{"key":"xinlang_cat","name":"😺新浪┃cat","type":3,"api":"./cat/caiji.js","ext":"https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8"},
+{"key":"bdzy_cat","name":"😺百度┃cat","type":3,"api":"./cat/caiji.js","ext":"https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/"},
+{"key":"bfzy_cat","name":"😺暴风┃cat","type":3,"api":"./cat/caiji.js","ext":"https://bfzyapi.com/api.php/provide/vod/"},
+{"key":"liangzi_cat","name":"😺量子┃cat","type":3,"api":"./cat/caiji.js","ext":"https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8"},
+{"key":"feifan_cat","name":"😺非凡┃cat","type":3,"api":"./cat/caiji.js","ext":"https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/"},
+{"key":"yingtu_cat","name":"😺影图┃cat","type":3,"api":"./cat/caiji.js","ext":"https://cj.vodimg.top/api.php/provide/vod/"},
+{"key":"guangsuapi_cat","name":"😺光速┃cat","type":3,"api":"./cat/caiji.js","ext":"http://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/"},
+{"key":"feisu_cat","name":"😺飞速┃cat","type":3,"api":"./cat/caiji.js","ext":"https://www.feisuzyapi.com/api.php/provide/vod/from/fsm3u8/"},
+{"key":"ikun_cat","name":"😺爱坤┃cat","type":3,"api":"./cat/caiji.js","ext":"https://ikunzyapi.com/api.php/provide/vod"},
+{"key":"jinying_cat","name":"😺金鹰┃cat","type":3,"api":"./cat/caiji.js","ext":"https://jinyingzy.com/provide/vod/from/jinyingm3u8/"},
+{"key":"kuaiche_cat","name":"😺快车┃cat","type":3,"api":"./cat/caiji.js","ext":"https://caiji.kczyapi.com/api.php/provide/vod/from/kcm3u8/"},
+{"key":"taopianapi_cat","name":"😺淘片┃cat","type":3,"api":"./cat/caiji.js","ext":"https://taopianapi.com/cjapi/mc10/vod/json.html"},
+
+##
 
 ##采集切片源
 {"key": "量子","name": "🍃量子┃切片","type": 0,"api": "https://cj.lziapi.com/api.php/provide/vod/at/xml/","searchable": 1,"changeable": 1,"categories": ["国产动漫","日韩动漫","国产剧","韩国剧","日本剧","电影片","连续剧","综艺片","动漫片","动作片","喜剧片","爱情片","科幻片","恐怖片","剧情片","战争片","台湾剧","香港剧","欧美剧","记录片","海外剧","泰国剧","大陆综艺","港台综艺","日韩综艺","欧美综艺","欧美动漫","港台动漫","海外动漫","体育","足球","篮球","网球","斯诺克"]},
