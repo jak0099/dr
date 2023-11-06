@@ -127,18 +127,28 @@ function base64Encode(text) {
 function base64Decode(text) {
     return Crypto.enc.Utf8.stringify(Crypto.enc.Base64.parse(text));
 }
-async function search(wd, quick) {
-    let data = JSON.parse(await request(HOST + '/index.php/ajax/suggest?mid=1&wd=' + wd)).list;
-    let videos = [];
-    for (const vod of data) {
-        videos.push({
-            vod_id: vod.id,
-            vod_name: vod.name,
-            vod_pic: vod.pic,
-            vod_remarks: '',
-        });
-    }
+async function search(wd, quick, pg) {
+    if (pg <= 0) pg = 1;
+    let data = await request(HOST + '/vodsearch/' + wd + '----------' + pg + '---' + '.html');//https://www.moguys.xyz/vodsearch/%E6%88%91----------2---.html
+    const $ = load(data);
+      const items = $('ul.stui-vodlist > li');
+    let videos = _.map(items, (item) => {
+        const it = $(item).find('a:first')[0];
+        const remarks = $($(item).find('span.pic-text text-right')[0]).text().trim();
+        return {
+            vod_id: it.attribs.href.replace(/.*?\/voddetail\/(.*).html/g, '$1'),
+            vod_name: it.attribs.title,
+            vod_pic: it.attribs['data-original'],
+            vod_remarks: remarks || '',
+        };
+    });
+    const hasMore = $('ul.stui-page__item > li > a:contains(下一页)').length > 0;
+    const pgCount = hasMore ? parseInt(pg) + 1 : parseInt(pg);
     return JSON.stringify({
+        page: parseInt(pg),
+        pagecount: pgCount,
+        limit: 24,
+        total: 24 * pgCount,
         list: videos,
     });
 }

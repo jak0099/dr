@@ -126,18 +126,30 @@ function base64Decode(text) {
     return Crypto.enc.Utf8.stringify(Crypto.enc.Base64.parse(text));
 }
 
-async function search(wd, quick) {
-    let data = JSON.parse(await request(HOST + '/index.php/ajax/suggest?mid=1&wd=' + wd)).list;
-    let videos = [];
-    for (const vod of data) {
-        videos.push({
-            vod_id: vod.id,
-            vod_name: vod.name,
-            vod_pic: vod.pic,
-            vod_remarks: '',
-        });
-    }
+async function search(wd, quick, pg) {
+    if (pg <= 0) pg = 1;
+    const link = HOST + '/search.php?page=' + pg + '&searchword=' + wd + '&searchtype=';//http://www.ting38.com/search.php?page=2&searchword=%E6%88%91&searchtype=
+    const html = await request(link);
+    const $ = load(html);
+    const items = $('ul.fed-list-info > li');
+    let videos = _.map(items, (item) => {
+        const it = $(item).find('a:first')[0];
+        const k = $(item).find('a')[1];
+        const remarks = $($(item).find('span.fed-list-remarks')[0]).text().trim();
+        return {
+            vod_id: it.attribs.href.replace(/.*?\/books\/(.*).html/g, '$1'),
+            vod_name:  k.children[0].data,
+            vod_pic: HOST + it.attribs['data-original'],
+            vod_remarks: remarks || '',
+        };
+    });
+    const hasMore = $('div.fed-page-info > a:contains(下页)').length > 0;
+    const pgCount = hasMore ? parseInt(pg) + 1 : parseInt(pg);
     return JSON.stringify({
+        page: parseInt(pg),
+        pagecount: pgCount,
+        limit: 24,
+        total: 24 * pgCount,
         list: videos,
     });
 }

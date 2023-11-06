@@ -87,7 +87,7 @@ async function detail(id) {
     const playlist = _.map($('div.sort-item > a'), (it) => {
         return it.attribs.title + '$' + it.attribs.href.replace(/\/vodplay\/(.*).html/g, '$1');
     });
-    vod.vod_play_from = "blue";
+    vod.vod_play_from = "多多线路";
     vod.vod_play_url = playlist.join('#');
     return JSON.stringify({
         list: [vod],
