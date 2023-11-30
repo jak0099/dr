@@ -240,6 +240,7 @@
 {"key": "dr_阿布影院","name": "🍒阿布影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/阿布影院.js"},
 {"key": "dr_短剧网","name": "🍒短剧网[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/短剧网.js"},
 {"key": "dr_量子资源","name": "🍒量子资源[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/量子资源.js"},
+{"key": "dr_NY影院","name": "🍒NY影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NY影院.js"},
 
 
 #js_V2源
@@ -268,7 +269,10 @@
 {"key": "dr_落攻阁影视[V2]","name": "🌶落攻阁影视[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/落攻阁影视[V2].js"},
 {"key": "dr_鑫鑫[V2]","name": "🌶鑫鑫[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/鑫鑫[V2].js"},
 {"key": "dr_路人甲[V2]","name": "🌶路人甲[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/路人甲[V2].js"},
-{"key": "dr_刺桐[V2]","name": "🌶刺桐[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/刺桐[V2].js"},
+//{"key": "dr_刺桐[V2]","name": "🌶刺桐[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/刺桐[V2].js"},
+//{"key": "dr_毛子[V2]","name": "🌶毛子[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/毛子[V2].js"},
+{"key": "dr_532影院[V2]","name": "🌶532影院[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/532影院[V2].js"},
+{"key": "dr_宝片[V2]","name": "🌶宝片[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/宝片[V2].js"},
 
 
 ##js_磁力源
@@ -364,6 +368,10 @@
 ##js_cat格式源
 {"key":"douban_cat","name":"😺豆瓣┃cat","type":3,"indexs":1,"api":"./cat/douban_open.js"},
 {"key":"nangua_cat","name":"😺南瓜┃cat","type":3,"api":"./cat/ng_open.js"},
+{"key": "xyyy_cat","name": "😺小鸭┃cat","type": 3,"api": "xyyy_open.js"},	
+{"key": "tutu_cat","name": "😺图图┃cat","type": 3,"api": "tutu_open.js"},
+{"key": "rejumao_cat","name": "😺热剧┃cat","type": 3,"api": "apptov5_open.js","ext": {"domains": ["https://app-1253196701.cos.ap-shanghai.myqcloud.com/app.txt","https://www.daenwl.com/app.txt"],"aesKey": "8y8sDX3ZG22yACH3ZM5KfNGieTxEMKFe","aesIV": "WxRAbh68C8pP6SpN","rasPublicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6Ykikz4aIqkJC899VxwX\nwx27bZJGV/fDbgAHtXxZ73Mq8QWuPfeAanWDWiGPhJu5aVQndADi7B0L5RBIrirf\n6lIzA+l8Ubt6+nvPYQ9NSlRkObE4ML2Hw7ccAmcqzDD0vplJz7Y8o7qKIoyfK5NP\nXDuiv52HgbyEP6KlWCiDfMuIsAA+/3x9C/0RDRgjf3x+24EuGOD6Gnw+rVJCOb64\nW4KZ7vH/uhaQSLLnNYF9VD00c072tOeaBt2mElexJN66gcP65kmrkI5grFz2RcEg\nIEkwUcYBNiFeHUcFyQZuDj/DLqQidwMhFJfkcUuMtByR9cYl9BpqT/3NKVQ1EPrV\n7QIDAQAB\n-----END PUBLIC KEY-----","ic": "fwEUWytkwJqHICtu/kNrXOVGQAzWUw1mGuQYdT1heOKZ6vEEI+4jf6LAHJ/f4h39ZR2WL4fccGchSoCm+pqkBRi8asSMqZzKGGfY8ejzrYHxDjiTOhs4B6p/iC8Nrj+bcCmXAjVNksfxlcjU6JlbRQ=="}},	
+{"key": "zhuiyi_cat","name": "😺追忆┃cat","type": 3,"api": "apptov5_open.js","ext": {"domains": ["https://xtao-1253811961.cos.ap-chengdu.myqcloud.com/appto/xtao.json"],"aesKey": "we2CwNfG7PJppQmBfX8MMMQaWbSdcDXi","aesIV": "DnT3jxT8RYsa8ctc","rasPublicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsKLhkMcBpvQ7x1bhAVDgNWdhJpkVUhWQaunZoDD7IwUNkkzl3cgHOBVo6H8IkoTnMAHwWnLIK9xHTwtN0ikAbZvlIOrOWwrhWwGYUAVSAtZm7FDHyVQlW3ZSv+oeBceIE7MZbCi7ZmS3Ft2XEdEEyjXdvaQN8f+1ORmf/AsMTwfX2QhsjD1qNtq+pCw9wnd+AWGW6lAG8mxNTygfWqKT2GZsor5v3qq/qsMiFL7aUy/ZiBlHInzC3R9ZP6mWICt72Su+C9VzH+LHdiSMWmpZ1uT7EPJfh0MgzQUbIhNPVMeOBkDcf93DzO+zTDznpPCed12OORZL5PDg/2lK8i+HCwIDAQAB\n-----END PUBLIC KEY-----","ic": "4Dqrm2DknrkdH3qOh7rE2nwK9BUd5cMVriFc+kWKpUedUJt6cLXHcROX9ps/2rBoBEftIjKkCAB5PSxCJUoKm/1n1mEZt7hQLSyIco9fRfS1QwyZItfMvHbjPJoB0vQnOvlcl7C8lgRZHFQLVXh9iA=="}},            
 {"key":"ikanbot_cat","name":"😺爱看┃cat","type":3,"api":"./cat/ikanbot_open.js"},
 {"key":"17kan_cat","name":"😺17看┃cat","type":3,"api":"./cat/yqktv_open.js"},
 {"key":"bulei_cat","name":"😺布蕾┃cat","type":3,"api":"./cat/bulei_open.js"},
@@ -434,6 +442,10 @@
 {"key":"MV_cat","name":"🎾MTV┃cat","type":3,"api":"./cat/MV_open.js"},
 {"key":"wogg_cat","name":"🥏玩偶┃cat","type":3,"api":"./cat/wogg_open.js","ext":"请在此处输入阿里token"},
 {"key":"wobg_cat","name":"🥏老表┃cat","type":3,"api":"./cat/wobg_open.js","ext":"请在此处输入阿里token"},
+{"key": "xiaozhitiao_cat","name": "🥏纸条┃cat","type": 3,"api": "xiaozhitiao_open.js","ext": "请在此处输入阿里token"},			
+{"key": "dovx_cat","name": "🥏七夜┃cat","type": 3,"api": "dovx_open.js","ext": "请在此处输入阿里token"},	
+{"key": "pansearch_cat","name": "🥏PanS┃cat","type": 3,"api": "pansearch_open.js","ext": "请在此处输入阿里token"},
+{"key": "pansou_cat","name": "🥏盘搜┃cat","type": 3,"api": "pansou_open.js","ext": "请在此处输入阿里token"},
 {"key":"yjys_cat","name":"✈️悠久┃cat","type":3,"api":"./cat/yjys_open.js"},
 {"key":"duboku_cat","name":"✈️独播①┃cat","type":3,"api":"./cat/duboku_open.js"},
 {"key":"duboku2_cat","name":"✈️独播②┃cat","type":3,"api":"./cat/duboku2_open.js"},
