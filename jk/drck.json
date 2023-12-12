@@ -1,6 +1,6 @@
 //模板：{"urls":[{"url":"仓库地址1","name":"🔔仓库1"},{"url":"仓库地址2","name":"🔔仓库2"}]}
 //此仓库接口列表为网络整理而成
-//仓库远程地址：https://raw.gitmirror.com/jak0099/dr/master/jk/ck.json
+//仓库远程地址：https://raw.gitmirror.com/jak0099/dr/master/jk/drck.json
 //仓库本地地址：http://127.0.0.1:9978/file/tvbox/jk/ck.json
 {
 "urls": [
