@@ -1,7 +1,7 @@
 import { Crypto, _ } from './lib/cat.js';
 
 let key = 'mtsp';
-let main = 'https://mt6039.sbs';
+let main = 'https://mt77.pw/';
 let url = '';
 let siteKey = '';
 let siteType = 0;
