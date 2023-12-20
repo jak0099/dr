@@ -249,6 +249,7 @@
 {"key": "dr_量子资源","name": "🍒量子资源[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/量子资源.js"},
 {"key": "dr_NY影院","name": "🍒NY影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NY影院.js"},
 {"key": "dr_徕米TV","name": "🍒徕米TV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/徕米TV.js"},
+{"key": "dr_369影视","name": "🍒369影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/369影视.js"},
 
 
 #js_V2源
