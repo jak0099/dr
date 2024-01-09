@@ -246,6 +246,14 @@
 {"key": "dr_NY影院","name": "🍒NY影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/NY影院.js"},
 {"key": "dr_徕米TV","name": "🍒徕米TV[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/徕米TV.js"},
 {"key": "dr_369影视","name": "🍒369影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/369影视.js"},
+{"key": "dr_天天视频","name": "🍒天天视频[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/天天视频.js"},
+{"key": "dr_华乐影院[飞]","name": "🍒华乐影院[飞][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/华乐影院[飞].js"},
+{"key": "dr_996影视","name": "🍒996影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/996影视.js"},
+{"key": "dr_69美剧","name": "🍒69美剧[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/69美剧.js"},
+{"key": "dr_539影视","name": "🍒539影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/539影视.js"},
+{"key": "dr_4K影院","name": "🍒4K影院[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/4K影院.js"},
+{"key": "dr_333影视","name": "🍒333影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/333影视.js"},
+{"key": "dr_188影视","name": "🍒188影视[DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/188影视.js"},
 
 
 #js_V2源
@@ -278,6 +286,9 @@
 //{"key": "dr_毛子[V2]","name": "🌶毛子[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/毛子[V2].js"},
 {"key": "dr_532影院[V2]","name": "🌶532影院[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/532影院[V2].js"},
 {"key": "dr_宝片[V2]","name": "🌶宝片[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/宝片[V2].js"},
+{"key": "dr_69美剧[V2]","name": "🌶69美剧[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/69美剧[V2].js"},
+{"key": "dr_模板[V2]","name": "🌶模板[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板[V2].js"},
+{"key": "dr_模板[V2]","name": "🌶模板[V2][DR]","type": 3,"api": "./libs/drpy.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板[V2].js"},
 
 
 ##js_磁力源
