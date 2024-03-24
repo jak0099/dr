@@ -725,11 +725,11 @@
 {"name": "快看广告","hosts": ["kuaikan"],"regex": ["5","20.123","20.167","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2\\.4,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-KEY:METHOD((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-DISCONTINUITY"]},
 {"name":"一起看广告","hosts":["yqk88","ydd"],"regex":["18.4666","18.4","15.1666","16.5333","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-OUT((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-IN"]},
 {"name": "海外看","hosts": ["haiwaikan"],"regex": ["8.16","8.1748","10.0099","10.3333","10.85","12.33","16.0599"]},
-{"name": "索尼","hosts": ["suonizy"],"regex": ["16.3333","15.1666","15.2666","16.333333","15.266667","#EXTINF.*?\\s+.*?original.*?\\.ts\\s+"]},
+{"name": "索尼","hosts": ["suonizy"],"regex": ["16.3333","15.1666","15.2666","16.333333","15.266667","#EXTINF.*?\\s+.*?original.*?\\.ts\\s+","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:1\\.000000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?p1ayer.*?\\.ts\\s+","#EXTINF.*?\\s+.*?\\/video\\/original.*?\\.ts\\s+"]},
 {"name": "暴風","hosts": ["bfzy","bf"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?adjump.*?\\.ts\\s+"]},
-{"name": "星星","hosts": ["aws.ulivetv.net"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
-{"name": "量子","hosts": ["vip.lz","hd.lz","v.cdnlz","lz","yzzy1.play"],"regex": ["18.5333","19.52","18.6666"]},
-{"name": "非凡","hosts": ["vip.ffzy","hd.ffzy","ffzy"],"regex": ["25.1","25.0666","25.08","20.52","25.1999"]},
+{"name": "星星","hosts": ["aws.ulivetv.net"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:9,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name": "量子","hosts": ["vip.lz","hd.lz","v.cdnlz","lz","yzzy1.play"],"regex": ["18.5333","19.52","18.6666","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6\\.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"]},
+{"name": "非凡","hosts": ["vip.ffzy","hd.ffzy","ffzy"],"regex": ["25.1","25.0666","25.08","20.52","25.1999","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7\\.400000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1170(20|32).*?\\.ts\\s+","#EXTINF.*?\\s+.*?116977.*?\\.ts\\s+"]},
 {"name": "磁力广告","hosts": ["magnet"],"regex": ["更多","社 區","x u u","最 新","直 播","更 新","社 区","有 趣","英皇体育","全中文AV在线","澳门皇冠赌场","哥哥快来","美女荷官","裸聊","新片首发","UUE29"]},
 {"name":"蜗牛广告","hosts":["vip.123pan.cn","rescdn.wuxivlog.cn"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:20.840000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:10.120000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+","#EXT-X-DISCONTINUITY[\\s\\S]+?#EXT-X-DISCONTINUITY"]},
 {"name": "蚂蚁","hosts": ["v.cdnlz1.com"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
@@ -749,7 +749,7 @@
 ],
 
 ##解析线路站点标识
-"flags":["youku","qq","QQ","iqiyi","qiyi","letv","sohu","tudou","pptv","PPTV","mgtv","ltnb","rx","CL4K","xfyun","wuduzy","wasu","bilibili","renrenmi","xmm","xigua","m1905 ","funshion ","优酷","芒果","腾讯","爱奇艺","奇艺","哔哩哔哩","哔哩"],
+"flags":["youku","qq","QQ","iqiyi","qiyi","letv","sohu","tudou","pptv","PPTV","mgtv","ltnb","rx","SLYS4k","BYGA","BYGB","luanzi","dxzy","QEYSS","aliyun","AliS","122","chuangying","CL4K","xfyun","wuduzy","wasu","bilibili","renrenmi","xmm","xigua","m1905","funshion","优酷","芒果","腾讯","爱奇艺","奇艺","哔哩哔哩","哔哩","西瓜视频","腾讯视频","奇艺视频","优酷视频","芒果视频","乐视视频","FY","fy","FeiYun","feiyun","飞云"],
 
 ##嗅探设置
 "sniffer": {
