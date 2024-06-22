@@ -1,0 +1,39 @@
+//模板：{"urls":[{"url":"仓库地址1","name":"🔔仓库1"},{"url":"仓库地址2","name":"🔔仓库2"}]}
+//此仓库接口列表为网络整理而成,切勿商用
+//接口可能随时失效，请自行切换，且用且珍惜
+//仓库远程地址：https://raw.gitmirror.com/jak0099/dr/master/jk/ck.json
+//仓库本地地址：http://127.0.0.1:9978/file/tvbox/jk/ck.json
+{
+"urls": [
+{"name": "☄️dr②","url":"https://raw.gitmirror.com/jak0099/dr/master/dr2.json"},        
+{"name": "☄️dr②|备用1","url":"https://gh.con.sh/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
+{"name": "☄️dr②|备用2","url":"https://raw.gitmirror.com/jak0099/dr/master/dr2.json"},        
+{"name": "☄️dr②|备用3","url":"https://github.moeyy.xyz/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
+{"name": "🔥本地dr源②","url":"clan://localhost/tvbox/dr2.json"},        
+//{"name": "🔥本地dr","url":"clan://localhost/tvbox/dr.json"},        
+//{"name": "☄️dr","url":"https://raw.gitmirror.com/jak0099/dr/master/dr.json"},        
+//{"name": "☄️dr|备用","url":"https://gh.con.sh/https://raw.githubusercontent.com/jak0099/dr/master/dr.json"},        
+{"name": "🍚饭太硬线路","url":"http://www.饭太硬.com/tv"},               
+{"name": "😺肥猫线路","url":"http://肥猫.com/"}, 
+{"name": "🎱OK线路","url":"https://jihulab.com/okcaptain/kko/-/raw/main/ok.txt"},
+{"name": "🐬业余线路","url":"https://raw.gitmirror.com/yydfys/yydf/main/yydf/yydf.json"},
+{"name": "💥小爆线路","url":"http://xhww.fun:63/小米/DEMO.json"},               
+{"name": "💥PG线路","url":"https://git.acwing.com/iduoduo/orange/-/raw/main/jsm.json"},               
+{"name": "🐈高天流云线路","url":"https://ghproxy.net/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"},         
+{"name": "🐈夜猫子线路","url":"https://d.looks.wang/我爱夜猫子"},         
+{"name": "🚛运输车线路","url":"https://weixine.net/ysc.json"},         
+{"name": "🍄日后线路","url":"http://rihou.cc:88/荷城茶秀"},         
+{"name": "🌀多多线路","url":"https://yydsys.top/duo"},         
+{"name": "🌪南风线路","url":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json"},         
+{"name": "🦜唐三线路","url":"https://hutool.ml/tang"},
+{"name": "🐝蜂蜜线路","url":"https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json"},                                                               
+{"name": "🐘道长线路","url":"https://pastebin.com/raw/5NHaxyGR"},
+{"name": "🥬菜妮丝线路","url":"https://tvbox.cainisi.cf"},
+{"name": "🐣巧技线路","url":"https://agit.ai/relax/adcc/raw/branch/master/tvbox.json"},
+{"name": "🌬小雅线路","url":"http://101.34.67.237/config/1"},
+{"name": "🕊俊佬线路","url":"http://home.jundie.top:81/top98.json"}, 
+{"name": "❄霜辉月明","url":"https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json"},
+{"name": "🐸dxawi0线路","url":"https://xhdwc.tk/0"},
+{"name": "🐠easybox线路","url":"https://app.easybox.vip/dy"}
+]
+}
