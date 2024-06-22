@@ -1,0 +1,17 @@
+{"spider":"","sites":[
+{"key":"py_douban","name":"🫧豆瓣|评分","type":3,"api":"./py/py_douban.py","searchable":0,"changeable":0},
+{"key":"py_cctv","name":"🫧央视|频道","type":3,"style":{"type":"rect","ratio":1.485},"api":"./py/py_cctv.py","searchable":1,"changeable":1},
+{"key":"py_1905","name":"🫧1905|直连","type":3,"api":"./py/m1905.py","searchable":1,"changeable":1},
+{"key":"py_live","name":"🫧视频|直播","type":3,"api":"./py/py_live.py","searchable":1,"changeable":0,"ext":{"url":"./py/json/live.json"}},
+{"key":"py_Alist","name":"🫧Alist|网盘","type":3,"api":"./py/py_alist.py","playerType":1,"searchable":1,"changeable":1,"ext":"./py/json/alist.json"},
+{"key":"py_czspp","name":"🫧厂长|直连","type":3,"api":"./py/py_czspp.py","searchable":1,"changeable":1},
+{"key":"py_cyys","name":"🫧创艺|直连","type":3,"api":"./py/py_cyys.py","searchable":1,"changeable":1},
+{"key":"py_xigua.py","name":"🫧西瓜|直连","type":3,"api":"./py/py_xigua.py","searchable":1,"changeable":1},
+{"key":"py_douyu","name":"🫧斗鱼|直播","type":3,"api":"./py/py_douyu.py","searchable":1,"changeable":1},
+{"key":"py_huya","name":"🫧虎牙|直播","type":3,"api":"./py/py_huya.py","searchable":1,"changeable":1},
+{"key":"py_bilimd","name":"🫧B站|番剧","type":3,"style":{"type":"rect","ratio":1.485},"api":"./py/py_bilibilimd.py","searchable":1,"changeable":1,"ext":{"cookie":"buvid3=8B57D3BA-607A-1E85-018A-E8C430023CED42659infoc; b_lsid=BEB8EE7F_18742FF8C2E; bsource=search_baidu; _uuid=DE810E367-B52C-AF6E-A612-EDF4C31567F358591infoc; b_nut=100; buvid_fp=711a632b5c876fa8bbcf668c1efba551; SESSDATA=7624af93%2C1696008331%2C862c8%2A42; bili_jct=141a474ef3ce8cf2fedf384e68f6625d; DedeUserID=3493271303096985; DedeUserID__ckMd5=212a836c164605b7; sid=5h4ruv6o; buvid4=978E9208-13DA-F87A-3DC0-0B8EDF46E80434329-123040301-dWliG5BMrUb70r3g583u7w%3D%3D"}},
+{"key":"py_bilibili","name":"🫧B站|视频","type":3,"api":"./py/py_bilibilivd.py","searchable":1,"changeable":1,"ext":{"json":"./py/json/bili.json"}},
+{"key":"py_freezb","name":"🫧体育|直播","type":3,"api":"./py/py_sport.py","searchable":0,"changeable":0},
+{"key":"py_firstaid","name":"🫧急救|教学","type":3,"api":"./py/py_firstaid.py","searchable":0,"changeable":0},
+
+],"rules":[{"name":"一起看","hosts":["yqk88"],"regex":["18.4","15.1666"]},{"name":"小小","hosts":["aws.ulivetv.net"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},{"name":"索尼","hosts":["suonizy"],"regex":["15.1666","15.2666"]},{"name":"暴風","hosts":["bfzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},{"name":"星星","hosts":["aws.ulivetv.net"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},{"name":"量子","hosts":["vip.lz","hd.lz","v.cdnlz"],"regex":["18.5333"]},{"name":"非凡","hosts":["vip.ffzy","hd.ffzy"],"regex":["25.0666","25.08"]},{"name":"火山嗅探","hosts":["huoshan.com"],"regex":["item_id="]},{"name":"抖音嗅探","hosts":["douyin.com"],"regex":["is_play_url="]},{"name":"農民嗅探","hosts":["toutiaovod.com"],"regex":["video/tos/cn"]},{"name":"快看广告","hosts":["kuaikan"],"regex":["20.123","20.167"]}],"ads":["mozai.4gtv.tv"]}

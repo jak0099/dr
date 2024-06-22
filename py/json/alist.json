@@ -1,0 +1,37 @@
+{
+  "vodPic": "https://s1.ax1x.com/2023/05/04/p9tgI81.png",
+  "drives": [
+    {
+      "name": "Ecve",
+      "server": "https://pan.ecve.cn/"
+    },
+    {
+      "name": "托盘",
+      "server": "https://pan.mediy.cn/"
+    },
+    {
+      "name": "蓼茶",
+      "server": "http://175.178.16.226:62494/"
+    },
+    {
+      "name": "柯南",
+      "server": "https://alist.523.monster/"
+    },
+    {
+      "name": "秋雨",
+      "server": "https://share.qiuyu.org/"
+    },
+    {
+      "name": "老谭",
+      "server": "https://pan.cqtjy.cn/ali"
+    },
+    {
+      "name": "小雅",
+      "server": "http://alist.xiaoya.pro/"
+    },
+    {
+      "name": "七米蓝",
+      "server": "https://al.chirmyram.com/"
+    }
+  ]
+}
