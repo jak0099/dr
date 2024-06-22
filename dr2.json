@@ -355,6 +355,7 @@
 //#js_音乐类🍈
 //{"key": "dr_模板[音]","name": "🍈模板[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/模板[音].js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_KTV歌厅[音]","name": "🍈KTV歌厅[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/KTV歌厅[音].js"},
 {"key": "dr_A8音乐[音]","name": "🍈A8音乐[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/音乐/A8音乐[音].js"},
 {"key": "dr_酷狗MV[音]","name": "🍈酷狗MV[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/音乐/酷狗MV[音].js"},
 {"key": "dr_爱车MV[音]","name": "🍈爱车MV[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/音乐/爱车MV[音].js"},
@@ -399,6 +400,7 @@
 //#****************************************************************************************************************************************************************#
 {"key": "dr_兔小贝[儿]","name": "🍑兔小贝[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/少儿/兔小贝[儿].js"},
 {"key": "dr_童趣[儿]","name": "🍑童趣[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/少儿/童趣[儿].js"},
+{"key": "dr_贝乐虎[儿]","name": "🍑贝乐虎[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "./js/少儿/贝乐虎[儿].js"},
 
 //#js_视频录像类🥭
 //{"key": "dr_模板[录]","name": "🥭模板[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影像/模板[录].js"},
