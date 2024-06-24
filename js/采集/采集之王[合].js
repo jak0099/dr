@@ -10,7 +10,7 @@ globalThis.getRandomItem = function (items) {//从列表随机取出一个元素
 var rule = {
     title: '采集之王[合]',
     author: '道长',
-    version: '20240624 beta8',
+    version: '20240624 beta9',
     update_info: `
 20240604:
 1.首页推荐取消硬控等待。增加随机推荐功能。
@@ -210,7 +210,8 @@ var rule = {
                 vod_pic: 'https://resource-cdn.tuxiaobei.com/video/FtWhs2mewX_7nEuE51_k6zvg6awl.png',
                 vod_remarks: `版本:${rule.version}`,
                 vod_play_from: '道长在线',
-                vod_play_url: '嗅探播放$https://resource-cdn.tuxiaobei.com/video/10/8f/108fc9d1ac3f69d29a738cdc097c9018.mp4'
+                // vod_play_url: '嗅探播放$https://resource-cdn.tuxiaobei.com/video/10/8f/108fc9d1ac3f69d29a738cdc097c9018.mp4',
+                vod_play_url: '随机小视频$http://api.yujn.cn/api/zzxjj.php',
             };
         } else {
             if (rule.classes) {
