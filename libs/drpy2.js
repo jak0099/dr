@@ -411,11 +411,11 @@ function window_b64() {
 /**
  es6py扩展
  */
-if (typeof atob != 'function' || typeof btoa != 'function') {
+if (typeof atob !== 'function' || typeof btoa !== 'function') {
     var {atob, btoa} = window_b64();
 }
 
-if (typeof Object.assign != 'function') {
+if (typeof Object.assign !== 'function') {
     Object.assign = function () {
         let target = arguments[0];
         for (let i = 1; i < arguments.length; i++) {
@@ -472,12 +472,12 @@ if (!Array.prototype.includes) {
         enumerable: false
     });
 }
-if (typeof String.prototype.startsWith != 'function') {
+if (typeof String.prototype.startsWith !== 'function') {
     String.prototype.startsWith = function (prefix) {
         return this.slice(0, prefix.length) === prefix;
     };
 }
-if (typeof String.prototype.endsWith != 'function') {
+if (typeof String.prototype.endsWith !== 'function') {
     String.prototype.endsWith = function (suffix) {
         return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
@@ -497,7 +497,7 @@ Object.defineProperty(Object.prototype, 'myValues', {
     },
     enumerable: false
 });
-if (typeof Object.prototype.values != 'function') {
+if (typeof Object.prototype.values !== 'function') {
     Object.defineProperty(Object.prototype, 'values', {
         value: function (obj) {
             if (obj == null) {
@@ -514,7 +514,7 @@ if (typeof Object.prototype.values != 'function') {
         enumerable: false
     });
 }
-if (typeof Array.prototype.join != 'function') {
+if (typeof Array.prototype.join !== 'function') {
     Object.defineProperty(Array.prototype, 'join', {
         value: function (emoji) {
             // emoji = emoji||',';
@@ -541,7 +541,7 @@ if (typeof Array.prototype.join != 'function') {
         enumerable: false
     });
 }
-if (typeof Array.prototype.toReversed != 'function') {
+if (typeof Array.prototype.toReversed !== 'function') {
     Object.defineProperty(Array.prototype, 'toReversed', {
         value: function () {
             const clonedList = this.slice();
