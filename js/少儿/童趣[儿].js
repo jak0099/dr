@@ -67,7 +67,12 @@ var rule = {
     cate_exclude: '',
     play_parse: true,
     lazy: $js.toString(() => {
-        input = {parse: 1, url: input, js: "document.querySelector('video').play();"};
+        input = {
+            parse: 1, url: input, js: "document.querySelector('video').play();",
+            header: {
+                'User-Agent': PC_UA,
+            }
+        };
     }),
     推荐: '',
     一级: 'body div.bj-col4:has(h3);a&&title;img&&data-original;span.played&&Text;a&&href',
