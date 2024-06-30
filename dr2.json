@@ -397,7 +397,21 @@
 {"key": "dr_清风DJ[音]","name": "🍈清风DJ[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/音乐/清风DJ[音].js"},
 {"key": "dr_啊哈DJ[音]","name": "🍈啊哈DJ[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/啊哈DJ[音].js"},
 {"key": "dr_ASMR助眠[音]","name": "🍈ASMR助眠[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/ASMR助眠[音].js"},
-
+{
+      "key": "MTV转点播",
+      "name": "🎸┃万首┃MTV",
+      "type": 3,
+      "playerType": 2,
+      "api": "./js/音乐转点播.js",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 1.597
+      },
+      "ext": "./txt/MTV2.txt"
+    },
 //#js_小说类🍠
 //{"key": "dr_模板[书]","name": "🍠模板[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/模板[书].js"},
 //#****************************************************************************************************************************************************************#
@@ -409,6 +423,7 @@
 //{"key": "dr_顶点小说2[书]","name": "🍠顶点小说2[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/顶点小说2[书].js"},
 //{"key": "dr_飞翔鸟[书]","name": "🍠飞翔鸟[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/飞翔鸟[书].js"},
 //{"key": "dr_我看书斋[书]","name": "🍠我看书斋[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/我看书斋[书].js"},
+//{"key": "dr_笔趣阁13[书]","name": "🍠笔趣阁13[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/笔趣阁13[书].js"},
 
 //#js_小说类🥬
 //{"key": "dr_模板[画]","name": "🥬模板[画][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/漫画/模板[画].js"},
@@ -722,9 +737,13 @@
 {"name": "mg廣告","hosts": ["."],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7.680000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:15,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+","#EXTINF.*?\\s+.*?muguacdn.*?\\.ts\\s+"]},
 {"name":"乐视广告","hosts":["leshiyun"],"regex":["15.92"]},
 {"name":"优质广告","hosts":["yzzy"],"regex":["18.66","19.52","19.13"]},
-
+{"hosts":["toutiaovod.com"],"name":"农民嗅探","regex":["video/tos/cn"]},
+{"exclude":[".m3u8"],"hosts":["bytetos.com","byteimg.com","bytednsdoc.com","pstatp.com"],"name":"bdys","regex":["/tos-cn"]},
+{"exclude":[".m3u8"],"hosts":["bdys10.com"],"name":"bdys10","regex":["/obj/"]},
+	
 
 //#嗅探解析
+{"name":"农民点击","hosts":["api.cnmcom.com"],"script":["document.querySelector('.line').click()"]},		
 {"name":"火山嗅探","hosts":["huoshan.com"],"regex":["item_id="]},
 {"name":"抖音嗅探","hosts":["douyin.com"],"regex":["is_play_url="]},
 {"name": "农民嗅探","hosts": ["toutiaovod.com"],"regex": ["video/tos/cn"]},
