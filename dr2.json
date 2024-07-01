@@ -383,6 +383,7 @@
 {"key": "dr_海洋听书[听]","name": "🍋海洋听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/海洋听书[听].js"},
 {"key": "dr_播客[听]","name": "🍋播客[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/播客[听].js"},
 {"key": "dr_喜马拉雅[听]","name": "🍋喜马拉雅[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/喜马拉雅[听].js"},
+{"key": "dr_老白故事[听]","name": "🍋老白故事[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/老白故事[听].js"},
 
 //#js_音乐类🍈
 //{"key": "dr_模板[音]","name": "🍈模板[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/模板[音].js"},
@@ -397,21 +398,9 @@
 {"key": "dr_清风DJ[音]","name": "🍈清风DJ[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/音乐/清风DJ[音].js"},
 {"key": "dr_啊哈DJ[音]","name": "🍈啊哈DJ[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/啊哈DJ[音].js"},
 {"key": "dr_ASMR助眠[音]","name": "🍈ASMR助眠[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/ASMR助眠[音].js"},
-{
-      "key": "MTV转点播",
-      "name": "🎸┃万首┃MTV",
-      "type": 3,
-      "playerType": 2,
-      "api": "./js/音乐转点播.js",
-      "searchable": 0,
-      "quickSearch": 0,
-      "changeable": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.597
-      },
-      "ext": "./txt/MTV2.txt"
-    },
+{"key": "MTV转点播","name": "🍈MTV[音]","type": 3,"playerType": 2,"api": "./libs/音乐转点播.js","searchable": 0,"quickSearch": 0,"changeable": 0,"style": {"type": "rect","ratio": 1.597},"ext": "./js/json/MTV2.txt"},
+{"key": "dr_世纪DJ音乐网[音]","name": "🍈世纪DJ音乐网[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/世纪DJ音乐网[音].js"},
+
 //#js_小说类🍠
 //{"key": "dr_模板[书]","name": "🍠模板[书][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/小说/模板[书].js"},
 //#****************************************************************************************************************************************************************#
