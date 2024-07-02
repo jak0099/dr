@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=47f17e8c59b4687e50fda4f62908c95b", 
+"spider":"./jar/pg.jar?md5=3815819b82a6029d44e758c91ab13de6", 
 
 //##提示语
 "warningText":"💮👉接口免费收集，切勿付费购买👈💮",
@@ -27,6 +27,7 @@
 //##聚合展示
 {"key":"dr_豆瓣","name":"☯豆瓣推荐[DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./js/官源/豆瓣[官].js"},
 {"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json","jar":"./jar/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
+{"key":"Youtube","name":"♻️油管","type":3,"api": "csp_Youtube","searchable": 1,"quickSearch": 0,"changeable": 0,"timeout": 60,"ext":{"token":"./pg/tokenm.json","json":"./pg/youtube.json","type":"直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary","keywords":"排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐","codecs":"","proxy":"proxy","danmu":true},"style": {"type": "rect","ratio": 1.77}},
 //{"key": "dr_我的哔哩","name":"🅱我的哔哩[DR]","type": 3,"api": "./libs/drpy2.min.js","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/我的哔哩[官].js"},
 //{"key":"dr_Live2CMS","name":"📺直播转点播V2[DR]","type":3,"api":"./libs/live2cms.js","searchable":2,"quickSearch":0,"filterable":0,"ext":"./live/live2cms_data.json"},
 {"key": "dr_好趣网","name": "📺好趣网[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/直播/好趣网[直].js"},
