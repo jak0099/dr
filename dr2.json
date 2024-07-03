@@ -255,8 +255,8 @@
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_神马影院[自动]","name": "🫐神马影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/神马影院[自动].js"},
-{"key": "dr_网飞啦[自动]","name": "🫐网飞啦[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/网飞啦[自动].js"},
+{"key": "dr_神马影院[自动]","name": "🥑神马影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/神马影院[自动].js"},
+{"key": "dr_网飞啦[自动]","name": "🥑网飞啦[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/网飞啦[自动].js"},
 {"key": "dr_易点看影院[自动]","name": "🥑易点看影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/易点看影院[自动].js"},
 {"key": "dr_来看点播[自动]","name": "🥑来看点播[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/来看点播[自动].js"},
 {"key": "dr_奈飞中文[自动]","name": "🥑奈飞中文[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奈飞中文[自动].js"},
