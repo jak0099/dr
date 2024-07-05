@@ -353,7 +353,7 @@
 //#js_采集资源类🥒
 //{"key": "dr_模板[采]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_采集之王[合]","name": "🥒采集之王[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/采集/采集之王[合].js?type=url&params=./js/json/采集静态.json#1"},
+{"key": "dr_采集之王[合]","name": "🥒采集聚合[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/采集/采集之王[合].js?type=url&params=./js/json/采集静态.json$1"},
 {"key": "dr_金鹰资源[资]","name": "🥒金鹰资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/金鹰资源[资].js"},
 {"key": "dr_量子资源[资]","name": "🥒量子资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/量子资源[资].js"},
 {"key": "dr_非凡资源[资]","name": "🥒非凡资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/非凡资源[资].js"},
