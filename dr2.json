@@ -27,7 +27,7 @@
 //##聚合展示
 {"key":"dr_豆瓣","name":"☯豆瓣推荐[DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./js/官源/豆瓣[官].js"},
 {"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json","jar":"./jar/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
-{"key":"Youtube","name":"♻️油管","type":3,"api": "csp_Youtube","searchable": 1,"quickSearch": 0,"changeable": 0,"timeout": 60,"ext":{"token":"./pg/tokenm.json","json":"./pg/youtube.json","type":"直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary","keywords":"排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐","codecs":"","proxy":"proxy","danmu":true},"style": {"type": "rect","ratio": 1.77}},
+{"key":"Youtube","name":"♻️油管┃SP","type":3,"api": "csp_Youtube","searchable": 1,"quickSearch": 0,"changeable": 0,"timeout": 60,"ext":{"token":"./pg/tokenm.json","json":"./pg/youtube.json","type":"直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary","keywords":"排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐","codecs":"","proxy":"proxy","danmu":true},"style": {"type": "rect","ratio": 1.77}},
 //{"key": "dr_我的哔哩","name":"🅱我的哔哩[DR]","type": 3,"api": "./libs/drpy2.min.js","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/我的哔哩[官].js"},
 //{"key":"dr_Live2CMS","name":"📺直播转点播V2[DR]","type":3,"api":"./libs/live2cms.js","searchable":2,"quickSearch":0,"filterable":0,"ext":"./live/live2cms_data.json"},
 {"key": "dr_好趣网","name": "📺好趣网[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/直播/好趣网[直].js"},
@@ -267,16 +267,16 @@
 {"key": "dr_bilfun[自动]","name": "🥑bilfun[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/bilfun[自动].js"},
 {"key": "dr_剧圈圈[自动]","name": "🥑剧圈圈[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/剧圈圈[自动].js"},
 
-//#js_官源解析类🍅
-//{"key": "dr_模板[官]","name": "🍅模板[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/模板[官].js"},
+//#js_官源解析类🍎
+//{"key": "dr_模板[官]","name": "🍎模板[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/模板[官].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_腾云驾雾[官]","name": "🍅腾云驾雾[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/腾云驾雾[官].js"},
-{"key": "dr_菜狗[官]","name": "🍅菜狗[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/菜狗[官].js"},
-{"key": "dr_哔哩影视[官]","name": "🍅哔哩影视[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/哔哩影视[官].js"},
-{"key": "dr_奇珍异兽[官]","name": "🍅奇珍异兽[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/奇珍异兽[官].js"},
-{"key": "dr_360影视[官]","name": "🍅360影视[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/360影视[官].js"},
-{"key": "dr_百忙无果[官]","name": "🍅百忙无果[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/百忙无果[官].js"},
-{"key": "dr_优酷[官]","name": "🍅优酷[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/优酷[官].js"},
+{"key": "dr_腾云驾雾[官]","name": "🍎腾云驾雾[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/腾云驾雾[官].js"},
+{"key": "dr_菜狗[官]","name": "🍎菜狗[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/菜狗[官].js"},
+{"key": "dr_哔哩影视[官]","name": "🍎哔哩影视[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/哔哩影视[官].js"},
+{"key": "dr_奇珍异兽[官]","name": "🍎奇珍异兽[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/奇珍异兽[官].js"},
+{"key": "dr_360影视[官]","name": "🍎360影视[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/360影视[官].js"},
+{"key": "dr_百忙无果[官]","name": "🍎百忙无果[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/百忙无果[官].js"},
+{"key": "dr_优酷[官]","name": "🍎优酷[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/优酷[官].js"},
 
 //#js_聚合影视V2类🍏
 //{"key": "dr_模板[V2]","name": "🍏模板[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/模板[V2].js"},
@@ -310,17 +310,17 @@
 {"key": "dr_短剧在线[短]","name": "🥝短剧在线[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧在线[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 
-//#js_云盘源🍎
-//{"key": "dr_模板[盘]","name": "🍎模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/模板[盘].js"},
+//#js_云盘源🍅
+//{"key": "dr_模板[盘]","name": "🍅模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/模板[盘].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_玩偶哥哥[盘]","name": "🍎玩偶哥哥[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 0,"ext":"./js/玩偶哥哥[盘].js"},
-{"key": "dr_RRDY網[盘]","name": "🍎RRDY網[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/RRDY網[盘].js"},
-{"key": "dr_dydhhy[盘]","name": "🍎DYD网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/dydhhy[盘].js"},
-{"key": "dr_xzys[盘]","name": "🍎校长影视[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/xzys[盘].js"},
-{"key": "dr_阿里土豆[盘]","name": "🍎阿里土豆[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/阿里土豆[盘].js"},
-{"key": "dr_云盘资源网[盘]","name": "🍎云盘资源网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘资源网[盘].js"},
-{"key": "dr_蜡笔[盘]","name": "🍎蜡笔[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/蜡笔[盘].js"},
-{"key": "dr_橘子柚[盘]","name": "🍎橘子柚[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/橘子柚[盘].js"},
+{"key": "dr_玩偶哥哥[盘]","name": "🍅玩偶哥哥[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 0,"ext":"./js/玩偶哥哥[盘].js"},
+{"key": "dr_RRDY網[盘]","name": "🍅RRDY網[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/RRDY網[盘].js"},
+{"key": "dr_dydhhy[盘]","name": "🍅DYD网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/dydhhy[盘].js"},
+{"key": "dr_xzys[盘]","name": "🍅校长影视[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/xzys[盘].js"},
+{"key": "dr_阿里土豆[盘]","name": "🍅阿里土豆[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/阿里土豆[盘].js"},
+{"key": "dr_云盘资源网[盘]","name": "🍅云盘资源网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘资源网[盘].js"},
+{"key": "dr_蜡笔[盘]","name": "🍅蜡笔[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/蜡笔[盘].js"},
+{"key": "dr_橘子柚[盘]","name": "🍅橘子柚[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/橘子柚[盘].js"},
 
 //#动漫类🍇
 //{"key": "dr_模板[漫]","name": "🍇模板[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/模板[漫].js"},
@@ -353,7 +353,7 @@
 //#js_采集资源类🥒
 //{"key": "dr_模板[采]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_采集之王[合]","name": "🥒采集之王[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/采集/采集之王[合].js?type=url&params=./js/json/采集静态.json"},
+{"key": "dr_采集之王[合]","name": "🥒采集之王[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/采集/采集之王[合].js?type=url&params=./js/json/采集静态.json#1"},
 {"key": "dr_金鹰资源[资]","name": "🥒金鹰资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/金鹰资源[资].js"},
 {"key": "dr_量子资源[资]","name": "🥒量子资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/量子资源[资].js"},
 {"key": "dr_非凡资源[资]","name": "🥒非凡资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/非凡资源[资].js"},
@@ -499,31 +499,31 @@
 {"key": "Xunlei8","name": "🧬Xunlei8┃磁力","type": 3,"api": "csp_Xunlei8","changeable": 1,"timeout": 60},
 {"key": "SeedHub","name": "🧬SeedHub┃磁力","type": 3,"api": "csp_SeedHub","changeable": 1,"timeout": 60},    
 
-//XBPQ_磁力🔗
-{"key": "小白","name": "🔗小白┃磁力","type": 3,"api": "csp_XBPQ","playerType": 1,"ext": "./XBPQ/小白磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "BT天堂","name": "🔗BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/BT天堂磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "布谷tv","name": "🔗布谷4K┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/布谷TV磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "haokongbu","name": "🔗好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/好恐怖磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "迅雷8","name": "🔗迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/迅雷吧磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+//XBPQ_磁力🌵
+{"key": "小白","name": "🌵小白┃磁力","type": 3,"api": "csp_XBPQ","playerType": 1,"ext": "./XBPQ/小白磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "BT天堂","name": "🌵BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/BT天堂磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "布谷tv","name": "🌵布谷4K┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/布谷TV磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "haokongbu","name": "🌵好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/好恐怖磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "迅雷8","name": "🌵迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/迅雷吧磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
 
-//#PG_云盘📂
-{"key":"美剧迷","name":"📂美剧迷┃云","type":3,"api":"csp_Meijumi","quickSearch":1,"changeable":1,"filterable":1,"timeout":120,"ext":"./pg/tokenm.json$$$https://www.meijumi.net/$$$proxy$$$1"},
-{"key":"Libvio","name":"📂LIBVIO┃云","type":3,"api":"csp_Libvio","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.libvio.fun/$$$null"},
-{"key":"Xpanpan","name":"📂小盘盘┃云","type":3,"api":"csp_Xpanpan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xpanpan.site$$$proxy$$$1","style":{"type":"list","ratio":1.1}},
-{"key":"Wogg","name":"📂玩偶哥哥┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wogg.link/$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"Wobg","name":"📂玩偶表哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wobge.run.goorm.io$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"yydsys","name":"📂玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"Gaoqing","name":"📂中国高清网┃云","type":3,"api":"csp_Gaoqing","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://gaoqing.la/$$$proxy$$$1"},
-{"key":"ddys","name":"📂低端影视┃云","type":3,"api":"csp_Ddys","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ddys.pro/$$$proxy$$$1$$$"},
-{"key":"Xinshijue","name":"📂新视觉┃云","type":3,"api":"csp_Xinshijue","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.80yy3.com/$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"团长资源","name":"📂团长资源┃云","type":3,"api":"csp_TZFile","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
-{"key":"Moli","name":"📂HDmoli┃云","type":3,"api":"csp_Moli","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.hdmoli.pro/$$$proxy$$$1$$$./pg/moli.json"},
-{"key":"Hdhive","name":"📂影巢┃云","type":3,"api":"csp_Hdhive","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
-{"key":"Ppxzy","name":"📂皮皮虾┃云","type":3,"api":"csp_Ppxzy","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ppxzy.ink$$$proxy$$$1"},
-{"key":"校长影视","name":"📂校长影视┃云","type":3,"api":"csp_XiaoZhang","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xzyshd.com$$$proxy$$$1"},
-{"key":"YunPan","name":"📂云盘资源┃云","type":3,"api":"csp_YunPan","timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1"},
-{"key":"Panta","name":"📂盘Ta┃云","type":3,"api":"csp_Panta","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.91panta.cn/$$$null$$$1","style":{"type":"list","ratio":1.1}},
-{"key": "4KHDR","name": "📂4KHDR┃云","type": 3,"api": "csp_FourKHDR","quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60,"ext": "./pg/tokenm.json$$$./pg/4khdr.txt$$$1","style": {"type": "list","ratio": 1.1}},
+//#PG_云盘☁
+{"key":"美剧迷","name":"☁美剧迷┃云","type":3,"api":"csp_Meijumi","quickSearch":1,"changeable":1,"filterable":1,"timeout":120,"ext":"./pg/tokenm.json$$$https://www.meijumi.net/$$$proxy$$$1"},
+{"key":"Libvio","name":"☁LIBVIO┃云","type":3,"api":"csp_Libvio","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.libvio.fun/$$$null"},
+{"key":"Xpanpan","name":"☁小盘盘┃云","type":3,"api":"csp_Xpanpan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xpanpan.site$$$proxy$$$1","style":{"type":"list","ratio":1.1}},
+{"key":"Wogg","name":"☁玩偶哥哥┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wogg.link/$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"Wobg","name":"☁玩偶表哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wobge.run.goorm.io$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"yydsys","name":"☁玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"Gaoqing","name":"☁中国高清网┃云","type":3,"api":"csp_Gaoqing","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://gaoqing.la/$$$proxy$$$1"},
+{"key":"ddys","name":"☁低端影视┃云","type":3,"api":"csp_Ddys","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ddys.pro/$$$proxy$$$1$$$"},
+{"key":"Xinshijue","name":"☁新视觉┃云","type":3,"api":"csp_Xinshijue","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.80yy3.com/$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"团长资源","name":"☁团长资源┃云","type":3,"api":"csp_TZFile","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
+{"key":"Moli","name":"☁HDmoli┃云","type":3,"api":"csp_Moli","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.hdmoli.pro/$$$proxy$$$1$$$./pg/moli.json"},
+{"key":"Hdhive","name":"☁影巢┃云","type":3,"api":"csp_Hdhive","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
+{"key":"Ppxzy","name":"☁皮皮虾┃云","type":3,"api":"csp_Ppxzy","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ppxzy.ink$$$proxy$$$1"},
+{"key":"校长影视","name":"☁校长影视┃云","type":3,"api":"csp_XiaoZhang","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xzyshd.com$$$proxy$$$1"},
+{"key":"YunPan","name":"☁云盘资源┃云","type":3,"api":"csp_YunPan","timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1"},
+{"key":"Panta","name":"☁盘Ta┃云","type":3,"api":"csp_Panta","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.91panta.cn/$$$null$$$1","style":{"type":"list","ratio":1.1}},
+{"key": "4KHDR","name": "☁4KHDR┃云","type": 3,"api": "csp_FourKHDR","quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60,"ext": "./pg/tokenm.json$$$./pg/4khdr.txt$$$1","style": {"type": "list","ratio": 1.1}},
 
 //#PG_云盘搜索
 {"key":"YingSo","name":"📡影搜┃云搜","type":3,"api":"csp_YingSo","timeout":60,"ext":"./pg/tokenm.json"},
