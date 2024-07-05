@@ -1,7 +1,15 @@
 /**
  * 强烈推荐静态分类。可以加快速度!!!
+ * 不建议:
  * 传参 ?type=url&params=../json/采集.json
- * 传参 ?type=url&params=../json/采集静态.json
+ * 建议：
+ * 传参 ?type=url&params=../json/采集静态.json#1
+ * 传参 ?type=url&params=../json/采集[zy]静态.json#1
+ * 传参 ?type=url&params=../json/采集[密]静态.json#1
+ * hipy-server支持@改名比如:
+ * 传参 ?type=url&params=../json/采集静态.json#1@采王道长[合]
+ * 传参 ?type=url&params=../json/采集[zy]静态.json#1@采王zy[密]
+ * 传参 ?type=url&params=../json/采集[密]静态.json@采王成人[密]
  * [{"name":"暴风资源","url":"https://bfzyapi.com","parse_url":""},{"name":"飞刀资源","url":"http://www.feidaozy.com","parse_url":""},{"name":"黑木耳资源","url":"https://www.heimuer.tv","parse_url":""}]
  */
 globalThis.getRandomItem = function (items) {//从列表随机取出一个元素
@@ -10,8 +18,10 @@ globalThis.getRandomItem = function (items) {//从列表随机取出一个元素
 var rule = {
     title: '采集之王[合]',
     author: '道长',
-    version: '20240703 beta10',
+    version: '20240705 beta12',
     update_info: `
+20240705:
+1.支持传参json后面增加#1 这样的额外标识，用于搜索结果精准匹配
 20240703:
 1.采集json支持"searchable": 0,用于搜索时排除这个源
 20240604:
@@ -21,7 +31,7 @@ var rule = {
 有些资源站的json接口不是标准的/api.php/provide/vod/,需要自己在采集静态.json中编辑对应的api属性填写比如:/api.php/provide/vod/at/json/
 有些资源站的采集数据是加密后的切片片段，可能需要采集站特定的解析接口，需要自己编辑json里的parse_url属性
 资源站部分大分类下无数据很正常，可以自行编辑json里cate_exclude属性排除掉自己测试过无数据的分类(小程序无法自动识别，只能人工测好哪些分类无数据)
-`,
+`.trim(),
     host: '',
     homeTid: '', // 首页推荐。一般填写第一个资源站的想要的推荐分类的id.可以空
     homeUrl: '/api.php/provide/vod/?ac=detail&t={{rule.homeTid}}',
@@ -39,8 +49,10 @@ var rule = {
     filterable: 1,//是否启用分类筛选,
     play_parse: true,
     parse_url: '', // 这个参数暂时不起作用。聚合类的每个资源应该有自己独立的解析口。单独配置在采集.json里的parse_url有效
+    search_match: false, // 搜索精准匹配
     // params: 'http://127.0.0.1:5707/files/json/%E9%87%87%E9%9B%86.json',
     // params: 'http://127.0.0.1:5707/files/json/采集静态.json',
+    // params: 'http://127.0.0.1:5707/files/json/采集[zy]静态.json#1',
     // hostJs:$js.toString(()=>{
     //
     // }),
@@ -76,6 +88,11 @@ var rule = {
         }
         let _url = rule.params;
         if (_url && typeof (_url) === 'string' && /^(http|file)/.test(_url)) {
+            if (_url.includes('#')) {
+                let _url_params = _url.split('#');
+                _url = _url_params[0];
+                rule.search_match = !!(_url_params[1]);
+            }
             let html = request(_url);
             let json = JSON.parse(html);
             let _classes = [];
@@ -280,7 +297,12 @@ var rule = {
                                         i.vod_id = it.type_id + '$' + i.vod_id;
                                         i.vod_remarks = i.vod_remarks + '|' + it.type_name;
                                     });
-                                    results = results.concat(data);
+                                    if (rule.search_match) {
+                                        data = data.filter(item => item.vod_name && (new RegExp(KEY, 'i')).test(item.vod_name))
+                                    }
+                                    if (data.length > 0) {
+                                        results = results.concat(data);
+                                    }
                                 } catch (e) {
                                     log(`请求:${it.type_id}发生错误:${e.message}`)
                                 }
@@ -297,6 +319,12 @@ var rule = {
                                     i.vod_id = it.type_id + '$' + i.vod_id;
                                     i.vod_remarks = i.vod_remarks + '|' + it.type_name;
                                 });
+                                if (rule.search_match) {
+                                    data = data.filter(item => item.vod_name && (new RegExp(KEY, 'i')).test(item.vod_name))
+                                }
+                                if (data.length > 0) {
+                                    results = results.concat(data);
+                                }
                                 results = results.concat(data);
                             } catch (e) {
                                 log(`请求:${it.type_id}发生错误:${e.message}`)
