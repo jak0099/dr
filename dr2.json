@@ -62,6 +62,7 @@
 {"key": "dr_麻雀视频[优]","name": "🍒麻雀视频[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/麻雀视频[优].js"},
 {"key": "dr_多多追剧[优]","name": "🍒多多追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/多多追剧[优].js"},
 {"key": "dr_毒蛇电影[优]","name": "🍒毒蛇电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/毒蛇电影[优].js"},
+{"key": "dr_桃子影视[优]","name": "🍒桃子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/桃子影视[优].js"},
 
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
@@ -266,6 +267,7 @@
 {"key": "dr_爱迪[自动]","name": "🥑爱迪[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱迪[自动].js"},
 {"key": "dr_bilfun[自动]","name": "🥑bilfun[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/bilfun[自动].js"},
 {"key": "dr_剧圈圈[自动]","name": "🥑剧圈圈[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/剧圈圈[自动].js"},
+{"key": "dr_爱优影视[自动]","name": "🥑爱优影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱优影视[自动].js"},
 
 //#js_官源解析类🍎
 //{"key": "dr_模板[官]","name": "🍎模板[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/模板[官].js"},
@@ -321,6 +323,7 @@
 {"key": "dr_云盘资源网[盘]","name": "🍅云盘资源网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘资源网[盘].js"},
 {"key": "dr_蜡笔[盘]","name": "🍅蜡笔[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/蜡笔[盘].js"},
 {"key": "dr_橘子柚[盘]","name": "🍅橘子柚[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/橘子柚[盘].js"},
+{"key": "dr_爱看短剧[盘]","name": "🍅爱看短剧[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/爱看短剧[盘].js"},
 
 //#动漫类🍇
 //{"key": "dr_模板[漫]","name": "🍇模板[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/模板[漫].js"},
