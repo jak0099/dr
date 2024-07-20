@@ -197,7 +197,7 @@ var rule = {
     // params: 'http://127.0.0.1:5707/files/json/live2cms.json',
     // 下面自定义一些源的配置
     // def_pic: 'https://avatars.githubusercontent.com/u/97389433?s=120&v=4', //默认列表图片
-    def_pic: 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/hipy-server/master/app/static/img/lives.jpg', //默认列表图片
+    def_pic: 'https://ghproxy.net/https://raw.githubusercontent.com/ls125781003/hikerjsonK/main/img/lives.jpg', //默认列表图片
     showMode: 'groups',// groups按组分类显示 all全部一条线路展示
     groupDict: {},// 搜索分组字典
     tips: '', //二级提示信息
@@ -257,7 +257,7 @@ var rule = {
             vod_name: '更新日志',
             vod_id: 'update_info',
             vod_remarks: `版本:${rule.version}`,
-            vod_pic: 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/hipy-server/master/app/static/img/logo.png'
+            vod_pic: 'https://ghproxy.net/https://raw.githubusercontent.com/ls125781003/hikerjsonK/main/img/logo.png'
         }];
         VODS = [];
         if (rule.classes) {
