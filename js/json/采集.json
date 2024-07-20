@@ -1,17 +1,5 @@
 [
   {
-    "name": "业余资源",
-    "url": "https://yyff.540734621.xyz",
-    "parse_url": "",
-    "cate_exclude": ""
-  },
-  {
-    "name": "360资源",
-    "url": "https://360zy.com",
-    "parse_url": "",
-    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
-  },
-  {
     "name": "豪华资源",
     "url": "https://hhzyapi.com",
     "parse_url": "",
@@ -73,12 +61,5 @@
     "url": "http://cj.ffzyapi.com",
     "parse_url": "",
     "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
-  },
-  {
-    "name": "乐视资源",
-    "url": "https://leshiapi.com",
-    "parse_url": "https://leshivideoplayurl.com/?url=",
-    "cate_exclude": "",
-    "api": "/api.php/provide/vod/at/json/"
   }
 ]
