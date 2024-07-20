@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=89f18b4f0f44c1fe7c925631594e3d7a", 
+"spider":"./jar/pg.jar?md5=c687efe41ea48c68e9ddd63d0796d242", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -66,6 +66,7 @@
 {"key": "dr_桃子影视[优]","name": "🍒桃子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/桃子影视[优].js"},
 {"key": "dr_PTT[优]","name": "🍒PTT[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/PTT[优].js"},
 {"key": "dr_哔嘀影视[优]","name": "🍒哔嘀影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/哔嘀影视[优].js"},
+{"key": "dr_兄弟影视[优]","name": "🍊兄弟影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/兄弟影视[优].js"},
 
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
@@ -126,7 +127,6 @@
 {"key": "dr_朴樱影视","name": "🍊朴樱影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/朴樱影视.js"},
 {"key": "dr_秋香影视","name": "🍊秋香影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/秋香影视.js"},
 {"key": "dr_光棍影院","name": "🍊光棍影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/光棍影院.js"},
-{"key": "dr_兄弟影视","name": "🍊兄弟影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/兄弟影视.js"},
 {"key": "dr_B站影视","name": "🍊B站影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/B站影视.js"},
 {"key": "dr_9U电影","name": "🍊9U电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/9U电影.js"},
 {"key": "dr_免费看","name": "🍊免费看[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/免费看.js"},
@@ -233,7 +233,6 @@
 {"key": "dr_西瓜影院","name": "🍊西瓜影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/西瓜影院.js"},
 {"key": "dr_豆角网","name": "🍊豆角网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/豆角网.js"},
 {"key": "dr_剧哥哥","name": "🍊剧哥哥[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧哥哥.js"},
-{"key": "dr_你好帅影院","name": "🍊你好帅影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/你好帅影院.js"},
 {"key": "dr_冠建影视","name": "🍊冠建影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/冠建影视.js"},
 {"key": "dr_刷剧网","name": "🍊刷剧网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/刷剧网.js"},
 {"key": "dr_剧迷","name": "🍊剧迷[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧迷.js"},
@@ -257,6 +256,17 @@
 {"key": "dr_天龙影院","name": "🍊天龙影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/天龙影院.js"},
 {"key": "dr_飞鱼影视","name": "🍊飞鱼影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/飞鱼影视.js"},
 {"key": "dr_80S电影网","name": "🍊80S电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/80S电影网.js"},
+{"key": "dr_菠萝小站","name": "🍊菠萝小站[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/菠萝小站.js"},
+{"key": "dr_看了么","name": "🍊看了么[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/看了么.js"},
+{"key": "dr_影视工厂","name": "🍊影视工厂[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/影视工厂.js"},
+{"key": "dr_北川影视","name": "🍊北川影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/北川影视.js"},
+{"key": "dr_剧圈圈","name": "🍊剧圈圈[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧圈圈.js"},
+{"key": "dr_两个BT","name": "🍊两个BT[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/两个BT.js"},
+{"key": "dr_cally66","name": "🍊cally66[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/cally66.js"},
+{"key": "dr_539影视","name": "🍊539影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/539影视.js"},
+{"key": "dr_火狐影视","name": "🍊火狐影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/火狐影视.js"},
+{"key": "dr_4K-AV","name": "🍊4K-AV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/4K-AV.js"},
+{"key": "dr_宇航影视","name": "🍊宇航影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/宇航影视.js"},
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
@@ -310,6 +320,7 @@
 {"key": "dr_短剧在线[短]","name": "🥝短剧在线[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧在线[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 {"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
+{"key": "dr_你好帅影院[短]","name": "🥝你好帅影院[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/你好帅影院[短].js"},
 
 //#js_云盘源🍅
 //{"key": "dr_模板[盘]","name": "🍅模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/模板[盘].js"},
@@ -352,7 +363,8 @@
 {"key": "dr_喵次元[漫]","name": "🍇喵次元[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/喵次元[漫].js"},
 {"key": "dr_NT动漫[漫]","name": "🍇NT动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/NT动漫[漫].js"},
 {"key": "dr_动漫巴士[漫]","name": "🍇动漫巴士[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/动漫巴士[漫].js"},
-
+{"key": "dr_OmoFun[漫]","name": "🍇OmoFun[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/OmoFun[漫].js"},
+//
 //#js_采集资源类🥒
 //{"key": "dr_模板[采]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
@@ -440,6 +452,7 @@
 //#****************************************************************************************************************************************************************#
 {"key": "dr_小品网[戏]","name": "🍉小品网[戏][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/戏艺/小品网[戏].js"},
 {"key": "dr_相声随身听[戏]","name": "🍉相声随身听[戏][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/戏艺/相声随身听[戏].js"},
+{"key": "dr_一曲肝肠断[戏]","name": "🍉一曲肝肠断[戏][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/戏艺/一曲肝肠断[戏].js"},
 
 //#js_少儿类🍑
 //{"key": "dr_模板[儿]","name": "🍑模板[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/少儿/模板[儿].js"},
@@ -467,6 +480,8 @@
 {"key": "dr_l0l","name": "🥦l0l[直播[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/l0l[直].js"},
 {"key": "dr_哔哩直播","name": "🥦哔哩直播[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/哔哩直播[官].js"},
 {"key": "dr_短视频","name": "🥦短视频[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/短视频[直].js"},
+{"key": "dr_FreeOKLOL[直]","name": "🥦FreeOKLOL[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/FreeOKLOL[直].js"},
+{"key": "dr_一支穿云箭[直]","name": "🥦一支穿云箭[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/一支穿云箭[直].js"},
 
 //#js_体育类🍐
 //{"key": "dr_模板[体]","name": "🍐模板[体][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/体育/模板[体].js"},
@@ -475,6 +490,7 @@
 {"key": "dr_310直播[体]","name": "🍐310直播[体][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/体育/310直播[体].js"},
 {"key": "dr_88看球[体]","name": "🍐88看球[体][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/体育/88看球[体].js"},
 {"key": "dr_抓饭体育[体]","name": "🍐抓饭体育[体][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/体育/抓饭体育[体].js"},
+{"key": "dr_01看球[体]","name": "🍐01看球[体][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/体育/01看球[体].js"},
 
 //#js_搜索类🍳
 //{"key": "dr_模板[搜]","name": "🍳模板[搜][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/搜索/模板[搜].js"},
@@ -499,9 +515,14 @@
 {"key":"Bt0","name":"🧬不太灵┃磁力","type":3,"api":"csp_Bt0","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1","style": {"type": "list","ratio": 1.1}},
 {"key":"Wo4k","name":"🧬玩偶4K┃磁力","type":3,"api":"csp_Wo4k","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.wo4k.net/$$$proxy$$$1$$$./pg/wogg.json"},
 {"key":"Bdys_spider","name":"🧬哔滴┃磁力","api":"csp_Bdys01","type":3,"filterable":1,"searchable":1,"quickSearch":1,"ext":"./pg/tokenm.json$$$https://www.yjys.me/$$$proxy$$$1"},
-{"key": "BLSGod","name": "🧬BLSGod┃磁力","type": 3,"api": "csp_BLSGod","changeable": 1,"timeout": 60},
-{"key": "Xunlei8","name": "🧬Xunlei8┃磁力","type": 3,"api": "csp_Xunlei8","changeable": 1,"timeout": 60},
+{"key": "BLSGod","name": "🧬80S影视┃磁力","type": 3,"api": "csp_BLSGod","changeable": 1,"timeout": 60},
+{"key": "Xunlei8","name": "🧬讯雷吧┃磁力","type": 3,"api": "csp_Xunlei8","changeable": 1,"timeout": 60},
 {"key": "SeedHub","name": "🧬SeedHub┃磁力","type": 3,"api": "csp_SeedHub","changeable": 1,"timeout": 60},    
+{"key":"csp_BtSearch","name":"🧬BTSearch┃磁力","type":3,"api":"csp_BtSearch","searchable":1,"changeable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$null$$$1"},
+{"key":"csp_BtSow","name":"🧬BTSow┃磁力","type":3,"api":"csp_BtSow","searchable":1,"changeable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$null$$$1"},
+{"key":"csp_MeijuTT","name":"🧬美剧天堂┃磁力","type":3,"api":"csp_MeijuTT","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Clg","name":"🧬磁力狗┃磁力","type":3,"api":"csp_Clg","searchable":1,"quickSearch":1,"changeable":1,"filterable":0,"timeout":60,"ext":"./pg/tokenm.json$$$https://clg.clgvip1.xyz/$$$1","style":{"type":"rect","ratio":1.5}},
+
 
 //XBPQ_磁力🌵
 {"key": "小白","name": "🌵小白┃磁力","type": 3,"api": "csp_XBPQ","playerType": 1,"ext": "./XBPQ/小白磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
