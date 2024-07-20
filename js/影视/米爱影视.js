@@ -1,5 +1,6 @@
 muban.mxone5.二级.title = 'h1&&Text;.video-info-aux&&Text';
 muban.mxone5.二级.desc = '.video-info-items:eq(4)&&Text;;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text';
+muban.mxone5.二级.tabs = '.module-tab-item--small';
 var rule = {
 	title: '米爱影视',
 	模板:'mxone5',
