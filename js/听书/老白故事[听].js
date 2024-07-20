@@ -262,8 +262,7 @@ var rule = {
         headers['Content-Type'] = 'application/x-www-form-urlencoded';
         let html = post(appData.api_url, {
             headers: headers,
-            // body: post_data,
-            data: post_obj,
+            body: post_data,
         });
         let content = JSON.parse(html);
         var datas = content.data;
@@ -307,8 +306,8 @@ var rule = {
         headers['Content-Type'] = 'application/x-www-form-urlencoded';
         let html = post(appData.api_url, {
             headers: headers,
-            // body: post_data,
-            data: post_obj,
+            body: post_obj,
+            postType: "form",
         });
         let content = JSON.parse(html);
         var datas = content.data;
