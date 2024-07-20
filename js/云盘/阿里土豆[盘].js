@@ -30,3 +30,4 @@ input = getProxyUrl().replace('js',type)+'&type=push'+confirm+'&url='+encodeURIC
   
   `,
 }
+
