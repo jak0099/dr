@@ -1,1 +1,111 @@
-Ly8g5Y+R5biD6aG1IGh0dHBzOi8vd3d3LmJkeXMubWUvCnZhciBydWxlID0gewogICAgdGl0bGU6ICflk5TlmIDlvbHop4Zb5LyYXScsCiAgICBob3N0OiAnaHR0cHM6Ly93d3cueWp5cy50b3AnLAogICAgLy9ob3N0SnM6J3ByaW50KEhPU1QpO2xldCBodG1sPXJlcXVlc3QoSE9TVCx7aGVhZGVyczp7IlVzZXItQWdlbnQiOlBDX1VBfX0pO0hPU1QgPSBodG1sLm1hdGNoKC/lj6/nlKjnvZHlnYDvvJo8YSBocmVmPVwnKC4qKVwnPueCueatpOi/m+WFpS8pWzFdO3ByaW50KCLlk5TlmIDot7PovazlnLDlnYAgPT09PT0+ICIgKyBIT1NUKScsCiAgICAvLyB1cmw6ICcvcy9hbGwvZnlwYWdlP3R5cGU9ZnljbGFzcycsCiAgICAvL3VybDogJy9zL2FsbC9meXBhZ2U/dHlwZT1meWNsYXNzZnlmaWx0ZXInLAogICAgLy91cmw6Jy9zL3t7ZmwubHh9fS9meXBhZ2U/dHlwZT1meWNsYXNzJnt7ZmwuYXJlYX19Jnt7ZmwueWVhcn19Jnt7ZmwuYnl9fVsvcy9hbGwvZnlwYWdlP3R5cGU9ZnljbGFzc2Z5ZmlsdGVyXScKICAgIHVybDogJy9zL2Z5ZmlsdGVyJywKICAgIGZpbHRlcl91cmw6ICd7e2ZsLmx4fX0vZnlwYWdlP3R5cGU9e3tmbC50eXBlfX0me3tmbC5hcmVhfX0me3tmbC55ZWFyfX0me3tmbC5ieX19JywKICAgIGZpbHRlcjogJ0g0c0lBQUFBQUFBQUErMlczMUlUTVJURzMyV3Z1Y2lDZ2pMRG5XL2hlQkhvUWhmS1ZvdXJ0QXd6S2xCS2dSWVFpZ1ZVWnZoVGNPeTBDQXEwdHJ4TWs5MTlDMU9hVFU2QzQ1MTNlOWY5Zmljbk9WOU9PbWZPUU1idzh6bGp5a29idzBaaTF1Z3pIRHh0c2QvZVJaTjhXV1hmYjNEQ3RlNkRIQ1ozYnRhRDhrWlhaaDg0a1REbSszcUE1TTg2clFNT1lrbG5JdU1tQmZSeUYzUmhLVnhsdjdLZENibXdkRUJXS3B6TjJwT3VYRlhaSkxkTlRxYXN1SXNkd2VqN0RmcXVGREsyM2FoY1IzT2ZPbzBWempKeDdHVGlGdGlRVms4NzdVT08zN3F6TmhZb3FHN0xIYWVUeW83c2tMS0dTVmV0SVgvbWJUZEI4V3lsM0c4aFR6L3NoUXZac3Bra1dEcndqQlAyUXhUK3ZoM3N0Y01Dc08zQXdqOTg5MHFib1Yzc2dHbGJNTDk2U3RhK2daM0dMUWxwYWRsZmFZUmxXM0JkOEhtTGZqcmhxRnZZV053RmhXZTNndko1YUFwT01zTWs5UEkxcnhWdU9jNnNkbVZhci9HTnRIYkVjUkx5aGtqeDJEOEt2Wnh3TTEyamdac255L0lXWHRucUxleTMvRnBWckV5bVFiczBmOHNDTTh4alVDRXBaRW54QjJjSmV5WU9UTHZiWU5mSFVkcDFZdkIyU09FcnllMlR3aXJKL1JJaDJCbFREK3kxQzdLRnB5M1l3OEhYYzRsWUt3TEVTdWswS3Q3MlQ3K1NsVEdzSmhCRGQwOGtTc0hFL3VxRkpHbDJaekJ6KzFxeW1BVkk1MjVSRWdqSTlaVUVveGlTL0tFa2t6WkUvc21kUkRNdnNjT01sVWRmTEpMakNzbWR3MlBHY0FJV1FTL3JrcjdHQ3JxcGtTS2dFOHh3TGVKeVIrSnhlQzdhdnBRRTMvdjVvc3Q2LzNJNFpXSDVQMGNPNm1TdDhlLy9PV25mVFpYZEdpc3JLR2ZEOUN6YmlLS3J3Y0ZwbVpYeU1KanJXdVppbmQ2Mi81SzVwOE4rMjIvQk1LN0E1bEFEdUFMNmloNThod0ZjZ1gyclp1QUtkRjhONElyb20vVTZhWnpDQUs3QUxsVXpjQVcwbDFlc2VpdGxwUkFoUG1nMDVUQkNoRTF4cjNRYWUwb2sxRVZ3YlpzcGRQZVhFaWxFY1JHYlg4alNqWElSUFVXVXNINU5sdXJLK1h1S3ZQZmJRSFdKSytENTBkVTdka0xGS0NHQ2grMjFkbWxKN1RRaHd2NVBXemdGK3YvMnF0TnNQZWgvc25RV0xKenAvZCtQK2grRmI1bGxHYm4vQm5CQWd3TVE5bXV3SDBKVGd5YUVTSU1JUVBPcEN0azNnRTgwK0FUQ0lRME9RVGlvd1VFSUgydndNWVNhUXlaMHlOUWNNcUZEcHVhUUNSMHlOWWRNNkpDcE9XUkNoNURtRUlJT0ljMGhCQjFDbWtNSU9vUTBoeEIwQ0drT0llZ1EwaHhDMENHa09ZU2dRMGh6Q0VHSGtPWVFnZzRoelNIMkRkL0VhRnErQ0ZyWUlvM2lneGRCOTY5b3FjNWVmN0I3eFhNbFV6RXJOU0s5OWkreTNzY2p2N1pJY2xrbHhPeHU5cUxQTUtOaE94cTJvMkU3R3JhallUc2F0cU5oT3hxMm8yRTdHcmFqWWZ0L0ROdnpmd0FZdFp3UzJ4WUFBQT09JywKICAgIGZpbHRlcl9kZWY6IHsKICAgICAgICAwOiB7bHg6ICdhbGwnLCB0eXBlOiAnMCd9LC8v5pyA5paw55S15b2xCiAgICAgICAgMToge2x4OiAnYWxsJywgdHlwZTogJzEnfSwvL+acgOaWsOeUteinhuWJpwogICAgICAgIDI6IHtseDogJ2RvbmdodWEnLCB0eXBlOiAnMSd9LC8v5Yqo5ryrCiAgICAgICAgMzoge2x4OiAnYWxsJywgdHlwZTogJzEnLCBhcmVhOiAnYXJlYT3kuK3lm73lpKfpmYYnLCBieTogJ29yZGVyPTAnfSwvL+WbveS6p+WJpwogICAgICAgIDQ6IHtseDogJ2dhbmd0YWlqdScsIHR5cGU6ICcnfSwvL+a4r+WPsOWJpwogICAgICAgIDU6IHtseDogJ21laWp1JywgdHlwZTogJyd9LC8v5qyn576O5YmnCiAgICAgICAgNjoge2x4OiAnaGFuanUnLCB0eXBlOiAnJ30vL+aXpemfqeWJpwoKICAgIH0sCiAgICBmaWx0ZXJhYmxlOiAxLC8v5piv5ZCm5ZCv55So5YiG57G7562b6YCJLAogICAgY2xhc3NfbmFtZTogJ+acgOaWsOeUteW9sSbmnIDmlrDnlLXop4bliacm5Yqo5ryrJuWbveS6p+WJpybmuK/lj7Dliacm5qyn576O5YmnJuaXpemfqeWJpycsCiAgICBjbGFzc191cmw6ICcwJjEmMiYzJjQmNSY2JywKICAgIHNlYXJjaFVybDogJy9zZWFyY2gvKiovZnlwYWdlJywKICAgIHNlYXJjaGFibGU6IDIsLy/mmK/lkKblkK/nlKjlhajlsYDmkJzntKIsCiAgICBxdWlja1NlYXJjaDogMCwvL+aYr+WQpuWQr+eUqOW/q+mAn+aQnOe0oiwKICAgIGhlYWRlcnM6IHsKICAgICAgICAvLydVc2VyLUFnZW50JzogJ01PQklMRV9VQScsCiAgICAgICAgJ1VzZXItQWdlbnQnOiAnUENfVUEnLAogICAgfSwKICAgIHBsYXlfcGFyc2U6IHRydWUsCiAgICBsYXp5OiAkanMudG9TdHJpbmcoKCkgPT4gewogICAgICAgIC8vIOiOt+WPliBwaWQg5bm26L6T5Ye6CiAgICAgICAgbGV0IHBpZCA9IEpTT04ucGFyc2UocmVxdWVzdChNWV9VUkwpLm1hdGNoKC92YXIgcGlkID0gKFxkKyk7LylbMV0pOwogICAgICAgIC8vY29uc29sZS5sb2cocGlkKTsKICAgICAgICAvLyDojrflj5blvZPliY3ml7bpl7TlubbovpPlh7oKICAgICAgICBsZXQgY3VycmVudFRpbWVNaWxsaXMgPSBEYXRlLm5vdygpOwogICAgICAgIC8vY29uc29sZS5sb2coY3VycmVudFRpbWVNaWxsaXMpOwogICAgICAgIGxldCBzdHI0ID0gcGlkICsgJy0nICsgY3VycmVudFRpbWVNaWxsaXM7CiAgICAgICAgY29uc29sZS5sb2coc3RyNCk7CiAgICAgICAgLy/pgJrov4flr7lzdHI06L+b6KGMU0hBLTI1NuWTiOW4jO+8jOeUn+aIkOWJjTE25Liq5a2X6IqC5L2c5Li65a+G6ZKlCiAgICAgICAgbGV0IG1kNUhhc2ggPSBDcnlwdG9KUy5NRDUoc3RyNCkudG9TdHJpbmcoQ3J5cHRvSlMuZW5jLkhleCk7CiAgICAgICAgLy8g56Gu5L+d5ZOI5biM5YC86ZW/5bqm5Li6MzLkuKrlrZfnrKbvvIzlubbovazmjaLkuLrlsI/lhpkKICAgICAgICB3aGlsZSAobWQ1SGFzaC5sZW5ndGggPCAzMikgewogICAgICAgICAgICBtZDVIYXNoID0gJzAnICsgbWQ1SGFzaDsKICAgICAgICB9CiAgICAgICAgbWQ1SGFzaCA9IG1kNUhhc2gudG9Mb3dlckNhc2UoKTsKICAgICAgICAvL2NvbnNvbGUubG9nKG1kNUhhc2gpOwogICAgICAgIGxldCBrZXkgPSBDcnlwdG9KUy5lbmMuVXRmOC5wYXJzZShtZDVIYXNoLnN1YnN0cmluZygwLCAxNikpOwogICAgICAgIGxldCBlbmNyeXB0ZWQgPSBDcnlwdG9KUy5BRVMuZW5jcnlwdChDcnlwdG9KUy5lbmMuVXRmOC5wYXJzZShzdHI0KSwga2V5LCB7CiAgICAgICAgICAgIG1vZGU6IENyeXB0b0pTLm1vZGUuRUNCLAogICAgICAgICAgICBwYWRkaW5nOiBDcnlwdG9KUy5wYWQuUGtjczcKICAgICAgICB9KTsKICAgICAgICBsZXQgZW5jcnlwdGVkSGV4ID0gZW5jcnlwdGVkLmNpcGhlcnRleHQudG9TdHJpbmcoQ3J5cHRvSlMuZW5jLkhleCk7CiAgICAgICAgbGV0IGVuY3J5cHRlZFN0cmluZyA9IGVuY3J5cHRlZEhleC50b1VwcGVyQ2FzZSgpOwovL2NvbnNvbGUubG9nKGVuY3J5cHRlZFN0cmluZyk7CiAgICAgICAgbGV0IGxpbmVzID0gSE9TVCArICcvbGluZXM/dD0nICsgY3VycmVudFRpbWVNaWxsaXMgKyAnJnNnPScgKyBlbmNyeXB0ZWRTdHJpbmcgKyAnJnBpZD0nICsgcGlkOwogICAgICAgIC8vY29uc29sZS5sb2cobGluZXMpOwogICAgICAgIC8vbGV0IGxpbmVzID0gJ2h0dHBzOi8vd3d3LnlqeXMudG9wL2xpbmVzP3Q9MTcxODM3OTYyNzQ5OSZzZz02Njc1OUJBQTg5NkVDNUU3QjI2RUU4OEY5OTk0RjI1RjRDQkI0MzRDOTY3NDE2Q0RENTFFQjI1RjNFRjBENzdBJnBpZD0xNzkzOTUnOwogICAgICAgIC8vIOWPkei1t+ivt+axguW5tuiOt+WPluWMuemFjeeahCBVUkwKICAgICAgICAvL3VybCA9IHJlcXVlc3QobGluZXMsIHt9KS5tYXRjaCgvdXJsMyI6Lio/WyciXSguKj8pWyciXS8pWzFdOwogICAgICAgIGxldCB1cmwgPSBKU09OLnBhcnNlKHJlcXVlc3QobGluZXMpKS5kYXRhLnVybDM7CiAgICAgICAgY29uc29sZS5sb2codXJsKTsKICAgICAgICBsZXQgc3BsaXRVcmwgPSB1cmwuaW5kZXhPZignLCcpICE9PSAtMSA/IHVybC5zcGxpdCgnLCcpWzBdLnRyaW0oKSA6IHVybC50cmltKCk7CiAgICAgICAgbGV0IHJlc3AgPSByZXF1ZXN0KHNwbGl0VXJsLnJlcGxhY2UoJ3d3dy55anlzMDIuY29tJywgJ3d3dy55anlzLnRvcCcpLCB7d2l0aEhlYWRlcnM6IHRydWUsIHJlZGlyZWN0OiBmYWxzZX0pOwogICAgICAgIHNwbGl0VXJsID0gSlNPTi5wYXJzZShyZXNwKS5sb2NhdGlvbjsKICAgICAgICAvL3NwbGl0VXJsID0gJ2h0dHBzOi8vbGYzLWltY2xvdWQtZmlsZS1zaWduLmJ5dGV0b3MuY29tL3Rvcy1jbi1pLTRlZmY2dmc2d2Mvb0Uwbk9BQ25sQ3NTYVdPZURBQWx0RUlqdUFJTWJwYmdrbFFmRjI/eC1leHBpcmVzPTE3MTk0NzcxNjUmeC1zaWduYXR1cmU9WDZrS0UlMkZoTEdZT2owSWhPNnl2allJc0tMS1klM0QnOwogICAgICAgIGlucHV0ID0gewogICAgICAgICAgICBqeDogMCwKICAgICAgICAgICAgdXJsOiBzcGxpdFVybCwKICAgICAgICAgICAgcGFyc2U6IDAKICAgICAgICB9OwoKICAgIH0pLAogICAgbGltaXQ6IDYsCiAgICBkb3VibGU6IHRydWUsIC8vIOaOqOiNkOWGheWuueaYr+WQpuWPjOWxguWumuS9jQogICAg5o6o6I2QOiAnLnJvdy1jYXJkczsuY2FyZC1saW5rOyo7aW1nJiZkYXRhLXNyYzsqOyonLAogICAg5LiA57qnOiAnLnJvdy1jYXJkcyYmLmNhcmQtbGluaztoMyYmVGV4dDtpbWcmJnNyYztwJiZUZXh0O2EmJmhyZWYnLAogICAg5LqM57qnOiB7CiAgICAgICAgInRpdGxlIjogImgyJiZUZXh0Oy5tdC0xJiZUZXh0IiwKICAgICAgICAiaW1nIjogIi5jb2wtbWQtYXV0byBpbWcmJnNyYyIsCiAgICAgICAgImRlc2MiOiAiOzs7Lm1iLW1kLTI6ZXEoMykmJlRleHQ7Lm1iLW1kLTI6ZXEoMSkmJlRleHQiLAogICAgICAgICJjb250ZW50IjogIiNzeW5vcHNpcyAuY2FyZC1ib2R5JiZUZXh0IiwKICAgICAgICAidGFicyI6ICIuY2FyZC1oZWFkZXI6ZXEoMSkgaDMiLAogICAgICAgICJsaXN0cyI6ICIjcGxheS1saXN0OmVxKCNpZCkgYSIKICAgIH0sCiAgICDmkJzntKI6ICcucm93LWNhcmRzIC5yb3ctMDsuZC1pbmxpbmUtYmxvY2smJnRpdGxlO2ltZyYmc3JjOy5kLWlubGluZS1ibG9jayYmVGV4dDthJiZocmVmJywKfQ==
+// 发布页 https://www.bdys.me/
+var rule = {
+    title: '哔嘀影视[优]',
+    host: 'https://www.yjys.top',
+    //hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});HOST = html.match(/可用网址：<a href=\'(.*)\'>点此进入/)[1];print("哔嘀跳转地址 =====> " + HOST)',
+    // url: '/s/all/fypage?type=fyclass',
+    //url: '/s/all/fypage?type=fyclassfyfilter',
+    //url:'/s/{{fl.lx}}/fypage?type=fyclass&{{fl.area}}&{{fl.year}}&{{fl.by}}[/s/all/fypage?type=fyclassfyfilter]'
+    url: '/s/fyfilter',
+    filter_url: '{{fl.lx}}/fypage?type={{fl.type}}&{{fl.area}}&{{fl.year}}&{{fl.by}}',
+    filter: 'H4sIAAAAAAAAA+2W31ITMRTG32WvuciCgjLDnW/heBHoQhfKVourtAwzKlBKgRYQigVUZvhTcOy0CAq0trxMk919C1OaTU6C4513e9f9ficnOV9OOmfOQMbw8zljykobw0Zi1ugzHDxtsd/eRZN8WWXfb3DCte6DHCZ3btaD8kZXZh84kTDm+3qA5M86rQMOYklnIuMmBfRyF3RhKVxlv7KdCbmwdEBWKpzN2pOuXFXZJLdNTqasuIsdwej7DfquFDK23ahcR3OfOo0VzjJx7GTiFtiQVk877UOO37qzNhYoqG7LHaeTyo7skLKGSVetIX/mbTdB8Wyl3G8hTz/shQvZspkkWDrwjBP2QxT+vh3stcMCsO3Awj9890qboV3sgGlbML96Sta+gZ3GLQlpadlfaYRlW3Bd8HmLfjrhqFvYWNwFhWe3gvJ5aApOMsMk9PI1rxVuOc6sdmVar/GNtHbEcRLyhkjx2D8KvZxwM12jgZsny/IWXtnqLey3/FpVrEymQbs0f8sCM8xjUCEpZEnxB2cJeyYOTLvbYNfHUdp1YvB2SOErye2TwirJ/RIh2BlTD+y1C7KFpy3Yw8HXc4lYKwLESuk0Kt72T7+SlTGsJhBDd08kSsHE/uqFJGl2ZzBz+1qymAVI525REgjI9ZUEoxiS/KEkkzZE/smdRDMvscOMlUdfLJLjCsmdw2PGcAIWQS/rkr7GCrqpkSKgE8xwLeJyR+JxeC7avpQE3/v5ost6/3I4ZWH5P0cO6mSt8e//OWnfTZXdGisrKGfD9CzbiKKrwcFpmZXyMJjrWuZind62/5K5p8N+22/BMK7A5lADuAL6ih58hwFcgX2rZuAKdF8N4Irom/U6aZzCAK7ALlUzcAW0l1eseitlpRAhPmg05TBChE1xr3Qae0ok1EVwbZspdPeXEilEcRGbX8jSjXIRPUWUsH5NlurK+XuKvPfbQHWJK+D50dU7dkLFKCGCh+21dmlJ7TQhwv5PWzgF+v/2qtNsPeh/snQWLJzp/d+P+h+Fb5llGbn/BnBAgwMQ9muwH0JTgyaESIMIQPOpCtk3gE80+ATCIQ0OQTiowUEIH2vwMYSaQyZ0yNQcMqFDpuaQCR0yNYdM6JCpOWRCh5DmEIIOIc0hBB1CmkMIOoQ0hxB0CGkOIegQ0hxC0CGkOYSgQ0hzCEGHkOYQgg4hzSH2Dd/EaFq+CFrYIo3igxdB969oqc5ef7B7xXMlUzErNSK99i+y3scjv7ZIclklxOxu9qLPMKNhOxq2o2E7GrajYTsatqNhOxq2o2E7GrajYft/DNvzfwAYtZwS2xYAAA==',
+    filter_def: {
+        0: {lx: 'all', type: '0'},//最新电影
+        1: {lx: 'all', type: '1'},//最新电视剧
+        2: {lx: 'donghua', type: '1'},//动漫
+        3: {lx: 'all', type: '1', area: 'area=中国大陆', by: 'order=0'},//国产剧
+        4: {lx: 'gangtaiju', type: ''},//港台剧
+        5: {lx: 'meiju', type: ''},//欧美剧
+        6: {lx: 'hanju', type: ''}//日韩剧
+
+    },
+    filterable: 1,//是否启用分类筛选,
+    class_name: '最新电影&最新电视剧&动漫&国产剧&港台剧&欧美剧&日韩剧',
+    class_url: '0&1&2&3&4&5&6',
+    searchUrl: '/search/**/fypage',
+    searchable: 2,//是否启用全局搜索,
+    quickSearch: 0,//是否启用快速搜索,
+    headers: {
+        //'User-Agent': 'MOBILE_UA',
+        'User-Agent': 'PC_UA',
+    },
+    play_parse: true,
+    lazy: $js.toString(() => {
+
+
+        // 获取 pid 并输出
+        let pid = JSON.parse(request(MY_URL).match(/var pid = (\d+);/)[1]);
+        //console.log(pid);
+
+        // 获取当前时间并输出
+        let currentTimeMillis = Date.now();
+        //console.log(currentTimeMillis);
+
+        let str4 = pid + '-' + currentTimeMillis;
+        //console.log(str4);
+        //通过对str4进行SHA-256哈希，生成前16个字节作为密钥
+
+        let md5Hash = CryptoJS.MD5(str4).toString(CryptoJS.enc.Hex);
+
+        // 确保哈希值长度为32个字符，并转换为小写
+        while (md5Hash.length < 32) {
+            md5Hash = '0' + md5Hash;
+        }
+
+        md5Hash = md5Hash.toLowerCase();
+
+//console.log(md5Hash);
+        let key = CryptoJS.enc.Utf8.parse(md5Hash.substring(0, 16));
+        let encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(str4), key, {
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7
+        });
+
+
+        let encryptedHex = encrypted.ciphertext.toString(CryptoJS.enc.Hex);
+
+        let encryptedString = encryptedHex.toUpperCase();
+//console.log(encryptedString);
+
+        let lines = HOST + '/lines?t=' + currentTimeMillis + '&sg=' + encryptedString + '&pid=' + pid;
+
+        //console.log(lines);
+
+        //let lines = 'https://www.yjys.top/lines?t=1718379627499&sg=66759BAA896EC5E7B26EE88F9994F25F4CBB434C967416CDD51EB25F3EF0D77A&pid=179395';
+
+        // 发起请求并获取匹配的 URL
+        let url = JSON.parse(request(lines)).data.url3;
+        // console.log(url);
+        let splitUrl = url.indexOf(',') !== -1 ? url.split(',')[0].trim() : url.trim();
+        //console.log(splitUrl);
+        //let resp = request(splitUrl.replace('www.yjys02.com','www.yjys.top'), {withHeaders: true, redirect: false});
+        //console.log(resp);
+
+        if (splitUrl.includes('yjys')) {
+            let resp = request(splitUrl, {withHeaders: true, redirect: false});
+            splitUrl = JSON.parse(resp).location;
+            console.log(splitUrl);
+        }
+
+        input = {
+            jx: 0,
+            url: splitUrl,
+            parse: 0
+        };
+
+
+    }),
+    limit: 6,
+    double: true, // 推荐内容是否双层定位
+    推荐: '.row-cards;.card-link;*;img&&data-src;*;*',
+    一级: '.row-cards&&.card-link;h3&&Text;img&&src;p&&Text;a&&href',
+    二级: {
+        "title": ".col h2&&Text;.mt-1&&Text",
+        "img": ".col-md-auto img&&src",
+        "desc": ";;;.mb-md-2:eq(3)&&Text;.mb-md-2:eq(1)&&Text",
+        "content": "#synopsis .card-body&&Text",
+        "tabs": ".card-header:eq(2) h3",
+        "lists": "#play-list:eq(#id) a"
+    },
+    搜索: '.row-cards .row-0;.d-inline-block&&title;img&&src;.d-inline-block&&Text;a&&href',
+}
