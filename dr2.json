@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=c687efe41ea48c68e9ddd63d0796d242", 
+"spider":"./jar/pg.jar?md5=ea34f3999eeccc1d9fdf43b95537bac9", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -273,6 +273,10 @@
 {"key": "dr_臭蛋蛋","name": "🍊臭蛋蛋[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/臭蛋蛋.js"},
 {"key": "dr_速讯影院","name": "🍊速讯影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/速讯影院.js"},
 {"key": "dr_金牌影院","name": "🍊金牌影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/金牌影院.js"},
+{"key": "dr_家庭影视","name": "🍊家庭影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/家庭影视.js"},
+{"key": "dr_小宝影院","name": "🍊小宝影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/小宝影院.js"},
+{"key": "dr_电影狗","name": "🍊电影狗[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/电影狗.js"},
+{"key": "dr_看呀看","name": "🍊看呀看[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/看呀看.js"},
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
@@ -395,6 +399,7 @@
 {"key": "dr_飞刀资源[资]","name": "🥒飞刀资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/飞刀资源[资].js"},
 {"key": "dr_iku喵[资]","name": "🥒iku喵[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/iku喵[资].js"},
 {"key": "dr_文才[采]","name": "🥒文才[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/文才[资].js"},
+{"key": "dr_文才2[采]","name": "🥒文才2[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/文才2[资].js"},
 
 //#js_听书类🍋
 //{"key": "dr_模板[听]","name": "🍋模板[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/模板[听].js"},
