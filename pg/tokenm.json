@@ -1,7 +1,7 @@
 {
 "token":"",
 "open_token":"",
-"open_api_url":"get|https://adrive.xdow.net/oauth/access_token",
+"open_api_url":"http://api.extscreen.com/aliyundrive/token",
 "oauth_client_id":"",
 "oauth_client_secret":"",
 "oauth_auth_url":"",
