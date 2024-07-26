@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=ea34f3999eeccc1d9fdf43b95537bac9", 
+"spider":"./jar/pg.jar?md5=169229fcbe07c888c538f2292e671a84", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -524,11 +524,18 @@
 
 
 //##PG_sp源
+//XBPQ_磁力🌵
+{"key": "小白","name": "🌵小白┃磁力","type": 3,"api": "csp_XBPQ","playerType": 1,"ext": "./XBPQ/小白磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "BT天堂","name": "🌵BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/BT天堂磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "布谷tv","name": "🌵布谷4K┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/布谷TV磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "haokongbu","name": "🌵好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/好恐怖磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+{"key": "迅雷8","name": "🌵迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/迅雷吧磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
+
 //#PG_磁力🧬
 {"key": "yinfans", "name": "🧬音范丝4K┃磁力", "type": 3, "api": "csp_Gaoqing","searchable": 1, "quickSearch": 1, "filterable": 1,"timeout":60,"ext": "./pg/tokenm.json$$$https://www.yinfans.me/$$$proxy$$$1"},  
-{"key":"Bt0","name":"🧬不太灵┃磁力","type":3,"api":"csp_Bt0","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1","style": {"type": "list","ratio": 1.1}},
+{"key":"Bt0","name":"🧬不太灵┃磁力","type":3,"api":"csp_Bt0","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$noproxy$$$1","style": {"type": "list","ratio": 1.1}},
 {"key":"Wo4k","name":"🧬玩偶4K┃磁力","type":3,"api":"csp_Wo4k","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.wo4k.net/$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"Bdys_spider","name":"🧬哔滴┃磁力","api":"csp_Bdys01","type":3,"filterable":1,"searchable":1,"quickSearch":1,"ext":"./pg/tokenm.json$$$https://www.yjys.me/$$$proxy$$$1"},
+{"key":"Bdys_spider","name":"🧬哔滴┃磁力","api":"csp_Bdys01","type":3,"filterable":1,"searchable":1,"quickSearch":1,"ext":"./pg/tokenm.json$$$https://www.yjys01.com/$$$proxy$$$1"},
 {"key": "BLSGod","name": "🧬80S影视┃磁力","type": 3,"api": "csp_BLSGod","changeable": 1,"timeout": 60},
 {"key": "Xunlei8","name": "🧬讯雷吧┃磁力","type": 3,"api": "csp_Xunlei8","changeable": 1,"timeout": 60},
 {"key": "SeedHub","name": "🧬SeedHub┃磁力","type": 3,"api": "csp_SeedHub","changeable": 1,"timeout": 60},    
@@ -537,33 +544,27 @@
 {"key":"csp_MeijuTT","name":"🧬美剧天堂┃磁力","type":3,"api":"csp_MeijuTT","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_Clg","name":"🧬磁力狗┃磁力","type":3,"api":"csp_Clg","searchable":1,"quickSearch":1,"changeable":1,"filterable":0,"timeout":60,"ext":"./pg/tokenm.json$$$https://clg.clgvip1.xyz/$$$1","style":{"type":"rect","ratio":1.5}},
 
-
-//XBPQ_磁力🌵
-{"key": "小白","name": "🌵小白┃磁力","type": 3,"api": "csp_XBPQ","playerType": 1,"ext": "./XBPQ/小白磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "BT天堂","name": "🌵BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/BT天堂磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "布谷tv","name": "🌵布谷4K┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/布谷TV磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "haokongbu","name": "🌵好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/好恐怖磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-{"key": "迅雷8","name": "🌵迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/迅雷吧磁力.json","jar": "./jar/XBPQ.jar?md5=4145467d49e0437dc43e8bbb79e3ff7d"},
-
 //#PG_云盘☁
 {"key":"美剧迷","name":"☁美剧迷┃云","type":3,"api":"csp_Meijumi","quickSearch":1,"changeable":1,"filterable":1,"timeout":120,"ext":"./pg/tokenm.json$$$https://www.meijumi.net/$$$proxy$$$1"},
 {"key":"Libvio","name":"☁LIBVIO┃云","type":3,"api":"csp_Libvio","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.libvio.fun/$$$null"},
-{"key":"Xpanpan","name":"☁小盘盘┃云","type":3,"api":"csp_Xpanpan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xpanpan.site$$$proxy$$$1","style":{"type":"list","ratio":1.1}},
-{"key":"Wogg","name":"☁玩偶哥哥┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wogg.link/$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"Xpanpan","name":"☁小盘盘┃云","type":3,"api":"csp_Xpanpan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xpanpan.site$$$noproxy$$$1","style":{"type":"list","ratio":1.1}},
+{"key":"Wogg","name":"☁玩偶哥哥┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wogg.888484.xyz/$$$noproxy$$$1$$$./pg/wogg.json"},
 {"key":"Wobg","name":"☁玩偶表哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wobge.run.goorm.io$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"yydsys","name":"☁玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$proxy$$$1$$$./pg/wogg.json"},
+{"key":"yydsys","name":"☁玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$noproxy$$$1$$$./pg/wogg.json"},
+{"key":"蜡笔网盘","name":"☁蜡笔┃云","type":3,"api":"csp_Wobg","quickSearch":1, "changeable":1, "filterable":1, "timeout":60, "ext":"./pg/tokenm.json$$$https://duopan.fun/$$$noproxy$$$1$$$./pg/wogg.json"},	
 {"key":"Gaoqing","name":"☁中国高清网┃云","type":3,"api":"csp_Gaoqing","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://gaoqing.la/$$$proxy$$$1"},
 {"key":"ddys","name":"☁低端影视┃云","type":3,"api":"csp_Ddys","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ddys.pro/$$$proxy$$$1$$$"},
-{"key":"Xinshijue","name":"☁新视觉┃云","type":3,"api":"csp_Xinshijue","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.80yy3.com/$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"团长资源","name":"☁团长资源┃云","type":3,"api":"csp_TZFile","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
+{"key":"Xinshijue","name":"☁新视觉┃云","type":3,"api":"csp_Xinshijue","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://6080z.com/$$$noproxy$$$1$$$./pg/wogg.json"},
+{"key":"团长资源","name":"☁团长资源┃云","type":3,"api":"csp_TZFile","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$noproxy$$$1"},
 {"key":"Moli","name":"☁HDmoli┃云","type":3,"api":"csp_Moli","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.hdmoli.pro/$$$proxy$$$1$$$./pg/moli.json"},
-{"key":"Hdhive","name":"☁影巢┃云","type":3,"api":"csp_Hdhive","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$proxy$$$1"},
+{"key":"Hdhive","name":"☁影巢┃云","type":3,"api":"csp_Hdhive","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$noproxy$$$1"},
 {"key":"Ppxzy","name":"☁皮皮虾┃云","type":3,"api":"csp_Ppxzy","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ppxzy.ink$$$proxy$$$1"},
 {"key":"校长影视","name":"☁校长影视┃云","type":3,"api":"csp_XiaoZhang","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xzyshd.com$$$proxy$$$1"},
 {"key":"YunPan","name":"☁云盘资源┃云","type":3,"api":"csp_YunPan","timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1"},
 {"key":"Panta","name":"☁盘Ta┃云","type":3,"api":"csp_Panta","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.91panta.cn/$$$null$$$1","style":{"type":"list","ratio":1.1}},
 {"key": "4KHDR","name": "☁4KHDR┃云","type": 3,"api": "csp_FourKHDR","quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60,"ext": "./pg/tokenm.json$$$./pg/4khdr.txt$$$1","style": {"type": "list","ratio": 1.1}},
-
+{"key":"欧乐影院","name":"☁欧乐影院┃云","type":3,"api":"csp_Olevod", "quickSearch":1, "changeable":1, "filterable":1, "timeout":60,"ext":"./lib/tokenm.json$$$null$$$proxy$$$1"},
+	
 //#PG_云盘搜索
 {"key":"YingSo","name":"📡影搜┃云搜","type":3,"api":"csp_YingSo","timeout":60,"ext":"./pg/tokenm.json"},
 {"key":"混合盘","name":"📡混合盘┃云搜","type":3,"api":"csp_HunHePan","timeout":60,"ext":"./pg/tokenm.json","style":{"type":"list","ratio":1.1}},
