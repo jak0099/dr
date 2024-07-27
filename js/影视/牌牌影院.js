@@ -1,0 +1,28 @@
+var rule = {
+    模板: '短视2',
+    title: '牌牌影院',
+    host: "https://paipaiyy.com",
+    class_name: "电影&电视剧&综艺&动漫&短剧",
+    class_url: "1&2&3&4&5",
+    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchable: 2,
+    quickSearch: 0,
+    headers: {
+        'User-Agent': 'MOBILE_UA',
+    },
+    url: '/index.php/api/vod#type=fyclassfyfilter&page=fypage',
+    detailUrl: '/voddetail/fyid.html',
+    play_parse: true,
+    limit: 6,
+    推荐: 'body&&.public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
+    二级: {
+        title: '.slide-info-title&&Text;.slide-info:eq(3)--strong&&Text',
+        img: '.detail-pic&&data-original',
+        desc: '.fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text',
+        content: '#height_limit&&Text',
+        tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
+        tab_text: '.swiper-slide--i&&Text',
+        lists: '.anthology-list-box:eq(#id) li',
+    },
+    搜索: '.search-box;.thumb-txt&&Text;.lazy&&data-original;.public-list-prb&&Text;a&&href;.thumb-blurb&&Text',
+}
