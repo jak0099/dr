@@ -21,8 +21,41 @@ var rule = {
         desc: '.fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text',
         content: '#height_limit&&Text',
         tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
-        tab_text: '.swiper-slide--i&&Text',
+        tab_text: '.swiper-slide--i--span&&Text',
         lists: '.anthology-list-box:eq(#id) li',
     },
     搜索: '.search-box;.thumb-txt&&Text;.lazy&&data-original;.public-list-prb&&Text;a&&href;.thumb-blurb&&Text',
+    lazy: $js.toString(() => {
+        let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        let url = html.url;
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/\.m3u8/.test(url)) {
+            let body = request(url);
+            let lines = body.split('\n');
+            let m3u8Url = null;
+            for (let line of lines) {
+                line = line.trim();
+                if (line.endsWith('.m3u8')) {
+                    m3u8Url = urljoin(url, line);
+                    console.log(m3u8Url);
+                    break;
+                }
+            }
+            input = {
+                jx: 0,
+                url: m3u8Url || url,
+                parse: 0
+            };
+        } else {
+            input = {
+                jx: tellIsJx(url),
+                url: url,
+                parse: 0
+            };
+        }
+    }),
 }
