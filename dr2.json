@@ -56,6 +56,7 @@
 {"key": "dr_兄弟影视[优]","name": "🍒兄弟影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/兄弟影视[优].js"},
 {"key": "dr_畅梦影视[优]","name": "🍒畅梦影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/畅梦影视[优].js"},
 {"key": "dr_蜥蜴影视[优]","name": "🍒蜥蜴影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/蜥蜴影视[优].js"},
+{"key": "dr_桃子影视[优]","name": "🍒桃子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/桃子影视[优].js"},
 
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
@@ -205,7 +206,7 @@
 {"key": "dr_暖光影视","name": "🍊暖光影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/暖光影视.js"},
 {"key": "dr_蚂蚁影视","name": "🍊蚂蚁影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/蚂蚁影视.js"},
 {"key": "dr_虾酱追剧","name": "🍊虾酱追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/虾酱追剧.js"},
-{"key": "dr_天启影视","name": "🍊天启影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/天启影视.js"},
+{"key": "dr_天启影视","name": "🍊天启影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/天启.js"},
 {"key": "dr_子子影视","name": "🍊子子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/子子影视.js"},
 {"key": "dr_热片网","name": "🍊热片网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/热片网.js"},
 {"key": "dr_酷云影视","name": "🍊酷云影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/酷云影视.js"},
@@ -229,7 +230,6 @@
 {"key": "dr_嘀哩嘀哩","name": "🍊嘀哩嘀哩[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/嘀哩嘀哩.js"},
 {"key": "dr_大千世界","name": "🍊大千世界[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大千世界.js"},
 {"key": "dr_奶狗影视[慢]","name": "🍊奶狗影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奶狗影视[慢].js"},
-{"key": "dr_影剧星球","name": "🍊影剧星球[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影剧星球.js"},
 {"key": "dr_影渣渣","name": "🍊影渣渣[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影渣渣.js"},
 {"key": "dr_影视大全","name": "🍊影视大全[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影视大全.js"},
 {"key": "dr_影视控","name": "🍊影视控[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影视控.js"},
@@ -270,13 +270,20 @@
 {"key": "dr_达达猪","name": "🍊达达猪[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/达达猪.js"},
 {"key": "dr_牌牌影院","name": "🍊牌牌影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/牌牌影院.js"},
 {"key": "dr_剧巴巴","name": "🍊剧巴巴[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧巴巴.js"},
+{"key": "dr_来看点播","name": "🍊来看点播[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/来看点播.js"},
+{"key": "dr_极点影视","name": "🍊极点影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/极点影视.js"},
+{"key": "dr_金金虫","name": "🍊金金虫[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/金金虫.js"},
+{"key": "dr_追影TV","name": "🍊追影TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/追影TV.js"},
+{"key": "dr_泡泡影院","name": "🍊泡泡影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/泡泡影院.js"},
+{"key": "dr_efuns影视","name": "🍊efuns影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/efuns影视.js"},
+{"key": "dr_云电影网","name": "🍊云电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/云电影网.js"},
+{"key": "dr_GO影视","name": "🍊GO影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/GO影视.js"},
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
 {"key": "dr_神马影院[自动]","name": "🥑神马影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/神马影院[自动].js"},
 {"key": "dr_网飞啦[自动]","name": "🥑网飞啦[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/网飞啦[自动].js"},
 {"key": "dr_易点看影院[自动]","name": "🥑易点看影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/易点看影院[自动].js"},
-{"key": "dr_来看点播[自动]","name": "🥑来看点播[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/来看点播[自动].js"},
 {"key": "dr_奈飞中文[自动]","name": "🥑奈飞中文[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奈飞中文[自动].js"},
 {"key": "dr_宇航影视[自动]","name": "🥑宇航影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/宇航影视[自动].js"},
 {"key": "dr_三集电影[自动]","name": "🥑三集电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/三集电影[自动].js"},
@@ -285,6 +292,8 @@
 {"key": "dr_bilfun[自动]","name": "🥑bilfun[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/bilfun[自动].js"},
 {"key": "dr_剧圈圈[自动]","name": "🥑剧圈圈[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/剧圈圈[自动].js"},
 {"key": "dr_爱优影视[自动]","name": "🥑爱优影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱优影视[自动].js"},
+{"key": "dr_电影天堂[自动]","name": "🥑电影天堂[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/电影天堂[自动].js"},
+{"key": "dr_影剧星球[自动]","name": "🥑影剧星球[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影剧星球[自动].js"},
 
 //#js_官源解析类🍎
 //{"key": "dr_模板[官]","name": "🍎模板[官][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/模板[官].js"},
