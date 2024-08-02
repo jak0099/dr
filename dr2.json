@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=d0fd1e35e3323b898d312c84b0714865", 
+"spider":"./jar/pg.jar?md5=a65ea57973d4a3c2c8f406d900a216ae", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -555,12 +555,13 @@
 {"key":"csp_Clg","name":"🧬磁力狗┃磁力","type":3,"api":"csp_Clg","searchable":1,"quickSearch":1,"changeable":1,"filterable":0,"timeout":60,"ext":"./pg/tokenm.json$$$https://clg.clgvip1.xyz/$$$1","style":{"type":"rect","ratio":1.5}},
 
 //#PG_云盘☁
+{"key":"yyds","name":"☁多多影音┃云","type":3,"api":"csp_Wobg","quickSearch":1, "changeable":1, "filterable":1, "timeout":60, "ext":"./lib/tokenm.json$$$https://tv.yydsys.cc/$$$proxy$$$1$$$./lib/wogg.json"},
 {"key":"美剧迷","name":"☁美剧迷┃云","type":3,"api":"csp_Meijumi","quickSearch":1,"changeable":1,"filterable":1,"timeout":120,"ext":"./pg/tokenm.json$$$https://www.meijumi.net/$$$proxy$$$1"},
 {"key":"Libvio","name":"☁LIBVIO┃云","type":3,"api":"csp_Libvio","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.libvio.fun/$$$null"},
 {"key":"Xpanpan","name":"☁小盘盘┃云","type":3,"api":"csp_Xpanpan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://xpanpan.site$$$noproxy$$$1","style":{"type":"list","ratio":1.1}},
 {"key":"Wogg","name":"☁玩偶哥哥┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wogg.888484.xyz/$$$noproxy$$$1$$$./pg/wogg.json"},
 {"key":"Wobg","name":"☁玩偶表哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://wobge.run.goorm.io$$$proxy$$$1$$$./pg/wogg.json"},
-{"key":"yydsys","name":"☁玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$noproxy$$$1$$$./pg/wogg.json"},
+{"key":"yydsys","name":"☁玩你老哥┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://tv.yydsys.top/$$$proxy$$$1$$$./pg/wogg.json"},
 {"key":"蜡笔网盘","name":"☁蜡笔┃云","type":3,"api":"csp_Wobg","quickSearch":1, "changeable":1, "filterable":1, "timeout":60, "ext":"./pg/tokenm.json$$$https://duopan.fun/$$$proxy$$$1$$$./pg/wogg.json"},	
 {"key":"Gaoqing","name":"☁中国高清网┃云","type":3,"api":"csp_Gaoqing","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://gaoqing.la/$$$proxy$$$1"},
 {"key":"ddys","name":"☁低端影视┃云","type":3,"api":"csp_Ddys","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://ddys.pro/$$$proxy$$$1$$$"},
