@@ -1,6 +1,6 @@
 var rule = {
     title: '麻雀视频[优]',
-    host: 'https://www.mqtv.cc',
+    host: 'https://mqtv.cc',
     parse_url: 'https://player.mqtv.cc/fun/?url=',
     url: '/libs/VodList.api.php?type=fyclass&rank=rankhot&cat=&year=&area=&page=fypage',
     searchUrl: '/libs/VodList.api.php?search=**',
@@ -22,43 +22,20 @@ var rule = {
     is_video: 'obj/tos',
     lazy: $js.toString(() => {
         input = {
-            parse: 1,
-            url: rule.parse_url + input,
+            parse: 1, url: rule.parse_url + input,
             js: "$('.player-btn').click()",
             parse_extra: '&is_pc=1&custom_regex=' + rule.is_video
         };
     }),
     double: true,
     推荐: '',
-    预处理: $js.toString(() => {
-        let xrequest = request;
-        (function() {
-            request = function(url, obj) {
-                function setCookie() {
-                    let {
-                        cookie
-                    } = reqCookie(HOST);
-                    rule.headers["cookie"] = cookie;
-                    return rule.headers;
-                }
-                let result = xrequest(url, obj);
-                if (result == "") {
-                    result = xrequest(url, {
-                        headers: setCookie()
-                    });
-                }
-                return result;
-            }
-        })()
-    }),
     一级: 'json:data;title;img;remark;url;desc',
     二级: $js.toString(() => {
         VOD = {};
         log(input);
         let ctid = input.match(/.*\/(\d+)/)[1];
         // log(ctid);
-
-        let detailUrl = 'https://www.mqtv.cc/libs/VodInfo.api.php?ctid=' + ctid;
+        let detailUrl = 'https://mqtv.cc/libs/VodInfo.api.php?ctid=' + ctid;
         log('detailUrl:' + detailUrl);
         let html = request(detailUrl);
         let json = JSON.parse(html);
