@@ -58,7 +58,6 @@
 {"key": "dr_蜥蜴影视[优]","name": "🍒蜥蜴影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/蜥蜴影视[优].js"},
 {"key": "dr_桃子影视[优]","name": "🍒桃子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/桃子影视[优].js"},
 {"key": "dr_片多多[优]","name": "🍒片多多[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/片多多[优].js"},
-{"key": "dr_rarbt[优]","name": "🍒rarbt[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/rarbt[优].js"},
 
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
@@ -304,7 +303,6 @@
 {"key": "dr_七七看片网","name": "🍊七七看片网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/七七看片网.js"},
 {"key": "dr_M1949电影","name": "🍊M1949电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/M1949电影.js"},
 {"key": "dr_LAN6影视","name": "🍊LAN6影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/LAN6影视.js"},
-{"key": "dr_BT影视","name": "🍊BT影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/BT影视.js"},
 {"key": "dr_98影院","name": "🍊98影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/98影院.js"},
 {"key": "dr_2345one","name": "🍊2345one[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/2345one.js"},
 
@@ -349,12 +347,14 @@
 //#js_磁力源类🍓
 //{"key": "dr_模板[磁]","name": "🍓模板[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/模板[磁].js"},
 #****************************************************************************************************************************************************************#
+{"key": "dr_rarbt[磁]","name": "🍓rarbt[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/rarbt[磁].js"},
 {"key": "dr_磁力熊[磁]","name": "🍓磁力熊[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/磁力熊[磁].js"},
 {"key": "dr_6V新版[磁]","name": "🍓6V新版[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"timeout": 60,"ext": "./js/磁力/6V新版[磁].js"},
 {"key": "dr_酷吧[磁]","name": "🍓酷吧[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"timeout": 60,"ext": "./js/磁力/酷吧[磁].js"},
 {"key": "dr_MP4电影[磁]","name": "🍓MP4电影[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"timeout": 60,"ext": "./js/磁力/MP4电影[磁].js"},
 {"key": "dr_4KHDR[磁]","name": "🍓4KHDR[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"timeout": 60,"ext": "./js/磁力/4KHDR[磁].js"},
 {"key": "dr_97tvs[磁]","name": "🍓高清MP4吧[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"timeout": 60,"ext": "./js/磁力/97tvs[磁].js"},
+{"key": "dr_BT影视[磁]","name": "🍓BT影视[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/BT影视[磁].js"},
 
 //#js_短剧类🥝
 //{"key": "dr_模板[短]","name": "🥝模板[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/模板[短].js"},
