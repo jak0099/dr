@@ -1,29 +1,68 @@
-muban.mxpro.二级.img = '.lazyload&&data-src';
-muban.mxpro.二级.desc = '.module-info-item:eq(4)&&Text;;;.module-info-item--span:eq(3)&&Text;.module-info-item--span:eq(1)&&Text';
 var rule = {
-    title:'歪片星球',
-    模板:'mxpro',
-    host:'https://waipian20.com',
-    url:'/show-fyclassfyfilter/',
-    filterable:1,//是否启用分类筛选,
-    filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-----fypage---{{fl.year}}',
-    filter: {
-        "dianying":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"动画","v":"动画"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"短片","v":"短片"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"泰国","v":"泰国"},{"n":"新加坡","v":"新加坡"},{"n":"马来西亚","v":"马来西亚"},{"n":"印度","v":"印度"},{"n":"英国","v":"英国"},{"n":"法国","v":"法国"},{"n":"加拿大","v":"加拿大"},{"n":"俄罗斯","v":"俄罗斯"},{"n":"澳大利亚","v":"澳大利亚"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":"time"},{"n":"最多播放","v":"hits"},{"n":"实时热门","v":"hits_day"},{"n":"近期热播","v":"hits_week"},{"n":"新片上线","v":"year"}]}],
-        "juji":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"历史","v":"历史"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"都市","v":"都市"},{"n":"情景","v":"情景"},{"n":"家庭","v":"家庭"},{"n":"短剧","v":"短剧"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"英国","v":"英国"},{"n":"澳大利亚","v":"澳大利亚"},{"n":"西班牙","v":"西班牙"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"新加坡","v":"新加坡"},{"n":"马来西亚","v":"马来西亚"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":"time"},{"n":"最多播放","v":"hits"},{"n":"实时热门","v":"hits_day"},{"n":"近期热播","v":"hits_week"},{"n":"新片上线","v":"year"}]}],
-        "zongyi":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"音乐","v":"音乐"},{"n":"歌舞","v":"歌舞"},{"n":"运动","v":"运动"},{"n":"真人秀","v":"真人秀"},{"n":"旅游","v":"旅游"},{"n":"美食","v":"美食"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":"time"},{"n":"最多播放","v":"hits"},{"n":"实时热门","v":"hits_day"},{"n":"近期热播","v":"hits_week"},{"n":"新片上线","v":"year"}]}],
-        "dongman":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"动画","v":"动画"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"战争","v":"战争"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":"time"},{"n":"最多播放","v":"hits"},{"n":"实时热门","v":"hits_day"},{"n":"近期热播","v":"hits_week"},{"n":"新片上线","v":"year"}]}],
-        "jilupian":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"传记","v":"传记"},{"n":"历史","v":"历史"},{"n":"纪录","v":"纪录"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":"time"},{"n":"最多播放","v":"hits"},{"n":"实时热门","v":"hits_day"},{"n":"近期热播","v":"hits_week"},{"n":"新片上线","v":"year"}]}]
-    },
-	filter_def:{
-		dianying:{by:'time'},
-		juji:{by:'time'},
-		zongyi:{by:'time'},
-		dongman:{by:'time'},
-		jilupian:{by:'time'}
-	},
-    searchUrl:'/search-**----------fypage---/',
-    class_parse: '.navbar-items li:gt(1):lt(8);a&&Text;a&&href;.*t/(.*?)/',
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);log(html);var url=html.url;if(html.encrypt=='1'){url=unescape(url).split('&')[0]}else if(html.encrypt=='2'){url=unescape(base64Decode(url).split('&')[0])}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    推荐:'*',
-    一级: 'a.module-poster-item.module-item;.module-poster-item-title&&Text;.lazyload&&data-src;.module-item-note&&Text;a&&href',
+author: '小可乐/2408/第一版',
+title: '歪片星球[资]',
+类型: '影视',
+host: 'https://waipian14.com',
+hostJs: '',
+headers: {'User-Agent': 'MOBILE_UA'},
+编码: 'utf-8',
+timeout: 5000,
+
+homeUrl: '/',
+url: '/show-fyclass-fyfilter',
+filter_url: '{{fl.area}}-{{fl.by}}-{{fl.class}}--{{fl.letter}}---fypage---{{fl.year}}',
+detailUrl: '',
+searchUrl: 'https://soupian.one/movie/**?page=fypage',
+searchable: 1,
+quickSearch: 1,
+filterable: 1,
+
+class_name: '电影&剧集&综艺&动漫&短剧&纪录&Netflix',
+class_url: 'dianying&juji&zongyi&dongman&duanju&jilupian&netflix',
+filter_def: {},
+
+play_parse: true,
+lazy: `js:
+let kcode = JSON.parse(request(input).match(/var player_.*?=(.*?)</)[1]);
+let kurl = unescape(kcode.url);
+kurl = kurl.split('&')[0];
+if (/\\.(m3u8|mp4)/.test(kurl)) {
+    input = { jx: 0, parse: 0, url: kurl }
+} else {
+    input = { jx: 0, parse: 1, url: input }
+}
+`,
+
+limit: 9,
+double: false,
+推荐: '*',
+一级: '.module-item:has(.module-item-note);img&&alt;img&&data-src;.module-item-note&&Text;a&&href',
+二级: {
+title: 'h1&&Text;.module-info-tag-link:eq(2)&&Text',
+img: '.module-info-poster&&img&&data-src',
+desc: '.module-info-item:eq(-1)&&Text;.module-info-tag-link:eq(0)&&Text;.module-info-tag-link:eq(1)&&Text;.module-info-item-content:eq(1)&&Text;.module-info-item-content:eq(0)&&Text',
+content: '.module-info-introduction-content&&Text',
+tabs: '.tab-item span',
+tab_text: 'body&&Text',
+lists: '.module-play-list:eq(#id)&&a',
+list_text: 'body&&Text',
+list_url: 'a&&href',
+},
+搜索: `js:
+VODS = [];
+let klists = pdfa(request(input),'.list-row-text:contains(歪片星球)');
+klists.forEach((it) => {
+    let kid = HOST + pdfh(it, 'h4&&a:eq(0)&&href').match(/com(.*?)\\?/)[1];
+    let kpic = pdfh(request(kid), '.module-info-poster&&img&&data-src');
+    VODS.push({
+        vod_name: pdfh(it, 'h4&&span&&Text'),
+        vod_pic: kpic,
+        vod_remarks: pdfh(it, 'p:eq(0)&&Text'),
+        vod_id: kid,
+        vod_content: ''
+    })
+})
+`,
+
+filter: 'H4sIAAAAAAAAA+2ZW08bRxTH3/0x9plKu6S5NG+535v7XVHlFjc1IW4VoK2DkAwON2PAQYDj1ARSMGCEwZQWgYntL+O9fYuuPWf+M06RgxAPFM2b/7+zOztnPD7nv+Mun9YS9IfCwdBz7fRTX5f2IhDWTms/tPnb27UmLeR/GfCkObRoRfs8/au/rdMDT7u0UBX3LbnRpSr2hNbdRBQXC4HYVNojPMYEYrGlSjHNY0zwmD24LsYkgdjiW3N7h8eYkMa0J3bEmFXBY1bvij31lmIkEIvGrN73PMYEYj0JKzLFY0xgLrE1u7jM58IE5pKIWxHkzgRio/3m2F88xgSeN/iuUhjiz2MC92UGRO4kEOsfd1NZHmMC8+wpue9LfJ5M4Hm5hUpplj+PCYw5Nu/M4btlAmPO5OyhAT4mEzz2baDjx7bg7xTkqvtZdxO2nP9VwC/tuHTejBf2uOMqWznzj6I5v+im+ilWh+qvcxdS1tZa3XWEPhtvLG9tl+rHYwgZl0Y9yDNmgsfcmayIkcAKJzNWeoWvMBOIbeTFfSQQm8qbsVlz+iMPQ+Op2RVrOuNkypUC3711CN/jSN4sLPDvkQkec4bXxQxIiNlNyrOblGPeVKzhsrfk+LlxjXUtv7GLSWsKiw+N8Usb3g3mYFbMvw7V7ZhwwP9K7Bgruekm/97jjmnWm78mVvso8WOCH5N5s+DNMjcEN2SuC65L3PgG3Pso8VOCn5L5ScFPyvyE4Cdkflzw4zIX+RpyvobI15DzNUS+hpyvIfI15HwNka8h56uLfHU5X13kq8v56iJfXc5XF/nqcr66yFeX89VFvt7Hun3TFujoCEg7x8wlrbWRPe6cMwTOgJwlchbkHJFzIOeJnAe5QOQCyEUiF0EuEbkEcpnIZZArRK6AXCVyFeQakWsg14lcB7lB5Iao2bxag9wkchPkFpFbILeJ3Aa5Q+QOyF0id0HuEbkHcp/IfZAHRB6APCTyEOQRkUcgj4k8BnlC5AmI/hXfpNVPdXvl+7BUYUbHzcLYf/aJKDye6Ah6l6KapSPmPK9jPwU72kXniObc5JIU+a7FH5aj1nhOjv4WCLyQ24BotLUi6E3Z96zJp7V2tgaPoo1TVu1grZobLZpbvdwgMCHWs89KrWE9awJjrm6aBb4xSUj2T+wJEkfb/u3X4jWyjQ3N15fMER8jU7bHPPud4sNA78VkNrKGB2BAlYFTBk4ZOGXglIHbzcC9/jn0PHxgFs6d2ahsJ9CgakJYh7gz+AHWoSbQQMoJz7jx7sEEUkvPVAoFezHC+xe0aH191tYWWl9NSK3PnZsRra8qjrZJ2K8R2NVcqOapmqdqnqp5qua5W/Ns8ZrnS3/oKB6A/F/+x2p4ALLPQw7lC754QKB8gfIFyhcoX6B8wa6+oNMfau08KFvQ6JzbjfQ7f/IpksB9E2lzlZ/Vk0BRTyWsnmFe1JnAfdmysxnj9zGB5w2M2BP8dZoEYg3O+O3RfGVnzlmKSGZERmjZDf5D8Lq7ncEBAhMYP/PBjMPKMCHFnPVlEasKrMNmnxNFc2MCsUTcXJ3mMSYwz/mRyg7/7kngvn/emdkyv48JsQ5vJMvFhLTdnI845WDi0DRaVbhV4T76hbs12Nb5S/Dg3ugqn2ad1TxREighDf7WtQvLZnGSlwIm1NtJ3dvJYSmM6g1EvYGoRqYamXaoGlmI2oLUx1SRVEVSFUlVJFWRrBVJX/e/EuhLTIo0AAA='
 }
