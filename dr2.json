@@ -305,6 +305,10 @@
 {"key": "dr_LAN6影视","name": "🍊LAN6影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/LAN6影视.js"},
 {"key": "dr_98影院","name": "🍊98影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/98影院.js"},
 {"key": "dr_2345one","name": "🍊2345one[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/2345one.js"},
+{"key": "dr_看片狂人","name": "🍊看片狂人[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/看片狂人.js"},
+{"key": "dr_白嫖者影视","name": "🍊白嫖者影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/白嫖者影视.js"},
+{"key": "dr_CNN影院","name": "🍊CNN影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/白嫖者影视.js"},
+{"key": "dr_飞飞影视","name": "🍊飞飞影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/飞飞影视.js"},
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
@@ -494,6 +498,18 @@
 //{"key": "dr_古飞漫画[画]","name": "🥬古风漫画[画][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/漫画/古风漫画[画].js"},
 //{"key": "dr_漫小肆[画]","name": "🥬漫小肆[画][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/漫画/漫小肆[画].js"},
 
+//#js_央视类🥭
+//{"key": "dr_模板[官]","name": "🥭模板[央][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/模板[央].js"},
+//#****************************************************************************************************************************************************************#
+{"key":"dr_央视合集[央]","name":"🥭央视合集[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视合集[央].js"},
+{"key":"dr_央视大全[央]","name":"🥭央视大全[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视大全[央].js"},
+{"key":"dr_央视4K1[央]","name":"🥭央视4K1[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视4K1[央].js"},
+{"key":"dr_央视4K2[央]","name":"🥭央视4K2[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视4K2[央].js"},
+{"key":"dr_央视综合[央]","name":"🥭央视综合[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视综合[央].js"},
+{"key":"dr_央视经济[央]","name":"🥭央视经济[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视经济[央].js"},
+{"key":"dr_央视新闻[央]","name":"🥭央视新闻[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视新闻[央].js"},
+{"key":"dr_央视少儿[央]","name":"🥭央视少儿[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视少儿[央].js"},
+
 //#js_广播类🌽
 //{"key": "dr_模板[广]","name": "🌽模板[广][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/广播/模板[广].js"},
 //#****************************************************************************************************************************************************************#
@@ -514,12 +530,12 @@
 {"key": "dr_童趣[儿]","name": "🍑童趣[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/少儿/童趣[儿].js"},
 {"key": "dr_贝乐虎[儿]","name": "🍑贝乐虎[儿][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "./js/少儿/贝乐虎[儿].js"},
 
-//#js_视频录像类🥭
-//{"key": "dr_模板[录]","name": "🥭模板[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/模板[录].js"},
+//#js_视频录像类🍌
+//{"key": "dr_模板[录]","name": "🍌模板[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/模板[录].js"},
 //#****************************************************************************************************************************************************************#
-{"key": "dr_网易公版影像","name": "🥭网易公版影像[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/网易公版影像.js"},
-{"key": "dr_酷6网","name": "🥭酷6网[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/酷6网.js"},
-{"key": "dr_开眼视频","name": "🥭开眼视频[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/开眼视频.js"},
+{"key": "dr_网易公版影像","name": "🍌网易公版影像[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/网易公版影像.js"},
+{"key": "dr_酷6网","name": "🍌酷6网[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/酷6网.js"},
+{"key": "dr_开眼视频","name": "🍌开眼视频[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/开眼视频.js"},
 
 //#js_视频直播类🥦
 //{"key": "dr_模板[直]","name": "🥦模板[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/模板[直].js"},
@@ -585,8 +601,10 @@
 {"key":"csp_BtSow","name":"🧬BTSow┃磁力","type":3,"api":"csp_BtSow","searchable":1,"changeable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$null$$$1"},
 {"key":"csp_MeijuTT","name":"🧬美剧天堂┃磁力","type":3,"api":"csp_MeijuTT","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_Clg","name":"🧬磁力狗┃磁力","type":3,"api":"csp_Clg","searchable":1,"quickSearch":1,"changeable":1,"filterable":0,"timeout":60,"ext":"./pg/tokenm.json$$$https://clg.clgvip1.xyz/$$$1","style":{"type":"rect","ratio":1.5}},
+{"key":"csp_Xb6v","name":"🧬新6V┃磁力","type":3,"api":"csp_Xb6v","searchable":1,"quickSearch":1,"changeable":1,"timeout":60,"ext":"./pg/tokenm.json$$$http://www.xb6v.com$$$cfg$$$1"},
 
 //#PG_云盘☁
+{"key":"csp_Jianpian","name":"☁荐片弹幕版┃云","type":3,"api":"csp_Jianpian","searchable":1,"quickSearch":1,"changeable":1,"ext":"./pg/jianpian.json$$$1"},
 {"key":"yyds","name":"☁多多影音┃云","type":3,"api":"csp_Wobg","quickSearch":1, "changeable":1, "filterable":1, "timeout":60, "ext":"./lib/tokenm.json$$$https://tv.yydsys.cc/$$$proxy$$$1$$$./lib/wogg.json"},
 {"key":"美剧迷","name":"☁美剧迷┃云","type":3,"api":"csp_Meijumi","quickSearch":1,"changeable":1,"filterable":1,"timeout":120,"ext":"./pg/tokenm.json$$$https://www.meijumi.net/$$$proxy$$$1"},
 {"key":"Libvio","name":"☁LIBVIO┃云","type":3,"api":"csp_Libvio","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.libvio.fun/$$$null"},
@@ -607,6 +625,10 @@
 {"key":"Panta","name":"☁盘Ta┃云","type":3,"api":"csp_Panta","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.91panta.cn/$$$null$$$1","style":{"type":"list","ratio":1.1}},
 {"key": "4KHDR","name": "☁4KHDR┃云","type": 3,"api": "csp_FourKHDR","quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60,"ext": "./pg/tokenm.json$$$./pg/4khdr.txt$$$1","style": {"type": "list","ratio": 1.1}},
 {"key":"欧乐影院","name":"☁欧乐影院┃云","type":3,"api":"csp_Olevod", "quickSearch":1, "changeable":1, "filterable":1, "timeout":60,"ext":"./lib/tokenm.json$$$null$$$proxy$$$1"},
+{"key":"csp_Wobg_至臻视觉","name":"☁至臻视觉┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://mihdr.top/$$$cfg$$$1$$$./pg/wogg.json$$$XIAOMI"},
+{"key":"csp_Wobg_奥秘影视","name":"☁奥秘影视┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://vip.omii.top/$$$cfg$$$1$$$./pg/wogg.json"},
+{"key":"csp_Wobg_云星网盘","name":"☁云星网盘┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://4k.4u4.cn$$$cfg$$$1$$$./pg/wogg.json"},
+{"key":"csp_Wogg_六趣网盘","name":"☁六趣网盘┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://cms.715d.com/$$$cfg$$$1$$$./pg/wogg.json"},
 	
 //#PG_云盘搜索
 {"key":"YingSo","name":"📡影搜┃云搜","type":3,"api":"csp_YingSo","timeout":60,"ext":"./pg/tokenm.json"},
@@ -623,6 +645,7 @@
 {"key":"Qianfan","name":"📡千帆┃云搜","type":3,"api":"csp_Qianfan","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://pan.qianfan.app$$$null$$$./pg/qianfan.txt$$$1"},
 {"key":"YunSo","name":"📡小云搜索┃云搜","type":3,"api":"csp_YunSo","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://www.yunso.net$$$null$$$1","style":{"type":"list","ratio":1.1}},
 {"key":"YunPanOne","name":"📡云盘One┃云搜","type":3,"api":"csp_YunPanOne","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$null$$$proxy$$$1"},
+{"key":"csp_TGYunPan","name":"☁TG搜索┃云搜","type":3,"api":"csp_TGYunPan","timeout":60,"ext":"./pg/tokenm.json$$$http://144.126.217.226:8000/$$$wpzyhj,hao115,Aliyundrive_Share_Channel,kuakeyun$$$cfg$$$1"},
 
 //##fan_sp源
 {"key":"玩偶","name":"👽玩偶哥哥┃4K弹幕","type":3,"api":"csp_WoGG","searchable":1,"quickSearch":1,"changeable":0,"ext":{"Cloud-drive":"tvfan/Cloud-drive.txt","from":"4k|auto","siteUrl":"https://www.wogg.link/","danMu":"弹"},"jar": "./jar/fan.txt?md5=80004bdf8ea71093c980aa89a7d4e3d9"},
@@ -754,6 +777,8 @@
 //#嗅探解析
 {"exclude":[".m3u8"],"hosts":["bytetos.com","byteimg.com","bytednsdoc.com","pstatp.com"],"name":"bdys","regex":["/tos-cn"]},
 {"exclude":[".m3u8"],"hosts":["bdys10.com"],"name":"bdys10","regex":["/obj/"]},
+{"name":"喵次元139嗅探","hosts":["mcloud.139.com"],"regex":["mcloud.139.com"]},
+{"name":"348资源嗅探","hosts":["aliyundrive.net"],"regex":["aliyundrive.net"]},
 {"name":"阳途","hosts":["jx.yangtu.top"],"regex":["download4.caiyun.feixin.10086.cn","/servlet/"]},
 {"name":"农民点击","hosts":["api.cnmcom.com"],"script":["document.querySelector('.line').click()"]},		
 {"name":"火山嗅探","hosts":["huoshan.com"],"regex":["item_id="]},
