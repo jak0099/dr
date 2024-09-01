@@ -1,9 +1,64 @@
 [
   {
-    "name": "豪华资源",
-    "url": "https://hhzyapi.com",
+    "name": "360资源",
+    "url": "https://360zy.com",
     "parse_url": "",
     "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
+  },
+  {
+    "name": "暴风资源",
+    "url": "https://bfzyapi.com",
+    "parse_url": "",
+    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
+  },
+  {
+    "name": "量子资源",
+    "url": "https://cj.lziapi.com",
+    "parse_url": "",
+    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
+  },
+    {
+    "name": "非凡资源",
+    "url": "http://cj.ffzyapi.com",
+    "parse_url": "",
+    "cate_exclude": ""
+  },
+  {
+    "name": "黑木耳资源",
+    "url": "https://www.heimuer.tv",
+    "parse_url": "",
+    "cate_exclude": "^电影$|^电视剧$|^综艺$|^动漫$"
+  },
+  {
+    "name": "海外资源",
+    "url": "https://hw8.live",
+    "parse_url": "",
+    "cate_exclude": ""
+  },
+  {
+    "name": "华为资源",
+    "url": "http://nikanba.live",
+    "parse_url": "",
+    "cate_exclude": ""
+  },
+  {
+    "name": "优质资源",
+    "url": "https://api.1080zyku.com",
+    "parse_url": "",
+    "cate_exclude": "",
+    "api": "/inc/api_mac10.php"
+  },
+  {
+    "name": "快看资源",
+    "url": "https://kuaikan-api.com/",
+    "parse_url": "",
+    "cate_exclude": ""
+  },
+  {
+    "name": "极速资源",
+    "url": "https://jszyapi.com/",
+    "parse_url": "",
+    "cate_exclude": ""
   },
   {
     "name": "速播资源",
@@ -18,6 +73,18 @@
     "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
   },
   {
+    "name": "豪华资源",
+    "url": "https://hhzyapi.com",
+    "parse_url": "",
+    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
+  },
+  {
+    "name": "虎牙资源",
+    "url": "https://www.huyaapi.com/",
+    "parse_url": "",
+    "cate_exclude": ""
+  },
+  {
     "name": "新浪资源",
     "url": "https://api.xinlangapi.com",
     "parse_url": "",
@@ -25,16 +92,18 @@
     "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
   },
   {
-    "name": "飞刀资源",
-    "url": "http://www.feidaozy.com",
+    "name": "超级资源",
+    "url": "http://cjvip.free.hr",
     "parse_url": "",
-    "cate_exclude": "^电影$|^电视剧$|^综艺$|^动漫$"
+    "cate_exclude": "",
+    "api": ""
   },
   {
-    "name": "黑木耳资源",
-    "url": "https://www.heimuer.tv",
+    "name": "追风资源",
+    "url": "http://www.zfsp.cc",
     "parse_url": "",
-    "cate_exclude": "^电影$|^电视剧$|^综艺$|^动漫$"
+    "cate_exclude": "",
+    "api": ""
   },
   {
     "name": "iku喵",
@@ -43,23 +112,10 @@
     "cate_exclude": ""
   },
   {
-    "name": "暴风资源",
-    "url": "https://bfzyapi.com",
-    "parse_url": "",
-    "searchable": 0,
-    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
-  },
-  {
-    "name": "量子资源",
-    "url": "https://cj.lziapi.com",
-    "parse_url": "",
-    "searchable": 0,
-    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
-  },
-  {
-    "name": "非凡资源",
-    "url": "http://cj.ffzyapi.com",
-    "parse_url": "",
-    "cate_exclude": "电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯"
+    "name": "乐视资源",
+    "url": "https://leshiapi.com",
+    "parse_url": "https://leshivideoplayurl.com/?url=",
+    "cate_exclude": "",
+    "api": "/api.php/provide/vod/at/json/"
   }
 ]
