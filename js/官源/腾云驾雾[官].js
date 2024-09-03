@@ -16,19 +16,49 @@ var rule = {
     // filter: 'H4sIAAAAAAAAA+2UzUrDQBCA32XOEZLUJrGvIj0saaDBNisxBkIJCG3Fi4oepIg3EQoieqiH+vM23Zq+hRuaZLZ4ce9z2/lmd2d2+NgR+H0e+gF0DkdwFGTQgRMeJ2BAxIaSwvrqVnxcyzhlg9PttqjED2c/45cSy8DyIDcavr57q/lBw8XTd/E6qbnT8M3zTFyc72RtC/Jumd+2c8wy7KZ4nxSL5Z9uxHS+Gc+r83sWVp1eVttl4Dluk1h93YubWZVwduplAYuxoFguVp+P/y5om/Z+/YxyqfAW8pbKbeS2yi3kO/ebyE2Fy1nXXBm7DDzknspd5K7KHeSOytvI2+XAugYkKWlD2mhrM+RpSB8OmaNvTsriMEgycofc0XbHZ3HCeUTukDv67vTDQY/MIXO0zelxn5M4JI6mOPkvgswSEpgPAAA=',
     filter: 'H4sIAAAAAAAAA+1Y3U8aWRT/X+ZZEwYEtI9207Rp0r40+9CNDxM7G8laaZCamsYEinyoDYp1sa1I/aJSK4ita3Eo9J+Ze2fmv9g7yOWc22u3xJX0RZ7gd+ee7/M7h3mujE+EQ+O6cuOP58pf+qxyQ5kOR6LKgDKlPWaoQrOrxFhmv2e0yafnj025cCFmJSouzH4E/crcQBen+VoHH/Z1cVJq2kfzHFeVuTH35FxhaFbXIqCRnJ2YjV1JI0mWnUS5I2FQ7Ur2erxDHbT9FeE+wH0Y9wLuxbgKuCDfA7gH4epIF2dfET4M+DDGg4AHMR4APIBxP+B+N2JjA0p0pi+ZCo5cnCnXHpSpP3Ut+jSig07ruEGKSz3nysoc00SSywaVy3v2LochI/TFoZXPdWBIoJNokvqLDgz5JtVTYnA/wU2SL5CF/Q4M0TW/bpFSmnsPKivvzdYWL1MQktqg69xACBXdTNi1Je4OlIaz+YHkmhxH7mdrpFrkOPJoc5W+LnEcXLJeZsFIFXyy9nPkrIFSxPGPRboY43gQ6Z1Hzw9fN98lm+9xeCb0S5kyOvvkfzTf4pHVPJD7ZvGYfFuXmk/oG9XDPqguExV7O4bOAurFTdu+B9kR2989+1FNsyMVEUF8hcby+MyDzC9ba8I9FOLMa9NYwPogwwJdtO9BVTDHRTtRpbKG/M5OkCmwR/sMcVw2RZY/YZlwZsfi1kIa34NysEvfIJsIrtZI82/xltsfqFiuG7vnxp7RIiE9OtuX1naDdM23l0rLuBaJhsNTv5JxtYiuoWwVauSl0XO2SCrJbkjrDl0v0cKhvO4c7lutrNTpJHlqNjj5DV3hOMBLAeJozMNQYCK1IetSq86bD5LRjHlpng8VlIGVonWYkwMSX2KjQVrGnMoamPKDLQfVqDh5gjjcpF6Xtyi6tU02uhMAyS+8Mw0DbUv8+WzZWknJW5rI7CiSjWWSrP93Pt0hd00OlyOHidDko/78GUJbAqaG7+brtP4M6Yvtk8zH3pmh9JlUeNugnlz7ArC3T0Tkw51xERGJFfqTAnVa87T6T8+WeAZ95FNccnxoMAAwWBIcHAEY7FY9DDUbJbO+KK+zybJg1TmjtCvmUXg83J+CEWk5FI1ooUkdxyltkFdxmj/rOU6jozelIJGNpru1FmpAQ+D37dH7PE4qsvPe7btyftuE5ezknPgriXTvPPidy/H7ELlmd6yTHeEO0wPqH/52C2DoHzvZsqtHdvqAZE5lBiYrGbNZoAWDFnmPBS6uQv/VzT1mjDV/KsWPjV5n9113mwZ8r2V+fSuVIJsQNJ+WjRZmAX5/YBpLUiLYrIVJBvxon+yw2SEPGpYDmLX4dUDzgG5npEyKbwPQnrGepDAP2/09NvcvaIIuCAgUAAA=',
     headers: {
-        'User-Agent': 'PC_UA'
+        'User-Agent': 'okhttp/4.12.0'
     },
     timeout: 5000,
     // class_parse:'.site_channel a;a&&Text;a&&href;channel/(.*)',
     cate_exclude: '会员|游戏|全部',
     // class_name: '精选&电视剧&电影&综艺&动漫&少儿&纪录片',
     // class_url: 'choice&tv&movie&variety&cartoon&child&doco',
-    class_name: '精选&电影&电视剧&综艺&动漫&少儿&纪录片',
-    class_url: 'choice&movie&tv&variety&cartoon&child&doco',
+    class_name: '摸鱼精选&新电影&新电视剧&新动漫&新综艺&少儿动画&新纪录片',
+    class_url: 'choice&movie&tv&cartoon&variety&child&doco',
     limit: 20,
+    play_parse:true,
     // play_parse:true,
-    // 手动调用解析请求json的url,此lazy不方便
-    lazy: 'js:input="https://cache.json.icu/home/api?type=ys&uid=292796&key=fnoryABDEFJNPQV269&url="+input.split("?")[0];log(input);let html=JSON.parse(request(input));log(html);input=html.url||input',
+ lazy: $js.toString(() => {
+    let d = [];
+    
+    // 发起请求并解析返回的 JSON 数据
+    let response = JSON.parse(request("http://103.117.123.51:2121/zhuimi666.php?url=" + input));
+    
+    // 获取所有字段名
+    let keys = Object.keys(response);
+    
+    // 查找以 'url' 开头的字段名
+    let urlKey = keys.find(key => key.startsWith('url'));
+    
+    // 提取对应的值
+    let url = urlKey ? response[urlKey] : null;
+    
+    if (url) {
+        // 处理 url，或将其用于 input
+        input = {
+            url: url,
+            parse: 0,
+            header: rule.headers
+        };
+    } else {
+        // 处理没有找到 url 字段的情况
+        console.error("没有找到以 'url' 开头的字段");
+    }
+    
+    setResult(d);
+}),
+   
+
     推荐: '.list_item;img&&alt;img&&src;a&&Text;a&&data-float',
     一级: '.list_item;img&&alt;img&&src;a&&Text;a&&data-float',
     二级: $js.toString(() => {
@@ -116,7 +146,7 @@ var rule = {
         let zp = d.filter(function (it) {
             return !(it.type && it.type !== "正片")
         });
-        VOD.vod_play_from = yg.length < 1 ? "qq" : "qq$$$qq 预告及花絮";
+        VOD.vod_play_from = yg.length < 1 ? "关注【我不是摸鱼儿】防失联" : "关注【我不是摸鱼儿】防失联$$$万色山川 预告及花絮";
         VOD.vod_play_url = yg.length < 1 ? d.map(function (it) {
             return it.title + "$" + it.url
         }).join("#") : [zp, yg].map(function (it) {

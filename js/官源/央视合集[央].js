@@ -7,9 +7,8 @@ var rule = {
     searchable:0,
     quickSearch:0,
     
-   class_name: '少儿&动画&综艺&体育&健康&生活&科教&经济&农业&法治&军事',
-class_url:'少儿&动画&综艺&体育&健康&生活&科教&经济&农业&法治&军事',
-
+class_name: '影视&New闻&体育&综艺&健康&生活&科教&法治&军事&少儿&动画&音乐&戏曲',
+	class_url:'电影电视剧&新闻&体育&综艺&健康&生活&科教&法治&军事&少儿&动画&音乐&戏曲',
     filterable: 1,  
     headers:{
         'User-Agent':'PC_UA'
