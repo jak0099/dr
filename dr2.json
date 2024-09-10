@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=2281de95361c3a25f5772b5a9e50e863", 
+"spider":"./jar/pg.jar?md5=3fa63370280e33434501573b01e5ce43", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -318,6 +318,8 @@
 {"key": "dr_韩迷TV","name": "🍊韩迷TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/韩迷TV.js"},
 {"key": "dr_97电影网","name": "🍊97电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/97电影网.js"},
 {"key": "dr_剧狗狗","name": "🍊剧狗狗[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧狗狗.js"},
+{"key": "dr_天天美剧","name": "🍊天天美剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/天天美剧.js"},
+{"key": "dr_瓜子影视","name": "🍊瓜子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/瓜子影视.js"},
 
 //{"key": "dr_模板[自动]","name": "🥑模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[自动].js"},
 //#****************************************************************************************************************************************************************#
@@ -429,6 +431,10 @@
 {"key": "dr_OmoFun[漫]","name": "🍇OmoFun[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/OmoFun[漫].js"},
 {"key": "dr_咕咕番[漫]","name": "🍇咕咕番[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/咕咕番[漫].js"},
 {"key": "dr_萌番[漫]","name": "🍇萌番[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/萌番[漫].js"},
+{"key": "dr_路漫漫[漫]","name": "🍇路漫漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/路漫漫[漫].js"},
+{"key": "dr_PPXDM[漫]","name": "🍇PPXDM[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/PPXDM[漫].js"},
+{"key": "dr_樱之空[漫]","name": "🍇樱之空[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/樱之空[漫].js"},
+{"key": "dr_风车动漫[漫]","name": "🍇风车动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/风车动漫[漫].js"},
 
 
 //#js_采集资源类🥒
@@ -818,7 +824,9 @@
 {"name":"非凡","hosts":["vip.ffzy","hd.ffzy","super.ffzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6\\.400000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6\\.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1171(057).*?\\.ts","#EXTINF.*?\\s+.*?6d7b(077).*?\\.ts","#EXTINF.*?\\s+.*?6718a(403).*?\\.ts","17.99","14.45"]},
 {"name":"索尼","hosts":["suonizy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:1\\.000000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?p1ayer.*?\\.ts","#EXTINF.*?\\s+.*?\\/video\\/original.*?\\.ts"]},
 {"name":"快看","hosts":["kuaikan"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2\\.4,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:1\\.467,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
-{"name":"leshiyun","hosts":["leshiyuncdn"],"regex":["15.92"]},
+{"name":"卧龙","hosts":["cdn.wl*"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:.*?,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"ikun","hosts":["bfikuncdn"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:.*?,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"qihubf","hosts":["qihubf"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=AES-128","#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"1080zyk","hosts":["high24-playback","high20-playback"],"regex":["16.63"]},
 {"name":"555DM","hosts":["cqxfjz"],"regex":["10.56"]},
 {"name":"海外看","hosts":["haiwaikan"],"regex":["10.0099","10.3333","16.0599","8.1748","10.85"]},
