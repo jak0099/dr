@@ -435,6 +435,9 @@
 {"key": "dr_PPXDM[漫]","name": "🍇PPXDM[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/PPXDM[漫].js"},
 {"key": "dr_樱之空[漫]","name": "🍇樱之空[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/樱之空[漫].js"},
 {"key": "dr_风车动漫[漫]","name": "🍇风车动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/风车动漫[漫].js"},
+{"key": "dr_56动漫[漫]","name": "🍇56动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/56动漫[漫].js"},
+{"key": "dr_动画片大全[漫]","name": "🍇动画片大全[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/动画片大全[漫].js"},
+{"key": "dr_好看动漫[漫]","name": "🍇好看动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/好看动漫[漫].js"},
 
 
 //#js_采集资源类🥒
@@ -840,8 +843,9 @@
 
 	
 //#嗅探解析
-{"exclude":[".m3u8"],"hosts":["bytetos.com","byteimg.com","bytednsdoc.com","pstatp.com"],"name":"bdys","regex":["/tos-cn"]},
-{"exclude":[".m3u8"],"hosts":["bdys10.com"],"name":"bdys10","regex":["/obj/"]},
+{"name": "czzy","hosts": ["10086.cn"],"regex": ["/storageWeb/servlet/downloadServlet"]},
+{"name": "bdys","hosts": ["bytetos.com","byteimg.com","bytednsdoc.com","pstatp.com"],"regex": ["/tos-cn"],"exclude": [".m3u8"]},
+{"name": "bdys10","hosts": ["bdys10.com"],"regex": ["/obj/"],"exclude": [".m3u8"]},
 {"name":"喵次元139嗅探","hosts":["mcloud.139.com"],"regex":["mcloud.139.com"]},
 {"name":"348资源嗅探","hosts":["aliyundrive.net"],"regex":["aliyundrive.net"]},
 {"name":"阳途","hosts":["jx.yangtu.top"],"regex":["download4.caiyun.feixin.10086.cn","/servlet/"]},
