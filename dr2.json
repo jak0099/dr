@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=2f5377200fe042448fb91855ab502527", 
+"spider":"./jar/pg.jar?md5=d0d29152ec97765c3ba795093a7ed6f7", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -662,7 +662,7 @@
 {"key":"csp_Wobg_奥秘影视","name":"☁奥秘影视┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://vip.omii.top/$$$cfg$$$1$$$./pg/wogg.json"},
 {"key":"csp_Wobg_云星网盘","name":"☁云星网盘┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://4k.4u4.cn$$$cfg$$$1$$$./pg/wogg.json"},
 {"key":"csp_Wogg_六趣网盘","name":"☁六趣网盘┃云","type":3,"api":"csp_Wogg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://cms.715d.com/$$$cfg$$$1$$$./pg/wogg.json"},
-	
+{"key":"csp_Wobg_欧歌分享","name":"☁欧歌分享┃云","type":3,"api":"csp_Wobg","quickSearch":1,"changeable":1,"filterable":1,"timeout":60,"ext":"./pg/tokenm.json$$$https://woog.nxog.top/$$$cfg$$$1$$$./pg/wogg.json"},	
 //#PG_云盘搜索
 {"key":"YingSo","name":"📡影搜┃云搜","type":3,"api":"csp_YingSo","timeout":60,"ext":"./pg/tokenm.json"},
 {"key":"混合盘","name":"📡混合盘┃云搜","type":3,"api":"csp_HunHePan","timeout":60,"ext":"./pg/tokenm.json","style":{"type":"list","ratio":1.1}},
