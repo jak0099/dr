@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=d0d29152ec97765c3ba795093a7ed6f7", 
+"spider":"./jar/pg.jar?md5=a2caecf3cb7c9cdee3106033668024aa", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -447,6 +447,15 @@
 {"key": "dr_56动漫[漫]","name": "🍇56动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/56动漫[漫].js"},
 {"key": "dr_动画片大全[漫]","name": "🍇动画片大全[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/动画片大全[漫].js"},
 {"key": "dr_好看动漫[漫]","name": "🍇好看动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/好看动漫[漫].js"},
+
+//#js_弹幕类🍄
+//{"key": "dr_模板[弹]","name": "🍄模板[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/模板[弹].js"},
+//#****************************************************************************************************************************************************************#
+{"key": "dr_星河弹幕[弹]","name": "🍄星河弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/星河弹幕[弹].js"},
+{"key": "dr_悠悠弹幕[弹]","name": "🍄悠悠弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/悠悠弹幕[弹].js"},
+{"key": "dr_巨人弹幕[弹]","name": "🍄巨人弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/巨人弹幕[弹].js"},
+{"key": "dr_小虎斑弹幕[弹]","name": "🍄小虎斑弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/小虎斑弹幕[弹].js"},
+{"key": "dr_小熊弹幕[弹]","name": "🍄小熊弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/小熊弹幕[弹].js"},
 
 
 //#js_采集资源类🥒
