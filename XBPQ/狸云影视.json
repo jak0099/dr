@@ -1,0 +1,10 @@
+{
+    "搜索url": "https://www.lysvc.cc/?cat=&s={wd}",
+    "数组": "class=\"post-item&&class=\"entry-title&&</article> ",
+    "图片": "data-bg=\"&&\">",
+    "播放链接": "<td><a href=\"&&\">[包含:magnet]",
+    "播放标题": ">&&</a>",
+    "线路标题": "weight: bold;\">&&</td>",
+    "分类": "蓝光-4k-电影$蓝光-4k-电影#精选剧集$精选剧集",
+    "分类url": "https://www.lysvc.cc/archives/category/%e5%bd%b1%e8%a7%86%e8%b5%84%e6%ba%90/{cateId}/page/{catePg}"
+}

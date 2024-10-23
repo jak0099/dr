@@ -1,0 +1,9 @@
+{
+    "站名": "磁力追剧",
+    "分类": "电视剧$13#动作片$6#科幻片$7#爱情片$8#喜剧片$9#恐怖片$10#战争片$11#剧情片$12",
+    "搜索url": "https://www.zmp4.com/vodsearch.html?wd={wd}",
+    "播放数组": "class=\"panel down-list thunder1&&</ul",
+    "线路数组": "class=\"stui-pannel__head active&&</div",
+    "线路标题": "class=\"title titlego\">&&</h3",
+    "分类url": "https://www.zmp4.com/show/{cateId}/page/{catePg}/year/{year}.html;;a"
+}
