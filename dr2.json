@@ -1,6 +1,6 @@
 {
 //##jar全局爬虫文件
-"spider":"./jar/pg.jar?md5=f156f848349dbbff558ff68ce708fd03", 
+"spider":"./jar/pg.jar?md5=da99aeeee03bc57c00e8f5a944fce397", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿付费商用👈💮",
@@ -456,6 +456,7 @@
 {"key": "dr_巨人弹幕[弹]","name": "🍄巨人弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/巨人弹幕[弹].js"},
 {"key": "dr_小虎斑弹幕[弹]","name": "🍄小虎斑弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/小虎斑弹幕[弹].js"},
 {"key": "dr_小熊弹幕[弹]","name": "🍄小熊弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/小熊弹幕[弹].js"},
+{"key": "dr_完美弹幕[弹]","name": "🍄完美弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/完美弹幕[弹].js"},
 
 
 //#js_采集资源类🥒
