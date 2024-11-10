@@ -1,5 +1,5 @@
 var rule = {
-    title: '云盘资源网[盘]',
+    title: '云盘资源网',
     host: 'https://res.yunpan.win',
     hostJs: '',
     headers: {'User-Agent': 'MOBILE_UA'},
@@ -22,19 +22,7 @@ var rule = {
     isVideo: '',
     play_parse: true,
     parse_url: '',
-    lazy: `
-if (/(pan.quark.cn|www.aliyundrive.com|www.alipan.com)/.test(input)){
-let type="ali";
-if (input.includes("pan.quark.cn")){
-type="quark";
-} else if (input.includes("www.aliyundrive.com") || input.includes("www.alipan.com")){
-type="ali";
-}
-let confirm="";
-//let confirm="&confirm=0";
-input = getProxyUrl().replace('js',type)+'&type=push'+confirm+'&url='+encodeURIComponent(input);
-}`,
-
+    
     limit: 9,
     double: false,
 //列表;(true双层列表);标题;图片;描述;链接;详情(可不写)
@@ -54,6 +42,7 @@ input = getProxyUrl().replace('js',type)+'&type=push'+confirm+'&url='+encodeURIC
         "tabs": "js:TABS = ['阿里网盘']",
 //线路标题
         "tab_text": "",
+        
 //播放数组 选集列表
 // "lists": ".card-footer:eq(#id)&&.float-end",
         lists: $js.toString(() => {
@@ -62,7 +51,7 @@ input = getProxyUrl().replace('js',type)+'&type=push'+confirm+'&url='+encodeURIC
             let lists1 = pdfa(html, '.card-footer&&.float-end').map(it => {
                 let _tt = pdfh(it, 'a&&Text');
                 let _uu = pdfh(it, 'a&&onclick').match(/open\('(.*?)'/)[1];
-                return _tt + '$' + _uu
+                return _tt + '$' +  'push://' + _uu
             });
             LISTS.push(lists1);
         }),

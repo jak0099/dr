@@ -10,6 +10,8 @@ var rule = {
     headers: {
         'User-Agent': 'MOBILE_UA'
     },
+    hikerListCol: "avatar",
+    hikerClassListCol: "avatar",
     timeout: 5000,
     play_parse: false,
     lazy: '',

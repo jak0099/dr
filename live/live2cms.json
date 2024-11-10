@@ -1,37 +1,10 @@
 [
-  {
-    "name": "GitHub-TXT",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.txt",
-    "img": "http://www.weibomn.com/uploadfile/image/20240622/5bf3ad336af04dc36b49ecd4a909882c.jpg"
-  },
-  {
-    "name": "GitHub-M3U",
-    "url": "https://ghproxy.net/https://raw.githubusercontent.com/ssili126/tv/main/itvlist.m3u",
-    "img": "http://www.weibomn.com/uploadfile/image/20240622/5bf3ad336af04dc36b49ecd4a909882c.jpg"
-  },
-  {
-    "name": "CNTV",
-    "url": "./live_cntv.txt",
-    "img": "../img/tb1.png"
-  },
-  {
-    "name": "范冰冰-V6",
-    "url": "https://live.fanmingming.com/tv/m3u/ipv6.m3u",
-    "img": "https://bkimg.cdn.bcebos.com/pic/a044ad345982b2b7d0a2e28059e3dcef76094b362d6a"
-  },
-  {
-    "name": "1905",
-    "url": "./live_1905.txt",
-    "img": "https://image11.m1905.cn/uploadfile/2022/0510/thumb_1_285_100_20220510030520666149.jpg"
-  },
-  {
-    "name": "测试1(随时失效)",
-    "url": "https://gitee.com/svcd2008/tv/raw/master/430.txt",
-    "img": "../img/lives.jpg"
-  },
-  {
-    "name": "测试2(随时失效)",
-    "url": "https://gitee.com/flying-snow-wu/tv/raw/main/itvlist.txt",
-    "img": ""
-  }
+{"name":"雷蒙影视宣传片","url":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/EXT/LIVE/ctvpv.txt","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER1.png"},
+{"name":"电视直播","url":"https://cors.isteed.cc/https://raw.githubusercontent.com/lem85930/LiteTV/main/live.m3u","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"},
+{"name":"搜集","url":"http://tv.850930.xyz/gather.m3u","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER2.png"},
+{"name":"YouTube直播","url":"https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/EXT/JS/YTTV.txt","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER1.png"},
+{"name":"YouTube音乐","url":"http://yt.850930.xyz","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER1.png"},
+{"name":"YouTube榜单","url":"https://ytp.850930.xyz/playlist.txt","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER1.png"},
+{"name":"YouTube列表","url":"https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/EXT/LIVE/ytplaylist.txt","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER1.png"},
+{"name":"4GTV","url":"http://pixman.digimon.us.kg/4gtv.m3u","img":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/N3RD/master/JN/N3RD/W/POSTER3.png"}
 ]

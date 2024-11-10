@@ -1,1 +1,97 @@
-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
+var rule = {
+    title:'央视少儿[漫]',
+    host:'https://api.cntv.cn',
+    homeUrl: '/lanmu/columnSearch?&fl=&fc=&cid=&p=1&n=500&serviceId=tvcctv&t=json',
+  //  url:'/list/getVideoAlbumList?fyfilter&area=&letter=&n=24&serviceId=tvcctv&t=json',
+  url: '/NewVideo/getVideoListByColumn?id=fyclass&n=10&sort=desc&p=fypage&mode=0&serviceId=tvcctv',
+    searchUrl:'',
+    searchable:0,
+    quickSearch:0,
+    
+class_name: '周末动画片&快乐体验&小小智慧树&智力快车&音乐快递&英雄出少年&快乐大巴&动漫世界&新闻袋袋裤&大风车&七巧板&大手牵小手&智慧树&动感特区&动画大放映&看我 72 变&快乐童行&风车剧场',
+class_url:'TOPC1451559836238828&TOPC1451559479171411&TOPC1451559205464876&TOPC1451559756374759&TOPC1451559666055645&TOPC1451559695702690&TOPC1451559161446811&TOPC1451559448233349&TOPC1451559603261584&TOPC1451558929123462&TOPC1451559569040502&TOPC1451558967135492&TOPC1451447359806385&TOPC1451559378830189&TOPC1451559025546574&TOPC1451559131256781&TOPC1628144739712839&TOPC1573528152700717',
+
+    filterable: 1,  
+    headers:{
+        'User-Agent':'PC_UA'
+    },
+    timeout:10000,
+    play_parse:true,
+    
+    limit:6,
+    double:false,
+/*
+    推荐: $js.toString(() => {
+        var d = [];
+        var list = JSON.parse(request(input)).response.docs;
+
+        list.forEach(it => {
+            // 一级标题
+            let title1 = it.column_name;
+            // 一级描述
+            let desc1 = it.channel_name;
+            // 一级图片URL
+            let picUrl1 = it.column_logo;
+            // 一级URL（id 地区 类型 标题 演员 年份 频道 简介 图片 更新至）
+            let url1 = it.lastVIDE.videoSharedCode + '|' + '' + '|' + it.column_firstclass + '|' + it.column_name + '|' + '' + '|' + it.column_playdate + '|' + it.channel_name + '|' + it.column_brief + '|' + it.column_logo + '|' + '' + '|' + it.lastVIDE.videoTitle;
+
+            d.push({
+                desc : desc1,
+                title : title1,
+                pic_url : picUrl1,
+                url : url1
+            })
+        })
+        setResult(d);
+    }),
+*/
+    
+    一级: $js.toString(() => {
+
+        var d = [];
+
+           var list = JSON.parse(request(input)).data.list;
+            list.forEach(it => {
+            //一级id           
+                let guid1 = it.guid;
+                // 一级标题
+                let title1 = it.title
+                // 一级描述
+                let desc1 = it.time;
+                // 一级图片URL
+                let picUrl1 = it.image;
+                // 一级URL（id 地区 类型 标题 演员 年份 频道 简介 图片 集数）
+             let url1 =it.guid + '|' + it.id + '|' + it.time + '|' + it.title + '|' + it.length + '|' + it.image + '|' + it.focus_date + '|' + it.brief  + '|' + it.url + '|'   + '' + '|' + MY_CATE;
+                d.push({
+                    desc : desc1,
+                    title : title1,
+                    pic_url : picUrl1,
+                    guid : guid1,
+                    url : url1
+                })
+            })
+        setResult(d);
+    }),
+
+二级 : $js.toString(() => {
+let info = input.split("|");
+let guid = info[0].replaceAll('https://api.cntv.cn/lanmu/', '');
+    VOD = {
+            vod_id: info[1],
+            vod_name: info[3],
+            vod_pic: info[5],
+            type_name: info[2],
+            vod_year: info[2],
+            vod_area: info[1],
+            vod_remarks: 'ƪ(˘⌣˘)ʃ优雅',
+            vod_director: 'ƪ(˘⌣˘)ʃ优雅',
+            vod_actor: 'ƪ(˘⌣˘)ʃ优雅',
+            vod_content: info[7],
+        vod_play_from: '央视频',
+        //https://hls.cntv.myalicdn.com//asp/hls/2000/0303000a/3/default/https://api.cntv.cn/lanmu/1a01871d6d5f4d4bbe82b9c62650f100/2000.m3u8
+        vod_play_url: '立即播放$https://hls.cntv.myalicdn.com//asp/hls/2000/0303000a/3/default/' + guid + '/2000.m3u8'
+    };
+
+}),
+    搜索:'',
+}

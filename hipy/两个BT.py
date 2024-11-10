@@ -37,7 +37,7 @@ api里会自动含有ext参数是base64编码后的选中的筛选条件
     "searchable":1,
     "quickSearch":0,
     "filterable":1,
-    "ext":"两个BT"
+    "ext":"{{host}}/files/hipy/两个BT.json"
 },
 {
     "key": "hipy_t3_两个BT",
@@ -47,14 +47,15 @@ api里会自动含有ext参数是base64编码后的选中的筛选条件
     "searchable": 1,
     "quickSearch": 0,
     "filterable": 1,
-    "ext": "{{host}}/txt/hipy/两个BT.json"
+    "ext": "{{host}}/files/hipy/两个BT.json"
 },
 """
 
 
 class Spider(BaseSpider):  # 元类 默认的元类 type
-    api: str = 'https://www.bttwo.net'
+    api: str = 'https://www.bttwo.org'
     api_ext_file: str = api + '/movie_bt/'
+    search_api: str = ''
 
     def getName(self):
         return "规则名称如:基础示例"
@@ -68,7 +69,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         ext_file = __file__.replace('.py', '.json')
         print(f'ext_file:{ext_file}')
 
-        # 全部电影网页: https://www.bttwo.net/movie_bt/
+        # 全部电影网页: https://www.bttwo.org/movie_bt/
         # ==================== 获取全部电影筛选条件 ======================
         r = self.fetch(self.api_ext_file)
         html = r.text
@@ -219,6 +220,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         html = self.html(html)
         d = []
 
+        self.search_api = "".join(html.xpath('//*[contains(@class,"w-search-form")]/@action')).strip()
         lis = html.xpath('//*[contains(@class,"leibox")]/ul/li')
         print(len(lis))
         for li in lis:
@@ -327,8 +329,10 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
             "Host": "www.bttwo.net",
             "Referer": self.api
         }
-
-        url = f'{self.api}/xssearch?q={quote(wd)}'
+        self.log(f'self.search_api:{self.search_api}')
+        search_api = self.search_api or f'{self.api}/xsssearch'
+        url = f'{search_api}?q={quote(wd)}'
+        print(url)
         r = self.fetch(url, headers=headers)
         cookies = ['myannoun=1']
         for key, value in r.headers.items():
@@ -337,7 +341,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
         new_headers = {
             'Cookie': ';'.join(cookies),
             # 'Pragma': 'no-cache',
-            # 'Origin': 'https://www.bttwo.net',
+            # 'Origin': 'https://www.bttwo.org',
             # 'Referer': url,
             # 'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
             # 'Sec-Ch-Ua-Mobile': '?0',
@@ -397,12 +401,12 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
             'User-Agent': 'Mozilla/5.0 (Linux；； Android 11；； M2007J3SC Build/RKQ1.200826.002；； wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/99.0.4844.48 Mobile Safari/537.36',
             'Referer': id,
         }
-        return {
-            'parse': 1,  # 1=嗅探,0=播放
-            'playUrl': '',  # 解析链接
-            'url': id,  # 直链或待嗅探地址
-            'header': headers,  # 播放UA
-        }
+        # return {
+        #     'parse': 1,  # 1=嗅探,0=播放
+        #     'playUrl': '',  # 解析链接
+        #     'url': id,  # 直链或待嗅探地址
+        #     'header': headers,  # 播放UA
+        # }
         r = self.fetch(id)
         html = r.text
         text = html.split('window.wp_nonce=')[1].split('eval')[0]
@@ -437,7 +441,7 @@ class Spider(BaseSpider):  # 元类 默认的元类 type
     header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36",
         "Host": "www.bttwo.net",
-        "Referer": "https://www.bttwo.net/"
+        "Referer": "https://www.bttwo.org/"
     }
 
     def localProxy(self, params):
@@ -518,15 +522,15 @@ if __name__ == '__main__':
 
     spider = Spider()
     t4_spider_init(spider)
-    spider.init_api_ext_file()  # 生成筛选对应的json文件
+    # spider.init_api_ext_file()  # 生成筛选对应的json文件
 
-    # print(spider.homeVideoContent())
+    print(spider.homeVideoContent())
     # print(spider.categoryContent('movie_bt', 1, True, {}))
-    # print(spider.searchContent('斗罗大陆'))
-    # print(spider.detailContent(['https://www.bttwo.net/movie/20107.html']))
+    print(spider.searchContent('斗罗大陆'))
+    # print(spider.detailContent(['https://www.bttwo.org/movie/20107.html']))
     # print(spider.playerContent('在线播放', spider.decodeStr('https%3A%2F%2Fwww.bttwo.net%2Fv_play%2FbXZfMzY4Nzgtbm1fMQ%3D%3D.html','utf-8'), None))
-    # print(spider.playerContent('在线播放', spider.decodeStr('https://www.bttwo.net/v_play/bXZfMTMyNjkwLW5tXzE=.html','utf-8'), None))
-    # print(spider.playerContent('在线播放', 'https://www.bttwo.net/v_play/bXZfMTMyNjA2LW5tXzE=.html', None))
+    # print(spider.playerContent('在线播放', spider.decodeStr('https://www.bttwo.org/v_play/bXZfMTMyNjkwLW5tXzE=.html','utf-8'), None))
+    # print(spider.playerContent('在线播放', 'https://www.bttwo.org/v_play/bXZfMTMyNjA2LW5tXzE=.html', None))
 
     # ciphertext = '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'
     # key = 'ae05c73de8a193cf'
