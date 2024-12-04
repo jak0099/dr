@@ -20,10 +20,10 @@ var rule = {
   }),
   double:true,
   推荐:'.tab-pane ul li;li;*;*;.col-sm-2 p&&Text;.image a&&href',
-  一级:'.bg-white ul li;h3&&Text;.img-responsive&&src||data-original;.col-md-2&&p&&Text;.col-md-2 a&&href',
+  一级:'.vod-item-img li;h3&&Text;.img-responsive&&data-original;.col-md-2&&p&&Text;.col-md-2 a&&href',
   二级:{
     title:'h1&&Text;.media-body&&li:eq(1)&&Text',
-    img:'.media-left img&&src',
+    img:'.media-object&&src',
     desc:'.media-body&&li:eq(0)&&Text;.media-body&&li:eq(4)&&Text;.media-body&&li:eq(5)&&Text;.media-body&&li:eq(3)&&Text;.media-body&&li:eq(2)&&Text',
     content:'.vod-content&&Text',
     tabs:'.ff-playurl-tab&&li',
@@ -33,5 +33,5 @@ var rule = {
     list_url:'a&&href',
     list_url_prefix: '',
   },
-  搜索:'.vod-item-img&&li;h3&&Text;.img-responsive&&src||data-original;.col-md-2&&p&&Text;.col-md-2 a&&href',
+  搜索:'.vod-item-img&&li;h3&&Text;.img-responsive&&data-original;.col-md-2&&p&&Text;.col-md-2 a&&href',
 }
