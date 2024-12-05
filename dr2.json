@@ -341,6 +341,10 @@
 {"key": "dr_火狼动漫[漫]","name": "🍇火狼动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/火狼动漫[漫].js"},
 {"key": "dr_次元方舟[漫]","name": "🍇次元方舟[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/次元方舟[漫].js"},
 {"key": "dr_Aki动漫[漫]","name": "🍇Aki动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Aki动漫[漫].js"},
+{"key": "dr_饭团动漫[漫]","name": "🍇饭团动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/饭团动漫[漫].js"},
+{"key": "dr_泡漫网[漫]","name": "🍇泡漫网[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/泡漫网[漫].js"},
+{"key": "dr_囧次元动漫[漫]","name": "🍇囧次元动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/囧次元动漫[漫].js"},
+
 //#js_采集资源类🥒
 //{"key": "dr_模板[资]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
