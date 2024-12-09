@@ -292,6 +292,7 @@
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 {"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
 {"key": "dr_你好帅影院[短]","name": "🥝你好帅影院[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/你好帅影院[短].js"},
+{"key": "dr_MM短剧网[短]","name": "🥝MM短剧网[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/MM短剧网[短].js"},
 
 //#js_云盘源🍅
 //{"key": "dr_模板[盘]","name": "🍅模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/模板[盘].js"},
