@@ -8,5 +8,5 @@ var rule = {
   host: 'https://www.wxnlm.com',
   url: '/vodtype/fyclass-fypage.html',
   searchUrl: '/vodsearch/**----------fypage---.html',
-  class_parse: '.myui-header__menu li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?)\.html',
+  class_parse: '.item&&li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?)\.html',
 }
