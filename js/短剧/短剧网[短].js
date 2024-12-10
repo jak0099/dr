@@ -1,34 +1,41 @@
-muban.mxone5.二级.title = 'h1&&Text;.video-info-aux&&Text';
-muban.mxone5.二级.desc = ';;;.video-info-items:eq(1)&&Text;.video-info-items:eq(0)&&Text';
 var rule = {
-	title: '短剧网',
-	模板:'mxone5',
-	host: 'https://m.duanju5.com',
-	url: '/vodshow/fyclassfyfilter.html',
-	filterable:1,//是否启用分类筛选,
-	filter_url:'-{{fl.area}}-{{fl.by or "time"}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
-	filter: {
-		"nixi":[{"key":"letter","name":"字母","value":[{"n":"A","v":"A"},{"n":"B","v":"B"},{"n":"C","v":"C"},{"n":"D","v":"D"},{"n":"E","v":"E"},{"n":"F","v":"F"},{"n":"G","v":"G"},{"n":"H","v":"H"},{"n":"I","v":"I"},{"n":"J","v":"J"},{"n":"K","v":"K"},{"n":"L","v":"L"},{"n":"M","v":"M"},{"n":"N","v":"N"},{"n":"O","v":"O"},{"n":"P","v":"P"},{"n":"Q","v":"Q"},{"n":"R","v":"R"},{"n":"S","v":"S"},{"n":"T","v":"T"},{"n":"U","v":"U"},{"n":"V","v":"V"},{"n":"W","v":"W"},{"n":"X","v":"X"},{"n":"Y","v":"Y"},{"n":"Z","v":"Z"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"tianchong":[{"key":"letter","name":"字母","value":[{"n":"A","v":"A"},{"n":"B","v":"B"},{"n":"C","v":"C"},{"n":"D","v":"D"},{"n":"E","v":"E"},{"n":"F","v":"F"},{"n":"G","v":"G"},{"n":"H","v":"H"},{"n":"I","v":"I"},{"n":"J","v":"J"},{"n":"K","v":"K"},{"n":"L","v":"L"},{"n":"M","v":"M"},{"n":"N","v":"N"},{"n":"O","v":"O"},{"n":"P","v":"P"},{"n":"Q","v":"Q"},{"n":"R","v":"R"},{"n":"S","v":"S"},{"n":"T","v":"T"},{"n":"U","v":"U"},{"n":"V","v":"V"},{"n":"W","v":"W"},{"n":"X","v":"X"},{"n":"Y","v":"Y"},{"n":"Z","v":"Z"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"nuelian":[{"key":"letter","name":"字母","value":[{"n":"A","v":"A"},{"n":"B","v":"B"},{"n":"C","v":"C"},{"n":"D","v":"D"},{"n":"E","v":"E"},{"n":"F","v":"F"},{"n":"G","v":"G"},{"n":"H","v":"H"},{"n":"I","v":"I"},{"n":"J","v":"J"},{"n":"K","v":"K"},{"n":"L","v":"L"},{"n":"M","v":"M"},{"n":"N","v":"N"},{"n":"O","v":"O"},{"n":"P","v":"P"},{"n":"Q","v":"Q"},{"n":"R","v":"R"},{"n":"S","v":"S"},{"n":"T","v":"T"},{"n":"U","v":"U"},{"n":"V","v":"V"},{"n":"W","v":"W"},{"n":"X","v":"X"},{"n":"Y","v":"Y"},{"n":"Z","v":"Z"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"chuanyue":[{"key":"letter","name":"字母","value":[{"n":"A","v":"A"},{"n":"B","v":"B"},{"n":"C","v":"C"},{"n":"D","v":"D"},{"n":"E","v":"E"},{"n":"F","v":"F"},{"n":"G","v":"G"},{"n":"H","v":"H"},{"n":"I","v":"I"},{"n":"J","v":"J"},{"n":"K","v":"K"},{"n":"L","v":"L"},{"n":"M","v":"M"},{"n":"N","v":"N"},{"n":"O","v":"O"},{"n":"P","v":"P"},{"n":"Q","v":"Q"},{"n":"R","v":"R"},{"n":"S","v":"S"},{"n":"T","v":"T"},{"n":"U","v":"U"},{"n":"V","v":"V"},{"n":"W","v":"W"},{"n":"X","v":"X"},{"n":"Y","v":"Y"},{"n":"Z","v":"Z"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"chongsheng":[{"key":"letter","name":"字母","value":[{"n":"A","v":"A"},{"n":"B","v":"B"},{"n":"C","v":"C"},{"n":"D","v":"D"},{"n":"E","v":"E"},{"n":"F","v":"F"},{"n":"G","v":"G"},{"n":"H","v":"H"},{"n":"I","v":"I"},{"n":"J","v":"J"},{"n":"K","v":"K"},{"n":"L","v":"L"},{"n":"M","v":"M"},{"n":"N","v":"N"},{"n":"O","v":"O"},{"n":"P","v":"P"},{"n":"Q","v":"Q"},{"n":"R","v":"R"},{"n":"S","v":"S"},{"n":"T","v":"T"},{"n":"U","v":"U"},{"n":"V","v":"V"},{"n":"W","v":"W"},{"n":"X","v":"X"},{"n":"Y","v":"Y"},{"n":"Z","v":"Z"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
-	},
-	lazy: `js:
-		var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
-		var url = html.url;
-		if (html.encrypt == '1') {
-			url = unescape(url)
-		} else if (html.encrypt == '2') {
-			url = unescape(base64Decode(url))
-		}
-		if (/m3u8|mp4/.test(url)) {
-			input = {jx:0, url:url, parse:0}
-		} else {
-			input
-		}
-	`,
-	searchUrl:'/index.php/ajax/suggest?mid=1&wd=**&limit=50',
-	detailUrl:'/voddetail/fyid.html', //非必填,二级详情拼接链接
-	搜索:'json:list;name;pic;en;en',
+  类型:'影视',//影视|听书|漫画|小说
+  title:'短剧网[短]',
+  host:'https://duanju001.com',
+  url:'/type/fyclassfyfilter-fypage.html',
+  searchUrl:'/search/**----------fypage---.html',
+  searchable:2,
+  quickSearch:0,
+  filterable:1,
+  //filter:'H4sIAAAAAAAAA43TzU7CQBAH8HfZM4dukQ95FcOhkiYSEROKJg3pQT4U/IBgDMSLGtGICUaIDdES9GXabfsWbku3M40Xbzu/+e+WmYQGkbOksNMg+6pOCqRUUTSNpEhVOVB56XRP3cWK18dK5UgNc9WAO1O/NQ2YF8RIRfr84T8O2cmF211EvQSJnNceMvOONWfuaBjlEhS/92Xaq4n7+uMtz8V7mOLc4MmbdOzVrf39IHKYRM7tz/llv7V2PptRLkHw3pW3nsUvhUX8RnfNRmfi9qaIe/dvTu9F9DaFUQy6m93qqlJDqw1H+edqZUneiiw8Ik+Dp7HL4DJ2Ck6xS+AScrodOz8iz4PnsefAc9iz4FnsGfAMdpiX4nkpzEvxvBTm5Ue89l0dls761441+LN0dtlj46U/NqHPtV7md8QXeMS2LDa/SUT2ynUNR7z3Nv/LJCJa6bCmBj+oaPwCW6lWo2wDAAA=',
+  filter:{"duanju":[{"key":"class","name":"分类","value":[{"n":"全部","v":""},{"n":"女频恋爱","v":"女频恋爱"},{"n":"脑洞悬疑","v":"脑洞悬疑"},{"n":"年代穿越","v":"年代穿越"},{"n":"古装仙侠","v":"古装仙侠"},{"n":"现代都市","v":"现代都市"},{"n":"反转","v":"反转"},{"n":"爽文","v":"爽文"},{"n":"短剧","v":"短剧"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"}]},{"key":"by","name":"排序","value":[{"n":"按时间排序","v":"time"},{"n":"按人气排序","v":"hits"},{"n":"按评分排序","v":"score"}]}]},
+  filter_url:'--{{fl.by}}-{{fl.class}}-----fypage---{{fl.year}}',
+  //filter_def:{duanju:{cateId:'duanju'}},
+  headers:{
+      'User-Agent':'MOBILE_UA',
+  },
+  timeout:5000,
+  class_parse:'#menu li;a&&Text;a&&href;.*/(.*?)\.html',
+  cate_exclude:'排行榜',
+  play_parse:true,
+  lazy:$js.toString(()=>{
+    input = {parse:1,url:input,js:''};
+  }),
+  double:true,
+  推荐:'*',
+  一级:'#post-876;.placeholder a&&title;.lazyload&&data-src;.meta-post-type2&&Text;.placeholder a&&href;.meta-views&&Text',
+  二级:{
+    title:'.lazyload img&&alt;.pricing-options li&&Text',
+    img:'.col-lg-4 img&&data-src',
+    desc:'.pricing-options li:eq(5)&&Text;.pricing-options li:eq(4)&&Text;.pricing-options li:eq(3)&&Text;.pricing-options li:eq(2)&&Text;.pricing-options li:eq(1)&&Text',
+    content:'.data-label&&Text',
+    tabs:'.nav-item a:gt(0)',
+    lists:'.accordion:eq(#id)&&a',
+    tab_text:'body&&Text',
+    list_text:'body&&Text',
+    list_url:'a&&href',
+    list_url_prefix: '',
+  },
+  搜索:'.col-lg-12;.placeholder a&&title;.placeholder img&&data-src;.meta-category-dot&&Text;.placeholder a&&href;.meta-views&&Text',
+  //搜索:'*',
 }
