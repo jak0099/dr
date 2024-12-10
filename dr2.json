@@ -296,6 +296,7 @@
 {"key": "dr_MM短剧网[短]","name": "🥝MM短剧网[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/MM短剧网[短].js"},
 {"key": "dr_短剧网[短]","name": "🥝短剧网[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧网[短].js"},
 {"key": "dr_花生短剧[短]","name": "🥝花生短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/花生短剧[短].js"},
+{"key": "dr_吉吉短剧[短]","name": "🥝吉吉短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/吉吉短剧[短].js"},
 
 //#js_云盘源🍅
 //{"key": "dr_模板[盘]","name": "🍅模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/模板[盘].js"},
@@ -320,7 +321,7 @@
 {"key": "dr_MuteFun动漫[漫]","name": "🍇MuteFun动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/MuteFun动漫[漫].js"},
 {"key": "dr_次元城动漫[漫]","name": "🍇次元城动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/次元城动漫[漫].js"},
 {"key": "dr_七色番[漫]","name": "🍇七色番[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/七色番[漫].js"},
-//{"key": "dr_维奇动漫[漫]","name": "🍇维奇动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/维奇动漫[漫].js"},
+{"key": "dr_AnFuns动漫[漫]","name": "🍇AnFuns动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/AnFuns动漫[漫].js"},
 {"key": "dr_花子动漫[漫]","name": "🍇花子动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/花子动漫[漫].js"},
 {"key": "dr_动漫岛[漫]","name": "🍇动漫岛[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/动漫岛[漫].js"},
 {"key": "dr_爱弹幕[漫]","name": "🍇爱弹幕[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/爱弹幕[漫].js"},
