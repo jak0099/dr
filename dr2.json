@@ -59,6 +59,8 @@
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_大米星球","name": "🍊大米星球[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大米星球.js"},
+{"key": "dr_耐看点播","name": "🍊耐看点播[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/耐看点播.js"},
 {"key": "dr_美益达","name": "🍊美益达[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/美益达.js"},
 {"key": "dr_天天影院","name": "🍊天天影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/天天影院.js"},
 {"key": "dr_皮皮影视","name": "🍊皮皮影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/皮皮影视.js"},
@@ -360,6 +362,8 @@
 {"key": "dr_搜漫网[漫]","name": "🍇搜漫网[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/搜漫网[漫].js"},
 {"key": "dr_233动漫[漫]","name": "🍇233动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/233动漫[漫].js"},
 {"key": "dr_Animoe动漫[漫]","name": "🍇Animoe动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Animoe动漫[漫].js"},
+{"key": "dr_MX动漫[漫]","name": "🍇MX动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/MX动漫[漫].js"},
+{"key": "dr_久久动漫[漫]","name": "🍇久久动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/久久动漫[漫].js"},
 
 
 //#js_采集资源类🥒
