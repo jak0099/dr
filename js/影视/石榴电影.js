@@ -1,1 +1,103 @@
-H4sIAAAAAAAAAN1WS28cRRC+51e0BmseZnfWa7iw1sYyOFIS2bHF2gi0Wo3aM7U7bc8r3T0mG2SJE1IQoBy4gYTEgUTihAgSMuHfYDv8C6p6Zp+AUSSEFPawM12Pr6qrvq6eUy6ZLBNgXfbRDca00Al0mHP1zY+X3z27+vKni19/cBqoiHOlUR5rXahOqxWDaL/lh3lqlKVMUNcKueZJPtoM86RMs+5wHCZcKVvlUnfbdgEyKPgIurb5H47p0f8bp4HBVcBlGB9W6NViU48LQLQTGH+Yy0h1V1fn8ebc+BHtZJ0E90sRnvSMtMPWzHaARyBVx2yaMedQgWxujSDTDsba3Xv7zs6t4HDLwDHWajHrnTw/EWB1mFXBZwBRNz+x0OCMrEzaQcZTUz5TOPvi0ZPfv/rEvvj06eXz7+2rX56/eHTuzIyrsrXtdftN+w0jLxI+xiJJhSBalkCyhD8cd9jKsfJ13tNSZCPX9Vj3Zp16AppBge1rb0zXKddhjCKRFaX2zcptQdF1/dVNb6XlVZZiyFyj82ooVgEZWb89qKzO6gpgj1wovGmMWKcJGku4X4LSrgnlzVI4Vnm2hfpjVfhFNIxdsm8w67UguHfr/YNge+tgKwhs+zaKrTm/COmAbnd7e/d8UwjXIHl+IfNC+dTjffN2KiLIt0FzkVTvUAiVR+ATwsZc0rT2bkwDCA0pBiCpPxRZ5A7LLNQiz1yhZ4WQoEuZobFfw7JuF6tTlwTzneJJ4AkylKpNyJvm4WNrWYeZ2H4C2UjH7CZbQy1J+muD2qDMIsAkIJogVinXmFWxTWXr40k/w5raolHLasqsVelRlmce6S6/ePri88f/wJ66k0Mgmvypj6h5mf5Rt5b6N6dNhNKGFHm23NBpy6438yXg1Ekhi3pg2rZtSowOdZTK9e6+Tynscx271orfd6rxMufjDPqrg75T5EWZcBmQH4ocQ6VAZMPcGFgNg+jNE8rsTZlaiuHYJX0jK5Okse4t2BlHs35vb7uHSZEAT2Px15RDrp3mUVCI0HAJh+spyI1FpYSUyxNVGWg+WlLT9Kl09LakFBGqbu/1DtjrzGpF5uS0LFygXkQby8SfMn3Cpd9+/vjq/MkrwSU/hUhww4zlafB/a8r5Z6YpVb6Wub7pjorbtn0AD7RVTQhLpCMS48O2lQwn4ghUSHLD+iatmjS+Kt8Nf05M124zPVpEDfNM45VJCLWtyLTMozIE2y4WbTU/UsbwSGdNuudqBdVfXcMqxnbu9A6oU/3BpB4vS6YFwqATnzj5lEiTFLbNZ9Z0Mxpe1KMbZ//ajBN1Rn5RqtjtW+0V6tfuB8Hhuzs4nRAxBNeqWonjw6IQIC1v4NX+ZwwSBXNwdWJTJgpN2zebE7rBHCqj4xFDTKiaLjM9t+1YwtDxphtYSHFG+cltPjkMxsirSdWYfMlcPv766tm3r8ZBr77FdvNTATtUvn/5uOPLdYddgsJrhVD+uzN/9geFeI6usgsAAA==
+var rule = {
+  title: '石榴电影',
+  host: 'https://hei19.com',
+  url: '/catalog?column=fyclass&sort=1&per_page=&page=fypage[/catalog?column=fyclass]',
+  searchUrl: '/search?type=1&keywords=**&page=fypage',
+  searchable: 2,
+  quickSearch: 0,
+  headers: {
+    'User-Agent': 'MOBILE_UA',
+    // "Cookie": "searchneed=ok"
+  },
+  class_name: '电影&剧集&动漫&综艺',
+  class_url: '1&2&4&3',
+  play_parse: true,
+  lazy: $js.toString(() => {
+    let ep = 1;
+    let match = input.match(/ep=(.*?)$/);
+    if (match) {
+      ep = match[1];
+    }
+    //log(ep)
+    let html = request(input);
+    let jsonA = jsp.pdfh(html, "#__NEXT_DATA__&&Html");
+    let data = JSON.parse(jsonA).props.pageProps.videoDetail.videoepisode.data;
+    //log(data)
+
+    let item = data.find(function(it) {
+      return it.episode == ep;
+    });
+
+    let realUrl = item ? item.url : (data.length > 0 ? data[0].url : undefined);
+
+    //log(realUrl)
+    input = {
+      url: realUrl,
+      parse: 0
+    };
+  }),
+  推荐: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps;
+    //let list = json.props.pageProps.recommendSectionData.list;
+    list = JP.JSONPath("$.['columnSectionData'][*]['popular_list']['video_info'][*]", list);
+    //log(JSON.stringify(list,null,2));
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.cover;
+      it.vod_remarks = it.tag;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),
+  一级: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps.mediaData.data;
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.cover;
+      it.vod_remarks = it.tag;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),
+  二级: {
+    "title": "h1&&Text",
+    "img": "img&&src",
+    "desc": "video-desc-item&&Text;.video-desc-type-mb&&Text",
+    "content": ".video-introduce&&p&&Text",
+    "tabs": ".btn-play",
+    lists: $js.toString(() => {
+      LISTS = [];
+      let j = pdfh(html, "#__NEXT_DATA__&&Html");
+      let list = pdfa(html, ".play-list&&a");
+      if (list.length == 0) {
+        LISTS.push(["1$" + MY_URL.replace("detail", "player")])
+      } else {
+        list = list.map(it => pdfh(it, 'Text') + "$" + HOST + pdfh(it, 'a&&href'));
+        LISTS.push(list)
+      }
+      //log(LISTS)
+    }),
+  },
+  搜索: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps.searchMovieList.data;
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.pic;
+      it.vod_remarks = it.resolution;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),
+}

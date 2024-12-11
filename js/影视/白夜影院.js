@@ -1,1 +1,47 @@
-dmFyIHJ1bGUgPSB7CiAgdGl0bGU6ICdb5a+GXeeZveWknOW9semZoicsCiAgaG9zdDogJ2h0dHBzOi8vd3d3LmJhaXljLmNvbScsCiAgdXJsOiAnL2ZyaW0vZnljbGFzcy1meXBhZ2UuaHRtbFsvZnJpbS9meWNsYXNzLmh0bWxdJywKICBzZWFyY2hVcmw6ICcvc2VhcmNoLnBocD9wYWdlPWZ5cGFnZSZzZWFyY2h3b3JkPSoqJnNlYXJjaHR5cGU9JywKICBzZWFyY2hhYmxlOiAyLAogIGhlYWRlcnM6IHsKICAgICdVc2VyLUFnZW50JzogJ01PQklMRV9VQScsCiAgfSwKICBjbGFzc19wYXJzZTogJy5zdHVpLWhlYWRlcl9fbWVudSBsaTpndCgwKTpsdCg3KTthJiZUZXh0O2EmJmhyZWY7L1xcdysvKFxcdyspLmh0bWwnLAogIHBsYXlfcGFyc2U6IHRydWUsCiAgbGF6eTogJGpzLnRvU3RyaW5nKCgpID0+IHsKICAgIGxldCBodG1sID0gSlNPTi5wYXJzZShyZXF1ZXN0KGlucHV0KS5tYXRjaCgvciBwbGF5ZXJfLio/PSguKj8pPC8pWzFdKTsKICAgIGxldCB1cmwgPSBodG1sLnVybDsKICAgIGlmIChodG1sLmVuY3J5cHQgPT0gJzEnKSB7CiAgICAgIHVybCA9IHVuZXNjYXBlKHVybCkKICAgIH0gZWxzZSBpZiAoaHRtbC5lbmNyeXB0ID09ICcyJykgewogICAgICB1cmwgPSB1bmVzY2FwZShiYXNlNjREZWNvZGUodXJsKSkKICAgIH0KICAgIGlmICgvXC5tM3U4fFwubXA0Ly50ZXN0KHVybCkpIHsKICAgICAgaW5wdXQgPSB7CiAgICAgICAgang6IDAsCiAgICAgICAgdXJsOiB1cmwsCiAgICAgICAgcGFyc2U6IDAKICAgICAgfQogICAgfSBlbHNlIHsKICAgICAgaW5wdXQKICAgIH07CiAgICBjb25zdCB2aWRlbyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdteVZpZGVvJyk7CiAgICB2aWRlby5hZGRFdmVudExpc3RlbmVyKCdjYW5wbGF5JywgZnVuY3Rpb24gKCkgewogICAgICB2aWRlby5jdXJyZW50VGltZSA9IDEwOwogICAgfSk7Cn0pLAogIGxpbWl0OiA2LAogIGRvdWJsZTogdHJ1ZSwKICDmjqjojZA6ICcuc3R1aS12b2RsaXN0Oy5zdHVpLXZvZGxpc3RfX2l0ZW07YSYmdGl0bGU7YSYmZGF0YS1vcmlnaW5hbDsucGljLXRleHQmJlRleHQ7YSYmaHJlZicsCiAg5LiA57qnOiAnLnN0dWktdm9kbGlzdF9faXRlbTthJiZ0aXRsZTthJiZkYXRhLW9yaWdpbmFsOy5waWMtdGV4dCYmVGV4dDthJiZocmVmJywKICDkuoznuqc6IHsKICAgIHRpdGxlOiAnaDEudGl0bGUtLXNwYW4mJlRleHQ7LnBpYy10ZXh0JiZUZXh0JywKICAgIGltZzogJy5sYXp5bG9hZCYmZGF0YS1vcmlnaW5hbCcsCiAgICBkZXNjOiAncC5kYXRhOmVxKDApIGE6ZXEoMCkmJlRleHQ7cC5kYXRhOmVxKDApIGE6ZXEoMikmJlRleHQ7cC5kYXRhOmVxKDApIGE6ZXEoMSkmJlRleHQ7cC5kYXRhOmVxKDEpLS1zcGFuJiZUZXh0O3AuZGF0YTplcSgyKS0tc3BhbiYmVGV4dCcsCiAgICBjb250ZW50OiAnLnN0dWktY29udGVudF9fZGVzYyBwJiZUZXh0JywKICAgIHRhYnM6ICcuZHJvcGRvd24tbWVudSBsaScsCiAgICBsaXN0czogJy5zdHVpLWNvbnRlbnRfX3BsYXlsaXN0OmVxKCNpZCkgYScsCiAgfSwKICDmkJzntKI6ICcuc3R1aS12b2RsaXN0X19pdGVtO2EmJnRpdGxlOy5sYXp5bG9hZCYmZGF0YS1vcmlnaW5hbDsucGljLXRleHQmJlRleHQ7YSYmaHJlZjsuZGV0YWlsJiZUZXh0JywKfQ==
+var rule = {
+  title: '白夜影院',
+  host: 'https://www.baiyc.com',
+  url: '/frim/fyclass-fypage.html[/frim/fyclass.html]',
+  searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
+  searchable: 2,
+  headers: {
+    'User-Agent': 'MOBILE_UA',
+  },
+  class_parse: '.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;/\\w+/(\\w+).html',
+  play_parse: true,
+  lazy: $js.toString(() => {
+    let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+    let url = html.url;
+    if (html.encrypt == '1') {
+      url = unescape(url)
+    } else if (html.encrypt == '2') {
+      url = unescape(base64Decode(url))
+    }
+    if (/\.m3u8|\.mp4/.test(url)) {
+      input = {
+        jx: 0,
+        url: url,
+        parse: 0
+      }
+    } else {
+      input
+    };
+    const video = document.getElementById('myVideo');
+    video.addEventListener('canplay', function () {
+      video.currentTime = 10;
+    });
+}),
+  limit: 6,
+  double: true,
+  推荐: '.stui-vodlist;.stui-vodlist__item;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+  一级: '.stui-vodlist__item;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+  二级: {
+    title: 'h1.title--span&&Text;.pic-text&&Text',
+    img: '.lazyload&&data-original',
+    desc: 'p.data:eq(0) a:eq(0)&&Text;p.data:eq(0) a:eq(2)&&Text;p.data:eq(0) a:eq(1)&&Text;p.data:eq(1)--span&&Text;p.data:eq(2)--span&&Text',
+    content: '.stui-content__desc p&&Text',
+    tabs: '.dropdown-menu li',
+    lists: '.stui-content__playlist:eq(#id) a',
+  },
+  搜索: '.stui-vodlist__item;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.detail&&Text',
+}

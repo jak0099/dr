@@ -1,1 +1,26 @@
-dmFyIHJ1bGUgPSB7CiAgdGl0bGU6ICdLaW1pVm9kJywKICBob3N0OiAnaHR0cHM6Ly9raW1pdm9kLmNvbS92b2Qvc2hvdy9pZC8yL3BhZ2UvMi5odG1sJywKICB1cmw6ICcvdm9kL3Nob3cvaWQvZnljbGFzcy9wYWdlL2Z5cGFnZS5odG1sJywKICBzZWFyY2hVcmw6ICcvdm9kc2VhcmNoLmh0bWw/d2Q9KionLAogIHNlYXJjaGFibGU6IDIscXVpY2tTZWFyY2g6IDAsZmlsdGVyYWJsZTogMCwKICBoZWFkZXJzOiB7J1VzZXItQWdlbnQnOiAnTU9CSUxFX1VBJ30sCmNsYXNzX25hbWU6ICfnlLXlvbEm5Ymn6ZuGJue7vOiJuibliqjmvKsm55+t5YmnJuWbveS6p+WJpybpn6nliacm576O5YmnJuaXpeWJpyblj7Dliacm5riv5YmnJua1t+WkluWJpybnuqrlvZXniYcm5rOw5YmnJuaImOS6ieeJhybliqjnlLvnlLXlvbEm5oKs55aR54mHJuWlh+W5u+eJhybniLHmg4XniYcm5oGQ5oCW54mHJuWJp+aDheeJhybliqjkvZzniYcm56eR5bm754mHJuWWnOWJp+eJhyblm73kuqfliqjmvKsm5pel5pys5Yqo5ryrJumfqeWbveWKqOa8qybmrKfnvo7liqjmvKsm5riv5Y+w5Yqo5ryrJuWPsOa4r+e7vOiJuibmrKfnvo7nu7zoibom6Z+p5pel57u86Im6JuWbveS6p+e7vOiJuicsCmNsYXNzX3VybDogJzImMSY0JjMmMzkmNiY3JjgmOSYxMCYxMSYxMiYyNiYzMiYyMiYyMyYyNCYyNSYyMSYyMCYxMyYxNCYxNSYxNiYyOCYyNyYyOSYzMCYzMSYzNiYzMyYzNCYzOCcsCiAgcGxheV9wYXJzZTogdHJ1ZSxsaW1pdDogNixkb3VibGU6IHRydWUsCiAgbGF6eTogYGpzOgogIGxldCBodG1sPXJlcXVlc3QoaW5wdXQpOwogIGlucHV0PWh0bWwubWF0Y2goL3ZpZFxzKj1ccypbIiddKC4qPylbIiddLylbMV07CiAgYCwKICDmjqjojZA6ICcqJywKICDkuIDnuqc6ICcuZ3JpZCAuczYubTM7YSYmdGl0bGU7aW1nJiZkYXRhLXNyYzsud2hpdGUtdGV4dC5zbWFsbC10ZXh0JiZUZXh0O2EmJmhyZWYnLAogIOS6jOe6pzogewogICAgdGl0bGU6ICdoMSYmVGV4dCcsCiAgICBpbWc6ICdpbWcmJmRhdGEtc3JjJywKICAgIGRlc2M6ICcuZ3JpZCYmLmVycm9yLXRleHQmJlRleHQ7LmdyaWQmJm5hdiYmYTplcCgyKSYmVGV4dDsuZ3JpZCYmbmF2JiZhOmVwKDEpJiZUZXh0Oy5ncmlkJiZwOmVwKDEpJiZUZXh0Oy5ncmlkJiZwOmVwKDApJiZUZXh0JywKICAgIGNvbnRlbnQ6ICcucmlnaHQtYWxpZ24mJlRleHQnLAogICAgdGFiczogJy50YWJzIHNwYW4nLAogICAgbGlzdHM6ICcucGxheW5vOmVxKCNpZCkgYScKICB9LAogIOaQnOe0ojogJyonLAp9
+var rule = {
+  title: 'KimiVod',
+  host: 'https://kimivod.com/vod/show/id/2/page/2.html',
+  url: '/vod/show/id/fyclass/page/fypage.html',
+  searchUrl: '/vodsearch.html?wd=**',
+  searchable: 2,quickSearch: 0,filterable: 0,
+  headers: {'User-Agent': 'MOBILE_UA'},
+class_name: '电影&剧集&综艺&动漫&短剧&国产剧&韩剧&美剧&日剧&台剧&港剧&海外剧&纪录片&泰剧&战争片&动画电影&悬疑片&奇幻片&爱情片&恐怖片&剧情片&动作片&科幻片&喜剧片&国产动漫&日本动漫&韩国动漫&欧美动漫&港台动漫&台港综艺&欧美综艺&韩日综艺&国产综艺',
+class_url: '2&1&4&3&39&6&7&8&9&10&11&12&26&32&22&23&24&25&21&20&13&14&15&16&28&27&29&30&31&36&33&34&38',
+  play_parse: true,limit: 6,double: true,
+  lazy: `js:
+  let html=request(input);
+  input=html.match(/vid\s*=\s*["'](.*?)["']/)[1];
+  `,
+  推荐: '*',
+  一级: '.grid .s6.m3;a&&title;img&&data-src;.white-text.small-text&&Text;a&&href',
+  二级: {
+    title: 'h1&&Text',
+    img: 'img&&data-src',
+    desc: '.grid&&.error-text&&Text;.grid&&nav&&a:ep(2)&&Text;.grid&&nav&&a:ep(1)&&Text;.grid&&p:ep(1)&&Text;.grid&&p:ep(0)&&Text',
+    content: '.right-align&&Text',
+    tabs: '.tabs span',
+    lists: '.playno:eq(#id) a'
+  },
+  搜索: '*',
+}
