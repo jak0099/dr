@@ -352,7 +352,7 @@
 {"key": "dr_好看动漫[漫]","name": "🍇好看动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/动漫/好看动漫[漫].js"},
 {"key": "dr_萌道动漫[漫]","name": "🍇萌道动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/萌道动漫[漫].js"},
 {"key": "dr_嗷呜动漫[漫]","name": "🍇嗷呜动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/嗷呜动漫[漫].js"},
-{"key": "dr_大千视界[漫]","name": "🍇大千视界[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/大千视界[漫].js"},
+{"key": "dr_打驴动漫[漫]","name": "🍇打驴动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/打驴动漫[漫].js"},
 {"key": "dr_思思动漫[漫]","name": "🍇思思动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/思思动漫[漫].js"},
 {"key": "dr_火狼动漫[漫]","name": "🍇火狼动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/火狼动漫[漫].js"},
 {"key": "dr_Aki动漫[漫]","name": "🍇Aki动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Aki动漫[漫].js"},
