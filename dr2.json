@@ -333,7 +333,7 @@
 {"key": "dr_花子动漫[漫]","name": "🍇花子动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/花子动漫[漫].js"},
 {"key": "dr_动漫岛[漫]","name": "🍇动漫岛[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/动漫岛[漫].js"},
 {"key": "dr_爱弹幕[漫]","name": "🍇爱弹幕[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/爱弹幕[漫].js"},
-//{"key": "dr_咕咕番[漫]","name": "🍇咕咕番[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/咕咕番[漫].js"},
+{"key": "dr_咕咕番[漫]","name": "🍇咕咕番[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/咕咕番[漫].js"},
 {"key": "dr_奇米动漫[漫]","name": "🍇奇米动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/奇米动漫[漫].js"},
 {"key": "dr_怡萱动漫[漫]","name": "🍇怡萱动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/怡萱动漫[漫].js"},
 {"key": "dr_NT动漫[漫]","name": "🍇NT动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/动漫/NT动漫[漫].js"},
