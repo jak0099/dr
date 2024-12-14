@@ -31,7 +31,7 @@ var rule = {
         }
     }),
     limit: 6,
-    推荐: '.border-box.public-r .public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
+    推荐: '.border-box.public-r .public-list-box:gt(4);a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
     一级: $js.toString(() => {
         let body = input.split("#")[1];
         let t = Math.round(new Date / 1e3).toString();
