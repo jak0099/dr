@@ -5,7 +5,7 @@ var rule = {
 	模板:'mxpro',
 	//host:'https://www.kkw361.com',
 	host:'https://www.kkw1200.com',
-	// url:'/vodshow/fyclass--------fypage---.html',不带筛选写法
+	// url:'/vodshow/fyclass--------fypage---.html',//不带筛选写法
 	url:'/vodshow/fyfilter.html',//带筛选写法
 	filterable:1,//是否启用分类筛选,
 	filter_url:'{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
