@@ -3,7 +3,8 @@ muban.mxpro.二级.desc = '.module-info-item:eq(4)&&Text;;;.module-info-item-con
 var rule = {
 	title:'看看屋',
 	模板:'mxpro',
-	host:'https://www.kkw361.com',
+	//host:'https://www.kkw361.com',
+  host:'https://www.kkw1200.com',
 	// url:'/vodshow/fyclass--------fypage---.html',
 	url:'/vodshow/fyfilter.html',
 	filterable:1,//是否启用分类筛选,
