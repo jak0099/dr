@@ -7,16 +7,16 @@ var rule = {
   searchable:2,
   quickSearch:0,
   filterable:1,
-  url: '/index.php/vod/show/id/fyclassfyfilter.html',//带筛选写法
-  filter:'H4sIAAAAAAAAA+1aW08bRxT+K6t9TiWvIZfylvv9fk+VBzey2qiUSkAroQgJYkMNBAwI7BgMMQrGUNnYDhEt69r8mZ3d9b/o2rOZOWewtLsohCidN77vHJ+ZOXvm7PlsXimqpvYoPyivFPWX6JDzp/qiNzIwoJ5Q1L7Ir9EWYVVrZHWqxfwR6f09+sm9r2UjY5vN2Gbb1oKqMnyC2yYKZmyM2VwIPczXRSs1xzxcCD2sRBXGcCFaZWacJD/wVShEMSbLVv0vHoNCFGNy06hneQwKkUf+T7JX4x4UQo/myrz5Ns88XIhOm3hr6BP8tBSinRbm4CouRPtIrtvvQU4pRB7j883MFvegEO1jdNYcSfF9UIg8ShtGI8c9KESrjO6SWJKvQqEyrDx3vdxiivRHI7CWSLZC3uiHqKX1QjMzztejEOV/I2P+U+b5pxDnrmLuNUDu2hDFeLdFlus8BoUoM+m8mS3yzFCInmFjBsZwIfSwp6rQw4VolZ0K9HAh8khVyGSOrKxxJ8agE20VzZW8nd839CV+LkiiDE1XiL7BM0Qh3tki3tmiuDPS+Bt6uBDFiCed50cSvEg5g29lzpzadwzgYn5iULzGDv00PCMiUdSxXaPGq9+FByt3KBrpR5W799Go1YNXbjgU7maWNhCsXdDaJVrD0BoWrRq0aqI1BK0hwap9D6wOEKxnoPWMaD0NradF6yloPSVaT0LrSdEKc6WJudJgrjQxVxrMlSbmSoO50sRcaTBXWqhDPfRG+n6C9WCXS/bmyCE62XLd+SivPwpRB/mwDj1ciG51uk6m09CJM+hmZLabI0t2eYVfC8YIHQkGc6HQGdFyFAqdEXq4UOhqyINCobtgj0XRw2knKHsUduwuKBIk0cnz+1ayZE1k0PkhCb2N/Tj0cyGKN7dmz8bFeJAU+20WJYUzHSowOjgYxT2plDbL08Fr8CyjzyL+HOPPIf48488j/gLjLyD+IuMvIv4S4y8h/jLjLyP+CuOvIP4q468i/hrjryH+OuOvI/4G428g/ibjbyL+FuNvIf42428j/g7j7yD+LuPvIv4e4+8h/j7j7yP+AeMfIP4h4x8i/hHjHyH+MeMfI/4J458g/injnyL+GeOfIT70HX/ZtP4+WNs/DsG6NmfmiZ7sXNdmereZ/sjCDb50PoLuqK6blQVm//nl4AC+oeU4SfBJcuDFb/1Rd0PKc4cNq0clh7xFRirriCTuQWEwOeQtIbzHfx/CLTZpvgbDFoUBRZe3UPEUTN4C0oeU8ZR2zqOyFmrwybUgKqrtCqkv8oZPISrLf3MOy18dFAYTsmbpjZ1YBWdpQ5T10UZziUscF0pZJmXZ1y7LnFnKqqfNFC8VznQc2A5Oa1LmSZn3Tcm8zyLLfErA/7N8k0JLCi0ptL600OpSj0hoWbGSvTbCGyuFwaSHj997SgtOg+Otl0IUY3uX6KDZURhQaHn/VpNbI8ugVVKIPGZXrSIQSRSis/j57cpMpaEUa8GAwtNbrI1OOZIWnLYNj06+eMsGb4HjvNkNHczCFAaTHj4EjveA7ymjvAWO3yHcrwTwFh1yTKeEHNPlmC7HdDmmyzFdjukt9usZ07vVoxrTs++cvVkFMKkzBjfPHWNvFjTPNgw2aNvxKkm+h2tx5ji/HfceQH2MhsWCM1LyGBSiGIf+Dl6OYXIMk2OYHMN65Bgmx7AeOYYd4xj2Of9Nv1s7hqnn25glju8NaFYnUJen0P/bS/Zt2bdl3/6ifVsZ/g+oKI2GYDUAAA==',
-  filter_url:'{{fl.area}}{{fl.by}}{{fl.class}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
+  url: '/index.php/vod/show/fyfilter.html',//带筛选写法
+  filter:'H4sIAAAAAAAAA+2bW08bRxTHv4ufqcwacn3LPeR+vyoPTmKlqJRKQCuhKBLEQDEEDAjsAOamYAwtxnZIaTHYfBnP7vpbdOwZnz17tpLHakqJmEf/f4czM2dnZs9fK976DN/Z5299P4R6fWd9r4I9obbXviZfZ/DHEP/Nhoes3B7//Uuw4+dQNbCTy9b0H3ZqqCLzH/72137D964JECvkEAoAYiPr5v7vCLU4f7W3b0fyCLU6aCnNIimM+GAvKlROuSPY3e3MmE+XLY56ZswG18vhdZnFmVEkZYYHa7mrmfxSq4WY7zet2KQ7RGoww+GcJ4vUYKDxIRb9TAYSGmQZyViF30gWoaEClgoJkkVoEJL8le3ukRCh1ULKC1Pmx6Q7RGqw6OGPpXyELFpoMN3UpGcgqcFcoqv2J1pdoUHI0FR5doOECA3m0j9h9sXIXIQGIem1UnGZhAgNBurfYeEoGUhoeDMFu0JBtPsTWfYhr7qXVlPlWTgTlUR+KUHh12bNvzKuCCk5Fcuau0V3DiFBjqUNNl9w5xASFCOeNBObrggpwaMrjtMcUqpF2KM5GiElGGU7SyOkBBGxLBtZZgsr7iBQYUUbm+ZC0k4elPJz7nVhABUay7L8mrtCQnJmNuOd2QyeGSv+SSOkBDkGovzZseENdxpQnQO5bI4ecNGdDFTIV9wWf0nX6AKQdXCntBdzpxQS3qq9oWAX2qq7X0p7BcWtGmgOtNbSV9L4qwKiLZS2YBqgNICpQamBaTOlzYgaZwjlAqKnKT2N6SlKT2F6ktKTmJ6g9ASmtFYGrpVBa2XgWhm0VgaulUFrZeBaGbRWXMAboCPY+cbZAHYmba/3qd5V8wUeX0tfSeSXEtwRn1dphJTg3MYLbCxOgxwV9v7sVrlvzs4suOIcFd05NJmU0N3nGU5I6O6jEVJC95YnQkjo/vBGzOAIfll4qickz/3hyYQBrDx5YEXTVmTWs34MatGlgwEaJyXIN7liTwz8Uz4M8I2a8BTFUV1bLtTTE8K3TjpuZsYUN905GKCaxX8OyHlCzgO5QMgFIBcJuQjkEiGXgFwm5DKQK4RcAXKVkKtA2ghpA3KNkGtArhNyHcgNQm4AuUnITSC3CLkF5DYht4HcIeQOkLuE3AVyj5B7QO4Tch/IA0IeAHlIyEMgjwh5BOQxIY+BPCHkCZCnhDwF8oyQZ0CavztDWEXBR+Blr7P9zfEplo96tr8Z3ynHv9TyvOz197TzcDi/+byZnUb0+/aebufsZga450K0+9VPXaHKDF40+QLH2KkpWJ9YAg0vQ4TWgFNT8DUKjkTFWIZHzPdzJIvQGrGECgaqvplTMLkqHqu+9+SPzJqmIUKDE7CVZYUZd4jU4AjtL3PFHSK1Bgy3mf5gDy/SFVU1eAD9xfJckTwAoWnXqF3jkXKNvAm0CnEz5t4qjurpNt0PClTtQrUL/XZc6FdxjYoO9Zi7S+0DtQ/UPvAo+MCW4+sDrXDaXukjHbnQGrBEKl/J0tP8YnaHSA2ybO2wfJpkEVojPlDh+9byCpsnA0kNQiYWrU3q4IQGK1L67mfG4h6rWNEa8ccKbrJ/lPtuuuiq9pWMVX1DU9968W6klCddupDUTZGC9apvPeoavPrWS9UeqJqT+nZIGwhtILSB0AZCGwhtILSBOFIGovUYG4jEEi+claIeAmTn2t8u7U6QdlloDRgAeyDHop88wznyoX1HqN8QK7Sqmyne3rpzCAly/JuvFbotxFS3hbot1G2hbgt1W6jbwkNqC4/jv4L85/3XN9rVHNa72MxFPO8bISm/R/UbRL9B9Bvk/3+DvPsbfKZEUk04AAA=',
+  filter_url:'{{fl.area}}{{fl.by}}{{fl.class}}{{fl.cateId}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
   //https://www.tyys1.com/index.php/vod/show/area/大陆/by/hits/class/动作/id/2/lang/国语/letter/B/page/2/year/2024.html
   filter_def:{
-    1: {cateId: '1'},
-    2: {cateId: '2'},
-    3: {cateId: '3'},
-    4: {cateId: '4'},
-    41: {cateId: '41'}
+    1: {cateId: '/id/1'},
+    2: {cateId: '/id/2'},
+    3: {cateId: '/id/3'},
+    4: {cateId: '/id/4'},
+    41: {cateId: '/id/41'}
   },
   headers:{
       'User-Agent':'MOBILE_UA',
