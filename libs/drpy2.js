@@ -25,8 +25,16 @@ cheerio.jinja2 = function (template, obj) {
 // import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 
 let vercode = typeof (pdfl) === 'function' ? 'drpy2.1' : 'drpy2';
-const VERSION = vercode + ' 3.9.51beta5 20241104';
+const VERSION = vercode + ' 3.9.51beta6 20241220';
 const UpdateInfo = [
+    {
+        date: '20241220',
+        title: 'drpy更新，优化去广告算法',
+        version: '3.9.51beta6 20241220',
+        msg: `
+ 1. 更新同步drpyS里的去广告算法
+       `,
+    },
     {
         date: '20241104',
         title: 'drpy更新，增加新特性',
@@ -1047,99 +1055,103 @@ function fixAdM3u8Ai(m3u8_url, headers) {
             }
             i++
         }
-        return i;
+        return i
     }
 
     function reverseString(str) {
-        return str.split('').reverse().join('');
+        return str.split("").reverse().join("")
     }
 
     //log('播放的地址：' + m3u8_url);
-    let m3u8 = request(m3u8_url, option);
-    //log('m3u8处理前:' + m3u8);
-    m3u8 = m3u8.trim().split('\n').map(it => it.startsWith('#') ? it : urljoin(m3u8_url, it)).join('\n');
+    let m3u8 = request(m3u8_url, option).content;
+    m3u8 = m3u8.trim().split("\n").map(it => it.startsWith("#") ? it : urljoin(m3u8_url, it)).join("\n");
     //log('m3u8处理后:============:' + m3u8);
     // 获取嵌套m3u8地址
-    m3u8 = m3u8.replace(/\n\n/ig, '\n');//删除多余的换行符
-    let last_url = m3u8.split('\n').slice(-1)[0];
+    m3u8 = m3u8.replace(/\n\n/gi, "\n");//删除多余的换行符
+    let last_url = m3u8.split("\n").slice(-1)[0];
     if (last_url.length < 5) {
-        last_url = m3u8.split('\n').slice(-2)[0];
+        last_url = m3u8.split("\n").slice(-2)[0]
     }
-
-    if (last_url.includes('.m3u8') && last_url !== m3u8_url) {
-        m3u8_url = urljoin2(m3u8_url, last_url);
-        log('嵌套的m3u8_url:' + m3u8_url);
-        m3u8 = request(m3u8_url, option);
+    if (last_url.includes(".m3u8") && last_url !== m3u8_url) {
+        m3u8_url = urljoin(m3u8_url, last_url);
+        log("嵌套的m3u8_url:" + m3u8_url);
+        m3u8 = request(m3u8_url, option).content;
     }
     //log('----处理有广告的地址----');
-    let s = m3u8.trim().split('\n').filter(it => it.trim()).join('\n');
-    let ss = s.split('\n')
+    let s = m3u8.trim().split("\n").filter(it => it.trim()).join("\n");
+    let ss = s.split("\n");
     //找出第一条播放地址
     //let firststr = ss.find(x => !x.startsWith('#'));
-    let firststr = '';
+    let firststr = "";
     let maxl = 0;//最大相同字符
     let kk = 0;
-    let kkk = 2;
-    let secondstr = '';
+    let kkk1 = 1;
+    let kkk2 = 0;
+    let secondstr = "";
     for (let i = 0; i < ss.length; i++) {
         let s = ss[i];
         if (!s.startsWith("#")) {
-            if (kk == 0) firststr = s;
-            if (kk == 1) maxl = b(firststr, s);
-            if (kk > 1) {
-                if (maxl > b(firststr, s)) {
-                    if (secondstr.length < 5) secondstr = s;
-                    kkk = kkk + 2;
+            if (kk == 0)
+                firststr = s;
+            if (kk > 0) {
+                if (maxl > b(firststr, s) + 1) {
+                    if (secondstr.length < 5)
+                        secondstr = s;
+                    kkk2++
                 } else {
                     maxl = b(firststr, s);
-                    kkk++;
+                    kkk1++
                 }
             }
             kk++;
-            if (kk >= 20) break;
+            if (kk >= 30)
+                break
         }
     }
-    if (kkk > 30) firststr = secondstr;
+    if (kkk2 > kkk1)
+        firststr = secondstr;
     let firststrlen = firststr.length;
     //log('字符串长度：' + firststrlen);
     let ml = Math.round(ss.length / 2).toString().length;//取数据的长度的位数
     //log('数据条数的长度：' + ml);
     //找出最后一条播放地址
     let maxc = 0;
-    let laststr = ss.toReversed().find((x) => {
-        if (!x.startsWith('#')) {
-            let k = b(reverseString(firststr), reverseString(x));
-            maxl = b(firststr, x);
-            maxc++;
-            if (firststrlen - maxl <= ml + k || maxc > 10) {
-                return true
+    let laststr = ss.toReversed().find(x => {
+            if (!x.startsWith("#")) {
+                let k = b(reverseString(firststr), reverseString(x));
+                maxl = b(firststr, x);
+                maxc++;
+                if (firststrlen - maxl <= ml + k || maxc > 10) {
+                    return true
+                }
             }
+            return false
         }
-        return false
-    });
-    log('最后一条切片：' + laststr);
+    );
+    log("最后一条切片：" + laststr);
     //log('最小相同字符长度：' + maxl);
     let ad_urls = [];
     for (let i = 0; i < ss.length; i++) {
         let s = ss[i];
-        if (!s.startsWith('#')) {
+        if (!s.startsWith("#")) {
             if (b(firststr, s) < maxl) {
-                ad_urls.push(s); // 广告地址加入列表
+                ad_urls.push(s);// 广告地址加入列表
                 ss.splice(i - 1, 2);
-                i = i - 2;
+                i = i - 2
             } else {
-                ss[i] = urljoin(m3u8_url, s);
+                ss[i] = urljoin(m3u8_url, s)
             }
         } else {
-            ss[i] = s.replace(/URI=\"(.*)\"/, 'URI=\"' + urljoin(m3u8_url, '$1') + '\"');
+            ss[i] = s.replace(/URI=\"(.*)\"/, 'URI="' + urljoin(m3u8_url, "$1") + '"')
         }
     }
-    log('处理的m3u8地址:' + m3u8_url);
-    log('----广告地址----');
+    log("处理的m3u8地址:" + m3u8_url);
+    log("----广告地址----");
     log(ad_urls);
-    m3u8 = ss.join('\n');
+    m3u8 = ss.join("\n");
     //log('处理完成');
-    log('处理耗时：' + (new Date().getTime() - ts).toString());
+    log("处理耗时：" + (new Date().getTime() - ts).toString());
+    log(m3u8);
     return m3u8
 }
 

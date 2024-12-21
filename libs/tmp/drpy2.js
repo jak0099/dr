@@ -25,7 +25,25 @@ cheerio.jinja2 = function (template, obj) {
 // import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
 
 let vercode = typeof (pdfl) === 'function' ? 'drpy2.1' : 'drpy2';
-const VERSION = vercode + ' 3.9.51beta5 20241031';
+const VERSION = vercode + ' 3.9.51beta5 20241104';
+const UpdateInfo = [
+    {
+        date: '20241104',
+        title: 'drpy更新，增加新特性',
+        version: '3.9.51beta5 20241104',
+        msg: `
+ 1. rule增加 搜索验证标识 属性,可以不定义，默认为 '系统安全验证|请输入验证码' 
+ 2. rule增加 searchNoPage 属性，可以不定义，如果定义 1 将关闭该源的搜索翻页功能，超过1页直接返回空     
+       `
+    },
+];
+
+function getUpdateInfo() {
+    return UpdateInfo.map((_o) => {
+        _o.msg = _o.msg.trim().split('\n').map(_it => _it.trim()).join('\n')
+        return _o
+    })
+}
 
 function init_test() {
     // console.log(typeof(JSON5));
@@ -2413,6 +2431,10 @@ function searchParse(searchObj) {
     if (!searchObj.searchUrl) {
         return '{}'
     }
+    if (rule.searchNoPage && Number(searchObj.pg) > 1) {
+        // 关闭搜索分页
+        return '{}'
+    }
     let p = searchObj.搜索 === '*' && rule.一级 ? rule.一级 : searchObj.搜索;
     if (!p || typeof (p) !== 'string') {
         return '{}'
@@ -2501,7 +2523,9 @@ function searchParse(searchObj) {
                 html = getHtml(MY_URL);
             }
             if (html) {
-                if (/系统安全验证|输入验证码/.test(html)) {
+                // 解决搜索源码奇葩触发自动过验证逻辑
+                let search_tag = rule.搜索验证标识 || '系统安全验证|输入验证码';
+                if (new RegExp(search_tag).test(html)) {
                     let cookie = verifyCode(MY_URL);
                     if (cookie) {
                         console.log(`本次成功过验证,cookie:${cookie}`);
