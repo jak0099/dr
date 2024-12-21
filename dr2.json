@@ -73,7 +73,6 @@
 {"key": "dr_40影视","name": "🍊40影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/40影视.js"},
 {"key": "dr_酷云影视","name": "🍊酷云影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/酷云影视.js"},
 {"key": "dr_爱看机器人","name": "🍊爱看机器人[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/爱看机器人[虫].js"},
-{"key": "dr_量子影视","name": "🍊量子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/量子影视.js"},
 {"key": "dr_蓝光影院","name": "🍊蓝光影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/蓝光影院.js"},
 {"key": "dr_爱迪影视","name": "🍊爱迪影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/爱迪影视.js"},
 {"key": "dr_快看","name": "🍊快看[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/快看.js"},
