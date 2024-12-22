@@ -57,6 +57,8 @@
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_大象影视","name": "🍊大象影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大象影视.js"},
+{"key": "dr_雪糕TV","name": "🍊雪糕TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/雪糕TV.js"},
 {"key": "dr_看看屋","name": "🍊看看屋[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/看看屋.js"},
 {"key": "dr_大米星球","name": "🍊大米星球[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大米星球.js"},
 {"key": "dr_蜥蜴电影","name": "🍊蜥蜴电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/蜥蜴电影.js"},
@@ -66,13 +68,13 @@
 {"key": "dr_剧爷爷","name": "🍊剧爷爷[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧爷爷.js"},
 {"key": "dr_大树网","name": "🍊大树网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大树网.js"},
 {"key": "dr_泡泡影视","name": "🍊泡泡影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/泡泡影视.js"},
-{"key": "dr_全集网","name": "🍊全集网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/全集网.js"},
 {"key": "dr_统一影视","name": "🍊统一影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/统一影视.js"},
-{"key": "dr_火车太堵","name": "🍊火车大堵[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/火车太堵.js"},
+{"key": "dr_火车太堵","name": "🍊火车太堵[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/火车太堵.js"},
 {"key": "dr_可可影视2","name": "🍊可可影视2[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/可可影视2.js"},
 {"key": "dr_40影视","name": "🍊40影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/40影视.js"},
 {"key": "dr_酷云影视","name": "🍊酷云影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/酷云影视.js"},
 {"key": "dr_爱看机器人","name": "🍊爱看机器人[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/爱看机器人[虫].js"},
+{"key": "dr_量子影视","name": "🍊量子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/量子影视.js"},
 {"key": "dr_蓝光影院","name": "🍊蓝光影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/蓝光影院.js"},
 {"key": "dr_爱迪影视","name": "🍊爱迪影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/爱迪影视.js"},
 {"key": "dr_快看","name": "🍊快看[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/快看.js"},
@@ -319,9 +321,9 @@
 {"key": "dr_Animoe动漫[漫]","name": "🍇Animoe动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Animoe动漫[漫].js"},
 {"key": "dr_MX动漫[漫]","name": "🍇MX动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/MX动漫[漫].js"},
 {"key": "dr_久久动漫[漫]","name": "🍇久久动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/久久动漫[漫].js"},
-{"key": "dr_橘子动漫[漫]","name": "🍇模板[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/橘子动漫漫].js"},
+{"key": "dr_橘子动漫[漫]","name": "🍇橘子动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/橘子动漫[漫].js"},
 {"key": "dr_九兔动漫[漫]","name": "🍇九兔动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/九兔动漫[漫].js"},
-
+    
 //#js_采集资源类🥒
 //{"key": "dr_模板[资]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
@@ -671,10 +673,10 @@
 //##解析&去广规则
 //#去广告
 {"name": "爱酷","hosts": ["cdn.json.icu"],"regex": ["#EXTINF:1.000000,[\\s\\S]*?#EXT-X-ENDLIST"]},
-//{"name":"一起看广告","hosts":["yqk88","ydd"],"regex":["18.4666","18.4","15.1666","16.5333","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-OUT((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-IN"]},
+{"name":"一起看广告","hosts":["yqk88","ydd"],"regex":["18.4666","18.4","15.1666","16.5333","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-OUT((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-IN"]},
 {"name": "星星广告","hosts": ["aws.ulivetv.net"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:9,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"暴风","hosts":["bfzy","bfbfvip","bfengbf","7bbffvip"],"regex":["#EXTINF.*?\\s+.*?adjump.*?\\.ts"]},
-//{"name":"量子","hosts":["vip.lz","hd.lz","cdnlz","cdnlz22"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7\\.166667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:4\\.066667,[\\s\\S]*?#EXT-X-DISCONTINUITY","17.19"]},
+{"name":"量子","hosts":["vip.lz","hd.lz","cdnlz","cdnlz22"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7\\.166667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:4\\.066667,[\\s\\S]*?#EXT-X-DISCONTINUITY","17.19"]},
 {"name":"非凡","hosts":["vip.ffzy","hd.ffzy","super.ffzy","svipsvip.ffzy-online5","svipsvip","ffzyread1","9iqy39dnfl","skr"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.400000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.466667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.600000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6\\.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1171(057).*?\\.ts","#EXTINF.*?\\s+.*?6d7b(077).*?\\.ts","#EXTINF.*?\\s+.*?6718a(403).*?\\.ts","17.99","14.45"]},
 {"name":"索尼","hosts":["suonizy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:1\\.000000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?p1ayer.*?\\.ts","#EXTINF.*?\\s+.*?\\/video\\/original.*?\\.ts"]},
 {"name":"快看","hosts":["kuaikan"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2\\.4,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:1\\.467,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
