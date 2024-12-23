@@ -57,6 +57,8 @@
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_星空影院","name": "🍊星空影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/星空影院.js"},
+{"key": "dr_熊猫","name": "🍊熊猫[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/熊猫.js"},
 {"key": "dr_大象影视","name": "🍊大象影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/大象影视.js"},
 {"key": "dr_雪糕TV","name": "🍊雪糕TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/雪糕TV.js"},
 {"key": "dr_看看屋","name": "🍊看看屋[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/看看屋.js"},
