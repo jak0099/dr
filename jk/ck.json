@@ -7,7 +7,7 @@
 "urls": [
 {"name": "🔥本地dr源②","url":"clan://localhost/tvbox/dr2.json"},        
 {"name": "☄️dr②","url":"https://raw.gitmirror.com/jak0099/dr/master/dr2.json"},        
-{"name": "☄️dr②|备用1","url":"https://ghp.ci/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
+{"name": "☄️dr②|备用1","url":"https://gh-proxy.com/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
 {"name": "☄️dr②|备用2","url":"https://hub.gitmirror.com/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
 {"name": "☄️dr②|备用3","url":"https://gh.llkk.cc/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
 {"name": "☄️dr②|备用4","url":"https://cors.isteed.cc/https://raw.githubusercontent.com/jak0099/dr/master/dr2.json"},        
