@@ -43,7 +43,7 @@ var rule = {
     }),
   double:true,
   推荐:'.stui-vodlist;li;a&&title;a&&data-original;.text-right&&Text;a&&href;.stui-vodlist__detail&&.text-muted&&Text',
-  一级:'.box-video-list&&li;a&&title;a&&data-original;.text-right&&Text;a&&href;.stui-vodlist__detail&&.text-muted&&Text',
+  一级:'.box-video-list&&li;a&&title;a&&data-original;.note&&Text;a&&href;.stui-vodlist__detail&&.text-muted&&Text',
   二级:{
     title:'h1&&Text;.info&&li:eq(2)&&Text',
     img:'.details-pic&&a&&style',

@@ -30,6 +30,10 @@
 //##播放本地视频
 //{"key": "csp_LocalFile","name": "📁本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1,"jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 
+{"key":"yfsp","name":"🍥壹帆{GM}","type":3,"searchable":1,"changeable":1,"quickSearch":0,"style":{"type":"rect","ratio":0.75},"api":"csp_GM","jar":"./sp/GM.jar","ext":{"userScript":"./js/us/ysfp.user.js","debug":false,"webViewSettings":{"blockNetworkImage":true,"blockList":["*.png*","*.mp3*","*.css*","https://*.googletagmanager.com/*","https://*.google-analytics.com/*"]},"spider":{"homeContent":{"loadUrl":"https://m.yfsp.tv/"},"categoryContent":{"loadUrl":"https://m.yfsp.tv/list/${tid}?type=${index-0:-0}${index-1:-,0}${index-2:-,0}${index-3:-,0}${index-4:-,0}${index-5:-}"},"detailContent":{"loadUrl":"https://m.yfsp.tv/play/${id}"},"playerContent":{"loadUrl":"https://m.yfsp.tv/play/${mediaKey}?id=${episodeKey}"},"searchContent":{"loadUrl":"https://m.yfsp.tv/search"}}}},
+{"key":"gaze","name":"🍥注视{GM}","type":3,"searchable":1,"changeable":1,"quickSearch":0,"style":{"type":"rect","ratio":0.66},"api":"csp_GM","jar":"./sp/GM.jar","ext":{"userScript":"./js/us/gaze.user.js","debug":false,"webViewSettings":{"blockNetworkImage":true,"blockList":["https://*.bytecdntp.com/cdn/expire-1-M/font-awesome/*","https://*.clarity.ms/*","https://gaze.run/visitorslog.php*","*.css*"]},"playUrlMatch":["https://dl-b.cloud.189.cn/corp/downloadFile.action?*","https://gaze.run/gaze_filey/pb/*.m3u8","https://*/obj/tos*"],"spider":{"homeContent":{"loadUrl":"https://gaze.run/filter"},"categoryContent":{"loadUrl":"https://gaze.run/filter"},"detailContent":{"loadUrl":"https://gaze.run/play/${id}"},"playerContent":{"loadUrl":"https://gaze.run/play/${mcid}#${path}"},"searchContent":{"loadUrl":"https://gaze.run/filter"}}}},
+{"key":"hitv","name":"🍥Hi视频{GM}","type":3,"searchable":1,"changeable":1,"quickSearch":0,"style":{"type":"rect","ratio":0.71},"api":"csp_GM","jar":"./sp/GM.jar","ext":{"userScript":"./js/us/hitv.user.js","debug":false,"webViewSettings":{"blockNetworkImage":true,"blockList":["https://*.google-analytics.com/*"]},"spider":{"homeContent":{"loadUrl":"https://www.upfuhn.com/column/0.html"},"categoryContent":{"loadUrl":"https://www.upfuhn.com/column/${tid}.html"},"detailContent":{"loadUrl":"https://www.upfuhn.com/play/${id}.html"},"searchContent":{"loadUrl":"https://www.upfuhn.com/search/${key}.html"}}}},
+
 //##道长js_dr格式源
 //#测试源
 //{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./测试文件/js源测试/测试.js"},
@@ -57,6 +61,12 @@
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_流光影视","name": "🍊流光影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/流光影视.js"},
+{"key": "dr_皮皮虾","name": "🍊皮皮虾[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/皮皮虾.js"},
+{"key": "dr_追剧","name": "🍊追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/追剧.js"},
+{"key": "dr_奈飞中文","name": "🍊奈飞中文[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奈飞中文.js"},
+{"key": "dr_哈哈影视","name": "🍊哈哈影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/哈哈影视.js"},
+{"key": "dr_酷猫电影网","name": "🍊酷猫电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/酷猫电影网.js"},
 {"key": "dr_奈飞工厂","name": "🍊奈飞工厂[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奈飞工厂.js"},
 {"key": "dr_萍果","name": "🍊萍果[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/萍果.js"},
 {"key": "dr_奈落影视","name": "🍊奈落影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/奈落影视.js"},

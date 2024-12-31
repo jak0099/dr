@@ -12,3 +12,4 @@ https://ghproxy.com/https://raw.githubusercontent.com/
 https://ghproxy.net/https://raw.githubusercontent.com/
 https://githubfd.deno.dev/
 https://mirror.ghproxy.com/https://raw.githubusercontent.com/
+https://ghp.ci/

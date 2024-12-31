@@ -1,0 +1,9 @@
+/*
+ 参数说明：
+ fullText: 完整的文本内容。
+ leftText: 左边文本，用于定位中间内容的起始位置。
+ rightText: 右边文本，用于定位中间内容的结束位置。
+ startPos: 起始查找位置，默认为 0，表示从文本的第一个字符开始查找。
+ includeLeft: 是否在结果中包含左边文本，默认为 false。
+ includeRight: 是否在结果中包含右边文本，默认为 false。
+ */

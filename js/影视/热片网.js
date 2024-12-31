@@ -22,7 +22,7 @@ var rule = {
         input = {parse: 1, url: input, js: ''};
     }),
     double: true,
-    推荐: '.layout-box;li;*;*;*;*;*',
+    推荐: '.col-md-2;li;*;*;*;*;*',
     一级: '.box-video-list&&ul&&li;a&&title;a&&data-original;.note&&Text;a&&href;.subtitle&&Text',
     二级: {
         title: 'h1--em&&Text;ul.info&&li:eq(2)&&Text',

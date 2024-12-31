@@ -14,7 +14,7 @@ var rule = {
         'User-Agent': 'MOBILE_UA',
     },
     timeout: 5000,
-    class_parse: '.hom_mob_list li;a&&Text;a&&href;.*/(.*?).html',
+    class_parse: '.hom_mob_list li;span&&Text;a&&href;.*/(.*?)\.html',
     cate_exclude: '',
     play_parse: true,
     lazy: "js:input = {parse: 1, url: input, js: ''}",

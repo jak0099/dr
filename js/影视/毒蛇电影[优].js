@@ -102,4 +102,10 @@ var rule = {
     VODS = [filters];
     console.log(gzip(JSON.stringify(filters)));
     `,
+    //过滤广告
+  proxy_rule: `js:
+  let url = input.url;
+  let m3u8 = fixAdM3u8Ai(url);
+  input = [200,'application/vnd.apple.mpegurl',m3u8]
+  `
 }

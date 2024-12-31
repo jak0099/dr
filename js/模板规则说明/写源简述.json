@@ -191,6 +191,13 @@ RSA.decode(data, key, option);
 ###2024.11.4
 增加drpy新特性，可以规则内添加搜索验证标识，可以禁止某个源的搜索翻页。
 
+##广告过滤写法：
+  proxy_rule: `js:
+  let url = input.url;
+  let m3u8 = fixAdM3u8Ai(url);
+  input = [200,'application/vnd.apple.mpegurl',m3u8]
+  `
+  
 ##筛选简述:
 ###1.动漫巴士为例：
 {https://dm84.top/show-1--hits-奇幻--2024-2.html

@@ -1,0 +1,40 @@
+var rule = {
+  类型:'影视',//影视|听书|漫画|小说
+  author:'jak',
+  title:'米粒米粒',
+  host:'https://milimili.nl/',
+  url:'/list/fyclass',
+  searchUrl:'/search?q=**',
+  searchable:2,
+  quickSearch:0,
+  filterable:1,
+  filter:'',
+  filter_url:'',
+  filter_def:{},
+  headers:{
+      'User-Agent':'MOBILE_UA',
+  },
+  timeout:5000,
+  class_parse:'.nav-bar li;a&&Text;a&&href;.*/(.*)/?.*',
+  cate_exclude:'最近更新|剧场版|TV版|OVA版',
+  play_parse:true,
+  lazy:$js.toString(()=>{
+    input = {parse:1,url:input,js:''};
+  }),
+  double:true,
+  推荐:'ul.row&&li;li;.col-3&&a:eq(1)&&title;.col-3&&img&&src;.col-3&&span&&Text;.col-3&&a:eq(1)&&href',
+  一级:'ul.list-unstyled&&li;h6&&Text;img&&src;ul.list-unstyled .small&&Text;ul.list-unstyled&&li&&a:eq(1)&&href',
+  二级:{
+    title:'body .small .mb-2:eq(0)&&Text;.col-lg-6:eq(3)&&Text',
+    img:'img&&src',
+    desc:'.col-md-8 .row&&span:eq(4)&&Text;.col-md-8 .row&&span:eq(1)&&Text;.col-md-8 .row&&span:eq(0)&&Text',
+    content:'.col-md-8 .small:eq(1)&&Text',
+    tabs:'.menu-tabs&&li',
+    lists:'.ep-panel:eq(#id)&&li',
+    tab_text:'body&&Text',
+    list_text:'body&&Text',
+    list_url:'a&&href',
+    list_url_prefix: '',
+  },
+  搜索:'body .mb-3 ul.list-unstyled&&li;.text:eq(0)&&Text;img&&src;em&&Text;.carousel-node&&a&&href',
+}

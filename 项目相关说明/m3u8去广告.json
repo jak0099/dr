@@ -1,0 +1,502 @@
+
+量子非凡暴风去广告2024年5月最新代码：
+
+<?php
+//关闭所有PHP错误报告
+error_reporting(0);
+//是否缓存视频链接 1 缓存 0 不缓存
+define('IFHC',1);
+//缓存保存的文件夹 如果不缓存请无视
+if(strstr($_GET['url'],'ffzy')){$mulu="/m3u8_chace/F/";}//非凡缓存目
+if(strstr($_GET['url'],'lz-cdn')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+if(strstr($_GET['url'],'cdnlz')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+if(strstr($_GET['url'],'bfeng')){$mulu="/m3u8_chace/B/";}//暴风缓存目录
+if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+//如果目录地址为空，默认保存在目录中
+define('HCFILE',__DIR__.$mulu);
+//缓存时效 秒为单位 如果不缓存请无视
+define('HCTIME',86400);
+//设置编码
+header('Content-type: text/json;charset=utf-8');
+//开始接收url内容，get方式接收url播放地址
+$url = $_GET["url"];
+//将url 变量中所有的http替换成https
+$url = str_replace('http://','https://',$url);
+//存储从目标 URL 获取到的数据。
+$DATA = curl($url);
+//对 DATA 变量中的内容进行匹配，并将匹配结果存储在 jmurl 数组中。
+preg_match('/RESOLUTION=(.*)\n?(.*)/',$DATA,$jmurl);
+//将 url 中的 index.m3u8'替换为 jmurl[2] 的值。
+$url = str_replace('index.m3u8',$jmurl[2],$url);
+//根据 URL 中是否包含特定字符串来确定缓存目录的路径
+if(strstr($url, "ffzy")==true){
+//根据 URL 计算 MD5 值，并添加 m3u8扩展名作为缓存文件的文件名。
+$MD5 = Md5($url).'.m3u8';
+//创建缓存目录，设置权限为 0755，如果父目录不存在也会一并创建。
+if (is_dir(HCFILE)==false) {
+    mkdir(HCFILE,0755,true);
+}
+//检查是否开启了缓存，并且缓存文件是否存在以及缓存文件是否仍然在有效期内。
+if (IFHC==1 && file_exists(HCFILE.$MD5) && filemtime(HCFILE.$MD5) + HCTIME > time()) {
+//确定当前请求的协议类型（HTTP 或 HTTPS）。
+//如果是 HTTPS 请求，那么被赋值为 https，否则被赋值为 http。
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+//根据传入的参数判断是否包含特定的字符串。
+    if(strstr($_GET['url'],'ffzy')){$mulu="/m3u8_chace/F/";}//非凡缓存目录
+    if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+//记录解析 M3U8 文件的时间，并返回解析结果的相关信息。
+    $t1 = microtime(true);
+    $t2 = microtime(true);
+    $arr = array(
+        'code' => 200,
+                              'type' => 'm3u8',
+        'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$MD5,
+        'msg' => '非凡资源解析成功,JSON播放器通过读取url地址进行播放',
+    );
+//输出并终止脚本的执行。将 JSON 字符串输出给前端后，脚本即停止执行，不再执行后续的代码。
+    die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+}
+//检查从 URL 获取的数据是否为空。如果数据为空，它会输出 HTTP 状态码 404 并终止脚本的执行。
+$data = curl($url);
+if (empty($data)) {
+    die(404);
+}
+//判断是否为.m3u8
+if(strstr($url, ".m3u8")==true){
+echo m3u8ts($url,$MD5,$data,$explode[2]);
+}
+}
+
+
+if(strstr($url, "lz-cdn")==true){
+$MD5 = Md5($url).'.m3u8';
+if (is_dir(HCFILE)==false) {
+    mkdir(HCFILE,0755,true);
+}
+if (IFHC==1 && file_exists(HCFILE.$MD5) && filemtime(HCFILE.$MD5) + HCTIME > time()) {
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+    if(strstr($_GET['url'],'lz-cdn')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+    if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+    $arr = array(
+        'code' => 200,
+                              'type' => 'm3u8',
+        'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$MD5,
+        'msg' => '量子资源解析成功,JSON播放器通过读取url地址进行播放',
+    );
+    die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+}
+$data = curl($url);
+if (empty($data)) {
+    die(404);
+}
+//判断是否为.m3u8
+if(strstr($url, ".m3u8")==true){
+echo m3u8ts($url,$MD5,$data,$explode[2]);
+}
+}
+
+
+if(strstr($url, "cdnlz")==true){
+$MD5 = Md5($url).'.m3u8';
+if (is_dir(HCFILE)==false) {
+    mkdir(HCFILE,0755,true);
+}
+if (IFHC==1 && file_exists(HCFILE.$MD5) && filemtime(HCFILE.$MD5) + HCTIME > time()) {
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+    if(strstr($_GET['url'],'cdnlz')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+    if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+    $arr = array(
+        'code' => 200,
+                              'type' => 'm3u8',
+                              'date' => date("Y-m-d H:i:s"),
+                              'ip' => rand_ip(),
+        'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$MD5,
+                              'msg' => '量子资源解析成功,JSON播放器通过读取url地址进行播放',
+    );
+              die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+
+}
+
+$data = curl($url);
+if (empty($data)) {
+    die(404);
+}
+
+//判断是否为.m3u8
+if(strstr($url, ".m3u8")==true){
+echo m3u8ts($url,$MD5,$data,$explode[2]);
+}
+}
+
+
+if(strstr($_GET["url"], "bfeng")==true){
+$MD5 = Md5($_GET["url"]).'.m3u8';
+if (is_dir(HCFILE)==false) {
+    mkdir(HCFILE,0755,true);
+}
+if (IFHC==1 && file_exists(HCFILE.$MD5) && filemtime(HCFILE.$MD5) + HCTIME > time()) {
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+    if(strstr($_GET['url'],'bfeng')){$mulu="/m3u8_chace/B/";}//暴风缓存目录
+    if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+    $arr = array(
+        'code' => 200,
+                              'type' => 'm3u8',
+        'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$MD5,
+                              'msg' => '暴风资源解析成功！JSON播放器通过读取url地址进行播放',
+    );
+    die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+}
+$data = curl($_GET["url"]);
+if (empty($data)) {
+    die(404);
+}
+//判断是否为.m3u8
+if(strstr($_GET["url"], ".m3u8")==true){
+echo m3u8ts($_GET["url"],$MD5,$data,$explode[2]);
+}
+}
+
+//如果在url中没有找到包含以上解析的相关关键字，解析将会失败，返回JSON格式的404失败。
+//解析失败后，JSON播放器会自动调用下一个备用播放器进行解析，如果你只有一个播放器，而且解析失败后，想通过直链播放，可以将下面的nullurl修改为url
+
+if ($decrypted == false) {
+    $add['code'] = 404;
+    $add['ip'] = rand_ip();
+    $add['url'] =$_GET["url"];
+    $add["msg"]='解析失败，解析地址为空或服务器无法访问此URL。如果本地M3U8链接可以正常播放，你的解析服务器可能已经被对方屏蔽。';
+}
+//将404解析失败的错误转换为 JSON 格式，并将其发送给客户端。
+echo json_encode($add,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+
+
+//对 m3u8 数据进行处理，根据不同条件匹配不同的正则表达式，从而实现对 m3u8 数据的定制化处理。
+function m3u8ts($wz , $file , $data , $name){
+                   //替换字符串中匹配特定模式，将匹配到的部分替换为空
+                   $data = preg_replace('/#EXT-X-DISCONTINUITY\n?/',"",$data);
+                   //注意：这里是删除m3u8中切片广告的核心部分，例如量子资源中广告部分是a4d95fd218f0718312.ts结尾数字与m3u8中的数字不是连续的就是广告。
+                   //通过正则匹配删除，前面11个字母+数字的字符，正则表达式是(\d+){11}  后面7位数字的正则是(\d{0,7}) 正则的写法可以在AI中查询。
+                   if(strstr($_GET["url"], "cdnlz")==true){
+        $data = preg_replace('/[0-9a-z]{11}\d{7}.ts/',"",$data);
+                                                               }
+                   if(strstr($_GET["url"], "bfeng")==true){
+        $data = preg_replace('/(\d+){12}(\d{0,9}).ts/',"",$data);
+                                                                }
+        if(strstr($_GET["url"], "ffzy")==true){
+        $data = preg_replace('/(\d+){12}(\d{0,9}).ts/',"",$data);
+                                                                }
+                   if(strstr($_GET["url"], "lz-cdn")==true){
+         $data = preg_replace('/[0-9a-z]{11}\d{7}.ts/',"",$data);
+                                                                }
+          
+                   //如果有其它的资源站删除切片广告，也可以使用这个方法删除。
+                   //下面是重新将切片文件打包过程。
+                   //提取URL部分，保存在$ym变量中
+        preg_match('/\/\/(.*)\/'.$name.'/',$wz,$ym);
+                   //将上面提取到的URL添加https:和删除原始切片文件名，例如：删除掉index.m3u8 然后将URL保存在$web变量中。
+        $web = 'https:'.str_replace($name,'', $ym[0]);
+                   //使用正则表达式匹配 $data 字符串中的 #EXTINF 标签行，将其替换为带有新的 URL 地址的 #EXTINF 标签行，并将结果存储在 $m3u8 变量中。
+        $m3u8 = preg_replace('/#EXTINF:(.*),\n?(.*)\n?/',"#EXTINF:$1,\n$web$2\n",$data);
+                   //将替换后的$m3u8字符串按行拆分为数组，并将结果存储在 $lines 变量中。PHP_EOL 表示换行符
+        $lines = explode(PHP_EOL, $m3u8);
+                   //初始化变量$last_order
+        $last_order = -1;
+
+    //查找$lines内容，按数字顺序保存名称，将内容保存在$filtered_lines中。
+    foreach ($lines as $line) {
+    if (strpos($line, 'http') !== false) {
+        preg_match('/(\d+)\.ts/', $line, $matches);
+        $order = intval($matches[1]);
+            if ($order > $last_order) {
+                $filtered_lines[] = $line;
+                $last_order = $order;
+                                                 }
+                                                     } else {
+        $filtered_lines[] = $line;
+                                                     }
+                             }
+
+                   //将M3U8的播放列表中特定格式的标签行删除，然后将处理后的结果存储在 $filtered_lines_hc 变量中
+                   //用于删除之前切片广告遗留下来的#EXTINF行，每个起始行的标记都是唯一的，切片广告删除条数多少，#EXTINF起始行后面加上几个#EXTINF
+    
+        $filtered_lines_hc=implode(PHP_EOL, $filtered_lines);
+        $filtered_lines_hc=preg_replace('/#EXTINF:6.433333,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+        $filtered_lines_hc=preg_replace('/#EXTINF:6.666667,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+        $filtered_lines_hc=preg_replace('/#EXTINF:3,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+        $filtered_lines_hc=preg_replace('/#EXTINF:4.066667,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+                   $filtered_lines_hc=preg_replace('/#EXTINF:4.12,\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+                   $filtered_lines_hc=preg_replace('/#EXTINF:4.400000,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+                   $filtered_lines_hc=preg_replace('/#EXTINF:6.400000,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+
+
+
+                              //将经过处理的，打包好的m3u8数据写入到指定的文件中。
+                   file_put_contents(HCFILE.$file, $filtered_lines_hc);
+
+        $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+        if(strstr($_GET['url'],'ffzy')){$mulu="/m3u8_chace/F/";}//非凡缓存目
+                              if(strstr($_GET['url'],'lz-cdn')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+        if(strstr($_GET['url'],'cdnlz')){$mulu="/m3u8_chace/L/";}//量子缓存目录
+        if(strstr($_GET['url'],'bfeng')){$mulu="/m3u8_chace/B/";}//暴风缓存目录
+        if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+        $arr = array(
+            'code' => 200,
+            'msg' => 'M3U8文件解析成功!',
+                                             'type'=>'m3u8',
+            'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$file,
+        );
+                              //输出解析成功的json内容。
+        die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+        return;
+}
+
+
+//执行 HTTP 请求
+function curl($url) {
+if(!function_exists('curl_init')) die('PHP未安装curl扩展，请安装PHP对应版本的curl扩展！'); 
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "accept: */*",
+        "accept-encoding: gzip, deflate",
+        "accept-language: zh-CN,zh;q=0.9",
+        "Accept: application/json, text/javascript, */*; q=0.01",
+        "X-FORWARDED-FOR:".rand_ip(),
+                              "CLIENT-IP:".rand_ip(),
+                              "X-Real-IP:".rand_ip(),
+                   "Connection: keep-alive",
+    ));
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36');
+    curl_setopt($ch, CURLOPT_REFERER,'');
+    curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    @ $file = curl_exec($ch);
+    curl_close($ch);
+    return $file;
+}
+//生成随机 IP 地址
+function rand_ip() {
+    $ip_long = array(
+    array('607649792', '608174079'), //36.56.0.0-36.63.255.255
+    array('975044608', '977272831'), //58.30.0.0-58.63.255.255
+    array('999751680', '999784447'), //59.151.0.0-59.151.127.255
+    array('1019346944', '1019478015'), //60.194.0.0-60.195.255.255
+    array('1038614528', '1039007743'), //61.232.0.0-61.237.255.255
+    array('1783627776', '1784676351'), //106.80.0.0-106.95.255.255
+    array('1947009024', '1947074559'), //116.13.0.0-116.13.255.255
+    array('1987051520', '1988034559'), //118.112.0.0-118.126.255.255
+    array('2035023872', '2035154943'), //121.76.0.0-121.77.255.255
+    array('2078801920', '2079064063'), //123.232.0.0-123.235.255.255
+    array('-1950089216', '-1948778497'), //139.196.0.0-139.215.255.255
+    array('-1425539072', '-1425014785'), //171.8.0.0-171.15.255.255
+    array('-1236271104', '-1235419137'), //182.80.0.0-182.92.255.255
+    array('-770113536', '-768606209'), //210.25.0.0-210.47.255.255
+    array('-569376768', '-564133889'), //222.16.0.0-222.95.255.255
+    );
+    $rand_key = mt_rand(0, 14);
+    $huoduan_ip= long2ip(mt_rand($ip_long[$rand_key][0], $ip_long[$rand_key][1]));
+    return $huoduan_ip;
+}
+
+
+快看去广告代码
+快看资源去广告代码，由于快看资源的m3u8的内部结构和以上的不同，所以重新写了一段针对快看资源的去广告代码。
+
+下面的代码适用于不使用数字排序的。也可以修改其它切片插播广告的m3u8资源。
+
+<?php
+header("Cache-Control: no-cache, must-revalidate");//清理浏览器缓存
+header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');//禁止页面被缓存
+header("Access-Control-Allow-Headers: x-requested-with,content-type");
+header("Access-Control-Allow-Methods: GET, POST");
+header("Access-Control-Allow-Origin: *");
+header("Cache-Control: no-cache, no-store, max-age=0, must-revalidate");
+header("Connection: keep-alive");
+header("Transfer-Encoding: chunked");
+//关闭所有PHP错误报告
+error_reporting(0);
+//是否缓存视频链接 1 缓存 0 不缓存
+define('IFHC',1);
+//缓存保存的文件夹 如果不缓存请无视
+if(strstr($_GET['url'],'kuaikan')){$mulu="/m3u8_chace/K/";}//快看缓存目录
+if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+//如果目录地址为空，默认保存在目录中
+define('HCFILE',__DIR__.$mulu);
+//缓存时效 秒为单位 如果不缓存请无视
+define('HCTIME',86400);
+//设置编码
+header('Content-type: text/json;charset=utf-8');
+//开始接收url内容，get方式接收url播放地址
+$url = $_GET["url"];
+//将url 变量中所有的http替换成https
+$url = str_replace('http://','https://',$url);
+
+
+if(strstr($url, "kuaikan")==true){
+$MD5 = Md5($url).'.m3u8';
+if (is_dir(HCFILE)==false) {
+    mkdir(HCFILE,0755,true);
+}
+
+if (IFHC==1 && file_exists(HCFILE.$MD5) && filemtime(HCFILE.$MD5) + HCTIME > time()) {
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+   
+if(strstr($_GET['url'],'kuaikan')){$mulu="/m3u8_chace/K/";}//快看缓存目录
+
+if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+    $arr = array(
+        'code' => 200,
+                              'type' => 'm3u8',
+                              'date' => date("Y-m-d H:i:s"),
+                              'ip' => rand_ip(),
+        'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$MD5,
+                              'msg' => '快看资源解析成功,JSON播放器通过读取url地址进行播放',
+    );
+              die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+}
+$data = curl($url);
+if (empty($data)) {
+    die(404);
+}
+
+//判断是否为.m3u8
+if(strstr($url, ".m3u8")==true){
+echo m3u8ts($url,$MD5,$data,$explode[2]);
+}
+}
+
+if ($decrypted == false) {
+    $add['code'] = 404;
+    $add['ip'] = rand_ip();
+    $add['nullurl'] =$_GET["url"];
+    $add["msg"]='解析失败，解析地址为空或服务器无法访问此URL。如果本地M3U8链接可以正常播放，你的解析服务器可能已经被对方屏蔽。';
+}
+//将404解析失败的错误转换为 JSON 格式，并将其发送给客户端。
+echo json_encode($add,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+
+
+function m3u8ts($wz , $file , $data , $name){
+
+                   //通过正则匹配删除
+                   if(strstr($_GET["url"], "kuaikan")==true){
+                    $data = preg_replace('/#EXT-X-DISCONTINUITY\n?/',"",$data);
+                    $data = preg_replace('/#EXT-X-KEY:METHOD=NONE\n?/',"",$data);
+                    $data = preg_replace('/\/(\d{4})(\d{2})(\d{2})\/.{8}\/hls\//',"",$data);
+                                                    
+         $data = preg_replace('/\/(\d{4})(\d{2})(\d{2})\/.{8}\/10028kb\/hls\/.{8}.ts/',"",$data);
+
+
+                                                                }
+          
+                   //下面是重新将切片文件打包过程。
+                   //提取URL部分，保存在$ym变量中
+        preg_match('/\/\/(.*)\/'.$name.'/',$wz,$ym);
+                   //将上面提取到的URL添加https:和删除原始切片文件名，例如：删除掉index.m3u8 然后将URL保存在$web变量中。
+        $web = 'https:'.str_replace($name,'', $ym[0]);
+                   //使用正则表达式匹配 $data 字符串中的 #EXTINF 标签行，将其替换为带有新的 URL 地址的 #EXTINF 标签行，并将结果存储在 $m3u8 变量中。
+        $m3u8 = preg_replace('/#EXTINF:(.*),\n?(.*)\n?/',"#EXTINF:$1,\n$web$2\n",$data);
+                   //将替换后的$m3u8字符串按行拆分为数组，并将结果存储在 $lines 变量中。PHP_EOL 表示换行符
+        $lines = explode(PHP_EOL, $m3u8);
+                   //初始化变量$last_order
+        $last_order = -1;
+
+
+foreach ($lines as $line) {
+    if (strpos($line, '.ts') !== false || strpos($line, '#EXT') !== false) {
+        $filtered_lines[] = $line;
+    }
+}
+
+                   //将M3U8的播放列表中特定格式的标签行删除，然后将处理后的结果存储在 $filtered_lines_hc 变量中
+                   //用于删除之前切片广告遗留下来的#EXTINF行，每个起始行的标记都是唯一的，切片广告删除条数多少，#EXTINF起始行后面加上几个#EXTINF
+    
+        $filtered_lines_hc=implode(PHP_EOL, $filtered_lines);
+        $filtered_lines_hc=preg_replace('/#EXTINF:1.267,\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?#EXTINF:(.*),\n?/',"",$filtered_lines_hc);
+
+
+
+                              //将经过处理的，打包好的m3u8数据写入到指定的文件中。
+                   file_put_contents(HCFILE.$file, $filtered_lines_hc);
+
+        $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+        if(strstr($_GET['url'],'kuaikan')){$mulu="/m3u8_chace/K/";}//快看缓存目录
+        if($mulu == ''){$mulu="/m3u8_chace/m3u8/";}//其他缓存目录
+        $arr = array(
+            'code' => 200,
+            'msg' => 'M3U8文件解析成功!',
+                                             'type'=>'m3u8',
+            'url' => $http_type.$_SERVER['HTTP_HOST'].$mulu.$file,
+        );
+                              //输出解析成功的json内容。
+        die(json_encode($arr,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+        return;
+
+}
+
+
+
+
+
+
+
+
+
+
+//执行 HTTP 请求
+function curl($url) {
+if(!function_exists('curl_init')) die('PHP未安装curl扩展，请安装PHP对应版本的curl扩展！'); 
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "accept: */*",
+        "accept-encoding: gzip, deflate",
+        "accept-language: zh-CN,zh;q=0.9",
+        "Accept: application/json, text/javascript, */*; q=0.01",
+        "X-FORWARDED-FOR:".rand_ip(),
+                              "CLIENT-IP:".rand_ip(),
+                              "X-Real-IP:".rand_ip(),
+                   "Connection: keep-alive",
+    ));
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36');
+    curl_setopt($ch, CURLOPT_REFERER,'');
+    curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    @ $file = curl_exec($ch);
+    curl_close($ch);
+    return $file;
+}
+
+//生成随机 IP 地址
+function rand_ip() {
+    $ip_long = array(
+    array('607649792', '608174079'), //36.56.0.0-36.63.255.255
+    array('975044608', '977272831'), //58.30.0.0-58.63.255.255
+    array('999751680', '999784447'), //59.151.0.0-59.151.127.255
+    array('1019346944', '1019478015'), //60.194.0.0-60.195.255.255
+    array('1038614528', '1039007743'), //61.232.0.0-61.237.255.255
+    array('1783627776', '1784676351'), //106.80.0.0-106.95.255.255
+    array('1947009024', '1947074559'), //116.13.0.0-116.13.255.255
+    array('1987051520', '1988034559'), //118.112.0.0-118.126.255.255
+    array('2035023872', '2035154943'), //121.76.0.0-121.77.255.255
+    array('2078801920', '2079064063'), //123.232.0.0-123.235.255.255
+    array('-1950089216', '-1948778497'), //139.196.0.0-139.215.255.255
+    array('-1425539072', '-1425014785'), //171.8.0.0-171.15.255.255
+    array('-1236271104', '-1235419137'), //182.80.0.0-182.92.255.255
+    array('-770113536', '-768606209'), //210.25.0.0-210.47.255.255
+    array('-569376768', '-564133889'), //222.16.0.0-222.95.255.255
+    );
+    $rand_key = mt_rand(0, 14);
+    $huoduan_ip= long2ip(mt_rand($ip_long[$rand_key][0], $ip_long[$rand_key][1]));
+    return $huoduan_ip;
+}
+
+
+
+​

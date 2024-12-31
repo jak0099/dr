@@ -6,8 +6,6 @@
 以/开头，存储卡的根目录
 #AllinOne
 http://127.0.0.1:35455/tv.m3u
-#TPTV
-http://127.0.0.1:35455/tptv.m3u
 #哔哩直播
 http://127.0.0.1:35455/bililive.m3u
 #虎牙一起看
@@ -16,6 +14,8 @@ http://127.0.0.1:35455/huyayqk.m3u
 http://127.0.0.1:35455/douyuyqk.m3u
 #YY轮播
 http://127.0.0.1:35455/yylunbo.m3u
+#PIXMAN
+https://tv.850930.xyz/pix.m3u
 
 
 
