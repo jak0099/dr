@@ -73,8 +73,7 @@ var rule = {
     一级二:'.ewave-vodlist&&li;.lazyload&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 	一级: $js.toString(() => {
          let cookie = getItem(RULE_CK, '');
-        //log('储存的cookie:' + cookie);
-        
+        //log('储存的cookie:' + cookie);        
         let ret = request(MY_URL, {
             headers: {
                 Referer: encodeUrl(MY_URL),

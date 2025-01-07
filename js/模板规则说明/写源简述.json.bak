@@ -191,6 +191,13 @@ RSA.decode(data, key, option);
 ###2024.11.4
 增加drpy新特性，可以规则内添加搜索验证标识，可以禁止某个源的搜索翻页。
 
+##广告过滤写法：
+  proxy_rule: `js:
+  let url = input.url;
+  let m3u8 = fixAdM3u8Ai(url);
+  input = [200,'application/vnd.apple.mpegurl',m3u8]
+  `
+  
 ##筛选简述:
 ###1.动漫巴士为例：
 {https://dm84.top/show-1--hits-奇幻--2024-2.html
@@ -222,3 +229,361 @@ https://dm84.top/show-fyclass--fyfilter-fypage.html}
 		4:{cateId:'4'},
 		5:{cateId:'5'}
 	},
+
+###系统安全验证写法：
+示例1：
+function verifyLogin(url) {
+    let cnt = 0;
+    let cookie = '';
+    let r = Math.random();
+    let yzm_url = getHome(url) + '/index.php/verify/index.html';
+    log(`验证码链接:${yzm_url}`);
+    let submit_url = getHome(url) + '/index.php/ajax/verify_check';
+    log(`post登录链接:${submit_url}`);
+    while (cnt < OCR_RETRY) {
+        try {
+            let {cookie, html} = reqCookie(yzm_url + '?r=' + r, {toBase64: true});
+            let code = OcrApi.classification(html);
+            log(`第${cnt + 1}次验证码识别结果:${code}`);
+            html = post(submit_url, {
+                headers: {Cookie: cookie},
+                body: 'type=show&verify=' + code,
+            });
+            html = JSON.parse(html);
+            
+            if (html.code === 1) {
+                log(`第${cnt + 1}次验证码提交成功`);
+                log(cookie);
+                return cookie // 需要返回cookie
+            } else if (html.code !== 1 && cnt + 1 >= OCR_RETRY) {
+                cookie = ''; // 需要清空返回cookie
+            }
+        } catch (e) {
+            log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+            if (cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
+        }
+        cnt += 1
+    }
+    return cookie
+}
+
+globalThis.verifyLogin = verifyLogin;
+
+示例2：
+
+###自定义免嗅探:
+示例1:
+lazy: $js.toString(() => {
+    let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+    let url = html.url;
+    if (html.encrypt == '1') {
+      url = unescape(url)
+    } else if (html.encrypt == '2') {
+      url = unescape(base64Decode(url))
+    }
+    if (/\.m3u8|\.mp4/.test(url)) {
+      input = {
+        jx: 0,
+        url: url,
+        parse: 0
+      }
+    } else {
+      input
+    };
+    const video = document.getElementById('myVideo');
+    video.addEventListener('canplay', function () {
+      video.currentTime = 10;
+    });
+}),	
+示例2:
+lazy : `js:
+            if(/\\.(m3u8|mp4)/.test(input)){
+                input = {parse:0,url:input}
+            }else{
+                if(rule.parse_url.startsWith('json:')){
+                    let purl = rule.parse_url.replace('json:','')+input;
+                    let html = request(purl);
+                    input = {parse:0,url:JSON.parse(html).url}
+                }else{
+                    input= rule.parse_url+input; 
+                }
+            `,
+示例3:
+lazy: $js.toString(() => {
+        input = jxx(input);
+    }),
+
+示例4：
+lazy: $js.toString(() => {
+    let ep = 1;
+    let match = input.match(/ep=(.*?)$/);
+    if (match) {
+      ep = match[1];
+    }
+    //log(ep)
+    let html = request(input);
+    let jsonA = jsp.pdfh(html, "#__NEXT_DATA__&&Html");
+    let data = JSON.parse(jsonA).props.pageProps.videoDetail.videoepisode.data;
+    //log(data)
+    let item = data.find(function(it) {
+      return it.episode == ep;
+    });
+    let realUrl = item ? item.url : (data.length > 0 ? data[0].url : undefined);
+    //log(realUrl)
+    input = {
+      url: realUrl,
+      parse: 0
+    };
+  }),
+  
+示例5：
+lazy: $js.toString(() => {
+        let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        let url = html.url;
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/\.m3u8|\.mp4/.test(url)) {
+            input = {
+                jx: 0,
+                url: url,
+                parse: 0
+            }
+        } else {
+            input
+        }
+    }),  
+                  
+###推荐&一级&二级&搜索写法:
+示例1：
+推荐: $js.toString(() => {
+        let bdata = vodlist(0, 1);
+        console.log(bdata);
+        bdata.forEach(it => {
+            d.push({
+                url: it.vod_id,
+                title: it.vod_name,
+                img: it.vod_pic,
+                desc: it.vod_remarks
+            });
+        });
+        setResult(d);
+    }),
+    一级: $js.toString(() => {
+        let bdata = vodlist(input, MY_PAGE);
+        console.log(bdata);
+        bdata.forEach(it => {
+            d.push({
+                url: it.vod_id,
+                title: it.vod_name,
+                img: it.vod_pic,
+                desc: it.vod_remarks
+            });
+        });
+        setResult(d);
+    }),
+    二级: $js.toString(() => {
+        console.log("调试信息2" + input);
+        let data = vodids(input);
+        //console.log(data);
+        VOD = (data);
+    }),
+    搜索: $js.toString(() => {
+        let ddata = seach(input);
+        ddata.forEach(it => {
+            d.push({
+                url: it.vod_id,
+                title: it.vod_name,
+                img: it.vod_pic,
+                desc: it.vod_remarks
+            });
+        });
+        setResult(d);
+    }),
+
+示例2:
+    一级二:'.ewave-vodlist&&li;.lazyload&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+	一级: $js.toString(() => {
+         let cookie = getItem(RULE_CK, '');
+        //log('储存的cookie:' + cookie);        
+        let ret = request(MY_URL, {
+            headers: {
+                Referer: encodeUrl(MY_URL),
+                Cookie: cookie,
+            }
+        });
+        if (/系统安全验证/.test(ret)) {
+            //log(ret);
+            cookie = verifyLogin(MY_URL);
+            if (cookie) {
+                log(`本次成功过验证,cookie:${cookie}`);
+                setItem(RULE_CK, cookie);
+            } else {
+                log(`本次验证失败,cookie:${cookie}`);
+            }
+            ret = request(MY_URL, {
+                headers: {
+                    Referer: encodeUrl(MY_URL),
+                    Cookie: cookie,
+                }
+            });
+        }
+//log(ret);
+        let d = [];
+        let p = rule.一级二.split(';');
+        let arr = pdfa(ret, p[0]);//列表
+        arr.forEach(it => {
+            d.push({
+                title: pdfh(it, p[1]),//标题
+                pic_url: pdfh(it, p[2]),//图片
+                desc: pdfh(it, p[3]),//描述
+                url: pdfh(it, p[4]),//链接
+                
+            });
+
+        });
+        setResult(d);
+    }),
+********
+搜索: `js:
+    let cookie = getItem(RULE_CK,'');
+    // let cookie = '';
+    log('储存的cookie:'+cookie);
+    let hhtml=request(input,{withHeaders:true,headers:{Cookie:cookie}});
+    let json = JSON.parse(hhtml);
+    let html = json.body;
+    let setCk = Object.keys(json).find(it=>it.toLowerCase()==='set-cookie');
+    cookie = setCk ? json[setCk] : cookie;
+    // 3个set-Cookie
+    if (Array.isArray(cookie)) {
+        cookie = cookie.join(';');
+    }
+    cookie = cookie.split(';')[0];
+    log('set-cookie:'+cookie);
+    let code='';
+    if(/erphp-search-captcha/.test(html)){
+        code = jsp.pdfh(html,'.erphp-search-captcha--button&&Text');
+        if(code.includes('=')){
+            let a = code.replace('=','').replace(/ /g,'');
+            code = eval(a);
+            log('回答验证码:'+a+' 答案:'+code);
+        }
+        let key = jsp.pdfh(html,'.erphp-search-captcha&&input&&name');
+        let body = key+'='+code;
+        post(input,{body:body,headers:{Cookie:cookie}});
+        setItem(RULE_CK,cookie);
+        html = getHtml(input);
+    }
+    // log(html);
+    VODS = [];
+    let lis=pdfa(html,'.search_list&&ul&&li');
+    log(lis.length);
+    lis.forEach(function(it){
+        VODS.push({
+            vod_id: pd(it,'a&&href',input),
+			vod_name: pdfh(it,'h3.dytit&&Text'),
+			vod_pic: pd(it,'img.lazy&&data-original',input),
+			vod_remarks: pdfh(html,'.jidi&&Text')
+        });
+    
+    });
+    `,   
+
+示例3：
+一级: 'json:list;vod_name;vod_pic;vod_remarks;vod_id',     
+二级: `js:
+let kdata = JSON.parse(request(input)).data;
+VOD = kdata;
+VOD.type_name = kdata.vod_class
+`,
+搜索: 'json:list;name;pic;;id',
+
+示例4：
+搜索: $js.toString(() => {
+        let html = post(input.split('?')[0], {body: input.split('?')[1]});
+        let items = pdfa(html, 'rss&&item');
+        // log(items);
+        let d = [];
+        items.forEach(it => {
+            it = it.replace(/title|link|author|pubdate|description/g, 'p');
+            let url = pdfh(it, 'p:eq(1)&&Text');
+            d.push({
+                title: pdfh(it, 'p&&Text'),
+                url: url,
+                desc: pdfh(it, 'p:eq(3)&&Text'),
+                content: pdfh(it, 'p:eq(2)&&Text'),
+                pic_url: "",
+            });
+        });
+        setResult(d);
+    }),
+    
+示例5：
+推荐: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps;
+    //let list = json.props.pageProps.recommendSectionData.list;
+    list = JP.JSONPath("$.['columnSectionData'][*]['popular_list']['video_info'][*]", list);
+    //log(JSON.stringify(list,null,2));
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.cover;
+      it.vod_remarks = it.tag;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),
+  一级: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps.mediaData.data;
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.cover;
+      it.vod_remarks = it.tag;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),
+  二级: {
+    "title": "h1&&Text",
+    "img": "img&&src",
+    "desc": "video-desc-item&&Text;.video-desc-type-mb&&Text",
+    "content": ".video-introduce&&p&&Text",
+    "tabs": ".btn-play",
+    lists: $js.toString(() => {
+      LISTS = [];
+      let j = pdfh(html, "#__NEXT_DATA__&&Html");
+      let list = pdfa(html, ".play-list&&a");
+      if (list.length == 0) {
+        LISTS.push(["1$" + MY_URL.replace("detail", "player")])
+      } else {
+        list = list.map(it => pdfh(it, 'Text') + "$" + HOST + pdfh(it, 'a&&href'));
+        LISTS.push(list)
+      }
+      //log(LISTS)
+    }),
+  },
+  搜索: $js.toString(() => {
+    let html = fetch(input);
+    let j = pdfh(html, "#__NEXT_DATA__&&Html");
+    let json = JSON.parse(j);
+    let list = json.props.pageProps.searchMovieList.data;
+    //log(list)
+    VODS = list.map(function(it) {
+      it.vod_pic = it.pic;
+      it.vod_remarks = it.resolution;
+      it.vod_name = it.name;
+      it.vod_id = HOST + "/detail/" + it.id;
+      return it
+    });
+  }),    

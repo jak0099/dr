@@ -24,7 +24,6 @@ var rule = {
 		5:{cateId:'5'}
 	},
 	class_parse: '.navbar-items&&li:gt(1):lt(7);a&&title;a&&href;.*/(.*?).html',
-
 	searchUrl:'/index.php/ajax/suggest?mid=fypage&wd=**',
 	detailUrl:'/voddetail/fyid.html', //非必填,二级详情拼接链接
 	搜索:'json:list;name;pic;;id',
