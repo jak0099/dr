@@ -7,7 +7,7 @@ var rule = {
     homeUrl: '/',
     headers: {'User-Agent': 'UC_UA'},
     searchable: 1, quickSearch: 0, filterable: 0, double: true, play_parse: true, limit: 6,
-    class_name: '3D动漫&动态漫&沙雕剧场',
+    class_name: '3D动漫&动漫&沙雕剧场',
     class_url: '20&21&22',
     lazy:`js:
 		var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
