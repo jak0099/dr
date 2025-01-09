@@ -1,6 +1,6 @@
 var rule = {
   类型:'影视',//影视|听书|漫画|小说
-  title:'Aki动漫[漫]',
+  title:'漫岛动漫[漫]',
   host:'https://www.imandaow.com',
   url:'/list/fyclass.html',
   searchUrl:'/search.php?page=fypage&searchword=a&searchtype=',
