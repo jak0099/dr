@@ -57,7 +57,6 @@
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
 {"key": "dr_秋霞电影","name": "🍊秋霞电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/秋霞电影.js"},
-{"key": "dr_97电影网","name": "🍊97电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/97电影网.js"},
 {"key": "dr_修罗影视","name": "🍊修罗影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/修罗影视.js"},
 {"key": "dr_播剧网","name": "🍊播剧网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/播剧网.js"},
 {"key": "dr_海纳TV","name": "🍊海纳TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/海纳TV.js"},
@@ -215,6 +214,8 @@
 {"key": "dr_85k影视","name": "🍊85k影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/85k影视.js"},
 {"key": "dr_一支穿云箭","name": "🍊CY影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/一支穿云箭.js"},
 {"key": "dr_飞快TV","name": "🍊飞快TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/飞快TV.js"},
+{"key": "dr_97电影网","name": "🍊97电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/97电影网.js"},
+{"key": "dr_蚂蚁影视","name": "🍊蚂蚁影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/蚂蚁影视.js"},
 
 //#js_弹幕类🍄
 //{"key": "dr_模板[弹]","name": "🍄模板[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/模板[弹].js"},
@@ -330,19 +331,31 @@
 {"key": "dr_打驴动漫[漫]","name": "🍇打驴动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/打驴动漫[漫].js"},
 {"key": "dr_思思动漫[漫]","name": "🍇思思动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/思思动漫[漫].js"},
 {"key": "dr_火狼动漫[漫]","name": "🍇火狼动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/火狼动漫[漫].js"},
-{"key": "dr_Aki动漫[漫]","name": "🍇Aki动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Aki动漫[漫].js"},
+{"key": "dr_漫岛动漫[漫]","name": "🍇漫岛动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/漫岛动漫[漫].js"},
 {"key": "dr_樱花动漫2[漫]","name": "🍇樱花动漫2[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/樱花动漫2[漫].js"},
 {"key": "dr_泡漫网[漫]","name": "🍇泡漫网[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/泡漫网[漫].js"},
 {"key": "dr_囧次元动漫[漫]","name": "🍇囧次元动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/囧次元动漫[漫].js"},
 {"key": "dr_搜漫网[漫]","name": "🍇搜漫网[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/搜漫网[漫].js"},
-{"key": "dr_233动漫[漫]","name": "🍇233动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/233动漫[漫].js"},
 {"key": "dr_Animoe动漫[漫]","name": "🍇Animoe动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/Animoe动漫[漫].js"},
 {"key": "dr_MX动漫[漫]","name": "🍇MX动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/MX动漫[漫].js"},
 {"key": "dr_久久动漫[漫]","name": "🍇久久动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/久久动漫[漫].js"},
 {"key": "dr_橘子动漫[漫]","name": "🍇橘子动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/橘子动漫[漫].js"},
 {"key": "dr_九兔动漫[漫]","name": "🍇九兔动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/九兔动漫[漫].js"},
 {"key": "dr_集百动漫[漫]","name": "🍇集百动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/集百动漫[漫].js"},
-    
+{"key": "dr_虾皮动漫[漫]","name": "🍇虾皮动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/虾皮动漫[漫].js"},
+{"key": "dr_爱动漫[漫]","name": "🍇爱动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/爱动漫[漫].js"},
+{"key": "dr_AGE动漫[漫]","name": "🍇AGE动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/AGE动漫[漫].js"},
+{"key": "dr_樱花动漫网[漫]","name": "🍇樱花动漫网[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/樱花动漫网[漫].js"},
+{"key": "dr_第一动漫[漫]","name": "🍇第一动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/第一动漫[漫].js"},
+{"key": "dr_金阿尼动画[漫]","name": "🍇金阿尼动画[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/金阿尼动画[漫].js"},
+{"key": "dr_番茄动漫[漫]","name": "🍇番茄动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/番茄动漫[漫].js"},
+{"key": "dr_稀饭动漫[漫]","name": "🍇稀饭动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/稀饭动漫[漫].js"},
+{"key": "dr_喵物次元[漫]","name": "🍇喵物次元[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/喵物次元[漫].js"},
+{"key": "dr_CliCli动漫[漫]","name": "🍇CliCli动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/CliCli动漫[漫].js"},
+{"key": "dr_漫次元[漫]","name": "🍇漫次元[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/漫次元[漫].js"},
+{"key": "dr_ACG动漫[漫]","name": "🍇ACG动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/ACG动漫[漫].js"},
+{"key": "dr_饭团动漫[漫]","name": "🍇饭团动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/饭团动漫[漫].js"},
+   
 //#js_采集资源类🥒
 //{"key": "dr_模板[资]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
 //#****************************************************************************************************************************************************************#
