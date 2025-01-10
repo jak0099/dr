@@ -216,6 +216,7 @@
 {"key": "dr_飞快TV","name": "🍊飞快TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/飞快TV.js"},
 {"key": "dr_97电影网","name": "🍊97电影网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/97电影网.js"},
 {"key": "dr_蚂蚁影视","name": "🍊蚂蚁影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/蚂蚁影视.js"},
+{"key": "dr_短剧网","name": "🍊短剧网[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/短剧网.js"},
 {"key": "dr_爱上电影","name": "🍊爱上电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱上电影.js"},
 
 //#js_弹幕类🍄
@@ -283,6 +284,7 @@
 {"key": "dr_河马短剧[短]","name": "🥝河马短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/河马短剧[短].js"},
 {"key": "dr_南风短剧[短]","name": "🥝南风短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/南风短剧[短].js"},
 {"key": "dr_短剧HOME[短]","name": "🥝短剧HOME[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧HOME[短].js"},
+{"key": "dr_火鸟短剧[短]","name": "🥝火鸟短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/火鸟短剧[短].js"},
 
 //#js_云盘源🍅
 //{"key": "dr_模板[盘]","name": "🍅模板[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/模板[盘].js"},
