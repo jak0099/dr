@@ -15,8 +15,7 @@ function verifyLogin(url) {
                 headers: {Cookie: cookie},
                 body: 'type=search&verify=' + code,
             });
-            html = JSON.parse(html);
-            
+            html = JSON.parse(html);           
             if (html.code === 1) {
                 log(`第${cnt + 1}次验证码提交成功`);
                 log(cookie);
@@ -37,7 +36,7 @@ function verifyLogin(url) {
 
 globalThis.verifyLogin = verifyLogin;
 
-muban.首图2.二级.tabs ='.nav-tabs li';
+muban.首图2.二级.tabs = '.nav-tabs li';
 var rule = {
   类型:'影视',//影视|听书|漫画|小说
   模板:'首图2',
