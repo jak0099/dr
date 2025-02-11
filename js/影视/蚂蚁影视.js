@@ -8,5 +8,4 @@ var rule = {
   host: 'https://www.mayiyingshi.tv',
   url: '/vodtype/fyclass-fypage.html',
   searchUrl: '/vodsearch/**----------fypage---.html',
-  cate_exclude:'解析',
 }

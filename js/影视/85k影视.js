@@ -1,30 +1,15 @@
 var rule={
   title: "85k影视",
-  模板: "mxpro",
-  host: "https://85k.ltd",
-  url: "/index.php/vod/show/id/fyfilter",
-  searchUrl: "/index.php/vod/search/page/fypage/wd/**/",
+  模板: 'mxpro',
+  host: 'https://85k.ltd',
+  url: '/index.php/vod/show/id/fyfilter',
+  searchUrl: '/index.php/vod/search/page/fypage/wd/**/',
   filterable: 1,
-  filter: "H4sIAAAAAAAAA+1Z607bMBh9l/xGs52GtvAqEz+6UY1qrCBgbAghMXFruXVM0A6tG5sEtGyUphvXlMLL1En7FkuaxPbnSiusZZum/Mw5J0584nznczKrEGXw8azyPD6jDCpWpUo/rSl9SjL2Ii4eT8dGX8ZbwqQN06Vic6HowPYBUeb6PHi1WK/lrfSKx4Q5k83TdIEzEcZYqYq5sMSZKGcKW/SqypkBxphv3przWc4QzC+ULoDhCL87M/W+bqQFSmVU40SntR1Oqfa1hhzSdYXmdbpucFfY8S9cQYnkcPz1o/GRcTQ9NowmR8ZeocQwIohdtH5Zoh9qdL/Q3F32T4pNxGMIEL66ebhrXpaBzoPY1DO6eXUDFB7EHL3ZtAcGCg9iHv3YkRUexKxaq8gKD2Jj5A7M/DEcw4XYXPaO5DE8iM3l5kJWeBC/U739TnUwxoZOjUM4hguxMRYztss0dQSHYSib88GtlSlZ6V04bYby9f/ZXLu1T4YXZSjTLZ3Xq1kociFx1TXKpUZxnq86dtzVqrMdsgfy5aOx5DPkQkh8xLLEhbjE+r4vS1yIS5q5Gt3IySqGInE1tKlaEBKXlCxxISSu3DZJC0LiomqbegtC4pOhJwtQ0oIQLAhXp/VqTSgI/nFXj0bFar8vnonHJpADAFqTaQ3QIZkOAVqVaRXQRKbhrWGZxiJNBiSaDAA6KtNRQEdkOgLosEyHAS27RoBrRHaNANeI7BoBrhHZNQJcI7JrBLhGZNcIcA3LrmHgGpZdw8A1LLuGgWtYdg0D17DsGgauYdk1rMF3wNx8R40MfwfYMXwHzNx5M3fKSWfEJzNoKmGfxJLQMEx9u00zkpia5EWpvEhTy22ayadjE3Hnvob6FLXLRob3A3ZFrBsFu5fwW4UQrzOXZTtVBUoTC5ldlQSqn591XHCSllO8NTLPLuh+llMqFmqaE2gCRR6qLRHW9D3bko5R3ovGpXNLcZfWplPDcIfWJqvbaU4/foHDMPSvBbzw/P7XgP/z0QzjMYjmIJqDaP7NaA51Gc08f938sarXjbThxyIPbjedIRsSq4xdeCDL49vNaMj2P1TBDgUFu/cFOxQU7KBgBwW7FwVb67JgC7uilXVr5ytdLZrX33xS+DDcwq3tM1qr+LVe+Jrr7sPEc9WwWKac/RZg+Ydlb8sF2OhD7Z+Et+B++6fOOxt3HlDhQn9tt6EF4dX78NKC8ArCKwivnoRXpNv0Ev5P1rasap5/g9OEH5R7JQHX/mlT5n4CarxelegdAAA=",
-  filter_url: "{{fl.类型}}{{fl.地区}}{{fl.排序}}{{fl.语言}}/page/fypage{{fl.年份}}",
-  filter_def: {
-    1: {
-      类型: "1"
-    },
-    2: {
-      类型: "2"
-    },
-    3: {
-      类型: "3"
-    },
-    4: {
-      类型: "4"
-    },
-    47: {
-      类型: "47"
-    }
-  },
-  class_parse: ".navbar-items&&li;a&&Text;a&&href;.*/(\\d+)/",
+  headers: {'User-Agent': 'pc_UA'},
+  filter: 'H4sIAAAAAAAAA+2Yf0/TQBzG30rTv0l61xUGvhXDH9MsSkRMAE0IITHhhwyEJUZYiCia8GNExooShI7Bm9m127vwWGvb+z5NHMmMoPcfPPfpXfv0+v0+t1nD5OYD46Exa5jPijPyTzM4aYhPq+aAYU4UnhdV5VVh/GXxFz9xMyYWq535anfs5l9uGnMD8WD72BXNjaD0Jh63RyRgjEZQtKLYdsVbL71iovx2RWXB1nlNfGiK3YPO1lJMWIXJYsFShtLXdPa3/PM6oSMxzYmy619cES4S01xwtS4XIlwkpjn/+wZykaiYuHqCXCQq81X2/O0jOl8oKs+7c4jzRaLyvFc/kItE9TncrOdwYb41V3j7dL5QVOZbKMu3JJYP6ZSxrrizdx2Ua0FpixoU68o9rHz2V6/lNPQ2Yl2hF89ajU2KhiLu4na91q6+Tu/iRLndLpbOyUuTdccLE0+sULTo1kAwFFUw+LaLYCiqYKfSFGsVZGPdonspg+2KFt2cCIaiRb+KDLArWnR7ZpjUFS36FsXxPAW7opVVjC5OW42mUoxi5Xav0Wb2YLLsTLEwad1IFoUchByAcgjlALIRsgHiCHGAGEKMQnwEID4C0DBCwwDlEcoDNITQEEDoOAfHOTrOwXGOjnNwnKPjHBzn6DgHxzk6zsFxho4zcJyh4wwcZ+g4A8cZOs7AcYaOM3CcoePMyfr6/PV3wiunv75Ewa/Pr5x1KqcporvAoxlrekxerAQDz/Pd9xnk07HpKbWm1hfE8lIGOfX4xWQxumVjVI7Y/QxONu0ALe9AlJI+JbejUibP6zJ6KIBDK7MsrwowmNG204DN71426zGr9DvD9Zqles96vWWknrPepisji/j4hU4Z6zrH/N0co1OHTh06dejU0ffUketn6lBDRdiAg8Zlu+QlqUBNJmHwoEyOFklZOymj5hP/6ED2ScoM6n6k+5HuR7of6X50X/qR089+pPaI6BS8UvUvvyY9YijrnEuYfEavoczwnTvt9nrqDJ+HcqGoz326z+o+q/us7rP/Wp/N97XRqh0y2Kmlfwl2nD9dqnSB+U8LzL39BI25nwoz7ZQsIwAA',
+  filter_url: '{{fl.类型}}{{fl.地区}}{{fl.排序}}{{fl.语言}}/page/fypage{{fl.年份}}',
+  filter_def: {1: {类型: "1"},2: {类型: "2"},3: {类型: "3"},4: {类型: "4"},47: { 类型: "47"}},
+  class_parse: ".navbar-items li;a&&Text;a&&href;.*/(\\d+)/",
   tab_exclude: "排序",
   搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-card-item-info--strong&&Text',
 }

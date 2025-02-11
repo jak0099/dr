@@ -32,7 +32,7 @@ var rule = {
     // 一级:'json:data.hitDocs;title;img;updateInfo;playPartId',
     二级: $js.toString(() => {
         fetch_params.headers.Referer = "https://www.mgtv.com";
-        fetch_params.headers["User-Agent"] = UA;
+        fetch_params.headers["User-Agent"] = MOBILE_UA;
         pdfh = jsp.pdfh;
         pdfa = jsp.pdfa;
         pd = jsp.pd;
@@ -137,7 +137,7 @@ var rule = {
 
     // 搜索: $js.toString(() => {
     //     fetch_params.headers.Referer = "https://www.mgtv.com";
-    //     fetch_params.headers["User-Agent"] = UA;
+    //     fetch_params.headers["User-Agent"] = MOBILE_UA;
     //     let d = [];
     //     let html = request(input);
     //     let json = JSON.parse(html);
@@ -171,7 +171,7 @@ var rule = {
     // }),
     搜索: $js.toString(() => {
         fetch_params.headers.Referer = "https://www.mgtv.com";
-        fetch_params.headers["User-Agent"] = UA;
+        fetch_params.headers["User-Agent"] = MOBILE_UA;
         let d = [];
         let html = request(input);
         let json = JSON.parse(html);

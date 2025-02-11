@@ -36,6 +36,7 @@ var rule = {
         other:'..'
         }
     }, 
+    filter获取方法: '',
     // 筛选网站传参,会自动传到分类链接下(本示例中的url参数)-url里参数为fyfilter,可参考蓝莓影视.js
     filter_url:'style={{fl.style}}&zone={{fl.zone}}&year={{fl.year}}&fee={{fl.fee}}&order={{fl.order}}',
     // 注意,由于猫有配置缓存,搜索配置没法热加载，修改了js不需要重启服务器
@@ -586,4 +587,163 @@ VOD.type_name = kdata.vod_class
       it.vod_id = HOST + "/detail/" + it.id;
       return it
     });
-  }),    
+  }), 
+  
+示例6：
+一级:`js:
+        var d = [];
+        pdfh = jsp.pdfh;
+        pdfa = jsp.pdfa;
+        pd = jsp.pd;
+        var html = request(input, {
+            withHeaders: true
+        });
+        let json = JSON.parse(html);
+        let setCk = Object.keys(json).find(it => it.toLowerCase() === "set-cookie");
+        let cookie = setCk ? json[setCk].split(";")[0] : "";
+        fetch_params.headers.Cookie = cookie;
+        html = JSON.parse(html).body;
+        if (/检测中/.test(html)) {
+            html = request(input + "?btwaf" + html.match(/btwaf(.*?)\"/)[1], fetch_params)
+        }
+        let list = pdfa(html, "ul.stui-vodlist&&li");
+        list.forEach(it => {
+            d.push({
+                title: pdfh(it, "a&&title"),
+                desc: pdfh(it, ".pic-text&&Text"),
+                pic_url: pd(it, ".lazyload&&data-original"),
+                url: pd(it, "a&&href")
+            })
+        });
+        setResult(d)
+    `,
+    二级:`js:
+        pdfh = jsp.pdfh;
+        pdfa = jsp.pdfa;
+        pd = jsp.pd;
+        VOD = {};
+        var html = request(input, {
+            withHeaders: true
+        });
+        let json = JSON.parse(html);
+        let setCk = Object.keys(json).find((it) => it.toLowerCase() === "set-cookie");
+        let cookie = setCk ? json[setCk].split(";")[0] : "";
+        fetch_params.headers.Cookie = cookie;
+        html = JSON.parse(html).body;
+        if (/检测中/.test(html)) {
+            html = request(input + "?btwaf" + html.match(/btwaf(.*?)\"/)[1], fetch_params)
+        }
+        VOD.vod_name = pdfh(html, ".stui-content__detail&&h1--span&&Text");
+        VOD.type_name = pdfh(html, ".data--span:eq(0)&&Text");
+        VOD.vod_pic = pd(html, ".stui-content__thumb&&img&&data-original");
+        VOD.vod_remarks = pdfh(html, ".stui-content__thumb&&pic-text&&Text");
+        VOD.vod_actor = pdfh(html, ".data--span:eq(1)&&Text");
+        VOD.vod_director = pdfh(html, ".data--span:eq(2)&&Text");
+        VOD.vod_content = pdfh(html, ".desc.hidden-xs--a&&Text");
+        let playFrom = [];
+        let vod_tab_list = [];
+        let tabs = pdfa(html, "body .stui-pannel__head.bottom-line");
+        tabs.forEach((it) => {
+            playFrom.push(pdfh(it, "h3&&Text"))
+        });
+        for (let i = 0; i < playFrom.length; i++) {
+            let p1 = ".stui-content__playlist:eq(#id)&&li".replaceAll("#id", i);
+            let new_vod_list = [];
+            let vodList = [];
+            try {
+                vodList = pdfa(html, p1)
+            } catch (e) {}
+            for (let i = 0; i < vodList.length; i++) {
+                let it = vodList[i];
+                new_vod_list.push(pdfh(it, "body&&Text").trim() + "$" + pd(it, "a&&href"))
+            }
+            let vlist = new_vod_list.join("#");
+            vod_tab_list.push(vlist)
+        }
+        VOD.vod_play_from = playFrom.join("$$$");
+        VOD.vod_play_url = vod_tab_list.join("$$$");
+    `,
+    搜索:`js:
+        var d = [];
+        pdfh = jsp.pdfh;
+        pdfa = jsp.pdfa;
+        pd = jsp.pd;
+        var html = request(input, {
+            withHeaders: true
+        });
+        let json = JSON.parse(html);
+        let setCk = Object.keys(json).find(it => it.toLowerCase() === "set-cookie");
+        let cookie = setCk ? json[setCk].split(";")[0] : "";
+        fetch_params.headers.Cookie = cookie;
+        html = JSON.parse(html).body;
+        if (/检测中/.test(html)) {
+            html = request(input + "?btwaf" + html.match(/btwaf(.*?)\"/)[1], fetch_params)
+        }
+        let list = pdfa(html, ".stui-vodlist__media&&li");
+        list.forEach(it => {
+            d.push({
+                title: pdfh(it, "a&&title"),
+                desc: pdfh(it, ".pic-text&&Text"),
+                pic_url: pd(it, ".lazyload&&data-original"),
+                url: pd(it, "a&&href")
+            })
+        });
+        setResult(d)
+    `,
+
+示例7：
+推荐／一级/搜索: $js.toString(() => {
+        let html = fetch(input);
+        let list = pdfa(html, ".public-list-box");
+        VODS = list.map(x => {
+            return {
+                vod_name: pdfh(x, ".thumb-txt&&Text"),
+                vod_pic: pdfh(x, ".lazy&&data-src"),
+                vod_remarks: pdfh(x, ".public-list-prb&&Text"),
+                vod_content: pdfh(x, ".thumb-blurb&&Text"),
+                vod_id: pdfh(x, "a&&href")
+            }
+        });
+    }),
+    
+###zyfun抓取采集源方式代码(点击zy写源工具中'首页'抓取)
+var rule = {
+    推荐: $js.toString(() => {
+        let url = 'https://blog.ilol.top/p/zqgwes.html';
+        let html = request(url);
+        let tlist = pdfa(html, '.post-content&&h2');
+        log(tlist)
+        let alist = pdfa(html, '.post-content&&a:gt(0)');
+        log(alist);
+
+        VODS = [];
+
+        for (let i in tlist) {
+            VODS.push({
+                name: pdfh(tlist[i], 'Text'),
+                url: pdfh(alist[i], 'a&&href'),
+            })
+        }
+        log(JSON.stringify(VODS))
+
+    })
+} 
+
+###筛选分类获取：
+filter获取方法:`
+    let value = [];
+    $('ul').eq(2).find('li').each(function() {
+      // console.log($(this).text());
+      let n = $(this).text().trim();
+      value.push({
+      'n': n, 'v': n
+      });
+    });
+    // 电影执行:
+    let data = {'movie': [{'key': 'tag', 'name': '标签', 'value': value}]};
+    console.log(JSON.stringify(data));
+    
+    //剧集执行:
+    let data = {'tv': [{'key': 'tag', 'name': '标签', 'value': value}]};
+    console.log(JSON.stringify(data));
+    `,       

@@ -36,6 +36,7 @@ var rule = {
         other:'..'
         }
     }, 
+    filter获取方法: '',
     // 筛选网站传参,会自动传到分类链接下(本示例中的url参数)-url里参数为fyfilter,可参考蓝莓影视.js
     filter_url:'style={{fl.style}}&zone={{fl.zone}}&year={{fl.year}}&fee={{fl.fee}}&order={{fl.order}}',
     // 注意,由于猫有配置缓存,搜索配置没法热加载，修改了js不需要重启服务器
@@ -98,7 +99,12 @@ var rule = {
     // 二级 title: 片名;类型
     // 二级 desc: 主要信息;年代;地区;演员;导演
     // 或者 {title:'',img:'',desc:'',content:'',tabs:'',lists:'',tab_text:'body&&Text',list_text:'body&&Text',list_url:'a&&href'} 同海阔dr二级
-    二级:'*',
+    // 二级tabs: '', //线路数组
+    // 二级lists: '', //集数组
+    // 二级tab_text: '', //线路名
+    // 二级list_text: '', //集名
+    // 二级list_url: '' //集链接
+    二级:'*',//'*',没有二级直接嗅探播放详情页地址  
     // 搜索可以是*,集成一级，或者跟一级一样的写法 列表;标题;图片;描述;链接;详情
     搜索:'*',
     // 本地代理规则，可用于修改m3u8文件文本去广告后返回代理文件地址，也可以代理加密图片
@@ -690,4 +696,59 @@ VOD.type_name = kdata.vod_class
         setResult(d)
     `,
 
-        
+示例7：
+推荐／一级/搜索: $js.toString(() => {
+        let html = fetch(input);
+        let list = pdfa(html, ".public-list-box");
+        VODS = list.map(x => {
+            return {
+                vod_name: pdfh(x, ".thumb-txt&&Text"),
+                vod_pic: pdfh(x, ".lazy&&data-src"),
+                vod_remarks: pdfh(x, ".public-list-prb&&Text"),
+                vod_content: pdfh(x, ".thumb-blurb&&Text"),
+                vod_id: pdfh(x, "a&&href")
+            }
+        });
+    }),
+    
+###zyfun抓取采集源方式代码(点击zy写源工具中'首页'抓取)
+var rule = {
+    推荐: $js.toString(() => {
+        let url = 'https://blog.ilol.top/p/zqgwes.html';
+        let html = request(url);
+        let tlist = pdfa(html, '.post-content&&h2');
+        log(tlist)
+        let alist = pdfa(html, '.post-content&&a:gt(0)');
+        log(alist);
+
+        VODS = [];
+
+        for (let i in tlist) {
+            VODS.push({
+                name: pdfh(tlist[i], 'Text'),
+                url: pdfh(alist[i], 'a&&href'),
+            })
+        }
+        log(JSON.stringify(VODS))
+
+    })
+} 
+
+###筛选分类获取：
+filter获取方法:`
+    let value = [];
+    $('ul').eq(2).find('li').each(function() {
+      // console.log($(this).text());
+      let n = $(this).text().trim();
+      value.push({
+      'n': n, 'v': n
+      });
+    });
+    // 电影执行:
+    let data = {'movie': [{'key': 'tag', 'name': '标签', 'value': value}]};
+    console.log(JSON.stringify(data));
+    
+    //剧集执行:
+    let data = {'tv': [{'key': 'tag', 'name': '标签', 'value': value}]};
+    console.log(JSON.stringify(data));
+    `,       

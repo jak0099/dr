@@ -20,10 +20,10 @@ var rule = {
   }),
   double:true,
   推荐:'*',
-  一级:'.shoutu-vodlist li;.cover-img&&title;.lazyload&&src||dsta-original;p.text&&Text;.cover-img&&href',
+  一级:'.shoutu-vodlist li;.cover-img&&title;.lazyload&&data-original||src;p.text&&Text;.cover-img&&href',
   二级:{
     title:'.shoutu-media-bd h1&&Text;.tag&&Text',
-    img:'.lazyload&&dsta-original||src',
+    img:'.lazyload&&data-original||src',
     desc:'.shoutu-media-bd p:eq(3)&&Text;.tag a:eq(3)&&Text;.tag a:eq(4)&&Text;.shoutu-media-bd p:eq(1)&&Text;.shoutu-media-bd p:eq(2)&&Text',
     content:'p.desc&&Text',
     tabs:'.page-row .panel-hd',   
