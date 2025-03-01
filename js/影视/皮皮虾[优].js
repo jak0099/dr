@@ -1,43 +1,33 @@
 var rule = {
-  title : '皮皮虾[优]',
-  host : 'http://www.ppxys.vip/',
-  url : '/s/fyclass-fypage.html',
-  searchUrl : '/vodsearch.html?wd=**',
-  searchable : 2,  // 是否启用全局搜索,
-  quickSearch : 0, // 是否启用快速搜索,
-  filterable : 0,  // 是否启用分类筛选,
-  headers : {
-    'User-Agent' : 'okhttp/3.12.11', // "Cookie":"searchneed=ok"
+  title: '皮皮虾[优]',
+  host: 'https://ppxys.cc',
+  class_name: '电影&电视剧&综艺&动漫',
+  class_url: '1&2&3&4',
+  searchUrl: '/index.php/ajax/suggest?mid=1&wd=**&limit=50',
+  searchable: 2,
+  quickSearch: 0,
+  headers: {
+    'User-Agent': 'MOBILE_UA',
   },
-  编码 : 'utf-8',
-  timeout : 5000,
-  class_name : '剧集&电影&动漫番剧',
-  class_url : '1&2&3',
-  tab_exclude : '今日更新|APP|留言|硬核指南',
-  play_parse : true,
-  lazy : `js:
-            if(/\\.(m3u8|mp4)/.test(input)){
-                input = {parse:0,url:input}
-            }else{
-                if(rule.parse_url.startsWith('json:')){
-                    let purl = rule.parse_url.replace('json:','')+input;
-                    let html = request(purl);
-                    input = {parse:0,url:JSON.parse(html).url}
-                }else{
-                    input= rule.parse_url+input; 
-                }
-            `,
-  limit : 6,
-  double : true,
-  推荐 : '*',
-  一级 :'.module-item;img&&alt;img&&data-original;.module-item-note&&Text;a&&href',
-  二级 : {
-    "title" : "h1&&a&&Text",
-    "img" : "img&&data-original",
-    "desc" : ".module-info-tag&&Text",
-    "content" : ".module-info-introduction-content&&p&&Text",
-    "tabs" : ".module-tab-item.tab-item--small",
-    "lists" : ".module-play-list:eq(#id)&&a"
+  url: '/index.php/vod/type/id/fyclass.html',
+  filterable: 0,
+  filter_url: '',
+  filter: {},
+  filter_def: {},
+  detailUrl: '/index.php/vod/detail/id/fyid.html',
+  play_parse: true,
+  lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input;\n  }",
+  limit: 6,
+  推荐: '.slide-time-bj;h3&&Text;.slide-time-img3&&style;.slide-info-remarks:eq(1)&&Text;a&&href;.slide-info:eq(3)&&Text',
+  一级:'.public-list-box.public-pic-b;a&&title;img&&data-src;.public-list-prb.hide&&Text;a&&href',
+  二级: {
+    title: '.slide-info-title&&Text;.slide-info:eq(2)--strong&&Text',
+    img: '.lazy&&data-src',
+    desc: '.slide-info-remarks&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(1)--strong&&Text;.info-parameter&&ul&&li:eq(3)&&Text',
+    content: '#height_limit&&Text',
+    tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
+    tab_text: 'a--span&&Text',
+    lists: '.anthology-list-box:eq(#id) li',
   },
-  搜索 :'.module-item;img&&alt;img&&data-original;.module-item-note&&Text;a&&href',
+  搜索: 'json:list;name;pic;;id',
 }

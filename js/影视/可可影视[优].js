@@ -1,24 +1,32 @@
 var rule = {
     title: '可可影视[优]',
-    host: 'https://www.keke8.app',
+    //动态切换域名
+    host: `https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
+    //host: 'https://www.keke8.app',
     //host: 'https://www.kkys01.com',
-    // url: '/show/fyclass-----2-fypage.html',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
     searchUrl: '/search?k=**&page=fypage',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
+    //headers: {'User-Agent': 'MOBILE_UA'},
     headers: {
-        'User-Agent': 'MOBILE_UA',
+        'User-Agent': 'UC_UA',
+        'Referer': rule.host + '/',
+        'X-Forwarded-For': `119.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`
     },
     class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
     cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
-    tab_exclude:'可可影视提供',
+    tab_exclude: '可可影视提供',
     tab_order: ['超清', '蓝光', '极速蓝光'],
-    tab_remove:['4K(高峰不卡)'],
+    tab_remove: ['4K(高峰不卡)'],
     play_parse: true,
-    lazy: '',
+    lazy: `js:
+        let html = request(input);
+        let m3u8 = pdfh(html, 'script:contains(m3u8)').match(/http[^'"]+m3u8/)[0];
+        input = {parse:0, url: m3u8};
+    `,
     limit: 20,
     推荐: '.section-box:eq(2)&&.module-box-inner&&.module-item;*;*;*;*',
     double: false,
@@ -34,7 +42,8 @@ var rule = {
         tabs: 'body&&.source-item-label',
         lists: '.episode-list:eq(#id) a',
     },
-    搜索: '.search-result-list&&a;.title:eq(1)&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
+    //搜索: '.search-result-list&&a;.title:eq(1)&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
+    搜索: '.search-result-list&&a;h3&&Text;.lazyload&&data-original;.info:eq(0)&&Text;a&&href;.info:eq(1)&&Text',
     // 图片替换:$js.toString(()=>{
     //     log(input);
     //    input = input.replace(rule.host,'https://vres.a357899.cn');
@@ -104,10 +113,10 @@ var rule = {
     VODS = [filters];
     console.log(gzip(JSON.stringify(filters)));
     `,
-  //过滤广告
-  proxy_rule: `js:
-  let url = input.url;
-  let m3u8 = fixAdM3u8Ai(url);
-  input = [200,'application/vnd.apple.mpegurl',m3u8]
-  `
+    //过滤广告
+    proxy_rule: `js:
+            let url = input.url;
+            let m3u8 = fixAdM3u8Ai(url);
+            input = [200,'application/vnd.apple.mpegurl',m3u8]
+    `
 }

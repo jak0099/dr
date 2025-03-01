@@ -1,0 +1,20 @@
+{
+  "请求头":"User-Agent$MOBILE_UA",
+  "编码":"UTF-8",
+  "主页url":"http://www.szguyun.com/",
+  "二次截取":"stui-vodlist clearfix&&</ul>",
+  "数组":"class=\"stui-vodlist__box\"&&</a>",
+  "标题":"title=\"&&\"","图片":"src=\"&&\"",
+  "副标题":"right\">&&</span>",
+  "链接":"href=\"&&\"",
+  "线路数组":"class=\"more text-muted pull-right\"&&</div>",
+  "线路标题":"title\">&&</h3>",
+  "播放数组":"stui-content__playlist&&</ul>",
+  "播放列表":"<a&&a>",
+  "播放链接":"href='&&'",
+  "播放标题":">&&</",
+  "跳转播放链接":"var player_*\"url\":\"&&\"",
+  "分类url":"http://www.szguyun.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}.html",
+  "分类":"电影$1#电视剧$2#综艺$3#动漫$4",
+  "类型":"动作片$6#喜剧片$7#爱情片$8#科幻片$9#恐怖片$10#战争片$12||短视频$36#国产剧$13#港台剧$14#韩剧$15#美剧$16#海外剧$27#日剧$26||空||空"
+}

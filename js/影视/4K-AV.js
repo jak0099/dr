@@ -1,7 +1,8 @@
 var rule = {
     title: '4KAV',
     类型: '影视',
-    host: 'https://www.4kvm.pro',
+    //host: 'https://www.4kvm.pro',
+    host: 'https://4k-av.com',
     hostJs: '',
     headers: {
         'User-Agent': 'IOS_UA'

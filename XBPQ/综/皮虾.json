@@ -1,0 +1,15 @@
+{
+    "主页url": "http://www.ppxys.vip/",
+    "图片": "data-original=\"&&\"",
+    "标题": "title=\"&&\"",
+    "副标题": "class=\"module-item-note\">&&</div>",
+    "链接": "href=\"&&\"",
+    "影片类型": "vod_class\":\"&&\"",
+    "导演": "vod_director\":\"&&\"",
+    "主演": "vod_actor\":\"&&\"",
+    "简介": "+introduction\">&&</p>",
+    "线路数组": "class=\"module-tab-item tab-item&&</small>",
+    "线路标题": ">&&<small",
+    "分类url": "http://www.ppxys.vip/s/{cateId}/by/{by}/page/{catePg}.html",
+    "分类": "今日更新$http://www.ppxys.vip/label/new.html#热榜$http://www.ppxys.vip/label/hot.html#电视剧$1#电影$2#动漫$3"
+}

@@ -1,0 +1,23 @@
+{
+  "站名": "速影",
+  "请求头": "User-Agent$MOBILE_UA",
+  "编码": "UTF-8",
+  "标题": "title=\"&&\"",
+  "图片": "background-image: url('&&'",
+  "链接": "href=\"&&\"",
+  "数组": "stui-vodlist__box\">&&</div>",
+  "线路数组": "title\">&&</h3>",
+  "线路标题": "<span>&&</span>",
+  "副标题": "pic-text text-right\">&&</span>",
+  "播放标题": ">&&</",
+  "播放链接": "href='&&'",
+  "播放列表": "<a&&</a",
+  "跳转播放链接": "",
+  "播放数组": "stui-content__playlist&&</ul>",
+  "简介": "简介：</span>&&</p >",
+  "搜索url": "https://xn--94qq85au3qyvbe13c.com/vodsearch/{wd}----------{pg}---.html",
+  "搜索模式": "1",
+  "嗅探词": ".m3u8#.mp4",
+  "分类url": "https://xn--94qq85au3qyvbe13c.com/movie-type-id-{cateId}-pg-{catePg}.html",
+  "分类": "电影$1#连续剧$2#综艺$3#动漫$4#伦理片$22"
+}

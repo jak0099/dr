@@ -1,0 +1,12 @@
+﻿{
+  "数组": "li-img&&</div",
+  "图片": "data-src=\"&&\"",
+  "标题": "title=\"&&\"",
+  "副标题": "class=\"icon-play\"&&</span>",
+  "链接": "href=\"&&\"",
+  "线路二次截取": "<ul class=\"py-tabs\">&&</ul",
+  "线路数组": "<li&&</li",
+  "线路标题": ">&&<small>+[+(&&)</small>+]",
+  "分类url": "https://www.lyys8.com/list/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html;;k",
+  "分类": "电影$movie#电视剧$tv#动漫$cartoon"
+}

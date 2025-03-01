@@ -4,7 +4,7 @@ var rule = {
   url: '/vodshow/fyfilter.html',
   searchUrl: '/vodsearch/**----------fypage---.html',
   searchable: 2,
-  quickSearch: 2,
+  quickSearch: 1,
   filterable: 1,
   filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.排序}}-{{fl.剧情}}-{{fl.语言}}-{{fl.字母}}---fypage---{{fl.年份}}',
   filter_def: { 1: { 类型: "1" }, 2: { 类型: "2" }, 3: { 类型: "3" }, 4: { 类型: "4" }, },

@@ -1,0 +1,17 @@
+﻿{
+   "站名": "青蛙影视",
+   "主页url": "https://4k.zhuhouju.com/",
+   "图片": "data-original=\"&&\"",
+   "标题": "title=\"&&\"",
+   "副标题": "class=\"pic-text text-right\">&&</span>",
+   "链接": "/index.php/vod/play/+/detail/&&.html+/sid/1/nid/1.html",
+   "线路名二次截取": "class=\"play_source_tab list_scroll clearfix&&</div",
+   "线路数组": "<a&&</a>",
+   "线路标题": "</i>&nbsp;&&</a",
+   "播放数组": "<ul class=\"content_playlist clearfix&&</ul",
+   "播放列表": "<li&&</li",
+   "播放标题": ">&&</a",
+   "播放链接": "href=\"&&\"",
+   "分类url": "https://4k.zhuhouju.com/index.php/vod/show/area/{area}/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html;;k",
+   "分类": "电影$1#连续剧$2#综艺$3#动漫$4#普通$35#福利$24"
+}

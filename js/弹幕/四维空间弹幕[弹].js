@@ -1,7 +1,6 @@
 var rule = {
     author: '小虎斑',
     title: '小虎斑',
-
     host: 'https://4k-av.com',
     hostJs: '',
     headers: {

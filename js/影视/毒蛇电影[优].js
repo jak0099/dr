@@ -12,9 +12,9 @@ var rule = {
     },
     class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
     cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
-    tab_exclude:'毒舌电影提供',
+    tab_exclude: '毒舌电影提供',
     tab_order: ['超清', '蓝光', '极速蓝光'],
-    tab_remove:['4K(高峰不卡)'],
+    tab_remove: ['4K(高峰不卡)'],
     play_parse: true,
     lazy: '',
     limit: 20,
@@ -103,9 +103,9 @@ var rule = {
     console.log(gzip(JSON.stringify(filters)));
     `,
     //过滤广告
-  proxy_rule: `js:
-  let url = input.url;
-  let m3u8 = fixAdM3u8Ai(url);
-  input = [200,'application/vnd.apple.mpegurl',m3u8]
-  `
+    proxy_rule: `js:
+            let url = input.url;
+            let m3u8 = fixAdM3u8Ai(url);
+            input = [200,'application/vnd.apple.mpegurl',m3u8]
+    `
 }

@@ -2,7 +2,8 @@
 // 搜索数字验证
 var rule = {
     title:'素白白[优]',
-    host:'https://www.subaibaiys.com',
+    host:'https://www.subaibai.com',
+    //host:'https://www.subaibaiys.com',
     //host:'https://subaibai.vip',
     //hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src = jsp.pdfh(html,".go:eq(0)&&a&&href");print(src);HOST=src',//网页域名根动态抓取js代码。通过HOST=赋值
     // url:'/fyclass/page/fypage',
@@ -17,7 +18,7 @@ var rule = {
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     headers:{
-        'User-Agent':'UC_UA',
+        'User-Agent':'PC_UA',
     },
      class_parse:'.navlist&&li;a&&Text;a&&href;.*/([^/]+)',
     play_parse:true,

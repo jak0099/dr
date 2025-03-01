@@ -1,0 +1,138 @@
+const { getHtml } = $.require('./_lib.request.js');
+
+const UA = randomUa.generateUa(1, {
+    device: ['pc'],
+    pcOs: ['windows'],
+    windowsApp: ['edge']
+});
+
+var rule = {
+    类型: '影视',
+    title: '番薯动漫',
+    模板: 'mxpro',  // 继承mxpro模板
+    host: 'https://www.fsdm02.com',
+    url: '/vodshow/${fyclass}-${fl.area}-${fl.order}------${fypage}---${fl.year}.html',
+    searchUrl: '/vodsearch/**/page/${fypage}.html',
+    filterable: 1,  // 启用筛选
+    headers: {
+        'User-Agent': UA,
+        'Referer': 'https://www.fsdm02.com',
+        'cookie': ''
+    },
+    
+    // 分类解析
+    class_parse: async () => ({
+        class: [
+            { type_id: "1", type_name: "TV番剧" },
+            { type_id: "3", type_name: "剧场版" },
+            { type_id: "20", type_name: "4k分区" },
+            { type_id: "21", type_name: "欧美动漫" }
+        ],
+        filters: {
+            "1": [
+                {
+                    name: "年份", key: "year",
+                    value: Array.from({length:25},(_,i)=>({n:2000+i,v:2000+i})).reverse()
+                },
+                {
+                    name: "排序", key: "order",
+                    value: [
+                        {n:"时间排序",v:"time"},
+                        {n:"人气排序",v:"hits"},
+                        {n:"评分排序",v:"score"}
+                    ]
+                }
+            ],
+            "3": [
+                {
+                    name: "地区", key: "area",
+                    value: [{n:"全部",v:""},{n:"日本",v:"%E6%97%A5%E6%9C%AC"}]
+                },
+                // ...其他筛选条件同原规则
+            ]
+        }
+    }),
+
+    // 一级列表
+    一级: $js.toString(() => {
+        const url = urljoin(HOST, MY_URL
+            .replace('${fyclass}', tid)
+            .replace('${fypage}', pg)
+            .replace('${fl.area}', extend.area || "")
+            .replace('${fl.order}', extend.order || "")
+            .replace('${fl.year}', extend.year || "")
+        );
+        
+        const html = request(url);
+        const $ = parseDom(html);
+        VODS = $('.module>a').map(item => ({
+            vod_id: pd(item, 'a&&href'),
+            vod_name: pd(item, 'img&&alt'),
+            vod_pic: pd(item, 'img&&data-original'),
+            vod_remarks: pd(item, '.module-item-note&&Text')
+        }));
+    }),
+
+    // 二级详情
+    二级: $js.toString(() => {
+        const html = request(urljoin(HOST, MY_URL));
+        const $ = parseDom(html);
+        VOD = {
+            vod_name: $('.module-info-heading>h1').text(),
+            vod_pic: $('.lazyload:first').data('original'),
+            vod_remarks: $('.module-info-item-title:contains(更新)+p').text(),
+            vod_content: $('.show-desc').text().trim(),
+            vod_play_from: $('#y-playList span').map(i => $(i).text()).join('$$$'),
+            vod_play_url: $('.module-play-list-content').map(i => 
+                $(i).find('a').map(j => 
+                    $(j).text().replace(/\(.*/, "") + "$" + $(j).attr('href')
+                ).join('#')
+            ).join('$$$')
+        };
+    }),
+
+    // 搜索功能
+    搜索: $js.toString(() => {
+        let cookie = await verifyCode();
+        const html = post(MY_URL, {
+            headers: { Cookie: cookie },
+            body: `wd=${encodeURI(wd)}`
+        });
+        
+        VODS = parseDom(html)('.module-items>div').map(item => ({
+            vod_id: pd(item, 'a&&href').match(/\/movie\/(.*?)\.html/)[1],
+            vod_name: pd(item, 'img&&alt'),
+            vod_pic: pd(item, 'img&&data-original'),
+            vod_remarks: pd(item, '.module-info-item-content&&Text')
+        }));
+    }),
+
+    // 播放解析
+    lazy: $js.toString(() => {
+        const decrypt = (data) => {
+            // ...保持原有解密逻辑
+            return decryptedUrl;
+        };
+        
+        const html = request(urljoin(HOST, MY_URL));
+        const playUrl = decrypt(html.match(/player_aaaa[\s\S]*?url: '(.*?)'/)[1]);
+        input = playUrl.match(/\.m3u8|\.mp4/) ? {parse:0, url:playUrl} : input;
+    }),
+
+    // 其他功能（cookie维护）
+    预处理: $js.toString(() => {
+        if (!rule.headers.cookie || Date.now() - lastCookieTime > 300000) {
+            rule.headers.cookie = "sl-challenge-jwt=" + getJwt();
+            lastCookieTime = Date.now();
+        }
+    })
+};
+
+// 工具函数
+const verifyCode = async () => {
+    // ...保持原有验证码识别逻辑
+};
+
+const getJwt = async () => {
+    // ...保持原有JWT获取逻辑
+};
