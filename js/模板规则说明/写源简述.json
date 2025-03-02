@@ -201,6 +201,10 @@ RSA.decode(data, key, option);
 // 单行极简写法（二选一）
 host: `https://www.${Math.random() < 0.5 ? 'subaibaiys' : 'subaibai'}.com`,
 
+host: `https://${
+  Math.random() < 0.5 ? 'www.subaibaiys.com' : 'subaibai.vip'
+}`,
+
 // 或扩展多域名版本（三选一）
 host: `https://${
   Math.random() < 0.33 ? 'www.subaibai.com' : 
