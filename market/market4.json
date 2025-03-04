@@ -1,0 +1,81 @@
+[
+  {
+    "name": "推荐",
+    "list": [
+      {
+        "url": "",
+        "icon": "https://jihulab.com/fourd/FourD/-/raw/main/莫比乌斯环.jpg"
+      }
+    ]
+  },
+  {
+    "name": "当前版本",
+    "list": [
+      {
+        "name": "单线路",
+        "url": "",
+        "icon": "http://127.0.0.1:9978/file/TVBoxOSC/tvbox/.版本.png",
+        "version": "2.22.2"
+      },
+      {
+        "name": "多线路",
+        "url": "",
+        "icon": "http://127.0.0.1:9978/file/TVBoxOSC/本地仓/.版本.png",
+        "version": "2.22.2"
+      }
+    ]
+  },
+  {
+    "name": "检查更新",
+    "list": [
+      {
+        "name": "单线路",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/local/单线路.zip",
+        "icon": "",
+        "version": "2.22.2",
+        "copy":"clan://localhost/TVBoxOSC/tvbox/api.json"
+      },
+      {
+        "name": "多线路",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/local/多线路.zip",
+        "icon": "",
+        "version": "2.22.2"
+      }
+    ]
+  },
+  {
+    "name": "Allinone",
+    "list": [
+      {
+        "name": "当前版本",
+        "url": "",
+        "icon": "http://127.0.0.1:9978/file/TVBox/.allinone.png",
+        "version": ""
+      },
+      {
+        "name": "稳定版 32位",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/formal/32/allinone.zip",
+        "icon": "",
+        "version": "1.0"
+      },
+      {
+        "name": "稳定版 64位",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/formal/64/allinone.zip",
+        "icon": "",
+        "version": "1.0"
+      },
+      {
+        "name": "测试版 32位",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/beta/32/allinone.zip",
+        "icon": "",
+        "version": "2.17"
+      },
+      {
+        "name": "测试版 64位",
+        "url": "https://jihulab.com/fourd/FourD/-/raw/main/beta/64/allinone.zip",
+        "icon": "",
+        "version": "2.17"
+      }
+    ]
+  }
+]

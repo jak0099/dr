@@ -30,6 +30,8 @@
 //{"key": "WebDAV","name": "🅿WebDAV┃FM","type": 3,"api": "csp_WebDAV","searchable": 1,"filterable": 1,"changeable": 0,"ext": "./pan/webdav.json","jar":"./sp/fm.jar"},
 {"key":"Aid","name":"🚑急救教学┃SP","type":3,"api":"csp_FirstAid","searchable":0,"quickSearch":0,"changeable":0,"style":{"type":"rect","ratio":3.8}},
 //{"key": "csp_LocalFile","name": "📁本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1,"jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
+{"jar": "./sp/mk.jar?md5=29972e50f5902a6409fce58e6e4c7473","key": "接口信息","name": "🔥接口更新🔥","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market.json"},
+{"jar": "./sp/mk2.jar?md5=5400486b7884dd01de5a306e34724c3c","key": "应用商店","name": "💥APP推荐💥","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market2.json"},
 
 //##道长js_dr格式源
 //#js_聚合影视_优🍒
@@ -50,10 +52,13 @@
 {"key": "dr_HBOTV[优]","name": "🍒HBOTV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/HBOTV[优].js"},
 {"key": "dr_素白白[优]","name": "🍒素白白[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/素白白[优].js"},
 {"key": "dr_皮皮虾[优]","name": "🍒皮皮虾[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/皮皮虾[优].js"},
+{"key": "dr_柠檬影视[优]","name": "🍒柠檬影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/柠檬影视[优].js"},
 
 //#js_聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_全民追剧","name": "🍊全民追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/全民追剧.js"},
+{"key": "dr_影趣影视","name": "🍊影趣影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/影趣影视.js"},
 {"key": "dr_青蛙影视","name": "🍊青蛙影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/青蛙影视.js"},
 {"key": "dr_爱看影视","name": "🍊爱看影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱看影视.js"},
 {"key": "dr_5点电影","name": "🍊5点电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/5点电影.js"},
@@ -301,6 +306,7 @@
 //#AppV2模板传参法🍎
 //{"key": "dr_APPV2_泽少","name": "🍎泽少[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 0,"ext": "./js/V2/APPV2[模板].js?type=url&params=http://122.228.85.203:1000$http://122.228.85.203:1000/play?url="},
 {"key": "dr_APPV2_河狸影视","name": "🍎河狸影视[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 3,"ext": "./js/V2/APPV2[模板].js?type=url&params=https://www.heli888.cc"},
+{"key": "dr_APPV2_酷影视","name": "🍎酷影视[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 3,"ext": "./js/V2/APPV2[模板].js?type=url&params=https://www.tvkuys.xyz"},
 
 //#js_磁力源类🍓
 //{"key": "dr_模板[磁]","name": "🍓模板[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/模板[磁].js"},
@@ -752,6 +758,16 @@
 /*代理规则*/
 {"name":"proxy","hosts":["meijutt.net","btsow.motorcycles","555zxdy.com","huanyuxing.com","cj.ffzyapi.com","ddys.pro","mypikpak.com",".*workers.dev","www.cilixiong.com","*.t4tv.hz.cz","kuba222.com","mp4us.com","dydhhy.com","magicalsearch.top","api123.adys.app","raw.githubusercontent.com","googlevideo.com","cdn.v82u1l.com","cdn.iz8qkg.com","cdn.kin6c1.com","c.biggggg.com","c.olddddd.com","haiwaikan.com","www.histar.tv","youtube.com","uhibo.com",".*boku.*",".*nivod.*","*.t4tv.hz.cz",".*ulivetv.*","wogg.link","wogg.xyz"]},
 /*去广规则*/
+{"name":"量子非凡广告","hosts":["lz","vip.lz","v.cdnlz","hd.lz","ffzy","vip.ffzy","hd.ffzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.600000,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"索尼广告","hosts":["suonizy","qrssv.com"],"regex":["15.1666","15.2666"]},
+{"name":"乐视广告","hosts":["leshiyun"],"regex":["15.92"]},
+{"name":"优质广告","hosts":["yzzy","playback"],"regex":["16.63","18.66","17.66","19.13"]},
+{"name":"快看广告","hosts":["kuaikan","vip.kuaikan"],"regex":["15.32","15.231","18.066"]},
+{"name":"360广告","hosts":["lyhuicheng"],"regex":["#EXTINF.*?\\s+.*?hrz8QcR9.*?\\.ts\\s+","#EXT-X-KEY:METHOD=NONE[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"开源棋牌","hosts":["askzycdn","jkunbf","bfikuncdn","bfaskcdn"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"\\r*\\n*#EXTINF:3.333,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"暴风广告","hosts":["bfengbf.com","bfzy","c1"],"regex":["#EXTINF.*?\\s+.*?adjump.*?\\.ts\\s+","#EXT-X-DISCONTINUITY\r*\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"磁力广告","hosts":["magnet"],"regex":["更多","请访问","example","社 區","x u u","直 播","更 新","社 区","有趣","有 趣","英皇体育","全中文AV在线","澳门皇冠赌场","哥哥快来","美女荷官","裸聊","新片首发","UUE29"]},
+
 {
   "name": "增强型视频广告过滤规则",
   "hosts": ["*"], 

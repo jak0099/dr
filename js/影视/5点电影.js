@@ -9,8 +9,7 @@ var rule = {
   quickSearch: 1,
   filterable: 1,
   headers: {
-    referer: "https://www.5.movie/",
-    "User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/133.0.0.0",
+    'User-Agent':'UC_UA',
   },
   class_name: '电影&剧集&短剧&动漫&综艺',
   class_url: '20&21&24&22&23',

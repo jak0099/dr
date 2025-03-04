@@ -99,7 +99,12 @@ var rule = {
     // 二级 title: 片名;类型
     // 二级 desc: 主要信息;年代;地区;演员;导演
     // 或者 {title:'',img:'',desc:'',content:'',tabs:'',lists:'',tab_text:'body&&Text',list_text:'body&&Text',list_url:'a&&href'} 同海阔dr二级
-    二级:'*',
+    // 二级tabs: '', //线路数组
+    // 二级lists: '', //集数组
+    // 二级tab_text: '', //线路名
+    // 二级list_text: '', //集名
+    // 二级list_url: '' //集链接
+    二级:'*',//'*',没有二级直接嗅探播放详情页地址  
     // 搜索可以是*,集成一级，或者跟一级一样的写法 列表;标题;图片;描述;链接;详情
     搜索:'*',
     // 本地代理规则，可用于修改m3u8文件文本去广告后返回代理文件地址，也可以代理加密图片
@@ -175,7 +180,7 @@ getProxyUrl(获取壳子本地代理地址返回 /proxy?do=js的完整链接)
 proxy_rule参数input赋值格式为三元素列表[status,content-type,data]  
 如: [200,'text/plain','hello drpy']  
 input = [200,'application/vnd.apple.mpegurl',m3u8]    
-
+return [200, "video/MP2T", action, ""]
 ##rsa加解密说明:
 RSA.encode(data, key, option);
 RSA.decode(data, key, option);
@@ -192,13 +197,54 @@ RSA.decode(data, key, option);
 ###2024.11.4
 增加drpy新特性，可以规则内添加搜索验证标识，可以禁止某个源的搜索翻页。
 
+##多域名基础随机切换方案示例（50%概率）
+// 单行极简写法（二选一）
+host: `https://www.${Math.random() < 0.5 ? 'subaibaiys' : 'subaibai'}.com`,
+
+// 或扩展多域名版本（三选一）
+host: `https://${
+  Math.random() < 0.33 ? 'www.subaibai.com' : 
+  Math.random() < 0.66 ? 'www.subaibaiys.com' : 'subaibai.vip'
+}`,
+
+
+##预处理：
+// 可在预处理中添加Cookie验证
+const checkAuth = () => {
+  if(!rule.headers.Cookie){
+    const auth = verifyLogin(rule.host);
+    rule.headers.Cookie = auth.cookie;
+  }
+}
+lazy广告过滤代码：
+// 在play_parse中添加广告过滤
+const filterAds = (url) => {
+  return url.replace(/\/ad\/\d+\//,'/');
+}
+
 ##广告过滤写法：
   proxy_rule: `js:
   let url = input.url;
   let m3u8 = fixAdM3u8Ai(url);
   input = [200,'application/vnd.apple.mpegurl',m3u8]
   `
-  
+广告过滤示例1：
+proxy_rule: $js.toString(() => {      
+        let data=fetch(input.url,{headers:rule.headers})       
+        // let m3u8=data.replace('URI="','URI="http://194.147.100.39')
+        let m3u8=data.replace('URI="',`URI="${rule.host}`)        
+        input = [200, 'application/vnd.apple.mpegurl', m3u8]
+    }),
+
+广告过滤示例2：
+proxy_rule: `js:
+const { fixAdM3u8Ai } = require('./m3u8-filter'); // 假设函数保存在外部文件
+let url = input.url;
+let headers = input.headers; // 获取请求头
+let m3u8 = fixAdM3u8AiPro(url, headers);
+input = [200, 'application/vnd.apple.mpegurl', m3u8];
+`
+      
 ##筛选简述:
 ###1.动漫巴士为例：
 {https://dm84.top/show-1--hits-奇幻--2024-2.html
@@ -747,3 +793,51 @@ filter获取方法:`
     let data = {'tv': [{'key': 'tag', 'name': '标签', 'value': value}]};
     console.log(JSON.stringify(data));
     `,       
+
+图片代理解密示例1：    
+proxy_rule: $js.toString(() => {
+        //log(input);
+        // 测试:https://www.wakatool.com/base64img
+        if (input) {
+            let t1 = new Date().getTime();
+            let _type = input.url.split('.').slice(-1)[0];
+            let data = request(input.url, {toBase64: true});
+            //log(data);
+            let t2 = new Date().getTime();
+            log(`网络请求获取图片耗时:${t2 - t1}ms`);
+            // log(`当前线程:${java.lang.Thread.currentThread().getName()}`);
+
+            let key = CryptoJS.enc.Utf8.parse("f5d965df75336270");
+            let iv = CryptoJS.enc.Utf8.parse("97b60394abc2fbe1");
+            let encrypted = CryptoJS.AES.decrypt({
+                ciphertext: CryptoJS.enc.Base64.parse(data)
+            }, key, {
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            }).toString(CryptoJS.enc.Base64);
+            // .toString(CryptoJS.enc.Utf8).toTypedArray(CryptoJS.enc.Utf8); //直接转参数3可用的字节流方法
+            let img_base64 = 'data:image/' + _type + ';base64,' + encrypted;
+            let t3 = new Date().getTime();
+            log(`已获取图片${input.url}解密耗时:${t3 - t2}ms`);
+            // // input = [200, 'text/plain', img_base64];
+            // input = [302, 'text/html', '', {Location:'https://www.baidu.com'}];
+            input = [200, 'image/' + _type, img_base64, null, 1];
+            // input = [200, 'text/plain', data];
+        }
+    }),
+    预处理: $js.toString(() => {
+        rule.cate_exclude = '';
+    }),    
+
+图片代理解密示例2：
+proxy_rule: $js.toString(() => {
+        log(input.url);
+        if (input.url.includes('https://pic.eqiykt.cn')) {
+            let content = request(input.url, {withHeaders: true, toBase64: true});
+            log(content);
+            input = [200, 'text/plain', content];
+        } else {
+            input = [403, 'text/plain', 'forbidden']
+        }
+    }),    
