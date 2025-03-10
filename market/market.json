@@ -1,10 +1,10 @@
 [
-{"name": "推荐","list": [
+{"name": "有奖","list": [
 {"name":"右滑查看🔀","url": "","icon": "http://127.0.0.1:9978/file/tvbox/img/d5.gif"}]},
 
 //{"name":"当前版本","list":[{"name":"本地包日期","url":"","icon":"http://127.0.0.1:9978/file/tvbox/img/wj.png","version":"2025-03-04"}]},
 
-{"name":"↓更新本地包↓","list":[
-{"name":"↑更新日期↑","url":"https://gh-proxy.com/github.com/jak0099/dr/archive/refs/heads/master.zip","icon":"http://127.0.0.1:9978/file/tvbox/img/wj.png","version":"2025-03-04","copy":"clan://localhost/dr-master/jk/ck2.json"}
+{"name":"↓更新内容↓","list":[
+{"name":"↑随缘更新↑","url":"https://gh-proxy.com/github.com/jak0099/dr/archive/refs/heads/master.zip","icon":"http://127.0.0.1:9978/file/tvbox/img/wj.png","version":"点击拉取","copy":"clan://localhost/dr-master/jk/ck2.json"}
 
 ]}]

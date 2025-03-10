@@ -2,7 +2,7 @@
 {"name": "推荐","list": [
 {"name":"右滑查看🔀","url": "","icon": "http://127.0.0.1:9978/file/tvbox/img/d5.gif"}]},
 
-{"name":"↓APP推荐&更新↓","list":[
+{"name":"↓APP推荐↓","list":[
 //zb系列
 {"name":"OurTV","url":"https://cors.isteed.cc/https://github.com/andandroidor/ourtv/releases/download/3.6.9/OurTV_3.6.9_android_tv.apk","version":"3.6.9","icon":"http://pic.baobeiy.com/up/2024-9/202499813206306.png"},
 {"name":"天光云影","url":"https://cors.isteed.cc/https://raw.githubusercontent.com/n3rddd/MARKET/refs/heads/main/APP/tv-3.3.9-all-sdk21-original.apk","version":"3.3.9","icon":"https://itopdog.xyxza.com/gameggg/imgfile/20241107/07154337hlir.png"},
