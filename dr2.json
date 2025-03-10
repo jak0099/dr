@@ -769,212 +769,79 @@
 {"name":"开源棋牌","hosts":["askzycdn","jkunbf","bfikuncdn","bfaskcdn"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"\\r*\\n*#EXTINF:3.333,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"暴风广告","hosts":["bfengbf.com","bfzy","c1"],"regex":["#EXTINF.*?\\s+.*?adjump.*?\\.ts\\s+","#EXT-X-DISCONTINUITY\r*\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"磁力广告","hosts":["magnet"],"regex":["更多","请访问","example","社 區","x u u","直 播","更 新","社 区","有趣","有 趣","英皇体育","全中文AV在线","澳门皇冠赌场","哥哥快来","美女荷官","裸聊","新片首发","UUE29"]},
-
-{
-  "name": "增强型视频广告过滤规则",
-  "hosts": ["*"], 
-  "regex": [
-    // ========== 核心播放列表 ==========
-    // 支持更多视频平台格式（.m3u8/.mpd/.ism）
-    "^https?:\\/\\/(?:[^\\/]+)\\/(?:\\d{8}|vod)\\/(?:[\\w-]+_)?[\\da-f]+(?:\\/index)?\\.(?:m3u8|mpd|ism)(?:\\?.*)?$",
-
-    // ========== 广告域名拦截 ==========
-    // 匹配已知广告CDN域名
-    "(?:ads?|promo|track)\\.[a-z]{2,}(?:\\d+)?\\.(?:com|net)\\b",
-    "\\b(?:adserver|adtag|adcontent)\\.[a-z]+\\b",
-    
-    // ========== HLS/MPD广告标签 ==========
-    // 标准HLS广告标签 (含DASH兼容)
-    "#EXT-X-(?:CUE-OUT|CUE-OUT-CONT|AD-MARKER|SPONSORBLOCK|UPLYNK-AD)\\b.*",
-    "<Event\\b[^>]*schemeIdUri=\"(?:urn:mpeg:dash:event:2012|ad)\".*?>",
-    
-    // 组合型广告标签（含动态时长）
-    "#EXT-X-DISCONTINUITY\\s*#EXTINF:(\\d+\\.?\\d*),\\s*(?:广告|AD|赞助|%\\w{2}%\\w{2}).*\\n[^#]*\\.ts",
-    
-    // ========== URL路径特征 ==========
-    // 广告路径特征（目录/文件）
-    "\\/(?:ads?|adv|advert|promo|sponsor|banner|tracking)(?:\\d*|[-_]?v\\d+)\\b[^\\/]*\\/.*\\.(?:ts|mp4|m4s)(?:\\?.*)?$",
-    
-    // 动态广告ID模式（字母数字混合）
-    "\\/[a-f0-9]{32}\\/ad_\\d+\\b",
-    "\\/(?:v?\\d+_)?ad(?:\\d+)?_\\d+\\.ts\\b",
-    
-    // ========== 高级参数过滤 ==========
-    // 广告参数（含值检测）
-    "[?&](?:ad|adv|adtag)(?:[_-]?(?:zone|id|token|v|name))=(?:[0-9a-f]{32}|\\d{15,})",
-    "[?&](?:utm_|pt_).*?(?:ad|promo)\\b",
-    
-    // 时间戳广告标记（避免缓存）
-    "(?:start|offset)=\\d+&(?:ad_|midroll_)",
-    
-    // ========== 高级特征防护 ==========
-    // 广告统计像素（1x1图片）
-    "\\.(?:gif|png)\\?(?:w=\\d+&h=1|sz=1x1)",
-    
-    // 加密广告密钥请求
-    "\\.key\\?type=ad&",
-    
-    // 动态广告域名子路径
-    "\\/\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}\\/ads\\/"
-  ]
-},  
-  
-  // 通用型规则
-{"name":"♻️通用广告标记","hosts":["*"],"regex":[
-    "#EXT-X-AD,[\\s\\S]*?#EXT-X-DISCONTINUITY",  // 标准广告标记
-    "#EXTINF:[0-5]\\.\\d+\\b.*?/(ads?|banner)/", // 短时长+广告路径
-    "^http[^\\n]+/ad/[^\\n]+\\.ts"  // 广告TS文件URL
-]},
-  
-  //针对低性能设备
-{"name":"♻️低性能去广","hosts":["*"],"regex":[
-  "#EXTINF:\\d\\.\\d{3}.*ad",
-  "/ad/\\d{2}/\\d{2}/[a-z0-9]+\\.ts",
-  "#EXT-X-DISCONTINUITY(\\s+#EXT-X-DISCONTINUITY)+"
-]},
-  
-  // 时长特征增强
-{"name":"♻️异常时长广告","hosts":["*"],"regex":[
-    "#EXTINF:\\s*([0-9]|1[0-5])\\.[0-9]{4,}\\b",  // 超长小数位
-    "#EXTINF:\\s*([56]\\.[678]|1[5-9])\\d*\\b"  // 可疑时长范围
-]},
-
-  // 加密广告流
-{"name":"♻️加密广告特征","hosts":["*"],"regex":[
-    "#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+ads?[^\"]*\"",
-    "#EXT-X-SESSION-KEY:[\\s\\S]*?URI=\"[^\"]+encrypt/"
-]},
-
-  // 动态路径广告
-  {"name":"♻️动态广告路径","hosts":["*"],"regex":[
-    "/[a-f0-9]{32}/[^\\s]+\\.ts",  // 哈希路径
-    "/\\d{8}/[^\\s]+\\.ts",  // 日期路径
-    "_\\d{2}/[^\\s]+\\.ts"  // 动态分段
-  ]},
-
-  // 高级结构特征
-  {"name":"♻️广告结构特征","hosts":["*"],"regex":[
-    "(#EXT-X-DISCONTINUITY[\\r\\n]+){2,}",  // 连续分段标记
-    "#EXT-X-MAP:.*?BANDWIDTH=\\d{4,5}\\b"  // 低码率初始化段
-  ]},
-
-  // 协议级特征
-  {"name":"♻️协议级广告特征","hosts":["*"],"regex":[
-    "^#UPLYNK-SEGMENT:.*?\\b(ad|promo)\\b",
-    "#EXT-X-CUE-OUT-CONTROL:.*?DURATION=30"
-  ]},
-
-  // 增强型磁力规则
-  {"name":"♻️磁力广告增强","hosts":["magnet"],"regex":[
-    "\\b(更多|社區|xuu|最新|直播|更新|社区|有趣|英皇体育|全中文AV在线|澳门皇冠赌场|哥哥快来|美女荷官|真人荷官|在线发牌|澳门金沙|夜场直招|同城约炮|裸聊|UUE29)\\b",
-    "magnet:\\?xt=urn:btih:[0-9a-f]{40}&dn=.*?[\u4e00-\u9fa5]{5}广告"
-  ]},    
-  
-  // 核心协议头过滤
-  {"name":"♻️TVBox协议特征","hosts":["*"],"regex":[
-    "^#EXTINF:\\s*(([0-4]\\.[0-9]{4,})|(1[5-9]\\.\\d+))\\s*,\\s*([^\\n]{0,15}?([广宣推]|AD|Promo)[^\\n]{0,15})\\s",
-    "^http[^\\n]+/(ad[0-9]*|banner|promo)/[^\\n]+\\.(ts|m3u8)(\\?[^\\s]*)?"
-  ]},
-
-  // 电视广告专用路径
-  {"name":"♻️TV广告路径","hosts":["tv.ads.com","ott.adserver.*"],"regex":[
-    "/tv[_-]?(ad|banner)/[0-9]{6}/[a-z0-9]{32}\\.ts",
-    "_\\d{2}_ad_\\d{2}\\.ts"
-  ]},
-
-  // 低性能设备优化
-  {"name":"♻️TVBox轻量规则","hosts":["*"],"regex":[
-    "#EXT-X-DISCONTINUITY\\n#EXTINF:[0-5]\\.[0-9]+,[^\\n]*[^a-zA-Z0-9](ad|banner)",
-    "#UPLYNK-SEGMENT:.*DURATION=30"
-  ], "max_time":50},
-
-  // 机顶盒广告特征
-  {"name":"♻️机顶盒特征","hosts":["*.tvbox","*.ott"],"regex":[
-    "\\/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\\/ad\\/",
-    "#EXT-X-MAP:.*BANDWIDTH=\\d{5},"
-  ]},
-  
-  // 移动广告协议特征
-  {"name":"♻️移动广告协议头","hosts":["*"],"regex":[
-    "^#EXT-X-(CUE-OUT|PLACEMENT):.*DURATION=\\d{2}\\.\\d{3}",
-    "^#EXTINF:\\s*\\d{1,2}\\.\\d{3,5},\\s*@广告@",
-    "#EXT-X-ASSET:.*\\bTYPE=AD\\b"
-  ]},
-  
-  // 移动动态路径检测
-  {"name":"♻️移动动态广告","hosts":["mobilecdn.*","*.m3u8"],"regex":[
-    "/[0-9]{13}/[a-f0-9]{8}_ad\\.ts",
-    "/v(?:1|2)/ads/\\d{2}/[^/]+\\.ts\\?exp=\\d{10}",
-    "_\\d{4}[ap]d\\.ts"
-  ]},
-  
-  // 移动加密特征
-  {"name":"♻️移动加密广告","hosts":["*.encrypt","*secure*"],"regex":[
-    "#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+/ads?/encrypt/",
-    "#EXT-X-MAP:.*?keyid=\"ad_[0-9a-f]{8}\"",
-    "#EXT-X-SESSION-KEY:.*,IV=0x0000000000000000"
-  ]},
-  
-  // 移动端性能优化
-  {"name":"♻️移动轻量规则","hosts":["*"],"regex":[
-    "#EXT-X-DISCONTINUITY\\n#EXTINF:[0-5]\\.\\d{3}\\b",
-    "/ad/\\d{2}/\\d{2}/[a-z0-9]{16}\\.ts"
-  ], "optimize":"mobile"},
-  
-  // 移动混合广告
-  {"name":"♻️混合广告检测","hosts":["*"],"regex":[
-    "(#EXT-X-AD-MARKER:[^\\n]+\\n){3,}",
-    "#EXT-X-DATERANGE:.*\\bID=\"AD_\\d+\"",
-    "#EXT-X-CONTENT-STEERING:.*URI=\"[^\"]+/ad/steer\""
-  ]},
-  
+    {
+        "name": "通用广告路径过滤",
+        "hosts": ["ad", "ads", "advert", "adserver", "adcdn", "staticads"],
+        "regex": [
+            "#EXTINF:\\d+\\.\\d+,\\s*[\\s\\S]*?\\/(ad|ads|advert|promo)\\/.*?\\.ts\\s+",
+            "#EXTINF:\\d+\\.\\d+,\\s*[\\s\\S]*?\\.(ad|ads|advert|banner)\\..*?\\.ts\\s+",
+            "\\?.*&?(ad_zone|adid)=[^&]+"
+        ]
+    },
+    {
+        "name": "智能时长广告块",
+        "hosts": [],
+        "regex": [
+            "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(1[5-9]|20)(\\.\\d+)?,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+            "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:[3-6]\\.\\d+,[\\s\\S]*?(插入广告|AD_SLOT).*?#EXT-X-DISCONTINUITY"
+        ]
+    },
+    {
+        "name": "动态加密广告",
+        "hosts": ["*"],
+        "regex": [
+            "#EXT-X-KEY:METHOD=(AES-128|SAMPLE-AES),URI=\"[^\"]*\\/ad\\/[^\"]+\"\\r*\\n*#EXTINF:\\d+\\.\\d+,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+            "#EXT-X-SESSION-DATA:DATA-ID=\"ad_.*?\"\\r*\\n*#EXTINF:\\d+\\.\\d+"
+        ]
+    },
+    {
+        "name": "元数据广告特征",
+        "hosts": ["metacdn", "streammeta"],
+        "regex": [
+            "#EXT-X-MEDIA-SEQUENCE:\\d+\\r*\\n*#EXT-X-CUE-OUT-CONT.*?#EXT-X-CUE-IN",
+            "#EXT-X-PROGRAM-DATE-TIME:.*?\\r*\\n*#UPLYNK-SEGMENT:.*?ad=1.*"
+        ]
+    },
+    {
+        "name": "增强型文本特征",
+        "hosts": ["magnet", "ed2k", "ftp"],
+        "regex": [
+            "(立即|马上|点击)(注册|下载|领取)",
+            "【.*?促销.*?】",
+            "[试看60秒]",
+            "完整版[在|到]",
+            "澳门[金沙|威尼斯]",
+            "[日韩|欧美]独播",
+            "（工.*?号.*?）",
+            "v\\s*信|薇\\s*信",
+            "Q\\s*群|扣\\s*扣"
+        ]
+    },
+    {
+        "name": "精准广告协议",
+        "hosts": ["vast","vmap"],
+        "regex": [
+            "<Ad.*?<Duration>.*?<\\/Ad>",
+            "<vmap:AdBreak.*?breakType=\"linear\"",
+            "<MediaFile.*?delivery=\"progressive\".*?adtech.*?<\\/MediaFile>"
+        ]
+    },  
   {
-  "name":"♻️参数广告过滤",
-  "hosts":["*.video.*"],
-  "regex":[
-    "\\.ts\\?rand=[0-9a-f]{8}&type=ad",
-    "\\.m3u8\\?t=\\d{10}&adflag=1",
-    "/v\\d+/[\\w-]+_ad_\\d{13}\\.ts"
-  ]},
-  
+    "name": "广告关键字",
+    "hosts": ["*"],
+    "regex": ["ad|adv|ads|advertisement|commercial|spot", "广告|商插|提示|跳过", ".more|please visit|click here"]
+  },
   {
-  "name":"♻️二进制广告指纹",
-  "hosts":["*"],
-  "regex":[
-    "\\x00{4}ADV\\x00",  // 头部标识
-    "[0-9A-F]{4} 63 6F 6D 6D 65 72 63 69 61 6C",  // "commercial" HEX
-    "\\x89PNG.*ADV\\x00\\x00"  // PNG广告图片
-  ],
-  "mode":"hex"},
+    "name": "广告标识符",
+    "hosts": ["*"],
+    "regex": ["#EXT-X-KEY:METHOD=NONE[\\s\\S]*?#EXTINF:", "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:.*?\\r*\\n*#EXT-X-DISCONTINUITY", "adjump|discontinuity|adbreak|adcue"]
+  },
   {
-  "name":"♻️AIGC广告检测",
-  "hosts":["*"],
-  "regex":[
-    "/generate_ad/[0-9a-f-]{36}/",
-    "# Created by AI_AD_GEN v\\d+\\.\\d+",
-    "prompt=[^&]+%E5%B9%BF%E5%91%8A"  // URL编码的"广告"
-  ]},
-  
-  // ================= 低延迟流广告 =================
-  {"name":"♻️LL-HLS广告","hosts":["*"],"regex":[
-    "#EXT-X-PART:DURATION=0.\\d{3},URI=\"[^\"]+/part/ad/",
-    "#EXT-X-PRELOAD-HINT:[\\s\\S]{0,100}ad/segment/",
-    "#EXT-X-SERVER-CONTROL:[\\s\\S]*?CAN-BLOCK-RELOAD=YES"
-  ], "low_latency":true},
+    "name": "加密广告",
+    "hosts": ["*"],
+    "regex": ["#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"", "#EXT-X-KEY:METHOD=SAMPLE-AES,URI=\"[^\"]+\"", "#EXT-X-KEY:METHOD=NONE[\\s\\S]*?#EXTINF:.*?\\.ts"]
+  },
 
-  // ================= 多语言广告 =================
-  {"name":"♻️全球化广告","hosts":["*"],"regex":[
-    "\\b(おすすめ|무료체험|免费试用|Try Now)\\b",  // 多语言关键词
-    "magnet:\\?xt=urn:btih:[0-9a-f]{40}&dn=.*[^\\x00-\\x7F]{5}.*ads?", // 非ASCII特征
-    "(廣告|広告|광고)[^\\/]{0,10}\\.(ts|m3u8)\\b"  // 多语言扩展名
-  ], "multilingual":true},
-
-  // ================= 对抗生成式广告 =================
-  {"name":"♻️AIGC广告检测","hosts":["*"],"regex":[
-    "/generate/[0-9a-f]{32}/ad/",  // 生成式路径
-    "\\b(StableDiffusion|DALL·E)_AD_[0-9]{10}\\b",  // AI模型标记
-    "# Created by AI Adv System v[1-9]"  // 生成标记
-  ], "aigc_detect":true},
   
 /*嗅探解析*/
 {"host":"dyxs20.com","rule":[".m3u8"]},
