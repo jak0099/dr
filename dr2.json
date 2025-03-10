@@ -260,6 +260,7 @@
 {"key": "dr_青柠影院","name": "🍊青柠影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/青柠影院.js"},
 {"key": "dr_4K-AV","name": "🍊4K-AV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/4K-AV.js"},
 {"key": "dr_麻雀视频","name": "🍊麻雀视频[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/麻雀视频.js"},
+{"key": "dr_水晶影院","name": "🍊水晶影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/水晶影院.js"},
 
 //#js_弹幕类🍄
 //{"key": "dr_模板[弹]","name": "🍄模板[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/模板[弹].js"},
@@ -354,6 +355,7 @@
 {"key": "dr_DYD[盘]","name": "🍅DYD[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/DYD[盘].js"},
 {"key": "dr_小米盘[盘]","name": "🍅小米盘[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/小米盘[盘].js"},
 {"key": "dr_饺子影院[盘]","name": "🍅饺子影院[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/饺子影院[盘].js"},
+{"key": "dr_闪电优汐[盘]","name": "🍅闪电优汐[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/云盘/闪电优汐[盘].js"},
 
 //#动漫类🍇
 //{"key": "dr_模板[漫]","name": "🍇模板[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/模板[漫].js"},
