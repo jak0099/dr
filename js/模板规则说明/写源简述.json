@@ -228,7 +228,7 @@ const filterAds = (url) => {
   let m3u8 = fixAdM3u8Ai(url);
   input = [200,'application/vnd.apple.mpegurl',m3u8]
   `
-广告过滤示例1：
+##代理广告过滤示例1：
 proxy_rule: $js.toString(() => {      
         let data=fetch(input.url,{headers:rule.headers})       
         // let m3u8=data.replace('URI="','URI="http://194.147.100.39')
@@ -236,7 +236,7 @@ proxy_rule: $js.toString(() => {
         input = [200, 'application/vnd.apple.mpegurl', m3u8]
     }),
 
-广告过滤示例2：
+##代理广告过滤示例2：
 proxy_rule: `js:
 const { fixAdM3u8Ai } = require('./m3u8-filter'); // 假设函数保存在外部文件
 let url = input.url;
@@ -244,7 +244,33 @@ let headers = input.headers; // 获取请求头
 let m3u8 = fixAdM3u8AiPro(url, headers);
 input = [200, 'application/vnd.apple.mpegurl', m3u8];
 `
-      
+代理1
+proxy_rule: $js.toString(() => {
+        // console.log("tup====="+input);
+        if (input) {
+            let data1 = request(input.url);
+            let key = CryptoJS.enc.Utf8.parse("46cc793c53dc451b");
+            let img
+            if (/pK0H/.test(data1)) {
+                var decrypt = CryptoJS.AES.decrypt(data1, key, {
+                    mode: CryptoJS.mode.ECB,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+                img = decrypt.toString(CryptoJS.enc.Utf8);
+            } else {
+                var decrypt = CryptoJS.AES.decrypt(data1, key, {
+                    mode: CryptoJS.mode.ECB,
+                    padding: CryptoJS.pad.NoPadding
+                });
+                img = decrypt.toString(CryptoJS.enc.Utf8);
+
+            }
+            let type=img.match(/.*image\/([^;]+);/)[1];
+            input = [200, `image/${type}`, img, null, 1];
+        }
+
+    }),
+          
 ##筛选简述:
 ###1.动漫巴士为例：
 {https://dm84.top/show-1--hits-奇幻--2024-2.html

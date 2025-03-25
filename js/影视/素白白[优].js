@@ -3,8 +3,8 @@
 var rule = {
     title: '素白白[优]',
     host: `https://${
-    Math.random() < 0.33 ? 'subaibai.com' : 
-    Math.random() < 0.66 ? 'www.subaibaiys.com' : 'www.subaibai.com'
+    Math.random() < 0.33 ? 'www.subaibai.com' : 
+    Math.random() < 0.66 ? 'subaibai.com' : 'www.subaibaiys.com'
     }`,
     //host:'https://www.subaibai.com',
     //host:'https://www.subaibaiys.com',

@@ -1,0 +1,50 @@
+{
+  "rules": [
+    {
+      "name": "♻️通用智能去广",
+      "hosts": ["*"],
+      "regex": [
+        // 智能时长过滤（短于15秒的非正片片段）
+        "#EXT-X-DISCONTINUITY\\s*#EXTINF:(?:[0-2]\\d|3[0-5])\\.\\d+,[^\\n]+?(?:ad|adv|commercial)[^\\n]*\\s",
+        "(?i)#EXTINF:[0-9]{1,2}\\.\\d{2,6},\\s*.*?(?:广告|推广|跳转|赞助)",
+        
+        // 深度解密识别（加密广告特征）
+        "(#EXT-X-KEY:[^\\n]+?URI=\"[^\"]+?(?:adkey|advkey|adsecret)[^\"]*?\")(?:[\\s\\S]*?#EXT-X-DISCONTINUITY)",
+        "#EXT-X-KEY:METHOD=(AES-128|SAMPLE-AES)[\\s\\S]{1,200}?#EXTINF:(8|10|15)\\.000000",
+        
+        // 多维特征识别（文件名+协议特征）
+        "#EXTINF.*?\\s+(?:[a-z0-9]{32}|[A-Z0-9]{16}|v[0-9]{2}ad[0-9]{2})\\.ts\\s",
+        "(?i)#EXT-X-CUE-OUT[\\s\\S]{1,100}?(?:CONTENT-ID=\"AD\"|DURATION=30)",
+        
+        // 智能语义分析（中文广告特征）
+        "(?:立即下载|VIP会员|跳过广告|點擊觀看|澳门金沙|棋牌娱乐|在线发牌|荷官|性感荷官|激情直播)\\b",
+        
+        // 动态自适应过滤（时序异常检测）
+        "#EXTINF:([5-9]|10|15)\\.(?:000000|999999|666666|333333)[\\s\\S]*?(?:EXT-X-DISCONTINUITY|EXT-X-CUE-IN)",
+        
+        // 加密混淆对抗（模糊匹配）
+        "#EXT-X-KEY.*?/\\*{6}_?(?:ad|gg|sp)\b.*?\\*{6}/",
+        "#EXTINF.*?\\s+.*?(?:\\d{4}/\\d{2}/[a-z0-9]+_ad_\\d+\\.ts)\\s",
+        
+        // 高级协议注入检测
+        "#UPLYNK-SEGMENT.*?advertising/[^\\n]+",
+        "#EXT-X-ADVANCED:[\\s\\S]*?X-AD-INSERTION"
+      ]
+    },
+    {
+      "name": "♻️智能动态修正",
+      "hosts": ["*"],
+      "regex": [
+        // 智能白名单保护（排除误杀关键词）
+        "(?!.*?(?:main|segment|part\\d|index|\\d{3}p))\\.ts",
+        "(?i)(?<!promo|trailer|preview)#EXTINF:[5-9]\\.\\d+",
+        
+        // 动态分片验证（双重校验机制）
+        "#(EXTINF:\\d+\\.\\d+).*?\\n(#EXT-X-DISCONTINUITY)\\n(?:\\1.*?\\n\\2){2,}",
+        
+        // 时间戳连续性检测
+        "(#EXT-X-PROGRAM-DATE-TIME:[^\\n]+)\\n#EXTINF:(10|15)\\.\\d+\\n[^#]+?(\\1)"
+      ]
+    }
+  ]
+}

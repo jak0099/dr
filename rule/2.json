@@ -1,0 +1,86 @@
+{
+  "name": "🚀超强TS流拦截",
+  "hosts": ["*"],
+  "regex": [
+    // 基础特征增强
+    "(#EXT-X-DISCONTINUITY[\\r\\n]+#EXTINF:(3|5|10|15)(\\.\\d+)?,[\\s\\S]*?/(ad[s]?|promo)/.*?\\.ts)",
+    
+    // 新型加密广告检测
+    "(#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]*/(ads_enc|vip_promo)/[^\"]*\")",
+    
+    // 动态广告标记
+    "(#UPLYNK-SEGMENT.*?(?:duration=\\d{15,}|asset-id=ad_))",
+    
+    // 时间戳异常检测
+    "(#EXT-X-PROGRAM-DATE-TIME:.*?(?:202[3-9]-0[135]-3[12]T23:59|0000-00-00))",
+    
+    // 广告序列特征
+    "(#EXTINF:(5\\.000|15\\.000),.*?(_ad_\\d{3}|seg-ad-)\\.ts)",
+    
+    // 隐藏式广告流
+    "(#EXT-X-MAP:URI=\"[^\"]*/(splash|interstitial)/[^\"]*.(ts|mp4)\")",
+    
+    // 动态广告插入标记
+    "(#EXT-X-SCTE35:(CUE-OUT|CUE-IN).*?ID=/ad/break)",
+    
+    // 广告内容哈希特征
+    "(#EXT-X-AD-HASH:([A-F0-9]{32}|[a-f0-9]{64}))"
+  ]
+},
+
+{
+  "name": "♻️AI动态学习规则",
+  "hosts": ["*"],
+  "regex": [
+    "#EXT-X-DISCONTINUITY[\\r\\n]+#EXTINF:(?:\\d{1,2}\\.\\d+|\\d+),.*?[^\\n]+?(?:logo|promo)\\.ts\\b",
+    "(?:\\/ad\\/|\\/adv\\/|_banner_)\\d{6}\\.ts(?:\\?token=[A-Za-z0-9]+)?",
+    "http[s]?://(?:[a-z0-9-]+\\.)?(?:akamai|cloudfront)\\.net/.*?\\/(?:preroll|midroll)\\."
+  ]
+},
+
+{
+  "name": "♻️元数据净化",
+  "protocols": ["hls","dash","rtmp"],
+  "actions": [
+    "remove_xml_node('AdOpportunity')",
+    "modify_manifest(delete:#EXT-X-SPLICEPOINT)",
+    "rewrite_url(scheme=https; path=/clean/)" 
+  ]
+},
+{
+  "name": "💉播放器基因清洗",
+  "hosts": ["*"],
+  "regex": [
+    // 广告容器特征
+    "<div\\s+class=[\"'](?:ad-container|player-ads|ad-wrapper)",
+    
+    // 广告脚本注入
+    "<script\\s+src=[\"'](?:https?:)?//[^/]+/(ads|adx)/\\w+\\.js",
+    
+    // 视频覆盖广告
+    "<video-ads\\s+[^>]*(?:vpaid|companion)",
+    
+    // 播放器广告API
+    "player\\.(?:initAd|loadAd)\\([^)]*\\)",
+    
+    // 广告样式特征
+    "\\bposition:\\s?(absolute|fixed).*?z-index:\\s?9999"
+  ]
+},
+{
+  "name": "🛑广告协议阻断",
+  "hosts": ["*"],
+  "regex": [
+    // VAST广告协议
+    "<VAST\\s+version=\"[3-4]",
+    
+    // VPAID容器
+    "vpaid-container.js",
+    
+    // IMA SDK特征
+    "imasdk\\.googleapis\\.com",
+    
+    // 广告信标
+    "/ad/tracker\\.gif\\?.*?(?:pid=|cid=)"
+  ]
+},

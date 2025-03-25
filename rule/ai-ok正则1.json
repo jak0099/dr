@@ -1,0 +1,21 @@
+{"rules":[
+/* 通用广告片段过滤 */
+{"name":"♻️通用广告标记","hosts":"*","regex":"EXT-X-DISCONTINUITY[\\s\\S]{1,300}?EXTINF:[0-9]{1,2}\\.?\\d{0,6}[,\\s][\\s\\S]*?(?:1o|ad|gg|adjump|tvc|tanx|union)\\S*?\\.ts"},
+{"name":"♻️异常时间标记","hosts":"*","regex":"EXTINF:(?:3\\.3|5|6\\.6|8|9|10|15|20)(?:333|666|000)?[,\\s]\\s*[^\\n]+?\\.ts"},
+{"name":"♻️空加密广告","hosts":"*","regex":"EXT-X-KEY:METHOD=(?:NONE|AES-128)[\\s\\S]{1,150}?EXT-X-DISCONTINUITY"},
+
+/* 智能TS特征过滤 */
+{"name":"♻️TS广告特征","hosts":"*","regex":"\\.ts[\\s\\n]+(?:#|https?)[^\\n]*?(?:\\/[a-z0-9]{8,}\\/|_\\d{3}\\.ts)"},
+{"name":"♻️异常TS路径","hosts":"*","regex":"\\/[a-z]{2}(?:ad|gg|sp|pr|cm)\\/[^\\/]+\\.ts"},
+
+/* 高级动态规则 */
+{"name":"♻️动态广告模板","hosts":"*","regex":"EXTINF:[\\d\\.]+[,\\s][^\\n]*?(?:\\b(?:ad|tanc|cntv|tanx|aliyun)\\b|\\/[a-z]{3}\\d{2}\\/)"},
+{"name":"♻️复合广告规则","hosts":"*","regex":"(?:EXT-X-DISCONTINUITY.*?\\R){2}|(?:#EXTINF:[\\d\\.]+).*?(?:\\R#\\S+ads\\b|\\/[a-z0-9]{16}\\/)"},
+
+/* 精准文本过滤 */
+{"name":"♻️高级文本特征","hosts":"*","regex":"(?:澳门|赌场|荷官|裸聊|新片|哥哥|社区)(?!.*?(?:论坛|讨论))|(?<![a-z])av(?!\\d)|(?:x{2,}|vx)\\d{5}"},
+
+/* 智能排除策略 */ 
+{"name":"♻️正片保护规则","hosts":"*","regex":"(?<!000)\\.ts(?!.*?(?:pre|mid|ad))|(?<=\\/episode\\/)\\d+\\.ts"}
+]
+}

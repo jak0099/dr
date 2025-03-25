@@ -1,0 +1,53 @@
+{
+  "rules": [
+    {
+      "name": "♻️AI神经去广-认知引擎",
+      "hosts": ["*"],
+      "regex": [
+        // 动态上下文感知系统
+        "(?<=(#EXTINF:42\\.0.*?\\n))(?:#EXT-X-DISCONTINUITY\\n){2,}(#EXTINF:[3-15]\\.\\d{4,}.*?(?=\\/ad_))", // 正片后连续异常分片
+        
+        // 神经行为分析模型
+        "(#EXT-X-KEY:METHOD=(?<method>AES-128).*?URI=\"(?<path>.*?)\").*?(?<=(\\k<method>.*?\\k<path>.*?){3})(#EXTINF:6\\.6{4,}.*?\\/adx\\/))", // 密钥复用模式识别
+        
+        // 时空预测引擎
+        "#EXT-X-PROGRAM-DATE-TIME:(?<time>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}).*?#EXTINF:(?<duration>\\d+\\.\\d+).*?(?=(?<time>\\g<time>\\+\\k<duration>.*?){3})", // 时间连续性预测
+        
+        // 自适应语义网络
+        "(?!.*?(lecture|surgery))((会员|充值|体验)(?=.*?(#EXTINF:5\\.0.*?\\/vip/))).*?(?<=(\\b澳门\\b.*?){2})", // 语义关联分析
+        
+        // 量子决策树
+        "(?(?=.*#EXT-X-MAP)(#EXTINF:3\\.3{6}.*?\\/ad\\/.*?(?=#EXT-X-ENDLIST)|#EXTINF:6\\.6{6}.*?\\/promo\\/.*?(?=#EXT-X-KEY))" // 分支条件判断
+      ]
+    },
+    {
+      "name": "♻️AI认知白名单",
+      "hosts": ["*"],
+      "isWhitelist": true,
+      "regex": [
+        // 动态知识图谱
+        "/(?<series>[A-Z]{3}_\\d{4})/S(?<season>\\d{2})E(?<episode>\\d{2})/.*?(?<=(\\k<series>.*?S\\k<season>E\\d{2}.*?){3})", // 剧集连续验证
+        
+        // 生物特征识别
+        "#EXTINF:.*?(?<=(human_face|scene_change|audio_wave).{0,50})", // 视频内容AI分析结果
+        
+        // 加密DNA库
+        "#EXT-X-KEY.*?URI=\"[^\"]*(/cinema/|/drm_protected/).*?(?<key_fingerprint>X-KeyID:\\d{12})",
+        
+        // 时空锚点验证
+        "#EXT-X-PROGRAM-DATE-TIME:(?<datetime>20\\d{2}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}).*?(?<=(\\g<datetime>.*?){5})" // 连续5分片时间正确
+      ]
+    },
+    {
+      "name": "♻️AI动态学习引擎",
+      "hosts": ["*"],
+      "regex": [
+        // 在线增量学习
+        "(?<learn>(#EXTINF:\\d+\\.\\d+.*?))/(?<path>.*?)\\.ts.*?(?(<learn>)(?(?=.*/episode/.*)(白名单学习)|(黑名单学习)))",
+        
+        // 联邦学习节点
+        "(?<global>#EXT-X-VERSION:3).*?(?<=(?<global>.*?#EXTINF:10\\.0.*?){1000})(ad_pattern_\\d{4})" // 全局模式更新
+      ]
+    }
+  ]
+}
