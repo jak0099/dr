@@ -1,7 +1,11 @@
+globalThis.fixAdM3u8Ai = fixAdM3u8Ai;
+
 var rule = {
     title: '可可影视[优]',
     //动态切换域名
-    host: `https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
+    //host: `https://www.${(r=>r<0.5?'keke5.app':((n=((r-0.5)*20|0))<7?`keke${n<4?n+1:n+2}.app`:`kkys0${n-6}.com`))(Math.random())}`,
+    host: `https://www.${(r=>r<0.5?'keke5':['keke1','keke2','keke3','keke4','keke6','keke7','keke8'][(r-0.5)*14|0])(Math.random())}.app`,
+    //host: `https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
     //host: 'https://www.keke8.app',
     //host: 'https://www.kkys01.com',
     url: '/show/fyclass-fyfilter-fypage.html',
@@ -113,7 +117,7 @@ var rule = {
     VODS = [filters];
     console.log(gzip(JSON.stringify(filters)));
     `,
-    //过滤广告#不生效的
+    //代理广告过滤#不生效的
     /*
     proxy_rule: `js:
             let url = input.url;

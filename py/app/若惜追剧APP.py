@@ -3,16 +3,28 @@
 import re
 import sys
 from Crypto.Hash import MD5
-sys.path.append('..')
+sys.path.append("..")
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from urllib.parse import quote, urlparse
 from base64 import b64encode, b64decode
+from concurrent.futures import ThreadPoolExecutor
 import json
 import time
 from base.spider import Spider
 
 class Spider(Spider):
+
+    '''
+    sites照常配置，
+    lives配置：
+    {
+      "name": "xxxx",
+      "type": 3,
+      "api": "路径/若惜追剧APP.py",
+      "ext": ""
+    }
+    '''
 
     def init(self, extend=""):
         self.host = self.gethost()
@@ -111,19 +123,19 @@ class Spider(Spider):
 
     def playerContent(self, flag, id, vipFlags):
         ids = json.loads(self.d64(id))
-        h = {"User-Agent": (ids['user_agent'] or "okhttp/3.14.9")}
+        h={"User-Agent": (ids['user_agent'] or "okhttp/3.14.9")}
         try:
             if re.search(r'url=', ids['parse_api_url']):
-                data = self.fetch(ids['parse_api_url'], headers=h, timeout=10).json()
-                url = data.get('url') or data['data'].get('url')
+                data=self.fetch(ids['parse_api_url'], headers=h, timeout=10).json()
+                url=data.get('url') or data['data'].get('url')
             else:
-                body = f"parse_api={ids.get('parse') or ids['parse_api_url'].replace(ids['url'], '')}&url={quote(self.aes(ids['url'], True))}&token={ids.get('token')}"
+                body = f"parse_api={ids.get('parse') or ids['parse_api_url'].replace(ids['url'], '')}&url={quote(self.aes(ids['url'],True))}&token={ids.get('token')}"
                 b = self.getdata("/api.php/getappapi.index/vodParse", body)['json']
                 url = json.loads(b)['url']
-                if 'error' in url: raise ValueError(f"解析失败: {url}")
-            p = 0
+                if 'error' in url:raise ValueError(f"解析失败: {url}")
+            p=0
         except Exception as e:
-            print('错误信息：', e)
+            print('错误信息：',e)
             url, p = ids['url'], 1
 
         if re.search(r'\.jpg|\.png|\.jpeg', url):
@@ -134,6 +146,35 @@ class Spider(Spider):
         result["header"] = h
         return result
 
+    def liveContent(self, url):
+        id=self.homeContent(True)['class'][-1]['type_id']
+        vlist=self.categoryContent(id,1,False,{})['list']
+        results = []
+        with ThreadPoolExecutor(max_workers=len(vlist)) as executor:
+            futures = [executor.submit(self.livedetailContent, item['vod_name'], item['vod_id']) for item in vlist]
+            for future in futures:
+                try:
+                    detail = future.result()
+                    if detail:
+                        results.append(detail)
+                except Exception as e:
+                    print(f"处理详情数据失败: {str(e)}")
+        return '\n'.join(results)
+
+    def livedetailContent(self, name,id):
+        try:
+            print(f"获取直播源：{name}")
+            body = f"vod_id={id}"
+            data = self.getdata("/api.php/getappapi.index/vodDetail", body)
+            play = [f"{name},#genre#"]
+            for itt in data["vod_play_list"]:
+                for it in itt['urls']:
+                    play.append(f"{it['name']}, {it['url']}")
+        except Exception as e:
+            print(f"获取直播源失败：{str(e)}")
+            play=[]
+        return '\n'.join(play)
+
     def localProxy(self, param):
         return self.Mlocal(param)
 
@@ -141,44 +182,36 @@ class Spider(Spider):
         headers = {
             'User-Agent': 'okhttp/3.14.9'
         }
-        host = self.fetch('https://jingyu-1312635929.cos.ap-nanjing.myqcloud.com/1.json',
-                              headers=headers).text.strip()
-        return host
+        host = self.fetch('https://rxysyyds.oss-cn-chengdu.aliyuncs.com/getapp.txt', headers=headers).text
+        return host.strip()
 
-    phend = {
-        'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)',
-        'allowCrossProtocolRedirects': 'true'
-    }
-
-    def aes(self, operation, text):
-        key = "4d83b87c4c5ea111".encode("utf-8")
-        iv = key
-        if operation == "encrypt":
-            cipher = AES.new(key, AES.MODE_CBC, iv)
+    def aes(self, text,b=None):
+        key = b"ebad3f1a58b13933"
+        cipher = AES.new(key, AES.MODE_CBC, key)
+        if b:
             ct_bytes = cipher.encrypt(pad(text.encode("utf-8"), AES.block_size))
             ct = b64encode(ct_bytes).decode("utf-8")
             return ct
-        elif operation == "decrypt":
-            cipher = AES.new(key, AES.MODE_CBC, iv)
+        else :
             pt = unpad(cipher.decrypt(b64decode(text)), AES.block_size)
             return pt.decode("utf-8")
 
     def header(self):
         t = str(int(time.time()))
         header = {"Referer":self.host,
-            "User-Agent": "okhttp/3.14.9", "app-version-code": "300", "app-ui-mode": "light",
+            "User-Agent": "okhttp/3.14.9", "app-version-code": "140", "app-ui-mode": "light",
                   "app-api-verify-time": t, "app-user-device-id": self.md5(t),
-                  "app-api-verify-sign": self.aes("encrypt", t),
+                  "app-api-verify-sign": self.aes(t,True),
                   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         return header
 
     def getdata(self, path, data=None):
         vdata = self.post(f"{self.host}{path}", headers=self.header(), data=data, timeout=10).json()['data']
-        data1 = self.aes("decrypt", vdata)
+        data1 = self.aes(vdata)
         return json.loads(data1)
 
     def Mproxy(self, url):
-        return self.getProxyUrl() + "&url=" + b64encode(url.encode('utf-8')).decode('utf-8') + "&type=m3u8"
+        return f"{self.getProxyUrl()}&url={self.e64(url)}&type=m3u8"
 
     def Mlocal(self, param,header=None):
         url = self.d64(param["url"])

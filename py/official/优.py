@@ -201,7 +201,7 @@ class Spider(Spider):
         return {'list': vlist, 'page': pg}
 
     def playerContent(self, flag, id, vipFlags):
-        return  {'parse': 1, 'url': f"{self.ihost}/video?vid={id}", 'header': ''}
+        return  {'jx':1,'parse': 1, 'url': f"{self.ihost}/video?vid={id}", 'header': ''}
 
     def localProxy(self, param):
         pass

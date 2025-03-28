@@ -2,8 +2,10 @@
 # by @嗷呜
 import re
 import sys
+import threading
+import requests
 from Crypto.Hash import MD5
-sys.path.append('..')
+sys.path.append("..")
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from urllib.parse import quote, urlparse
@@ -12,15 +14,12 @@ import json
 import time
 from base.spider import Spider
 
+
 class Spider(Spider):
 
     def init(self, extend=""):
         self.host = self.gethost()
         pass
-
-    def getName(self):
-        pass
-
 
     def isVideoFormat(self, url):
         pass
@@ -94,8 +93,8 @@ class Spider(Spider):
             a = []
             names.append(itt["player_info"]["show"])
             for it in itt['urls']:
-                it['user_agent']=itt["player_info"].get("user_agent")
-                it["parse"]=itt["player_info"].get("parse")
+                it['user_agent'] = itt["player_info"].get("user_agent")
+                it["parse"] = itt["player_info"].get("parse")
                 a.append(f"{it['name']}${self.e64(json.dumps(it))}")
             play.append("#".join(a))
         vod["vod_play_from"] = "$$$".join(names)
@@ -141,46 +140,70 @@ class Spider(Spider):
         headers = {
             'User-Agent': 'okhttp/3.14.9'
         }
-        host = self.fetch('https://jingyu-1312635929.cos.ap-nanjing.myqcloud.com/1.json',
-                              headers=headers).text.strip()
-        return host
+        response = self.fetch('https://ydysdynamicdomainname.68.gy:10678/c9m2js298x82h6/l9m8bx23j2o2p9q/dynamicdomainname.txt',
+                              headers=headers).text
+        return self.host_late(response.split('\n'))
 
-    phend = {
-        'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)',
-        'allowCrossProtocolRedirects': 'true'
-    }
+    def host_late(self, url_list):
+        if isinstance(url_list, str):
+            urls = [u.strip() for u in url_list.split(',')]
+        else:
+            urls = url_list
 
-    def aes(self, operation, text):
-        key = "4d83b87c4c5ea111".encode("utf-8")
-        iv = key
-        if operation == "encrypt":
-            cipher = AES.new(key, AES.MODE_CBC, iv)
+        if len(urls) <= 1:
+            return urls[0] if urls else ''
+
+        results = {}
+        threads = []
+
+        def test_host(url):
+            try:
+                start_time = time.time()
+                response = requests.head(url,timeout=1.0, allow_redirects=False)
+                delay = (time.time() - start_time) * 1000
+                results[url] = delay
+            except Exception as e:
+                results[url] = float('inf')
+
+        for url in urls:
+            t = threading.Thread(target=test_host, args=(url,))
+            threads.append(t)
+            t.start()
+
+        for t in threads:
+            t.join()
+
+        return min(results.items(), key=lambda x: x[1])[0]
+
+    def aes(self, text, b=None):
+        key = b"k9o3p2c8b7m3z0o8"
+        cipher = AES.new(key, AES.MODE_CBC, key)
+        if b:
             ct_bytes = cipher.encrypt(pad(text.encode("utf-8"), AES.block_size))
             ct = b64encode(ct_bytes).decode("utf-8")
             return ct
-        elif operation == "decrypt":
-            cipher = AES.new(key, AES.MODE_CBC, iv)
+        else:
             pt = unpad(cipher.decrypt(b64decode(text)), AES.block_size)
             return pt.decode("utf-8")
 
     def header(self):
         t = str(int(time.time()))
-        header = {"Referer":self.host,
-            "User-Agent": "okhttp/3.14.9", "app-version-code": "300", "app-ui-mode": "light",
+        header = {"Referer": self.host,
+                  "User-Agent": "okhttp/3.14.9", "app-version-code": "140", "app-ui-mode": "light",
                   "app-api-verify-time": t, "app-user-device-id": self.md5(t),
-                  "app-api-verify-sign": self.aes("encrypt", t),
+                  "app-api-verify-sign": self.aes(t, True),
                   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         return header
 
     def getdata(self, path, data=None):
         vdata = self.post(f"{self.host}{path}", headers=self.header(), data=data, timeout=10).json()['data']
-        data1 = self.aes("decrypt", vdata)
+        data1 = self.aes(vdata)
         return json.loads(data1)
 
     def Mproxy(self, url):
-        return self.getProxyUrl() + "&url=" + b64encode(url.encode('utf-8')).decode('utf-8') + "&type=m3u8"
+        return f"{self.getProxyUrl()}&url={self.e64(url)}&type=m3u8"
 
-    def Mlocal(self, param,header=None):
+    def Mlocal(self, param, header=None):
         url = self.d64(param["url"])
         ydata = self.fetch(url, headers=header, allow_redirects=False)
         data = ydata.content.decode('utf-8')
@@ -207,7 +230,7 @@ class Spider(Spider):
             print(f"Base64编码错误: {str(e)}")
             return ""
 
-    def d64(self,encoded_text):
+    def d64(self, encoded_text):
         try:
             encoded_bytes = encoded_text.encode('utf-8')
             decoded_bytes = b64decode(encoded_bytes)

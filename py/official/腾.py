@@ -224,7 +224,7 @@ class Spider(Spider):
     def playerContent(self, flag, id, vipFlags):
         ids = id.split('@')
         url = f"{self.host}/x/cover/{ids[0]}/{ids[1]}.html"
-        return {'parse': 1, 'url': url, 'header': ''}
+        return {'jx':1,'parse': 1, 'url': url, 'header': ''}
 
     def localProxy(self, param):
         pass

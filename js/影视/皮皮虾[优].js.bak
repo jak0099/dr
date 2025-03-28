@@ -1,7 +1,6 @@
 var rule = {
   title: '皮皮虾[优]',
-  //host: 'https://ppxys.cc',
-  host: 'http://ppx.bjx365.top',
+  host: 'https://ppxys.cc',
   class_name: '电影&电视剧&综艺&动漫',
   class_url: '1&2&3&4',
   searchUrl: '/index.php/ajax/suggest?mid=1&wd=**&limit=50',

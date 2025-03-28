@@ -1,21 +1,91 @@
 var rule = {
-    模板: 'mxone5',
-    类型: '影视',//影视|听书|漫画|小说
-    title: '里里影院',
-    host: 'https://www.liic.cc',
-    url: '/vodshow/fyfilter.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    cate_exclude: '新闻|网址+',
+    title: '可可影视[优]',
+    host:`https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
+    url: '/show/fyclass-fyfilter-fypage.html',
+    filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
+    searchUrl: '/search?k=**&page=fypage',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
-    filter: {
-        "1": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部类型", "v": "1" }, { "n": "动作片", "v": "6" }, { "n": "喜剧片", "v": "7" }, { "n": "爱情片", "v": "8" }, { "n": "科幻片", "v": "9" }, { "n": "剧情片", "v": "10" }, { "n": "悬疑片", "v": "11" }, { "n": "惊悚片", "v": "12" }, { "n": "恐怖片", "v": "20" }, { "n": "犯罪片", "v": "21" }, { "n": "冒险片", "v": "22" }, { "n": "战争片", "v": "24" }, { "n": "记录片", "v": "25" }, { "n": "动画电影", "v": "26" }, { "n": "", "v": "27" }] }, { "key": "地区", "name": "地区", "value": [{ "n": "全部地区", "v": "" }, { "n": "大陆", "v": "大陆" }, { "n": "香港", "v": "香港" }, { "n": "台湾", "v": "台湾" }, { "n": "美国", "v": "美国" }, { "n": "法国", "v": "法国" }, { "n": "英国", "v": "英国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "德国", "v": "德国" }, { "n": "泰国", "v": "泰国" }, { "n": "印度", "v": "印度" }, { "n": "意大利", "v": "意大利" }, { "n": "西班牙", "v": "西班牙" }, { "n": "加拿大", "v": "加拿大" }, { "n": "其他", "v": "其他" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部语言", "v": "" }, { "n": "国语", "v": "国语" }, { "n": "英语", "v": "英语" }, { "n": "粤语", "v": "粤语" }, { "n": "闽南语", "v": "闽南语" }, { "n": "韩语", "v": "韩语" }, { "n": "日语", "v": "日语" }, { "n": "法语", "v": "法语" }, { "n": "德语", "v": "德语" }, { "n": "其它", "v": "其它" }] }, { "key": "时间", "name": "时间", "value": [{ "n": "全部时间", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }],
-        "2": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部类型", "v": "2" }, { "n": "国产剧", "v": "13" }, { "n": "港台剧", "v": "14" }, { "n": "日韩剧", "v": "15" }, { "n": "欧美剧", "v": "16" }, { "n": "泰国剧", "v": "28" }, { "n": "海外剧", "v": "29" }] }, { "key": "地区", "name": "地区", "value": [{ "n": "全部地区", "v": "" }, { "n": "大陆", "v": "大陆" }, { "n": "香港", "v": "香港" }, { "n": "台湾", "v": "台湾" }, { "n": "美国", "v": "美国" }, { "n": "法国", "v": "法国" }, { "n": "英国", "v": "英国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "德国", "v": "德国" }, { "n": "泰国", "v": "泰国" }, { "n": "印度", "v": "印度" }, { "n": "意大利", "v": "意大利" }, { "n": "西班牙", "v": "西班牙" }, { "n": "加拿大", "v": "加拿大" }, { "n": "其他", "v": "其他" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部语言", "v": "" }, { "n": "国语", "v": "国语" }, { "n": "英语", "v": "英语" }, { "n": "粤语", "v": "粤语" }, { "n": "闽南语", "v": "闽南语" }, { "n": "韩语", "v": "韩语" }, { "n": "日语", "v": "日语" }, { "n": "其它", "v": "其它" }] }, { "key": "时间", "name": "时间", "value": [{ "n": "全部时间", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }],
-        "3": [{ "key": "地区", "name": "地区", "value": [{ "n": "全部地区", "v": "" }, { "n": "大陆", "v": "大陆" }, { "n": "香港", "v": "香港" }, { "n": "台湾", "v": "台湾" }, { "n": "美国", "v": "美国" }, { "n": "法国", "v": "法国" }, { "n": "英国", "v": "英国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "德国", "v": "德国" }, { "n": "泰国", "v": "泰国" }, { "n": "印度", "v": "印度" }, { "n": "意大利", "v": "意大利" }, { "n": "西班牙", "v": "西班牙" }, { "n": "加拿大", "v": "加拿大" }, { "n": "其他", "v": "其他" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部语言", "v": "" }, { "n": "国语", "v": "国语" }, { "n": "英语", "v": "英语" }, { "n": "粤语", "v": "粤语" }, { "n": "闽南语", "v": "闽南语" }, { "n": "韩语", "v": "韩语" }, { "n": "日语", "v": "日语" }, { "n": "其它", "v": "其它" }] }, { "key": "时间", "name": "时间", "value": [{ "n": "全部时间", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }],
-        "4": [{ "key": "地区", "name": "地区", "value": [{ "n": "全部地区", "v": "" }, { "n": "大陆", "v": "大陆" }, { "n": "香港", "v": "香港" }, { "n": "台湾", "v": "台湾" }, { "n": "美国", "v": "美国" }, { "n": "法国", "v": "法国" }, { "n": "英国", "v": "英国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "西班牙", "v": "西班牙" }, { "n": "加拿大", "v": "加拿大" }, { "n": "其他", "v": "其他" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部语言", "v": "" }, { "n": "国语", "v": "国语" }, { "n": "英语", "v": "英语" }, { "n": "粤语", "v": "粤语" }, { "n": "闽南语", "v": "闽南语" }, { "n": "韩语", "v": "韩语" }, { "n": "日语", "v": "日语" }, { "n": "其它", "v": "其它" }] }, { "key": "时间", "name": "时间", "value": [{ "n": "全部时间", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }],
-        "5": [{ "key": "地区", "name": "地区", "value": [{ "n": "全部地区", "v": "" }, { "n": "大陆", "v": "大陆" }, { "n": "韩国", "v": "韩国" }, { "n": "台湾", "v": "台湾" }, { "n": "日本", "v": "日本" }, { "n": "美国", "v": "美国" }, { "n": "英国", "v": "英国" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部语言", "v": "" }, { "n": "国语", "v": "国语" }, { "n": "英语", "v": "英语" }, { "n": "粤语", "v": "粤语" }, { "n": "闽南语", "v": "闽南语" }, { "n": "韩语", "v": "韩语" }, { "n": "日语", "v": "日语" }, { "n": "其它", "v": "其它" }] }, { "key": "时间", "name": "时间", "value": [{ "n": "全部时间", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }]
+    headers: {
+        'User-Agent': 'UC_UA',
+        'Referer': rule.host + '/',
+        'X-Forwarded-For': `119.${Math.random()*255|0}.${Math.random()*255|0}.${Math.random()*255|0}`
     },
-    filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.排序}}--{{fl.语言}}----fypage---{{fl.时间}}',
-    filter_def: {1:{类型:'1'},2:{类型:'2'},3:{类型:'3'},4:{类型:'4'},5:{类型:'5'}},
+    class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
+    cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
+    tab_exclude: '可可影视提供',
+    tab_order: ['超清', '蓝光', '极速蓝光'],
+    tab_remove: ['4K(高峰不卡)'],
+    play_parse: true,
+    lazy: `js:
+        let html = request(input);
+        let m3u8 = pdfh(html, 'script:contains(m3u8)').match(/http[^'"]+?m3u8/)?.[0];
+        if (m3u8) {
+            // 过滤广告片段
+            let m3u8Content = request(m3u8, {headers: {'Referer': rule.host}});
+            m3u8Content = m3u8Content.replace(/[#]EXTINF.*\\n(http[^\\n]+ad[^\\n]+\\n?)/gi, '');
+            input = {parse:0, url: m3u8, header: {'Referer': rule.host}};
+        }
+    `,
+    limit: 20,
+    推荐: '.section-box:eq(2)&&.module-box-inner&&.module-item;*;*;*;*',
+    double: false,
+    一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span&&Text;a&&href',
+    二级: {
+        title: '.detail-pic&&img&&alt;.detail-tags&&a&&Text',
+        img: '.detail-pic&&img&&data-original',
+        desc: ';;;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main&&Text', // 精简描述信息
+        content: '.detail-desc&&Text',
+        tabs: 'body&&.source-item-label:not(:contains("广告"))', // 排除广告标签
+        lists: '.episode-list:eq(#id) a:not([href*="ad"])', // 过滤广告链接
+    },
+    搜索: '.search-result-list&&a;h3&&Text;.lazyload&&data-original;.info:eq(0)&&Text;a&&href;.info:eq(1)&&Text',
+    预处理: `js:
+        let html = request(rule.host);
+        let img_script = pdfa(html, 'script').find(it => pdfh(it, 'script&&src').includes('rdul.js'));
+        if (img_script) {
+            let img_url = img_script.match(/src="(.*?)"/)[1];
+            let img_html = request(img_url);
+            let img_host = img_html.match(/'([^']+)'/)[1];
+            rule.图片替换 = rule.host + '=>' + img_host;
+        }
+    `,
+    filter: 'H4sIAAAAAAAAA+2Zz08bRxTH/xefOdgGtTi3HlqpUpVLe6hURREHV4qa0kN/qFWEZLANxhBsEDFx7AIpGEyCf0CQY9bY/md2Ztf/RWf95r0ZR+3LtqGRqviC+LzvzOzs7Nt539k/isQid755FPku+VvkTsS76In9jchMZHHh+6TNvyw8/Dk5briowiJbH6XrQVhBZGkGoveTP3378MGvOnz3068+++Lzr0kV66cyndWiBtJKVRVBDYC0fN3tV1EDQM3LXZgxNaAml4syVdKaBtLSebnyDDUAGjPf8vovcEwA0k63xXUPNQAac+XcK23jmAB0D7U1008Daas7o/IZagA0Zu6p66zjmADUb2tVFC6xHwBphWP/iNYagLRmRzgN1ABQc28O/WZbaxpoLo0Td3CIcwEw2qaf2ydtDLRmBw1vfQ3XDMB6tt5uzzzbAEjLDL2XNdQAUPOXN0XV0ZqGpXuBCmksqm2x6Zg0Jg6TxuL4dFRexUXoNkSlr0PYYnRSlt3WRAsdMg+gLa8Hk2NAiJZlsKWCuCwAtJx7NVk9x+UEoGsfnJl+GmhZNi6MpoHGfPXEaBpotoPXRtNA2uO2cE5QAzBjtu0x23Y/t3s9on4a6N6390W2i/cOQNd7feXXhng9AJMuh3JjqB4GZQwyXXWY8fp7skQPh5jmnCmoDiKHb5xhatHaVSj3OtiC2Np2RHtXZPFNMUxPojb0CirVy/gwiOkqg1dwXdehjcgO0T1nO24PtzENdqr7rYZfT5lUJw6V6pW+ao+DA9BNXh4bTYOVaEbTYCWv0TRYyWs0DVaCWv0Awi6CuL5ye33rfUcOswjxaHxOx8b/WvFZE5+143ETj9vxmInH7HjUxKMUj0XH0zwiLRa9r/4kqEH0zQbRoEHUNEhMNoglEtH76o9pMP9mg/mgwbxpICtXcg9fhUD7ODGxsHJrRzgFs7DEkwvr9W5EMYdXMaNXU7KEL0ncDntpfNJmXf1WRuRw350LpnFvRvX6b8yJpjDmhDMZnHHhjARrFrjizZghrrBzhoczJ0FhovvTEMYMceaEMzVBQaPraQhjQNSWZ56RhjBGkDNfo3RfdFdwLgC3bUAoHLllA8LZhH9rPTgLwVkP1l681ShxJoMzJ9PCOS2cH3DhnH1PhTNfl6llefNy4hxnQqFO/9wpkPsywGzebKHkCh5X1JgTqSzue+dU0AFCGQimaHMnZ5UH/vMUagCkVfKyjFVFQxjj4fUK1rEMgPodPhcV2mQAUPtk8YFKK5Dgf8rMYVGtPW53AHRUcy5Fo4g7PwBtd7/vyKe40hpMOd9Qa0jlfAxhLMJfWqDb+mbAlc23l/N3+1rwbmZg+s1g+s1gan1snlqf/7n1mbst6+M5L0T/CaYzAGnVA9dxvFOqwcQ0t2bb9NZAWuZCFI5Mb8OhDBP36Z8xTNznfa/SFUe0OQHQbPMrXqWJUwUwJffvP/1zBo2zBl8mF358YVFrGmie3M8zjGHiDJosP3NvaEcFmP6cMC0j0zLyIZeRj/55GTFh+ymPUqv+H5R6AJTqu1XRxBOLBppVuajON5jqANTvbOh38tgPgK639tjbPcDrAYQpK+yv28zJij3fMudw9tdt7myf7Yhm2rySAbz3zFEpsvQnK+G0IDwhAAA=',
+    一级f: `js:(()=>{
+        const urls = ['1','2','3','4','6'].map(c=>\`\${rule.host}/show/\${c}-----1-1.html\`);
+        let filters = {};
+        for(const url of urls){
+            const fclass = url.match(/show\\/(\\d+)-/)[1];
+            const html = request(url);
+            const data = pdfa(html, '.filter-row').map(tab => {
+                const title = pdfh(tab, 'strong&&Text').replace(':','');
+                const value = pdfa(tab, 'a').map(li => {
+                    const n = pdfh(li, 'a&&Text').trim();
+                    let v = n;
+                    if(/全部|地区|类型/.test(n)) v = '';
+                    else if(/综合/.test(n)) v = '1';
+                    else {
+                        const href = pdfh(li,'a&&href');
+                        v = href.match(/(?:\\d+-)([\\w-]+?)(?:-\\d+\\.html)/)[1].replace(/-/g,'');
+                    }
+                    return {n, v: decodeURIComponent(v)};
+                });
+                return {key: title, name: title, value};
+            });
+            filters[fclass] = data;
+        }
+        return JSON.stringify(filters);
+    })()`,
+    proxy_rule: `js:
+        if (/(m3u8|mp4)/i.test(input.url)) {
+            let m3u8 = input.url;
+            // 过滤广告域名
+            m3u8 = m3u8.replace(/https?:\\/\\/(ads?|adcdn)\\.\\w+\\//gi,'');
+            // 二次请求过滤广告片段
+            let content = request(m3u8, {headers: {Referer: rule.host}});
+            content = content.replace(/(#EXTINF.*\\n.*ad.*\\n)/gi, '');
+            input = {parse:0, url: m3u8, header: {Referer: rule.host}, content};
+        }
+    `,
 }

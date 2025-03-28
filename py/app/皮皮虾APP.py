@@ -3,7 +3,7 @@
 import re
 import sys
 from Crypto.Hash import MD5
-sys.path.append('..')
+sys.path.append("..")
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from urllib.parse import quote, urlparse
@@ -15,7 +15,7 @@ from base.spider import Spider
 class Spider(Spider):
 
     def init(self, extend=""):
-        self.host = self.gethost()
+        self.host = "http://ppx.bjx365.top"
         pass
 
     def getName(self):
@@ -111,21 +111,21 @@ class Spider(Spider):
 
     def playerContent(self, flag, id, vipFlags):
         ids = json.loads(self.d64(id))
-        h = {"User-Agent": (ids['user_agent'] or "okhttp/3.14.9")}
+        h={"User-Agent": (ids['user_agent'] or "okhttp/3.14.9")}
+        url = ids['url']
+        p=1
         try:
-            if re.search(r'url=', ids['parse_api_url']):
-                data = self.fetch(ids['parse_api_url'], headers=h, timeout=10).json()
-                url = data.get('url') or data['data'].get('url')
-            else:
-                body = f"parse_api={ids.get('parse') or ids['parse_api_url'].replace(ids['url'], '')}&url={quote(self.aes(ids['url'], True))}&token={ids.get('token')}"
+            if re.search(r'\?url=', ids['parse_api_url']):
+                data=self.fetch(ids['parse_api_url'], headers=h, timeout=10).json()
+                url=data.get('url') or data['data'].get('url')
+            elif not re.search(r'\.m3u8|\.mp4', ids.get('url')):
+                body = f"parse_api={ids.get('parse') or ids['parse_api_url'].replace(ids['url'], '')}&url={quote(self.aes('encrypt', ids['url']))}&token={ids.get('token')}"
                 b = self.getdata("/api.php/getappapi.index/vodParse", body)['json']
                 url = json.loads(b)['url']
-                if 'error' in url: raise ValueError(f"解析失败: {url}")
-            p = 0
+            p=0
         except Exception as e:
-            print('错误信息：', e)
-            url, p = ids['url'], 1
-
+            print('错误信息：',e)
+            pass
         if re.search(r'\.jpg|\.png|\.jpeg', url):
             url = self.Mproxy(url)
         result = {}
@@ -137,21 +137,8 @@ class Spider(Spider):
     def localProxy(self, param):
         return self.Mlocal(param)
 
-    def gethost(self):
-        headers = {
-            'User-Agent': 'okhttp/3.14.9'
-        }
-        host = self.fetch('https://jingyu-1312635929.cos.ap-nanjing.myqcloud.com/1.json',
-                              headers=headers).text.strip()
-        return host
-
-    phend = {
-        'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)',
-        'allowCrossProtocolRedirects': 'true'
-    }
-
     def aes(self, operation, text):
-        key = "4d83b87c4c5ea111".encode("utf-8")
+        key = "pipixia217522324".encode("utf-8")
         iv = key
         if operation == "encrypt":
             cipher = AES.new(key, AES.MODE_CBC, iv)
@@ -220,3 +207,5 @@ class Spider(Spider):
         h = MD5.new()
         h.update(text.encode('utf-8'))
         return h.hexdigest()
+
+

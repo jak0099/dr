@@ -1,7 +1,7 @@
 {
 //##jar全局爬虫文件
-//"spider":"./sp/pg.jar",
-"spider":"./sp/fan.jar?md5=0886444de555442edf77a5942b31aa65", 
+"spider":"./sp/pg.jar?md5=fd53509ee96e1519441cfa9f182fe66a",
+//"spider":"./sp/fan.jar?md5=0886444de555442edf77a5942b31aa65", 
 
 //##提示语
 "warningText":"💮👉网络收集自用，切勿售卖，勿传播👈💮",
@@ -45,19 +45,31 @@
 {"key": "dr_网飞猫[优]","name": "🍒网飞猫[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/网飞猫[优].js"},
 {"key": "dr_农民影视[优]","name": "🍒农民影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/农民影视[优].js"},
 {"key": "dr_一起看[优]","name": "🍒一起看[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/一起看[优].js"},
-{"key": "dr_星辰[优]","name": "🍒星辰[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/星辰[优].js"},
-{"key": "dr_多多追剧[优]","name": "🍒多多追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/多多追剧[优].js"},
+//{"key": "dr_星辰[优]","name": "🍒星辰[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/星辰[优].js"},
+//{"key": "dr_多多追剧[优]","name": "🍒多多追剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/多多追剧[优].js"},
 {"key": "dr_毒蛇电影[优]","name": "🍒毒蛇电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/毒蛇电影[优].js"},
-{"key": "dr_片多多[优]","name": "🍒片多多[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/片多多[优].js"},
+//{"key": "dr_片多多[优]","name": "🍒片多多[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/片多多[优].js"},
 {"key": "dr_PTT[优]","name": "🍒PTT[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/PTT[优].js"},
 {"key": "dr_HBOTV[优]","name": "🍒HBOTV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/HBOTV[优].js"},
-{"key": "dr_素白白[优]","name": "🍒素白白[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/素白白[优].js"},
-{"key": "dr_皮皮虾[优]","name": "🍒皮皮虾[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/皮皮虾[优].js"},
+//{"key": "dr_素白白[优]","name": "🍒素白白[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/素白白[优].js"},
+//{"key": "dr_皮皮虾[优]","name": "🍒皮皮虾[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/皮皮虾[优].js"},
 {"key": "dr_柠檬影视[优]","name": "🍒柠檬影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/柠檬影视[优].js"},
+
+/*py_影视*/
+{"key": "dr_云端APP","name": "🍒云端[影][PY]","type": 3,"api": "./py/app/云端APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_光速APP","name": "🍒光速[影][PY]","type": 3,"api": "./py/app/光速APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_哇哇APP","name": "🍒哇哇[影][PY]","type": 3,"api": "./py/app/哇哇APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_小苹果APP","name": "🍒小苹果[影][PY]","type": 3,"api": "./py/app/小苹果APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_美帕APP","name": "🍒美帕[影][PY]","type": 3,"api": "./py/app/美帕APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_爱瓜TVAPP","name": "🍒爱瓜TV[影][PY]","type": 3,"api": "./py/app/爱瓜TVAPP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_若惜追剧APP","name": "🍒若惜追剧[影][PY]","type": 3,"api": "./py/app/若惜追剧APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_绝对影视","name": "🍒绝对影视[影][PY]","type": 3,"api": "./py/html/绝对影视.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "dr_LREEOK","name": "🍒LREEOK[影][PY]","type": 3,"api": "./py/html/LREEOK.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //#js_py_jar聚合影视_普🍊
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
 //#****************************************************************************************************************************************************************#
+{"key": "dr_2077影视","name": "🍊2077影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/2077影视.js"},
 {"key": "dr_里里影院","name": "🍊里里影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/里里影院.js"},
 {"key": "dr_555影视","name": "🍊555影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/555影视.js"},
 {"key": "dr_八度影院","name": "🍊八度影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/八度影院.js"},
@@ -423,6 +435,9 @@
 {"key": "dr_ACG动漫[漫]","name": "🍇ACG动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/ACG动漫[漫].js"},
 {"key": "dr_饭团动漫[漫]","name": "🍇饭团动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/饭团动漫[漫].js"},
 {"key": "dr_趣动漫[漫]","name": "🍇趣动漫[漫][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/动漫/趣动漫[漫].js"},
+
+/*py_动漫*/
+{"key": "dr_三号动漫APP","name": "🍇三号动漫[影][PY]","type": 3,"api": "./py/app/三号动漫APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
    
 //#js_py_jar采集资源类🥒
 //{"key": "dr_模板[资]","name": "🥒模板[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/模板[资].js"},
@@ -447,6 +462,7 @@
 {"key": "dr_文才[资]","name": "🥒文才[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/文才[资].js"},
 {"key": "dr_文才2[资]","name": "🥒文才2[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/文才2[资].js"},
 {"key": "dr_泥视频[资]","name": "🥒泥视频[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/泥视频[资].js"},
+{"key": "dr_优质资源[资]","name": "🥒优质资源[采][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/采集/优质资源[资].js"},
 
 //#js_py_jar听书类🍋
 //{"key": "dr_模板[听]","name": "🍋模板[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/模板[听].js"},
@@ -765,13 +781,8 @@
 /*代理*嗅探*去广规则*/
 "rules":[
     /*去广规则*/ 
-//{"name":"kk","hosts":["*"],"regex":["#EXT-X-DISCONTINUITY\\n(#EXTINF:\\d+\\.\\d+,\\n.*\\.ts\\?[^\\n]*\\n){5}#EXT-X-DISCONTINUITY"]},
-//{"name": "*","hosts": [".app"],"regex": ["EXT-X-DISCONTINUITY\\s*\\n#EXTINF:5\\.600000\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n(#EXTINF:2\\.800000\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n){3}#EXTINF:0\\.966667\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\nEXT-X-DISCONTINUITY\\s*\\n","EXT-X-DISCONTINUITY\\s*\\n#EXTINF:3\\.125000\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n#EXTINF:3\\.083333\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n#EXTINF:3\\.125000\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n#EXTINF:3\\.083333\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\n#EXTINF:2\\.583333\\s*,\\s*\\n[^\\n]*\\.ts\\?[^\\n]*\\nEXT-X-DISCONTINUITY\\s*\\n"]},
-
-{"name":"kk去广","hosts":["keke5","keke8"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5.600000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3.125000,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
-
-
-//{"name":"超清广告","hosts":["keke5.app","keke8.app"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5\\.600000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3\\.125000,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name": "固定5段广告过滤","hosts": ["*"],"regex": ["#EXT-X-DISCONTINUITY\\n(#EXTINF:[0-9]+\\.[0-9]+,\\n[^#]+\\n){5}#EXT-X-DISCONTINUITY\\n"]},
+      
 {"name":"量子非凡广告","hosts":["lz","vip.lz","v.cdnlz","hd.lz","ffzy","vip.ffzy","hd.ffzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.600000,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"索尼广告","hosts":["suonizy","qrssv.com"],"regex":["15.1666","15.2666"]},
 {"name":"乐视广告","hosts":["leshiyun"],"regex":["15.92"]},
