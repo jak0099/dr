@@ -11,7 +11,22 @@ import time
 from Crypto.Hash import MD5, SHA1
 
 class Spider(Spider):
-
+    '''
+    配置示例：
+    {
+        "key": "xxxx",
+        "name": "xxxx",
+        "type": 3,
+        "api": ".所在路径/金牌.py",
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 1,
+        "changeable": 1,
+        "ext": {
+            "site": "https://www.jiabaide.cn,域名2,域名3"
+        }
+    },
+    '''
     def init(self, extend=""):
         if extend:
             hosts=json.loads(extend)['site']

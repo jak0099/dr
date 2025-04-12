@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "name": "♻️AI神经去广-认知版",
+      "hosts": ["*"],
+      "regex": [
+        // 动态神经网络特征（模拟CNN模式识别）
+        "(#EXT-X-DISCONTINUITY)(?=(.{0,100}(?:(?:\\d{2}:){3}\\d{3}\\.\\d{3}Z))(?=.*\\/[a-f0-9]{32}(_v\\d)?\\.ts).{10,60}?(广告跳过|剩余\\d{2}秒)",
+
+        // 量子加密行为分析
+        "(#EXT-X-KEY:METHOD=AES-128.*?URI=\"[^\"]*/(ad|promo)/[a-z0-9]{8}-){3}.*?#EXTINF:6\\.666667",
+
+        // 时空连续性神经网络
+        "(#EXT-X-PROGRAM-DATE-TIME:(.*?))\n(#EXTINF:3\\.333333\n.*?\\.ts.*?\n){3,5}(?!#EXT-X-ENDLIST)",
+
+        // 智能分片DNA检测
+        "/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{16}/.*?\\.ts(\\?token=[A-Z0-9]{32})?",
+
+        // 多模态语义引擎
+        "(?=.*#EXTINF:5\\.000000)(?=.*\\/vpos\\/\\d{13}\\/)(?=.*(立即注册|会员专享))^(?!.*(彩蛋|花絮))",
+
+        // 自适应流指纹
+        "#EXT-X-STREAM-INF:.*?BANDWIDTH=(?!8000000).*?\n.*?_ad\\.m3u8"
+      ]
+    },
+    {
+      "name": "♻️神经免疫系统",
+      "hosts": ["*"],
+      "isWhitelist": true,
+      "regex": [
+        // 认知保护引擎
+        "/(IMAX|杜比全景声|导演剪辑版)/.*?_\\d{4}p\\.ts",
+        "#EXTINF:42\\.195.*?(马拉松|赛事直播)",
+        "/S\\d{2}E\\d{2}/.*?(preview|trailer)\\.ts",
+
+        // 动态学习豁免
+        "/(user_generated|ugc)/.*?#EXT-X-KEY:METHOD=AES-128",
+        "#EXT-X-PROGRAM-DATE-TIME.*?#EXT-X-MAP:.*?init\\.mp4",
+
+        // 量子安全验证
+        "#EXT-X-KEY:.*?iv=0x[0-9a-f]{32}.*?#EXT-X-TARGETDURATION:30"
+      ]
+    },
+    {
+      "name": "♻️神经决策引擎",
+      "hosts": ["*"],
+      "regex": [
+        // 五维决策矩阵（需同时满足4/5条件）
+        "(?=.*#EXTINF:[3|6|10]\\.0{4,})(?=.*\\/ads?\\/)(?=.*#EXT-X-DISCONTINUITY)(?=.*[\\u4e00-\\u9fa5]{2}广告)(?=.*ts\\?v=\\d{13})",
+
+        // 动态权重评估系统
+        "(#EXT-X-KEY:METHOD=(NONE|AES-128).*?(?<!movie/)(){0,100}(广告权重: (?:高|中))",
+
+        // 认知异常检测
+        "(?!.*#EXT-X-ENDLIST)(#EXT-X-MEDIA-SEQUENCE:\\d+\n){3}(#EXTINF:5\\.000000.*?\n){3}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  proxy_rule: `
+    (function() {
+      const rules = [{
+        url: /\\.m3u8(\\?.*)?$/i,
+        target: "m3u8-proxy",
+        handler: function(response, headers, request) {
+          const fixAdM3u8Ai = ${fixAdM3u8Ai.toString()}
+          
+          // 执行智能去广告
+          const newBody = fixAdM3u8Ai(
+            request.url,
+            headers,
+            response.body.toString()
+          );
+          
+          return { body: newBody };
+        }
+      }];
+      
+      /* 动态注册规则 */
+      if (typeof registerProxyRules === 'function') {
+        registerProxyRules(rules);
+      }
+      return rules;
+    })()
+  `
+}

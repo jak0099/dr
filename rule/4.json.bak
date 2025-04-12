@@ -1,0 +1,287 @@
+{"rules":[{"name":"keke5.app高精度广告过滤","hosts":["keke5.app"],"regex":["#EXT-X-DISCONTINUITY\\n(#EXTINF:\\d+\\.\\d{6},\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=2&name=[0-9a-f]{32}\\n)+#EXT-X-DISCONTINUITY"]}]}
+
+{"rules":[{"name":"*","hosts":["*"],"regex":["*"]}]}
+
+{
+  "rules": [
+    {
+      "name": "固定5段广告过滤-21301端口",
+      "hosts": ["*:21301"],
+      "regex": [
+        // 匹配完整广告结构：2个DISCONTINUITY标记 + 5个TS片段
+        "#EXT-X-DISCONTINUITY\\n(#EXTINF:[0-9]+\\.[0-9]+,\\n[^#]+\\n){5}#EXT-X-DISCONTINUITY\\n"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "remove_ads",
+      "hosts": ["*"],
+      "regex": [
+        "(?m)^#EXT-X-DISCONTINUITY\\n(#EXTINF:[1-5]\\.\\d+,\\n.*?\\n)+#EXT-X-DISCONTINUITY\\n"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "fixed_5_ads_removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY[\\\\s\\\\S]*?(#EXTINF:[\\\\d.]+,[\\\\s\\\\S]*?\\?.*?(?:ref=2|sign=[a-f0-9]{32})[\\\\s\\\\S]*?){5}[\\\\s\\\\S]*?#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "duration_based_ad_removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY[\\\\s\\\\S]*?(#EXTINF:((3\\.12[58]|3\\.083333|2\\.583333|5\\.605600|2\\.802800|1\\.001000)\\\\d*),.*?\\?.*?(?:ref=2|sign=[a-f0-9]{32})[\\\\s\\\\S]*?){5}[\\\\s\\\\S]*?#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "remove_ads",
+      "hosts": ["*"],
+      "regex": [
+        // 匹配广告TS文件路径（基于固定端口和路径特征）
+        ":21301\\/data3\\/jvods\\/hls\\/dhz\\/.*\\/(\\d+\\/){5}[a-f0-9]{32}\\.ts\\?sign=.*&name=[a-f0-9]{32}.*",
+        
+        // 匹配广告TS文件名（结合日志中广告片段特征）
+        "\\/(d9cb3d8aa52d81e3b5e9ea438bbee53d|5700423a715b8eace92aa988ab99d213|b8c029ccfc95862a3d0668cda8d58adf|da6f8c8b5037b03b59d5fe8c2cc8ec4d|fc1200cf9e3bf9fed16f53acee721512)\\.ts.*"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "fixed_5_ads_removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY[\\\\s\\\\S]*?(#EXTINF:[\\\\d.]+,[\\\\s\\\\S]*?\\?.*?(?:ref=2|sign=[a-f0-9]{32})[\\\\s\\\\S]*?){5}[\\\\s\\\\S]*?#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "Remove first ad segment group",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:3\\.125000,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:3\\.083333,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:3\\.125000,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:3\\.083333,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.583333,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXT-X-DISCONTINUITY",
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:5\\.605600,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:1\\.001000,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXT-X-DISCONTINUITY"      
+      ]
+    },
+    {
+      "name": "Remove second ad segment group",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:5\\.605600,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:2\\.802800,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXTINF:1\\.001000,\\n[0-9a-f]{32}\\.ts\\?sign=[0-9a-f]{32}&timestamp=\\d+&ref=\\d+&name=[0-9a-f]{32}\\n#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "宽松模式-允许参数变化",
+      "hosts": ["*:21301"],
+      "regex": [
+        // 匹配核心结构，忽略TS文件名差异
+        "#EXT-X-DISCONTINUITY\\n(#EXTINF:[0-9]+\\.[0-9]+,\\n.*?\\?sign=.*?\\n){5}#EXT-X-DISCONTINUITY\\n"
+      ]
+    }
+  ]
+}
+
+Based on the provided HLS playlist segments, I can analyze the two ad blocks and generate precise ad-removal regex rules:
+
+
+{
+  "rules": [
+    {
+      "name": "First Ad Block Removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:3\\.125000,\\n[^\\n]+\\n#EXTINF:3\\.083333,\\n[^\\n]+\\n#EXTINF:3\\.125000,\\n[^\\n]+\\n#EXTINF:3\\.083333,\\n[^\\n]+\\n#EXTINF:2\\.583333,\\n[^\\n]+\\n#EXT-X-DISCONTINUITY"
+      ]
+    },
+    {
+      "name": "Second Ad Block Removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:5\\.605600,\\n[^\\n]+\\n#EXTINF:2\\.802800,\\n[^\\n]+\\n#EXTINF:2\\.802800,\\n[^\\n]+\\n#EXTINF:2\\.802800,\\n[^\\n]+\\n#EXTINF:1\\.001000,\\n[^\\n]+\\n#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "Remove Ads",
+      "hosts": ["*"],
+      "regex": [
+        "#EXTINF:.*?,\\s*[a-f0-9]{32}\\.ts\\?sign=[a-f0-9]{32}&timestamp=\\d+&ref=2&name=[a-f0-9]{32}"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "HLS广告过滤",
+      "hosts": ["*"], 
+      "regex": [
+        "(#EXT-X-DISCONTINUITY\\b[\\s\\S]*?(?=\\s*?#EXT-X-DISCONTINUITY\\b|\\Z))"
+      ]
+    }
+  ]
+}
+
+
+
+根据提供的广告内容结构，广告片段由`EXT-X-DISCONTINUITY`标签包裹，可生成以下专用正则规则：
+
+json
+{
+  "rules": 
+    {
+      "name": "HLS-Ad-Removal",
+      "hosts": "*",
+      "regex": "(?s)EXT-X-DISCONTINUITY.*?EXT-X-DISCONTINUITY"
+    }
+  
+}
+{
+  "rules": [
+    {
+      "name": "HLS-Ad-Removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\s*\\n[\\s\\S]*?\\n#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "HLS-Fixed-Ad-Removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\n(?:#EXTINF:[\\d\\.]+,\\n[^\\n]+?\\n){5}#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "HLS-FixedDuration-Ad-Removal-Robust",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\s*\\R#EXTINF:5\\.605600,\\R[a-f0-9]+\\.ts\\?[^\\n]*(sign=[a-f0-9]+|timestamp=\\d+)[^\\n]*\\R#EXTINF:2\\.802800,\\R[a-f0-9]+\\.ts\\?[^\\n]*(sign=[a-f0-9]+|timestamp=\\d+)[^\\n]*\\R#EXTINF:2\\.802800,\\R[a-f0-9]+\\.ts\\?[^\\n]*(sign=[a-f0-9]+|timestamp=\\d+)[^\\n]*\\R#EXTINF:2\\.802800,\\R[a-f0-9]+\\.ts\\?[^\\n]*(sign=[a-f0-9]+|timestamp=\\d+)[^\\n]*\\R#EXTINF:1\\.001000,\\R[a-f0-9]+\\.ts\\?[^\\n]*(sign=[a-f0-9]+|timestamp=\\d+)[^\\n]*\\R#EXT-X-DISCONTINUITY"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "ad-removal",
+      "hosts": ["*"],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\s*((#EXTINF:[0-5]\\.\\d+,[\\s\\S]*?\\.ts[^\\s]*\\s*){5})"
+      ]
+    }
+  ]
+}
+{"rules":[
+
+{"name":"remove_ads","hosts":["*"],"regex":["#EXT-X-DISCONTINUITY[\\r\\n]+(?:#EXTINF:[0-5]\\.\\d{1,6}|6\\.0+),?[\\r\\n]+[^\\r\\n]*[\\r\\n]+){5}#EXT-X-DISCONTINUITY"]}
+
+]}
+
+{
+  "rules": [
+    {
+"name": "r is in a bad mood ve_ads,"
+      "hosts": ["*"],
+      "regex": [
+        "(#EXT-X-DISCONTINUITY[\\s\\S]*?(#EXTINF:(?:[0-5]\\.[0-9]+|6\\.0+),\\s*[^\\s]+\\.ts\\?[^\\s]+\\s*){5}[\\s\\S]*?(#EXT-X-DISCONTINUITY|#EXT-X-ENDLIST))"
+      ]
+    }
+  ]
+}
+{
+  "rules": [
+    {
+      "name": "remove_ads",
+      "hosts": ["*"],
+      "regex": [
+        "(#EXT-X-DISCONTINUITY[\\s\\S]*?(#EXTINF:(?:[0-5]\\.[0-9]+|6\\.0+),\\s*[^\\s]+\\.ts\\?[^\\s]+\\s*){5}[\\s\\S]*?(#EXT-X-DISCONTINUITY|#EXT-X-ENDLIST))"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "remove_keke5_ads",
+      "hosts": ["*keke5.app*"],
+      "regex": [
+        "(#EXT-X-DISCONTINUITY\\n(?:#EXTINF:[0-5]\\.\\d+,\\s*\\S+\\.ts\\?[^\\n]+\\n){5}?#EXT-X-DISCONTINUITY\\n)"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "Block Ads",
+      "hosts": [
+        "^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}:2130[1-9]$"
+      ],
+      "regex": [
+        "^/data5/jvods/hls/.*"
+      ]
+    }
+  ]
+}
+
+{
+  "rules": [
+    {
+      "name": "filter_ads",
+      "hosts": ["\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+"],  // 匹配任意IP和任意端口
+      "regex": [
+        "(#EXT-X-DISCONTINUITY\\n(#EXTINF:\\d+\\.\\d+,\\n[^\\n]+\\.ts\\?sign=[^\\n]+\\n)+)+"
+      ]
+    }
+  ]
+}

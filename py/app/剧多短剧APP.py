@@ -258,7 +258,7 @@ class Spider(Spider):
                 vods.append({
                     'vod_id': f'{i.get("id")}@',
                     'vod_name': i.get('name'),
-                    'vod_pic': i.get('avatar'),
+                    'vod_pic': f"{self.getProxyUrl()}&path={i.get('avatar')}",
                     'vod_tag': 'folder',
                     'vod_remarks': f'作品{i.get("movieNum")}',
                     'style': {"type": "oval"}
@@ -298,7 +298,6 @@ class Spider(Spider):
         return  {'parse': 0, 'url': f'{self.mphost}{id}', 'header': {'User-Agent':'Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)'}}
 
     def localProxy(self, param):
-        type=param.get('path').split('.')[-1]
         data=self.fetch(f'{self.phost}{param.get("path")}{self.phz}',headers={'User-Agent':'Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)'})
         def decrypt(encrypted_text):
             try:
@@ -310,5 +309,5 @@ class Spider(Spider):
                 return decrypted_data
             except (binascii.Error, ValueError):
                 return None
-        return [200, f'image/{type}', decrypt(data.content)]
+        return [200, data.headers.get('Content-Type'), decrypt(data.content)]
 

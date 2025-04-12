@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # by @嗷呜
 # 温馨提示：搜索只能搜拼音联想
+# 播放需要挂代理
 import sys
 import time
 import uuid
@@ -108,7 +109,7 @@ class Spider(Spider):
         # https://aigua.tv
         result = {
             "parse": 0,
-            "url": "id",
+            "url": id,
             "header": {
                 "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 11; M2012K10C Build/RP1A.200720.011)",
                 "Origin": "https://aigua.tv",

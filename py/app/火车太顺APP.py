@@ -41,7 +41,7 @@ class Spider(Spider):
         pass
 
     def homeContent(self, filter):
-        result = {}
+        result = {}       
         filters = {}
         classes = []
         bba = self.url()

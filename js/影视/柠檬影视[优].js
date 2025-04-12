@@ -24,7 +24,7 @@ var rule = {
   class_name: "电影&电视剧&综艺&动漫&短剧屋&主题伦理",
   class_url: "1&2&3&4&30&36",
   */
-  cate_exclude: "",
+  cate_exclude: "主题伦理",
   play_parse: true,
   /*
   lazy: $js.toString(() => {
