@@ -1,3 +1,4 @@
+//筛选有验证，无能为力
 Object.assign(muban.mxpro.二级, {
     tab_text: 'div--small&&Text',
 });

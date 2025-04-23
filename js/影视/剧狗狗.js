@@ -1,3 +1,49 @@
+function verifyCode(url) {
+    let cnt = 0;
+    let host = getHome(url);
+    let cookie = '';
+    while (cnt < OCR_RETRY) {
+        try {
+            // let obj = {headers:headers,timeout:timeout};
+            let yzm_url = `${host}/index.php/verify/index.html`;
+            console.log(`验证码链接:${yzm_url}`);
+            let hhtml = request(yzm_url, {withHeaders: true, toBase64: true}, true);
+            let json = JSON.parse(hhtml);
+            if (!cookie) {
+                // print(json);
+                let setCk = Object.keys(json).find(it => it.toLowerCase() === 'set-cookie');
+                // cookie = json['set-cookie']?json['set-cookie'].split(';')[0]:'';
+                cookie = setCk ? json[setCk].split(';')[0] : '';
+            }
+            // console.log(hhtml);
+            console.log('cookie:' + cookie);
+            let img = json.body;
+            // console.log(img);
+            let code = OcrApi.classification(img);
+            console.log(`第${cnt + 1}次验证码识别结果:${code}`);
+            let submit_url = `${host}/index.php/ajax/verify_check?type=search&verify=${code}`;
+            console.log(submit_url);
+            let html = request(submit_url, {headers: {Cookie: cookie}, 'method': 'POST'});
+            // console.log(html);
+            html = JSON.parse(html);
+            if (html.msg === 'ok') {
+                console.log(`第${cnt + 1}次验证码提交成功`);
+                return cookie // 需要返回cookie
+            } else if (html.msg !== 'ok' && cnt + 1 >= OCR_RETRY) {
+                cookie = ''; // 需要清空返回cookie
+            }
+        } catch (e) {
+            console.log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+            if (cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
+        }
+        cnt += 1
+    }
+    return cookie
+}
+
+globalThis.verifyCode = verifyCode;
 var rule={
   title: "剧狗狗",
   host: "https://www.jugougou.me",

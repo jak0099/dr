@@ -1,0 +1,3 @@
+本地代理说明: proxy_rule参数input赋值格式为三元素列表[status,content-type,data]
+如: [200,'text/plain','hello drpy']
+input = [200,'application/vnd.apple.mpegurl',m3u8]

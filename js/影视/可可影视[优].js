@@ -2,11 +2,12 @@
 var rule = {
     title: '可可影视[优]',
     //动态切换域名
+    //host: `https://www.${Math.random() < 0.5 ? 'kkys02' : Math.random() < 0.5 ? 'kkys01' : 'kkys03'}.com`,
     host: `https://www.${(r=>r<0.5?'keke5':['keke1','keke2','keke3','keke4','keke6','keke7','keke8'][(r-0.5)*14|0])(Math.random())}.app`,
     //host: `https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
     //host: 'https://www.keke5.app',
     //host: 'https://www.keke8.app',
-    //host: 'https://www.kkys01.com',
+    //host: 'https://www.kkys02.com',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
     searchUrl: '/search?k=**&page=fypage',
@@ -24,7 +25,7 @@ var rule = {
     tab_exclude: '可可影视提供',
     tab_order: ['超清', '蓝光', '极速蓝光'],
     tab_remove: ['4K(高峰不卡)'],
-    play_parse: true,
+    play_parse: true,    
     lazy: $js.toString(() => {
         input = {
             parse: 1,
@@ -125,5 +126,6 @@ var rule = {
             let m3u8 = fixAdM3u8Ai(url);
             input = [200,'application/vnd.apple.mpegurl',m3u8]
     `
-    */   
+    */
+       
 }
