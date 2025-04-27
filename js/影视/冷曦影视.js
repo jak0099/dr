@@ -1,5 +1,5 @@
 // 永久网址发布页：https://www.lenxi.co/
-// 一级筛选页面 数字验证
+// 一级筛选页面 数字验证，放弃
 // 搜索 数字验证
 muban.vfed.二级.title = 'h1&&Text;.fed-col-md3--span:eq(0)&&Text';
 muban.vfed.二级.desc = '.fed-col-md3:eq(3)&&Text;;;.fed-col-md6:eq(0)&&Text;.fed-col-md6--span:eq(1)&&Text';

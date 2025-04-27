@@ -1,3 +1,4 @@
+//没有筛选的，发布页http://www.woniu.info
 Object.assign(muban.首图2.二级, {
     tabs: ".nav.nav-tabs&&li",
 });

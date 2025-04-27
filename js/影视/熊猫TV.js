@@ -1,7 +1,7 @@
-Object.assign(muban.mxone5.二级, {
-    tabs: 'body&&.name_box .item',
-    desc: '.video-info-items:eq(4)&&Text;.tag-link:eq(2)&&Text;.tag-link:eq(1)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(0)&&Text',
-});
+
+Object.assign(muban.mxone5.二级, {   
+    content:'.video-info-content&&Text',
+    });
 var rule = {
     title: "熊猫TV",
     模板: "mxone5",
@@ -19,7 +19,7 @@ var rule = {
         "99": [{ key: '类型', name: '类型', value: [{ n: '全部类型', v: '', }, { n: '青春', v: '/class/青春', }, { n: '古装', v: '/class/古装', }, { n: '爱情', v: '/class/爱情', }, { n: '都市', v: '/class/都市', }, { n: '喜剧', v: '/class/喜剧', }, { n: '战争', v: '/class/战争', }, { n: '军旅', v: '/class/军旅', }, { n: '谍战', v: '/class/谍战', }, { n: '偶像', v: '/class/偶像', }, { n: '警匪', v: '/class/警匪', }, { n: '冒险', v: '/class/冒险', }, { n: '穿越', v: '/class/穿越', }, { n: '仙侠', v: '/class/仙侠', }, { n: '武侠', v: '/class/武侠', }, { n: '悬疑', v: '/class/悬疑', }, { n: '罪案', v: '/class/罪案', }, { n: '家庭', v: '/class/家庭', }, { n: '历史', v: '/class/历史', }, { n: '年代', v: '/class/年代', }, { n: '农村', v: '/class/农村', }, { n: '其他', v: '/class/其他', },], }, { key: '年代', name: '年代', value: [{ n: '全部年代', v: '', }, { n: '2025', v: '/year/2025', }, { n: '2024', v: '/year/2024', }, { n: '2023', v: '/year/2023', }, { n: '2022', v: '/year/2022', }, { n: '2021', v: '/year/2021', }, { n: '2020', v: '/year/2020', }, { n: '2019', v: '/year/2019', }, { n: '2018', v: '/year/2018', }, { n: '2017', v: '/year/2017', }, { n: '2016', v: '/year/2016', },], }, { key: '排序', name: '排序', value: [{ n: '时间排序', v: '/by/time', }, { n: '人气排序', v: '/by/hits', }, { n: '评分排序', v: '/by/score', },], },],
     },
     filter_url: "{{fl.地区}}{{fl.排序}}{{fl.类型}}{{fl.语言}}/page/fypage{{fl.年代}}",
-    filter_def: {61: {全部类型: "id/61"},79: {全部类型: "id/79"},88: {全部类型: "id/88"},93: {全部类型: "id/93"},99: { 全部类型: "id/99"}},
+    filter_def: {61: {类型: "/id/61"},79: {类型: "/id/79"},88: {类型: "id/88"},93: {类型: "id/93"},99: { 类型: "id/99"}},
     class_parse: ".nav-menu-items&&.nav-menu-item;a&&Text;a&&href;id/(\\d+).html",
     搜索: '.module-items .module-search-item;h3&&Text;img&&data-src;.video-serial&&Text;.video-serial&&href;.video-info--h3--strong&&Text',
 }

@@ -1,3 +1,4 @@
+//筛选有验证，放弃
 Object.assign(muban.首图2.二级, {
     tabs: '.stui-pannel__head h3',
 });

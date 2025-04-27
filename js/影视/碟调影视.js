@@ -1,3 +1,4 @@
+//失效
 var rule = {
      title:'碟调影视',
     host:'http://www.618648.com',
