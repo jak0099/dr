@@ -1,86 +1,102 @@
-const level_list = ["DEBUG", "INFO", "WARNING", "ERROR"];
-const file_path = "log"
+var ws;
+var websocketUrl = getWsUrl();
+const HEART_BEAT_INTERVAL = 1000;
+const reconnectTime = 5000;
+var lockReconnect = false;
+var heartBeatInterval;
 
-class JadeLogging {
+function createWs() {
+    ws = new WebSocket(websocketUrl);
+    ws.addEventListener('open', (event) => {
+        console.log('WebSocket is open now.');
+        startHeartBeat();
+        addMsg("websocket连接成功，当前时间" + new Date().Format("yyyy-MM-dd hh:mm:ss"));
+    });
 
-    constructor(app_name, level = "DEBUG") {
-        this.app_name = app_name
-        this.level = level
-        this.level_index = level_list.indexOf(level)
-    }
+    ws.addEventListener('message', (event) => {
+        console.log('Message from server: ', event.data);
+        if (event.data != 'HEARTBEAT') addMsg(event.data);
+    });
 
+    ws.addEventListener('error', (error) => {
+        console.error('WebSocket encountered error: ', error);
+        let msg = "websocket发生错误,连接状态码:" + ws.readyState;
+        addMsg(msg);
+        reconnect();
+    });
 
-    format(level, message) {
-        let max_format = 80
-        switch (level) {
-            case "INFO":
-                max_format = max_format + 1
-                break
-            case "WARNING":
-                max_format = max_format - 2
-                break
-            default :
-                break
-        }
-        if (message.length < max_format) {
-            if ((max_format - message.length) % 2 === 0) {
-                message = "#".repeat(Math.floor((max_format - message.length) / 2)) + message + "#".repeat(Math.floor((max_format - message.length) / 2))
-            } else {
-                message = "#".repeat(Math.floor((max_format - message.length) / 2)) + message + "#".repeat(Math.floor((max_format - message.length) / 2) + 1)
-            }
-        }
-        return message
-    }
+    ws.addEventListener('close', (event) => {
+        console.log('WebSocket is closed now.');
+        addMsg('websocket连接关闭');
+        if (heartBeatInterval) clearInterval(heartBeatInterval);
+        reconnect();
+    });
+}
 
-    getTime() {
-        const timestamp = new Date();
-        // 获取当前时间戳
-        return timestamp.toLocaleDateString().replace(/\//g, "-") + " " + timestamp.toTimeString().substr(0, 8) + "," + timestamp.getMilliseconds().toString()
-    }
+function getWsUrl() {
+    let host = location.host;
+    let protocol = 'ws';
+    let port = location.port;
+    return protocol + '://' + host;
+}
 
-    formatMessage(log_level, message, is_format) {
-        // 获取北京时间
-        // 格式化消息
-        //2023-12-13 15:15:21,409 - 阿里玩偶 -
-        //2023-12-14T01:43:31.278Z
-        //2023-12-13 15:15:21,409 - 阿里玩偶 - INFO:
-        //2023-12-13 15:15:21,409 - 阿里玩偶 - ERROR:
-        if (is_format) {
-            message = this.format(log_level, message)
-        }
-        return `${this.getTime()} - ${this.app_name} - ${log_level}: ${message}`
-
-    }
-
-    async log(message) {
-        console.debug(message)
-        await local.set(file_path,this.getTime(), message);
-    }
-
-    async info(message, is_format=false) {
-        if (this.level_index <= 1) {
-            await this.log(this.formatMessage("INFO", message, is_format))
-        }
-    }
-
-    async warning(message, is_format=false) {
-        if (this.level_index <= 2) {
-            await this.log(this.formatMessage("WARNING", message, is_format))
-        }
-    }
-
-    async error(message, is_format=false) {
-        if (this.level_index <= 3) {
-            await this.log(this.formatMessage("ERROR", message, is_format))
-        }
-    }
-
-    async debug(message, is_format=false) {
-        if (this.level_index <= 0) {
-            await this.log(this.formatMessage("DEBUG", message, is_format))
-        }
+function reconnect() {
+    if (!lockReconnect) {
+        lockReconnect = true;
+        setTimeout(function () {
+            addMsg("正在重连，当前时间" + new Date().Format("yyyy-MM-dd hh:mm:ss"));
+            createWs();
+            lockReconnect = false;
+        }, reconnectTime);
     }
 }
 
-// 测试日志记录函数
-export {JadeLogging}
+function addMsg(msg){
+    let f = $('#filter').val();
+    if (f.length > 0 && msg.indexOf(f) <= 0) {
+        return;
+    }
+    if(msg && !msg.endsWith('<br>')) {
+        msg += '<br>';
+    }
+    $("#msg").append(msg);
+    $("#log").scrollTop($("#log").prop("scrollHeight"));
+}
+
+function startHeartBeat() {
+    if (ws.readyState === 1) {
+        ws.send('HEARTBEAT');
+//        console.log('send HEARTBEAT');
+    }
+    heartBeatInterval = setInterval(() => {
+        if (ws.readyState === 1) {
+          ws.send('HEARTBEAT');
+//          console.log('send HEARTBEAT');
+        }
+    }, HEART_BEAT_INTERVAL);
+}
+
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, // 月份
+        "d+": this.getDate(), // 日
+        "h+": this.getHours(), // 小时
+        "m+": this.getMinutes(), // 分
+        "s+": this.getSeconds(), // 秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+        "S": this.getMilliseconds() // 毫秒
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+}
+
+$(document).ready(function() {
+    $('#clearLog').click(function () {
+       $("#msg").html('');
+    });
+    addMsg('websocket初始化中,当前ws服务地址=>  ' + websocketUrl);
+    createWs();
+});

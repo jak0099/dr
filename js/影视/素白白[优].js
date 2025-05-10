@@ -2,11 +2,8 @@
 // 搜索数字验证
 var rule = {
     title: '素白白[优]',
-    host: `https://${
-    Math.random() < 0.33 ? 'www.subaibai.com' : 
-    Math.random() < 0.66 ? 'subaibai.com' : 'www.subaibaiys.com'
-    }`,
-    //host:'https://www.subaibai.com',
+    //host: `https://${Math.random() < 0.33 ? 'www.subaibai.com' : Math.random() < 0.66 ? 'subaibai.com' : 'www.subaibaiys.com'}`,
+    host:'https://www.subaibai.com',
     //host:'https://www.subaibaiys.com',
     //host:'https://subaibai.vip',
     //hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src = jsp.pdfh(html,".go:eq(0)&&a&&href");print(src);HOST=src',//网页域名根动态抓取js代码。通过HOST=赋值
@@ -698,6 +695,8 @@ var rule = {
         'User-Agent': 'UC_UA',
     },
     class_parse: '.navlist&&li;a&&Text;a&&href;.*/([^/]+)',
+    class_name:'全部',
+    class_url:'movie_bt',
     play_parse: true,
     // lazy:'',
     lazy: `js:

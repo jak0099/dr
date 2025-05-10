@@ -1,3 +1,0 @@
-1.'User-Agent':'MOBILE_UA'
-2.'User-Agent':'PC_UA'
-3.'User-Agent':'UC_UA'

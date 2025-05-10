@@ -1,2 +1,0 @@
-js:内置变量 
-input,html,VODS,VOD,TABS,LISTS,MY_CATE,MY_FL getProxyUrl(获取壳子本地代理地址返回 /proxy?do=js的完整链接)

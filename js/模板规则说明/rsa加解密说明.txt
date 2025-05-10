@@ -1,4 +1,0 @@
-log(typeof(rsaX));
-if(typeof(rsaX)=='function'){
-    rsaX(mode, pub, encrypt, input, inBase64, key, outBase64)
-}
