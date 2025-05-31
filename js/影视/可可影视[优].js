@@ -10,7 +10,7 @@ var rule = {
     //host: 'https://www.kkys02.com',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
-    searchUrl: '/search?k=**&page=fypage',
+    searchUrl: '/search?k=**&page=fypage2&t=',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
@@ -39,7 +39,7 @@ var rule = {
     //一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span:eq(1)&&Text;a&&href',
     一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span&&Text;a&&href',
     二级: {
-        title: '.detail-pic&&img&&alt;.detail-tags&&a&&Text',
+        title: '.detail-pic&&img&&alt;.detail-tags a:gt(1)&&Text',
         img: '.detail-pic&&img&&data-original',
         desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags&&a&&Text;.detail-tags&&a:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main&&Text',
         content: '.detail-desc&&Text',
@@ -48,8 +48,8 @@ var rule = {
         tabs: 'body&&.source-item-label',
         lists: '.episode-list:eq(#id) a',
     },
-    //搜索: '.search-result-list&&a;.title:eq(1)&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
-    搜索: '.search-result-list&&a;h3&&Text;.lazyload&&data-original;.info:eq(0)&&Text;a&&href;.info:eq(1)&&Text',
+    搜索: '.search-result-list&&a;.title:eq(0)&&Text;.lazyload&&data-original;.search-result-item-header&&Text;a&&href;.desc&&Text',
+    //搜索: '.search-result-list&&a;h3&&Text;.lazyload&&data-original;.info:eq(0)&&Text;a&&href;.info:eq(1)&&Text',
     // 图片替换:$js.toString(()=>{
     //     log(input);
     //    input = input.replace(rule.host,'https://vres.a357899.cn');

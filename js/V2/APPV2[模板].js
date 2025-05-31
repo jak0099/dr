@@ -2,7 +2,11 @@
  * 传参 ?type=url&params=http://122.228.85.203:1000@泽少1
  * 传参 ?type=url&params=http://122.228.85.203:1000@泽少2
  */
-
+/**
+ *用法
+ *{"key": "dr_APPV2_泽少","name": "🍎泽少[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 0,"ext": "./js/V2/APPV2[模板].js?type=url&params=http://122.228.85.203:1000$http://122.228.85.203:1000/play?url="}, 
+ */
+ 
 var rule = {
     title: 'APPV2[模板]',
     author: '道长',

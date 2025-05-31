@@ -1,98 +1,57 @@
-//筛选有验证,暂无能为力，放弃
-// 强化版验证码处理函数
+Object.assign(muban.mxpro.二级, {
+    tab_text: 'div--small&&Text',
+});
+
 function verifyLogin(url) {
-    const MAX_RETRY = 3;
+    let cnt = 0;
     let cookie = '';
-    const home = getHome(url);
-    const captchaUrl = `${home}/index.php/verify/index.html`;
-    const submitUrl = `${home}/index.php/ajax/verify_check`;
-
-    for (let i = 1; i <= MAX_RETRY; i++) {
+    let r = Math.random();
+    let yzm_url = getHome(url) + '/index.php/verify/index.html';
+    log(`验证码链接:${yzm_url}`);
+    let submit_url = getHome(url) + '/index.php/ajax/verify_check';
+    log(`post登录链接:${submit_url}`);
+    while (cnt < OCR_RETRY) {
         try {
-            // [1] 获取验证码并预处理
-            const { cookie: newCookie, html: imgBase64 } = reqCookie(
-                `${captchaUrl}?r=${Math.random()}`, 
-                { toBase64: true, preprocessing: true } // 启用图像预处理
-            );
-            cookie = mergeCookies(cookie, newCookie);
-
-            // [2] 多引擎OCR识别
-            let code = OcrApi.classification(imgBase64);
-            log(`第${i}次识别原始结果: ${code}`);
-            
-            // 结果清洗：去除空格/特殊字符
-            code = code.replace(/[^a-zA-Z0-9]/g, '').slice(0,4);
-            if (!/^\d{4}$/.test(code)) {
-                log('识别结果格式异常，启用备用OCR');
-                code = BackupOcrApi.classification(imgBase64);
-                code = code.replace(/[^0-9]/g, '').slice(0,4);
-            }
-
-            // [3] 提交验证码
-            const response = post(submitUrl, {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Cookie': cookie,
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
-                body: `type=show&verify=${encodeURIComponent(code)}`
+            let {cookie, html} = reqCookie(yzm_url + '?r=' + r, {toBase64: true});
+            let code = OcrApi.classification(html);
+            log(`第${cnt + 1}次验证码识别结果:${code}`);
+            html = post(submit_url, {
+                headers: {Cookie: cookie},
+                body: 'type=show&verify=' + code,
             });
+            html = JSON.parse(html);
             
-            // [4] 处理响应
-            const result = safeParse(response);
-            cookie = mergeCookies(cookie, response.cookie); // 合并最新cookie
-            
-            if (result?.code === 1) {
-                log(`✅验证成功，获得cookie: ${cookie}`);
-                return cookie;
-            } else {
-                log(`❌验证失败，响应码: ${result?.code || '无'}`);
+            if (html.code === 1) {
+                log(`第${cnt + 1}次验证码提交成功`);
+                log(cookie);
+                return cookie // 需要返回cookie
+            } else if (html.code !== 1 && cnt + 1 >= OCR_RETRY) {
+                cookie = ''; // 需要清空返回cookie
             }
         } catch (e) {
-            log(`⚠️第${i}次请求异常: ${e.message}`);
+            log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+            if (cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
         }
+        cnt += 1
     }
-    return '';
-}
-
-// 辅助函数：安全解析JSON
-function safeParse(str) {
-    try {
-        return JSON.parse(str);
-    } catch (e) {
-        log(`JSON解析失败: ${str.slice(0,50)}...`);
-        return null;
-    }
-}
-
-// OCR测试函数增强版
-function ocr_demo_test() {
-    const imgBase64 = `iVBORw0KGgoAAAANSUhEUgAAAIAAAAAoBAMAAADEX+97AAAAG1BMVEXz+/4thQTa7N6QwIFFkyNeokKozqDB3b93sWHFR+MEAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABN0lEQVRIie2TQU+DQBCFt9tSLkePUuwR00o8SmKixw5p7FXsH0CNd7CXHmti4t922KW6pMkuqUd5l4Hd+WbfzoAQvXo5dX8qKHMVvItTC2RLFcppu+zDpiPvY69ighafoV53KsGtNoLCWH0BsOxoQIMT1IWEfltfdXNQWY2qB69leYSiDKIOOGdSoB7LqWl58hHT2s3PaTMIE939zxTn5h4hdfLvwOUuyvT8k4JCY28IzBy4vONG50JAczuRmYS/cgUYc/fAh8vGeRK0EhAeQ4bmhBlVfR/jrF4q9TiU4uIaTzaep/7oK5PDJnFQXUhrgRXsU1ywf1Ko14zfOyAlbz9bbxB/cQq+RfXJ/J7rHzyP2KCVZ22Jh8jxpnkF0th9e3Xx3DxQ7syyyKdUurNskpGv/F69/rF+cCAjWSQWQQAAAABJRU5ErkJggg==`;
-    
-    // 多引擎测试
-    const apis = [
-        { name: '主引擎', api: OcrApi },
-        { name: '备用引擎', api: BackupOcrApi }
-    ];
-    
-    apis.forEach(({name, api}) => {
-        let code = api.classification(imgBase64);
-        code = code.replace(/[^0-9]/g, '').slice(0,4);
-        log(`${name}识别结果: ${code.padEnd(4, ' ')} | 正确性: ${code === '4113' ? '✅' : '❌'}`);
-    });
+    return cookie
 }
 
 globalThis.verifyLogin = verifyLogin;
 
-Object.assign(muban.mxpro.二级, {
-    tab_text: 'div--small&&Text',
-});
 var rule = {
     模板: 'mxpro',
     title: '剧哥哥',//https://jugege.com/
-    host: 'https://www.jugege.top',
+    host: 'https://www.jugege.vip',//发布页
+    hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"a:eq(0)&&href");print(src);HOST=src',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'PC_UA',
+    },
     class_parse: '.navbar-items li:gt(0):lt(8);a&&Text;a&&href;/(\\d+).html',
-    url: '/vodshow/fyclass--------fypage---.html',
+    url: '/vodshow/fyfilter.html',
+    filter_url: '{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-----fypage---{{fl.year}}',
     searchUrl: '/rss/index.xml?wd=**',
     搜索: $js.toString(() => {
         let html = request(input);
@@ -112,5 +71,60 @@ var rule = {
         });
         setResult(d);
     }),
-    搜索验证标识:'系统安全验证|输入验证码',
+    filter_def: {
+        1: {cateId: '1'}, 2: {cateId: '2'}, 4: {cateId: '4'}, 3: {cateId: '3'}
+    },
+    filter: 'H4sIAAAAAAAAA+2W308aQRDH/5d79sEDf9V/pfGBGpKaWpuAbUIMSSuCoFaEIEpFa1P5oRWB1lo5cvDP3O7Jf9GF3ZlZWnshbR/v7T7f2dmd2dnduQ3DNBafbhgvwjFj0VheDUWjxpSxFnoZFsgyNZ5ICn4TWn0dHo1bG8rJ+iBRH8oCjPiUUotlMV6pCsDmpttqIgKw8XcH/G1R2RTgnDt1xy7DnBJwzlqOdbowpwT0w8AJcL30sWNlYD0JYHtoVNnelbIpwPV2mq4NNgVanG6hS3EOAW2VbYpTAcbSqDq9c4hFAvql8oPSJfhJQL+zKxE5+EmYZD/55rVbzIFNAtoSO3zzA9gkYO7dLEveQ+4SwDY4zfPjirIpwDmL2w8ZC+aUgPn1btzCd2a3IUVkHJG9ePiMVZSAtv0Uy34FmwSsYv9A1ACqKIF2tcxPc7irI0DbVt/9ApkowB2wc263PBbwmBRfGo6UtygUCYe0S1RusT1r0kt0URuUUhCCBNzoaonfN2GjJdBWtXinh1s1Agy9t89ObAhaAhbo2yHZFOA27rbJpgD9jiq8fA1+EjDOj5fkp4CK/oNsCiiWlh5La8zvfYtZVfCTgH5bWbFTLA13hRgzqfTdbMPNlCAZZLrA53y3L9zwDgPjiOSd04VrpUAveiwcimhF79w6XXvCogemAzNKG31qepD0oK4HSA/oukm6qevTpE9ruvkEdfGp6QukL+j6POnzuj5H+pyuz5I+q+uUr6nna1K+pp6vSfmaer4m5Wvq+ZqUr/jUy/QsRkXi+3lmZX8rEj+6GxzdqgnWV8RQmNixLN4qKMvzlfUonbDmFkvDvY0uv4qEh6suTRmB/9VdPd5Cr47m1ZXZzR2zGmCTMGG3+2NX9up2Xl3Z6z336j5iDl6CR1EBlqvzid56BbjeYYo6qIJJ/lY8/zoe69h+X/D7gt8X/L7wS18Ian3BPyL+EXnkiMxoR+RfWseJ7Vj4fkmY5Lnm1zXRFMAmwX/0/BP91yc6/hNlKCPlbBIAAA==',
+	
+    一级二: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    一级: $js.toString(() => {
+         let cookie = getItem(RULE_CK, '');
+        //log('储存的cookie:' + cookie);
+        let ret = request(MY_URL, {
+            headers: {
+                Referer: encodeUrl(MY_URL),
+                Cookie: cookie,
+            }
+        });
+        if (/系统安全验证/.test(ret)) {
+            //log(ret);
+            cookie = verifyLogin(MY_URL);
+            if (cookie) {
+                log(`本次成功过验证,cookie:${cookie}`);
+                setItem(RULE_CK, cookie);
+            } else {
+                log(`本次验证失败,cookie:${cookie}`);
+            }
+            ret = request(MY_URL, {
+                headers: {
+                    Referer: encodeUrl(MY_URL),
+                    Cookie: cookie,
+                }
+            });
+        }
+//log(ret);
+        let d = [];
+        let p = rule.一级二.split(';');
+        let arr = pdfa(ret, p[0]);//列表
+        arr.forEach(it => {
+            d.push({
+                title: pdfh(it, p[1]),//标题
+                pic_url: pdfh(it, p[2]),//图片
+                desc: pdfh(it, p[3]),//描述
+                url: pdfh(it, p[4]),//链接
+                
+            });
+
+        });
+        setResult(d);
+    }),
+        lazy: $js.toString(() => {
+        let js = 'try{function requestApix(callback){$.post(\"api.php\",{vid:getQueryString(\"vid\")},function(result){callback(result.data.url);},\"json\");}requestApix(function(data){location.href=sign(data);})}catch(e){}location.href=document.querySelector(\"#playleft iframe\").src;';
+        input = {
+            parse: 1,
+            url: input,
+            click: js,
+            js: js
+        };
+    }),
 }

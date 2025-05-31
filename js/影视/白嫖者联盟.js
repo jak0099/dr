@@ -1,4 +1,4 @@
-//一级筛选有验证，放弃
+//一级筛选有人机验证，放弃
 var rule = {
     title: '白嫖者联盟',
     模板: '首图',
@@ -8,4 +8,5 @@ var rule = {
     searchable: 2,
     filterable: 0,
     class_parse: '.myui-header__menu li:gt(0):lt(5);a&&Text;a&&href;/(\\d+).html',
+    预处理:'',
 }
