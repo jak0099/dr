@@ -1,4 +1,3 @@
-//筛选有验证，无能为力
 function verifyLogin(url) {
   let cnt = 0;
   let cookie = '';

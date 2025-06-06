@@ -1,3 +1,17 @@
+globalThis.safePlay = function(whatTMDwhatTMDPPPP, whatTMDwhatTMDKKKK) {
+    eval(getCryptoJS());
+    let _0x568646 = "VNF9aVQF!G*0ux@2hAigUeH3";
+    var _0x527427 = CryptoJS.enc.Utf8.parse(whatTMDwhatTMDKKKK || _0x568646);
+    let _0x264b22 = whatTMDwhatTMDPPPP;
+    var _0x33e517 = CryptoJS.enc.Base64.parse(_0x264b22);
+    const _0x240c87 = { ciphertext: _0x33e517 };
+    var _0x358b25 = CryptoJS.AES.decrypt(_0x240c87, _0x527427, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    var _0x4f3e21 = _0x358b25.toString(CryptoJS.enc.Utf8);
+    return _0x4f3e21;
+};
 
 var rule = {
     title: '网飞猫[优]',
@@ -16,7 +30,6 @@ var rule = {
     tab_order: ['超清', '蓝光', '极速蓝光'],
     tab_remove:['4K(高峰不卡)'],
     play_parse: true,
-    /*
     lazy: $js.toString(() => {
         let html = request(input);
         var TMDKKKK = "";
@@ -32,28 +45,7 @@ var rule = {
         globalThis.originalUrl = url;
         // 生成代理URL
         input = { url: getProxyUrl() + '&url=' + encodeURIComponent(url) };
-    }),*/
-    
-    lazy: $js.toString(() => {
-        // 添加代理URL处理
-        input = {
-            parse: 1,
-            url: getProxyUrl() + '&url=' + encodeURIComponent(input), // 核心修改点
-            js: 'document.querySelector("#my-video video").click()'
-        }
     }),
-    
-    proxy_rule: `js:
-        if (input.url.startsWith("proxy_url=")) {
-            let realUrl = input.url.split('&url=')[1];
-            let m3u8 = request(realUrl);
-            // 广告过滤处理（示例：移除含ad/gg关键字的片段）
-        let cleaned = fixAdM3u8Ai(m3u8);                 
-            input = [200, 'application/vnd.apple.mpegurl', cleaned];
-        } else {
-            input = input;
-        }
-    `,
     limit: 20,
     double: false,
     推荐: '*',
@@ -80,5 +72,12 @@ var rule = {
         }
     }),
     filter: 'H4sIAAAAAAAAA+2Zz08bRxTH/xefOdgGtTi3HlqpUpVLe6hURREHV4qa0kN/qFWEZLANxhBsEDFx7AIpGEyCf0CQY9bY/md2Ztf/RWf95r0ZR+3LtqGRqviC+LzvzOzs7Nt539k/isQid755FPku+VvkTsS76In9jchMZHHh+6TNvyw8/Dk5briowiJbH6XrQVhBZGkGoneTP3378MGvOnz3068+++Lzr0kV66cyndWiBtJKVRVBDYC0fN3tV1EDQM3LXZgxNaAml4syVdKaBtLSebnyDDUAGjPf8vovcEwA0k63xXUPNQAac+XcK23jmAB0D7U1008Daas7o/IZagA0Zu6p66zjmADUb2tVFC6xHwBphWP/iNYagLRmRzgN1ABQc28O/WZbaxpoLo0Td3CIcwEw2qaf2ydtDLRmBw1vfQ3XDMB6tt5uzzzbAEjLDL2XNdQAUPOXN0XV0ZqGpXuBCmksqm2x6Zg0Jg6TxuL4dFRexUXoNkSlr0PYYnRSlt3WRAsdMg+gLa8Hk2NAiJZlsKWCuCwAtJx7NVk9x+UEoGsfnJl+GmhZNi6MpoHGfPXEaBpotoPXRtNA2uO2cE5QAzBjtu0x23Y/t3s9on4a6N6390W2i/cOQNd7feXXhng9AJMuh3JjqB4GZQwyXXWY8fp7skQPh5jmnCmoDiKHb5xhatHaVSj3OtiC2Np2RHtXZPFNMUxPojb0CirVy/gwiOkqg1dwXdehjcgO0T1nO24PtzENdqr7rYZfT5lUJw6V6pW+ao+DA9BNXh4bTYOVaEbTYCWv0TRYyWs0DVaCWv0Awi6CuL5ye33rfUcOswjxaHxOx8b/WvFZE5+143ETj9vxmInH7HjUxKMUj0XH0zwiLRa9r/4kqEH0zQbRoEHUNEhMNoglEtH76o9pMP9mg/mgwbxpICtXcg9fhUD7ODGxsHJrRzgFs7DEkwvr9W5EMYdXMaNXU7KEL0ncDntpfNJmXf1WRuRw350LpnFvRvX6b8yJpjDmhDMZnHHhjARrFrjizZghrrBzxoczJ0FhovvTEMYMceaEMzVBQaPraQhjQNSWZ56RhjBGkDNfo3RfdFdwLgC3bUAoHLllA8LZhH9rPTgLwVkP1l681ShxJoMzJ9PCOS2cH3DhnH1PhTNfl6llefNy4hxnQqFO/9wpkPsywGzebKHkCh5X1JgTqSzue+dU0AFCGQimaHMnZ5UH/vMUagCkVfKyjFVFQxjj4fUK1rEMgPodPhcV2mQAUPtk8YFKK5Dgf8rMYVGtPW53AHRUcy5Fo4g7PwBtd7/vyKe40hpMOd9Qa0jlfAxhLMJfWqDb+mbAlc2393Jg+s1g+s1gan1snlqf/7n1mbst6+M5L0T/CaYzAGnVA9dxvFOqwcQ0t2bb9NZAWuZCFI5Mb8OhDBP36Z8xTNznfa/SFUe0OQHQbPMrXqWJUwUwJffvP/1zBo2zBl8mF378YVFrGmie3M8zjGHiDJosP3NvaEcFmP6cMC0j0zLyIZeRj/55GTFh+ymPUqv+H5R6AJTqu1XRxBOLBppVuajON5jqANTvbOh38tgPgK639tjbPcDrAYQpK+yv28zJij3fMudw9tdt7myf7Yhm2rySAbz3zFEpsvQnK+G0IDwhAAA=',
-    
+    proxy_rule: `js:
+    // 获取lazy中存储的原始URL
+    let originalUrl = globalThis.originalUrl;
+    // 调用广告过滤函数，传入原始URL
+    let m3u8 = fixAdM3u8Ai(url);
+    // 返回处理后的m3u8内容
+    input = [200, 'application/vnd.apple.mpegurl', m3u8];
+    `
 }

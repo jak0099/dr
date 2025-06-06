@@ -25,7 +25,7 @@ var rule = {
     tab_exclude: '可可影视提供',
     tab_order: ['超清', '蓝光', '极速蓝光'],
     tab_remove: ['4K(高峰不卡)'],
-    play_parse: true,    
+    play_parse: true,
     lazy: $js.toString(() => {
         input = {
             parse: 1,
@@ -160,6 +160,5 @@ var rule = {
             let m3u8 = fixAdM3u8Ai(url);
             input = [200,'application/vnd.apple.mpegurl',m3u8]
     `
-    */
-       
+    */    
 }

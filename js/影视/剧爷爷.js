@@ -1,3 +1,42 @@
+function verifyLogin(url) {
+    let cnt = 0;
+    let cookie = '';
+    let r = Math.random();
+    let yzm_url = getHome(url) + '/index.php/verify/index.html';
+    log(`验证码链接:${yzm_url}`);
+    let submit_url = getHome(url) + '/index.php/ajax/verify_check';
+    log(`post登录链接:${submit_url}`);
+    while (cnt < OCR_RETRY) {
+        try {
+            let {cookie, html} = reqCookie(yzm_url + '?r=' + r, {toBase64: true});
+            let code = OcrApi.classification(html);
+            log(`第${cnt + 1}次验证码识别结果:${code}`);
+            html = post(submit_url, {
+                headers: {Cookie: cookie},
+                body: 'type=show&verify=' + code,
+            });
+            html = JSON.parse(html);
+            
+            if (html.code === 1) {
+                log(`第${cnt + 1}次验证码提交成功`);
+                log(cookie);
+                return cookie // 需要返回cookie
+            } else if (html.code !== 1 && cnt + 1 >= OCR_RETRY) {
+                cookie = ''; // 需要清空返回cookie
+            }
+        } catch (e) {
+            log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+            if (cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
+        }
+        cnt += 1
+    }
+    return cookie
+}
+
+globalThis.verifyLogin = verifyLogin;
+
 var rule = {
   模板:'mxpro',
   title: '剧爷爷',
@@ -14,5 +53,40 @@ var rule = {
     3: {cateId: '3'},
     4: {cateId: '4'}
   },
-  filterable:1,//是否启用分类筛选,  
+  filterable:1,//是否启用分类筛选,
+  一级: `js:
+    let khtml = request(input);
+    if (/需要输入验证码/.test(khtml)) {
+    let body = 'type=show&verify=';
+    let cookie = verifyLogin(input, body);
+    khtml = request(input, {headers: {Cookie: cookie} })
+    };
+    VODS = [];
+    let klist = pdfa(khtml, '.module-item');
+    klist.map((it) => {
+    VODS.push({
+        vod_name: pdfh(it, 'img&&alt'),
+        vod_pic: pdfh(it, 'img&&data-original'),
+        vod_remarks: pdfh(it, '.module-item-note&&Text'),
+        vod_id: pdfh(it, 'a&&href')
+    })
+    })
+    `,
+    搜索: `js:
+    let khtml = request(input);
+    if (/需要输入验证码/.test(khtml)) {
+    let cookie = verifyLogin(input);
+    khtml = request(input, {headers: {Cookie: cookie} })
+    };
+    VODS = [];
+    let klist = pdfa(khtml, '.module-item');
+    klist.map((it) => {
+    VODS.push({
+        vod_name: pdfh(it, 'img&&alt'),
+        vod_pic: pdfh(it, 'img&&data-original'),
+        vod_remarks: pdfh(it, '.module-item-note&&Text'),
+        vod_id: pdfh(it, 'a&&href')
+    })
+    })
+    `,  
 }

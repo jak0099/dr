@@ -161,6 +161,7 @@ var rule = {
     cate_exclude: '今日更新|热榜',
 }
 
+#filter一键爬取和入库(filter_name,filter_url,filter_parse)
 
 ##源正则写法说明:  
 属性class_parse按;分隔后取[3]为分类的正则字符串。  
