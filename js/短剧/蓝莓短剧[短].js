@@ -1,89 +1,109 @@
 var rule = {
-    title: '蓝莓短剧',
-    host: 'https://api.lanmeio.com',
-    url: '/fyclass/##page=fypage&ajax=1&category=fyfilter',
-    searchUrl: '/hongguo/##page=fypage&ajax=1&name=**',
+    title: '蓝莓短剧[短]',
+    host: 'https://app.whjzjx.cn',
+    url: '/v1/theater/home_page?theater_class_id=1&class2_id=fyclass&page_num=fypage&page_size=24',
+    searchUrl: '/?**',
     searchable: 2,
     quickSearch: 1,
-    filterable: 1,
-    filter: {
-      "hongguo": [{ "key": "sort", "name": "类型", "value": [{ "n": "推荐榜", "v": "推荐榜" }, { "n": "热播榜", "v": "热播榜" }, { "n": "飙升榜", "v": "飙升榜" }, { "n": "新剧榜", "v": "新剧榜" }, { "n": "热搜榜", "v": "热搜榜" }, { "n": "新剧", "v": "新剧" }, { "n": "逆袭", "v": "逆袭" }, { "n": "古装", "v": "古装" }, { "n": "总裁", "v": "总裁" }, { "n": "打脸虐渣", "v": "打脸虐渣" }, { "n": "现代言情", "v": "现代言情" }, { "n": "穿越", "v": "穿越" }, { "n": "马甲", "v": "马甲" }, { "n": "重生", "v": "重生" }, { "n": "奇幻脑洞", "v": "奇幻脑洞" }, { "n": "豪门恩怨", "v": "豪门恩怨" }, { "n": "都市日常", "v": "都市日常" }, { "n": "神豪", "v": "神豪" }, { "n": "大女主", "v": "大女主" }, { "n": "亲情", "v": "亲情" }, { "n": "女性成长", "v": "女性成长" }, { "n": "战神归来", "v": "战神归来" }, { "n": "小人物", "v": "小人物" }, { "n": "都市修仙", "v": "都市修仙" }, { "n": "强者归来", "v": "强者归来" }, { "n": "闪婚", "v": "闪婚" }, { "n": "家庭伦​理", "v": "家庭伦​理" }, { "n": "热血", "v": "热血" }, { "n": "玄学", "v": "玄学" }, { "n": "重生", "v": "重生" }, { "n": "逆袭", "v": "逆袭" }, { "n": "科幻未来", "v": "科幻未来" }, { "n": "武侠", "v": "武侠" }, { "n": "都市", "v": "都市" }, { "n": "修真", "v": "修真" }, { "n": "宫斗", "v": "宫斗" }, { "n": "搞笑", "v": "搞笑" }, { "n": "穿越", "v": "穿越" }, { "n": "电竞", "v": "电竞" }, { "n": "轻松治愈", "v": "轻松治愈" }, { "n": "机甲", "v": "机甲" }] }],
-      "qimao": [{ "key": "sort", "name": "类型", "value": [{ "n": "推荐", "v": "推荐" }, { "n": "新剧", "v": "新剧" }, { "n": "都市", "v": "都市" }, { "n": "逆袭", "v": "逆袭" }, { "n": "甜宠", "v": "甜宠" }, { "n": "现代言情", "v": "现代言情" }, { "n": "复仇", "v": "复仇" }, { "n": "古代", "v": "古代" }, { "n": "家庭", "v": "家庭" }, { "n": "虐恋", "v": "虐恋" }, { "n": "战神", "v": "战神" }, { "n": "穿越", "v": "穿越" }, { "n": "神豪", "v": "神豪" }, { "n": "重生", "v": "重生" }, { "n": "悬疑", "v": "悬疑" }, { "n": "奇幻", "v": "奇幻" }, { "n": "豪门总裁", "v": "豪门总裁" }, { "n": "青春", "v": "青春" }, { "n": "萌宝", "v": "萌宝" }, { "n": "日常", "v": "日常" }, { "n": "爽文", "v": "爽文" }, { "n": "赘婿", "v": "赘婿" }, { "n": "民国", "v": "民国" }, { "n": "情感", "v": "情感" }, { "n": "玄幻", "v": "玄幻" }, { "n": "闪婚", "v": "闪婚" }, { "n": "热血", "v": "热血" }, { "n": "异能", "v": "异能" }, { "n": "婚恋", "v": "婚恋" }, { "n": "虐渣", "v": "虐渣" }, { "n": "神医", "v": "神医" }, { "n": "古代言情", "v": "古代言情" }, { "n": "历史", "v": "历史" }, { "n": "武侠", "v": "武侠" }, { "n": "年代", "v": "年代" }, { "n": "仙侠", "v": "仙侠" }, { "n": "架空历史", "v": "架空历史" }, { "n": "校园", "v": "校园" }, { "n": "乡村", "v": "乡村" }, { "n": "言情", "v": "言情" }, { "n": "宫斗", "v": "宫斗" }, { "n": "职场", "v": "职场" }, { "n": "科幻", "v": "科幻" }, { "n": "鉴宝", "v": "鉴宝" }, { "n": "婚姻", "v": "婚姻" }, { "n": "系统", "v": "系统" }, { "n": "修仙", "v": "修仙" }, { "n": "先婚后爱", "v": "先婚后爱" }, { "n": "娱乐圈", "v": "娱乐圈" }, { "n": "励志", "v": "励志" }, { "n": "1V1", "v": "1V1" }, { "n": "真假千金", "v": "真假千金" }, { "n": "恐怖", "v": "恐怖" }, { "n": "追妻火葬场", "v": "追妻火葬场" }, { "n": "医生", "v": "医生" }, { "n": "治愈", "v": "治愈" }] }],
-      "hemaduanju": [{ "key": "sort", "name": "类型", "value": [{ "n": "热播榜", "v": "热播榜" }, { "n": "飙升榜", "v": "飙升榜" }, { "n": "新剧榜", "v": "新剧榜" }, { "n": "热搜榜", "v": "热搜榜" }, { "n": "精选", "v": "精选" }, { "n": "古装", "v": "古装" }, { "n": "重生", "v": "重生" }, { "n": "家庭", "v": "家庭" }, { "n": "恋爱", "v": "恋爱" }, { "n": "穿越", "v": "穿越" }, { "n": "强者回归", "v": "强者回归" }, { "n": "神医", "v": "神医" }, { "n": "萌宝", "v": "萌宝" }, { "n": "复仇", "v": "复仇" }, { "n": "超能", "v": "超能" }, { "n": "草根逆袭", "v": "草根逆袭" }, { "n": "奇幻", "v": "奇幻" }, { "n": "年代", "v": "年代" }, { "n": "悬疑", "v": "悬疑" }] }], xingya: [{ "key": "sort", "name": "类型", "value": [{ "n": "实时热榜", "v": "实时热榜" }, { "n": "星选好剧", "v": "星选好剧" }, { "n": "新剧", "v": "新剧" }, { "n": "热播剧", "v": "热播剧" }, { "n": "口碑榜", "v": "口碑榜" }, { "n": "热搜榜", "v": "热搜榜" }, { "n": "新剧榜", "v": "新剧榜" }, { "n": "全部", "v": "全部" }, { "n": "都市", "v": "都市" }, { "n": "逆袭", "v": "逆袭" }, { "n": "古装", "v": "古装" }, { "n": "现代言情", "v": "现代言情" }, { "n": "甜宠", "v": "甜宠" }, { "n": "重生", "v": "重生" }, { "n": "穿越", "v": "穿越" }, { "n": "战神", "v": "战神" }, { "n": "亲情", "v": "亲情" }, { "n": "玄幻", "v": "玄幻" }, { "n": "古代言情", "v": "古代言情" }, { "n": "历史", "v": "历史" }, { "n": "萌宝", "v": "萌宝" }, { "n": "神医", "v": "神医" }, { "n": "脑洞", "v": "脑洞" }, { "n": "赘婿", "v": "赘婿" }, { "n": "虐恋", "v": "虐恋" }] }], xiaokan: [{ "key": "sort", "name": "类型", "value": [{ "n": "热播榜", "v": "热播榜" }, { "n": "新剧榜", "v": "新剧榜" }, { "n": "点赞榜", "v": "点赞榜" }, { "n": "必看榜", "v": "必看榜" }, { "n": "限免榜", "v": "限免榜" }, { "n": "推荐榜", "v": "推荐榜" }, { "n": "热播剧", "v": "热播剧" }, { "n": "新剧", "v": "新剧" }] }],
-      "niuniu": [{ "key": "sort", "name": "类型", "value": [{ "n": "新剧", "v": "新剧" }, { "n": "都市", "v": "都市" }, { "n": "逆袭", "v": "逆袭" }, { "n": "甜宠", "v": "甜宠" }, { "n": "现代言情", "v": "现代言情" }, { "n": "复仇", "v": "复仇" }, { "n": "古代", "v": "古代" }, { "n": "家庭", "v": "家庭" }, { "n": "虐恋", "v": "虐恋" }, { "n": "战神", "v": "战神" }, { "n": "穿越", "v": "穿越" }, { "n": "神豪", "v": "神豪" }, { "n": "重生", "v": "重生" }, { "n": "悬疑", "v": "悬疑" }, { "n": "奇幻", "v": "奇幻" }, { "n": "豪门总裁", "v": "豪门总裁" }, { "n": "青春", "v": "青春" }, { "n": "萌宝", "v": "萌宝" }, { "n": "日常", "v": "日常" }, { "n": "爽文", "v": "爽文" }, { "n": "赘婿", "v": "赘婿" }, { "n": "民国", "v": "民国" }, { "n": "情感", "v": "情感" }, { "n": "玄幻", "v": "玄幻" }, { "n": "闪婚", "v": "闪婚" }, { "n": "热血", "v": "热血" }, { "n": "异能", "v": "异能" }, { "n": "婚恋", "v": "婚恋" }, { "n": "虐渣", "v": "虐渣" }, { "n": "神医", "v": "神医" }, { "n": "古代言情", "v": "古代言情" }, { "n": "历史", "v": "历史" }, { "n": "武侠", "v": "武侠" }, { "n": "年代", "v": "年代" }, { "n": "仙侠", "v": "仙侠" }, { "n": "架空历史", "v": "架空历史" }, { "n": "校园", "v": "校园" }, { "n": "乡村", "v": "乡村" }, { "n": "言情", "v": "言情" }, { "n": "宫斗", "v": "宫斗" }, { "n": "职场", "v": "职场" }, { "n": "科幻", "v": "科幻" }, { "n": "鉴宝", "v": "鉴宝" }, { "n": "婚姻", "v": "婚姻" }, { "n": "系统", "v": "系统" }, { "n": "修仙", "v": "修仙" }, { "n": "先婚后爱", "v": "先婚后爱" }, { "n": "娱乐圈", "v": "娱乐圈" }, { "n": "励志", "v": "励志" }, { "n": "1V1", "v": "1V1" }, { "n": "真假千金", "v": "真假千金" }, { "n": "恐怖", "v": "恐怖" }, { "n": "追妻火葬场", "v": "追妻火葬场" }, { "n": "医生", "v": "医生" }, { "n": "治愈", "v": "治愈" }] }]
-    },
-    filter_url: "{{fl.sort or fl.cateId}}",
-    filter_def: { hongguo: { cateId: '推荐榜' }, qimao: { cateId: '推荐' }, hemaduanju: { cateId: '热播榜' }, xingya: { cateId: '实时热榜' }, xiaokan: { cateId: '热播榜' }, niuniu: { cateId: '新剧' }, },
-    headers: { 'User-Agent': MOBILE_UA },
-    timeout: 5000,
-    class_name: '红果&七猫&河马&星芽&小看&牛牛',
-    class_url: 'hongguo&qimao&hemaduanju&xingya&xiaokan&niuniu',
-    play_parse: true,
-    lazy: $js.toString(() => {
-      input = {
-        parse: "0",
-        jx: "0",
-        url: input
-      }
-    }),
+    // filterable: 1,
+    class_name: '古装&穿越&逆袭&重生',
+    class_url: '5&17&7&6',
     一级: $js.toString(() => {
-      var M = input.split("##");
-      var html = request(M[0], {
-        headers: {
-          "Referer": M[0]
-        },
-        method: "POST",
-        body: M[1]
-      })
-      var list = JSON.parse(html).data;
-      var d = [];
-      list.forEach(data => {
-        d.push({
-          title: data.title,
-          desc: data.author,
-          img: data.cover,
-          url: M[0] + "?bookid=" + data.book_id
+        let d = [];
+        let urlk = `https://app.whjzjx.cn/v1/theater/home_page?theater_class_id=${MY_CATE}&page_num=${MY_PAGE - 1}&page_size=24`;
+        let tkurl = 'https://app.whjzjx.cn/v1/account/login';
+        let head = JSON.parse(post(tkurl, {
+            headers: {
+                "Connection": "keep-alive",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Length": "40",
+                "user-agent": "okhttp/4.10.0",
+                "user_agent": "Mozilla/5.0 (Linux; Android 9; ASUS_I003DD Build/PI; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.70 Mobile Safari/537.36",
+                "Host": "app.whjzjx.cn",
+                "Accept-Encoding": "gzip"
+            },
+            body: "device=20caaae96b3443174bf4ebdbdcc253776"
+        })).data.token;
+        let header={"authorization":head};
+        let html = JSON.parse(request(urlk, {
+            headers: header
+        }));
+        let bata = html.data.list;
+        bata.forEach(it => {
+            let id = 'https://app.whjzjx.cn/v2/theater_parent/detail?theater_parent_id=' + it.theater.id;
+            d.push({
+                url: id,
+                title: it.theater.title,
+                img: it.theater.cover_url,
+                desc: it.theater.total + "集",
+                content: "播放量:" + it.theater.play_amount_str,
+            });
         });
-      });
-  
-      setResult(d)
+        setResult(d);
     }),
     二级: $js.toString(() => {
-      var d = [];
-      var html = request(input);
-      var base = input.split('?')[0];
-      var episodes = JSON.parse(html.split("episodes = ")[1].split(";")[0])
-      var list = pdfa(html, ".episode-grid&&li");
-      var x = [];
-      for (var i in list) {
-        x.push(pdfh(list[i], "Text") + "$" + episodes[i].url.replace("./", base))
-      }
-      VOD = {
-        vod_name: pdfh(html, "h1&&Text"),
-        vod_content: pdfh(html, ".comic-description&&Text"),
-        vod_play_from: pdfh(html, "h2&&Text"),
-        vod_play_url: x.join('#')
-      }
+        let urls = [];
+        let tkurl = 'https://app.whjzjx.cn/v1/account/login';
+        let head = JSON.parse(post(tkurl, {
+            headers: {
+                "Connection": "keep-alive",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Length": "40",
+                "user-agent": "okhttp/4.10.0",
+                "user_agent": "Mozilla/5.0 (Linux; Android 9; ASUS_I003DD Build/PI; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.70 Mobile Safari/537.36",
+                "Host": "app.whjzjx.cn",
+                "Accept-Encoding": "gzip"
+            },
+            body: "device=20caaae96b3443174bf4ebdbdcc253776"
+        })).data.token;
+        let header={"authorization":head};
+        let data = JSON.parse(request(input, {
+            headers: header
+        })).data;
+        //console.log(data);
+        data.theaters.forEach(it => {
+            urls.push("第" + it.num + "集" + '$' + it.son_video_url);
+        });
+        VOD = {
+            vod_name: data.title,
+            vod_pic: data.cover_url,
+            vod_remarks: data.total + "集",
+            vod_play_from: '集多短剧',
+            vod_play_url: urls.join('#')
+        };
     }),
     搜索: $js.toString(() => {
-      var M = input.split("##");
-      var html = request(M[0], {
-        headers: {
-          "Referer": M[0]
-        },
-        method: "POST",
-        body: M[1]
-      })
-      var list = JSON.parse(html).data;
-      var d = [];
-      list.forEach(data => {
-        d.push({
-          title: data.title,
-          desc: data.author,
-          img: data.cover,
-          url: M[0] + "?bookid=" + data.book_id
+        let d = [];
+        let ht = input.match(/\?(.*)/)[1];
+        let ser = "https://app.whjzjx.cn/v2/search";
+        let tkurl = 'https://app.whjzjx.cn/v1/account/login';
+        let head = JSON.parse(post(tkurl, {
+            headers: {
+                "Connection": "keep-alive",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Length": "40",
+                "user-agent": "okhttp/4.10.0",
+                "user_agent": "Mozilla/5.0 (Linux; Android 9; ASUS_I003DD Build/PI; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.70 Mobile Safari/537.36",
+                "Host": "app.whjzjx.cn",
+                "Accept-Encoding": "gzip"
+            },
+            body: "device=20caaae96b3443174bf4ebdbdcc253776"
+        })).data.token;
+        let header={"authorization":head};
+        let html = JSON.parse(post(ser, {
+            headers: header,
+            body: "text=" + ht
+        }));
+        let bata = html.data.search_data;
+        bata.forEach(it => {
+            let id = 'https://app.whjzjx.cn/v2/theater_parent/detail?theater_parent_id=' + it.id;
+            d.push({
+                url: id,
+                title: it.title,
+                img: it.cover_url,
+                desc: it.score_str + "|" + it.total + "集",
+            });
         });
-      });
-      setResult(d)
+        setResult(d);
     }),
-  }
+};

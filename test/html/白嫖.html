@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白嫖者联盟 - 规则配置与状态监控系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff7e5f;
+            --secondary: #feb47b;
+            --dark: #0f2027;
+            --darker: #0a151c;
+            --light: #e0e0e0;
+            --card-bg: rgba(25, 30, 50, 0.8);
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --panel-bg: rgba(20, 25, 40, 0.95);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: var(--panel-bg);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: rgba(50, 55, 80, 0.7);
+            border: none;
+            color: var(--light);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .tab-btn:hover {
+            background: rgba(70, 75, 100, 0.7);
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 25px;
+            gap: 25px;
+        }
+        
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+        
+        .config-panel {
+            flex: 1;
+            background: var(--panel-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+        }
+        
+        .status-panel {
+            flex: 1;
+            background: var(--panel-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            min-width: 500px;
+        }
+        
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .panel-title {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .panel-title i {
+            color: var(--secondary);
+        }
+        
+        .form-group {
+            margin-bottom: 22px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(30, 35, 55, 0.7);
+            color: white;
+            font-size: 1.05rem;
+        }
+        
+        textarea {
+            min-height: 180px;
+            font-family: monospace;
+            line-height: 1.6;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0;
+        }
+        
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .status-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .status-card {
+            background: rgba(40, 45, 70, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .status-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .status-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .status-icon.connection {
+            background: rgba(40, 167, 69, 0.2);
+            color: var(--success);
+        }
+        
+        .status-icon.cookie {
+            background: rgba(255, 193, 7, 0.2);
+            color: var(--warning);
+        }
+        
+        .status-icon.verification {
+            background: rgba(86, 156, 214, 0.2);
+            color: #569cd6;
+        }
+        
+        .status-icon.storage {
+            background: rgba(220, 53, 69, 0.2);
+            color: var(--danger);
+        }
+        
+        .status-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .status-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 15px;
+            background: rgba(30, 35, 55, 0.7);
+            border-radius: 10px;
+            margin-top: 8px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .verification-section {
+            background: rgba(40, 45, 70, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .verification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .verification-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+        
+        .progress-container {
+            margin: 25px 0;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .progress-bar {
+            height: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            width: 100%;
+            transition: width 0.8s ease;
+        }
+        
+        .verification-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+        
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(40, 45, 70, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step.active .step-icon {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 126, 95, 0.5);
+        }
+        
+        .step-text {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--panel-bg);
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .code-toolbar {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .code-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .code-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .code-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .token {
+            color: #569cd6;
+        }
+        
+        .string {
+            color: #ce9178;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+        
+        .instructions {
+            background: rgba(40, 45, 70, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        
+        .instructions h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .instructions ul {
+            padding-left: 30px;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-crown logo-icon"></i>
+            <div class="logo-text">白嫖者联盟</div>
+        </div>
+        <div class="nav-tabs">
+            <button class="tab-btn active">规则配置</button>
+            <button class="tab-btn">状态监控</button>
+            <button class="tab-btn">帮助文档</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="config-panel">
+            <div class="panel-header">
+                <h2 class="panel-title"><i class="fas fa-sliders-h"></i> 规则配置</h2>
+                <div class="btn btn-secondary"><i class="fas fa-history"></i> 重置配置</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="ruleTitle"><i class="fas fa-heading"></i> 规则标题</label>
+                <input type="text" id="ruleTitle" value="白嫖者联盟">
+            </div>
+            
+            <div class="form-group">
+                <label for="ruleTemplate"><i class="fas fa-layer-group"></i> 模板类型</label>
+                <select id="ruleTemplate">
+                    <option value="首图">首图</option>
+                    <option value="列表">列表</option>
+                    <option value="详情">详情</option>
+                    <option value="瀑布流">瀑布流</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ruleHost"><i class="fas fa-globe"></i> 网站域名</label>
+                <input type="text" id="ruleHost" value="https://www.qyzf88.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="ruleUrl"><i class="fas fa-link"></i> 内容URL</label>
+                <input type="text" id="ruleUrl" value="/qyvodtype/fyclass-fypage.html">
+            </div>
+            
+            <div class="form-group">
+                <label for="searchUrl"><i class="fas fa-search"></i> 搜索URL</label>
+                <input type="text" id="searchUrl" value="/qyvodsearch/**----------fypage---.html">
+            </div>
+            
+            <div class="form-group">
+                <label for="classParse"><i class="fas fa-code-branch"></i> 分类解析规则</label>
+                <input type="text" id="classParse" value=".myui-header__menu li:gt(0):lt(5);a&&Text;a&&href;/(\\d+).html">
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="searchable" checked>
+                <label for="searchable">可搜索</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="filterable">
+                <label for="filterable">可筛选</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="defaultCookie"><i class="fas fa-cookie"></i> 默认Cookie</label>
+                <input type="text" id="defaultCookie" value="3d1899503da128319d46484900974d61=2260e8918a83e15f322f083e71586517">
+            </div>
+            
+            <div class="form-group">
+                <label for="preprocessCode"><i class="fas fa-cog"></i> 预处理代码</label>
+                <textarea id="preprocessCode">(function() {
+    // 尝试从存储获取历史Cookie
+    var savedCookie = typeof getItem === 'function' ? getItem('RULE_CK') : '';
+    if (savedCookie) {
+        rule_fetch_params.headers.Cookie = savedCookie;
+        return;
+    }
+    
+    // 初始化默认Cookie
+    var defaultCookie = "DEFAULT_COOKIE";
+    rule_fetch_params.headers.Cookie = defaultCookie;
+    
+    try {
+        // 首次检测请求
+        var new_html = request(rule.host);
+        
+        // 情况1: 检测中
+        if (/检测中/.test(new_html)) {
+            var headerResponse = request(rule.host, { withHeaders: true });
+            var headerJson = JSON.parse(headerResponse);
+            var setCookieKey = Object.keys(headerJson).find(function(k) {
+                return k.toLowerCase() === "set-cookie";
+            });
+            
+            if (setCookieKey) {
+                var cookieValue = headerJson[setCookieKey].split(";")[0];
+                rule_fetch_params.headers.Cookie = cookieValue;
+                if (typeof setItem === 'function') {
+                    setItem('RULE_CK', cookieValue);
+                }
+            }
+        }
+        // 情况2: 人机验证
+        else if (/正在进行人机识别/.test(new_html)) {
+            // 提取验证脚本URL
+            var scriptMatch = new_html.match(/<script[^>]*src=["']([^"']+)["']/i);
+            var scriptSrc = scriptMatch ? scriptMatch[1] : '';
+            
+            if (scriptSrc) {
+                // 确保URL完整
+                if (!scriptSrc.startsWith('http')) {
+                    scriptSrc = rule.host + (scriptSrc.startsWith('/') ? scriptSrc : '/' + scriptSrc);
+                }
+                
+                // 获取验证脚本
+                var scriptResponse = request(scriptSrc, { withHeaders: true });
+                var scriptData = JSON.parse(scriptResponse);
+                var scriptContent = scriptData.body || '';
+                
+                // 提取验证参数
+                var keyMatch = scriptContent.match(/var key="([^"]+)"/);
+                var valueMatch = scriptContent.match(/value="([^"]+)"/);
+                var key = keyMatch ? keyMatch[1] : '';
+                var avalue = valueMatch ? valueMatch[1] : '';
+                
+                if (key && avalue) {
+                    // 生成验证码
+                    var charCodes = '';
+                    for (var i = 0; i < avalue.length; i++) {
+                        charCodes += avalue.charCodeAt(i);
+                    }
+                    var value = md5(charCodes);
+                    
+                    // 执行验证请求
+                    var verifyUrl = rule.host + "/a20be899_96a6_40b2_88ba_32f1f75f1552_yanzheng_ip.php?type=96c4e20a0e951f471d32dae103e83881&key=" + key + "&value=" + value;
+                    var verifyResponse = request(verifyUrl, { withHeaders: true });
+                    var verifyData = JSON.parse(verifyResponse);
+                    
+                    // 更新Cookie
+                    var verifyCookieKey = Object.keys(verifyData).find(function(k) {
+                        return k.toLowerCase() === "set-cookie";
+                    });
+                    
+                    if (verifyCookieKey) {
+                        var newCookie = verifyData[verifyCookieKey].split(";")[0];
+                        rule_fetch_params.headers.Cookie = newCookie;
+                        if (typeof setItem === 'function') {
+                            setItem('RULE_CK', newCookie);
+                        }
+                    }
+                }
+            }
+        }
+    } catch (e) {
+        // 出错时使用默认Cookie
+        rule_fetch_params.headers.Cookie = defaultCookie;
+    }
+})()</textarea>
+            </div>
+            
+            <div class="btn-container">
+                <button class="btn btn-primary">
+                    <i class="fas fa-cogs"></i> 应用配置
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-save"></i> 保存配置
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-file-export"></i> 导出规则
+                </button>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-lightbulb"></i> 预处理代码说明</h3>
+                <ul>
+                    <li><strong>自动Cookie管理</strong>：优先使用存储的Cookie，避免重复验证</li>
+                    <li><strong>双重验证处理</strong>：支持"检测中"和"人机识别"两种验证方式</li>
+                    <li><strong>安全机制</strong>：错误处理确保规则不会中断</li>
+                    <li><strong>DEFAULT_COOKIE</strong>：将自动替换为上方设置的默认Cookie</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="status-panel">
+            <div class="panel-header">
+                <h2 class="panel-title"><i class="fas fa-heartbeat"></i> 验证状态监控</h2>
+                <button class="btn btn-primary" id="testBtn">
+                    <i class="fas fa-play"></i> 测试验证流程
+                </button>
+            </div>
+            
+            <div class="status-container">
+                <div class="status-card">
+                    <div class="status-header">
+                        <div class="status-icon connection">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="status-title">网站连接状态</div>
+                    </div>
+                    <div class="status-value" id="connectionStatus">等待测试...</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-header">
+                        <div class="status-icon cookie">
+                            <i class="fas fa-cookie-bite"></i>
+                        </div>
+                        <div class="status-title">Cookie状态</div>
+                    </div>
+                    <div class="status-value" id="cookieStatus">未初始化</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-header">
+                        <div class="status-icon verification">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="status-title">人机验证</div>
+                    </div>
+                    <div class="status-value" id="verificationStatus">未执行</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-header">
+                        <div class="status-icon storage">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="status-title">本地存储</div>
+                    </div>
+                    <div class="status-value" id="storageStatus">未保存</div>
+                </div>
+            </div>
+            
+            <div class="verification-section">
+                <div class="verification-header">
+                    <div class="verification-title">验证流程进度</div>
+                    <div class="status-value">100%</div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="verificationProgress" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="verification-steps">
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <div class="step-text">检测状态</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <div class="step-text">提取脚本</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-key"></i></div>
+                        <div class="step-text">获取参数</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-lock"></i></div>
+                        <div class="step-text">生成验证</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="step-text">完成验证</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <div>当前规则代码</div>
+                    <div class="code-toolbar">
+                        <button class="code-btn">
+                            <i class="fas fa-copy"></i> 复制代码
+                        </button>
+                        <button class="code-btn">
+                            <i class="fas fa-download"></i> 下载
+                        </button>
+                    </div>
+                </div>
+                <div class="code-content" id="codeContent">
+                    <span class="comment">// 配置规则后，代码将显示在这里</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>© 2023 白嫖者联盟 | 规则配置与状态监控系统 | 版本 2.1.0</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            <i class="fas fa-exclamation-triangle"></i> 免责声明：本系统仅用于技术研究，请遵守相关法律法规
+        </p>
+    </footer>
+
+    <script>
+        // 模拟测试验证流程
+        document.getElementById('testBtn').addEventListener('click', function() {
+            const connectionStatus = document.getElementById('connectionStatus');
+            const cookieStatus = document.getElementById('cookieStatus');
+            const verificationStatus = document.getElementById('verificationStatus');
+            const storageStatus = document.getElementById('storageStatus');
+            const progressBar = document.getElementById('verificationProgress');
+            const steps = document.querySelectorAll('.step');
+            
+            // 重置状态
+            connectionStatus.textContent = '连接中...';
+            cookieStatus.textContent = '初始化...';
+            verificationStatus.textContent = '等待中...';
+            storageStatus.textContent = '准备存储...';
+            progressBar.style.width = '0%';
+            
+            // 重置步骤
+            steps.forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // 模拟测试过程
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = progress + '%';
+                
+                // 更新步骤状态
+                if (progress >= 20 && progress < 40) {
+                    steps[0].classList.add('active');
+                    connectionStatus.textContent = '已连接 (https://www.qyzf88.com)';
+                } else if (progress >= 40 && progress < 60) {
+                    steps[1].classList.add('active');
+                    verificationStatus.textContent = '检测到人机验证';
+                } else if (progress >= 60 && progress < 80) {
+                    steps[2].classList.add('active');
+                    steps[3].classList.add('active');
+                    verificationStatus.textContent = '验证参数已提取';
+                } else if (progress >= 80 && progress < 100) {
+                    steps[4].classList.add('active');
+                    cookieStatus.textContent = '新Cookie获取成功';
+                    storageStatus.textContent = 'Cookie已保存';
+                } else if (progress >= 100) {
+                    clearInterval(interval);
+                    connectionStatus.textContent = '连接成功 (https://www.qyzf88.com)';
+                    cookieStatus.innerHTML = '3d1899503da128319d46484900974d61=<span style="color: var(--secondary)">动态获取的值</span>';
+                    verificationStatus.textContent = '人机验证已通过';
+                    storageStatus.textContent = 'Cookie已存储 (RULE_CK)';
+                    
+                    // 生成随机Cookie值
+                    const randomCookie = '3d1899503da128319d46484900974d61=' + 
+                        Math.random().toString(36).substring(2, 10) + 
+                        Math.random().toString(36).substring(2, 10);
+                    cookieStatus.innerHTML = randomCookie + '; <span style="opacity: 0.8">expires=Fri, 31 Dec 2024</span>';
+                }
+            }, 100);
+        });
+        
+        // 更新规则代码预览
+        function updateRulePreview() {
+            const title = document.getElementById('ruleTitle').value;
+            const template = document.getElementById('ruleTemplate').value;
+            const host = document.getElementById('ruleHost').value;
+            const url = document.getElementById('ruleUrl').value;
+            const searchUrl = document.getElementById('searchUrl').value;
+            const classParse = document.getElementById('classParse').value;
+            const searchable = document.getElementById('searchable').checked ? 2 : 0;
+            const filterable = document.getElementById('filterable').checked ? 1 : 0;
+            const defaultCookie = document.getElementById('defaultCookie').value;
+            
+            const ruleCode = `var rule = {
+    title: '${title}',
+    模板: '${template}',
+    host: '${host}',
+    url: '${url}',
+    searchUrl: '${searchUrl}',
+    searchable: ${searchable},
+    filterable: ${filterable},
+    class_parse: '${classParse}',
+    
+    // 自动获取Cookie的预处理逻辑
+    预处理: \`(function() {
+        // 尝试从存储获取历史Cookie
+        var savedCookie = typeof getItem === 'function' ? getItem('RULE_CK') : '';
+        if (savedCookie) {
+            rule_fetch_params.headers.Cookie = savedCookie;
+            return;
+        }
+        
+        // 初始化默认Cookie
+        var defaultCookie = "${defaultCookie}";
+        rule_fetch_params.headers.Cookie = defaultCookie;
+        
+        try {
+            // 首次检测请求
+            var new_html = request(rule.host);
+            
+            // 情况1: 检测中
+            if (/检测中/.test(new_html)) {
+                var headerResponse = request(rule.host, { withHeaders: true });
+                var headerJson = JSON.parse(headerResponse);
+                var setCookieKey = Object.keys(headerJson).find(function(k) {
+                    return k.toLowerCase() === "set-cookie";
+                });
+                
+                if (setCookieKey) {
+                    var cookieValue = headerJson[setCookieKey].split(";")[0];
+                    rule_fetch_params.headers.Cookie = cookieValue;
+                    if (typeof setItem === 'function') {
+                        setItem('RULE_CK', cookieValue);
+                    }
+                }
+            }
+            // 情况2: 人机验证
+            else if (/正在进行人机识别/.test(new_html)) {
+                // 提取验证脚本URL
+                var scriptMatch = new_html.match(/<script[^>]*src=["']([^"']+)["']/i);
+                var scriptSrc = scriptMatch ? scriptMatch[1] : '';
+                
+                if (scriptSrc) {
+                    // 确保URL完整
+                    if (!scriptSrc.startsWith('http')) {
+                        scriptSrc = rule.host + (scriptSrc.startsWith('/') ? scriptSrc : '/' + scriptSrc);
+                    }
+                    
+                    // 获取验证脚本
+                    var scriptResponse = request(scriptSrc, { withHeaders: true });
+                    var scriptData = JSON.parse(scriptResponse);
+                    var scriptContent = scriptData.body || '';
+                    
+                    // 提取验证参数
+                    var keyMatch = scriptContent.match(/var key="([^"]+)"/);
+                    var valueMatch = scriptContent.match(/value="([^"]+)"/);
+                    var key = keyMatch ? keyMatch[1] : '';
+                    var avalue = valueMatch ? valueMatch[1] : '';
+                    
+                    if (key && avalue) {
+                        // 生成验证码
+                        var charCodes = '';
+                        for (var i = 0; i < avalue.length; i++) {
+                            charCodes += avalue.charCodeAt(i);
+                        }
+                        var value = md5(charCodes);
+                        
+                        // 执行验证请求
+                        var verifyUrl = rule.host + "/a20be899_96a6_40b2_88ba_32f1f75f1552_yanzheng_ip.php?type=96c4e20a0e951f471d32dae103e83881&key=" + key + "&value=" + value;
+                        var verifyResponse = request(verifyUrl, { withHeaders: true });
+                        var verifyData = JSON.parse(verifyResponse);
+                        
+                        // 更新Cookie
+                        var verifyCookieKey = Object.keys(verifyData).find(function(k) {
+                            return k.toLowerCase() === "set-cookie";
+                        });
+                        
+                        if (verifyCookieKey) {
+                            var newCookie = verifyData[verifyCookieKey].split(";")[0];
+                            rule_fetch_params.headers.Cookie = newCookie;
+                            if (typeof setItem === 'function') {
+                                setItem('RULE_CK', newCookie);
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (e) {
+            // 出错时使用默认Cookie
+            rule_fetch_params.headers.Cookie = defaultCookie;
+        }
+    })()\`
+};`;
+            
+            // 高亮显示代码
+            const highlightedCode = ruleCode
+                .replace(/var/g, '<span class="token">var</span>')
+                .replace(/function/g, '<span class="token">function</span>')
+                .replace(/return/g, '<span class="token">return</span>')
+                .replace(/if/g, '<span class="token">if</span>')
+                .replace(/else/g, '<span class="token">else</span>')
+                .replace(/try/g, '<span class="token">try</span>')
+                .replace(/catch/g, '<span class="token">catch</span>')
+                .replace(/typeof/g, '<span class="token">typeof</span>')
+                .replace(/for/g, '<span class="token">for</span>')
+                .replace(/in/g, '<span class="token">in</span>')
+                .replace(/(\/\/.*)/g, '<span class="comment">$1</span>')
+                .replace(/(\'.*?\')/g, '<span class="string">$1</span>');
+            
+            document.getElementById('codeContent').innerHTML = highlightedCode;
+        }
+        
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始更新规则预览
+            updateRulePreview();
+            
+            // 绑定表单变化事件
+            const formElements = document.querySelectorAll('input, select, textarea');
+            formElements.forEach(element => {
+                element.addEventListener('change', updateRulePreview);
+                element.addEventListener('input', updateRulePreview);
+            });
+            
+            // 标签切换功能
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.tab-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
