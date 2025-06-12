@@ -12,6 +12,8 @@
 {"key":"csp_Alist","name":"🅿Alist网盘┃SP","type":3,"api":"csp_AList","searchable":1,"quickSearch":0,"filterable":0,"ext":"./pan/alist.json"},
 //{"key":"dr_Alist","name":"🅿Alist网盘[DR]","type":3,"api":"./libs/alist.min.js","searchable":2,"quickSearch":1,"filterable":0,"ext":"./pan/alist_drpy.json;200;video"},
 //{"key": "csp_WebDAV","name": "🅿WebDAV┃FM","type": 3,"api": "csp_WebDAV","searchable": 1,"filterable": 1,"changeable": 0,"ext": "./pan/webdav.json","jar":"./sp/fm.jar"},
+{"key":"csp_ConfigCenter","name":"🅿网盘配置中心","type":3,"api":"csp_ConfigCenter","searchable":0,"changeable":0,"ext":{"commonConfig":"./pan/peizhi.json"},"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_网盘集合","name":"🅿网盘集合┃4K","type":3,"api":"csp_网盘集合","searchable":1,"filterable":0,"switchable":0,"ext":{"commonConfig":"./pan/peizhi.json","share":"./pan/网盘集合.json"},"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
 {"key":"Aid","name":"🚑急救教学┃SP","type":3,"api":"csp_FirstAid","searchable":0,"quickSearch":0,"changeable":0,"style":{"type":"rect","ratio":3.8}},
 //{"key": "csp_LocalFile","name": "📁本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1,"jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key": "csp_接口信息","name": "🍔本地包更新🍔","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market.json","jar": "./sp/mk.jar?md5=5400486b7884dd01de5a306e34724c3c"},
@@ -275,6 +277,17 @@
 {"key": "dr_BT影视[磁]","name": "🍓BT影视[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/BT影视[磁].js"},
 {"key": "dr_修罗影视[磁]","name": "🍓修罗影视[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/修罗影视[磁].js"},
 
+{"key": "csp_XBPQ_BT天堂","name": "🍥BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/BT天堂磁力.json"},
+{"key": "csp_XBPQ_好恐怖","name": "🍥好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/好恐怖磁力.json"},
+{"key": "csp_XBPQ_迅雷8","name": "🍥迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/迅雷吧磁力.json"},
+
+{"key":"csp_DyGod","name":"🍥电影天堂┃磁力","type":3,"api":"csp_DyGod","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_QnMp4","name":"🍥七妹┃磁力","type":3,"api":"csp_QnMp4","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_SeedHub","name":"🍥SeedHub┃磁力","type":3,"api":"csp_SeedHub","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_MeijuTT","name":"🍥美剧天堂┃磁力","type":3,"api":"csp_MeijuTT","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_MeijuMi","name":"🍥美剧迷┃磁力","type":3,"api":"csp_MeijuMi","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.meijumi.net/","jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+{"key":"csp_BLSGod","name":"🍥80S影视┃磁力","type":3,"api":"csp_BLSGod","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
+
 //{"key": "dr_模板[短]","name": "🥝模板[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/模板[短].js"},
 {"key": "dr_短剧TV网[短]","name": "🥝短剧TV网[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧TV网[短].js"},
 {"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
@@ -478,10 +491,6 @@
 {"key": "dr_爱搜Q[搜]","name": "🍳爱搜Q[搜][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/搜索/爱搜Q[搜].js"},
 {"key": "dr_爱搜U[搜]","name": "🍳爱搜U[搜][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/搜索/爱搜U[搜].js"},
        
-{"key": "csp_XBPQ_BT天堂","name": "🍥BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/BT天堂磁力.json"},
-{"key": "csp_XBPQ_好恐怖","name": "🍥好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/好恐怖磁力.json"},
-{"key": "csp_XBPQ_迅雷8","name": "🍥迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/迅雷吧磁力.json"},
-
 {"key": "t1_新浪资源","name": "🍃新浪资源┃采集","type": 1,"api": "https://api.xinlangapi.com/xinlangapi.php/provide//vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:https://uutb.centos.chat/jsonwjm.php/?url=","categories": ["短剧","邵氏电影","爽文短剧","动作片","大陆剧","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动漫电影","欧美剧","港澳剧","韩剧","台湾剧","日剧","海外剧","泰剧","体育","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},
 {"key": "t1_高清资源","name": "🍃高清资源┃采集","type": 1,"api": "https://api.1080zyku.com/inc/apijson.php","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:https://uutb.centos.chat/jsonwjm.php/?url=","categories": ["短剧","邵氏电影","爽文短剧","动作片","国产剧","喜剧片","爱情片","科幻片","恐怖片","剧情片","战争片","记录片","欧美剧","日本剧","泰国剧","韩国剧","台湾剧","香港剧","大陆综艺","港台综艺","日韩综艺","欧美综艺","国产动漫","日韩动漫","欧美动漫"]},
 {"key": "t1_百度资源","name": "🍃百度资源┃采集","type": 1,"api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:https://uutb.centos.chat/jsonwjm.php/?url=","categories": ["短剧","邵氏电影","爽文短剧","动作片","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动画电影","大陆剧","欧美剧","犯罪片","港澳剧","韩剧","泰剧","台湾剧","日剧","海外剧","其他片","悬疑片","奇幻片","动画片","体育赛事","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},                
@@ -510,7 +519,7 @@
 {"key":"初中课堂","name":"📚初中┃课堂","type":3,"api":"csp_Bili","style":{"type":"rect","ratio":1.597},"searchable":0,"quickSearch":0,"changeable":0,"ext":"./bili/初中课堂.json"},
 {"key":"高中教育","name":"📚高中┃课堂","type":3,"api":"csp_Bili","style":{"type":"rect","ratio":1.597},"searchable":0,"quickSearch":0,"changeable":0,"ext":"./bili/高中课堂.json"},
 {"key": "dr_哔哩小学","name":"📚哔哩小学┃DR","type": 3,"api": "./libs/drpy2.min.js","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/我的哔哩传参.js?type=url&params=./bili/小学教育.json"},
-{"key": "csp_push_agent","name": "♻️手机┃推送","type": 3,"api": "csp_Push","searchable":0,"quickSearch":0,"changeable": 0}, 
+{"key": "csp_push_agent","name": "♻️手机推送┃SP","type": 3,"api": "csp_Push","searchable":0,"quickSearch":0,"changeable": 0,"ext":{"commonConfig":"./pan/peizhi.json"},"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"}, 
 {"key": "dr_勿信广告勿付费","name": "👉勿信广告勿付费👈","type": 3,"api": "","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": ""}
 ],
 "parses":[
@@ -599,7 +608,7 @@
 //{"name":"qihubf","hosts":["qihubf"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=AES-128","#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 //{"name":"快看广告","hosts":["kuaikan","vip.kuaikan"],"regex":["15.32","15.231","18.066","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2\\.4,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:1\\.467,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"360广告","hosts":["lyhuicheng"],"regex":["#EXTINF.*?\\s+.*?hrz8QcR9.*?\\.ts\\s+","#EXT-X-KEY:METHOD=NONE[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
-{"name":"棋牌广告","hosts":["askzycdn","jkunbf","bfikuncdn","bfaskcdn","fhbbff","gg155gg1","lbb2025","jkunnzyx","nbfjhertyrxiang"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:(?:5|3),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"\\r*\\n*#EXTINF:3.333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"(?:,IV=0x[0-9A-Fa-f]+)?\\r*\\n*#EXTINF:3\\.333[\\s\\S]*?(#EXT-X-DISCONTINUITY|#EXT-X-ENDLIST)","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-ENDLIST"]},
+{"name":"棋牌广告","hosts":["askzycdn","jkunbf","bfikuncdn","bfaskcdn","fhbbff","gg155gg1","lbb2025","jkunnzyx","nbfjhertyrxiang","ddcdnbf","lsbbf5","yutubf","bfaskbwerve","sysybf","didinew6"],"regex":["#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:(?:3|5),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"\\r*\\n*#EXTINF:3.333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"(?:,IV=0x[0-9A-Fa-f]+)?\\r*\\n*#EXTINF:3\\.333[\\s\\S]*?(#EXT-X-DISCONTINUITY|#EXT-X-ENDLIST)","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-ENDLIST"]},
 //{"name":"暴风广告","hosts":["bfengbf","bfzy","bfbfvip","c1"],"regex":["#EXTINF.*?\\s+.*?adjump.*?\\.ts\\s+","#EXT-X-DISCONTINUITY\r*\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"磁力广告","hosts":["magnet"],"regex":["更多","请访问","example","社 區","x u u","直 播","更 新","社 区","有趣","有 趣","英皇体育","全中文AV在线","澳门皇冠赌场","哥哥快来","美女荷官","裸聊","新片首发","UUE29"]},
 		          
