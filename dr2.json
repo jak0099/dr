@@ -101,7 +101,6 @@
 {"key": "py_剧巴巴","name": "🍑剧巴巴[影][PY]","type": 3,"api": "./py/html/剧巴巴.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
-{"key": "dr_剧巴巴","name": "🍊剧巴巴[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧巴巴.js"},
 {"key": "dr_茶杯","name": "🍊茶杯[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/茶杯.js"},
 {"key": "dr_多瑙影院","name": "🍊多瑙影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/多瑙影院.js"},
 {"key": "dr_厂长影视","name": "🍊厂长影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/厂长影视.js"},
