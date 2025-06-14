@@ -37,6 +37,7 @@
 {"key": "dr_爱看机器人[优]","name": "🍒爱看机器人[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/爱看机器人[虫].js"},
 {"key": "dr_厂长资源[优]","name": "🍒厂长资源[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/厂长资源[优].js"},
 {"key": "dr_茶杯狐[优]","name": "🍒茶杯狐[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/茶杯狐.js"},
+{"key": "dr_HBO[优]","name": "🍒HBO[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/HBO[优].js"},
 
 //{"key": "dr_AppGet_模板","name": "🍐模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=域名$key$iv"},
 {"key": "dr_AppGet_忍者","name": "🍐忍者[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=https://mfxs123.sbs$1234567887654321$1234567887654321"},
@@ -97,8 +98,10 @@
 {"key": "py_奇迹APP","name": "🍑奇迹[影][PY]","type": 3,"api": "./py/app/奇迹APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_柯南影视","name": "🍑柯南[影][PY]","type": 3,"api": "./py/html/柯南影视.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_海马影视APP","name": "🍑海马[影][PY]","type": 3,"api": "./py/app/海马影视APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_剧巴巴","name": "🍑剧巴巴[影][PY]","type": 3,"api": "./py/html/剧巴巴.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_剧巴巴","name": "🍊剧巴巴[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/剧巴巴.js"},
 {"key": "dr_茶杯","name": "🍊茶杯[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/茶杯.js"},
 {"key": "dr_多瑙影院","name": "🍊多瑙影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/多瑙影院.js"},
 {"key": "dr_厂长影视","name": "🍊厂长影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/厂长影视.js"},

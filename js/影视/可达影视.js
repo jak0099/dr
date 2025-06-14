@@ -72,7 +72,7 @@ var rule = {
     }),
     double: true,
     推荐: '.layout-box;.vlist&&li;*;*;*;*',
-    一级: '.vod-list&&ul&&li;a&&title;.lazyload&&data-original;.item-status&&Text;a&&href',
+    一级: '.vod-list&&ul&&li;a&&title;.lazyload&&data-original;.text-center&&Text;a&&href',
     二级: {
         title: 'h3&&Text;p.row&&span&&a&&Text',
         img: 'img.lazyload&&data-original',

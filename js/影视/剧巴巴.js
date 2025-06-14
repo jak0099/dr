@@ -2,8 +2,9 @@
 var rule = {
     类型: '影视',
     title: '剧巴巴',
-    host: 'https://www.jubaba.vip',
-    hostJs: 'let html=request(HOST,{headers:{"User-Agent":MOBILE_UA}}); let src= jsp.pdfh(html,".content-top&&a:eq(0)&&href");HOST=src',
+    //host: 'https://www.jubaba.vip',
+    host: 'https://www.jubaba.cc',
+    //hostJs: 'let html=request(HOST,{headers:{"User-Agent":MOBILE_UA}}); let src= jsp.pdfh(html,".content-top&&a:eq(0)&&href");HOST=src',
     headers: {'User-Agent': 'MOBILE_UA'},
     编码: 'utf-8',
     timeout: 5000,
