@@ -13,9 +13,11 @@ var rule = {
   headers:{
       'User-Agent':'MOBILE_UA',
   },
-  timeout:5000,
+  timeout:5000,  
   class_parse:'#side-menu li;a&&Text;a&&href;/(.*?)\.html',
   cate_exclude:'',
+  //class_name:'电影&电视剧&动漫&综艺',
+  //class_url:'1&2&3&4',
   play_parse:true,
   lazy:$js.toString(()=>{
     input = {parse:1,url:input,js:''};

@@ -1,0 +1,100 @@
+{
+  //jar爬虫代理
+  "spider": "file://Download/custom_spider.jar",
+  //壁纸
+  "wallpaper":"./img/w2.png",
+  //图标
+  "logo":"./img/d6.gif",
+  //点播站源
+  "sites": [
+    {
+      "key": "one",
+      "name": "One",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/one.json"
+    },
+    {
+      "key": "two",
+      "name": "Two",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/two.json"
+    },
+    {
+      "key": "extend",
+      "name": "Extend",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/extend.json",
+      "jar": "file://Download/extend.jar"
+    }
+  ],
+  //正则解析/广告过滤
+  "rules":[
+    {
+       "name":"*",
+       "hosts":["*"],
+       "regex":["*"]}
+       ],
+  //解析线路
+  "parses": [
+    {
+      "name": "官方",
+      "type": 1,
+      "url": "https://google.com/api/?url="
+    }
+  ],
+  //doh代理
+  "doh": [
+    {
+      "name": "Google",
+      "url": "https://dns.google/dns-query",
+      "ips": [
+        "8.8.4.4",
+        "8.8.8.8"
+      ]
+    }
+  ],
+  //网站请求头
+  "headers": [
+    {
+      "host": "gslbserv.itv.cmvideo.cn",
+      "header": {
+        "User-Agent": "okhttp/3.12.13"
+      }
+    }
+  ],
+  //直播源
+  /**
+   *直播源
+   *原版需挂jar全局代理
+   *"lives":[{"group": "redirect","channels": [{"name": "live","urls": ["proxy://do=live&type=txt&ext=./live/zb.txt"]}]}],  
+   */
+   "lives":[
+    {"name":"m3u","type":0,"url":"https://*.m3u","ua":"okhttp/3.15","epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"},
+    {"name":"txt","type":0,"url":"https://*.txt","ua":"okhttp/3.15","epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}
+  ],
+  //网站代理
+  "proxy": [
+    "raw.githubusercontent.com"
+  ],
+  //host代理
+  "hosts": [
+    "cache.ott.ystenlive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com"
+  ],
+  //线路标识
+  "flags": [
+    "qq"
+  ],
+  //传统解析广告过滤
+  "ads": [
+    "static-mozai.4gtv.tv"
+  ]
+}

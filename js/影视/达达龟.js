@@ -1,4 +1,4 @@
-//发布页https://www.dadagui.vip/
+//发布页https://www.dadagui.vip /有人机验证
 function verifyLogin(url) {
     let cnt = 0;
     let cookie = '';
@@ -127,5 +127,6 @@ var rule = {
       });
     });
     setResult(d);
-  }),               
+  }),
+  预处理:'',//js编写，用于过人机验证，未实现               
 }

@@ -1,0 +1,112 @@
+{
+ 
+"作者": "小可乐/240430/第一版",
+  
+"站名": "4K影视",
+    
+"请求头": "User-Agent$MOBILE_UA",
+
+"编码": "UTF-8",
+
+"图片代理": "0",
+
+"直接播放": "0",
+
+"播放请求头": "",
+
+"免嗅": "1",
+
+"嗅探词": ".mp4#.m3u8#.flv",
+
+"过滤词": "",
+
+"登录": "",
+
+
+"主页url": "https://www.4kvm.tv",
+
+"首页": "120",
+
+"起始页": "1",
+
+"分类url": "/{cateId}/page/{catePg};;rc",
+
+"分类": "电影&剧集&国剧&美剧&韩剧&番剧&热门",
+
+"分类值": "movies&tvshows&classify/guochan&classify/meiju&classify/hanju&classify/fanju&trending",
+
+
+"二次截取": "",
+
+"数组": "poster\">&&</article>",
+
+"标题": "alt=\"&&\"",
+
+"图片": "src=www.4kvm.tv&&\"",
+
+"副标题": "update\">&&</div>+icon-star2\">&&</div>",
+
+"链接": "href=\"&&\"",
+
+
+"影片类型": "sgeneros\">&&</div>",
+
+"影片年代": "默认--dateCreated\">*,&&</span>||电影--dateCreated'>*,&&</span>",
+
+"影片地区": "",
+
+"导演": "name\">&&</div>",
+
+"主演": "默认--演员</h2>&&<div id=\"info||电影--演员</h2>&&分享",
+
+"简介": "👶+title'>&&</span>+wp-content\">&&</p>",
+
+
+"线路二次截取": "",
+
+"线路数组": "se-q'>&&</a>",
+
+"线路标题": "👶4K影视专线",
+
+"多线数组": "se-q'>&&</a>",
+
+"多线链接": "href=\"&&\"",
+
+"播放二次截取": "playernotice&&</h2>[替换:</span>>>videourls:表题第1集题接\\&mvsource=0接表tables]",
+
+"播放数组": "videourls:&&tables[替换:{\"name\":>>表题第#,\"url\":>>集题接\\&source=0\\&ep=#}>>接表]",
+
+"倒序": "0",
+
+"播放列表": "表&&表",
+
+"播放标题": "题&&题",
+
+"播放链接": "接&&接",
+
+"播放链接前缀": "https://www.4kvm.tv/artplayer?id=+postid-&&\"",
+
+"跳转播放链接": "",
+
+"跳转解析": "",
+
+
+"搜索请求头": "User-Agent$MOBILE_UA",
+
+"搜索url": "/xssearch?s={wd}",
+
+"搜索模式": "1",
+
+"搜索二次截取": "",
+
+"搜索数组": "result-item\">&&</a>",
+
+"搜索标题": "alt=\"&&\"",
+
+"搜索图片": "src=\"&&\"",
+
+"搜索副标题": "<span*>&&</span>",
+
+"搜索链接": "href=\"&&\""
+
+}

@@ -5,6 +5,38 @@ var rule = {
   url: '/show/fyclass-fyfilter.html',
   searchUrl: '/search/**----------fypage---.html',
   cate_exclude: '萌图|专题',
+  lazy: `js:
+  var player = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+    var jsurl = player.url;
+    var fro = player.from; eval(fetch("http://www.mxdm6.com/static/js/playerconfig.js"));
+    var jx = MacPlayerConfig.player_list[fro].parse;
+    if (jx == '') {
+        jx = MacPlayerConfig.parse
+    };
+    if (jx.startsWith("/")) {
+        jx = "https:" + jx;
+    }
+    var url = jx + jsurl;
+    try {
+       
+         var html = request(url);
+      
+        var key = CryptoJS.enc.Utf8.parse("57A891D97E332A9D");
+        var le_token = html.split('_token = "')[1].split('"')[0];
+        var iv = CryptoJS.enc.Utf8.parse(le_token);
+        var data = html.match(/getVideoInfo\\("(.*?)"/)[1];
+        var video = CryptoJS.AES.decrypt(data, key, {
+            iv: iv
+        }).toString(CryptoJS.enc.Utf8)+"#.mp4";
+        input = {
+            jx:0,
+            parse:0,
+            url: video
+        }
+    } catch (e) {
+        input
+    }
+  `,
   filter: {
     "riman": [
       { "key": "剧情", "name": "剧情", "value": [{ "n": "全部剧情", "v": "" }, { "n": "搞笑", "v": "搞笑" }, { "n": "运动", "v": "运动" }, { "n": "励志", "v": "励志" }, { "n": "武侠", "v": "武侠" }, { "n": "特摄", "v": "特摄" }, { "n": "热血", "v": "热血" }, { "n": "战斗", "v": "战斗" }, { "n": "竞技", "v": "竞技" }, { "n": "校园", "v": "校园" }, { "n": "青春", "v": "青春" }, { "n": "爱情", "v": "爱情" }, { "n": "冒险", "v": "冒险" }, { "n": "后宫", "v": "后宫" }, { "n": "百合", "v": "百合" }, { "n": "治愈", "v": "治愈" }, { "n": "萝莉", "v": "萝莉" }, { "n": "魔法", "v": "魔法" }, { "n": "悬疑", "v": "悬疑" }, { "n": "推理", "v": "推理" }, { "n": "奇幻", "v": "奇幻" }, { "n": "神魔", "v": "神魔" }, { "n": "恐怖", "v": "恐怖" }, { "n": "血腥", "v": "血腥" }, { "n": "机战", "v": "机战" }, { "n": "战争", "v": "战争" }, { "n": "犯罪", "v": "犯罪" }, { "n": "社会", "v": "社会" }, { "n": "职场", "v": "职场" }, { "n": "剧情", "v": "剧情" }, { "n": "伪娘", "v": "伪娘" }, { "n": "耽美", "v": "耽美" }, { "n": "歌舞", "v": "歌舞" }, { "n": "肉番", "v": "肉番" }, { "n": "美少女", "v": "美少女" }, { "n": "吸血鬼", "v": "吸血鬼" }, { "n": "泡面番", "v": "泡面番" }, { "n": "欢乐向", "v": "欢乐向" }] },

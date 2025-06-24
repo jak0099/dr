@@ -1,0 +1,40 @@
+var rule = {
+  类型: '影视',//影视|听书|漫画|小说
+  title: '短剧123[短]',
+  host: 'https://www.djw123.com',
+  url: '/show/fyclass--fyfilter.html',
+  searchUrl: '/search/**----------fypage---.html',
+  searchable: 2,
+  quickSearch: 0,
+  filterable: 1,
+  filter: { "duanju": [{ "key": "剧情", "name": "剧情", "value": [{ "n": "全部", "v": "" }, { "n": "女频恋爱", "v": "女频恋爱" }, { "n": "脑洞悬疑", "v": "脑洞悬疑" }, { "n": "年代穿越", "v": "年代穿越" }, { "n": "古装仙侠", "v": "古装仙侠" }, { "n": "现代都市", "v": "现代都市" }, { "n": "反转", "v": "反转" }, { "n": "爽文", "v": "爽文" }, { "n": "短剧", "v": "短剧" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "按时间", "v": "time" }, { "n": "按人气", "v": "hits" }, { "n": "按评分", "v": "score" }] }] },
+  filter_url: '{{fl.排序}}-{{fl.剧情}}-----fypage---',
+  filter_def: {},
+  headers: {
+    'User-Agent': 'MOBILE_UA',
+  },
+  timeout: 5000,
+  class_name: '短剧库',
+  class_url: 'duanju',
+  cate_exclude: '',
+  play_parse: true,
+  lazy: $js.toString(() => {
+    input = { parse: 1, url: input, js: '' };
+  }),
+  double: true,
+  推荐: '*',
+  一级: '.a-con-inner;.pic a&&title;.lazyload&&data-original;span.s4&&Text;.pic a&&href',
+  二级: {
+    title: 'h1&&Text;div.p1 p:eq(1)&&Text',
+    img: '.lazyload&&data-original',
+    desc: 'div.p2 p:eq(2)&&Text;;;div.p2 p:eq(1)&&Text;div.p2 p:eq(0)&&Text',
+    content: 'div.p2 p:eq(4)&&Text',
+    tabs: '',
+    lists: 'p.play:eq(#id)&&a',
+    tab_text: 'body&&Text',
+    list_text: 'body&&Text',
+    list_url: 'a&&href',
+    list_url_prefix: '',
+  },
+  搜索: '.container li:gt(4);*;*;.state&&Text;*;.info p:eq(1)&&Text',
+}

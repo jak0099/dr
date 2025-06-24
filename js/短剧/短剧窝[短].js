@@ -1,0 +1,40 @@
+var rule = {
+  类型: '影视',//影视|听书|漫画|小说
+  title: '短剧窝[短]',
+  host: 'https://www.idjw.cc',
+  url: '/show/fyclassfyfilter/',
+  searchUrl: '/search/**--/page/fypage/',
+  searchable: 2,
+  quickSearch: 0,
+  filterable: 1,
+  filter: { "1": [{ "key": "状态", "name": "状态", "value": [{ "n": "全部", "v": "" }, { "n": "完结", "v": "/isend/完结" }, { "n": "连载", "v": "/isend/连载" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间", "v": "/by/time" }, { "n": "人气", "v": "/by/hits" }, { "n": "评分", "v": "/by/score" }] }] },
+  filter_url: '{{fl.排序}}{{fl.状态}}/page/fypage',
+  filter_def: {},
+  headers: {
+    'User-Agent': 'MOBILE_UA',
+  },
+  timeout: 5000,
+  class_parse: '.navbar-collapse li;a&&Text;a&&href;.*/(\\d+)/',
+  cate_exclude: '',
+  tab_exclude:'排序|最近更新|剧情简介',
+  play_parse: true,
+  lazy: $js.toString(() => {
+    input = { parse: 1, url: input, js: '' };
+  }),
+  double: true,
+  推荐: '*',
+  一级: '.pic-list li;.text-truncate&&Text;.lazy&&src||data-original;.text-white&&Text;.pic-item&&href',
+  二级: {
+    title: 'h1&&Text;.vod-detail-guild&&Text',
+    img: '.lazy&&src||data-original',
+    desc: '.vod-doc p:eq(3)&&Text;;;.vod-doc p:eq(2)&&Text;.vod-doc p:eq(1)&&Text',
+    content: '简介',
+    tabs: '.align-items-center h3',
+    lists: '#myList:eq(#id)&&a',
+    tab_text: 'body&&Text',
+    list_text: 'body&&Text',
+    list_url: 'a&&href',
+    list_url_prefix: '',
+  },
+  搜索: '*',
+}
