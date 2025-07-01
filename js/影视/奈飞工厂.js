@@ -2,8 +2,8 @@ var rule = {
   模板:'短视2',
   title: '奈飞工厂',
   host: 'https://www.netflixgc.com',
-  class_name: '电影&电视剧&漫剧&综艺&记录&伦理',
-  class_url: '1&2&3&23&24&30',
+  class_name: '电影&电视剧&漫剧&综艺&记录',//&伦理
+  class_url: '1&2&3&23&24',//&30
   url: '/index.php/api/vod#type=fyclassfyfilter&page=fypage',
   filterable: 1,
   filter_url: '&class={{fl.class}}&area={{fl.area}}&year={{fl.year}}&lang={{fl.lang}}&letter={{fl.letter}}&by={{fl.by}}',

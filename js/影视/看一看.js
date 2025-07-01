@@ -43,7 +43,7 @@ var rule = {
   }),
   double: true,
   推荐: '.channel-silder-panel;body;h2 a&&title;.channel-silder-img img&&src;.channel-silder-title span&&Text;h2 a&&href',
-  一级: '.index-area li;.link-hover&&title;.lazy&&data-original||src;p.other&&Text;.link-hover&&href',
+  一级: '.index-area li;.link-hover&&title;.lazy&&data-original||src;p.other&&Text;.link-hover&&href',  
   二级: {
     title: '.lazy&&alt;dt:eq(2)&&Text',
     img: '.lazy&&data-original||src',

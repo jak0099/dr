@@ -2,7 +2,7 @@ var rule = {
     title: '追剧迷',
     模板: 'vfed',
     host: 'https://www.zhuijumi.cc',
-    url: '/mp4type/fyfilter.html',
+    url: '/tvtype/fyfilter.html',
     searchUrl: '/vodsearch/**-fypage.html',
     class_parse: '.fed-navs-left a;a&&Text;a&&href;.*/(.*?).html',
     filter: {

@@ -17,7 +17,7 @@ searchable: 1,
 quickSearch: 1, 
 filterable: 1, 
 
-class_name: '电影&剧集&综艺&动漫&其他(短剧)',
+class_name: '电影&剧集&综艺&动漫&短剧',
 class_url: '1&2&3&4&49',
 filter_def: {
 1: {cateId: '1'},

@@ -9,7 +9,7 @@ var rule = {
   headers: {
     'User-Agent': 'MOBILE_UA',
   },
-  url: '/index.php/api/vod#type=fyclassfyfilter&page=fypage',
+  url: '/index.php/api/vod#type=fyclassfyfilter&page=fypage',//点击类url方式(https://hbottv.com/vodshow/1-----------.html)
   filterable: 1,
   filter_url: '&class={{fl.类型}}&area={{fl.地区}}&lang={{fl.语言}}&letter={{fl.字母}}&year={{fl.年份}}&by={{fl.排序}}',//点击类筛选方式
   filter: { 

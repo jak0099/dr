@@ -209,7 +209,32 @@ host: `https://${
   Math.random() < 0.66 ? 'www.subaibaiys.com' : 'subaibai.vip'
 }`,
 
-
+##多域名扩展写法示例3：
+host: (function() {
+    const domains = [
+      'lkvod.com',
+      'lkvod.me',
+      'www.nkvod.com'
+    ];    
+    let retry = 0;
+    while (retry++ < 3) {
+      const host = domains[Math.floor(Math.random() * domains.length)];
+      try {
+        const testUrl = `https://${host}/show/fyfilter.html`;
+        const res = req(testUrl, { timeout: 3000 });
+        if (res && res.code === 200) {
+          log(`域名验证成功: ${host}`);
+          return `https://${host}`;
+        }
+      } catch (e) {
+        log(`域名 ${host} 连接失败: ${e.message}`);
+      }
+    }
+    return 'https://lkvod.com';
+  })(),
+  url: '/show/fyfilter.html',
+  
+  
 ##预处理：
 // 可在预处理中添加Cookie验证
 const checkAuth = () => {
@@ -246,7 +271,7 @@ let headers = input.headers; // 获取请求头
 let m3u8 = fixAdM3u8AiPro(url, headers);
 input = [200, 'application/vnd.apple.mpegurl', m3u8];
 `
-代理1
+##代理示例1
 proxy_rule: $js.toString(() => {
         // console.log("tup====="+input);
         if (input) {
@@ -346,7 +371,47 @@ function verifyLogin(url) {
 
 globalThis.verifyLogin = verifyLogin;
 
-示例2：
+示例2(动态切换验证类型show或search)：
+function verifyLogin(url, verifyType = 'show') {
+    let cnt = 0;
+    let cookie = '';
+    let r = Math.random();
+    let yzm_url = getHome(url) + '/index.php/verify/index.html';
+    log(`验证码链接:${yzm_url}`);
+    let submit_url = getHome(url) + '/index.php/ajax/verify_check';
+    log(`post登录链接:${submit_url}`);
+    while (cnt < OCR_RETRY) {
+        try {
+            let {cookie, html} = reqCookie(yzm_url + '?r=' + r, {toBase64: true});
+            let code = OcrApi.classification(html);
+            log(`第${cnt + 1}次验证码识别结果:${code}`);
+                        
+            let requestBody = `type=${verifyType}&verify=${code}`; 
+            
+            html = post(submit_url, {
+                headers: {Cookie: cookie},
+                body: requestBody, 
+            });
+            html = JSON.parse(html);
+            
+            if (html.code === 1) {
+                log(`第${cnt + 1}次验证码提交成功`);
+                log(cookie);
+                return cookie;
+            } else if (html.code !== 1 && cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
+        } catch (e) {
+            log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+            if (cnt + 1 >= OCR_RETRY) {
+                cookie = '';
+            }
+        }
+        cnt += 1
+    }
+    return cookie;
+}
+globalThis.verifyLogin = verifyLogin;
 
 ###自定义免嗅探:
 示例1:

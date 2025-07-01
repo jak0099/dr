@@ -20,7 +20,9 @@ var rule = {
       'User-Agent': 'PC_UA',
    },
    timeout: 5000,
-   class_parse: 'ul.navbar-nav&&li:gt(0):lt(5);a&&Text;a&&href;cc\/(.*?)-page1\.html',
+   //class_parse: '.navbar-nav li:gt(0):lt(5);a&&Text;a&&href;cc\/(.*?)-page1\.html',
+   class_name:'电视剧&电影&动漫&综艺',
+   class_url:'dianshiju/listindex2&dianying/listindex1&dongman/listindex3&zongyi/listindex4',
    cate_exclude: '',
    play_parse: true,
    lazy: $js.toString(() => {

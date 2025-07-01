@@ -1,22 +1,17 @@
 //发布页地址 https://dl.kkys01.com/
 var rule = {
     title: '可可影视[优]',
-    //动态切换域名
     //host: `https://www.${Math.random() < 0.5 ? 'kkys02' : Math.random() < 0.5 ? 'kkys01' : 'kkys03'}.com`,
     host: `https://www.${(r=>r<0.5?'keke5':['keke1','keke2','keke3','keke4','keke6','keke7','keke8'][(r-0.5)*14|0])(Math.random())}.app`,
-    //host: `https://www.${Math.random() < 0.5 ? 'keke8' : 'keke5'}.app`,
     //host: 'https://www.keke5.app',
-    //host: 'https://www.keke8.app',
-    //host: 'https://www.kkys02.com',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
-    searchUrl: '/search?k=**&page=fypage2&t=',
+    searchUrl: '/search?k=**&page=fypage&t=**',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
-    //headers: {'User-Agent': 'MOBILE_UA'},
     headers: {
-        'User-Agent': 'UC_UA',
+        'User-Agent': 'MOBILE_UA',
         'Referer': rule.host + '/',
         'X-Forwarded-For': `119.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`
     },
@@ -36,20 +31,16 @@ var rule = {
     limit: 20,
     推荐: '.section-box:eq(2)&&.module-box-inner&&.module-item;*;*;*;*',
     double: false,
-    //一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span:eq(1)&&Text;a&&href',
     一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span&&Text;a&&href',
     二级: {
         title: '.detail-pic&&img&&alt;.detail-tags a:gt(1)&&Text',
         img: '.detail-pic&&img&&data-original',
         desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags&&a&&Text;.detail-tags&&a:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main&&Text',
         content: '.detail-desc&&Text',
-        //tabs: '.source-item-label:nth-of-type(2)',
-        //tabs: 'body&&.source-item-label[id]',
         tabs: 'body&&.source-item-label',
         lists: '.episode-list:eq(#id) a',
     },
     搜索: '.search-result-list&&a;.title:eq(0)&&Text;.lazyload&&data-original;.search-result-item-header&&Text;a&&href;.desc&&Text',
-    //搜索: '.search-result-list&&a;h3&&Text;.lazyload&&data-original;.info:eq(0)&&Text;a&&href;.info:eq(1)&&Text',
     // 图片替换:$js.toString(()=>{
     //     log(input);
     //    input = input.replace(rule.host,'https://vres.a357899.cn');
@@ -68,7 +59,6 @@ var rule = {
             rule.图片替换 = rule.host + '=>' + img_host;
         }
     }),
-    //filter: 'H4sIAAAAAAAAA+2Zz08bRxTH/xefOdgGtTi3HlqpUpVLe6hURREHV4qa0kN/qFWEZLANxhBsEDFx7AIpGEyCf0CQY9bY/md2Ztf/RWf95r0ZR+3LtqGRqviC+LzvzOzs7Nt531k/isQid755FPku+VvkTsS76In9jchMZHHh+6TNvyw8/Dk5briowiJbH6XrQVhBZGkGoneTP3378MGvOnz3068+++Lzr0kV66cyndWiBtJKVRVBDYC0fN3tV1EDQM3LXZgxNaAml4syVdKaBtLSebnyDDUAGjPf8vovcEwA0k63xXUPNQAac+XcK23jmAB0D7U1008Daas7o/IZagA0Zu6p66zjmADUb2tVFC6xHwBphWP/iNYagLRmRzgN1ABQc28O/WZbaxpoLo0Td3CIcwEw2qaf2ydtDLRmBw1vfQ3XDMB6tt5uzzzbAEjLDL2XNdQAUPOXN0XV0ZqGpXuBCmksqm2x6Zg0Jg6TxuL4dFRexUXoNkSlr0PYYnRSlt3WRAsdMg+gLa8Hk2NAiJZlsKWCuCwAtJx7NVk9x+UEoGsfnJl+GmhZNi6MpoHGfPXEaBpotoPXRtNA2uO2cE5QAzBjtu0x23Y/t3s9on4a6N6390W2i/cOQNd7feXXhng9AJMuh3JjqB4GZQwyXXWY8fp7skQPh5jmnCmoDiKHb5xhatHaVSj3OtiC2Np2RHtXZPFNMUxPojb0CirVy/gwiOkqg1dwXdehjcgO0T1nO24PtzENdqr7rYZfT5lUJw6V6pW+ao+DA9BNXh4bTYOVaEbTYCWv0TRYyWs0DVaCWv0Awi6CuL5ye33rfUcOswjxaHxOx8b/WvFZE5+143ETj9vxmInH7HjUxKMUj0XH0zwiLRa9r/4kqEH0zQbRoEHUNEhMNoglEtH76o9pMP9mg/mgwbxpICtXcg9fhUD7ODGxsHJrRzgFs7DEkwvr9W5EMYdXMaNXU7KEL0ncDntpfNJmXf1WRuRw350LpnFvRvX6b8yJpjDmhDMZnHHhjARrFrjizZghrrBzhoczJ0FhovvTEMYMceaEMzVBQaPraQhjQNSWZ56RhjBGkDNfo3RfdFdwLgC3bUAoHLllA8LZhH9rPTgLwVkP1l681ShxJoMzJ9PCOS2cH3DhnH1PhTNfl6llefNy4hxnQqFO/9wpkPsywGzebKHkCh5X1JgTqSzue+dU0AFCGQimaHMnZ5UH/vMUagCkVfKyjFVFQxjj4fUK1rEMgPodPhcV2mQAUPtk8YFKK5Dgf8rMYVGtPW53AHRUcy5Fo4g7PwBtd7/vyKe40hpMOd9Qa0jlfAxhLMJfWqDb+mbAlc23l/N3+1rwbmZg+s1g+s1gan1snlqf/7n1mbst6+M5L0T/CaYzAGnVA9dxvFOqwcQ0t2bb9NZAWuZCFI5Mb8OhDBP36Z8xTNznfa/SFUe0OQHQbPMrXqWJUwUwJffvP/1zBo2zBl8mF378YVFrGmie3M8zjGHiDJosP3NvaEcFmP6cMC0j0zLyIZeRj/55GTFh+ymPUqv+H5R6AJTqu1XRxBOLBppVuajON5jqANTvbOh38tgPgK639tjbPcDrAYQpK+yv28zJij3fMudw9tdt7myf7Yhm2rySAbz3zFEpsvQnK+G0IDwhAAA=',
     filter: {
     "1": [
       { "key": "类型", "name": "类型", "value": [{ "n": "全部", "v": "" }, { "n": "Netflix", "v": "NETFLIX" }, { "n": "剧情", "v": "剧情" }, { "n": "喜剧", "v": "喜剧" }, { "n": "动作", "v": "动作" }, { "n": "爱情", "v": "爱情" }, { "n": "恐怖", "v": "恐怖" }, { "n": "惊悚", "v": "惊悚" }, { "n": "犯罪", "v": "犯罪" }, { "n": "科幻", "v": "科幻" }, { "n": "悬疑", "v": "悬疑" }, { "n": "奇幻", "v": "奇幻" }, { "n": "冒险", "v": "冒险" }, { "n": "战争", "v": "战争" }, { "n": "历史", "v": "历史" }, { "n": "古装", "v": "古装" }, { "n": "家庭", "v": "家庭" }, { "n": "传记", "v": "传记" }, { "n": "武侠", "v": "武侠" }, { "n": "歌舞", "v": "歌舞" }, { "n": "短片", "v": "短片" }, { "n": "动画", "v": "动画" }, { "n": "儿童", "v": "儿童" }, { "n": "职场", "v": "职场" }] },
@@ -153,12 +143,4 @@ var rule = {
     VODS = [filters];
     console.log(gzip(JSON.stringify(filters)));
     `,
-    //代理广告过滤#不生效的
-    /*
-    proxy_rule: `js:
-            let url = input.url;
-            let m3u8 = fixAdM3u8Ai(url);
-            input = [200,'application/vnd.apple.mpegurl',m3u8]
-    `
-    */    
 }

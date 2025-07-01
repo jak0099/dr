@@ -22,7 +22,7 @@ var rule = {
     headers: {
         'User-Agent': 'MOBILE_UA',
     },
-    class_parse: '.myui-header__menu li;a&&Text;a&&href;index(\\d+)\.html',
+    class_parse: '.myui-header__menu li.hidden-sm:gt(0):lt(7);a&&Text;a&&href;index(\\d+)\.html',
     play_parse: true,
     lazy: '',
     limit: 6,

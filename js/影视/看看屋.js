@@ -1,7 +1,8 @@
+//发布页人机验证
 var rule = {
   title: '看看屋',
-  host:'https://www.kankanwu.vip',
-  hostJs: 'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"ul&&li a:eq(1)&&href");print(src);HOST=src',
+  host:'https://www.kankanwu.cc',
+  //hostJs: 'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"ul&&li a:eq(1)&&href");print(src);HOST=src',
   url: '/vodshow/fyfilter.html',
   searchUrl: '/vodsearch/**----------fypage---.html',
   searchable:1,quickSearch:1,double:false,timeout:5000,play_parse:true,filterable:1,invalid:true,

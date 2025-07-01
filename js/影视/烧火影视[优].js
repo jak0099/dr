@@ -57,8 +57,9 @@ var rule = {
         4: {cateId: '4'}
         // 28:{cateId:'28'}
     },
-    searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
-    searchable: 0,
+    //searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
+    searchUrl: '/search/**----------fypage---.html',    
+    searchable: 2,
     quickSearch: 0,
     headers: {'User-Agent': 'MOBILE_UA',},
     timeout: 5000,//网站的全局请求超时,默认是3000毫秒

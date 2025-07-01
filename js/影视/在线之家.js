@@ -1,9 +1,10 @@
 muban.首图2.二级.desc = '.data:eq(3)&&Text;;;.data:eq(1)&&Text;.data:eq(2)&&Text';
+muban.首图2.二级.tabs = '.stui-vodlist__head&&h3',
 var rule = {
     title: '在线之家',
     模板: '首图2',
     // host:'https://www.zxzj.site',
-    host: 'https://www.zxzja.com',
+    host: 'https://www.zxzjhd.com',
     url: '/vodshow/fyclassfyfilter.html',
     filterable: 1,//是否启用分类筛选,
     filter_url: '-{{fl.area}}-{{fl.by}}-{{fl.class}}-----fypage---{{fl.year}}',
