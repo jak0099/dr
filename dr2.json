@@ -19,12 +19,12 @@
 
 //{"key": "dr_模板[优]","name": "🍒模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[优].js"},
 {"key": "dr_可可影视[优]","name": "🍒可可影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/可可影视[优].js"},
+{"key": "dr_荐片[优]","name": "🍒荐片[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 30,"ext": "./js/磁力/荐片[磁].js"},
 {"key": "dr_海兔影视[优]","name": "🍒海兔影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/海兔影视.js"},
 {"key": "dr_麦田影院","name": "🍒麦田影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/麦田影院.js"},
 {"key": "dr_在线之家","name": "🍒在线之家[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/在线之家.js"},
 {"key": "dr_火车太堵","name": "🍒火车太堵[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/火车太堵.js"},
 {"key": "dr_LIBVIO[优]","name": "🍒LIBVIO[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/LIBVIO[优].js"},
-//{"key": "dr_荐片[优]","name": "🍒荐片[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 30,"ext": "./js/磁力/荐片[磁].js"},
 {"key": "dr_烧火影视[优]","name": "🍒烧火影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/烧火影视[优].js"},
 {"key": "dr_网飞猫[优]","name": "🍒网飞猫[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/网飞猫[优].js"},
 {"key": "dr_农民影视[优]","name": "🍒农民影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/农民影视[优].js"},
@@ -84,6 +84,7 @@
 {"key": "dr_AppGet_诺映","name": "🍐诺映[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=https://www.noad.top$708FA298F0855840$708FA298F0855840"},
 {"key": "dr_AppGet_世颜","name": "🍐世颜[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=https://sykjw.xyz$sicnagduxbSfisnz$sicnagduxbSfisnz"},
 {"key": "dr_AppGet_可达","name": "🍐可达[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=https://ledayy.com$hjjp68c2okw12345$hjjp68c2okw12345"},
+{"key": "dr_AppGet_客星","name": "🍐客星[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=https://api.hiapp.com.cn$2268331221bobobo$2268331221bobobo"},
 
 {"key": "py_云端APP","name": "🍑云端[影][PY]","type": 3,"api": "./py/app/云端APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_光速APP","name": "🍑光速[影][PY]","type": 3,"api": "./py/app/光速APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
