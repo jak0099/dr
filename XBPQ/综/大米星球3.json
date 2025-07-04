@@ -1,0 +1,5 @@
+{
+  "播放数组": "<div class=\"module-play-list-content  module-play-list-base\">&&</div>",
+  "分类": "电影$20#电视剧$21#动漫$22#综艺$23",
+  "分类url": "https://www.dami2vl.shop/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html"
+}
