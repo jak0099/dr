@@ -20,6 +20,7 @@
 //{"key": "dr_模板[优]","name": "🍒模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[优].js"},
 {"key": "dr_可可影视[优]","name": "🍒可可影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/可可影视[优].js"},
 {"key": "dr_荐片[优]","name": "🍒荐片[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 30,"ext": "./js/磁力/荐片[磁].js"},
+{"key": "dr_小苹果[优]","name": "🍒小苹果[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/小苹果[优].js"},
 {"key": "dr_海兔影视[优]","name": "🍒海兔影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/海兔影视.js"},
 {"key": "dr_麦田影院","name": "🍒麦田影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/麦田影院.js"},
 {"key": "dr_在线之家","name": "🍒在线之家[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/在线之家.js"},
@@ -72,7 +73,6 @@
 {"key": "dr_AppGet_云速","name": "🍐云速[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/AppGet模板.js?type=url&params=http://59.153.167.137:7788$4d83b87c4c5ea111$4d83b87c4c5ea111"},
 
 {"key": "py_荐片","name": "🍑荐片[影][PY]","type": 3,"api": "./py/html/荐片.py","searchable": 1,"quickSearch": 1,"filterable": 1},
-{"key": "py_小苹果APP","name": "🍑小苹果[影][PY]","type": 3,"api": "./py/app/小苹果APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_热播APP","name": "🍑热播[影][PY]","type": 3,"api": "./py/app/热播APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_云端APP","name": "🍑云端[影][PY]","type": 3,"api": "./py/app/云端APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_光速APP","name": "🍑光速[影][PY]","type": 3,"api": "./py/app/光速APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -218,8 +218,6 @@
 {"key": "dr_黑狐影院","name": "🍊黑狐影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/影视/黑狐影院.js"},
 {"key": "dr_白嫖者联盟","name": "🍊白嫖者联盟[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/白嫖者联盟.js"},
 
-{"key": "csp_XBPQ_大米星球","name": "🥗大米星球┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/综/大米星球3.json"},
-
 {"key": "dr_优酷弹幕[弹]","name": "🍄优酷弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/优酷弹幕[弹].js"},
 {"key": "dr_腾讯弹幕[弹]","name": "🍄腾讯弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/腾讯弹幕[弹].js"},
 {"key": "dr_三六零弹幕[弹]","name": "🍄三六零弹幕[弹][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/弹幕/三六零弹幕[弹].js"},
@@ -248,6 +246,7 @@
 //{"key": "dr_APPV2_泽少","name": "🍎泽少[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 0,"ext": "./js/APPV2模板.js?type=url&params=http://122.228.85.203:1000$http://122.228.85.203:1000/play?url="},
 {"key": "dr_APPV2_河狸影视","name": "🍎河狸影视[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 3,"ext": "./js/APPV2模板.js?type=url&params=https://www.heli888.cc"},
 {"key": "dr_APPV2_猪猪","name": "🍎猪猪[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 0,"ext": "./js/APPV2模板.js?type=url&params=http://jxfmax.juxiafan.com"},
+{"key": "dr_APPV2_大米","name": "🍎大米[V2][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"order_num": 0,"ext": "./js/APPV2模板.js?type=url&params=https://www.dami2vl.shop"},
 
 {"key": "dr_rarbt[磁]","name": "🍓rarbt[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/rarbt[磁].js"},
 {"key": "dr_磁力熊[磁]","name": "🍓磁力熊[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/磁力熊[磁].js"},
@@ -287,6 +286,7 @@
 {"key": "py_蓝莓短剧[短]","name": "🥝蓝莓短剧[短][PY]","type": 3,"api": "./py/短/蓝莓短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_好帅短剧[短]","name": "🥝好帅短剧[短][PY]","type": 3,"api": "./py/html/好帅短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_偷乐短剧[短]","name": "🥝偷乐短剧[短][PY]","type": 3,"api": "./py/html/偷乐短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 {"key": "dr_夸克分享[合]","name": "🍅夸克分享[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘/夸克分享[合].js?type=url&params=../json/夸克分享.json"},
 {"key": "dr_玩偶哥哥[盘]","name": "🍅玩偶哥哥[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 0,"ext":"./js/云盘/玩偶哥哥[盘].js"},
@@ -529,11 +529,11 @@
 "rules":[
 {"name":"硬核[正则❅时长]","hosts":["ryplay","svip.ryplay","cdn.ryplay"],"regex":["10.6","11.68","9.36","8.68"]},
 {"name": "鸭鸭[正则❅时长]","hosts": ["v2.qdhdcate","qdhdcate","v2.ffhij","ffhij"],"regex": ["#EXTINF:3\\.080000,[\\s\\S]*?(#EXTINF:\\d+\\.\\d+,[\\s\\S]*?){14}"]},     
-{"name":"非凡[正则❅时长]","hosts":["ffzy","vip.ffzy","svipsvip.ffzy","vip.ffzy-play2","ffzy-play2","hd.ffzy","ffzy-online5","cachem3u8.2s0"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:2\\.966667|2\\.433333|6\\.666667|6\\.667|6\\.6|6\\.000000|5\\.800000),[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+{"name":"非凡[正则❅时长]","hosts":["ffzy","vip.ffzy","svipsvip.ffzy","vip.ffzy-play2","ffzy-play2","hd.ffzy","ffzy-online5","cachem3u8.2s0"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:2\\.966667|2\\.433333|6\\.666667|6\\.667|6\\.6|6\\.000000|5\\.800000|5\\.266667),[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 //{"name": "量子[正则❅时长]","hosts": ["lz","vip1.lz","vip.lz","hd.lz",".cdnlz"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7\\.166667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?08646.*?\\.ts","17.19","19.63"]},
 //{"name":"索尼[正则❅时长]","hosts":["suonizy","qrssv.com"],"regex":["15.1666","15.2666","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:1\\.000000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?p1ayer.*?\\.ts","#EXTINF.*?\\s+.*?\\/video\\/original.*?\\.ts"]},
 //{"name":"乐视[正则❅时长]","hosts":["leshiyun"],"regex":["15.92"]},
-{"name":"优质[正则❅时长]","hosts":["yzzy","playback","high24-playback","high20-playback","yzzy.play","yzzy-dy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:6\\.666667),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:6\\.666667),[\\s\\S]*?#EXT-X-ENDLIST","16.63","18.66","17.66","19.13"]},
+//{"name":"优质[正则❅时长]","hosts":["yzzy","playback","high24-playback","high20-playback","yzzy.play","yzzy-dy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:6\\.666667),[\\s\\S]*?#EXT-X-DISCONTINUITY","16.63","18.66","17.66","19.13"]},
 //{"name": "555DM[正则❅时长]","hosts": ["cqxfjz"],"regex": ["10.56"]},
 {"name": "黑木耳[正则❅时长]","hosts": ["hmrvideo","mycj-m3u8"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:3\\.366667),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\s*(?:#EXTINF:6\\.000000[^\\n]*\\n[^\\n]*\\s*){4}#EXT-X-DISCONTINUITY"]},
 //{"name": "海外看[正则❅时长]","hosts": ["haiwaikan"],"regex": ["10.0099","10.3333","16.0599","8.1748","10.85"]},
