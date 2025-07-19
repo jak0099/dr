@@ -1,201 +1,145 @@
+globalThis.h_ost = 'https://mov.cenguigui.cn';
+
 var rule = {
-    类型: '影视',
-    title: '剧巴巴',
-    host: 'https://www.jubaba.cc',
+    title: '甜圈短剧[短]',
+    host: h_ost,
+    url: '/duanju/api.php?classname=fyclass&offset=fypage',
+    searchUrl: '/duanju/api.php?name=**&page=fypage',
     headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
-        'Referer': 'https://www.jubaba.cc/',
-        'Origin': 'https://www.jubaba.cc'
+        'User-Agent': 'MOBILE_UA',
+        'Referer': h_ost
     },
-    编码: 'utf-8',
-    timeout: 15000,  // 增加超时时间
-    url: '/vodshow/fyclass--------fypage---.html',
-    detailUrl: '/voddetail/fyid.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-    searchable: 1,
-    quickSearch: 1,
-    filterable: 0,
-    class_name: '电影&剧集&综艺&动漫',
-    class_url: '1&2&3&4',
+    timeout: 5000,
+    limit: 20,
+    multi: 1,
+    searchable: 2,
     play_parse: true,
-    lazy: $js.toString(() => {
-        // 精简版播放解析逻辑
-        try {
-            const iframe = document.querySelector("#playleft iframe");
-            if (!iframe) throw new Error("未找到播放iframe");
-            
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            const script = iframeDoc.querySelector("script");
-            if (!script) throw new Error("未找到播放脚本");
-            
-            // 提取播放配置
-            const scriptText = script.textContent;
-            const match = scriptText.match(/var\s+player\s*=\s*(\{.*?\});/);
-            if (!match) throw new Error("未找到播放配置");
-            
-            const playerConfig = JSON.parse(match[1]);
-            
-            // 请求播放地址
-            const apiRes = fetch(rule.host + '/bbplayer/api.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'User-Agent': rule.headers['User-Agent']
-                },
-                body: `vid=${playerConfig.url}`
-            }).json();
-            
-            const data = apiRes.data;
-            let url = '';
-            
-            // 简单的播放地址检测
-            if (data.url && (data.url.includes('.m3u8') || data.url.includes('.mp4'))) {
-                url = data.url;
-            } else if (jstr.url && (jstr.url.includes('.m3u8') || jstr.url.includes('.mp4'))) {
-                url = jstr.url;
-            }
-            
-            if (!url) throw new Error('未找到播放地址');
-            
-            return {
-                parse: 0,
-                url: url,
-                header: JSON.stringify({ 'User-Agent': 'okhttp/3.12.1' })
-            };
-        } catch (e) {
-            return {
-                parse: 1,
-                url: input,
-                click: 'document.querySelector("#playleft iframe").contentWindow.document.querySelector("#start").click()'
-            };
-        }
-    }),
-    limit: 9,
-    double: false,
-    推荐: 'ul.ewave-vodlist;.lazyload&&title;.lazyload&&data-original;.pic-text&&Text;.thumb-link&&href',
-    一级: $js.toString(() => {
-        // 精确的人机验证实现 - 根据提供的页面代码
-        const encrypt = (str) => {
-            const staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
-            let encodechars = "";
-            for (let i = 0; i < str.length; i++) {
-                const char = str[i];
-                const num0 = staticchars.indexOf(char);
-                if (num0 === -1) {
-                    encodechars += char;
-                } else {
-                    const code = staticchars[(num0 + 3) % 62];
-                    const num1 = Math.floor(Math.random() * 62);
-                    const num2 = Math.floor(Math.random() * 62);
-                    encodechars += staticchars[num1] + code + staticchars[num2];
-                }
-            }
-            return base64(encodechars);
-        };
-        
-        // 获取分类URL
-        const classUrl = RULE.url.replace('fyclass', RULE.tid).replace('fypage', RULE.pg);
-        const fullUrl = rule.host + classUrl;
-        
-        // 第一次请求
-        let res = fetch(fullUrl, {
-            headers: rule.headers,
-            timeout: rule.timeout
+    lazy: '',
+    class_parse: `js:
+    let classes = [];
+    const classMap = {
+        '🔥 推荐榜': '推荐榜',
+        '🎬 新剧': '新剧',
+        '🎬 逆袭': '逆袭',
+        '🎬 霸总': '霸总',
+        '🎬 现代言情': '现代言情',
+        '🎬 打脸虐渣': '打脸虐渣',
+        '🎬 豪门恩怨': '豪门恩怨',
+        '🎬 神豪': '神豪',
+        '🎬 马甲': '马甲',
+        '🎬 都市日常': '都市日常',
+        '🎬 战神归来': '战神归来',
+        '🎬 小人物': '小人物',
+        '🎬 女性成长': '女性成长',
+        '🎬 大女主': '大女主',
+        '🎬 穿越': '穿越',
+        '🎬 都市修仙': '都市修仙',
+        '🎬 强者回归': '强者回归',
+        '🎬 亲情': '亲情',
+        '🎬 古装': '古装',
+        '🎬 重生': '重生',
+        '🎬 闪婚': '闪婚',
+        '🎬 赘婿逆袭': '赘婿逆袭',
+        '🎬 虐恋': '虐恋',
+        '🎬 追妻': '追妻',
+        '🎬 天下无敌': '天下无敌',
+        '🎬 家庭伦理': '家庭伦理',
+        '🎬 萌宝': '萌宝',
+        '🎬 古风权谋': '古风权谋',
+        '🎬 职场': '职场',
+        '🎬 奇幻脑洞': '奇幻脑洞',
+        '🎬 异能': '异能',
+        '🎬 无敌神医': '无敌神医',
+        '🎬 古风言情': '古风言情',
+        '🎬 传承觉醒': '传承觉醒',
+        '🎬 现言甜宠': '现言甜宠',
+        '🎬 奇幻爱情': '奇幻爱情',
+        '🎬 乡村': '乡村',
+        '🎬 历史古代': '历史古代',
+        '🎬 王妃': '王妃',
+        '🎬 高手下山': '高手下山',
+        '🎬 娱乐圈': '娱乐圈',
+        '🎬 强强联合': '强强联合',
+        '🎬 破镜重圆': '破镜重圆',
+        '🎬 暗恋成真': '暗恋成真',
+        '🎬 民国': '民国',
+        '🎬 欢喜冤家': '欢喜冤家',
+        '🎬 系统': '系统',
+        '🎬 真假千金': '真假千金',
+        '🎬 龙王': '龙王',
+        '🎬 校园': '校园',
+        '🎬 穿书': '穿书',
+        '🎬 女帝': '女帝',
+        '🎬 团宠': '团宠',
+        '🎬 年代爱情': '年代爱情',
+        '🎬 玄幻仙侠': '玄幻仙侠',
+        '🎬 青梅竹马': '青梅竹马',
+        '🎬 悬疑推理': '悬疑推理',
+        '🎬 皇后': '皇后',
+        '🎬 替身': '替身',
+        '🎬 大叔': '大叔',
+        '🎬 喜剧': '喜剧',
+        '🎬 剧情': '剧情'
+    };
+    for (let key in classMap) {
+        classes.push({ type_name: key, type_id: classMap[key] });
+    }
+    setResult(classes);
+    `,
+    一级: `js:
+    let d = [];
+    let html = request(input, {headers: rule.headers});
+    let data = JSON.parse(html).data;
+    data.forEach(function(it) {
+        d.push({
+            title: it.title,
+            img: it.cover,
+            year: it.copyright,
+            desc: it.sub_title,
+            url: it.book_id
         });
-        let html = res.content;
-        
-        // 检查人机验证
-        if (html.includes('人机验证') || html.includes('防火墙正在检查您的访问')) {
-            // 生成验证数据 - 完全按照页面逻辑
-            const value = encrypt(fullUrl);  // 当前完整URL
-            const token = encrypt("MTc1MDU2NTQ5OA==");  // 固定token
-            
-            // 提交验证
-            const verifyRes = fetch(rule.host + '/robot.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'User-Agent': rule.headers['User-Agent'],
-                    'Referer': fullUrl,
-                    'Origin': rule.host
-                },
-                body: `value=${value}&token=${token}`
-            });
-            
-            // 等待验证处理完成
-            sleep(1500);  // 模拟页面中的setTimeout
-            
-            // 重新请求原始URL
-            res = fetch(fullUrl, {
-                headers: rule.headers,
-                timeout: rule.timeout
-            });
-            html = res.content;
-            
-            // 二次验证检查
-            if (html.includes('人机验证') || html.includes('防火墙正在检查您的访问')) {
-                // 再次尝试验证
-                const verifyRes2 = fetch(rule.host + '/robot.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'User-Agent': rule.headers['User-Agent'],
-                        'Referer': fullUrl,
-                        'Origin': rule.host
-                    },
-                    body: `value=${value}&token=${token}`
-                });
-                
-                sleep(1500);
-                
-                // 第二次重新请求
-                res = fetch(fullUrl, {
-                    headers: rule.headers,
-                    timeout: rule.timeout
-                });
-                html = res.content;
-            }
-        }
-        
-        // 解析视频列表
-        const $ = parseDOM(html);
-        const videos = [];
-        
-        $('.ewave-vodlist li').each(function() {
-            const $this = $(this);
-            const $img = $this.find('.lazyload');
-            const $link = $this.find('.thumb-link');
-            
-            const href = $link.attr('href') || '';
-            const match = href.match(/\/voddetail\/(\d+)\.html/);
-            
-            if (match && match[1]) {
-                videos.push({
-                    vod_id: match[1],
-                    vod_name: $img.attr('title') || '',
-                    vod_pic: $img.attr('data-original') || '',
-                    vod_remarks: $this.find('.pic-text').text().trim() || ''
-                });
-            }
+    });
+    setResult(d);
+    `,
+    二级: `js:
+    let url = rule.host + '/duanju/api.php?book_id=' + input;
+    let html = request(url);
+    let item = JSON.parse(html);
+    let VOD = {
+        vod_id: input,
+        vod_name: item.book_name,
+        vod_pic: item.book_pic,
+        vod_content: item.desc,
+        vod_remarks: item.duration,
+        vod_year: '更新:' + item.time,
+        vod_actor: item.author
+    };
+    let playUrls = item.data.map(function(ep) {
+        return ep.title + '$' + ep.video_id;
+    });
+    VOD.vod_play_from = '甜圈短剧';
+    VOD.vod_play_url = playUrls.join('#');
+    setResult(VOD);
+    `,
+    搜索: `js:
+    let d = [];
+    let html = request(input, {headers: rule.headers});
+    let data = JSON.parse(html).data;
+    data.forEach(function(it) {
+        d.push({
+            title: it.title,
+            img: it.cover,
+            year: it.author,
+            desc: it.type,
+            url: it.book_id
         });
-        
-        // 返回结果
-        return JSON.stringify({
-            page: parseInt(RULE.pg),
-            pagecount: 9999,
-            total: 999999,
-            list: videos
-        });
-    }),
-    二级: {
-        title: 'h1&&Text;.data--span:eq(0)&&Text',
-        img: 'img.lazyload&&data-original',
-        desc: '*;*;*;.data--span:eq(1)&&Text;.data--span:eq(2)&&Text',
-        content: 'meta[name=description]&&content',
-        tabs: '.nav-tabs&&a',
-        lists: '.ewave-content__playlist:eq(#id)&&a',
-        list_text: 'body&&Text',
-        list_url: 'a&&href',
-    },
-    搜索: '.ewave-vodlist li;.lazyload&&title;.lazyload&&data-original;.pic-text&&Text;.thumb-link&&href',
-}
+    });
+    setResult(d);
+    `,
+    lazy: `js:
+    setResult({
+        parse: 0, 
+        url: rule.host + '/duanju/api.php?video_id=' + input + '&type=mp4'
+    });
+    `
+};

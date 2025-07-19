@@ -26,8 +26,7 @@ var rule = {
     play_parse: true,
     lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input;\n  }",  
     double: true,
-    //推荐: '.box-width .public-list-box;body;.public-list-div a&&title;.public-list-div img&&data-src;.public-list-div .public-list-prb&&Text;.public-list-div a&&href',
-    推荐: '.slide-time-bj;body;.this-desc-title&&Text;.slide-time-img3&&style;.this-desc-info span:eq(3)&&Text;a&&href;.this-desc-item&&Text',
+    推荐: '.box-width .public-list-box;body;.public-list-div a&&title;.public-list-div img&&data-src;.public-list-div .public-list-prb&&Text;.public-list-div a&&href',
     一级: '.flex.wrap.border-box.public-r .public-list-box;.public-list-button a.time-title&&Text;.public-list-bj img&&data-src;.public-list-bj .public-list-prb&&Text;.public-list-button a.time-title&&href',
     二级: {
         title: '.slide-desc-box .this-desc-title&&Text;.gen-search-form li:eq(6)&&Text',

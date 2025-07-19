@@ -6,7 +6,7 @@ var rule = {
     //host: 'https://www.keke5.app',
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
-    searchUrl: '/search?k=**&page=fypage&t=',
+    searchUrl: '/search?k=**&page=fypage&t=**',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,

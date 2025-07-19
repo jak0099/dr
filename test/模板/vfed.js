@@ -1,0 +1,28 @@
+var rule = {
+  title: '',
+  host: '',
+  url: '/index.php/vod/show/id/fyclass/page/fypage.html',
+  searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
+  searchable: 2,
+  quickSearch: 0,
+  filterable: 0,
+  headers: {
+    'User-Agent': 'UC_UA',
+  },
+  class_parse: '.fed-pops-navbar&&ul.fed-part-rows&&a;a&&Text;a&&href;.*/(.*?).html',
+  play_parse: true,
+  lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input;\n  }",
+  limit: 6,
+  double: true,
+  推荐: 'ul.fed-list-info.fed-part-rows;li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
+  一级: '.fed-list-info&&li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
+  二级: {
+    title: 'h1.fed-part-eone&&Text;.fed-deta-content&&.fed-part-rows&&li&&Text',
+    img: '.fed-list-info&&a&&data-original',
+    desc: '.fed-deta-content&&.fed-part-rows&&li:eq(1)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(2)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(3)&&Text',
+    content: '.fed-part-esan&&Text',
+    tabs: '.fed-drop-boxs&&.fed-part-rows&&li',
+    lists: '.fed-play-item:eq(#id)&&ul:eq(1)&&li',
+  },
+  搜索: '.fed-deta-info;h1&&Text;.lazyload&&data-original;.fed-list-remarks&&Text;a&&href;.fed-deta-content&&Text',
+}
