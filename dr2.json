@@ -5,7 +5,6 @@
 "logo":"./img/d6.gif",
 "sites":[
 {"key":"dr_豆瓣","name":"☯豆瓣☾防骗勿轻信广告☽","type":3,"api":"./libs/drpy2.min.js","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./js/官源/豆瓣[官].js"},
-{"key": "csp_PushAgent","name": "♻️手机推送┃SP","type": 3,"api": "csp_PushAgent","searchable":0,"quickSearch":0,"changeable": 0}, 
 {"key":"csp_Bili","name":"🅱哔哩合集┃SP","type": 3,"api": "csp_Bili","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"./bili/Bili.json","jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 //{"key": "dr_我的哔哩","name":"🅱我的哔哩[DR]","type": 3,"api": "./libs/drpy2.min.js","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/我的哔哩[官].js"},
 //{"key":"dr_Live2CMS","name":"📺直播转点播V2[DR]","type":3,"api":"./libs/live2cms.js","searchable":2,"quickSearch":0,"filterable":0,"ext":"./live/live2cms_data.json"},
@@ -282,8 +281,8 @@
 {"key": "dr_短剧123[短]","name": "🥝短剧123[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧123[短].js"},
 {"key": "dr_98短剧[短]","name": "🥝98短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/98短剧[短].js"},
 {"key": "dr_短视频[短]","name": "🥝短视频[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短视频[短].js"},
+{"key": "dr_甜圈短剧[短]","name": "🥝甜圈短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/甜圈短剧[短].js"},
 
-{"key": "py_甜圈短剧[短]","name": "🥝甜圈短剧[短][PY]","type": 3,"api": "./py/html/甜圈短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧多短剧APP[短]","name": "🥝剧多短剧[短][PY]","type": 3,"api": "./py/app/剧多短剧APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_蓝莓短剧[短]","name": "🥝蓝莓短剧[短][PY]","type": 3,"api": "./py/短/蓝莓短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_好帅短剧[短]","name": "🥝好帅短剧[短][PY]","type": 3,"api": "./py/html/好帅短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -466,7 +465,8 @@
 {"key":"初中课堂","name":"📚初中┃课堂","type":3,"api":"csp_Bili","style":{"type":"rect","ratio":1.597},"searchable":0,"quickSearch":0,"changeable":0,"ext":"./bili/初中课堂.json","jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key":"高中教育","name":"📚高中┃课堂","type":3,"api":"csp_Bili","style":{"type":"rect","ratio":1.597},"searchable":0,"quickSearch":0,"changeable":0,"ext":"./bili/高中课堂.json","jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key": "dr_哔哩小学","name":"📚哔哩小学┃DR","type": 3,"api": "./libs/drpy2.min.js","style":{"type":"rect","ratio":1.597},"searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./js/官源/我的哔哩传参[官].js?type=url&params=../json/小学教育.json"},
-{"key": "dr_勿信广告勿付费","name": "👉勿信视频中广告勿付费👈","type": 3,"api": "","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": ""}
+{"key": "Push_Agent","name": "♻️手机推送┃SP","type": 3,"api": "csp_PushAgent","searchable":1,"quickSearch":0,"changeable": 0}, 
+{"key": "dr_勿信广告勿付费","name": "👉勿信视频中广告勿付费👈","type": 3,"api": "","searchable": 0,"quickSearch": 0,"filterable": 0}
 ],
 "parses":[
 {"name":"解析聚合","type":3,"url":"Demo"},
