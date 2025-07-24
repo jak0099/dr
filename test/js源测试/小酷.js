@@ -47,9 +47,9 @@ var rule = {
         }
     }),
     
-    二级: $js.toString(() => {
-        VODS = JSON.parse(fetch(input)).list
-    }), 
+    二级:$js.toString(()=>{
+    
+  }),  
   lazy:$js.toString(()=>{
     
   }),

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>人机验证</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <style>.verifyBox{position:fixed;top:0;right:0;bottom:0;left:0;text-align:center;white-space:nowrap;overflow:auto}.verifyBox:after{content:'';display:inline-block;height:100vh;vertical-align:middle}.verifyContent{display:inline-block;vertical-align:middle;text-align:center;white-space:normal}.loading{width:150px;height:15px;margin:0 auto;}.loading span{display:inline-block;width:15px;height:100%;margin-right:5px;border-radius:50%;background:#151515;-webkit-animation:load 1.5s ease infinite}.loading span:last-child{margin-right:0px}@-webkit-keyframes load{0%{opacity:1}100%{opacity:0}}.loading span:nth-child(1){-webkit-animation-delay:0.13s}.loading span:nth-child(2){-webkit-animation-delay:0.26s}.loading span:nth-child(3){-webkit-animation-delay:0.39s}.loading span:nth-child(4){-webkit-animation-delay:0.52s}.loading span:nth-child(5){-webkit-animation-delay:0.65s}h1{font-size:1.5em;color:#404040;text-align:center}</style>
+    </head>
+    <body>
+      <div class="verifyBox">
+        <div class="verifyContent">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>防火墙正在检查您的访问</h1>
+            <p id="bt-info">正在进行人机识别，请稍等……</p>
+            <p>本站受防御系统保护</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+	
+		var request = {
+		
+			createXHR: function () {
+				let xhr = null;
+				if (typeof XMLHttpRequest != 'undefined') {
+					xhr = new XMLHttpRequest()
+				} else if (typeof ActiveXObject != 'undefined') {
+					if (typeof agreement.callee.activeXString != 'string') {
+						let versions = ["MSXML2.XMLHTTP.6.0", "MSXML2.XMLHTTP.3.0", "MSXML2.XMLHTTP"], i, len;
+						for (i = 0, len = versions.length; i < len; i++) {
+							try {
+								xhr = new ActiveXObject(versions[i]);
+								arguments.callee.activeXString = versions[i];
+								break;
+							} catch (ex) {
+							}
+						}
+					}
+				} else {
+					throw new Error('No XHR object available.');
+				}
+				if (xhr == null) {
+					throw new Error('No XHR object available.');
+				}
+				return xhr;
+			},
+			
+			get: function (url, async, callback) {
+				let xhr = this.createXHR()
+				xhr.open('get', url, async || true)
+				xhr.send()
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+							let res = JSON.parse(xhr.responseText);
+							callback && callback(res, xhr.status, xhr)
+						}
+					}
+				}
+			},
+			
+			post: function (url, data, async, callback) {
+				let xhr = this.createXHR();
+				xhr.open('post', url, async || true)
+				let str = data;
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+				xhr.send(str)
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+							let res = JSON.parse(xhr.responseText)
+							callback && callback(res, xhr.status, xhr)
+						}
+					}
+				}
+			}	
+		}
+		
+		function encrypt(_str){
+			var staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
+			var encodechars = "";
+			for(var i=0;i<_str.length;i++){
+				var num0 = staticchars.indexOf(_str[i]);
+				if(num0 == -1){
+					var code = _str[i];
+				}else{
+					var code = staticchars[(num0+3)%62];
+				}
+				var num1 = parseInt(Math.random()*62,10);
+				var num2 = parseInt(Math.random()*62,10);
+				encodechars += staticchars[num1]+code+staticchars[num2];
+			}
+			return btoa(encodechars);
+		}
+		
+		var value = encrypt(window.location.href);
+		var token = encrypt("MTc1MDU2NDA2NA==");
+		var data = 'value=' + value + "&token=" + token;
+		var url = '/robot.php';
+		
+		request.post(url, data, true, function(res, status, xhr) {
+			setTimeout(function() {
+				location.reload();
+				location.reload()
+			}, 1000)
+		});
+		
+	</script>
+	</body>
+</html>
