@@ -59,9 +59,11 @@ var rule = {
         let playlist = list[0]['audiolist'];
         let playForm = [];
         let playUrls = [];
-        playlist.forEach(it => {
-            playUrls.push(it.isDefault + '$' + it.filePath);
-        })
+        list.forEach(item => {
+            const title = item.title;
+            const firstUrl = item.audiolist && item.audiolist[0] ? item.audiolist[0].filePath : '';
+            playUrls.push(`${title}$${firstUrl}`);
+        });
         VOD.vod_play_from = '凤凰FM';
         VOD.vod_play_url = playUrls.join('#');
     }),
