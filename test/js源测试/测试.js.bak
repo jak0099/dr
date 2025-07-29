@@ -1,7 +1,7 @@
 var rule = {
   title: 'Free追剧',
   host: 'https://www.lreeok.vip',
-  class_name: '电影&连续剧&动漫&综艺',
+  class_name: '电影&电视剧&综艺&动漫',
   class_url: '1&2&3&4',
   searchUrl: '/index.php/ajax/suggest?mid=1&wd=**&limit=50',
   searchable: 2,

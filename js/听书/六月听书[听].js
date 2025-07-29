@@ -127,7 +127,8 @@ globalThis.hex_md5 = hex_md5
 var rule = {
     类型: '听书',
     title: '六月听书[听]',
-    host: 'http://m.6yueting.com',
+    //host: 'http://m.6yueting.com',
+    host: 'http://m.5weiting.com',
     url: '/ys/fyclass/o2/pfypage',
     searchUrl: '/search/index/search?content=**&type=1&pageNum=fypage&pageSize=40',
     searchable: 2,
