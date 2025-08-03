@@ -1,21 +1,37 @@
 var rule = {
-  类型:'影视',//影视|听书|漫画|小说
-  模板:'海螺3',
-  title:'雪糕TV',
-  host:'https://www.xgitv.com',
-  //url:'/vshow/fyclass--------fypage---.html',//不带筛选
-  searchUrl:'/vsearch/**----------fypage---.html',
-  searchable:2,
-  quickSearch:0,
-  filterable:1,
-  url:'/vshow/fyfilter---fypage---.html',//带筛选
-  filter:'H4sIAAAAAAAAA+3WW08TQRQH8O+yzzUBxAu8cafc79fwsNINHSyL0i2kkCaYUu2CgJKwmNjoi2arkRQeQGlTP01nVr4F0/LPmWZJfPJBkn3r/P7TM9vJOZtuaRGmm0lmLmmt81vacyOptWqLumWEI1pIM/UVQ6698xL/tCfX63osYdQ2mpJ5Jn+dzldZLqhMKoR0N18p5zz7DTZsspjBGlXs5Ljt+uImir3suUhnfPFDFbvv+VXJFzdTLF69E9uOL36kzrbdu8Ufq29nP1SKti9+os4ufuflYxUvs1jihfz1qnzmslJykL5klq6lFqrZ7eXGDMsy1tTl8tMTUdj/++VS6TZAG0k7pJ2kA9JB0gnpJOmCdJF0Q7pJeiA9JL2QXpIwJEzSB+kj6Yf0kwxABkgGIYMkQ5AhkmHIMMkIZIRkFDJKMgYZIxmHjJNMQCZIJiGTJFOQKZJpyDTJDGSGZBYySzIHmSNpeNACq36qb5VnSdUm4uCIFw/vtIl4a4vctnDOUMJicjc1ci300qcIo8yK14d/Cjs8+xphfHF1zagevxCqDXM8ypYT/+ClcFuHZuNjuVJ05QDWz9ZT9VC/CvzwzBe3qPjk6/Xnb764sUHlP1zv94E/Vy8dcfGTf3FUHtXZhl57vGBAgwG9RwO6uWouJVnddAZNGzTt/960Edm0K/J/UtC1Qdfel65N3QB+spcVIQ0AAA==',
-  filter_url:'{{fl.cateId}}--{{fl.by}}---{{fl.letter}}',
-  //实例 https://www.xgitv.com/vshow/zilei8--hits---A---2---.html
-  filter_def:{
-   dianying: {cateId: 'dianying'},
-   dianshiju: {cateId: 'dianshiju'},
-   zongyi: {cateId: 'zongyi'},
-   dongman: {cateId: 'dongman'}
+  title: '雪糕TV',
+  author: '不告诉你',
+  host: 'https://www.pgitv.com',
+  url: '/vshow/fyfilter.html',
+  searchUrl: '/vsearch/**----------fypage---.html',
+  headers: { 'User-Agent': 'UC_UA' },
+  searchable: 2,
+  quickSearch: 0,
+  filterable: 1,
+  play_parse: true,
+  limit: 6,
+  timeout: 10000,
+  class_name: '电影&电视剧&动漫&综艺',
+  class_url: 'dianying&dianshiju&dongman&zongyi',
+  filter: {
+    "dianying": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部", "v": "1" }, { "n": "动作片", "v": "zilei1" }, { "n": "喜剧片", "v": "zilei2" }, { "n": "爱情片", "v": "zilei3" }, { "n": "科幻片", "v": "zilei4" }, { "n": "恐怖片", "v": "zilei5" }, { "n": "剧情片", "v": "zilei6" }, { "n": "战争片", "v": "zilei7" }, { "n": "纪录片", "v": "jilupian" }, { "n": "其他", "v": "qita" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "按更新", "v": "time" }, { "n": "按热度", "v": "hits" }, { "n": "按评分", "v": "score" }] }],
+    "dianshiju": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部", "v": "2" }, { "n": "国产剧", "v": "zilei8" }, { "n": "港台剧", "v": "zilei9" }, { "n": "日韩剧", "v": "zilei10" }, { "n": "欧美剧", "v": "zilei11" }, { "n": "海外剧", "v": "haiwaiju" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "按更新", "v": "time" }, { "n": "按热度", "v": "hits" }, { "n": "按评分", "v": "score" }] }],
+    "dongman": [{ "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "按更新", "v": "time" }, { "n": "按热度", "v": "hits" }, { "n": "按评分", "v": "score" }] }],
+    "zongyi": [{ "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "按更新", "v": "time" }, { "n": "按热度", "v": "hits" }, { "n": "按评分", "v": "score" }] }]
   },
-  }
+  filter_url: '{{fl.类型}}--{{fl.排序}}------fypage---{{fl.年份}}',
+  filter_def: { 'dianying': { 类型: '1' }, 'dianshiju': { 类型: '2' }, 'zongyi': { 类型: 'zongyi' }, 'dongman': { 类型: 'dongman' } },
+  推荐: '*',
+  tab_exclude: '热播榜|友情|猜你喜欢',
+  lazy: `js: let pclick = 'document.querySelector("#playleft iframe").contentWindow.document.querySelector("#start").click()';input = { parse: 1, url: input, js: pclick, click: pclick}`,
+  一级: 'ul.new-up-list li;a&&title;.lazyload&&data-original;span.state&&Text;a&&href',
+  二级: {
+    title: 'h1&&Text',
+    img: '.lazyload&&data-original',
+    desc: '.info-wrap&&p:eq(0)&&Text;.info-wrap&&p:eq(3)&&Text;.info-wrap&&p:eq(4)&&Text;.info-wrap&&p:eq(2)&&Text;.info-wrap&&p:eq(1)&&Text',
+    content: '.detail&&.box&&Text',
+    tabs: 'ul.nav-tabs&&li a',
+    lists: 'ul.episodes-list:eq(#id)&&li a'
+  },
+  搜索: '*',
+}

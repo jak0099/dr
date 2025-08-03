@@ -33,7 +33,7 @@ class Spider(Spider):
         self.key = js1['datakey']
         self.iv = js1.get('dataiv',self.key)
 
-        res = self.fetch(self.xurl + '.index/initV119', headers=headerx).json()
+        res = self.fetch(self.xurl + '.index/initV120', headers=headerx).json()
         encrypted_data = res['data']
         response = self.decrypt(encrypted_data)
         init_data = json.loads(response)
