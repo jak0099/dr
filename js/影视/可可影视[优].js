@@ -1,18 +1,17 @@
-//发布页地址 https://dl.kkys01.com/
+//搜索功能已修复，发布页地址 https://dl.kkys01.com/
 var rule = {
     title: '可可影视[优]',
-    //host: `https://www.${Math.random() < 0.5 ? 'kkys02' : Math.random() < 0.5 ? 'kkys01' : 'kkys03'}.com`,
-    host: `https://www.${(r=>r<0.5?'keke5':['keke1','keke2','keke3','keke4','keke6','keke7','keke8'][(r-0.5)*14|0])(Math.random())}.app`,
-    //host: 'https://www.keke5.app',
+    host: 'https://www.keke5.app',
+    //host: `https://www.${(r=>r<0.5?'keke5':['keke1','keke2','keke3','keke4','keke6','keke7','keke8'][(r-0.5)*14|0])(Math.random())}.app`,    
     url: '/show/fyclass-fyfilter-fypage.html',
     filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
-    searchUrl: 'https://www.keke1.app/search?k=**&page=1&os=pc',
+    searchUrl: '/search?k=**&page=fypage&t=',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
     headers: {
         'User-Agent': 'MOBILE_UA',
-        'Referer': rule.host + '/',
+        'Referer': 'https://www.keke5.app/',
         'X-Forwarded-For': `119.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`
     },
     class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
@@ -40,24 +39,19 @@ var rule = {
         tabs: 'body&&.source-item-label',
         lists: '.episode-list:eq(#id) a',
     },
-    //搜索: '.search-result-list&&a;.title:eq(0)&&Text;.lazyload&&data-original;.search-result-item-header&&Text;a&&href;.desc&&Text',
     搜索: '.search-result-list&&.search-result-item;.title:eq(0)&&Text;.lazyload&&data-original;.search-result-item-header&&Text;a&&href;.desc&&Text',
-    
-    // 图片替换:$js.toString(()=>{
-    //     log(input);
-    //    input = input.replace(rule.host,'https://vres.a357899.cn');
-    // }),
-    //图片替换: 'https://keke5.app=>https://vres.a357899.cn',
     预处理: $js.toString(() => {
-        let html = request(rule.host);
-        let scripts = pdfa(html, 'script');
+        let homeHtml = request(rule.host);
+        let tValue = homeHtml.match(/<input[^>]*name="t"[^>]*value="([^"]*)"/i);
+        if (tValue && tValue[1]) {
+            rule.searchUrl = rule.searchUrl + encodeURIComponent(tValue[1]);
+        } 
+        let scripts = pdfa(homeHtml, 'script');
         let img_script = scripts.find(it => pdfh(it, 'script&&src').includes('rdul.js'));
         if (img_script) {
             let img_url = img_script.match(/src="(.*?)"/)[1];
-            //console.log(img_url);
             let img_html = request(img_url);
             let img_host = img_html.match(/'(.*?)'/)[1];
-            log(img_host);
             rule.图片替换 = rule.host + '=>' + img_host;
         }
     }),
@@ -95,54 +89,4 @@ var rule = {
       { "key": "排序", "name": "排序", "value": [{ "n": "综合", "v": "1" }, { "n": "最新", "v": "2" }, { "n": "最热", "v": "3" }] }
     ]
   },
-    一级f: `js:
-    let urls = [
-    'https://keke5.app/show/1-----1-1.html',
-    'https://keke5.app/show/2-----1-1.html',
-    'https://keke5.app/show/3-----1-1.html',
-    'https://keke5.app/show/4-----1-1.html',
-    'https://keke5.app/show/6-----1-1.html',
-    ];
-    let filters = {};
-    pdfa = jsp.pdfa;
-    pdfh = jsp.pdfh;
-    for(let url of urls){
-    let fclass = url.match(/show\\/(\\d+)-/)[1];
-    console.log(fclass);
-    let html = request(url);
-    let tabs = pdfa(html, '.filter-row');
-    let data = [];
-    for (let tab of tabs) {
-        let title = pdfh(tab, 'strong&&Text').replace(':','');
-        let lis = pdfa(tab, 'a');
-        let _map = {key: title, name: title};
-        let value = [];
-        for (let li of lis) {
-            let n = pdfh(li, 'a&&Text').trim();
-            let v=n;
-            if(/全部|地区|类型/.test(n)){
-                v = '';
-            }else if(/综合/.test(n)){
-                v = '1';
-            }else{
-                v = pdfh(li,'a&&href');
-                try {
-                    v = v.match(/-(.*?)1-1\.html/)[1].replace(/-/g,'');
-                }catch (e) {
-                    v = v.match(/-(.*?)-1\.html/)[1].replace(/-/g,'');
-                }
-                v = decodeURIComponent(v);
-            }
-            value.push({
-                'n': n, 'v': v
-            });
-        }
-        _map['value'] = value;
-        data.push(_map);
-    }
-    filters[fclass] = data;
-    }
-    VODS = [filters];
-    console.log(gzip(JSON.stringify(filters)));
-    `,    
 }
