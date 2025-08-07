@@ -1,8 +1,12 @@
-from base.spider import Spider
 import re,sys,json
 sys.path.append('..')
+try:
+    # from base.spider import Spider as BaseSpider
+    from base.spider import BaseSpider
+except ImportError:
+    from t4.base.spider import BaseSpider
 
-class Spider(Spider):
+class Spider(BaseSpider):
     api_host = 'https://api.jinlidj.com'
     origin = 'https://www.jinlidj.com'
     api_path = '/api/search'
@@ -55,7 +59,7 @@ class Spider(Spider):
         videos = []
         vod_play_url = ''
         for name,url in data['player'].items():
-            vod_play_url += f'{name}${url}#'
+            vod_play_url += f'{name}${url}&auto=1#'
         vod_play_url.rstrip('#')
         videos.append({
             'vod_id': data.get('vod_id'),

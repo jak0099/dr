@@ -1,124 +1,157 @@
+globalThis.h_ost = 'https://mov.cenguigui.cn';
 var rule = {
-    类型: '影视',
-    title: '奇猫短剧',
-    host: 'https://api-store.qmplaylet.com',
-    url: '/api/v1/playlet/index?tag_id=fyclass&playlet_privacy=1&operation=1',
-    searchUrl: '',
-    searchable: 0,
-    quickSearch: 0,
-    filterable: 1,
+    title: '甜圈短剧[短]',
+    host: h_ost,
+    searchUrl: '/duanju/api.php?name=**&page=fypage',
+    url: '/duanju/api.php?classname=fyclass&offset=fypage',
     headers: {
-        'User-Agent': 'MOBILE_UA',
-        'app-version': '10001',
-        'platform': 'android',
-        'reg': '0',
-        'AUTHORIZATION': '',
-        'application-id': 'com.****.reader',
-        'net-env': '1',
-        'channel': 'unknown'
+        'User-Agent': 'okhttp/3.12.11',
     },
-    class_name: '推荐&新剧&都市情感&虐恋&逆袭&复仇&豪门总裁&都市&甜宠&家庭&古装&女性成长&重生&穿越&萌宝&打脸虐渣&真假千金&赘婿&强者回归&闪婚&战神&玄幻仙侠&小人物&追妻火葬场&职场&搞笑&神医&乡村&马甲&娱乐明星&商战&悬疑&奇幻&神豪&权谋&高手下山&异能&年代&欢喜冤家&伦理&青春校园&民国&宅斗&系统&穿书&替身&社会话题&团宠&宫斗&婚姻&武侠&银发&女强&种田经商&致富&女帝&先婚后爱&科幻&灵异&脑洞&偷听心声&兵王&破镜重圆&女总裁&暗恋&末世&金手指&现代言情&修仙&扮猪吃虎&替嫁&古代言情&正能量&鉴宝&古代&契约婚姻&王妃&婚恋&皇后&二次元&玄学&大女主&青梅竹马&双重生&带球跑&历史&校园&玄幻&皇帝&直播&读心术',
-    class_url: '0&-1&1273&16&400&795&624&571&21&670&1272&1294&784&373&356&716&812&36&402&480&527&1286&1296&715&724&793&1269&590&558&1295&723&27&570&37&790&1299&727&572&464&1293&1288&573&342&787&338&712&1290&545&343&718&371&1297&708&1291&492&617&524&594&1287&526&1258&28&467&89&719&556&726&776&671&799&476&777&1298&47&576&355&107&1246&106&1289&900&972&465&828&722&583&575&566&62&419&814',
+    timeout: 5000,
+    filterable: 1,
+    limit: 20,
+    multi: 1,
+    searchable: 2,
     play_parse: true,
-    double: true,
-
-    推荐: $js.toString(() => {
-        let params = {
-            tag_id: 0,
-            playlet_privacy: 1,
-            operation: 1
-        };
-        params.sign = getSignStr(params);
-        let html = request(rule.host + '/api/v1/playlet/index?' + new URLSearchParams(params).toString(), {
-            headers: rule.headers
-        });
-        let data = JSON.parse(html).data;
-        VODS = data.list.map(item => ({
-            vod_id: item.playlet_id,
-            vod_name: item.title,
-            vod_pic: item.image_link,
-            vod_remarks: item.hot_value + (item.is_over === '1' ? ' 已完结' : '')
-        }));
+    search_match: true, //精准搜索
+    class_parse: $js.toString(() => {
+    let classes = [
+    { type_id: '推荐榜', type_name: '🔥推荐榜' },
+    { type_id: '新剧', type_name: '🎬新剧' },
+    { type_id: '逆袭', type_name: '🎬逆袭' },
+    { type_id: '霸总', type_name: '🎬霸总' },
+    { type_id: '现代言情', type_name: '🎬现代言情' },
+    { type_id: '打脸虐渣', type_name: '🎬打脸虐渣' },
+    { type_id: '豪门恩怨', type_name: '🎬豪门恩怨' },
+    { type_id: '神豪', type_name: '🎬神豪' },
+    { type_id: '马甲', type_name: '🎬马甲' },
+    { type_id: '都市日常', type_name: '🎬都市日常' },
+    { type_id: '战神归来', type_name: '🎬战神归来' },
+    { type_id: '小人物', type_name: '🎬小人物' },
+    { type_id: '女性成长', type_name: '🎬女性成长' },
+    { type_id: '大女主', type_name: '🎬大女主' },
+    { type_id: '穿越', type_name: '🎬穿越' },
+    { type_id: '都市修仙', type_name: '🎬都市修仙' },
+    { type_id: '强者回归', type_name: '🎬强者回归' },
+    { type_id: '亲情', type_name: '🎬亲情' },
+    { type_id: '古装', type_name: '🎬古装' },
+    { type_id: '重生', type_name: '🎬重生' },
+    { type_id: '闪婚', type_name: '🎬闪婚' },
+    { type_id: '赘婿逆袭', type_name: '🎬赘婿逆袭' },
+    { type_id: '虐恋', type_name: '🎬虐恋' },
+    { type_id: '追妻', type_name: '🎬追妻' },
+    { type_id: '天下无敌', type_name: '🎬天下无敌' },
+    { type_id: '家庭伦理', type_name: '🎬家庭伦理' },
+    { type_id: '萌宝', type_name: '🎬萌宝' },
+    { type_id: '古风权谋', type_name: '🎬古风权谋' },
+    { type_id: '职场', type_name: '🎬职场' },
+    { type_id: '奇幻脑洞', type_name: '🎬奇幻脑洞' },
+    { type_id: '异能', type_name: '🎬异能' },
+    { type_id: '无敌神医', type_name: '🎬无敌神医' },
+    { type_id: '古风言情', type_name: '🎬古风言情' },
+    { type_id: '传承觉醒', type_name: '🎬传承觉醒' },
+    { type_id: '现言甜宠', type_name: '🎬现言甜宠' },
+    { type_id: '奇幻爱情', type_name: '🎬奇幻爱情' },
+    { type_id: '乡村', type_name: '🎬乡村' },
+    { type_id: '历史古代', type_name: '🎬历史古代' },
+    { type_id: '王妃', type_name: '🎬王妃' },
+    { type_id: '高手下山', type_name: '🎬高手下山' },
+    { type_id: '娱乐圈', type_name: '🎬娱乐圈' },
+    { type_id: '强强联合', type_name: '🎬强强联合' },
+    { type_id: '破镜重圆', type_name: '🎬破镜重圆' },
+    { type_id: '暗恋成真', type_name: '🎬暗恋成真' },
+    { type_id: '民国', type_name: '🎬民国' },
+    { type_id: '欢喜冤家', type_name: '🎬欢喜冤家' },
+    { type_id: '系统', type_name: '🎬系统' },
+    { type_id: '真假千金', type_name: '🎬真假千金' },
+    { type_id: '龙王', type_name: '🎬龙王' },
+    { type_id: '校园', type_name: '🎬校园' },
+    { type_id: '穿书', type_name: '🎬穿书' },
+    { type_id: '女帝', type_name: '🎬女帝' },
+    { type_id: '团宠', type_name: '🎬团宠' },
+    { type_id: '年代爱情', type_name: '🎬年代爱情' },
+    { type_id: '玄幻仙侠', type_name: '🎬玄幻仙侠' },
+    { type_id: '青梅竹马', type_name: '🎬青梅竹马' },
+    { type_id: '悬疑推理', type_name: '🎬悬疑推理' },
+    { type_id: '皇后', type_name: '🎬皇后' },
+    { type_id: '替身', type_name: '🎬替身' },
+    { type_id: '大叔', type_name: '🎬大叔' },
+    { type_id: '喜剧', type_name: '🎬喜剧' },
+    { type_id: '剧情', type_name: '🎬剧情' }
+        ];
+    input = classes;
     }),
-
-    一级: $js.toString(() => {
-        let tag_id = input.split('?')[1].split('&').find(p => p.startsWith('tag_id')).split('=')[1];
-        let params = {
-            tag_id: tag_id,
-            playlet_privacy: 1,
-            operation: 1
-        };
-        params.sign = getSignStr(params);
-        let html = request(rule.host + '/api/v1/playlet/index?' + new URLSearchParams(params).toString(), {
-            headers: rule.headers
-        });
-        let data = JSON.parse(html).data;
-        VODS = data.list.map(item => ({
-            vod_id: item.playlet_id,
-            vod_name: item.title,
-            vod_pic: item.image_link,
-            vod_remarks: item.hot_value + (item.is_over === '1' ? ' 已完结' : '')
-        }));
-    }),
-
-    二级: $js.toString(() => {
-        let playlet_id = input.split('?')[1].split('&').find(p => p.startsWith('playlet_id')).split('=')[1];
-        let params = {
-            playlet_id: playlet_id
-        };
-        params.sign = getSignStr(params);
-        // 使用完整URL覆盖host限制
-        let html = request('https://api-read.qmplaylet.com/player/api/v1/playlet/info?' + new URLSearchParams(params).toString(), {
-            headers: rule.headers
-        });
-        let data = JSON.parse(html).data;
-        let playList = data.play_list.sort((a, b) => a.sort - b.sort)
-            .map(item => `第${item.sort}集$${item.video_url}`)
-            .join('#');
-        
-        VOD = {
-            vod_id: playlet_id,
-            vod_name: data.title,
-            vod_pic: data.image_link,
-            vod_content: data.intro,
-            vod_play_from: '奇猫短剧',
-            vod_play_url: playList
-        };
-    }),
-
     lazy: $js.toString(() => {
         input = {
             parse: 0,
-            url: input,
-            js: ''
+            url: HOST + '/duanju/api.php?video_id=' + input + '&type=mp4',
+            jx: 0
         };
-    })
-};
-
-globalThis.getSignStr = function (params) {
-    const sign_key = "d3dGiJc651gSQ8w1";
-    let keys = Object.keys(params).sort();
-    let sign_str = keys.reduce((pre, n) => pre + n + "=" + params[n], "") + sign_key;
-    return md5(sign_str);
-}
-
-// 以下解密函数保留，但本规则中可能不需要
-function novelContentDecrypt(data, iv) {
-    let key = CryptoJS.enc.Hex.parse("32343263636238323330643730396531");
-    iv = CryptoJS.enc.Hex.parse(iv);
-    let HexStr = CryptoJS.enc.Hex.parse(data);
-    let Base64Str = CryptoJS.enc.Base64.stringify(HexStr);
-    let decrypted = CryptoJS.AES.decrypt(Base64Str, key, {
-        iv,
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return decrypted.toString(CryptoJS.enc.Utf8);
-}
-
-globalThis.decodeContent = function (response) {
-    let txt = CryptoJS.enc.Base64.parse(response).toString();
-    let iv = txt.slice(0, 32);
-    let _content = novelContentDecrypt(txt.slice(32), iv).trim();
-    return _content;
+    }),        
+    推荐: $js.toString(() => {
+        let url = HOST + '/duanju/api.php?classname=推荐榜&offset=0';
+        let res = request(url, {headers: rule.headers});
+        let data = JSON.parse(res).data;
+        VODS = [];
+        data.forEach(item => {
+            VODS.push({
+                vod_id: item.book_id,
+                vod_name: item.title,
+                vod_pic: item.cover,
+                vod_remarks: `${item.sub_title}|${item.episode_cnt}集`
+            });
+        });
+    }),    
+    一级: $js.toString(() => {
+        let d = [];
+        let html =  request(input, {headers: rule.headers });
+        let data = JSON.parse(html).data;
+        data.forEach((it) => {
+            d.push({
+                title: it.title,
+                img: it.cover,
+                //year: it.copyright,
+                desc: it.sub_title,
+                url: it.book_id
+            });
+        });
+        setResult(d);
+    }),
+    二级: $js.toString(() => {
+        let url = HOST + `/duanju/api.php?book_id=${orId}`;
+        let item = JSON.parse( request(url));
+         VOD = {
+            vod_name: item.book_name,
+            type_name: item.category,
+            vod_pic: item.book_pic,
+            vod_content: item.desc,
+            vod_remarks: item.duration,
+            vod_year: '更新时间:' + item.time,
+            //vod_actor: item.author
+        };
+        let playUrls = item.data.map(item => `${item.title}$${item.video_id}`);
+        VOD.vod_play_from = '甜圈短剧';
+        VOD.vod_play_url = playUrls.join("#");
+        }),
+    搜索: $js.toString(() => {
+        let d = [];
+        let html =  request(input, {headers: rule.headers });
+        let data = JSON.parse(html).data;
+        if (rule.search_match) {
+            data = data.filter(item =>
+                item.title &&
+                new RegExp(KEY, "i").test(item.title)
+            );
+        }
+        data.forEach((it) => {
+            d.push({
+                title: it.title,
+                img: it.cover,
+                year: it.author,
+                desc: it.type,
+                url: it.book_id
+            });
+        });
+         setResult(d);
+    }),
 }
