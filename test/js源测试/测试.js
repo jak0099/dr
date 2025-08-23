@@ -1,157 +1,123 @@
-globalThis.h_ost = 'https://mov.cenguigui.cn';
-var rule = {
-    title: '甜圈短剧[短]',
-    host: h_ost,
-    searchUrl: '/duanju/api.php?name=**&page=fypage',
-    url: '/duanju/api.php?classname=fyclass&offset=fypage',
-    headers: {
-        'User-Agent': 'okhttp/3.12.11',
-    },
-    timeout: 5000,
-    filterable: 1,
-    limit: 20,
-    multi: 1,
-    searchable: 2,
-    play_parse: true,
-    search_match: true, //精准搜索
-    class_parse: $js.toString(() => {
-    let classes = [
-    { type_id: '推荐榜', type_name: '🔥推荐榜' },
-    { type_id: '新剧', type_name: '🎬新剧' },
-    { type_id: '逆袭', type_name: '🎬逆袭' },
-    { type_id: '霸总', type_name: '🎬霸总' },
-    { type_id: '现代言情', type_name: '🎬现代言情' },
-    { type_id: '打脸虐渣', type_name: '🎬打脸虐渣' },
-    { type_id: '豪门恩怨', type_name: '🎬豪门恩怨' },
-    { type_id: '神豪', type_name: '🎬神豪' },
-    { type_id: '马甲', type_name: '🎬马甲' },
-    { type_id: '都市日常', type_name: '🎬都市日常' },
-    { type_id: '战神归来', type_name: '🎬战神归来' },
-    { type_id: '小人物', type_name: '🎬小人物' },
-    { type_id: '女性成长', type_name: '🎬女性成长' },
-    { type_id: '大女主', type_name: '🎬大女主' },
-    { type_id: '穿越', type_name: '🎬穿越' },
-    { type_id: '都市修仙', type_name: '🎬都市修仙' },
-    { type_id: '强者回归', type_name: '🎬强者回归' },
-    { type_id: '亲情', type_name: '🎬亲情' },
-    { type_id: '古装', type_name: '🎬古装' },
-    { type_id: '重生', type_name: '🎬重生' },
-    { type_id: '闪婚', type_name: '🎬闪婚' },
-    { type_id: '赘婿逆袭', type_name: '🎬赘婿逆袭' },
-    { type_id: '虐恋', type_name: '🎬虐恋' },
-    { type_id: '追妻', type_name: '🎬追妻' },
-    { type_id: '天下无敌', type_name: '🎬天下无敌' },
-    { type_id: '家庭伦理', type_name: '🎬家庭伦理' },
-    { type_id: '萌宝', type_name: '🎬萌宝' },
-    { type_id: '古风权谋', type_name: '🎬古风权谋' },
-    { type_id: '职场', type_name: '🎬职场' },
-    { type_id: '奇幻脑洞', type_name: '🎬奇幻脑洞' },
-    { type_id: '异能', type_name: '🎬异能' },
-    { type_id: '无敌神医', type_name: '🎬无敌神医' },
-    { type_id: '古风言情', type_name: '🎬古风言情' },
-    { type_id: '传承觉醒', type_name: '🎬传承觉醒' },
-    { type_id: '现言甜宠', type_name: '🎬现言甜宠' },
-    { type_id: '奇幻爱情', type_name: '🎬奇幻爱情' },
-    { type_id: '乡村', type_name: '🎬乡村' },
-    { type_id: '历史古代', type_name: '🎬历史古代' },
-    { type_id: '王妃', type_name: '🎬王妃' },
-    { type_id: '高手下山', type_name: '🎬高手下山' },
-    { type_id: '娱乐圈', type_name: '🎬娱乐圈' },
-    { type_id: '强强联合', type_name: '🎬强强联合' },
-    { type_id: '破镜重圆', type_name: '🎬破镜重圆' },
-    { type_id: '暗恋成真', type_name: '🎬暗恋成真' },
-    { type_id: '民国', type_name: '🎬民国' },
-    { type_id: '欢喜冤家', type_name: '🎬欢喜冤家' },
-    { type_id: '系统', type_name: '🎬系统' },
-    { type_id: '真假千金', type_name: '🎬真假千金' },
-    { type_id: '龙王', type_name: '🎬龙王' },
-    { type_id: '校园', type_name: '🎬校园' },
-    { type_id: '穿书', type_name: '🎬穿书' },
-    { type_id: '女帝', type_name: '🎬女帝' },
-    { type_id: '团宠', type_name: '🎬团宠' },
-    { type_id: '年代爱情', type_name: '🎬年代爱情' },
-    { type_id: '玄幻仙侠', type_name: '🎬玄幻仙侠' },
-    { type_id: '青梅竹马', type_name: '🎬青梅竹马' },
-    { type_id: '悬疑推理', type_name: '🎬悬疑推理' },
-    { type_id: '皇后', type_name: '🎬皇后' },
-    { type_id: '替身', type_name: '🎬替身' },
-    { type_id: '大叔', type_name: '🎬大叔' },
-    { type_id: '喜剧', type_name: '🎬喜剧' },
-    { type_id: '剧情', type_name: '🎬剧情' }
-        ];
-    input = classes;
-    }),
-    lazy: $js.toString(() => {
-        input = {
-            parse: 0,
-            url: HOST + '/duanju/api.php?video_id=' + input + '&type=mp4',
-            jx: 0
-        };
-    }),        
-    推荐: $js.toString(() => {
-        let url = HOST + '/duanju/api.php?classname=推荐榜&offset=0';
-        let res = request(url, {headers: rule.headers});
-        let data = JSON.parse(res).data;
-        VODS = [];
-        data.forEach(item => {
-            VODS.push({
-                vod_id: item.book_id,
-                vod_name: item.title,
-                vod_pic: item.cover,
-                vod_remarks: `${item.sub_title}|${item.episode_cnt}集`
-            });
-        });
-    }),    
-    一级: $js.toString(() => {
-        let d = [];
-        let html =  request(input, {headers: rule.headers });
-        let data = JSON.parse(html).data;
-        data.forEach((it) => {
-            d.push({
-                title: it.title,
-                img: it.cover,
-                //year: it.copyright,
-                desc: it.sub_title,
-                url: it.book_id
-            });
-        });
-        setResult(d);
-    }),
-    二级: $js.toString(() => {
-        let url = HOST + `/duanju/api.php?book_id=${orId}`;
-        let item = JSON.parse( request(url));
-         VOD = {
-            vod_name: item.book_name,
-            type_name: item.category,
-            vod_pic: item.book_pic,
-            vod_content: item.desc,
-            vod_remarks: item.duration,
-            vod_year: '更新时间:' + item.time,
-            //vod_actor: item.author
-        };
-        let playUrls = item.data.map(item => `${item.title}$${item.video_id}`);
-        VOD.vod_play_from = '甜圈短剧';
-        VOD.vod_play_url = playUrls.join("#");
-        }),
-    搜索: $js.toString(() => {
-        let d = [];
-        let html =  request(input, {headers: rule.headers });
-        let data = JSON.parse(html).data;
-        if (rule.search_match) {
-            data = data.filter(item =>
-                item.title &&
-                new RegExp(KEY, "i").test(item.title)
-            );
+// 全局验证函数
+function verifyLogin(currentUrl) {
+    // 定义加密函数
+    const encrypt = _str => {
+        const staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
+        let encodechars = "";
+        for(let i = 0; i < _str.length; i++) {
+            const char = _str[i];
+            const index = staticchars.indexOf(char);
+            const code = index === -1 ? char : staticchars[(index + 3) % 62];
+            const rand1 = staticchars[Math.floor(Math.random() * 62)];
+            const rand2 = staticchars[Math.floor(Math.random() * 62)];
+            encodechars += rand1 + code + rand2;
         }
-        data.forEach((it) => {
-            d.push({
-                title: it.title,
-                img: it.cover,
-                year: it.author,
-                desc: it.type,
-                url: it.book_id
+        return base64.encode(encodechars);
+    };
+    
+    try {
+        const value = encrypt(currentUrl);
+        const token = encrypt("MTc1MDU2NTQ5OA==");
+        const data = `value=${value}&token=${token}`;
+        const url = currentUrl.startsWith('http') 
+            ? new URL('/robot.php', new URL(currentUrl).origin).href
+            : HOST + '/robot.php';
+        
+        log(`发送验证请求到: ${url}`);
+        const res = req(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "User-Agent": MOBILE_UA
+            },
+            body: data
+        });
+        
+        log(`验证请求完成，状态码: ${res.statusCode || '无状态码'}`);
+        return true;
+    } catch (e) {
+        log(`验证异常: ${e.message}`);
+        return false;
+    }
+}
+
+// 注册全局函数
+globalThis.verifyLogin = verifyLogin;
+
+// 规则定义
+var rule = {
+    类型: '影视',
+    title: '剧巴巴',
+    host: 'https://www.jubaba.cc',
+    headers: {'User-Agent': MOBILE_UA},
+    编码: 'utf-8',
+    timeout: 5000,
+    homeUrl: '/',
+    url: '/vodshow/fyclass-fyfilter.html',
+    filter_url: '{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
+    detailUrl: '',
+    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+    class_name: '电影&剧集&综艺&动漫',
+    class_url: '1&2&3&4',
+    filter_def: {},
+    play_parse: true,
+    lazy: $js.toString(() => {
+        let pclick = 'document.querySelector("#playleft iframe").contentWindow.document.querySelector("#start").click()';
+        input = {
+            parse: 1,
+            url: input,
+            js: pclick,
+            click: pclick
+        }
+    }),
+    limit: 9,
+    double: false,
+    推荐: '*',
+    一级: `js:
+        // 检测验证页面
+        if (input.includes('verifyBox')) {
+            log('检测到人机验证，开始执行验证...');
+            
+            // 执行验证
+            const success = verifyLogin(fetchParams.url);
+            
+            if (success) {
+                log('验证成功，1秒后刷新页面');
+                // 返回刷新指令
+                return { reload: true, delay: 1000 };
+            } else {
+                log('验证失败，返回空结果');
+                return [];
+            }
+        }
+        
+        // 正常解析一级页面
+        let list = jsp.pdfa(input, '.lazyload');
+        let videos = [];
+        list.forEach(item => {
+            videos.push({
+                title: jsp.pdfh(item, '&&title'),
+                img: jsp.pdfh(item, '&&data-original'),
+                desc: jsp.pdfh(item, '.text-right&&Text'),
+                url: jsp.pdfh(item, 'a&&href')
             });
         });
-         setResult(d);
-    }),
+        return videos;
+    `,
+    二级: {
+        title: 'h1&&span:eq(0)&&Text;.data--span:eq(0)&&Text',
+        img: 'img.lazyload&&data-original',
+        desc: '.v-thumb&&span&&Text;.data:eq(0)&&a:eq(-1)&&Text;.data:eq(0)&&a:eq(-2)&&Text;.data--span:eq(1)&&Text;.data--span:eq(2)&&Text',
+        content: 'meta[name^=description]&&content',
+        tabs: '.nav-tabs&&a',
+        tab_text: 'body&&Text',
+        lists: '.ewave-content__playlist:eq(#id)&&a',
+        list_text: 'body&&Text',
+        list_url: 'a&&href',
+    },
+    搜索: '*',
+    filter: 'H4sIAAAAAAAAA+2ZW89cVxXG3/kYfqbSGnJr3nK/3++J8uBGVhs1pVKglRBCAoyJIYkNiOBQGwgNt1AMhqQUTI2/jGfX/hYde855n3FbVlabVkq7b/v7n53ZOWd2dv6a7WkJhUNHH7T0hL6OdoeOhh49iXR2hlpDHZFvohrV8JIbi2v+PvLkOy086Al11OT4cjW2XJM1hHpbSZ3M6vtJJeCYl9igjgQ45vaPun2TFCNAnyPL5WKW+zSAPpfG1M4u92kA7TBwATwv8bpcGObnGeBYJbeoXqxQjADPG1n3ihwjsMbpTezKOGuA2MIzGScBxpJbLO+94bEYQLuh8erUO25nAO1mVvTIuZ0BxAZWvckxjhlALDbiDvzAMQPIbzel4tucnwGOVafH3dcLFCNAn5PPKsMF7tMActhb8yZ+VsUNTgOMO1LzlbeYKQOIJYdUapNjBjBTpVFdZ54pA1K5rDs9hsrVAbHBkvcTZ0KAChTHvN1sw4AbpN6Hva1YKpGn0Yi1UrJ59aLQ7EqZX6pODfEYDKDSi1Pu9jpX2oDUKu/u7KFWdcDY95IqU+RRG8AMvX8lMQLU8fmGxAjQLr3gZle5nQGMc/adtCOQWf9FYgQylrw9lnxDu5d5VVjkdgbQbjClK6USvCCEkclCyUvlvOEpTgYsq/SN+7ykm2GhMuOO+FZ5l79FBA2z/iTS8aXMemU9V1nua3bWM0V9P/dtwJoFiRFgZjfnJUaAWUgX1cu0hIWtebLCBqz5lRiB9c5YMQPW/FqZGLAqqNZiUsEaNFSwOxp5KhV001vV9IcmK9jmtB0grX5p6e2it9t6m+htth4WPWzrjuiOpYc/h64vLf2I6Eds/bDoh239kOiHbP2g6AdtXfIN2/mGJd+wnW9Y8g3b+YYl37Cdb1jy1ZeNb3q0qytqzZTKpd31l03O1DESjkE5TspxKCdIOQHlJCknoZwi5RSU06SchnKGlDNQzpJyFso5Us5BOU/KeSgXSLkA5SIpF6FcIuUSlMukXIZyhZQrUK6SchXKNVKuQblOynUoN0i5AeUmKTeh3CLlFpTbpNyGcoeUO1DuknIXyj1S7kG5T8p9KM5nvAhqVw3vyhfd1opOjqtC6g/viSx0DV2P9a3cb7lQcPMTFPnqcVenfBXXB1WC98nOR98+jdYe2/KwtSXU9tFcq4//8HOKxgSp/i0VSzX4IpKaccVqbUsV8B010KTb3NcV+7lNP1fs57X8nGF5Z068FoG4zbg7xV6GAM97NSQOlsDyYVIzgqZ36L/jy4bi+n74xjo043f+qmfz81f+fm5/D+Xr5ybz2vKo6TmYdebA//ze/wQ+5hP2MdAdydex83UkX8fO15F8HTtfR/J17Hwdydex83UkX30Z+KrAV30ivqr9Y/mqat+wt9TH310Dti8YnLV8gQaMba1UySd4JzCAduM5d4TPbgjkWx53t9mjEMge8L68M4o9oA7WPlt9y2MhQKywotZmOGYAz8tsWqdeBtBuYtb9gJNJA2i3ve0mUuXCuJxeNUiow4cftdPiOhhAHxsDlf4X3NrAv+GBtK/RDgajroO1l+rdVfbSGiC2uqQryzEDgasIXEXgKgJXEbiK/4GrOPCxXIWfc/D7H+jFcpU5diME6DO57I3yuAkQG53xVvEvzYDslPv/n6uMTleSfHJEgD7fzKkM9gcD6NPnZMfNFqx/fgbwPJ+/YX6nWCqvy8TzTGDHFt5bMQ2o5/xe+Vf+j0iAdslZlchwOwPy9myqHDsxAvSZGXGn2FERSF02VCmNutTB2lP/uROhTLFcwOmdAWuf3/f0xtcp/ZkbajaXwCkFTilwSoFTCpzSf9AptfT+BgWl0kCQJQAA'
 }

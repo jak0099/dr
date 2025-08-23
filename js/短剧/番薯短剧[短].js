@@ -18,8 +18,36 @@ var rule = {
   class_url: '5',
   play_parse: true,
   lazy: $js.toString(() => {
-    input = { parse: 1, url: input, js: '' };
-  }),
+        let html = request(input);
+        let playerData = {};
+        try {
+            let playerScript = html.match(/var player_aaaa\s*=\s*({.*?});/s);
+            if (playerScript) {
+                playerData = JSON.parse(playerScript[1]);
+            }
+        } catch (e) {
+            console.log("JSON解析失败:" + e.message);
+        }
+        
+        if (playerData.url && playerData.url.includes('.m3u8')) {
+            input = playerData.url;
+            return;
+        }
+        
+        let m3u8Match = html.match(/player\.setUrl\("(http[^"]+\.m3u8)"/);
+        if (m3u8Match) {
+            input = m3u8Match[1];
+            return;
+        }
+        
+        let m3u8Url = html.match(/(https?:\/\/[^\s'"]+\.m3u8[^\s'"]*)/);
+        if (m3u8Url) {
+            input = m3u8Url[0];
+            return;
+        } 
+               
+        input = { parse: 1, url: input };
+    }),
   double: true,
   推荐: '*',
   一级: '.shoutu-vodlist li.col8;.cover-img&&title;.lazyload&&data-original;p.text&&Text;.cover-img&&href',
@@ -28,8 +56,8 @@ var rule = {
     img: '.lazyload&&data-original',
     desc: '.shoutu-media-bd p:eq(3)&&Text;;;.shoutu-media-bd p:eq(1)&&Text;.shoutu-media-bd p:eq(2)&&Text',
     content: '.shoutu-media-bd p:eq(0)&&Text',
-    tabs: '.panel-hd:gt(0):lt(2)&&h3',
-    lists: '.shoutu-playlist:eq(#id)&&a:gt(0)',
+    tabs: '.panel-hd:eq(1)&&h3',
+    lists: '.shoutu-playlist:eq(#id)&&a:not(:contains(滈凊))',
     tab_text: 'body&&Text',
     list_text: 'body&&Text',
     list_url: 'a&&href',

@@ -23,6 +23,7 @@ var rule = {
     searchUrl:'',//搜索链接 可以是完整路径或者相对路径,用于分类获取和推荐获取 **代表搜索词 fypage代表页数
     searchable:0,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
+    search_match: true, //精准搜索
     filterable:0,//是否启用筛选,
     filter:{},// 筛选条件字典
     // 默认筛选条件字典(不同分类可以指定同样筛选参数的不同默认值)

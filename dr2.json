@@ -61,11 +61,14 @@
 {"key": "dr_锦鲤短剧[短]","name": "🥝锦鲤短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/锦鲤短剧[短].js"},
 {"key": "dr_短剧导航[短]","name": "🥝短剧导航[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧导航[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
+{"key": "dr_逐月[短]","name": "🥝逐月[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/逐月[短].js"},
+{"key": "dr_番薯短剧[短]","name": "🥝番薯短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番薯短剧[短].js"},
 
 {"key": "py_剧多短剧APP[短]","name": "🥝剧多短剧[短][PY]","type": 3,"api": "./py/app/剧多短剧APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_偷乐短剧[短]","name": "🥝偷乐短剧[短][PY]","type": 3,"api": "./py/html/偷乐短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_星之阁短剧[短]","name": "🥝星之阁[短][PY]","type": 3,"api": "./py/短/星之阁短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 {"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/短/番茄.json"},
 {"key": "T1_旺旺短剧","name": "🥝旺旺短剧[短][T1]","type": 1,"api": "https://api.wwzy.tv/api.php/provide/vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"categories": ["短剧"]},
@@ -98,6 +101,7 @@
 {"key": "py_追星影视","name": "🍑追星[影][PY]","type": 3,"api": "./py/app/追星影视.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_界影视","name": "🍑界影视[影][PY]","type": 3,"api": "./py/综/界影视.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_明月影院","name": "🍑明月影院[影][PY]","type": 3,"api": "./py/综/明月影院.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_懒懒视频","name": "🍑懒懒视频[影][PY]","type": 3,"api": "./py/综/懒懒视频.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_AppGet_模板","name": "🍐模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=域名$key$iv"},
 {"key": "dr_AppGet_桃子","name": "🍐桃子[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=https://appcms.tzys.xyz$KL6vlZkw6WL5x90U$KL6vlZkw6WL5x90U"},
@@ -621,6 +625,7 @@
 {"name": "kilvn", "type": 0, "url": "https://live.kilvn.com/iptv.m3u", "timeout": 20, "playerType": 2 },
 {"name": "AkTV", "type": 0, "url": "https://aktv.space/live.m3u", "ua": "okhttp/3.8.1", "timeout": 20, "playerType": 2 }
 ],
+//"proxy": [{"name": "Global","host": ".*.","urls": ["http://127.0.0.1:7890","socks5://127.0.0.1:7891"]}],
 "hosts": [
 "cache.ott.*.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",
 "cache.ott.ystenlive.itv.cmvideo.cn=base-v4-free-mghy.e.cdn.chinamobile.com",

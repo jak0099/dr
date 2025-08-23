@@ -3,14 +3,16 @@
   searchable: 1,
   filterable: 1,
   quickSearch: 1,
-  title: 'AppV1',
+  title: 'AppV2²',
   lang: 'hipy'
 })
 """
 
-# -*- coding: utf-8 -*-
 # by @嗷呜
+import json
+import re
 import sys
+from Crypto.Util.Padding import unpad
 sys.path.append('..')
 try:
     # from base.spider import Spider as BaseSpider
@@ -18,19 +20,20 @@ try:
 except ImportError:
     from t4.base.spider import BaseSpider
 
+
 class Spider(BaseSpider):
 
     def init(self, extend=""):
         '''
         example:
         {
-            "key": "py_appV1",
+            "key": "py_appV2",
             "name": "xxx",
             "type": 3,
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "api": "./py/APPV1.py",
+            "api": "./py/appV2.py",
             "ext": "http://cmsyt.lyyytv.cn"
         }
         
@@ -39,7 +42,7 @@ class Spider(BaseSpider):
         pass
 
     def getName(self):
-        return 'AppV1'
+        return 'AppV2²'
 
     def isVideoFormat(self, url):
         pass
@@ -55,11 +58,11 @@ class Spider(BaseSpider):
     }
 
     def homeContent(self, filter):
-        data = self.fetch(f"{self.host}/v1.vod/types",headers=self.headers).json()
-        keys = ["class", "area", "year"]
+        data = self.fetch(f"{self.host}//api.php/app/nav?token=",headers=self.headers).json()
+        keys = ["class", "area", "lang", "year", "letter", "by", "sort"]
         filters = {}
         classes = []
-        for item in data['data']['typelist']:
+        for item in data['list']:
             has_non_empty_field = False
             jsontype_extend = item["type_extend"]
             classes.append({"type_name": item["type_name"], "type_id": item["type_id"]})
@@ -81,25 +84,24 @@ class Spider(BaseSpider):
         return result
 
     def homeVideoContent(self):
-        data=self.fetch(f"{self.host}/v1.vod",headers=self.headers).json()
-        videos=data['data']['list']
+        data=self.fetch(f"{self.host}/api.php/app/index_video?token=",headers=self.headers).json()
+        videos=[]
+        for item in data['list']:videos.extend(item['vlist'])
         return {'list':videos}
 
     def categoryContent(self, tid, pg, filter, extend):
-
-        params = {'type':tid,'class':extend.get('class',''),'area':extend.get('area',''),'year':extend.get('year',''),'limit':'18','page':pg}
-        data=self.fetch(f"{self.host}/v1.vod",params=params,headers=self.headers).json()
-        videos=data['data']
-        return videos
+        params = {'tid':tid,'class':extend.get('class',''),'area':extend.get('area',''),'lang':extend.get('lang',''),'year':extend.get('year',''),'limit':'18','pg':pg}
+        data=self.fetch(f"{self.host}/api.php/app/video",params=params,headers=self.headers).json()
+        return data
 
     def detailContent(self, ids):
-        data=self.fetch(f"{self.host}/v1.vod/detail?vod_id={ids[0]}",headers=self.headers).json()
+        data=self.fetch(f"{self.host}/api.php/app/video_detail?id={ids[0]}",headers=self.headers).json()
         return  {'list':[data['data']]}
 
     def searchContent(self, key, quick, pg="1"):
-        data=self.fetch(f"{self.host}/v1.vod?wd={key}&page={pg}",headers=self.headers).json()
-        videos=data['data']['list']
-        for item in data['data']['list']:
+        data=self.fetch(f"{self.host}/api.php/app/search?text={key}&pg={pg}",headers=self.headers).json()
+        videos=data['list']
+        for item in data['list']:
             item.pop('type', None)
         return {'list':videos,'page':pg}
 
@@ -108,5 +110,4 @@ class Spider(BaseSpider):
 
     def localProxy(self, param):
         pass
-
 

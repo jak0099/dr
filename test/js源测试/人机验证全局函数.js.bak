@@ -24,7 +24,7 @@ function verifyLogin(currentUrl) {
         const value = encrypt(currentUrl);
         const token = encrypt("MTc1MDU2NTQ5OA=="); 
         const data = `value=${encodeURIComponent(value)}&token=${encodeURIComponent(token)}`;       
-        const res = post('/robot.php', {
+        const res = post('https://www.kankanwu.vip' + '/robot.php', {
             body: data,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

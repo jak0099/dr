@@ -1,12 +1,11 @@
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
+
+from base.spider import Spider
 import re,sys,json
 sys.path.append('..')
-try:
-    # from base.spider import Spider as BaseSpider
-    from base.spider import BaseSpider
-except ImportError:
-    from t4.base.spider import BaseSpider
 
-class Spider(BaseSpider):
+class Spider(Spider):
     api_host = 'https://api.jinlidj.com'
     origin = 'https://www.jinlidj.com'
     api_path = '/api/search'
