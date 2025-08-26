@@ -69,6 +69,9 @@
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_星之阁短剧[短]","name": "🥝星之阁[短][PY]","type": 3,"api": "./py/短/星之阁短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_七猫短剧[短]","name": "🥝七猫短剧[短][PY]","type": 3,"api": "./py/短/七猫短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_牛牛短剧[短]","name": "🥝牛牛短剧[短][PY]","type": 3,"api": "./py/短/牛牛短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_西饭短剧[短]","name": "🥝西饭短剧[短][PY]","type": 3,"api": "./py/短/西饭短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 {"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/短/番茄.json"},
 {"key": "T1_旺旺短剧","name": "🥝旺旺短剧[短][T1]","type": 1,"api": "https://api.wwzy.tv/api.php/provide/vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"categories": ["短剧"]},
@@ -382,7 +385,7 @@
 
 {"key": "py_三号动漫APP","name": "🍇三号动漫[漫][PY]","type": 3,"api": "./py/app/三号动漫APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_嗷呜动漫","name": "🍇嗷呜动漫[漫][PY]","type": 3,"api": "./py/漫/嗷呜动漫.py","searchable": 1,"quickSearch": 1,"filterable": 1},
-   
+
 {"key": "dr_酷我听书[听]","name": "🍋酷我听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/酷我听书[听].js"},
 {"key": "dr_博看听书[听]","name": "🍋博看听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/博看听书[听].js"},
 {"key": "dr_六月听书[听]","name": "🍋六月听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/六月听书[听].js"},
@@ -566,6 +569,7 @@
 //{"name": "米来[正则❅时长]","hosts": ["zy.behds.cn"],"regex": ["#EXTINF"]},
 //{"name": "爱酷[正则❅时长]","hosts": ["cdn.json.icu"],"regex": ["#EXTINF:1.000000,[\\s\\S]*?#EXT-X-ENDLIST"]},
 //{"name":"快看[正则❅时长]","hosts":["kuaikan","vip.kuaikan"],"regex":["15.32","15.231","18.066","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:5,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2\\.4,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:1\\.467,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
+//{"name":"U酷[正则❅时长]","hosts":["ukzy"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:.*?,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"360[正则❅时长]","hosts":["lyhuicheng"],"regex":["#EXTINF.*?\\s+.*?hrz8QcR9.*?\\.ts\\s+","#EXT-X-KEY:METHOD=NONE[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
 {"name":"棋牌[正则❅时长]","hosts":["qihubf","askzycdn","jkunbf","bfikuncdn","bfaskcdn","fhbbff","gg155gg1","lbb2025","jkunnzyx","nbfjhertyrxiang","ddcdnbf","lsbbf5","yutubf","bfaskbwerve","sysybf","didinew6"],"regex":["#EXTINF.*?\\s+.*?XR8pDxQk.*?\\.ts","#EXTINF.*?\\s+.*?p5XQill8.*?\\.ts","#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=AES-128","#EXT-X-DISCONTINUITY\\r*\\n*#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:2,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:(?:3|5),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"\\r*\\n*#EXTINF:3.333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-KEY:METHOD=AES-128,URI=\"[^\"]+\"(?:,IV=0x[0-9A-Fa-f]+)?\\r*\\n*#EXTINF:3\\.333[\\s\\S]*?(#EXT-X-DISCONTINUITY|#EXT-X-ENDLIST)","#EXT-X-KEY:METHOD=NONE\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-ENDLIST"]},
 //{"name":"暴风[正则❅时长]","hosts":["bfengbf","bfzy","bfbfvip","c1"],"regex":["#EXTINF.*?\\s+.*?adjump.*?\\.ts\\s+","#EXT-X-DISCONTINUITY\r*\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"]},
