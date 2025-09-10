@@ -1,3 +1,6 @@
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
+
 from base.spider import Spider
 import re,sys,json
 sys.path.append('..')
@@ -55,7 +58,7 @@ class Spider(Spider):
         videos = []
         vod_play_url = ''
         for name,url in data['player'].items():
-            vod_play_url += f'{name}${url}#'
+            vod_play_url += f'{name}${url}&auto=1#'
         vod_play_url.rstrip('#')
         videos.append({
             'vod_id': data.get('vod_id'),

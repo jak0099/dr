@@ -49,7 +49,7 @@ var rule = {
         'User-Agent': 'MOBILE_UA',
     },
     timeout: 5000,
-    class_parse: '.sb_login_alert_box&&li;a&&Text;a&&href;/(\\d+)\.html',
+    class_parse: '.top-nav&&li;a&&Text;a&&href;/(\\d+)\.html',
     cate_exclude: '',
     play_parse: true,
     lazy: $js.toString(() => {

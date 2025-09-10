@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # by @嗷呜
+import os
 import re
+import subprocess
 import sys
+from pprint import pprint
 from Crypto.Hash import MD5
 sys.path.append("..")
 from Crypto.Cipher import AES
@@ -15,24 +18,12 @@ from base.spider import Spider
 
 class Spider(Spider):
 
-    '''
-    sites照常配置，
-    lives配置：
-    {
-      "name": "xxxx",
-      "type": 3,
-      "api": "路径/若惜追剧APP.py",
-      "ext": ""
-    }
-    '''
-
     def init(self, extend=""):
         self.host = self.gethost()
         pass
 
     def getName(self):
         pass
-
 
     def isVideoFormat(self, url):
         pass

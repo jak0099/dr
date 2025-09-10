@@ -1,32 +1,34 @@
-import cheerio from 'assets://js/lib/cheerio.min.js';
-import 'assets://js/lib/crypto-js.js';
-import './jsencrypt.js';
-import './node-rsa.js';
-import './pako.min.js';
-// import JSEncrypt from './jsencrypt.js'; // 会导致壳子崩溃的
-import 模板 from './模板.js'
-import {gbkTool} from './gbk.js'
-import './json5.js'
-// 下面是尝试对jinja2库进行更换
-import './jinja.js'
-
-const _jinja2 = cheerio.jinja2;
-cheerio.jinja2 = function (template, obj) {
-    try {
-        return jinja.render(template, obj);
-    } catch (e) {
-        console.log('新的jinja2库渲染失败,换回原始cheerio:' + e.message);
-        return _jinja2(template, obj)
-    }
-};
-// import cheerio from "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js";
-// import "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js";
-// import 模板 from"https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js";
-// import {gbkTool} from 'https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/gbk.js'
+import {cheerio, 模板} from '../dist/drpy-core.min.js';
 
 let vercode = typeof (pdfl) === 'function' ? 'drpy2.1' : 'drpy2';
-const VERSION = vercode + ' 3.9.51beta6 20241126';
+const VERSION = vercode + ' 3.9.52beta2 20250729';
 const UpdateInfo = [
+    {
+        date: '20250729',
+        title: 'drpy更新，所有依赖打包成一个js文件',
+        version: '3.9.52beta2 20250729',
+        msg: `
+ 1. wasm支持
+ 2. 引入 TextEncoder、TextDecoder对象
+ 3. 引入 WXXH 加解密库
+ 4. 所有依赖打包成一个js
+ 5. 增加 buildQueryString
+ 
+       `
+    },
+    {
+        date: '20250728',
+        title: 'drpy更新，增加tab_order线路模糊排序，优化解密算法支持文件头',
+        version: '3.9.52beta1 20250728',
+        msg: `
+ 1. 增加tab_order线路模糊排序 
+ 2. 优化解密算法支持文件头
+ 3. wasm支持
+ 4. 增加 removeHeader 函数可用于清除js/py文件的头信息及所有头注释
+ 5. 引入 TextEncoder、TextDecoder对象
+ 6. 引入 WXXH 加解密库
+       `
+    },
     {
         date: '20241126',
         title: 'drpy更新，优化去广告算法',
@@ -62,6 +64,35 @@ function init_test() {
     // print(模板);
     // print(typeof(模板.getMubans));
     console.log("当前版本号:" + VERSION);
+    /*
+    console.log('typeof 模板:', typeof (模板))
+    console.log('typeof cheerio:', typeof (cheerio))
+    // console.log(模板)
+    console.log('typeof gbkTool:', typeof gbkTool);
+    console.log('typeof CryptoJS:', typeof CryptoJS);
+    console.log('typeof JSEncrypt:', typeof JSEncrypt);
+    console.log('typeof NODERSA:', typeof NODERSA);
+    console.log('typeof pako:', typeof pako);
+    console.log('typeof JSON5:', typeof JSON5);
+    console.log('typeof JSONPath:', typeof JSONPath);
+    console.log('typeof jinja:', typeof jinja);
+    console.log('typeof WebAssembly:', typeof WebAssembly);
+    console.log('typeof TextEncoder:', typeof TextEncoder);
+    console.log('typeof TextDecoder:', typeof TextDecoder);
+    console.log('typeof WXXH:', typeof WXXH);
+
+    console.log(gbkTool.encode('你好'));
+    console.log(gbkTool.decode('%C4%E3%BA%C3'));
+
+    const s = '{"method":"GET","timestamp":1745206708456,"path":"/index/fuck","parameters":{"timestamp":["1745206708456"]},"body":""}';
+    const seed = 1745206708;
+    const hash = WXXH.h64(s, seed).toString(16);
+    console.log(`WASM:${hash}`);
+
+    console.log(cheerio.jinja2('渲染一个变量{{hash}}', {hash}));
+    console.log('jsonpath取值测试:', cheerio.jp('$.name', {name: '道长', project: 'drpys'}));
+    */
+
     console.log('本地代理地址:' + getProxyUrl());
     console.log(RKEY);
     // ocr_demo_test();
@@ -873,8 +904,7 @@ function ungzip(b64Data) {
 function encodeStr(input, encoding) {
     encoding = encoding || 'gbk';
     if (encoding.startsWith('gb')) {
-        const strTool = gbkTool();
-        input = strTool.encode(input);
+        input = gbkTool.encode(input);
     }
     return input
 }
@@ -888,8 +918,7 @@ function encodeStr(input, encoding) {
 function decodeStr(input, encoding) {
     encoding = encoding || 'gbk';
     if (encoding.startsWith('gb')) {
-        const strTool = gbkTool();
-        input = strTool.decode(input);
+        input = gbkTool.decode(input);
     }
     return input
 }
@@ -1048,6 +1077,7 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     let option = headers ? {
         headers: headers
     } : {};
+
     function b(s1, s2) {
         let i = 0;
         while (i < s1.length) {
@@ -1058,9 +1088,11 @@ function fixAdM3u8Ai(m3u8_url, headers) {
         }
         return i
     }
+
     function reverseString(str) {
         return str.split("").reverse().join("")
     }
+
     let m3u8 = request(m3u8_url, option);
     m3u8 = m3u8.trim().split("\n").map(it => it.startsWith("#") ? it : urljoin(m3u8_url, it)).join("\n");
     m3u8 = m3u8.replace(/\n\n/gi, "\n");
@@ -1077,10 +1109,10 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     let ss = s.split("\n");
     if (m3u8_url.indexOf("ffzy") > 0) {
         let j = 0
-          , k1 = 0
-          , m = 0
-          , n = 0
-          , t = 0;
+            , k1 = 0
+            , m = 0
+            , n = 0
+            , t = 0;
         let s2 = "";
         for (let i = 0; i < ss.length; i++) {
             let s = ss[i];
@@ -1151,16 +1183,16 @@ function fixAdM3u8Ai(m3u8_url, headers) {
     let ml = Math.round(ss.length / 2).toString().length;
     let maxc = 0;
     let laststr = ss.toReversed().find(x => {
-        if (!x.startsWith("#")) {
-            let k = b(reverseString(firststr), reverseString(x));
-            maxl = b(firststr, x);
-            maxc++;
-            if (firststrlen - maxl <= ml + k || maxc > 10) {
-                return true
+            if (!x.startsWith("#")) {
+                let k = b(reverseString(firststr), reverseString(x));
+                maxl = b(firststr, x);
+                maxc++;
+                if (firststrlen - maxl <= ml + k || maxc > 10) {
+                    return true
+                }
             }
+            return false
         }
-        return false
-    }
     );
     log("最后一条切片：" + laststr);
     let ad_urls = [];
@@ -1688,6 +1720,27 @@ function keysToLowerCase(obj) {
         result[newKey] = obj[key]; // 如果值也是对象，可以递归调用本函数
         return result;
     }, {});
+}
+
+//对象To字符串query
+function buildQueryString(params) {
+    const queryArray = [];
+    for (const key in params) {
+        if (params.hasOwnProperty(key)) {
+            // 处理参数值：兼容null、undefined，转为字符串并编码
+            let value = params[key];
+            if (value === undefined || value === null) {
+                value = "";
+            } else {
+                value = value.toString();
+            }
+            // 编码键值（兼容ES5）
+            const encodedKey = encodeURIComponent(key);
+            const encodedValue = encodeURIComponent(value);
+            queryArray.push(encodedKey + "=" + encodedValue);
+        }
+    }
+    return queryArray.join("&");
 }
 
 //字符串To对象
@@ -2986,7 +3039,17 @@ function vodDeal(vod) {
         if (rule.tab_order && rule.tab_order.length > 0) {
             let tab_order = rule.tab_order;
             tab_ordered_list = tab_removed_list.sort((a, b) => {
-                return (tab_order.indexOf(a) === -1 ? 9999 : tab_order.indexOf(a)) - (tab_order.indexOf(b) === -1 ? 9999 : tab_order.indexOf(b))
+                const getOrderIndex = (tabName, orderRules) => {
+                    for (let i = 0; i < orderRules.length; i++) {
+                        if (tabName.includes(orderRules[i])) {
+                            return i;
+                        }
+                    }
+                    return 9999; // 未匹配到任何规则时的默认位置
+                };
+                const indexA = getOrderIndex(a, tab_order);
+                const indexB = getOrderIndex(b, tab_order);
+                return indexA - indexB;
             });
             tab_list = tab_ordered_list;
         }
@@ -3147,14 +3210,95 @@ function isVideoParse(isVideoObj) {
 }
 
 /**
+ * 移除文件头信息
+ * @param {string} content 文件内容文本
+ * @param {Object} options 配置选项
+ * @param {string} [options.mode='header-only'] 移除模式:
+ *   - 'header-only': 只移除@header行（默认）
+ *   - 'top-comments': 移除文件顶部所有连续注释块
+ * @param {string} options.fileType 文件类型（js 或 py）
+ * @returns {string} 移除头信息后的内容
+ */
+function removeHeader(content, options = {}) {
+    const {mode = 'header-only', fileType} = options;
+
+    // 文件类型配置
+    const COMMENT_CONFIG = {
+        '.js': {
+            start: '/*',
+            end: '*/',
+            regex: /^\s*\/\*([\s\S]*?)\*\/\s*/,
+            headerRegex: /@header\(([\s\S]*?)\)/,
+            topCommentsRegex: /^(\s*(\/\/[^\n]*\n|\/\*[\s\S]*?\*\/)\s*)+/
+        },
+        '.py': {
+            start: '"""',
+            end: '"""',
+            regex: /^\s*"""([\s\S]*?)"""\s*/,
+            headerRegex: /@header\(([\s\S]*?)\)/,
+            topCommentsRegex: /^(\s*(#[^\n]*\n|'''[\s\S]*?'''|"""[\s\S]*?""")\s*)+/
+        }
+    };
+
+    // 验证必须参数
+    if (!fileType) throw new Error('fileType option is required');
+
+    // 获取文件扩展名
+    const ext = fileType.startsWith('.') ? fileType : `.${fileType}`;
+    const config = COMMENT_CONFIG[ext];
+
+    // 检查支持的文件类型
+    if (!config) throw new Error(`Unsupported file type: ${ext}`);
+
+    // 模式1: 移除顶部所有连续注释块
+    if (mode === 'top-comments') {
+        const match = content.match(config.topCommentsRegex);
+        if (match) {
+            return content.substring(match[0].length).trim();
+        }
+        return content.trim();
+    }
+
+    // 模式2: 只移除@header行（默认模式）
+    const match = content.match(config.regex);
+    if (!match) return content.trim();
+
+    let [fullComment, innerContent] = match;
+
+    // 检测并移除@header
+    if (config.headerRegex.test(innerContent)) {
+        innerContent = innerContent.replace(config.headerRegex, '');
+
+        // 清理空行并重组注释
+        const cleanedInner = innerContent
+            .split('\n')
+            .filter(line => line.trim().length > 0)
+            .join('\n');
+
+        if (!cleanedInner.trim()) {
+            // 如果注释内容为空，则完全移除注释块
+            return content.replace(fullComment, '').trim();
+        } else {
+            // 保留非header注释内容
+            const newComment = `${config.start}${cleanedInner}${config.end}`;
+            return content.replace(fullComment, newComment).trim();
+        }
+    }
+
+    return content.trim();
+}
+
+/**
  * 获取加密前的原始的js源文本
  * @param js_code
  */
 function getOriginalJs(js_code) {
-    let current_match = /var rule|[\u4E00-\u9FA5]+|function|let |var |const |\(|\)|"|'/;
+    // let current_match = /var rule|[\u4E00-\u9FA5]+|function|let |var |const |\(|\)|"|'/;
+    let current_match = /var rule|function|let |var |const|class Rule|async|this\./;
     if (current_match.test(js_code)) {
         return js_code
     }
+    js_code = removeHeader(js_code, {mode: 'top-comments', fileType: '.js'});
     let rsa_private_key = 'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqin/jUpqM6+fgYP/oMqj9zcdHMM0mEZXLeTyixIJWP53lzJV2N2E3OP6BBpUmq2O1a9aLnTIbADBaTulTNiOnVGoNG58umBnupnbmmF8iARbDp2mTzdMMeEgLdrfXS6Y3VvazKYALP8EhEQykQVarexR78vRq7ltY3quXx7cgI0ROfZz5Sw3UOLQJ+VoWmwIxu9AMEZLVzFDQN93hzuzs3tNyHK6xspBGB7zGbwCg+TKi0JeqPDrXxYUpAz1cQ/MO+Da0WgvkXnvrry8NQROHejdLVOAslgr6vYthH9bKbsGyNY3H+P12kcxo9RAcVveONnZbcMyxjtF5dWblaernAgMBAAECggEAGdEHlSEPFmAr5PKqKrtoi6tYDHXdyHKHC5tZy4YV+Pp+a6gxxAiUJejx1hRqBcWSPYeKne35BM9dgn5JofgjI5SKzVsuGL6bxl3ayAOu+xXRHWM9f0t8NHoM5fdd0zC3g88dX3fb01geY2QSVtcxSJpEOpNH3twgZe6naT2pgiq1S4okpkpldJPo5GYWGKMCHSLnKGyhwS76gF8bTPLoay9Jxk70uv6BDUMlA4ICENjmsYtd3oirWwLwYMEJbSFMlyJvB7hjOjR/4RpT4FPnlSsIpuRtkCYXD4jdhxGlvpXREw97UF2wwnEUnfgiZJ2FT/MWmvGGoaV/CfboLsLZuQKBgQDTNZdJrs8dbijynHZuuRwvXvwC03GDpEJO6c1tbZ1s9wjRyOZjBbQFRjDgFeWs9/T1aNBLUrgsQL9c9nzgUziXjr1Nmu52I0Mwxi13Km/q3mT+aQfdgNdu6ojsI5apQQHnN/9yMhF6sNHg63YOpH+b+1bGRCtr1XubuLlumKKscwKBgQDOtQ2lQjMtwsqJmyiyRLiUOChtvQ5XI7B2mhKCGi8kZ+WEAbNQcmThPesVzW+puER6D4Ar4hgsh9gCeuTaOzbRfZ+RLn3Aksu2WJEzfs6UrGvm6DU1INn0z/tPYRAwPX7sxoZZGxqML/z+/yQdf2DREoPdClcDa2Lmf1KpHdB+vQKBgBXFCVHz7a8n4pqXG/HvrIMJdEpKRwH9lUQS/zSPPtGzaLpOzchZFyQQBwuh1imM6Te+VPHeldMh3VeUpGxux39/m+160adlnRBS7O7CdgSsZZZ/dusS06HAFNraFDZf1/VgJTk9BeYygX+AZYu+0tReBKSs9BjKSVJUqPBIVUQXAoGBAJcZ7J6oVMcXxHxwqoAeEhtvLcaCU9BJK36XQ/5M67ceJ72mjJC6/plUbNukMAMNyyi62gO6I9exearecRpB/OGIhjNXm99Ar59dAM9228X8gGfryLFMkWcO/fNZzb6lxXmJ6b2LPY3KqpMwqRLTAU/zy+ax30eFoWdDHYa4X6e1AoGAfa8asVGOJ8GL9dlWufEeFkDEDKO9ww5GdnpN+wqLwePWqeJhWCHad7bge6SnlylJp5aZXl1+YaBTtOskC4Whq9TP2J+dNIgxsaF5EFZQJr8Xv+lY9lu0CruYOh9nTNF9x3nubxJgaSid/7yRPfAGnsJRiknB5bsrCvgsFQFjJVs=';
     let decode_content = '';
 

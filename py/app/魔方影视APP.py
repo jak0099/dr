@@ -136,7 +136,7 @@ class Spider(Spider):
         headers = {
             'User-Agent': 'okhttp/3.14.9'
         }
-        response = self.fetch('https://snysw.xyz/mfys.txt',headers=headers).text
+        response = self.fetch('https://gh.jasonzeng.dev/https://raw.githubusercontent.com/leilingzero/mofa/master/notes/py/ext/mfys.txt',headers=headers).text
         return response.strip()
 
     def aes(self, text, b=None):

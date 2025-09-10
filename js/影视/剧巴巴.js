@@ -19,7 +19,6 @@ var rule = {
     class_name: '电影&剧集&综艺&动漫',
     class_url: '1&2&3&4',
     filter_def: {},
-    预处理:'',//处理过人机验证，未实现
     play_parse: true,
     lazy: $js.toString(() => {
         let pclick = 'document.querySelector("#playleft iframe").contentWindow.document.querySelector("#start").click()';

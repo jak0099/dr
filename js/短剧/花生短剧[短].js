@@ -1,4 +1,4 @@
-muban.首图2.二级.lists = '.stui-content__playlist:eq(#id) li:gt(0)';
+muban.首图2.二级.lists = '.stui-content__playlist:eq(#id) li:not(:contains(滈凊))';
 var rule = {
   模板: '首图2',
   title: '花生短剧[短]',

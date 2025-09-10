@@ -42,7 +42,6 @@ var rule = {
             body: formDatas
         };
         let html = request(input, options);
-        log(`✅html的结果: ${html}`);
         let data = JSON.parse(html).data.list;
         data.forEach(item => {
             let title = item.vod_name || '';
@@ -135,22 +134,20 @@ var rule = {
                 }
         data.forEach(item => {
             let title = item.vod_name;
-            if (!/名称|排除/.test(title)) {
                 d.push({
                     title: title,
                     year: item.vod_year,
-                    desc: item.vod_total,
+                    desc: item.vod_total + '集',
                     content: item.vod_tag,
                     img: item.vod_pic,
                     url: item.vod_id,
                 });
-            }
         });
         setResult(d);
     }),
 
     lazy: $js.toString(() => {
-        let html = request(input);
+        let html = request(`${input}&auto=1`);
         let match = html.match(/let data\s*=\s*({[^;]*});/);
         let url = JSON.parse(match[1]).url;
         input = {
