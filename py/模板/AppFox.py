@@ -22,13 +22,21 @@ sys.path.append('..')
 
 
 class Spider(BaseSpider):
-    headers, host, froms, detail, custom_first, parses, custom_parses = {
-        'User-Agent': "Mozilla/5.0 (Linux; Android 12; SM-S9080 Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Safari/537.36",
-        'Connection': "Keep-Alive",
-        'Accept-Encoding': "gzip",
-        'Accept-Language': "zh-CN,zh;q=0.8",
-        'Cache-Control': "no-cache"
-    }, '', '', '', '', {}, {}
+    def __init__(self, query_params=None, t4_api=None):
+        super().__init__(query_params=query_params, t4_api=t4_api)
+        self.headers = {
+            'User-Agent': "Mozilla/5.0 (Linux; Android 12; SM-S9080 Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Safari/537.36",
+            'Connection': "Keep-Alive",
+            'Accept-Encoding': "gzip",
+            'Accept-Language': "zh-CN,zh;q=0.8",
+            'Cache-Control': "no-cache"
+        }
+        self.host = ''
+        self.froms = ''
+        self.detail = ''
+        self.custom_first = ''
+        self.parses = {}
+        self.custom_parses = {}
 
     def init(self, extend=''):
         print("============{0}============".format(extend))

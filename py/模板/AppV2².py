@@ -13,6 +13,7 @@ import json
 import re
 import sys
 from Crypto.Util.Padding import unpad
+
 sys.path.append('..')
 try:
     # from base.spider import Spider as BaseSpider
@@ -22,6 +23,9 @@ except ImportError:
 
 
 class Spider(BaseSpider):
+
+    def __init__(self, query_params=None, t4_api=None):
+        super().__init__(query_params=query_params, t4_api=t4_api)
 
     def init(self, extend=""):
         '''
@@ -38,7 +42,7 @@ class Spider(BaseSpider):
         }
         
         '''
-        self.host=self.extend.strip()
+        self.host = self.extend.strip()
         pass
 
     def getName(self):
@@ -58,7 +62,7 @@ class Spider(BaseSpider):
     }
 
     def homeContent(self, filter):
-        data = self.fetch(f"{self.host}//api.php/app/nav?token=",headers=self.headers).json()
+        data = self.fetch(f"{self.host}//api.php/app/nav?token=", headers=self.headers).json()
         keys = ["class", "area", "lang", "year", "letter", "by", "sort"]
         filters = {}
         classes = []
@@ -84,30 +88,30 @@ class Spider(BaseSpider):
         return result
 
     def homeVideoContent(self):
-        data=self.fetch(f"{self.host}/api.php/app/index_video?token=",headers=self.headers).json()
-        videos=[]
-        for item in data['list']:videos.extend(item['vlist'])
-        return {'list':videos}
+        data = self.fetch(f"{self.host}/api.php/app/index_video?token=", headers=self.headers).json()
+        videos = []
+        for item in data['list']: videos.extend(item['vlist'])
+        return {'list': videos}
 
     def categoryContent(self, tid, pg, filter, extend):
-        params = {'tid':tid,'class':extend.get('class',''),'area':extend.get('area',''),'lang':extend.get('lang',''),'year':extend.get('year',''),'limit':'18','pg':pg}
-        data=self.fetch(f"{self.host}/api.php/app/video",params=params,headers=self.headers).json()
+        params = {'tid': tid, 'class': extend.get('class', ''), 'area': extend.get('area', ''),
+                  'lang': extend.get('lang', ''), 'year': extend.get('year', ''), 'limit': '18', 'pg': pg}
+        data = self.fetch(f"{self.host}/api.php/app/video", params=params, headers=self.headers).json()
         return data
 
     def detailContent(self, ids):
-        data=self.fetch(f"{self.host}/api.php/app/video_detail?id={ids[0]}",headers=self.headers).json()
-        return  {'list':[data['data']]}
+        data = self.fetch(f"{self.host}/api.php/app/video_detail?id={ids[0]}", headers=self.headers).json()
+        return {'list': [data['data']]}
 
     def searchContent(self, key, quick, pg="1"):
-        data=self.fetch(f"{self.host}/api.php/app/search?text={key}&pg={pg}",headers=self.headers).json()
-        videos=data['list']
+        data = self.fetch(f"{self.host}/api.php/app/search?text={key}&pg={pg}", headers=self.headers).json()
+        videos = data['list']
         for item in data['list']:
             item.pop('type', None)
-        return {'list':videos,'page':pg}
+        return {'list': videos, 'page': pg}
 
     def playerContent(self, flag, id, vipFlags):
-        return  {'jx':1,'playUrl':'','parse': 1, 'url': id, 'header': self.headers}
+        return {'jx': 1, 'playUrl': '', 'parse': 1, 'url': id, 'header': self.headers}
 
     def localProxy(self, param):
         pass
-

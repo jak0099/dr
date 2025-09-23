@@ -32,6 +32,9 @@ except ImportError:
 
 class Spider(BaseSpider):
 
+    def __init__(self, query_params=None, t4_api=None):
+        super().__init__(query_params=query_params, t4_api=t4_api)
+
     def init(self, extend=""):
         '''
         ext配置示例：

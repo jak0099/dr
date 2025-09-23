@@ -1,44 +1,39 @@
+# 本资源来源于互联网公开渠道，仅可用于个人学习及爬虫技术交流。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
 """
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: 'AppToV5',
-  lang: 'hipy'
-})
+{
+    "key": "xxx",
+    "name": "xxx",
+    "type": 3,
+    "api": "./ApptoV5无加密.py",
+    "ext": "http://domain.com"
+}
 """
 
-import sys, uuid
-
-try:
-    # from base.spider import Spider as BaseSpider
-    from base.spider import BaseSpider
-except ImportError:
-    from t4.base.spider import BaseSpider
+import re,sys,uuid
+from base.spider import Spider
 sys.path.append('..')
 
+class Spider(Spider):
+    host,config,local_uuid,parsing_config = '','','',[]
+    headers = {
+        'User-Agent': "Dart/2.19 (dart:io)",
+        'Accept-Encoding': "gzip",
+        'appto-local-uuid': local_uuid
+    }
 
-class Spider(BaseSpider):
-
-    def __init__(self, query_params=None, t4_api=None):
-        super().__init__(query_params=query_params, t4_api=t4_api)
-        self.local_uuid = ''
-        self.config = ''
-        self.parsing_config = []
-        self.headers = {
-            'User-Agent': "Dart/2.19 (dart:io)",
-            'Accept-Encoding': "gzip",
-            'appto-local-uuid': self.local_uuid
-        }
-
-    def init(self, extend=""):
+    def init(self, extend=''):
         try:
-            self.host = self.extend.strip()
-            if not self.host.startswith('http'):
+            host = extend.strip()
+            if not host.startswith('http'):
                 return {}
+            if not re.match(r'^https?://[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?/?$', host):
+                host_=self.fetch(host).json()
+                self.host = host_['domain']
+            else:
+                self.host = host
             self.local_uuid = str(uuid.uuid4())
-            response = self.fetch(f'{self.host}/apptov5/v1/config/get?p=android&__platform=android',
-                                  headers=self.headers).json()
+            response = self.fetch(f'{self.host}/apptov5/v1/config/get?p=android&__platform=android', headers=self.headers).json()
             config = response['data']
             self.config = config
             parsing_conf = config['get_parsing']['lists']
@@ -49,14 +44,15 @@ class Spider(BaseSpider):
                     for j in i['config']:
                         if j['type'] == 'json':
                             label.append(j['label'])
-                    parsing_config.update({i['key']: label})
+                    parsing_config.update({i['key']:label})
             self.parsing_config = parsing_config
+            return None
         except Exception as e:
             print(f'初始化异常：{e}')
             return {}
 
     def detailContent(self, ids):
-        response = self.fetch(f"{self.host}/apptov5/v1/vod/getVod?id={ids[0]}", headers=self.headers).json()
+        response = self.fetch(f"{self.host}/apptov5/v1/vod/getVod?id={ids[0]}",headers=self.headers).json()
         data3 = response['data']
         videos = []
         vod_play_url = ''
@@ -144,13 +140,12 @@ class Spider(BaseSpider):
         home_cate = config['get_home_cate']
         classes = []
         for i in home_cate:
-            if isinstance(i.get('extend', []), dict):
+            if isinstance(i.get('extend', []),dict):
                 classes.append({'type_id': i['cate'], 'type_name': i['title']})
         return {'class': classes}
 
     def homeVideoContent(self):
-        response = self.fetch(f'{self.host}/apptov5/v1/home/data?id=1&mold=1&__platform=android',
-                              headers=self.headers).json()
+        response = self.fetch(f'{self.host}/apptov5/v1/home/data?id=1&mold=1&__platform=android',headers=self.headers).json()
         data = response['data']
         vod_list = []
         for i in data['sections']:
@@ -167,18 +162,16 @@ class Spider(BaseSpider):
         return {'list': vod_list}
 
     def categoryContent(self, tid, pg, filter, extend):
-        response = self.fetch(
-            f"{self.host}/apptov5/v1/vod/lists?area={extend.get('area', '')}&lang={extend.get('lang', '')}&year={extend.get('year', '')}&order={extend.get('sort', 'time')}&type_id={tid}&type_name=&page={pg}&pageSize=21&__platform=android",
-            headers=self.headers).json()
+        response = self.fetch(f"{self.host}/apptov5/v1/vod/lists?area={extend.get('area','')}&lang={extend.get('lang','')}&year={extend.get('year','')}&order={extend.get('sort','time')}&type_id={tid}&type_name=&page={pg}&pageSize=21&__platform=android", headers=self.headers).json()
         data = response['data']
         data2 = data['data']
         for i in data['data']:
-            if i.get('vod_pic', '').startswith('mac://'):
+            if i.get('vod_pic','').startswith('mac://'):
                 i['vod_pic'] = i['vod_pic'].replace('mac://', 'http://', 1)
         return {'list': data2, 'page': pg, 'total': data['total']}
 
     def getName(self):
-        return 'AppToV5'
+        pass
 
     def isVideoFormat(self, url):
         pass

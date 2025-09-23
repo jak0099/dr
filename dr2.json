@@ -14,6 +14,7 @@
 //{"key": "csp_LocalFile","name": "💻本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1,"jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key": "csp_接口信息","name": "🍔本地包拉取🍔","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market.json","jar": "./sp/mk.jar?md5=5400486b7884dd01de5a306e34724c3c"},
 //{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./test/js源测试/测试.js"},
+//{"key": "py_测试","name": "🌐测试[PY]","type": 3,"api": "./test/py源测试/测试.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_模板[优]","name": "🍒模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[优].js"},
 {"key": "dr_可可影视[优]","name": "🍒可可影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/影视/可可影视[优].js"},
@@ -61,10 +62,8 @@
 {"key": "dr_锦鲤短剧[短]","name": "🥝锦鲤短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/锦鲤短剧[短].js"},
 {"key": "dr_短剧导航[短]","name": "🥝短剧导航[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧导航[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
-{"key": "dr_逐月[短]","name": "🥝逐月[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/逐月[短].js"},
 {"key": "dr_番薯短剧[短]","name": "🥝番薯短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番薯短剧[短].js"},
 
-{"key": "py_剧多短剧APP[短]","name": "🥝剧多短剧[短][PY]","type": 3,"api": "./py/app/剧多短剧APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_偷乐短剧[短]","name": "🥝偷乐短剧[短][PY]","type": 3,"api": "./py/html/偷乐短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -75,8 +74,7 @@
 
 {"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/短/番茄.json"},
 {"key": "T1_旺旺短剧","name": "🥝旺旺短剧[短][T1]","type": 1,"api": "https://api.wwzy.tv/api.php/provide/vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"categories": ["短剧"]},
-    
-{"key": "py_荐片","name": "🍑荐片[影][PY]","type": 3,"api": "./py/html/荐片.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+
 {"key": "py_热播APP","name": "🍑热播[影][PY]","type": 3,"api": "./py/app/热播APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_云端APP","name": "🍑云端[影][PY]","type": 3,"api": "./py/app/云端APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_光速APP","name": "🍑光速[影][PY]","type": 3,"api": "./py/app/光速APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -136,6 +134,7 @@
 {"key": "py_AppGet2_仓鼠","name": "🍐仓鼠[影][PY]","type": 3,"api": "./py/模板/AppGet2.py","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": {"url": "https://qjappcms.cs4k.top","datakey": "Z98KXaLtO2wC1Pte","dataiv": "Z98KXaLtO2wC1Pte","deviceId": "","version": "120"}},
 
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_王子TV","name": "🍊王子TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/王子TV.js"},
 {"key": "dr_微云TV","name": "🍊微云TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/微云TV.js"},
 {"key": "dr_雪糕TV","name": "🍊雪糕TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/雪糕TV.js"},
 {"key": "dr_FreeVA[优]","name": "🍊FreeVA[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/FreeVA.js"},

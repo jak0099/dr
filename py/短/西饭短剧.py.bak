@@ -121,33 +121,28 @@ class Spider(Spider):
         result['total'] = 999999
         return result
 
-    def shouldUseAutoNumbering(self, episodeList, vod_name):
-        if not episodeList:
-            return False
-            
-        valid_episode_count = 0
-        for ep in episodeList:
-            title = ep.get('title', '')
-            
-            patterns = [
-                r'第\s*\d+\s*集', r'第\s*\d+\s*章', r'第\s*\d+\s*话',
-                r'\d+\s*集', r'\d+\s*章', r'\d+\s*话',
-                r'EP\s*\d+', r'ep\s*\d+', r'Ep\s*\d+'
-            ]
-            
-            has_episode_pattern = False
-            for pattern in patterns:
-                if re.search(pattern, title):
-                    has_episode_pattern = True
-                    break
-            
-            if has_episode_pattern:
-                valid_episode_count += 1
+    def cleanEpisodeTitle(self, title, vod_name):
+        if vod_name and title.startswith(vod_name):
+            cleaned_title = title[len(vod_name):].strip()            
+            separators = ['：', ':', '-', '—', '——', ' ']
+            for sep in separators:
+                if cleaned_title.startswith(sep):
+                    cleaned_title = cleaned_title[len(sep):].strip()
+                    break            
+            if cleaned_title:
+                return cleaned_title
+        patterns = [
+            r'第(\d+)集', r'第(\d+)章', r'第(\d+)话',
+            r'(\d+)集', r'(\d+)章', r'(\d+)话',
+            r'EP(\d+)', r'ep(\d+)', r'Ep(\d+)'
+        ]
         
-        if valid_episode_count > len(episodeList) / 2:
-            return False
-            
-        return True
+        for pattern in patterns:
+            match = re.search(pattern, title)
+            if match:
+                number = match.group(1)
+                return f"第{number}集"        
+        return title
 
     def detailContent(self, ids):
         did = ids[0]
@@ -168,25 +163,30 @@ class Spider(Spider):
                 result_data = data.get('result', {})
                 
                 playUrls = []
-                episodeList = result_data.get('episodeList', [])
+                episodeList = result_data.get('episodeList', [])                
+                vod_name = result_data.get('title', '')                
+                all_titles_same = True
+                if episodeList:
+                    first_title = episodeList[0].get('title', '')
+                    for ep in episodeList:
+                        if ep.get('title', '') != first_title:
+                            all_titles_same = False
+                            break
                 
-                vod_name = result_data.get('title', '')
-                
-                use_auto_numbering = self.shouldUseAutoNumbering(episodeList, vod_name)
-                
-                for i, ep in enumerate(episodeList):
-                    original_title = ep.get('title', '')
-                    play_url = ep.get('playUrl', '')
-                    
-                    if use_auto_numbering:
+                if all_titles_same and len(episodeList) > 1:
+                    for i, ep in enumerate(episodeList):
+                        play_url = ep.get('playUrl', '')
                         episode_title = f"第{i+1}集"
-                    else:
-                        episode_title = self.extractEpisodeInfo(original_title, vod_name)
-                        
-                        if not episode_title:
-                            episode_title = f"第{i+1}集"
-                    
-                    playUrls.append(f"{episode_title}${play_url}")
+                        playUrls.append(f"{episode_title}${play_url}")
+                else:
+                    for ep in episodeList:
+                        original_title = ep.get('title', '')
+                        play_url = ep.get('playUrl', '')                        
+                        episode_title = self.cleanEpisodeTitle(original_title, vod_name)                        
+                        if episode_title == vod_name or not episode_title.strip():
+                            index = episodeList.index(ep) + 1
+                            episode_title = f"第{index}集"                        
+                        playUrls.append(f"{episode_title}${play_url}")
                 
                 vod_info = {
                     "vod_id": did,
@@ -204,46 +204,6 @@ class Spider(Spider):
         
         result['list'] = videos
         return result
-
-    def extractEpisodeInfo(self, title, vod_name):
-        if title == vod_name:
-            return None
-            
-        patterns = [
-            (r'第\s*(\d+)\s*集', '第{}集'),
-            (r'第\s*(\d+)\s*章', '第{}章'),
-            (r'第\s*(\d+)\s*话', '第{}话'),
-            (r'(\d+)\s*集', '第{}集'),
-            (r'(\d+)\s*章', '第{}章'),
-            (r'(\d+)\s*话', '第{}话'),
-            (r'EP\s*(\d+)', '第{}集'),
-            (r'ep\s*(\d+)', '第{}集'),
-            (r'Ep\s*(\d+)', '第{}集')
-        ]
-        
-        for pattern, format_str in patterns:
-            match = re.search(pattern, title)
-            if match:
-                number = match.group(1)
-                return format_str.format(number)
-        
-        if vod_name and title.startswith(vod_name):
-            cleaned_title = title[len(vod_name):].strip()
-            
-            separators = ['：', ':', '-', '—', '——', ' ']
-            for sep in separators:
-                if cleaned_title.startswith(sep):
-                    cleaned_title = cleaned_title[len(sep):].strip()
-                    break
-            
-            if cleaned_title:
-                for pattern, format_str in patterns:
-                    match = re.search(pattern, cleaned_title)
-                    if match:
-                        number = match.group(1)
-                        return format_str.format(number)
-        
-        return None
 
     def playerContent(self, flag, id, vipFlags):
         result = {}

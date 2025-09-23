@@ -1,47 +1,31 @@
-"""
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: 'AppFei',
-  lang: 'hipy'
-})
-"""
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
 
-import re, sys, urllib3
-
-try:
-    # from base.spider import Spider as BaseSpider
-    from base.spider import BaseSpider
-except ImportError:
-    from t4.base.spider import BaseSpider
+import re,sys,urllib3
+from base.spider import Spider
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
-
-class Spider(BaseSpider):
-    def __init__(self, query_params=None, t4_api=None):
-        super().__init__(query_params=query_params, t4_api=t4_api)
-        self.headers = {
-            'User-Agent': "okhttp/4.9.3",
-            'Accept-Encoding': "gzip"
-        }
-        self.host = ''
+class Spider(Spider):
+    headers,host = {
+        'User-Agent': "okhttp/4.9.3",
+        'Accept-Encoding': "gzip"
+    },''
 
     def init(self, extend=''):
-        host = self.extend.strip()
+        host = extend.strip()
         if host.startswith('http'):
             self.host = host.rstrip('/')
 
     def homeContent(self, filter):
-        response = self.fetch(f'{self.host}/api.php?type=getsort', headers=self.headers, verify=False).json()
+        response = self.fetch(f'{self.host}/api.php?type=getsort', headers=self.headers,verify=False).json()
         classes = []
         for i in response['list']:
-            classes.append({'type_id': i['type_id'], 'type_name': i['type_name']})
+            classes.append({'type_id':i['type_id'],'type_name':i['type_name']})
         return {'class': classes}
 
     def homeVideoContent(self):
-        response = self.fetch(f'{self.host}/api.php?type=getHome', headers=self.headers, verify=False).json()
+        response = self.fetch(f'{self.host}/api.php?type=getHome', headers=self.headers,verify=False).json()
         videos = []
         for i, j in response.items():
             if not isinstance(j, dict):
@@ -52,27 +36,23 @@ class Spider(BaseSpider):
         return {'list': videos}
 
     def categoryContent(self, tid, pg, filter, extend):
-        response = self.fetch(
-            f"{self.host}/api.php?type=getvod&type_id={tid}&page={pg}&tag={extend.get('class', '全部')}&year={extend.get('year', '全部')}",
-            headers=self.headers, verify=False).json()
+        response = self.fetch(f"{self.host}/api.php?type=getvod&type_id={tid}&page={pg}&tag={extend.get('class','全部')}&year={extend.get('year','全部')}", headers=self.headers,verify=False).json()
         return {'list': response['list'], 'page': pg}
 
     def searchContent(self, key, quick, pg="1"):
-        response = self.fetch(f'{self.host}/api.php?type=getsearch&text={key}', headers=self.headers,
-                              verify=False).json()
+        response = self.fetch(f'{self.host}/api.php?type=getsearch&text={key}', headers=self.headers,verify=False).json()
         for i in response['list']:
             if not i.get('vod_content'):
                 i['vod_content'] = i['vod_blurb']
         return {'list': response['list'], 'page': pg}
 
     def detailContent(self, ids):
-        response = self.fetch(f'{self.host}/api.php?type=getVodinfo&id={ids[0]}', headers=self.headers,
-                              verify=False).json()
+        response = self.fetch(f'{self.host}/api.php?type=getVodinfo&id={ids[0]}', headers=self.headers,verify=False).json()
         show = ''
         vod_play_url = ''
         for i in response['vod_player']['list']:
-            show += i.get('from', '') + '$$$'
-            play_url = i.get('url', '')
+            show += i.get('from','') + '$$$'
+            play_url = i.get('url','')
             vod_play_url += '#'.join(f"{item}@{ids[0]}" for item in play_url.split('#')) + '$$$'
         videos = [{
             'vod_name': response.get('vod_name'),
@@ -97,17 +77,16 @@ class Spider(BaseSpider):
             url = vodurl
         else:
             try:
-                response = self.fetch(f'{self.host}/api.php?type=jx&vodurl={vodurl}&vodid={vodid}',
-                                      headers=self.headers, verify=False).json()
+                response = self.fetch(f'{self.host}/api.php?type=jx&vodurl={vodurl}&vodid={vodid}', headers=self.headers,verify=False).json()
                 url = response['url']
                 if not url.startswith('http') or url == vodurl:
                     jx, url, ua = 1, vodurl, ua2
             except Exception:
                 jx, url, ua = 1, vodurl, ua2
-        return {'jx': jx, 'parse': 0, 'url': url, 'header': {'User-Agent': ua}}
+        return {'jx': jx, 'parse': 0, 'url': url,'header': {'User-Agent': ua}}
 
     def getName(self):
-        return 'AppFei'
+        pass
 
     def isVideoFormat(self, url):
         pass

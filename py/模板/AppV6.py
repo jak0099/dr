@@ -18,12 +18,20 @@ try:
 except ImportError:
     from t4.base.spider import BaseSpider
 from urllib.parse import urlparse, urlencode
-import re,sys,time,json,urllib3,hashlib,datetime
+import re, sys, time, json, urllib3, hashlib, datetime
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
+
 class Spider(BaseSpider):
-    headers,api,apisignkey,datasignkey = {'User-Agent': 'okhttp/4.12.0',},'', '' , ''
+
+    def __init__(self, query_params=None, t4_api=None):
+        super().__init__(query_params=query_params, t4_api=t4_api)
+        self.headers = {'User-Agent': 'okhttp/4.12.0'}
+        self.api = ''
+        self.apisignkey = ''
+        self.datasignkey = ''
 
     def init(self, extend=""):
         ext = self.extend.strip()
@@ -48,7 +56,7 @@ class Spider(BaseSpider):
         keys = ["class", "area", "lang", "year", "letter", "by", "sort"]
         filters = {}
         classes = []
-        for item in data.get('list',data.get('data',[])):
+        for item in data.get('list', data.get('data', [])):
             has_non_empty_field = False
             jsontype_extend = item["type_extend"]
             classes.append({"type_name": item["type_name"], "type_id": item["type_id"]})
@@ -72,7 +80,7 @@ class Spider(BaseSpider):
             path = '/vodPhbAll'
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path += self.datasign(f'?apikey={self.apikey()}&keytime={keytime}',keytime)
+                path += self.datasign(f'?apikey={self.apikey()}&keytime={keytime}', keytime)
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).json()
             data = data['data']
         else:
@@ -91,14 +99,15 @@ class Spider(BaseSpider):
             path = f"?type={tid}&class={extend.get('class', '')}&lang={extend.get('lang', '')}&area={extend.get('area', '')}&year={extend.get('year', '')}&by=&page={pg}&limit=9"
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}' ,keytime)
+                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).json()
             data = data['data']
         else:
-            params = {'tid': tid, 'class': extend.get('class', ''), 'area': extend.get('area', ''), 'lang': extend.get('lang', ''), 'year': extend.get('year', ''), 'limit': '18', 'pg': pg}
+            params = {'tid': tid, 'class': extend.get('class', ''), 'area': extend.get('area', ''),
+                      'lang': extend.get('lang', ''), 'year': extend.get('year', ''), 'limit': '18', 'pg': pg}
             data = self.fetch(f"{self.api}/video", params=params, headers=self.headers, verify=False).json()
             if 'data' in data:
-                data = {'list':data['data']}
+                data = {'list': data['data']}
         return data
 
     def searchContent(self, key, quick, pg="1"):
@@ -106,11 +115,11 @@ class Spider(BaseSpider):
             path = f"?page={pg}&limit=10&wd={key}"
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}',keytime)
+                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
         else:
             path = f"/search?text={key}&pg={pg}"
         data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).json()
-        data2 = data.get('list',data.get('data',[]))
+        data2 = data.get('list', data.get('data', []))
         if 'type' in data2:
             for item in data2:
                 item.pop('type', None)
@@ -123,7 +132,7 @@ class Spider(BaseSpider):
             path = f'/detail?vod_id={ids[0]}&rel_limit=10'
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}',keytime)
+                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).json()
         else:
             data = self.fetch(f"{self.api}/video_detail?id={ids[0]}", headers=self.headers, verify=False).json()
@@ -135,22 +144,22 @@ class Spider(BaseSpider):
         if 'vod_url_with_player' in data:
             for i in data['vod_url_with_player']:
                 show += i.get('name', '') + '$$$'
-                parse_api = i.get('parse_api','')
+                parse_api = i.get('parse_api', '')
                 if parse_api and parse_api.startswith('http'):
-                    url = i.get('url','')
+                    url = i.get('url', '')
                     if url:
-                        url2 = '#'.join([i+ '@' + parse_api  for i in url.split('#')])
+                        url2 = '#'.join([i + '@' + parse_api for i in url.split('#')])
                     vod_play_url += url2 + '$$$'
                 else:
-                    vod_play_url += i.get('url','') + '$$$'
+                    vod_play_url += i.get('url', '') + '$$$'
             data.pop('vod_url_with_player')
         if 'vod_play_list' in data:
             for i in data['vod_play_list']:
                 parses = ''
                 player_info = i['player_info']
                 show += f"{player_info['show']}({i['from']})$$$"
-                parse = player_info.get('parse','')
-                parse2 = player_info.get('parse2','')
+                parse = player_info.get('parse', '')
+                parse2 = player_info.get('parse2', '')
                 if 'parse' in player_info and parse.startswith('http'):
                     parses += parse + ','
                 if 'parse2' in player_info and parse2.startswith('http') and parse2 != parse:

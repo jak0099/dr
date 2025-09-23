@@ -19,16 +19,24 @@ try:
 except ImportError:
     from t4.base.spider import BaseSpider
 from urllib.parse import urlparse, urlencode
-import re,sys,time,json,urllib3,hashlib,datetime
+import re, sys, time, json, urllib3, hashlib, datetime
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
-class Spider(BaseSpider):
-    api,apisignkey,datasignkey,detail_type,search_data = '', '' , '','',''
 
-    headers = {
-        'User-Agent': 'okhttp/4.12.0',
-    }
+class Spider(BaseSpider):
+
+    def __init__(self, query_params=None, t4_api=None):
+        super().__init__(query_params=query_params, t4_api=t4_api)
+        self.api = ''
+        self.apisignkey = ''
+        self.datasignkey = ''
+        self.detail_type = ''
+        self.search_data = ''
+        self.headers = {
+            'User-Agent': 'okhttp/4.12.0',
+        }
 
     def init(self, extend=""):
         ext = self.extend.strip()
@@ -38,7 +46,7 @@ class Spider(BaseSpider):
             arr = json.loads(ext)
             self.api = arr['api'].rstrip('/')
             if self.api.endswith('v1.vod'):
-                self.detail_type = arr.get('detail_type','')
+                self.detail_type = arr.get('detail_type', '')
             self.apisignkey = arr.get('apisignkey', '')
             if self.apisignkey:
                 self.datasignkey = arr.get('datasignkey', '6QQNUsP3PkD2ajJCPCY8')
@@ -56,7 +64,7 @@ class Spider(BaseSpider):
         keys = ["class", "area", "lang", "year", "letter", "by", "sort"]
         filters = {}
         classes = []
-        for item in data.get('list',data.get('data',[])):
+        for item in data.get('list', data.get('data', [])):
             has_non_empty_field = False
             jsontype_extend = item["type_extend"]
             classes.append({"type_name": item["type_name"], "type_id": item["type_id"]})
@@ -80,7 +88,7 @@ class Spider(BaseSpider):
             path = '/vodPhbAll'
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path += self.datasign(f'?apikey={self.apikey()}&keytime={keytime}',keytime)
+                path += self.datasign(f'?apikey={self.apikey()}&keytime={keytime}', keytime)
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).text
             data = json.loads(data[1:] if data.startswith('\ufeff') else data)
             data = data['data']
@@ -100,15 +108,16 @@ class Spider(BaseSpider):
             path = f"?type={tid}&class={extend.get('class', '')}&lang={extend.get('lang', '')}&area={extend.get('area', '')}&year={extend.get('year', '')}&by=&page={pg}&limit=9"
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}' ,keytime)
+                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).text
             data = json.loads(data[1:] if data.startswith('\ufeff') else data)
             data = data['data']
         else:
-            params = {'tid': tid, 'class': extend.get('class', ''), 'area': extend.get('area', ''), 'lang': extend.get('lang', ''), 'year': extend.get('year', ''), 'limit': '18', 'pg': pg}
+            params = {'tid': tid, 'class': extend.get('class', ''), 'area': extend.get('area', ''),
+                      'lang': extend.get('lang', ''), 'year': extend.get('year', ''), 'limit': '18', 'pg': pg}
             data = self.fetch(f"{self.api}/video", params=params, headers=self.headers, verify=False).json()
             if 'data' in data:
-                data = {'list':data['data']}
+                data = {'list': data['data']}
         return data
 
     def searchContent(self, key, quick, pg="1"):
@@ -116,14 +125,14 @@ class Spider(BaseSpider):
             path = f"?page={pg}&limit=10&wd={key}"
             if self.apisignkey and self.datasignkey:
                 keytime = self.keytime()
-                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}',keytime)
+                path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
         else:
             path = f"/search?text={key}&pg={pg}"
         data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).text
         data = json.loads(data[1:] if data.startswith('\ufeff') else data)
         if self.api.endswith('v1.vod') and self.detail_type == 'search':
             self.search_data = data
-        data2 = data.get('list',data.get('data',[]))
+        data2 = data.get('list', data.get('data', []))
         if 'type' in data2:
             for item in data2:
                 item.pop('type', None)
@@ -142,7 +151,7 @@ class Spider(BaseSpider):
                 path = f'/detail?vod_id={ids[0]}&rel_limit=10'
                 if self.apisignkey and self.datasignkey:
                     keytime = self.keytime()
-                    path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}',keytime)
+                    path = self.datasign(f'{path}&apikey={self.apikey()}&keytime={keytime}', keytime)
             else:
                 path = f'/video_detail?id={ids[0]}'
             data = self.fetch(f"{self.api}{path}", headers=self.headers, verify=False).text
@@ -158,11 +167,11 @@ class Spider(BaseSpider):
                     show.append(i['name'])
                 else:
                     show.append(f"{i['name']}\u2005({i['code']})")
-                parse_api = i.get('parse_api','')
+                parse_api = i.get('parse_api', '')
                 if parse_api and parse_api.startswith('http'):
-                    url = i.get('url','')
+                    url = i.get('url', '')
                     if url:
-                        url2 = '#'.join([i+ '@' + parse_api  for i in url.split('#')])
+                        url2 = '#'.join([i + '@' + parse_api for i in url.split('#')])
                     vod_play_url.append(url2)
                 else:
                     vod_play_url.append(i.get('url', ''))
@@ -176,8 +185,8 @@ class Spider(BaseSpider):
                     show.append(player_info['show'])
                 else:
                     show.append(f"{player_info['show']}\u2005({i['from']})")
-                parse = player_info.get('parse','').strip()
-                parse2 = player_info.get('parse2','').strip()
+                parse = player_info.get('parse', '').strip()
+                parse2 = player_info.get('parse2', '').strip()
                 if 'parse' in player_info and parse.startswith('http'):
                     parses += parse + ','
                 if 'parse2' in player_info and parse2.startswith('http') and parse2 != parse:
@@ -206,7 +215,7 @@ class Spider(BaseSpider):
 
     def playerContent(self, flag, id, vipFlags):
         video_pattern = re.compile(r'https?:\/\/.*\.(?:m3u8|mp4|flv)')
-        jx,url,ua = 0,'','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+        jx, url, ua = 0, '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
         if '@' in id:
             rawurl, jxapi = id.split('@', 1)
             jxapis = jxapi.split(',', 1) if ',' in jxapi else [jxapi]
@@ -231,8 +240,8 @@ class Spider(BaseSpider):
             url = id
             jx = 0 if video_pattern.match(id) else 1
         if url.startswith('NBY'):
-            jx, url = 0,''
-        return {'jx': jx,'parse': 0,'url': url,'header': {'User-Agent': ua}}
+            jx, url = 0, ''
+        return {'jx': jx, 'parse': 0, 'url': url, 'header': {'User-Agent': ua}}
 
     def keytime(self):
         return str(int(datetime.datetime.now().timestamp()))

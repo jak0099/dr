@@ -177,7 +177,7 @@ class Spider(Spider):
                     "vod_id": id,
                     "vod_name": name,
                     "vod_pic": pic,
-                    "vod_remarks": '▶️' + remark
+                    "vod_remarks": remark
                         }
                 videos.append(video)
 
@@ -203,38 +203,24 @@ class Spider(Spider):
         res = res.text
         doc = BeautifulSoup(res, "lxml")
 
-        url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732707176882/jiduo.txt'
-        response = requests.get(url)
-        response.encoding = 'utf-8'
-        code = response.text
-        name = self.extract_middle_text(code, "s1='", "'", 0)
-        Jumps = self.extract_middle_text(code, "s2='", "'", 0)
-
-        content = '集多为您介绍剧情📢' + self.extract_middle_text(res,'class="info-detail">','<', 0)
+        content = self.extract_middle_text(res,'class="info-detail">','<', 0)
 
         remarks = self.extract_middle_text(res, 'class="info-mark">', '<', 0)
 
         year = self.extract_middle_text(res, 'class="info-addtime">', '<', 0)
-
-        if name not in content:
-            bofang = Jumps
-            xianlu = '1'
-        else:
-            soups = doc.find('div', class_="ep-list-items")
-
+        
+        soups = doc.find('div', class_="ep-list-items")
+        if soups:
             soup = soups.find_all('a')
-
             for sou in soup:
-
                 id = sou['href']
-
                 name = sou.text.strip()
-
                 bofang = bofang + name + '$' + id + '#'
-
             bofang = bofang[:-1]
-
             xianlu = '专线'
+        else:
+            bofang = ''
+            xianlu = ''
 
         videos.append({
             "vod_id": did,
@@ -298,7 +284,7 @@ class Spider(Spider):
                     "vod_id": id,
                     "vod_name": name,
                     "vod_pic": pic,
-                    "vod_remarks": '▶️' + remark
+                    "vod_remarks": remark
                         }
                 videos.append(video)
 
@@ -320,10 +306,3 @@ class Spider(Spider):
         elif params['type'] == "ts":
             return self.proxyTs(params)
         return None
-
-
-
-
-
-
-

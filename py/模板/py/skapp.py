@@ -1,54 +1,45 @@
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
 """
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: 'AppSk',
-  lang: 'hipy'
-})
+示例
+{
+    "key": "xxx",
+    "name": "xxx",
+    "type": 3,
+    "api": "./skapp.py",
+    "ext": {
+        "host": "https://cos.ap-shanghai.domain.com/xxx/xxx.txt", 域名（支持txt或域名）
+        "key": "", 数据解密key
+        "iv": ""  数据解密iv
+    }
+}
 """
 
 from Crypto.Cipher import AES
-
-try:
-    # from base.spider import Spider as BaseSpider
-    from base.spider import BaseSpider
-except ImportError:
-    from t4.base.spider import BaseSpider
+from base.spider import Spider
 from Crypto.Util.Padding import unpad, pad
-import re, sys, time, json, base64, urllib3, hashlib, binascii
-
+import re,sys,time,json,base64,urllib3,hashlib,binascii
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
-
-class Spider(BaseSpider):
-
-    def __init__(self, query_params=None, t4_api=None):
-        super().__init__(query_params=query_params, t4_api=t4_api)
-        self.headers = {
-            'User-Agent': "Dart/2.10 (dart:io)",
-            'Accept-Encoding': "gzip",
-        }
-        self.host = ''
-        self.key = ''
-        self.iv = ''
-        self.ckkey = ''
-        self.ckiv = ''
-        self.config = {}
+class Spider(Spider):
+    headers,host,key,iv,ckkey,ckiv,config = {
+        'User-Agent': "Dart/2.10 (dart:io)",
+        'Accept-Encoding': "gzip",
+    }, '','','','','',{}
 
     def init(self, extend=""):
         try:
-            ext = json.loads(self.extend.strip())
+            ext = json.loads(extend.strip())
             host = ext['host']
             self.key = ext['key']
             self.iv = ext['iv']
-            self.ckkey = ext.get('ckkey', 'ygcnbcrvaervztmw')
-            self.ckiv = ext.get('ckiv', '1212164105143708')
+            self.ckkey = ext.get('ckkey','ygcnbcrvaervztmw')
+            self.ckiv = ext.get('ckiv','1212164105143708')
             if not host.startswith('http'):
                 return None
             if not re.match(r'^https?://[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?/?$', host):
-                host = self.fetch(host, headers=self.headers, verify=False).text.strip()
+                host = self.fetch(host,headers=self.headers,verify=False).text.strip()
             self.host = host.rstrip('/')
             if len(self.key) != 16 or len(self.iv) != 16:
                 self.host = ''
@@ -58,9 +49,8 @@ class Spider(BaseSpider):
                 "ck": self.ck_encrypt(f'{self.host}##5483##{int(time.time() * 1000)}##ckzmbc')
             }
             headers = self.headers.copy()
-            headers.update({'Content-Type': "application/json", 'content-type': "application/json; charset=utf-8"})
-            response = self.post(f'{self.host}/get_config', data=json.dumps(payload), headers=headers,
-                                 verify=False).text
+            headers.update({'Content-Type': "application/json",'content-type': "application/json; charset=utf-8"})
+            response = self.post(f'{self.host}/get_config', data=json.dumps(payload), headers=headers, verify=False).text
             if response:
                 token = self.sk_decrypt(response)
                 if token:
@@ -77,13 +67,13 @@ class Spider(BaseSpider):
                 else:
                     direct_link_list = [direct_link]
                 self.config['direct_link'] = direct_link_list
-            if direct_json_link and isinstance(direct_json_link, str):
+            if direct_json_link and isinstance(direct_json_link,str):
                 if '|' in direct_json_link:
                     direct_json_link_list = direct_json_link.split('|')
                 else:
                     direct_json_link_list = [direct_json_link]
                 self.config['direct_json_link'] = direct_json_link_list
-            if app_trans_name and isinstance(app_trans_name, list):
+            if app_trans_name and isinstance(app_trans_name,list):
                 self.config['app_trans_name'] = app_trans_name
             return None
         except Exception:
@@ -96,44 +86,39 @@ class Spider(BaseSpider):
         data = json.loads(data_)['data']
         classes = []
         for i in data:
-            if isinstance(i, dict):
+            if isinstance(i,dict):
                 classes.append({'type_id': i['type_id'], 'type_name': i['type_name']})
         return {'class': classes}
 
     def homeVideoContent(self):
-        response = self.fetch(
-            f'{self.host}/sk-api/vod/list?page=1&limit=12&type=randomlikeindex&area=&lang=&year=&mtype=',
-            headers=self.headers, verify=False).text
+        response = self.fetch(f'{self.host}/sk-api/vod/list?page=1&limit=12&type=randomlikeindex&area=&lang=&year=&mtype=',headers=self.headers, verify=False).text
         data_ = self.sk_decrypt(response)
         data = json.loads(data_)['data']
         return {'list': data}
 
     def categoryContent(self, tid, pg, filter, extend):
-        response = self.fetch(
-            f"{self.host}/sk-api/vod/list?typeId={tid}&page={pg}&limit=18&type={extend.get('sort', 'updateTime')}&area={extend.get('area', '')}&lang={extend.get('lang', '')}&year={extend.get('year', '')}&mtype=&extendtype=",
-            headers=self.headers, verify=False).text
+        response = self.fetch(f"{self.host}/sk-api/vod/list?typeId={tid}&page={pg}&limit=18&type={extend.get('sort','updateTime')}&area={extend.get('area','')}&lang={extend.get('lang','')}&year={extend.get('year','')}&mtype=&extendtype=", headers=self.headers, verify=False).text
         data_ = self.sk_decrypt(response)
         data = json.loads(data_)['data']
         return {'list': data, 'page': pg}
 
     def searchContent(self, key, quick, pg='1'):
-        response = self.fetch(f"{self.host}/sk-api/search/pages?keyword={key}&page={pg}&limit=10&typeId=-1",
-                              headers=self.headers, verify=False).text
+        response = self.fetch(f"{self.host}/sk-api/search/pages?keyword={key}&page={pg}&limit=10&typeId=-1", headers=self.headers, verify=False).text
         data_ = self.sk_decrypt(response)
         data = json.loads(data_)['data']
         return {'list': data, 'page': pg}
 
     def detailContent(self, ids):
-        response = self.fetch(f"{self.host}/sk-api/vod/one?vodId={ids[0]}", headers=self.headers, verify=False).text
+        response = self.fetch(f"{self.host}/sk-api/vod/one?vodId={ids[0]}",headers=self.headers, verify=False).text
         data_ = self.sk_decrypt(response)
         data = json.loads(data_)['data']
         return {'list': [data]}
 
     def playerContent(self, flag, id, vipflags):
-        jx, url = 0, ''
+        jx,url = 0,''
         config = self.config
-        direct_json_links = config.get('direct_json_link', [])
-        direct_links = config.get('direct_link', [])
+        direct_json_links = config.get('direct_json_link',[])
+        direct_links = config.get('direct_link',[])
         direct_json = 0
         for i in direct_json_links:
             if i in id:
@@ -141,10 +126,9 @@ class Spider(BaseSpider):
         for i in direct_links:
             if i in id and i.startswith('http'):
                 direct_link = 1
-        if direct_json or not (id.startswith('http')) or not (re.match(r'https?:\/\/.*\.(m3u8|mp4|flv)', id)):
+        if direct_json or not(id.startswith('http')) or not(re.match(r'https?:\/\/.*\.(m3u8|mp4|flv)', id)):
             try:
-                response = self.fetch(f'{self.host}/sk-api/vod/skjson?url={id}&skjsonindex=0', headers=self.headers,
-                                      verify=False).text
+                response = self.fetch(f'{self.host}/sk-api/vod/skjson?url={id}&skjsonindex=0', headers=self.headers, verify=False).text
                 data_ = self.sk_decrypt(response)
                 data = json.loads(data_)['data']
                 url = data.get('url')
@@ -152,13 +136,12 @@ class Spider(BaseSpider):
                     if url == '' and (re.match(r'https?:\/\/.*\.(m3u8|mp4|flv)', id) or direct_link):
                         jx, url = 0, id
                     else:
-                        jx, url = 1, id
+                        jx,url = 1, id
             except Exception:
                 jx, url = 1, id
         if url == '' and (re.match(r'https?:\/\/.*\.(m3u8|mp4|flv)', id) or direct_link):
             jx, url = 0, id
-        return {'jx': jx, 'parse': 0, 'url': url, 'header': {
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}}
+        return { 'jx': jx, 'parse': '0', 'url': url, 'header': {'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}}
 
     def ck_encrypt(self, str):
         key = self.ckkey.encode('utf-8')
@@ -173,7 +156,7 @@ class Spider(BaseSpider):
         final_ciphertext = base64.b64encode(hex_bytes).decode('utf-8')
         return final_ciphertext
 
-    def sk_decrypt(self, data):
+    def sk_decrypt(self,data):
         prefix = "FROMSKZZJM"
         if data.startswith('FROMSKZZJM'):
             try:
@@ -190,7 +173,7 @@ class Spider(BaseSpider):
             return data
 
     def getName(self):
-        return 'AppSk'
+        pass
 
     def isVideoFormat(self, url):
         pass
