@@ -42,6 +42,7 @@
 {"key": "dr_瓜子影视","name": "🍒瓜子影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/瓜子影视.js"},
 {"key": "dr_美剧天堂","name": "🍒美剧天堂[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/美剧天堂.js"},
 {"key": "dr_柯南影视","name": "🍒柯南影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/柯南影视.js"},
+{"key": "dr_03影院[优]","name": "🍒03影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/03影院[优].js"},
 
 //{"key": "dr_模板[短]","name": "🥝模板[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/模板[短].js"},
 {"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
@@ -64,15 +65,16 @@
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 {"key": "dr_番薯短剧[短]","name": "🥝番薯短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番薯短剧[短].js"},
 
-{"key": "py_偷乐短剧[短]","name": "🥝偷乐短剧[短][PY]","type": 3,"api": "./py/html/偷乐短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_星之阁短剧[短]","name": "🥝星之阁[短][PY]","type": 3,"api": "./py/短/星之阁短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_七猫短剧[短]","name": "🥝七猫短剧[短][PY]","type": 3,"api": "./py/短/七猫短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_牛牛短剧[短]","name": "🥝牛牛短剧[短][PY]","type": 3,"api": "./py/短/牛牛短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_西饭短剧[短]","name": "🥝西饭短剧[短][PY]","type": 3,"api": "./py/短/西饭短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_碎片剧场[短]","name": "🥝碎片剧场[短][PY]","type": 3,"api": "./py/综/碎片剧场.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
-{"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/短/番茄.json"},
+{"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/短/番茄.json"},
+
 {"key": "T1_旺旺短剧","name": "🥝旺旺短剧[短][T1]","type": 1,"api": "https://api.wwzy.tv/api.php/provide/vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"categories": ["短剧"]},
 
 {"key": "py_热播APP","name": "🍑热播[影][PY]","type": 3,"api": "./py/app/热播APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -134,6 +136,7 @@
 {"key": "py_AppGet2_仓鼠","name": "🍐仓鼠[影][PY]","type": 3,"api": "./py/模板/AppGet2.py","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": {"url": "https://qjappcms.cs4k.top","datakey": "Z98KXaLtO2wC1Pte","dataiv": "Z98KXaLtO2wC1Pte","deviceId": "","version": "120"}},
 
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_零度","name": "🍊零度[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/零度.js"},
 {"key": "dr_王子TV","name": "🍊王子TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/王子TV.js"},
 {"key": "dr_微云TV","name": "🍊微云TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/微云TV.js"},
 {"key": "dr_雪糕TV","name": "🍊雪糕TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/雪糕TV.js"},
@@ -298,9 +301,9 @@
 {"key": "dr_BT影视[磁]","name": "🍓BT影视[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/BT影视[磁].js"},
 {"key": "dr_修罗影视[磁]","name": "🍓修罗影视[磁][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"timeout": 60,"ext": "./js/磁力/修罗影视[磁].js"},
 
-{"key": "csp_XBPQ_BT天堂","name": "🍥BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/BT天堂磁力.json"},
-{"key": "csp_XBPQ_好恐怖","name": "🍥好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/好恐怖磁力.json"},
-{"key": "csp_XBPQ_迅雷8","name": "🍥迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./XBPQ/磁/迅雷吧磁力.json"},
+{"key": "csp_XBPQ_BT天堂","name": "🍥BT天堂┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/磁/BT天堂磁力.json"},
+{"key": "csp_XBPQ_好恐怖","name": "🍥好恐怖┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/磁/好恐怖磁力.json"},
+{"key": "csp_XBPQ_迅雷8","name": "🍥迅雷吧┃磁力","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/磁/迅雷吧磁力.json"},
 
 {"key":"csp_DyGod","name":"🍥电影天堂┃磁力","type":3,"api":"csp_DyGod","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
 {"key":"csp_QnMp4","name":"🍥七妹┃磁力","type":3,"api":"csp_QnMp4","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
@@ -384,6 +387,7 @@
 
 {"key": "py_三号动漫APP","name": "🍇三号动漫[漫][PY]","type": 3,"api": "./py/app/三号动漫APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_嗷呜动漫","name": "🍇嗷呜动漫[漫][PY]","type": 3,"api": "./py/漫/嗷呜动漫.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+
 
 {"key": "dr_酷我听书[听]","name": "🍋酷我听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/酷我听书[听].js"},
 {"key": "dr_博看听书[听]","name": "🍋博看听书[听][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/听书/博看听书[听].js"},
@@ -553,7 +557,7 @@
 {"name":"魔都[正则❅时长]","hosts":["modujx","play.modujx11"],"regex":["13.201"]},
 {"name":"硬核[正则❅时长]","hosts":["ryplay","svip.ryplay","cdn.ryplay"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6\\.633333,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:8\\.333333,[\\s\\S].*?\\.ts","#EXTINF:2\\.933333,[\\s\\S].*?\\.ts","10.6","11.68","9.36","8.68","18.12","11.266667","8.24"]},
 {"name": "鸭鸭[正则❅时长]","hosts": ["v2.qdhdcate","qdhdcate","v2.ffhij","ffhij"],"regex": ["#EXTINF:3\\.080000,[\\s\\S]*?(#EXTINF:\\d+\\.\\d+,[\\s\\S]*?){14}"]},     
-{"name":"非凡[正则❅时长]","hosts":["ffzy","vip.ffzy","svipsvip.ffzy","vip.ffzy-play2","ffzy-play2","hd.ffzy","ffzy-online5","cachem3u8.2s0"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:2\\.966667|2\\.433333|6\\.666667|6\\.667|6\\.6|6\\.000000|5\\.800000|5\\.266667),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1171(057).*?\\.ts","#EXTINF.*?\\s+.*?6d7b(077).*?\\.ts","#EXTINF.*?\\s+.*?6718a(403).*?\\.ts"]},
+//{"name":"非凡[正则❅时长]","hosts":["ffzy","vip.ffzy","svipsvip.ffzy","vip.ffzy-play2","ffzy-play2","hd.ffzy","ffzy-online5","cachem3u8.2s0"],"regex":["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:(?:2\\.966667|2\\.433333|6\\.666667|6\\.667|6\\.6|6\\.000000|5\\.800000|5\\.266667),[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1171(057).*?\\.ts","#EXTINF.*?\\s+.*?6d7b(077).*?\\.ts","#EXTINF.*?\\s+.*?6718a(403).*?\\.ts"]},
 //{"name": "量子[正则❅时长]","hosts": ["lz","vip1.lz","vip.lz","hd.lz",".cdnlz"],"regex": ["#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7\\.166667,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?08646.*?\\.ts","17.19","19.63"]},
 //{"name":"索尼[正则❅时长]","hosts":["suonizy","qrssv.com"],"regex":["15.1666","15.2666","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:1\\.000000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?p1ayer.*?\\.ts","#EXTINF.*?\\s+.*?\\/video\\/original.*?\\.ts"]},
 //{"name":"乐视[正则❅时长]","hosts":["leshiyun"],"regex":["15.92"]},

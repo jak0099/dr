@@ -2,13 +2,10 @@
 # !/usr/bin/python
 
 """
-
-作者 丢丢喵 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
-                    ====================Diudiumiao====================
-
 """
 
 from Crypto.Util.Padding import unpad
+from Crypto.Util.Padding import pad
 from urllib.parse import unquote
 from Crypto.Cipher import ARC4
 from urllib.parse import quote
@@ -31,35 +28,49 @@ sys.path.append('..')
 
 xurl = "https://app.whjzjx.cn"
 
-headerx = {
-    'Host': 'app.whjzjx.cn',
-    'x-app-id': '7',
-    'authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI5OTA1NTAsIlVzZXJJZCI6OTk3MjE1ODgsInJlZ2lzdGVyX3RpbWUiOiIyMDI1LTAzLTExIDE3OjI2OjAwIiwiaXNfbW9iaWxlX2JpbmQiOmZhbHNlfQ.kVsid49C_g8VRKKRJKgFrFk5yVMQpR42FDk5dePtRFc',
-    'platform': '1',
-    'manufacturer': 'vivo',
-    'version_name': '3.8.3.1',
-    'user_agent': 'Mozilla/5.0 (Linux; Android 9; V1938T Build/PQ3A.190705.08211809; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.114 Safari/537.36',
-    'dev_token': '',
-    'app_version': '2.2.1.0',
-    'device_platform': 'android',
-    'device_type': 'V1938T',
-    'device_brand': 'vivo',
-    'os_version': '9',
-    'channel': 'huawei',
-    'raw_channel': 'huawei',
-    'oaid': '',
-    'msa_oaid': '',
-    'uuid': 'randomUUID_292642bf-7ec5-4ae8-90a3-bf175942d6b9',
-    'device_id': '2a50580e69d38388c94c93605241fb306',
-    'ab_id': '',
-    'accept-encoding': 'gzip'
-          }
-
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
+    'User-Agent': 'Linux; Android 12; Pixel 3 XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36'
           }
 
-pm = ''
+headerf = {
+    "platform": "1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 9; V1938T Build/PQ3A.190705.08211809; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.114 Safari/537.36",
+    "content-type": "application/json; charset=utf-8"
+          }
+
+times = int(time.time() * 1000)
+
+data = {
+    "device": "2a50580e69d38388c94c93605241fb306",
+    "package_name": "com.jz.xydj",
+    "android_id": "ec1280db12795506",
+    "install_first_open": True,
+    "first_install_time": 1752505243345,
+    "last_update_time": 1752505243345,
+    "report_link_url": "",
+    "authorization": "",
+    "timestamp": times
+        }
+
+plain_text = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
+
+key = "B@ecf920Od8A4df7"
+key_bytes = key.encode('utf-8')
+plain_bytes = plain_text.encode('utf-8')
+cipher = AES.new(key_bytes, AES.MODE_ECB)
+padded_data = pad(plain_bytes, AES.block_size)
+ciphertext = cipher.encrypt(padded_data)
+encrypted = base64.b64encode(ciphertext).decode('utf-8')
+
+response = requests.post("https://u.shytkjgs.com/user/v3/account/login", headers=headerf, data=encrypted)
+response_data = response.json()
+Authorization = response_data['data']['token']
+
+headerx = {
+    'authorization': Authorization,
+    'platform': '1',
+    'version_name': '3.8.3.1'
+          }
 
 class Spider(Spider):
     global xurl
@@ -141,21 +152,11 @@ class Spider(Spider):
 
     def homeContent(self, filter):
         result = {}
-        result = {"class": [{"type_id": "4", "type_name": "都市"},
-                            {"type_id": "7", "type_name": "逆袭"},
-                            {"type_id": "5", "type_name": "古装"},
-                            {"type_id": "15", "type_name": "现代言情"},
-                            {"type_id": "24", "type_name": "战神"},
-                            {"type_id": "17", "type_name": "穿越"},
-                            {"type_id": "6", "type_name": "重生"},
-                            {"type_id": "33", "type_name": "甜宠"},
-                            {"type_id": "41", "type_name": "亲情"},
-                            {"type_id": "40", "type_name": "历史"},
-                            {"type_id": "37", "type_name": "古代言情"},
-                            {"type_id": "9", "type_name": "萌宝"},
-                            {"type_id": "25", "type_name": "神医"},
-                            {"type_id": "26", "type_name": "贤婿"},
-                            {"type_id": "35", "type_name": "玄幻"}],
+        result = {"class": [{"type_id": "1", "type_name": "剧场"},
+                            {"type_id": "3", "type_name": "新剧"},
+                            {"type_id": "2", "type_name": "热播"},
+                            {"type_id": "7", "type_name": "星选"},
+                            {"type_id": "5", "type_name": "阳光"}],
                   }
 
         return result
@@ -163,7 +164,8 @@ class Spider(Spider):
     def homeVideoContent(self):
         videos = []
 
-        detail = requests.get(url=xurl + "/v1/theater/home_page?theater_class_id=1&page_num=1&page_size=24", headers=headerx)
+        url= f'{xurl}/v1/theater/home_page?theater_class_id=1&class2_id=4&page_num=1&page_size=24'
+        detail = requests.get(url=url, headers=headerx)
         detail.encoding = "utf-8"
         if detail.status_code == 200:
             data = detail.json()
@@ -193,11 +195,12 @@ class Spider(Spider):
         result = {}
         videos = []
 
-        url = f'{xurl}/v1/theater/home_page?theater_class_id=1&class2_id={cid}&page_num={pg}&page_size=24'
+        url = f'{xurl}/v1/theater/home_page?theater_class_id={cid}&page_num={pg}&page_size=24'
         detail = requests.get(url=url,headers=headerx)
         detail.encoding = "utf-8"
         if detail.status_code == 200:
             data = detail.json()
+
             for vod in data['data']['list']:
 
                 name = vod['theater']['title']
@@ -206,7 +209,7 @@ class Spider(Spider):
 
                 pic = vod['theater']['cover_url']
 
-                remark = vod['theater']['play_amount_str']
+                remark = vod['theater']['theme']
 
                 video = {
                     "vod_id": id,
@@ -224,10 +227,11 @@ class Spider(Spider):
         return result
 
     def detailContent(self, ids):
-        global pm
         did = ids[0]
         result = {}
         videos = []
+        xianlu = ''
+        bofang = ''
 
         url = f'{xurl}/v2/theater_parent/detail?theater_parent_id={did}'
         detail = requests.get(url=url, headers=headerx)
@@ -242,32 +246,35 @@ class Spider(Spider):
         name = self.extract_middle_text(code, "s1='", "'", 0)
         Jumps = self.extract_middle_text(code, "s2='", "'", 0)
 
-        content = '😸集多🎉为您介绍剧情📢' + data['data']['introduction']
+        content = '剧情：' + data['data']['introduction']
 
-        if name not in content:
-            bofang = Jumps
-            xianlu = '1'
-        else:
-            soup = data['data']['theaters']
+        area = data['data']['desc_tags'][0]
 
-            xianlu = ''
-            bofang = ''
+        remarks = data['data']['filing']
 
-            for sou in soup:
-
+        # 修复剧集只有一集的问题 - 检查theaters数据是否存在且不为空
+        if 'theaters' in data['data'] and data['data']['theaters']:
+            for sou in data['data']['theaters']:
                 id = sou['son_video_url']
-
                 name = sou['num']
-
                 bofang = bofang + str(name) + '$' + id + '#'
 
-            bofang = bofang[:-1]
-
-            xianlu = '乐哥专线'
+            bofang = bofang[:-1] if bofang.endswith('#') else bofang
+            xianlu = '星芽'
+        else:
+            # 如果没有theaters数据，检查是否有单个视频URL
+            if 'video_url' in data['data'] and data['data']['video_url']:
+                bofang = '1$' + data['data']['video_url']
+                xianlu = '星芽'
+            else:
+                bofang = Jumps
+                xianlu = '1'
 
         videos.append({
             "vod_id": did,
             "vod_content": content,
+            "vod_remarks": remarks,
+            "vod_area": area,
             "vod_play_from": xianlu,
             "vod_play_url": bofang
                      })
@@ -289,7 +296,7 @@ class Spider(Spider):
         videos = []
 
         payload = {
-            "text": "爱情"
+            "text": key
                   }
 
         url = f"{xurl}/v3/search"
@@ -334,6 +341,3 @@ class Spider(Spider):
         elif params['type'] == "ts":
             return self.proxyTs(params)
         return None
-
-
-

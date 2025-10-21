@@ -39,30 +39,8 @@ globalThis.verifyLogin = verifyLogin;
 var rule = {
   类型: '影视',//影视|听书|漫画|小说
   title: '来看点播',
-  //host: 'https://lkvod.com',
-  //host: `https://${Math.random() < 0.5 ? 'lkvod.com' : 'lkvod.me'}`,
-  host: (function() {
-    const domains = [
-      'lkvod.com',
-      'lkvod.me',
-      'www.nkvod.com'
-    ];    
-    let retry = 0;
-    while (retry++ < 3) {
-      const host = domains[Math.floor(Math.random() * domains.length)];
-      try {
-        const testUrl = `https://${host}/show/fyfilter.html`;
-        const res = req(testUrl, { timeout: 3000 });
-        if (res && res.code === 200) {
-          log(`域名验证成功: ${host}`);
-          return `https://${host}`;
-        }
-      } catch (e) {
-        log(`域名 ${host} 连接失败: ${e.message}`);
-      }
-    }
-    return 'https://lkvod.com';
-  })(),
+  host: 'https://lkvod.org',
+  //host: `https://${Math.random() < 0.5 ? 'lkvod.com' : 'lkvod.me'}`,  
   url: '/show/fyfilter.html',
   searchUrl: '/nk/**----------fypage---.html',
   searchable: 2,

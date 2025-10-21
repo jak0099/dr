@@ -99,8 +99,8 @@ class Spider(Spider):
         result = {"class": [{"type_id": "961", "type_name": "电影"},
                             {"type_id": "962", "type_name": "电视剧"},
                             {"type_id": "963", "type_name": "少儿"},
-                            {"type_id": "965", "type_name": "综艺"}
-                          
+                            {"type_id": "965", "type_name": "综艺"},
+                            {"type_id": "966", "type_name": "新闻"}
                             ],
 
                   }
@@ -205,12 +205,45 @@ class Spider(Spider):
 
         result = {'list': videos}
         return result
-
     def playerContent(self, flag, id, vipFlags):
              return  {'jx':1,'parse': 1, 'url': id, 'header': headerx}
-   
 
-    def searchContent(self, key, quick):
+    def searchContentPage(self, key, quick, page):
+        result = {}
+        videos = []
+        if not page:
+            page = '1'
+
+        url = f'https://ups.5g.wasu.tv/rmp-user-suggest/1000101/hzhs/searchServlet?functionName=getServiceAndNewsSearch&keyword={key}&pageSize=10&page={page}&siteId=1000101'
+
+
+        detail = requests.get(url=url, headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        js1=json.loads(res)
+        for i in js1['data']['videoDataList']:
+            id=str(i['nodeId'])+','+str(i['newsId'])
+            name=i['title']
+            pic=i['pPic']
+            remark=i['episodeDesc']
+
+
+            video = {
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": pic,
+                "vod_remarks": remark
+                    }
+            videos.append(video)
+
+        result['list'] = videos
+        result['page'] = page
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def searchContent(self, key, quick,pg="1"):
         return self.searchContentPage(key, quick, '1')
 
     def localProxy(self, params):
