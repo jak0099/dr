@@ -64,6 +64,8 @@
 {"key": "dr_短剧导航[短]","name": "🥝短剧导航[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧导航[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 {"key": "dr_番薯短剧[短]","name": "🥝番薯短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番薯短剧[短].js"},
+{"key": "dr_围观短剧[短]","name": "🥝围观短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/围观短剧[短].js"},
+{"key": "dr_百度短剧[短]","name": "🥝百度短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/百度短剧[短].js"},
 
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -73,7 +75,7 @@
 {"key": "py_西饭短剧[短]","name": "🥝西饭短剧[短][PY]","type": 3,"api": "./py/短/西饭短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_碎片剧场[短]","name": "🥝碎片剧场[短][PY]","type": 3,"api": "./py/综/碎片剧场.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
-{"key": "csp_XBPQ_番茄","name": "🥝番茄┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/短/番茄.json"},
+{"key": "csp_XBPQ_番茄","name": "🥝番茄[短]┃XBPQ","type": 3,"api": "csp_XBPQ","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "./json/XBPQ/短/番茄.json"},
 
 {"key": "T1_旺旺短剧","name": "🥝旺旺短剧[短][T1]","type": 1,"api": "https://api.wwzy.tv/api.php/provide/vod/","searchable": 1,"quickSearch": 1,"filterable": 1,"categories": ["短剧"]},
 
@@ -136,6 +138,8 @@
 {"key": "py_AppGet2_仓鼠","name": "🍐仓鼠[影][PY]","type": 3,"api": "./py/模板/AppGet2.py","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": {"url": "https://qjappcms.cs4k.top","datakey": "Z98KXaLtO2wC1Pte","dataiv": "Z98KXaLtO2wC1Pte","deviceId": "","version": "120"}},
 
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_毒舌影视","name": "🍊毒舌影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/毒舌影视.js"},
+{"key": "dr_老王电影","name": "🍊老王电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/老王电影.js"},
 {"key": "dr_零度","name": "🍊零度[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/零度.js"},
 {"key": "dr_王子TV","name": "🍊王子TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/王子TV.js"},
 {"key": "dr_微云TV","name": "🍊微云TV[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/微云TV.js"},
@@ -443,6 +447,7 @@
 {"key": "dr_网易公版影像","name": "🍌网易公版影像[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/网易公版影像.js"},
 {"key": "dr_酷6网","name": "🍌酷6网[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/酷6网.js"},
 {"key": "dr_开眼视频","name": "🍌开眼视频[录][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/视像/开眼视频.js"},
+{"key": "dr_九一电视[合]","name": "🥦九一电视[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/九一电视[直].js"},
 {"key": "dr_直播转点播[合]","name": "🥦直播转点播[合][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/直播转点播[合].js?type=url&params=../json/live2cms.json"},
 {"key": "dr_虎牙直播","name": "🥦虎牙直播[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/官源/虎牙直播[官].js"},
 {"key": "dr_JRKAN直播","name": "🥦JRKAN直播[直][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "./js/直播/JRKAN直播[直].js"},
