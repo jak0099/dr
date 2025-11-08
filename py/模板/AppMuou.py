@@ -1,57 +1,45 @@
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
+
 """
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: 'AppMuou',
-  lang: 'hipy'
-})
+示例
+{
+    "key": "key",
+    "name": "name",
+    "type": 3,
+    "api": "./AppMuou.py",
+    "ext": {
+        "host": "https://muouapp.oss-cn-hangzhou.domain.com/xxx/xxx.txt",  应用域名(支持txt或域名)
+        "name": "xxx", 应用名称
+        "version": "4.2.0"  应用版本号
+    }
+}
 """
 
-# -*- coding: utf-8 -*-
-# 仅可用于学习用途
 from Crypto.Cipher import AES
-
-try:
-    # from base.spider import Spider as BaseSpider
-    from base.spider import BaseSpider
-except ImportError:
-    from t4.base.spider import BaseSpider
+from base.spider import Spider
 from Crypto.Util.Padding import unpad
-import re, sys, time, json, base64, hashlib, urllib3
-
+import re,sys,time,json,base64,hashlib,urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
-
-class Spider(BaseSpider):
-    def __init__(self, query_params=None, t4_api=None):
-        super().__init__(query_params=query_params, t4_api=t4_api)
-        self.host = ''
-        self.name = ''
-        self.version = ''
-        self.data_key = ''
-        self.data_iv = ''
-        self.cms_host = ''
-        self.jx_api = ''
-        self.playerinfo = []
-
-        # 初始化 headers 字典
-        self.headers = {
-            'User-Agent': "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
-            'Accept-Encoding': "gzip",
-            'brand-model': "xiaomi",
-            'app-device': "nodata",
-            'app-time': "",
-            'sys-version': "12",
-            'device': "831395239bddf2e6",
-            'os': "Android",
-            'app-version': self.version  # 引用实例变量
-        }
+class Spider(Spider):
+    host,name,version,data_key,data_iv,cms_host,jx_api,playerinfo,= '', '', '', '', '', '', '',[]
+    headers = {
+        'User-Agent': "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400",
+        'Accept-Encoding': "gzip",
+        'brand-model': "xiaomi",
+        'app-device': "nodata",
+        'app-time': "",
+        'sys-version': "12",
+        'device': "831395239bddf2e6",
+        'os': "Android",
+        'app-version': version
+    }
 
     def init(self, extend=""):
         try:
-            config = json.loads(self.extend.strip())
+            config = json.loads(extend)
         except (json.JSONDecodeError, TypeError):
             config = {}
         name = config.get("name", "muou")
@@ -63,7 +51,7 @@ class Spider(BaseSpider):
         self.headers['app-time'] = str(timestamp)
         inner_sha1 = hashlib.sha1(f"{timestamp}{name}".encode('utf-8')).hexdigest()
         outer_sha1 = hashlib.sha1(f"{timestamp}{inner_sha1}muouapp".encode('utf-8')).hexdigest()
-        payload = {'t': timestamp, 'n': inner_sha1, 'm': outer_sha1}
+        payload = { 't': timestamp, 'n': inner_sha1, 'm': outer_sha1 }
         try:
             response = self.post(f'{self.host}/app_info.php', data=payload)
             if response.status_code != 200:
@@ -96,7 +84,7 @@ class Spider(BaseSpider):
         self.data_key = hashlib.md5(key2.encode('utf-8')).hexdigest()[:16]
         self.data_iv = hashlib.md5(iv2.encode('utf-8')).hexdigest()[:16]
         self.cms_host = dat3['HBqq']
-        jx_api = dat3.get('HBrjjg', '')
+        jx_api = dat3.get('HBrjjg','')
         if jx_api.startswith('http'):
             self.jx_api = jx_api
         return None
@@ -175,17 +163,17 @@ class Spider(BaseSpider):
         except (json.JSONDecodeError, TypeError):
             data_ = self.decrypt(response)
             data = json.loads(data_)
-        data = data['data']
+        data =  data['data']
         if data == '':
             return {'list': []}
         vod_play_url = ''
         show = ''
-        for i, j in data['vod_play_list'].items():
+        for i,j in data['vod_play_list'].items():
             show += j['player_info']['show'] + '$$$'
-            urls = j.get('urls', {})
+            urls = j.get('urls',{})
             play_url = ''
             if isinstance(urls, dict):
-                for i2, j2 in urls.items():
+                for i2,j2 in urls.items():
                     play_url += f"{j2['name']}${j2['from']}@{j2['url']}#"
                 play_url = play_url.rstrip('#')
                 vod_play_url += play_url + '$$$'
@@ -235,26 +223,25 @@ class Spider(BaseSpider):
 
     def playerContent(self, flag, id, vipFlags):
         play_from, raw_url = id.split('@')
-        jx, url, playurl, = 1, raw_url, ''
+        jx,url,playurl, = 1,raw_url,''
         try:
             if not self.playerinfo:
-                res = self.fetch(f'{self.host}/api.php?action=playerinfo', headers=self.headers).text
+                res = self.fetch(f'{self.host}/api.php?action=playerinfo',headers=self.headers).text
                 data = self.decrypt(res)
-                playerinfo = json.loads(data).get('data', {}).get('playerinfo', [])
+                playerinfo  =json.loads(data).get('data',{}).get('playerinfo',[])
                 if len(playerinfo) > 1:
                     self.playerinfo = playerinfo
             if self.playerinfo:
                 for i in self.playerinfo:
-                    play_jx = i.get('playerjiekou', '')
+                    play_jx = i.get('playerjiekou','')
                     if i.get('playername') == play_from and play_jx.startswith('http'):
-                        response = self.fetch(f'{play_jx}{raw_url}&playerkey={play_from}', headers=self.headers,
-                                              verify=False).text
+                        response = self.fetch(f'{play_jx}{raw_url}&playerkey={play_from}',headers=self.headers,verify=False).text
                         try:
                             data = json.loads(response)
                         except (json.JSONDecodeError, TypeError):
                             data_ = self.decrypt(response)
                             data = json.loads(data_)
-                        if str(data.get('code', '')) == '403':
+                        if str(data.get('code','')) == '403':
                             playurl = ''
                         else:
                             playurl = data['url']
@@ -270,26 +257,25 @@ class Spider(BaseSpider):
                 jx = 0
             else:
                 try:
-                    response = self.fetch(self.jx_api + raw_url, headers=self.headers, verify=False).text
+                    response = self.fetch(self.jx_api + raw_url,headers=self.headers,verify=False).text
                     try:
                         data = json.loads(response)
                     except (json.JSONDecodeError, TypeError):
                         data_ = self.decrypt(response)
                         data = json.loads(data_)
-                    playurl = data.get('url', '')
+                    playurl = data.get('url','')
                     if playurl.startswith('http'):
-                        jx, url = 0, playurl
+                        jx,url = 0,playurl
                     else:
-                        jx, url = 1, raw_url
+                        jx,url = 1,raw_url
                 except Exception as e:
-                    jx, url = 1, raw_url
+                    jx,url = 1,raw_url
         if url.startswith('NBY-'):
-            jx, url = 0, ''
-        return {'jx': jx, 'parse': 0, 'url': url, 'header': {
-            'User-Agent': 'Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400'}}
+            jx,url = 0,''
+        return {'jx': jx, 'parse': 0, 'url': url,'header': {'User-Agent': 'Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 MUOUAPP/10.8.4506.400'}}
 
-    def decrypt(self, data, key='', iv=''):
-        if not (key or iv):
+    def decrypt(self,data, key='', iv=''):
+        if not(key or iv):
             key = self.data_key
             iv = self.data_iv
         key_bytes = key.encode('utf-8')
@@ -312,7 +298,7 @@ class Spider(BaseSpider):
         return s
 
     def getName(self):
-        return 'AppMuou'
+        pass
 
     def isVideoFormat(self, url):
         pass

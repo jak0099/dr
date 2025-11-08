@@ -45,7 +45,6 @@
 {"key": "dr_03影院[优]","name": "🍒03影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/03影院[优].js"},
 
 //{"key": "dr_模板[短]","name": "🥝模板[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/模板[短].js"},
-{"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
 {"key": "dr_短剧网[短]","name": "🥝短剧网[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧网[短].js"},
 {"key": "dr_花生短剧[短]","name": "🥝花生短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/花生短剧[短].js"},
 {"key": "dr_南风短剧[短]","name": "🥝南风短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/南风短剧[短].js"},
@@ -57,15 +56,18 @@
 {"key": "dr_短剧123[短]","name": "🥝短剧123[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧123[短].js"},
 {"key": "dr_98短剧[短]","name": "🥝98短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/98短剧[短].js"},
 {"key": "dr_短视频[短]","name": "🥝短视频[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短视频[短].js"},
-{"key": "dr_甜圈短剧[短]","name": "🥝甜圈短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/甜圈短剧[短].js"},
 {"key": "dr_短剧屋[短]","name": "🥝短剧屋[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/短剧屋[短].js"},
-{"key": "dr_番茄短剧[短]","name": "🥝番茄短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番茄短剧[短].js"},
-{"key": "dr_锦鲤短剧[短]","name": "🥝锦鲤短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/锦鲤短剧[短].js"},
 {"key": "dr_短剧导航[短]","name": "🥝短剧导航[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/短剧导航[短].js"},
 {"key": "dr_爱你短剧[短]","name": "🥝爱你短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/爱你短剧[短].js"},
 {"key": "dr_番薯短剧[短]","name": "🥝番薯短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番薯短剧[短].js"},
+
+{"key": "dr_星芽短剧[短]","name": "🥝星芽短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/星芽短剧[短].js"},
+{"key": "dr_甜圈短剧[短]","name": "🥝甜圈短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 0,"ext": "./js/短剧/甜圈短剧[短].js"},
+{"key": "dr_番茄短剧[短]","name": "🥝番茄短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/番茄短剧[短].js"},
+{"key": "dr_锦鲤短剧[短]","name": "🥝锦鲤短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/锦鲤短剧[短].js"},
 {"key": "dr_围观短剧[短]","name": "🥝围观短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/围观短剧[短].js"},
 {"key": "dr_百度短剧[短]","name": "🥝百度短剧[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/百度短剧[短].js"},
+{"key": "dr_红果[短]","name": "🥝红果[短][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/短剧/红果[短].js"},
 
 {"key": "py_河马短剧[短]","name": "🥝河马短剧[短][PY]","type": 3,"api": "./py/短/河马短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_剧王短剧[短]","name": "🥝剧王短剧[短][PY]","type": 3,"api": "./py/短/剧王短剧.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -135,9 +137,10 @@
 {"key": "dr_AppGet_豆丁","name": "🍐豆丁[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=http://110.42.7.59:9066$xasdasdqwertyuio$xasdasdqwertyuio"},
 {"key": "dr_AppGet_米诺","name": "🍐米诺[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=http://www.milkidc.cn$20c79c979da8db0f$20c79c979da8db0f"},
 
-{"key": "py_AppGet2_仓鼠","name": "🍐仓鼠[影][PY]","type": 3,"api": "./py/模板/AppGet2.py","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": {"url": "https://qjappcms.cs4k.top","datakey": "Z98KXaLtO2wC1Pte","dataiv": "Z98KXaLtO2wC1Pte","deviceId": "","version": "120"}},
-
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_泥视频","name": "🍊泥视频[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/泥视频.js"},
+{"key": "dr_人人美剧","name": "🍊人人美剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/人人美剧.js"},
+{"key": "dr_爱电影","name": "🍊爱电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱电影.js"},
 {"key": "dr_毒舌影视","name": "🍊毒舌影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/毒舌影视.js"},
 {"key": "dr_老王电影","name": "🍊老王电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/老王电影.js"},
 {"key": "dr_零度","name": "🍊零度[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/零度.js"},
@@ -316,6 +319,7 @@
 {"key":"csp_MeijuMi","name":"🍥美剧迷┃磁力","type":3,"api":"csp_MeijuMi","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.meijumi.net/","jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
 {"key":"csp_BLSGod","name":"🍥80S影视┃磁力","type":3,"api":"csp_BLSGod","searchable":1,"quickSearch":1,"filterable":1,"jar": "./sp/nf.jar?md5=9e873c9f7314b3a48ea97f625d1f0448"},
 
+{"key": "dr_夸克影视[盘]","name": "🍅夸克影视[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘/夸克影视[盘].js"},
 {"key": "dr_夸克分享[合]","name": "🍅夸克分享[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/云盘/夸克分享[合].js?type=url&params=../json/夸克分享.json"},
 {"key": "dr_玩偶哥哥[盘]","name": "🍅玩偶哥哥[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 1,"quickSearch": 0,"filterable": 0,"ext":"./js/云盘/玩偶哥哥[盘].js"},
 {"key": "dr_人人电影网[盘]","name": "🍅人人电影网[盘][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 0,"ext": "./js/云盘/人人电影网[盘].js"},
@@ -423,7 +427,12 @@
 {"key": "dr_172MV[音]","name": "🍈172MV[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/172MV[音].js"},
 {"key": "dr_多多DJ[音]","name": "🍈多多DJ[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/多多DJ[音].js"},
 {"key": "dr_熊猫dj[音]","name": "🍈熊猫dj[音][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/音乐/熊猫dj[音].js"},
-{"key": "csp_ASMR","name": "🍈ASMR[音][XBPQ]","type": 3,"api": "csp_XBPQ","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./XBPQ/音/ASMR.json"},
+{"key": "csp_ASMR","name": "🍈ASMR[音][XBPQ]","type": 3,"api": "csp_XBPQ","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./json/XBPQ/音/ASMR.json"},
+
+{"key": "py_网易云","name": "🍈网易云[音][PY]","type": 3,"api": "./py/音/网易云音乐.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_深港音乐","name": "🍈深港音乐[音][PY]","type": 3,"api": "./py/音/深港音乐汇.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_爱听音乐","name": "🍈爱听音乐[音][PY]","type": 3,"api": "./py/音/爱听音乐网.py","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key": "py_HIFI音乐","name": "🍈HIFI音乐[音][PY]","type": 3,"api": "./py/音/HIFI音乐APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 {"key":"dr_央视合集[央]","name":"🥭央视合集[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视合集[央].js"},
 {"key":"dr_央视大全[央]","name":"🥭央视大全[央][DR]","type":3,"api":"./libs/drpy2.min.js","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"./js/官源/央视大全[央].js"},

@@ -1,6 +1,21 @@
-# coding = utf-8
-# !/usr/bin/python
-# 新时代青年 2025.06.25 getApp第三版
+"""
+示例
+{
+      "key": "key",
+      "name": "名字",
+      "type": 3,
+      "api": "./py/AppGet2.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": {
+        "host": "",域名
+        "api": "/api.php/qijiappapi",api类型
+        "datakey": "",密钥key
+        "dataiv": ""解密iv
+      }
+    }
+"""
 import re
 import sys
 import uuid
@@ -26,14 +41,14 @@ class Spider(Spider):
 
     def init(self, extend):
         js1=json.loads(extend)
-        host = js1.get('host') or js1.get('url')
-        if re.match(r'^https:\/\/.*\.(txt|json)$',host):
-            host = self.fetch(host, headers=headerx, timeout=10, verify=False).text.rstrip('/')
-        self.xurl = host + '/api.php/qijiappapi'
+        host = js1['host']
+        if re.match(r'^https?:\/\/.*\.(txt|json)$',host):
+            host = self.fetch(host, headers=headerx, timeout=10).text.rstrip('/')
+        self.xurl = host + js1.get('api','/api.php/getappapi')
         self.key = js1['datakey']
         self.iv = js1.get('dataiv',self.key)
 
-        res = self.fetch(self.xurl + '.index/initV120', headers=headerx).json()
+        res = self.fetch(self.xurl + '.index/initV119', headers=headerx).json()
         encrypted_data = res['data']
         response = self.decrypt(encrypted_data)
         init_data = json.loads(response)
@@ -44,7 +59,7 @@ class Spider(Spider):
         kjson = self.init_data
         result = {"class": [], "filters": {}}
         for i in kjson['type_list']:
-            if not(i['type_name'] in ['全部', 'QQ'] or '企鹅群' in i['type_name']):
+            if not(i['type_name'] in ['全部', 'QQ', 'juo.one'] or '企鹅群' in i['type_name']):
                 result['class'].append({
                     "type_id": i['type_id'],
                     "type_name": i['type_name']
@@ -57,6 +72,7 @@ class Spider(Spider):
 
                 if not values:
                     continue
+
                 value_list = [{"n": value, "v": value} for value in values]
                 display_name = name_mapping.get(filter_name, filter_name)
                 key = 'by' if filter_name == 'sort' else filter_name
@@ -151,23 +167,25 @@ class Spider(Spider):
         subtitle = kjson['vod']['vod_remarks']
         desc = kjson['vod']['vod_lang']
         remark = '时间:' + subtitle + ' 语言:' + desc
-        lineid = 1
         for line in kjson['vod_play_list']:
-            keywords = ['防走丢', '群', '防失群', 'Q', '官网']
+            keywords = ['防走丢', '群', '防失群', 'Q','juo.one',]
             if any(keyword in line['player_info']['show'] for keyword in keywords):
-                line['player_info']['show'] = f'{lineid}线'
+                continue
             play_form += line['player_info']['show'] + '$$$'
             parse = line['player_info']['parse']
-            parse_type = line['player_info']['parse_type']
             player_parse_type = line['player_info']['player_parse_type']
             kurls = ""
-
             for vod in line['urls']:
-                token = 'token+' + vod['token']
-                kurls += f"{str(vod['name'])}${parse},{vod['url']},{token},{player_parse_type},{parse_type}#"
+                kurl = vod['url']
+                if '.m3u8' in kurl:
+                    kurls += str(vod['name']) + '$' + vod['url'] + '#'
+                else:
+                    if 'm3u8' not in kurl:
+                        token = 'token+' + vod['token']
+                        kurls += str(vod['name']) + '$' + parse + ',' + vod[
+                            'url'] + ',' + token + ',' + player_parse_type + '#'
             kurls = kurls.rstrip('#')
             play_url += kurls + '$$$'
-            lineid += 1
         play_form = play_form.rstrip('$$$')
         play_url = play_url.rstrip('$$$')
         videos.append({
@@ -186,27 +204,29 @@ class Spider(Spider):
 
     def playerContent(self, flag, id, vipFlags):
         url = ''
-        aid = id.split(',')
-        uid = aid[0]
-        kurl = aid[1]
-        token = aid[2].replace('token+', '')
-        player_parse_type = aid[3]
-        parse_type = aid[4]
-        if parse_type == '0':
-            res =  {"parse": 0, "url": kurl, "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
-        elif parse_type == '2':
-            res = {"parse": 1, "url": uid+kurl, "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
-        elif player_parse_type == '2':
-            response = self.fetch(url=f'{uid}{kurl}')
+        if re.search(r'https?:\/\/.*\.(m3u8|mp4|flv)', id):
+            url = id
+        elif 'url=' in id:
+            aid = id.split(',')
+            uid = aid[0]
+            kurl = aid[1]
+            kjson = uid + kurl
+            url2 = f"{kjson}"
+            response = self.fetch(url=url2)
             if response.status_code == 200:
                 kjson1 = response.json()
-                res = {"parse": 0, "url": kjson1['url'], "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
+                url = kjson1['url']
         else:
+            aid = id.split(',')
+            bid = aid[-1]
+            uid = aid[0]
+            kurl = aid[1]
+            token = aid[2].replace('token+', '')
             id1 = self.decrypt_wb(kurl)
             payload = {
                 'parse_api': uid,
                 'url': id1,
-                'player_parse_type': player_parse_type,
+                'player_parse_type': bid,
                 'token': token
             }
             url1 = f"{self.xurl}.index/vodParse"
@@ -219,16 +239,21 @@ class Spider(Spider):
                 kjson2 = kjson1['json']
                 kjson3 = json.loads(kjson2)
                 url = kjson3['url']
-            res = {"parse": 0, "playUrl": '', "url": url, "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
-        return res
+        return {"parse": 0, "playUrl": '', "url": url, "header": {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 14; 23113RK12C Build/SKQ1.231004.001)'}}
 
     def searchContent(self, key, quick, pg="1"):
         videos = []
+        # 使用urllib.parse.quote确保关键词被正确编码
+        import urllib.parse
+        encoded_key = urllib.parse.quote(key)
+        
+        # 构建POST请求的表单数据，使用编码后的关键词
         payload = {
-            'keywords': key,
+            'keywords': encoded_key,
             'type_id': "0",
             'page': str(pg)
         }
+        
         if self.search_verify:
             verifi = self.verification()
             if verifi is None:
@@ -237,12 +262,16 @@ class Spider(Spider):
             payload['key'] = verifi['uuid']
 
         url = f'{self.xurl}.index/searchList'
+        # 发送POST请求并携带表单数据
         res = self.post(url=url, data=payload, headers=headerx).json()
+        
         if not res.get('data'):
             return {'list':[] ,'msg': res.get('msg')}
+            
         encrypted_data = res['data']
         kjson = self.decrypt(encrypted_data)
         kjson1 = json.loads(kjson)
+        
         for i in kjson1['search_list']:
             id = i['vod_id']
             name = i['vod_name']
@@ -256,6 +285,7 @@ class Spider(Spider):
                 "vod_remarks": remarks
             }
             videos.append(video)
+            
         return {'list': videos, 'page': pg, 'pagecount': 9999, 'limit': 90, 'total': 999999}
 
     def localProxy(self, params):
@@ -318,8 +348,8 @@ class Spider(Spider):
         return {'uuid': random_uuid, 'code': code}
 
 def replace_code(text):
-    replacements = {'y': '9','口': '0','q': '0','u': '0','o': '0','>': '1','d': '0','b': '8','已': '2','D': '0','五': '5','066': '1666'}
+    replacements = {'y': '9','口': '0','q': '0','u': '0','o': '0','>': '1','d': '0','b': '8','已': '2','D': '0','五': '5'}
     if len(text) == 3:
-        text = text.replace('566', '5066')
         text = text.replace('066', '1666')
+        text = text.replace('566', '5066')
     return ''.join(replacements.get(c, c) for c in text)

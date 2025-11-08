@@ -1,24 +1,6 @@
 # coding = utf-8
 # !/usr/bin/python
 # 新时代青年 2025.06.25 getApp第三版
-"""
-示例
-{
-      "key": "key",
-      "name": "名字",
-      "type": 3,
-      "api": "./py/AppGet.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": {
-        "host": "",域名
-        "api": "/api.php/getappapi",api类型
-        "datakey": "",密钥key
-        "dataiv": ""解密iv
-      }
-    }
-"""
 import re
 import sys
 import uuid
@@ -47,11 +29,11 @@ class Spider(Spider):
         host = js1.get('host') or js1.get('url')
         if re.match(r'^https:\/\/.*\.(txt|json)$',host):
             host = self.fetch(host, headers=headerx, timeout=10, verify=False).text.rstrip('/')
-        self.xurl = host + '/api.php/getappapi'
+        self.xurl = host + '/api.php/qijiappapi'
         self.key = js1['datakey']
         self.iv = js1.get('dataiv',self.key)
 
-        res = self.fetch(self.xurl + '.index/initV119', headers=headerx).json()
+        res = self.fetch(self.xurl + '.index/initV120', headers=headerx).json()
         encrypted_data = res['data']
         response = self.decrypt(encrypted_data)
         init_data = json.loads(response)
