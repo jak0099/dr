@@ -1,24 +1,80 @@
 import requests
-import json
+from bs4 import BeautifulSoup
 import re
-import time
-import datetime
-from urllib.parse import quote, unquote
 from base.spider import Spider
+import sys
+import json
+import base64
+import urllib.parse
+import hashlib
+import time
 
-class Spider(Spider):
-    name = "西饭短剧"
-    host = "https://xifan-api-cn.youlishipin.com"
+sys.path.append('..')
+
+xurl = "https://www.ncat21.com"
+
+headerx = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
+}
+
+class CDNDefendBypass:
+    """绕过 cdndefend 反爬验证的类"""
     
     def __init__(self):
-        super().__init__()
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Linux; Android 8.0; DUK-AL20 Build/HUAWEIDUK-AL20; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044353 Mobile Safari/537.36 MicroMessenger/6.7.3.1360(0x26070333) NetType/WIFI Language/zh_CN Process/tools'
-        }
-        self.session_params = "&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY1ODI5NCIsInVuIjoiT1BHXzFlZGQ5OTZhNjQ3ZTQ1MjU4Nzc1MTE2YzFkNzViN2QwIiwiZnQiOiIxNzQwNjU4Mjk0In19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzOTY4MTI2MTQ4NjQxNTM2LCJhdWQiOiJkcmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjU4Mjk0LCJ1bm0iOiJPUEdfMWVkZDk5NmE2NDdlNDUyNTg3NzUxMTZjMWQ3NWI3ZDAiLCJpZCI6IjNiMzViZmYzYWE0OTgxNDQxNDBlZjI5N2JkMDY5NGNhIiwiZXhwIjoxNzQxMjYzMDk0LCJkYyI6Imd6cXkifQ.JS3QY6ER0P2cQSxAE_OGKSMIWNAMsYUZ3mJTnEpf-Rc"
+        self.original_array = ['7486084ACC778495566C82DF69A634E681EF8C87', 'cdndefend_js_cookie=', 'array']
     
+    def array_shift(self, arr, times):
+        """模拟JavaScript数组移位操作"""
+        for _ in range(times):
+            arr.append(arr.pop(0))
+        return arr
+    
+    def calculate_sha1(self, text):
+        """计算SHA1哈希值"""
+        return hashlib.sha1(text.encode('utf-8')).hexdigest()
+    
+    def get_cookie_value(self):
+        """计算cdndefend验证所需的cookie值"""
+        # 模拟数组移位操作
+        shifted_array = self.array_shift(self.original_array.copy(), 376)
+        
+        c = shifted_array[2]  # 获取移位后的第三个元素
+        n1 = int(c[0], 16)   # 获取第一个字符的16进制值
+        
+        i = 0
+        while True:
+            test_str = c + str(i)
+            sha1_hash = self.calculate_sha1(test_str)
+            
+            # 将SHA1哈希转换为字节数组进行检查
+            sha1_bytes = bytes.fromhex(sha1_hash)
+            
+            if len(sha1_bytes) > n1 + 1 and sha1_bytes[n1] == 0xb0 and sha1_bytes[n1 + 1] == 0xb:
+                cookie_value = f"cdndefend_js_cookie={c}{i}"
+                return cookie_value
+            i += 1
+            
+            # 防止无限循环，设置最大尝试次数
+            if i > 100000:
+                break
+        
+        return None
+
+class Spider(Spider):
+    global xurl
+    global headerx
+    
+    def __init__(self):
+        self.bypass = CDNDefendBypass()
+        self.session = requests.Session()
+        # 获取cdndefend cookie并添加到session中
+        cookie_value = self.bypass.get_cookie_value()
+        if cookie_value:
+            self.session.headers.update({'Cookie': cookie_value})
+        self.session.headers.update(headerx)
+
     def getName(self):
-        return self.name
+        return "首页"
 
     def init(self, extend):
         pass
@@ -29,267 +85,1587 @@ class Spider(Spider):
     def manualVideoCheck(self):
         pass
 
+    def extract_middle_text(self, text, start_str, end_str, pl, start_index1: str = '', end_index2: str = ''):
+        if pl == 3:
+            plx = []
+            while True:
+                start_index = text.find(start_str)
+                if start_index == -1:
+                    break
+                end_index = text.find(end_str, start_index + len(start_str))
+                if end_index == -1:
+                    break
+                middle_text = text[start_index + len(start_str):end_index]
+                plx.append(middle_text)
+                text = text.replace(start_str + middle_text + end_str, '')
+            if len(plx) > 0:
+                purl = ''
+                for i in range(len(plx)):
+                    matches = re.findall(start_index1, plx[i])
+                    output = ""
+                    for match in matches:
+                        match3 = re.search(r'(?:^|[^0-9])(\d+)(?:[^0-9]|$)', match[1])
+                        if match3:
+                            number = match3.group(1)
+                        else:
+                            number = 0
+                        if 'http' not in match[0]:
+                            output += f"#{match[1]}${number}{xurl}{match[0]}"
+                        else:
+                            output += f"#{match[1]}${number}{match[0]}"
+                    output = output[1:]
+                    purl = purl + output + "$$$"
+                purl = purl[:-3]
+                return purl
+            else:
+                return ""
+        else:
+            start_index = text.find(start_str)
+            if start_index == -1:
+                return ""
+            end_index = text.find(end_str, start_index + len(start_str))
+            if end_index == -1:
+                return ""
+
+        if pl == 0:
+            middle_text = text[start_index + len(start_str):end_index]
+            return middle_text.replace("\\", "")
+
+        if pl == 1:
+            middle_text = text[start_index + len(start_str):end_index]
+            matches = re.findall(start_index1, middle_text)
+            if matches:
+                jg = ' '.join(matches)
+                return jg
+
+        if pl == 2:
+            middle_text = text[start_index + len(start_str):end_index]
+            matches = re.findall(start_index1, middle_text)
+            if matches:
+                new_list = [f'{item}' for item in matches]
+                jg = '$$$'.join(new_list)
+                return jg
+
     def homeContent(self, filter):
-        return {
-            "class": [
-                {"type_id": "%E9%83%BD%E5%B8%82", "type_name": "都市"},
-                {"type_id": "%E9%9D%92%E6%98%A5", "type_name": "青春"},
-                {"type_id": "%E7%8E%B0%E4%BB%A3", "type_name": "现代"},
-                {"type_id": "%E8%B1%AA%E9%97%A8", "type_name": "豪门"},
-                {"type_id": "%E9%80%86%E8%A2%AD", "type_name": "逆袭"},
-                {"type_id": "%E7%A9%BF%E8%B6%8A", "type_name": "穿越"},
-                {"type_id": "%E6%89%93%E8%84%B8%E8%99%90%E6%B8%A3", "type_name": "打脸"}
-            ]
-        }
+        result = {}
+        result = {
+	"class": [
+		{
+			"type_id": "1",
+			"type_name": "电影"
+		},
+		{
+			"type_id": "2",
+			"type_name": "电视剧"
+		},
+		{
+			"type_id": "4",
+			"type_name": "综艺"
+		},
+		{
+			"type_id": "3",
+			"type_name": "动漫"
+		},
+		{
+			"type_id": "6",
+			"type_name": "短剧"
+		}
+	],
+	"list": [],
+	"filters": {
+		"1": [
+			{
+				"key": "类型",
+				"name": "类型",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "剧情",
+						"v": "剧情"
+					},
+					{
+						"n": "喜剧",
+						"v": "喜剧"
+					},
+					{
+						"n": "动作",
+						"v": "动作"
+					},
+					{
+						"n": "爱情",
+						"v": "爱情"
+					},
+					{
+						"n": "恐怖",
+						"v": "恐怖"
+					},
+					{
+						"n": "惊悚",
+						"v": "惊悚"
+					},
+					{
+						"n": "犯罪",
+						"v": "犯罪"
+					},
+					{
+						"n": "科幻",
+						"v": "科幻"
+					},
+					{
+						"n": "悬疑",
+						"v": "悬疑"
+					},
+					{
+						"n": "奇幻",
+						"v": "奇幻"
+					},
+					{
+						"n": "冒险",
+						"v": "冒险"
+					},
+					{
+						"n": "战争",
+						"v": "战争"
+					},
+					{
+						"n": "历史",
+						"v": "历史"
+					},
+					{
+						"n": "古装",
+						"v": "古装"
+					},
+					{
+						"n": "家庭",
+						"v": "家庭"
+					},
+					{
+						"n": "传记",
+						"v": "传记"
+					},
+					{
+						"n": "武侠",
+						"v": "武侠"
+					},
+					{
+						"n": "歌舞",
+						"v": "歌舞"
+					},
+					{
+						"n": "短片",
+						"v": "短片"
+					},
+					{
+						"n": "动画",
+						"v": "动画"
+					},
+					{
+						"n": "儿童",
+						"v": "儿童"
+					},
+					{
+						"n": "职场",
+						"v": "职场"
+					}
+				]
+			},
+			{
+				"key": "地区",
+				"name": "地区",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "大陆",
+						"v": "大陆"
+					},
+					{
+						"n": "香港",
+						"v": "香港"
+					},
+					{
+						"n": "台湾",
+						"v": "台湾"
+					},
+					{
+						"n": "美国",
+						"v": "美国"
+					},
+					{
+						"n": "日本",
+						"v": "日本"
+					},
+					{
+						"n": "韩国",
+						"v": "韩国"
+					},
+					{
+						"n": "英国",
+						"v": "英国"
+					},
+					{
+						"n": "法国",
+						"v": "法国"
+					},
+					{
+						"n": "德国",
+						"v": "德国"
+					},
+					{
+						"n": "印度",
+						"v": "印度"
+					},
+					{
+						"n": "泰国",
+						"v": "泰国"
+					},
+					{
+						"n": "丹麦",
+						"v": "丹麦"
+					},
+					{
+						"n": "瑞典",
+						"v": "瑞典"
+					},
+					{
+						"n": "巴西",
+						"v": "巴西"
+					},
+					{
+						"n": "加拿大",
+						"v": "加拿大"
+					},
+					{
+						"n": "俄罗斯",
+						"v": "俄罗斯"
+					},
+					{
+						"n": "意大利",
+						"v": "意大利"
+					},
+					{
+						"n": "比利时",
+						"v": "比利时"
+					},
+					{
+						"n": "爱尔兰",
+						"v": "爱尔兰"
+					},
+					{
+						"n": "西班牙",
+						"v": "西班牙"
+					},
+					{
+						"n": "澳大利亚",
+						"v": "澳大利亚"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "年代",
+				"name": "年代",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "2024",
+						"v": "2024"
+					},
+					{
+						"n": "2023",
+						"v": "2023"
+					},
+					{
+						"n": "2022",
+						"v": "2022"
+					},
+					{
+						"n": "2021",
+						"v": "2021"
+					},
+					{
+						"n": "2020",
+						"v": "2020"
+					},
+					{
+						"n": "10年代",
+						"v": "10年代"
+					},
+					{
+						"n": "00年代",
+						"v": "00年代"
+					},
+					{
+						"n": "90年代",
+						"v": "90年代"
+					},
+					{
+						"n": "80年代",
+						"v": "80年代"
+					},
+					{
+						"n": "更早",
+						"v": "更早"
+					}
+				]
+			},
+			{
+				"key": "语言",
+				"name": "语言",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "国语",
+						"v": "国语"
+					},
+					{
+						"n": "粤语",
+						"v": "粤语"
+					},
+					{
+						"n": "英语",
+						"v": "英语"
+					},
+					{
+						"n": "日语",
+						"v": "日语"
+					},
+					{
+						"n": "韩语",
+						"v": "韩语"
+					},
+					{
+						"n": "法语",
+						"v": "法语"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "排序",
+				"name": "排序",
+				"value": [
+					{
+						"n": "综合",
+						"v": "综合"
+					},
+					{
+						"n": "最新",
+						"v": "最新"
+					},
+					{
+						"n": "最热",
+						"v": "最热"
+					},
+					{
+						"n": "评分",
+						"v": "评分"
+					}
+				]
+			}
+		],
+		"2": [
+			{
+				"key": "类型",
+				"name": "类型",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "剧情",
+						"v": "剧情"
+					},
+					{
+						"n": "爱情",
+						"v": "爱情"
+					},
+					{
+						"n": "喜剧",
+						"v": "喜剧"
+					},
+					{
+						"n": "犯罪",
+						"v": "犯罪"
+					},
+					{
+						"n": "悬疑",
+						"v": "悬疑"
+					},
+					{
+						"n": "古装",
+						"v": "古装"
+					},
+					{
+						"n": "动作",
+						"v": "动作"
+					},
+					{
+						"n": "家庭",
+						"v": "家庭"
+					},
+					{
+						"n": "惊悚",
+						"v": "惊悚"
+					},
+					{
+						"n": "奇幻",
+						"v": "奇幻"
+					},
+					{
+						"n": "美剧",
+						"v": "美剧"
+					},
+					{
+						"n": "科幻",
+						"v": "科幻"
+					},
+					{
+						"n": "历史",
+						"v": "历史"
+					},
+					{
+						"n": "战争",
+						"v": "战争"
+					},
+					{
+						"n": "韩剧",
+						"v": "韩剧"
+					},
+					{
+						"n": "武侠",
+						"v": "武侠"
+					},
+					{
+						"n": "言情",
+						"v": "言情"
+					},
+					{
+						"n": "恐怖",
+						"v": "恐怖"
+					},
+					{
+						"n": "冒险",
+						"v": "冒险"
+					},
+					{
+						"n": "都市",
+						"v": "都市"
+					},
+					{
+						"n": "职场",
+						"v": "职场"
+					}
+				]
+			},
+			{
+				"key": "地区",
+				"name": "地区",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "大陆",
+						"v": "大陆"
+					},
+					{
+						"n": "香港",
+						"v": "香港"
+					},
+					{
+						"n": "韩国",
+						"v": "韩国"
+					},
+					{
+						"n": "美国",
+						"v": "美国"
+					},
+					{
+						"n": "日本",
+						"v": "日本"
+					},
+					{
+						"n": "法国",
+						"v": "法国"
+					},
+					{
+						"n": "英国",
+						"v": "英国"
+					},
+					{
+						"n": "德国",
+						"v": "德国"
+					},
+					{
+						"n": "台湾",
+						"v": "台湾"
+					},
+					{
+						"n": "泰国",
+						"v": "泰国"
+					},
+					{
+						"n": "印度",
+						"v": "印度"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "年代",
+				"name": "年代",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "2024",
+						"v": "2024"
+					},
+					{
+						"n": "2023",
+						"v": "2023"
+					},
+					{
+						"n": "2022",
+						"v": "2022"
+					},
+					{
+						"n": "2021",
+						"v": "2021"
+					},
+					{
+						"n": "2020",
+						"v": "2020"
+					},
+					{
+						"n": "10年代",
+						"v": "10年代"
+					},
+					{
+						"n": "00年代",
+						"v": "00年代"
+					},
+					{
+						"n": "90年代",
+						"v": "90年代"
+					},
+					{
+						"n": "80年代",
+						"v": "80年代"
+					},
+					{
+						"n": "更早",
+						"v": "更早"
+					}
+				]
+			},
+			{
+				"key": "语言",
+				"name": "语言",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "国语",
+						"v": "国语"
+					},
+					{
+						"n": "粤语",
+						"v": "粤语"
+					},
+					{
+						"n": "英语",
+						"v": "英语"
+					},
+					{
+						"n": "日语",
+						"v": "日语"
+					},
+					{
+						"n": "韩语",
+						"v": "韩语"
+					},
+					{
+						"n": "法语",
+						"v": "法语"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "排序",
+				"name": "排序",
+				"value": [
+					{
+						"n": "综合",
+						"v": "综合"
+					},
+					{
+						"n": "最新",
+						"v": "最新"
+					},
+					{
+						"n": "最热",
+						"v": "最热"
+					},
+					{
+						"n": "评分",
+						"v": "评分"
+					}
+				]
+			}
+		],
+		"3": [
+			{
+				"key": "类型",
+				"name": "类型",
+				"value": [
+					{
+						"n": "动态漫画",
+						"v": "动态漫画"
+					},
+					{
+						"n": "剧情",
+						"v": "剧情"
+					},
+					{
+						"n": "动画",
+						"v": "动画"
+					},
+					{
+						"n": "喜剧",
+						"v": "喜剧"
+					},
+					{
+						"n": "冒险",
+						"v": "冒险"
+					},
+					{
+						"n": "动作",
+						"v": "动作"
+					},
+					{
+						"n": "奇幻",
+						"v": "奇幻"
+					},
+					{
+						"n": "科幻",
+						"v": "科幻"
+					},
+					{
+						"n": "儿童",
+						"v": "儿童"
+					},
+					{
+						"n": "搞笑",
+						"v": "搞笑"
+					},
+					{
+						"n": "爱情",
+						"v": "爱情"
+					},
+					{
+						"n": "家庭",
+						"v": "家庭"
+					},
+					{
+						"n": "短片",
+						"v": "短片"
+					},
+					{
+						"n": "热血",
+						"v": "热血"
+					},
+					{
+						"n": "益智",
+						"v": "益智"
+					},
+					{
+						"n": "悬疑",
+						"v": "悬疑"
+					},
+					{
+						"n": "经典",
+						"v": "经典"
+					},
+					{
+						"n": "校园",
+						"v": "校园"
+					},
+					{
+						"n": "Anime",
+						"v": "Anime"
+					},
+					{
+						"n": "运动",
+						"v": "运动"
+					},
+					{
+						"n": "亲子",
+						"v": "亲子"
+					},
+					{
+						"n": "青春",
+						"v": "青春"
+					},
+					{
+						"n": "恋爱",
+						"v": "恋爱"
+					},
+					{
+						"n": "武侠",
+						"v": "武侠"
+					},
+					{
+						"n": "惊悚",
+						"v": "惊悚"
+					}
+				]
+			},
+			{
+				"key": "地区",
+				"name": "地区",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "日本",
+						"v": "日本"
+					},
+					{
+						"n": "大陆",
+						"v": "大陆"
+					},
+					{
+						"n": "台湾",
+						"v": "台湾"
+					},
+					{
+						"n": "美国",
+						"v": "美国"
+					},
+					{
+						"n": "香港",
+						"v": "香港"
+					},
+					{
+						"n": "韩国",
+						"v": "韩国"
+					},
+					{
+						"n": "英国",
+						"v": "英国"
+					},
+					{
+						"n": "法国",
+						"v": "法国"
+					},
+					{
+						"n": "德国",
+						"v": "德国"
+					},
+					{
+						"n": "印度",
+						"v": "印度"
+					},
+					{
+						"n": "泰国",
+						"v": "泰国"
+					},
+					{
+						"n": "丹麦",
+						"v": "丹麦"
+					},
+					{
+						"n": "瑞典",
+						"v": "瑞典"
+					},
+					{
+						"n": "巴西",
+						"v": "巴西"
+					},
+					{
+						"n": "加拿大",
+						"v": "加拿大"
+					},
+					{
+						"n": "俄罗斯",
+						"v": "俄罗斯"
+					},
+					{
+						"n": "意大利",
+						"v": "意大利"
+					},
+					{
+						"n": "比利时",
+						"v": "比利时"
+					},
+					{
+						"n": "爱尔兰",
+						"v": "爱尔兰"
+					},
+					{
+						"n": "西班牙",
+						"v": "西班牙"
+					},
+					{
+						"n": "澳大利亚",
+						"v": "澳大利亚"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "年代",
+				"name": "年代",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "2024",
+						"v": "2024"
+					},
+					{
+						"n": "2023",
+						"v": "2023"
+					},
+					{
+						"n": "2022",
+						"v": "2022"
+					},
+					{
+						"n": "2021",
+						"v": "2021"
+					},
+					{
+						"n": "2020",
+						"v": "2020"
+					},
+					{
+						"n": "10年代",
+						"v": "10年代"
+					},
+					{
+						"n": "00年代",
+						"v": "00年代"
+					},
+					{
+						"n": "90年代",
+						"v": "90年代"
+					},
+					{
+						"n": "80年代",
+						"v": "80年代"
+					},
+					{
+						"n": "更早",
+						"v": "更早"
+					}
+				]
+			},
+			{
+				"key": "语言",
+				"name": "语言",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "国语",
+						"v": "国语"
+					},
+					{
+						"n": "粤语",
+						"v": "粤语"
+					},
+					{
+						"n": "英语",
+						"v": "英语"
+					},
+					{
+						"n": "日语",
+						"v": "日语"
+					},
+					{
+						"n": "韩语",
+						"v": "韩语"
+					},
+					{
+						"n": "法语",
+						"v": "法语"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "排序",
+				"name": "排序",
+				"value": [
+					{
+						"n": "综合",
+						"v": "综合"
+					},
+					{
+						"n": "最新",
+						"v": "最新"
+					},
+					{
+						"n": "最热",
+						"v": "最热"
+					},
+					{
+						"n": "评分",
+						"v": "评分"
+					}
+				]
+			}
+		],
+		"6": [
+			{
+				"key": "类型",
+				"name": "类型",
+				"value": [
+					{
+						"n": "类型",
+						"v": "类型"
+					},
+					{
+						"n": "逆袭",
+						"v": "逆袭"
+					},
+					{
+						"n": "甜宠",
+						"v": "甜宠"
+					},
+					{
+						"n": "虐恋",
+						"v": "虐恋"
+					},
+					{
+						"n": "穿越",
+						"v": "穿越"
+					},
+					{
+						"n": "重生",
+						"v": "重生"
+					},
+					{
+						"n": "剧情",
+						"v": "剧情"
+					},
+					{
+						"n": "科幻",
+						"v": "科幻"
+					},
+					{
+						"n": "武侠",
+						"v": "武侠"
+					},
+					{
+						"n": "爱情",
+						"v": "爱情"
+					},
+					{
+						"n": "动作",
+						"v": "动作"
+					},
+					{
+						"n": "战争",
+						"v": "战争"
+					},
+					{
+						"n": "冒险",
+						"v": "冒险"
+					},
+					{
+						"n": "其它",
+						"v": "其它"
+					}
+				]
+			},
+			{
+				"key": "排序",
+				"name": "排序",
+				"value": [
+					{
+						"n": "综合",
+						"v": "综合"
+					},
+					{
+						"n": "最新",
+						"v": "最新"
+					},
+					{
+						"n": "最热",
+						"v": "最热"
+					}
+				]
+			}
+		],
+		"4": [
+			{
+				"key": "类型",
+				"name": "类型",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "纪录",
+						"v": "纪录"
+					},
+					{
+						"n": "真人秀",
+						"v": "真人秀"
+					},
+					{
+						"n": "记录",
+						"v": "记录"
+					},
+					{
+						"n": "脱口秀",
+						"v": "脱口秀"
+					},
+					{
+						"n": "剧情",
+						"v": "剧情"
+					},
+					{
+						"n": "历史",
+						"v": "历史"
+					},
+					{
+						"n": "喜剧",
+						"v": "喜剧"
+					},
+					{
+						"n": "传记",
+						"v": "传记"
+					},
+					{
+						"n": "相声",
+						"v": "相声"
+					},
+					{
+						"n": "节目",
+						"v": "节目"
+					},
+					{
+						"n": "歌舞",
+						"v": "歌舞"
+					},
+					{
+						"n": "冒险",
+						"v": "冒险"
+					},
+					{
+						"n": "运动",
+						"v": "运动"
+					},
+					{
+						"n": "Season",
+						"v": "Season"
+					},
+					{
+						"n": "犯罪",
+						"v": "犯罪"
+					},
+					{
+						"n": "短片",
+						"v": "短片"
+					},
+					{
+						"n": "搞笑",
+						"v": "搞笑"
+					},
+					{
+						"n": "晚会",
+						"v": "晚会"
+					}
+				]
+			},
+			{
+				"key": "地区",
+				"name": "地区",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "大陆",
+						"v": "大陆"
+					},
+					{
+						"n": "香港",
+						"v": "香港"
+					},
+					{
+						"n": "台湾",
+						"v": "台湾"
+					},
+					{
+						"n": "美国",
+						"v": "美国"
+					},
+					{
+						"n": "日本",
+						"v": "日本"
+					},
+					{
+						"n": "韩国",
+						"v": "韩国"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "年代",
+				"name": "年代",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "2024",
+						"v": "2024"
+					},
+					{
+						"n": "2023",
+						"v": "2023"
+					},
+					{
+						"n": "2022",
+						"v": "2022"
+					},
+					{
+						"n": "2021",
+						"v": "2021"
+					},
+					{
+						"n": "2020",
+						"v": "2020"
+					},
+					{
+						"n": "10年代",
+						"v": "10年代"
+					},
+					{
+						"n": "00年代",
+						"v": "00年代"
+					},
+					{
+						"n": "90年代",
+						"v": "90年代"
+					},
+					{
+						"n": "80年代",
+						"v": "80年代"
+					},
+					{
+						"n": "更早",
+						"v": "更早"
+					}
+				]
+			},
+			{
+				"key": "语言",
+				"name": "语言",
+				"value": [
+					{
+						"n": "全部",
+						"v": ""
+					},
+					{
+						"n": "国语",
+						"v": "国语"
+					},
+					{
+						"n": "粤语",
+						"v": "粤语"
+					},
+					{
+						"n": "英语",
+						"v": "英语"
+					},
+					{
+						"n": "日语",
+						"v": "日语"
+					},
+					{
+						"n": "韩语",
+						"v": "韩语"
+					},
+					{
+						"n": "法语",
+						"v": "法语"
+					},
+					{
+						"n": "其他",
+						"v": "其他"
+					}
+				]
+			},
+			{
+				"key": "排序",
+				"name": "排序",
+				"value": [
+					{
+						"n": "综合",
+						"v": "综合"
+					},
+					{
+						"n": "最新",
+						"v": "最新"
+					},
+					{
+						"n": "最热",
+						"v": "最热"
+					},
+					{
+						"n": "评分",
+						"v": "评分"
+					}
+				]
+			}
+		]
+	}
+}
+
+
+
+        return result
 
     def homeVideoContent(self):
         videos = []
-        current_timestamp = int(datetime.datetime.now().timestamp())
-
         try:
-            url = f"{self.host}/xifan/drama/portalPage?reqType=aggregationPage&offset=0&quickEngineVersion=-1&scene=&categoryNames=&categoryVersion=&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}d4aa487d53e646c2&appId=drama&teenMode=false&userBaseMode=false&session=eyJpbmZvIjp7InVpZCI6IiIsInJ0IjoiMTc0MDY0NjA2MiIsInVuIjoiT1BHXzYzZTYyMTdhZGJhMDQ4NGI5OWNmYTdkOWMyNmU2NTIwIiwiZnQiOiIxNzQwNjQ2MDYyIn19&feedssession=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dHlwIjowLCJidWlkIjoxNjMzODY1NTEzMDAzNzYyNjg4LCJhdWQiOiJkrmFtYSIsInZlciI6MiwicmF0IjoxNzQwNjQ2MDYyLCJ1bm0iOiJPUEdfNjNlNjIxN2FkYmEwNDg0Yjk5Y2ZhN2Q5YzI2ZTY1MjAiLCJpZCI6Ijg4MmM2M2U3ZDRhYTQ4N2Q1M2U2NDZjMjQxMjg0NTcxIiwiZXhwIjoxNzQxMjUwODYyLCJkYyI6ImJqaHQifQ.zWhF-1Y92_NwuTzUQ_5dNoJwJN8g6UbMfVuH2QrSjjQ"
-            response = requests.get(url=url, headers=self.headers)
-            if response.status_code == 200:
-                response_data = response.json()
-                js = response_data['result']['elements']
+            detail = self.session.get(url=xurl)
+            detail.encoding = "utf-8"
+            res = detail.text
+            
+            # 检查是否被重定向到反爬页面
+            if "cdndefend" in res or "Protected by cdndefend" in res:
+                # 重新计算cookie并重试
+                cookie_value = self.bypass.get_cookie_value()
+                if cookie_value:
+                    self.session.headers.update({'Cookie': cookie_value})
+                    detail = self.session.get(url=xurl)
+                    detail.encoding = "utf-8"
+                    res = detail.text
+            
+            doc = BeautifulSoup(res, "lxml")
 
-                for soups in js:
-                    for vod in soups['contents']:
-                        name = vod['duanjuVo']['title']
-                        id = vod['duanjuVo']['duanjuId']
-                        id1 = vod['duanjuVo']['source']
-                        pic = vod['duanjuVo']['coverImageUrl']
-                        total_episodes = vod['duanjuVo'].get('total', '')
-                        remark = f"{total_episodes}集" if total_episodes else ""
+            soups = doc.find('div', class_="section-main fs-margin-top")
 
-                        video = {
-                            "vod_id": id + "#" + id1,
-                            "vod_name": name,
-                            "vod_remarks": remark,
-                            "vod_pic": pic
-                        }
-                        videos.append(video)
+            vods = soups.find_all('div', class_="module-item")
+
+            for vod in vods:
+
+                names = vod.find_all('img')
+                name = names[1]['title']
+
+                id = vod.find('a')['href']
+
+                pics = vod.find_all('img')
+                pic = pics[1]['data-original']
+
+                if 'http' not in pic:
+                    pic = "https://vres.jxlfl.cn" + pic
+
+                remarks = vod.find('div', class_="v-item-bottom")
+                remark = remarks.find_all('span')
+                if len(remark) > 1:
+                    remark = remark[1].get_text()
+                remark = remark.replace(' ', '').replace('\n','')
+
+                video = {
+                    "vod_id": id,
+                    "vod_name": name,
+                    "vod_pic": pic,
+                    "vod_remarks": remark
+                         }
+                videos.append(video)
 
             result = {'list': videos}
             return result
         except Exception as e:
-            print(f"获取首页推荐失败: {e}")
+            print(f"Error in homeVideoContent: {e}")
             return {'list': []}
 
     def categoryContent(self, cid, pg, filter, ext):
-        return self.getVideosByCategory(cid, pg)
-
-    def getVideosByCategory(self, cid, pg):
         result = {}
-        videos = []
-        
-        page = (int(pg) - 1) * 30
-        current_timestamp = int(time.time())
-        
-        if cid and ('%E9%83%BD%E5%B8%82' in cid or '%E9%9D%92%E6%98%A5' in cid or '%E7%8E%B0%E4%BB%A3' in cid):
-            category_id = "68"
+        if pg:
+            page = int(pg)
         else:
-            category_id = "67"
-            
-        url = f"{self.host}/xifan/drama/portalPage?reqType=aggregationPage&offset={page}&categoryId={category_id}&quickEngineVersion=-1&scene=&categoryNames={cid}&categoryVersion=1&density=1.5&pageID=page_theater&version=2001001&androidVersionCode=28&requestId={current_timestamp}aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false{self.session_params}"
-        
+            page = 1
+        page = int(pg)
+        videos = []
+
+        if '类型' in ext.keys():
+            lxType = ext['类型']
+        else:
+            lxType = ''
+        if '地区' in ext.keys():
+            DqType = ext['地区']
+        else:
+            DqType = ''
+        if '语言' in ext.keys():
+            YyType = ext['语言']
+        else:
+            YyType = ''
+        if '年代' in ext.keys():
+            NdType = ext['年代']
+        else:
+            NdType = ''
+        if '剧情' in ext.keys():
+            JqType = ext['剧情']
+        else:
+            JqType = ''
+
+        if '排序' in ext.keys():
+            pxType = ext['排序']
+        else:
+            pxType = ''
+
+        url = f"{xurl}/show/{cid}-{lxType}-{DqType}-{YyType}-{NdType}-{pxType}-{pg}.html"
+
         try:
-            response = requests.get(url=url, headers=self.headers, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                elements = data.get('result', {}).get('elements', [])
-                
-                for element in elements:
-                    contents = element.get('contents', [])
-                    for vod in contents:
-                        duanjuVo = vod.get('duanjuVo', {})
-                        if duanjuVo:
-                            video = {
-                                "vod_id": f"{duanjuVo.get('duanjuId', '')}#{duanjuVo.get('source', '')}",
-                                "vod_name": duanjuVo.get('title', ''),
-                                "vod_remarks": f"{duanjuVo.get('total', '')}集",
-                                "vod_pic": duanjuVo.get('coverImageUrl', '')
-                            }
-                            videos.append(video)
+            detail = self.session.get(url)
+            detail.encoding = "utf-8"
+            res = detail.text
+            
+            # 检查是否被重定向到反爬页面
+            if "cdndefend" in res or "Protected by cdndefend" in res:
+                # 重新计算cookie并重试
+                cookie_value = self.bypass.get_cookie_value()
+                if cookie_value:
+                    self.session.headers.update({'Cookie': cookie_value})
+                    detail = self.session.get(url)
+                    detail.encoding = "utf-8"
+                    res = detail.text
+            
+            doc = BeautifulSoup(res, "lxml")
+
+            soups = doc.find_all('div', class_="module-box-inner")
+
+            for soup in soups:
+                vods = soup.find_all('div', class_="module-item")
+
+                for vod in vods:
+
+                    names = vod.find_all('img')
+                    name = names[1]['title']
+
+                    id = vod.find('a')['href']
+
+                    pics = vod.find_all('img')
+                    pic = pics[1]['data-original']
+
+                    if 'http' not in pic:
+                        pic = "https://vres.jxlfl.cn" + pic
+
+                    remarks = vod.find('div', class_="v-item-bottom")
+                    remark = remarks.find_all('span')
+                    if len(remark) > 1:
+                        remark = remark[1].get_text()
+                    remark = remark.replace(' ', '').replace('\n', '')
+
+                    video = {
+                        "vod_id": id,
+                        "vod_name": name,
+                        "vod_pic": pic,
+                        "vod_remarks": remark
+                    }
+                    videos.append(video)
+
         except Exception as e:
-            print(f"获取视频列表失败: {e}")
-        
-        result['list'] = videos
+            print(f"Error in categoryContent: {e}")
+
+        result = {'list': videos}
         result['page'] = pg
         result['pagecount'] = 9999
         result['limit'] = 90
         result['total'] = 999999
         return result
 
-    def shouldUseAutoNumbering(self, episodeList, vod_name):
-        if not episodeList:
-            return False
-            
-        valid_episode_count = 0
-        for ep in episodeList:
-            title = ep.get('title', '')
-            
-            patterns = [
-                r'第\s*\d+\s*集', r'第\s*\d+\s*章', r'第\s*\d+\s*话',
-                r'\d+\s*集', r'\d+\s*章', r'\d+\s*话',
-                r'EP\s*\d+', r'ep\s*\d+', r'Ep\s*\d+'
-            ]
-            
-            has_episode_pattern = False
-            for pattern in patterns:
-                if re.search(pattern, title):
-                    has_episode_pattern = True
-                    break
-            
-            if has_episode_pattern:
-                valid_episode_count += 1
-        
-        if valid_episode_count > len(episodeList) / 2:
-            return False
-            
-        return True
-
     def detailContent(self, ids):
         did = ids[0]
         result = {}
         videos = []
-        
-        if '#' in did:
-            duanjuId, source = did.split("#")
-        else:
-            duanjuId, source = did, ""
-            
-        url = f"{self.host}/xifan/drama/getDuanjuInfo?duanjuId={duanjuId}&source={source}&openFrom=homescreen&type=&pageID=page_inner_flow&density=1.5&version=2001001&androidVersionCode=28&requestId=1740658944980aa498144140ef297&appId=drama&teenMode=false&userBaseMode=false{self.session_params}"
+        if 'http' not in did:
+            did = xurl + did
         
         try:
-            response = requests.get(url=url, headers=self.headers, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                result_data = data.get('result', {})
-                
-                playUrls = []
-                episodeList = result_data.get('episodeList', [])
-                
-                vod_name = result_data.get('title', '')
-                
-                use_auto_numbering = self.shouldUseAutoNumbering(episodeList, vod_name)
-                
-                for i, ep in enumerate(episodeList):
-                    original_title = ep.get('title', '')
-                    play_url = ep.get('playUrl', '')
-                    
-                    if use_auto_numbering:
-                        episode_title = f"第{i+1}集"
-                    else:
-                        episode_title = self.extractEpisodeInfo(original_title, vod_name)
-                        
-                        if not episode_title:
-                            episode_title = f"第{i+1}集"
-                    
-                    playUrls.append(f"{episode_title}${play_url}")
-                
-                vod_info = {
-                    "vod_id": did,
-                    "vod_name": vod_name,
-                    "vod_pic": result_data.get('coverImageUrl', ''),
-                    "vod_content": result_data.get('qualification', result_data.get('desc', '暂无简介')),
-                    "vod_remarks": f"{result_data.get('total', '')}集",
-                    "vod_play_from": "西饭短剧",
-                    "vod_play_url": "#".join(playUrls)
-                }
-                
-                videos.append(vod_info)
-        except Exception as e:
-            print(f"获取详情失败: {e}")
-        
-        result['list'] = videos
-        return result
+            res1 = self.session.get(url=did)
+            res1.encoding = "utf-8"
+            res = res1.text
+            
+            # 检查是否被重定向到反爬页面
+            if "cdndefend" in res or "Protected by cdndefend" in res:
+                # 重新计算cookie并重试
+                cookie_value = self.bypass.get_cookie_value()
+                if cookie_value:
+                    self.session.headers.update({'Cookie': cookie_value})
+                    res1 = self.session.get(url=did)
+                    res1.encoding = "utf-8"
+                    res = res1.text
 
-    def extractEpisodeInfo(self, title, vod_name):
-        if title == vod_name:
-            return None
+            content = '😸繁华🎉为您介绍剧情📢' + self.extract_middle_text(res,'<div class="detail-desc">','</p>', 0)
+            content = content.replace(' ', '').replace('\n', '').replace('<p>', '')
+
+            xianlu = self.extract_middle_text(res, '<div class="source-box">','<div class="episode-box-main">',2, 'class=".*?" id=".*?">(.*?)</span>')
+
+            bofang = self.extract_middle_text(res, '<div class="episode-list"', '</div>', 3,'<a href="(.*?)"\s+class=".*?">(.*?)</a>')
+
+            # 提取演员和导演
+            actors= self.extract_middle_text(res, '<div class="detail-info-row-side">演员:</div>', '</div>', 0, '<a.*?</a>')
+            actors = actors.replace('/search?k=', '').replace('                ', '').replace('\n', '')
             
-        patterns = [
-            (r'第\s*(\d+)\s*集', '第{}集'),
-            (r'第\s*(\d+)\s*章', '第{}章'),
-            (r'第\s*(\d+)\s*话', '第{}话'),
-            (r'(\d+)\s*集', '第{}集'),
-            (r'(\d+)\s*章', '第{}章'),
-            (r'(\d+)\s*话', '第{}话'),
-            (r'EP\s*(\d+)', '第{}集'),
-            (r'ep\s*(\d+)', '第{}集'),
-            (r'Ep\s*(\d+)', '第{}集')
-        ]
+            # 提取导演信息
+            director= self.extract_middle_text(res, '<div class="detail-info-row-side">导演:</div>', '</div>', 0, '>(.*?)</a>')
+            director = director.replace('/search?k=%', '')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": actors,
+                "vod_director": director,
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+            result['list'] = videos
+        except Exception as e:
+            print(f"Error in detailContent: {e}")
+            result['list'] = []
         
-        for pattern, format_str in patterns:
-            match = re.search(pattern, title)
-            if match:
-                number = match.group(1)
-                return format_str.format(number)
-        
-        if vod_name and title.startswith(vod_name):
-            cleaned_title = title[len(vod_name):].strip()
-            
-            separators = ['：', ':', '-', '—', '——', ' ']
-            for sep in separators:
-                if cleaned_title.startswith(sep):
-                    cleaned_title = cleaned_title[len(sep):].strip()
-                    break
-            
-            if cleaned_title:
-                for pattern, format_str in patterns:
-                    match = re.search(pattern, cleaned_title)
-                    if match:
-                        number = match.group(1)
-                        return format_str.format(number)
-        
-        return None
+        return result
 
     def playerContent(self, flag, id, vipFlags):
-        result = {}
-        result["parse"] = 0
-        result["playUrl"] = ''
-        result["url"] = id
-        result["header"] = self.headers
-        return result
-
-    def searchContent(self, key, quick, pg="1"):
-        return self.searchContentPage(key, quick, pg)
+        parts = id.split("http")
+        xiutan = 1
+        
+        if xiutan == 1:
+            if len(parts) > 1:
+                before_https, after_https = parts[0], 'http' + parts[1]
+            result = {}
+            result["parse"] = xiutan
+            result["playUrl"] = ''
+            result["url"] = after_https
+            result["header"] = headerx
+            return result
 
     def searchContentPage(self, key, quick, page):
         result = {}
         videos = []
-        
-        current_timestamp = int(time.time())
-        url = f"{self.host}/xifan/search/getSearchList?keyword={key}84&pageIndex={page}&version=2001001&androidVersionCode=28&requestId={current_timestamp}ea3a14bc0317d76f&appId=drama&teenMode=false&userBaseMode=false{self.session_params}"
-        
+        if not page:
+            page = '1'
+        if page == '1':
+            url = f'{xurl}/search?os=pc&k={key}'
+        else:
+            url = f'{xurl}/search?k={key}&page={str(page)}'
+
         try:
-            response = requests.get(url=url, headers=self.headers, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                elements = data.get('result', {}).get('elements', [])
-                
-                for element in elements:
-                    contents = element.get('contents', [])
-                    for vod in contents:
-                        duanjuVo = vod.get('duanjuVo', {})
-                        if duanjuVo:
-                            video = {
-                                "vod_id": f"{duanjuVo.get('duanjuId', '')}#{duanjuVo.get('source', '')}",
-                                "vod_name": duanjuVo.get('title', ''),
-                                "vod_remarks": f"{duanjuVo.get('total', '')}集",
-                                "vod_pic": duanjuVo.get('coverImageUrl', '')
+            detail = self.session.get(url=url)
+            detail.encoding = "utf-8"
+            res = detail.text
+            
+            # 检查是否被重定向到反爬页面
+            if "cdndefend" in res or "Protected by cdndefend" in res:
+                # 重新计算cookie并重试
+                cookie_value = self.bypass.get_cookie_value()
+                if cookie_value:
+                    self.session.headers.update({'Cookie': cookie_value})
+                    detail = self.session.get(url=url)
+                    detail.encoding = "utf-8"
+                    res = detail.text
+            
+            doc = BeautifulSoup(res, "lxml")
+
+            soups = doc.find_all('div', class_="search-result-list")
+
+            for item in soups:
+                vods = item.find_all('a')
+
+                for vod in vods:
+
+                    names = vod.find_all('img')
+                    name = names[1]['title']
+
+                    id = vod['href']
+
+                    pics = vod.find_all('img')
+                    pic = pics[1]['data-original']
+
+                    if 'http' not in pic:
+                        pic = "https://vres.jxlfl.cn" + pic
+
+                    video = {
+                        "vod_id": id,
+                        "vod_name": name,
+                        "vod_pic": pic
                             }
-                            videos.append(video)
+                    videos.append(video)
+
+            result['list'] = videos
         except Exception as e:
-            print(f"搜索失败: {e}")
-        
-        result['list'] = videos
+            print(f"Error in searchContentPage: {e}")
+            result['list'] = []
+            
         result['page'] = page
         result['pagecount'] = 9999
         result['limit'] = 90
         result['total'] = 999999
         return result
+
+    def searchContent(self, key, quick):
+        return self.searchContentPage(key, quick, '1')
 
     def localProxy(self, params):
         if params['type'] == "m3u8":
@@ -299,3 +1675,20 @@ class Spider(Spider):
         elif params['type'] == "ts":
             return self.proxyTs(params)
         return None
+
+if __name__ == '__main__':
+    spider_instance = Spider()
+
+    # res=spider_instance.homeContent('filter')  #  分类🚨
+    #
+    # res = spider_instance.homeVideoContent()  # 首页🚨
+    #
+    # res=spider_instance.categoryContent('2', 2, 'filter', {})  #  分页🚨
+    #
+    res = spider_instance.detailContent(['https://www.ncat21.com/detail/253986.html'])  #  详情页🚨
+    #
+    # res = spider_instance.playerContent('1', '0https://www.mjzj.me/74354-1-1.html', 'vipFlags')  #  播放页🚨
+    #
+    # res = spider_instance.searchContentPage('爱情', 'quick', '2')  # 搜索页🚨
+
+    print(res)

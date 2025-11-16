@@ -5,13 +5,13 @@
 from base.spider import Spider
 from Crypto.Cipher import DES3
 from Crypto.Util.Padding import unpad
-from urllib.parse import quote, unquote, urljoin, urlparse
-import re, sys, time, json, base64, hashlib, urllib3
+import re,sys,time,json,base64,secrets,hashlib,urllib3
+from urllib.parse import quote, unquote,urljoin,urlparse
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
 class Spider(Spider):
-    headers,play_header,host,play_domain,proxyurl = {
+    headers,play_header,host,play_domain,proxyurl,encrypt_domain = {
         'User-Agent': "Android",
         'Connection': "Keep-Alive",
         'Accept': "application/vnd.yourapi.v1.full+json",
@@ -30,19 +30,27 @@ class Spider(Spider):
         'Sys-Platform': "Android",
         'Screen-Height': "1200",
         'timestamp': ""
-    },{'User-Agent': 'Mozi'},'','',''
+    },{'User-Agent': 'Mozi'},'','','',''
 
     def init(self, extend=''):
         try:
             ext = json.loads(extend.strip())
             host = ext.get('host').rstrip('/')
-            if not re.match(r'^https?://[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?/?$', host): return None
-            appid = ext.get('app_id').strip()
-            deviceid = ext.get('deviceid').strip()
-            version_code = ext.get('versionCode').strip()
-            channel = ext.get('UMENG_CHANNEL').strip()
-            if not(appid and deviceid and version_code and channel): return None
-            if not self.is_valid_android_id(deviceid): return None
+            if not re.match(r'^https?://[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?/?$', host): return
+            appid = ext['app_id']
+            deviceid = ext.get('deviceid')
+            version_code = ext['versionCode']
+            channel = ext['UMENG_CHANNEL']
+            self.encrypt_domain = ext.get('EncryptDomain', 'vT1RQRz8YzlzTgN26pIXNJ7Mi65juwSP')
+            if not (appid and version_code and channel): return
+            if deviceid:
+                if not self.is_valid_android_id(deviceid): return
+            else:
+                deviceid_cache_key = f'Hmys_deviceid_{appid}_{channel}'
+                deviceid = self.getCache(deviceid_cache_key)
+                if not deviceid:
+                    deviceid = self.device_id()
+                    self.setCache(deviceid_cache_key, deviceid)
             self.host = host
             self.headers['appid'] = appid
             self.headers['Channel'] = channel
@@ -273,20 +281,19 @@ class Spider(Spider):
             return None
 
     def hls_sign(self, url):
-        replaceEncryptDomain = 'vT1RQRz8YzlzTgN26pIXNJ7Mi65juwSP'
-        replaceDomain = self.play_domain
         hex_time = self.hex_time()
         if '?' in url: url = url.split('?')[0]
-        data = url.replace(replaceDomain, replaceEncryptDomain) + hex_time
+        data = url.replace(self.play_domain, self.encrypt_domain) + hex_time
         data_hash = hashlib.md5()
         data_hash.update(data.encode('utf-8'))
         return f"&wsSecret={data_hash.hexdigest()}&wsTime={hex_time}"
 
     def is_valid_android_id(self, android_id):
-        if not isinstance(android_id, str):
-            return False
-        pattern = r'^[0-9a-f]{16}$'
-        return bool(re.fullmatch(pattern, android_id))
+        if not isinstance(android_id, str): return False
+        return bool(re.fullmatch(r'^[0-9a-f]{16}$', android_id))
+
+    def device_id(self):
+        return ''.join(secrets.choice('0123456789abcdef') for _ in range(16))
 
     def timestamp(self):
         return str(int(time.time() * 1000))
