@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author  : Doubebly
-# @Time    : 2025/1/21 23:07
-
 import hashlib
 import re
 import sys
@@ -133,7 +129,7 @@ class Spider(Spider):
                 'vod_actor': i['vodActor'],
                 'vod_director': i['vodDirector'],
                 'vod_content': i['vodContent'],
-                'vod_play_from': 'PowerTech专享',
+                'vod_play_from': '免费分享',
                 'vod_play_url': '#'.join(urls),
 
             }

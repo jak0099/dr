@@ -1,8 +1,8 @@
 var rule = {
     模板: 'mxpro',
     title: '火车太堵',
-    //host: 'https://www.tdgo.shop',
-    host: 'https://tdgo.shop',
+    host: 'https://www.tdgo.shop',
+    //host: 'https://tdgo.shop',
     url: '/vodshow/fyclassfyfilter.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
     一级: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',

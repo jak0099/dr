@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 # 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
 # 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
 
+import re,sys,json,urllib3
 from base.spider import Spider
-import re,sys,json
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
 class Spider(Spider):
@@ -37,63 +39,9 @@ class Spider(Spider):
             "year": "",
             "keyword": ""
         }
-        response = self.post(f"{self.api_host}{self.api_path}", data=json.dumps(payload), headers=self.headers).json()
-        data = response['data']
-        videos = []
-        for i in data['list']:
-            videos.append({
-                    'vod_id': i.get('vod_id'),
-                    'vod_name': i.get('vod_name'),
-                    'vod_class': i.get('vod_class'),
-                    'vod_pic': i.get('vod_pic'),
-                    'vod_year': i.get('vod_year'),
-                    'vod_remarks': i.get('vod_total')+'集',
-                    'vod_score': i.get('vod_score')
-                    })
+        response = self.post(f"{self.api_host}{self.api_path}", data=json.dumps(payload), headers=self.headers, verify=False).json()
+        videos = self.json2vods(response)
         return {'list': videos}
-
-    def detailContent(self, ids):
-        response = self.post(f'{self.api_host}/api/detail/{ids[0]}', data=json.dumps({}), headers=self.headers).json()
-        data = response['data']
-        videos = []
-        vod_play_url = ''
-        for name,url in data['player'].items():
-            vod_play_url += f'{name}${url}&auto=1#'
-        vod_play_url.rstrip('#')
-        videos.append({
-            'vod_id': data.get('vod_id'),
-            'vod_name': data.get('vod_name'),
-            'vod_content': data.get('vod_blurb'),
-            'vod_remarks': '集数：' + data.get('vod_total'),
-            "vod_director": data.get('vod_director'),
-            "vod_actor": data.get('vod_actor'),
-            'vod_year': data.get('vod_year'),
-            'vod_area': data.get('vod_area'),
-            'vod_play_from': '锦鲤短剧',
-            'vod_play_url': vod_play_url
-        })
-        return {'list': videos}
-
-    def searchContent(self, key, quick, pg="1"):
-        payload = {
-            "page": pg,
-            "limit": 24,
-            "type_id": "",
-            "keyword": key
-        }
-        response = self.post(f'{self.api_host}{self.api_path}', data=json.dumps(payload), headers=self.headers).json()
-        data = response['data']
-        videos = []
-        for i in data['list']:
-                videos.append({
-                    "vod_id": i['vod_id'],
-                    "vod_name": i['vod_name'],
-                    "vod_class": i['vod_class'],
-                    "vod_pic": i['vod_pic'],
-                    'vod_year': i.get('vod_year'),
-                    "vod_remarks": i['vod_total'] + '集'
-                })
-        return {'list': videos, 'page': pg, 'total': data['total'], 'limit': 24}
 
     def categoryContent(self, tid, pg, filter, extend):
         payload = {
@@ -103,33 +51,70 @@ class Spider(Spider):
             "year": "",
             "keyword": ""
         }
-        response = self.post(f'{self.api_host}{self.api_path}', data=json.dumps(payload), headers=self.headers).json()
-        data = response['data']
-        videos = []
-        for i in data['list']:
-            videos.append({
-                    'vod_id': i.get('vod_id'),
-                    'vod_name': i.get('vod_name'),
-                    'vod_class': i.get('vod_class'),
-                    'vod_pic': i.get('vod_pic'),
-                    'vod_remarks': i.get('vod_total')+'集',
-                    'vod_year': i.get('vod_year'),
-                    'vod_score': i.get('vod_score')
-                    })
+        response = self.post(f'{self.api_host}{self.api_path}', data=json.dumps(payload), headers=self.headers, verify=False).json()
+        videos = self.json2vods(response)
         return {'list': videos}
+    
+    def searchContent(self, key, quick, pg="1"):
+        payload = {
+            "page": pg,
+            "limit": 24,
+            "type_id": "",
+            "keyword": key
+        }
+        response = self.post(f'{self.api_host}{self.api_path}', data=json.dumps(payload), headers=self.headers, verify=False).json()
+        videos = self.json2vods(response)
+        return {'list': videos, 'page': pg}
+        
+    def detailContent(self, ids):
+        response = self.post(f'{self.api_host}/api/detail/{ids[0]}', data='{}', headers=self.headers, verify=False).json()
+        data = response['data']
+        play_urls = []
+        for name,url in data['player'].items():
+            play_urls.append(f'{name}${url}&auto=1')
+        videos = {
+            'vod_id': data.get('vod_id'),
+            'vod_name': data.get('vod_name'),
+            'vod_content': data.get('vod_blurb'),
+            'vod_remarks': f"集数：{data.get('vod_total')}",
+            "vod_director": data.get('vod_director'),
+            "vod_actor": data.get('vod_actor'),
+            'vod_year': data.get('vod_year'),
+            'vod_area': data.get('vod_area'),
+            'vod_play_from': '锦鲤短剧',
+            'vod_play_url': '#'.join(play_urls),
+            'type_name': f"{data.get('vod_class')},{data.get('vod_tag')}",
+        }
+        return {'list': [videos]}
 
-    def playerContent(self, flag, id, vipflags):
+    def playerContent(self, flag, vid, vip_flags):
         parse = 0
-        header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
         try:
-            response = self.fetch(id, headers=self.headers).text
+            response = self.fetch(vid, headers=self.headers, verify=False).text
             match = re.search(r'let\s+data\s*=\s*(\{[^}]*http[^}]*\});', response, re.IGNORECASE)
             data = match.group(1)
             data2 = json.loads(data)
-            url = data2['url']
+            play_url = data2['url']
+            if play_url.startswith('http'):
+                url = play_url
         except Exception:
-            url, parse, header = id, 1, self.headers
-        return {'parse': parse, 'url': url,'header': header}
+            url, parse, header = vid, 1, self.headers
+        return {'parse': parse, 'jx': 0, 'url': url,'header': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}}
+        
+    def json2vods(self,arr):
+        videos = []
+        for i in arr['data']['list']:
+                videos.append({
+                    "vod_id": i['vod_id'],
+                    "vod_name": i['vod_name'],
+                    "vod_class": i['vod_class'],
+                    "vod_pic": i['vod_pic'],
+                    'vod_year': i.get('vod_year'),
+                    'vod_area': i.get('vod_area'),
+                    "vod_remarks": f"{i.get('vod_class','')} {i['vod_total']}集",
+                    'type_name': f"{i.get('vod_class')},{i.get('vod_tag')}"
+                })
+        return videos
 
     def init(self, extend=''):
         pass
