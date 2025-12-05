@@ -1,3 +1,123 @@
+globalThis.yanzheng = function(HOST, rule) {
+    const firstRes = request(HOST, {
+        headers: rule.headers,
+        withHeaders: true,
+        redirect: false,
+        method: 'GET'
+    });
+    
+    const firstResJson = typeof firstRes === 'string' ? JSON.parse(firstRes) : firstRes;
+    const firstHtml = firstResJson.body || firstResJson;
+    
+    if (!firstHtml.includes('人机验证') && !firstHtml.includes('防火墙正在检查您的访问')) {
+        return firstHtml;
+    }
+    
+    const setCookie = firstResJson['set-cookie'] || '';
+    let phpsessid = '';
+    
+    if (Array.isArray(setCookie)) {
+        for (let c of setCookie) {
+            if (c.includes('PHPSESSID')) {
+                phpsessid = c.split(';')[0].trim();
+                break;
+            }
+        }
+    } else if (setCookie && setCookie.includes('PHPSESSID')) {
+        phpsessid = setCookie.split(';')[0].trim();
+    }
+    
+    if (phpsessid) {
+        rule.headers["cookie"] = phpsessid;
+        rule_fetch_params.headers = Object.assign({}, rule.headers);
+    }
+    
+    const tokenMatch = firstHtml.match(/var token = encrypt\("([^"]+)"\)/);
+    if (!tokenMatch) {
+        return firstHtml;
+    }
+    
+    const tokenToEncrypt = tokenMatch[1];
+    
+    function encrypt(_str) {
+        const staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
+        let encodechars = "";
+        
+        for(let i = 0; i < _str.length; i++) {
+            const num0 = staticchars.indexOf(_str[i]);
+            let code;
+            if(num0 === -1) {
+                code = _str[i];
+            } else {
+                code = staticchars[(num0 + 3) % 62];
+            }
+            const num1 = Math.floor(Math.random() * 62);
+            const num2 = Math.floor(Math.random() * 62);
+            encodechars += staticchars[num1] + code + staticchars[num2];
+        }
+        
+        try {
+            return btoa(encodechars);
+        } catch (e) {
+            if (typeof Buffer !== 'undefined') {
+                return Buffer.from(encodechars).toString('base64');
+            }
+            return encodechars;
+        }
+    }
+    
+    const value = encrypt(HOST);
+    const token = encrypt(tokenToEncrypt);
+    
+    const postData = `value=${value}&token=${token}`;
+    const robotUrl = rule.host + '/robot.php';
+    
+    const verifyRes = request(robotUrl, {
+        headers: {
+            ...rule.headers,
+            'content-type': 'application/x-www-form-urlencoded',
+            'origin': rule.host,
+            'referer': HOST
+        },
+        withHeaders: true,
+        method: 'POST',
+        body: postData
+    });
+    
+    const verifyResJson = typeof verifyRes === 'string' ? JSON.parse(verifyRes) : verifyRes;
+    
+    let verifyBody;
+    if (typeof verifyResJson.body === 'string') {
+        try {
+            verifyBody = JSON.parse(verifyResJson.body);
+        } catch (e) {
+            verifyBody = {msg: 'error'};
+        }
+    } else {
+        verifyBody = verifyResJson.body || verifyResJson;
+    }
+    
+    if (verifyBody.msg === 'ok') {
+        let start = Date.now();
+        while (Date.now() - start < 1500) {}
+        
+        const finalRes = request(HOST, {
+            headers: rule.headers,
+            withHeaders: true,
+            redirect: false,
+            method: 'GET'
+        });
+        
+        const finalResJson = typeof finalRes === 'string' ? JSON.parse(finalRes) : finalRes;
+        if (finalResJson.body) {
+            return finalResJson.body;
+        }
+        return finalRes;
+    } else {
+        return firstHtml;
+    }
+};
+
 //发布页https://www.dadagui.vip /有人机验证
 function verifyLogin(url) {
     let cnt = 0;
@@ -58,7 +178,7 @@ var rule = {
     //searchUrl: '/vodsearch/**----------fypage---.html',
     searchUrl: '/rss.xml?wd=**',
     class_parse: '.stui-header__menu li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    lazy: $js.toString(() => {
+    /*lazy: $js.toString(() => {
         let js = 'try{function requestApix(callback){$.post(\"api.php\",{vid:getQueryString(\"vid\")},function(result){callback(result.data.url);},\"json\");}requestApix(function(data){location.href=sign(data);})}catch(e){}location.href=document.querySelector(\"#playleft iframe\").src;';
         input = {
             parse: 1,
@@ -66,9 +186,10 @@ var rule = {
             click: js,
             js: js
         };
-    }),
-    一级二: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',            
-    一级: $js.toString(() => {
+    }),*/
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",    
+    一级二: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    /*一级: $js.toString(() => {
          let cookie = getItem(RULE_CK, '');
         //log('储存的cookie:' + cookie);        
         let ret = request(MY_URL, {
@@ -93,7 +214,7 @@ var rule = {
                 }
             });
         }
-//log(ret);
+        //log(ret);
         let d = [];
         let p = rule.一级二.split(';');
         let arr = pdfa(ret, p[0]);//列表
@@ -108,6 +229,25 @@ var rule = {
 
         });
         setResult(d);
+    }),*/            
+    一级: $js.toString(() => {
+        const url = MY_URL || input;        
+        const isVodshowPage = url.includes('/vodshow/');        
+        if (isVodshowPage) {
+        const result = globalThis.yanzheng(url, rule);            
+        let d = [];
+        let p = rule.一级二.split(';');
+        let arr = pdfa(result, p[0]);//列表
+        arr.forEach(it => {
+            d.push({
+                title: pdfh(it, p[1]),//标题
+                pic_url: pdfh(it, p[2]),//图片
+                desc: pdfh(it, p[3]),//描述
+                url: pdfh(it, p[4]),//链接                
+            });
+        });            
+            setResult(d);
+        }
     }),
     搜索: $js.toString(() => {
     let html = post(input.split('?')[0], { body: input.split('?')[1] });
@@ -127,6 +267,5 @@ var rule = {
       });
     });
     setResult(d);
-  }),
-  预处理:'',//js编写，用于过人机验证，未实现               
+  }),  
 }

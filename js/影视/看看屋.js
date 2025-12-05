@@ -1,8 +1,104 @@
-//发布页人机验证
+globalThis.yanzheng = function(HOST, rule) {
+    const firstRes = request(HOST, {
+        headers: rule.headers,
+        withHeaders: true,
+        redirect: false,
+        method: 'GET'
+    });    
+    const res = typeof firstRes === 'string' ? JSON.parse(firstRes) : firstRes;
+    const html = res.body || firstRes;    
+    if (!html.includes('人机验证') && !html.includes('防火墙正在检查您的访问')) {
+        return html;
+    }    
+    const setCookie = res['set-cookie'] || '';
+    let phpsessid = '';    
+    if (Array.isArray(setCookie)) {
+        for (const c of setCookie) {
+            if (c.includes('PHPSESSID')) {
+                phpsessid = c.split(';')[0].trim();
+                break;
+            }
+        }
+    } else if (setCookie.includes('PHPSESSID')) {
+        phpsessid = setCookie.split(';')[0].trim();
+    }    
+    if (phpsessid) {
+        rule.headers.cookie = phpsessid;
+        if (typeof rule_fetch_params !== 'undefined') {
+            rule_fetch_params.headers = {...rule.headers};
+        }
+    }    
+    const tokenMatch = html.match(/var token = encrypt\("([^"]+)"\)/);
+    if (!tokenMatch) return html;    
+    const encrypt = (str) => {
+        const staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
+        let encodechars = "";        
+        for (let i = 0; i < str.length; i++) {
+            const idx = staticchars.indexOf(str[i]);
+            const code = idx === -1 ? str[i] : staticchars[(idx + 3) % 62];
+            encodechars += staticchars[Math.floor(Math.random() * 62)] + 
+                          code + 
+                          staticchars[Math.floor(Math.random() * 62)];
+        }        
+        try {
+            return btoa(encodechars);
+        } catch (e) {
+            if (typeof Buffer !== 'undefined') {
+                return Buffer.from(encodechars).toString('base64');
+            }
+            return encodechars;
+        }
+    };    
+    const value = encrypt(HOST);
+    const token = encrypt(tokenMatch[1]);
+    const postData = `value=${value}&token=${token}`;    
+    const verifyRes = request(`${rule.host}/robot.php`, {
+        headers: {
+            ...rule.headers,
+            'content-type': 'application/x-www-form-urlencoded',
+            'origin': rule.host,
+            'referer': HOST
+        },
+        withHeaders: true,
+        method: 'POST',
+        body: postData
+    });    
+    const verifyJson = typeof verifyRes === 'string' ? JSON.parse(verifyRes) : verifyRes;
+    let verifyBody;    
+    if (typeof verifyJson.body === 'string') {
+        try {
+            verifyBody = JSON.parse(verifyJson.body);
+        } catch {
+            verifyBody = {msg: 'error'};
+        }
+    } else {
+        verifyBody = verifyJson.body || verifyJson;
+    }    
+    if (verifyBody.msg === 'ok') {
+        const start = Date.now();
+        while (Date.now() - start < 1500) {}        
+        const finalRes = request(HOST, {
+            headers: rule.headers,
+            withHeaders: false,
+            redirect: false,
+            method: 'GET'
+        });        
+        return typeof finalRes === 'string' ? finalRes : (finalRes.body || finalRes);
+    }    
+    return html;
+};
+
 var rule = {
   title: '看看屋',
-  host:'https://www.kankanwu.cc',
+  //host:'https://www.kankanwu.cc',
   //hostJs: 'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"ul&&li a:eq(1)&&href");print(src);HOST=src',
+  host:'https://www.kankanwu.vip',
+  hostJs: $js.toString(() => {
+        rule.headers = rule.headers || {};
+        let Html = globalThis.yanzheng(HOST, rule);
+        let url = jsp.pdfh(Html, "ul li:first-child a&&href");
+        HOST = url;
+    }),
   url: '/vodshow/fyfilter.html',
   searchUrl: '/vodsearch/**----------fypage---.html',
   searchable:1,quickSearch:1,double:false,timeout:5000,play_parse:true,filterable:1,invalid:true,
@@ -19,7 +115,7 @@ var rule = {
     title: '.stui-content__detail .title&&Text;.stui-content__detail&&p:eq(-2)&&a&&Text',
     title1: '.stui-content__detail .title&&Text;.stui-content__detail&&p&&Text',
     img: '.stui-content__thumb .lazyload&&data-original',
-    desc: '.stui-content__detail p&&Text;.data.visible-xs:eq(2)&&Text;.data.visible-xs:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text',
+    desc: '.stui-content__detail p&&Text;.data.visible-xs:eq(2)&&Text;.data.visible-xs:eq(0)&&Text;.stui-content__detail p:eq(4)&&Text;.stui-content__detail&&p:eq(5)&&Text',
     desc1: '.stui-content__detail p:eq(4)&&Text;;;.stui-content__detail p:eq(1)&&Text',
     content: '.detail&&Text',
     tabs: '.stui-vodlist__head h3',

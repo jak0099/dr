@@ -13,7 +13,7 @@
 {"key":"csp_Aid","name":"🚑急救教学┃SP","type":3,"api":"csp_FirstAid","searchable":0,"quickSearch":0,"changeable":0,"style":{"type":"rect","ratio":3.8}},
 //{"key": "csp_LocalFile","name": "💻本地视频","type": 3,"api": "csp_LocalFile","searchable": 0,"quickSearch": 0,"filterable": 1,"jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key": "csp_接口信息","name": "🍔本地包拉取🍔","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market.json","jar": "./sp/mk.jar?md5=5400486b7884dd01de5a306e34724c3c"},
-//{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./test/js源测试/测试.js"},
+{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./test/js源测试/测试.js"},
 //{"key": "py_测试","name": "🌐测试[PY]","type": 3,"api": "./test/py源测试/测试.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_模板[优]","name": "🍒模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板[优].js"},
@@ -87,7 +87,7 @@
 {"key": "py_TVB云播","name": "🍑TVB云播[影][PY]","type": 3,"changeable": 0,"api": "./py/模板/Appfox.py","ext": "http://app.hktvyb.cc"},
 {"key": "py_未来影视","name": "🍑未来影视[影][PY]","type": 3,"changeable": 0,"api": "./py/模板/Appfox.py","ext": {"host": "http://kumiao.yzbao.com.cn","ver": 2}},
 {"key": "py_米兔影视","name": "🍑米兔影视[影][PY]","type": 3,"changeable": 0,"api": "./py/模板/Appfox.py","ext": {"host": "http://115.190.136.55:1689","cms": "http://d.tv.tkbot.fun/api.php/appfox/vod?ac=videolist","ver": 2}},
-
+{"key":"py_吉米","name":"🍑吉米[影][PY]","type":3,"api":"./py/模板/Appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://fox.tvmao.top"}},
 //skapp
 {"key": "py_月亮影视","name": "🍑月亮影视[影][PY]","type": 3,"api": "./py/模板/skapp.py","ext": {"host": "http://sk.13tv.top:6542/assets/dd.txt","key": "ygcnbcgeomivjoyn","iv": "8628532671143708"}},
 {"key": "py_即看影视","name": "🍑即看影视[影][PY]","type": 3,"api": "./py/模板/skapp.py","ext": {"host": "https://skyappdata-1321528676.cos.accelerate.myqcloud.com/4kapp/appipr.txt","key": "ygcnbckhcuvygdyb","iv": "4023892775143708"}},
@@ -106,11 +106,14 @@
 {"key": "py_壹影视","name": "🍑壹影视[影][PY]","type": 3,"api": "./py/综/壹影视.py"},
 {"key": "py_老地方影院","name": "🍑老地方影院[影][PY]","type": 3,"api": "./py/综/老地方影院.py"},
 
+{"key": "py_47电影天堂","name": "🍑47电影天堂[影][PY]","type": 3,"api": "./py/综/47电影天堂.py"},
+{"key": "py_58视频","name": "🍑58视频[影][PY]","type": 3,"api": "./py/综/58视频.py"},
+
 {"key": "py_4K影视","name": "🍑4K影视[影][PY]","type": 3,"api": "./py/综/4K影视.py"},
 {"key": "py_可可影视","name": "🍑可可影视[影][PY]","type": 3,"api": "./py/综/可可.py"},
 {"key": "py_山有木兮","name": "🍑山有木兮[影][PY]","type": 3,"api": "./py/综/山有木兮.py"},
-{"key": "py_K电影APP","name": "🍑K电影[影][PY]","type": 3,"api": "./py/综/K电影.py"},
-{"key": "py_端木APP","name": "🍑端木[影][PY]","type": 3,"api": "./py/综/端木.py"},
+{"key": "py_K电影APP","name": "🍑K电影[影][PY]","type": 3,"api": "./py/综/K-movie.py"},
+{"key": "py_端木APP","name": "🍑端木[影][PY]","type": 3,"api": "./py/综/新端木视频3.4单线.py"},
 {"key": "py_开端APP","name": "🍑开端[影][PY]","type": 3,"api": "./py/综/开端.py"},        
 {"key": "py_热播APP","name": "🍑热播[影][PY]","type": 3,"api": "./py/app/热播APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "py_云端APP","name": "🍑云端[影][PY]","type": 3,"api": "./py/app/云端APP.py","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -167,8 +170,8 @@
 {"key": "dr_AppGet_豆丁","name": "🍐豆丁[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=http://110.42.7.59:9066$xasdasdqwertyuio$xasdasdqwertyuio"},
 {"key": "dr_AppGet_米诺","name": "🍐米诺[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 1,"filterable": 1,"ext": "./js/模板/AppGet模板.js?type=url&params=http://www.milkidc.cn$20c79c979da8db0f$20c79c979da8db0f"},
 
-
 //{"key": "dr_模板","name": "🍊模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/模板.js"},
+{"key": "dr_剧巴巴","name": "🍊剧巴巴[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"click":"document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();","ext": "./js/影视/剧巴巴.js"},
 {"key": "dr_万象影视","name": "🍊万象影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/万象影视.js"},
 {"key": "dr_MX影院","name": "🍊MX影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/MX影院.js"},
 {"key": "dr_小红影视","name": "🍊小红影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/小红影视.js"},
@@ -183,6 +186,7 @@
 {"key": "dr_武德影院","name": "🍊武德影院[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/武德影院.js"},
 {"key": "dr_泥视频","name": "🍊泥视频[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/泥视频.js"},
 {"key": "dr_人人美剧","name": "🍊人人美剧[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/人人美剧.js"},
+{"key": "dr_达达龟","name": "🍊达达龟[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"click":"document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();","ext": "./js/影视/达达龟.js"},
 {"key": "dr_爱电影","name": "🍊爱电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/爱电影.js"},
 {"key": "dr_毒舌影视","name": "🍊毒舌影视[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/毒舌影视.js"},
 {"key": "dr_老王电影","name": "🍊老王电影[影][DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./js/影视/老王电影.js"},
@@ -676,7 +680,7 @@
 {"name": "夜市點擊","hosts": ["yeslivetv.com"],"script": ["document.getElementsByClassName('vjs-big-play-button')[0].click()"]},
 {"name": "毛驢點擊","hosts": ["www.maolvys.com"],"script": ["document.getElementsByClassName('swal-button swal-button--confirm')[0].click()"]},
 {"name": "可可点击","hosts": ["www.keke5.app","www.kkys01.com"],"script": ["document.querySelector(\"#my-video video\").click()"]},
-{"name":"饭团点击","hosts":["fantuan","dadagui","freeok","dadagui"],"script":["document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();"]},
+{"name":"饭团点击","hosts":["fantuan","dadagui","freeok"],"script":["document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();"]},
 {"name": "剧圈圈点击","hosts": ["jqqzx"],"script": ["document.getElementById('playleft').children[0].contentWindow.document.getElementById('start').click()"]},
 {"name": "ofiii","hosts": ["www.ofiii.com"],"script": ["const play=document.getElementsByClassName('play_icon')[0],event=new MouseEvent('click',{bubbles:!0,cancelable:!0,view:window,screenX:100,screenY:100,clientX:50,clientY:50,button:0,shiftKey:!1,ctrlKey:!1,altKey:!1,metaKey:!1,modifierState:0});play.dispatchEvent(event);"]},
 {"name":"proxy","hosts":["meijutt.net","btsow.motorcycles","555zxdy.com","huanyuxing.com","cj.ffzyapi.com","ddys.pro","mypikpak.com",".*workers.dev","www.cilixiong.com","*.t4tv.hz.cz","kuba222.com","mp4us.com","dydhhy.com","magicalsearch.top","api123.adys.app","raw.githubusercontent.com","googlevideo.com","cdn.v82u1l.com","cdn.iz8qkg.com","cdn.kin6c1.com","c.biggggg.com","c.olddddd.com","haiwaikan.com","www.histar.tv","youtube.com","uhibo.com",".*boku.*",".*nivod.*","*.t4tv.hz.cz",".*ulivetv.*","wogg.link","wogg.xyz"]}

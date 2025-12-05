@@ -20,6 +20,7 @@ var rule = {
     filter_url: '{{fl.地区}}-{{fl.排序}}-{{fl.类型}}-{{fl.语言}}----fypage---{{fl.年份}}',
     headers: {
         'User-Agent': 'MOBILE_UA',
+        'Cookie':'',
     },
     timeout: 5000,
     class_parse: '.head-nav li;a&&Text;a&&href;/(\\d+)\.html',
@@ -34,7 +35,7 @@ var rule = {
         img: '.this-pic-bj&&style',
         desc: '.gen-search-form li:eq(1)&&Text;.gen-search-form li:eq(4)&&Text;.gen-search-form li:eq(5)&&Text;.gen-search-form li:eq(2)&&Text;.gen-search-form li:eq(3)&&Text',
         content: '.gen-search-form li:eq(11)&&Text',
-        tabs: '.anthology-tab a',
+        tabs: '.anthology-tab a',        
         lists: '.anthology-list-play:eq(#id)&&a',
         tab_text: 'body&&Text',
         list_text: 'body&&Text',

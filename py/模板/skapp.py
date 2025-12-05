@@ -1,19 +1,6 @@
+# -*- coding: utf-8 -*-
 # 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
 # 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
-"""
-示例
-{
-    "key": "xxx",
-    "name": "xxx",
-    "type": 3,
-    "api": "./skapp.py",
-    "ext": {
-        "host": "https://cos.ap-shanghai.domain.com/xxx/xxx.txt", 域名（支持txt或域名）
-        "key": "", 数据解密key
-        "iv": ""  数据解密iv
-    }
-}
-"""
 
 from Crypto.Cipher import AES
 from base.spider import Spider

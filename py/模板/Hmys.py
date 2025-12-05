@@ -6,30 +6,30 @@ from base.spider import Spider
 from Crypto.Cipher import DES3
 from Crypto.Util.Padding import unpad
 import re,sys,time,json,base64,secrets,hashlib,urllib3
-from urllib.parse import quote, unquote,urljoin,urlparse
+from urllib.parse import quote,unquote,urljoin,urlparse
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.path.append('..')
 
 class Spider(Spider):
     headers,play_header,host,play_domain,proxyurl,encrypt_domain = {
-        'User-Agent': "Android",
-        'Connection': "Keep-Alive",
-        'Accept': "application/vnd.yourapi.v1.full+json",
-        'Accept-Encoding': "gzip",
-        'Device-Id': "",
-        'Screen-Width': "2670",
-        'Channel': "guan",
-        'Cur-Time': "",
-        'Mob-Mfr': "xiaomi",
-        'prefersex': "1",
-        'Mob-Model': "xiaomi",
-        'token': "",
-        'Sys-Release': "15",
-        'appid': "",
-        'Version-Code': "",
-        'Sys-Platform': "Android",
-        'Screen-Height': "1200",
-        'timestamp': ""
+        'User-Agent': 'Android',
+        'Connection': 'Keep-Alive',
+        'Accept': 'application/vnd.yourapi.v1.full+json',
+        'Accept-Encoding': 'gzip',
+        'Device-Id': '',
+        'Screen-Width': '2670',
+        'Channel': 'guan',
+        'Cur-Time': '',
+        'Mob-Mfr': 'xiaomi',
+        'prefersex': '1',
+        'Mob-Model': 'xiaomi',
+        'token': '',
+        'Sys-Release': '15',
+        'appid': '',
+        'Version-Code': '',
+        'Sys-Platform': 'Android',
+        'Screen-Height': '1200',
+        'timestamp': ''
     },{'User-Agent': 'Mozi'},'','','',''
 
     def init(self, extend=''):
@@ -41,8 +41,8 @@ class Spider(Spider):
             deviceid = ext.get('deviceid')
             version_code = ext['versionCode']
             channel = ext['UMENG_CHANNEL']
-            self.encrypt_domain = ext.get('EncryptDomain', 'vT1RQRz8YzlzTgN26pIXNJ7Mi65juwSP')
-            if not (appid and version_code and channel): return
+            self.encrypt_domain = ext.get('EncryptDomain','vT1RQRz8YzlzTgN26pIXNJ7Mi65juwSP')
+            if not(appid and version_code and channel): return
             if deviceid:
                 if not self.is_valid_android_id(deviceid): return
             else:
@@ -50,7 +50,7 @@ class Spider(Spider):
                 deviceid = self.getCache(deviceid_cache_key)
                 if not deviceid:
                     deviceid = self.device_id()
-                    self.setCache(deviceid_cache_key, deviceid)
+                    self.setCache(deviceid_cache_key,deviceid)
             self.host = host
             self.headers['appid'] = appid
             self.headers['Channel'] = channel
@@ -70,16 +70,33 @@ class Spider(Spider):
         headers['timestamp'] = self.timestamp()
         response = self.post(f'{self.host}/api/block/category_type', headers=headers, verify=False).json()
         data = json.loads(self.des3(response['data']))
-        classes = []
-        for i in data.get('result',[]):
-            classes.append({'type_id': i['type_pid'], 'type_name': i['type_name']})
-        return {'class': classes}
+        class_list = []
+        for item in data['result']:
+            class_list.append({ 'type_id': item['type_pid'], 'type_name': item['type_name']})
+        filters_dict = {}
+        for item in data['result']:
+            type_id = item['type_pid']
+            cate_list = [cate.strip() for cate in item['cate'].split(',')]
+            cate_values = [{'n': cate, 'v': cate} for cate in cate_list]
+            area_list = [area.strip() for area in item['area'].split(',')]
+            area_values = [{'n': area, 'v': area} for area in area_list]
+            year_list = [year.strip() for year in item['year'].split(',')]
+            year_values = [{'n': year, 'v': year} for year in year_list]
+            order_list = [order.strip() for order in item['order'].split(',')]
+            order_values = [{'n': order, 'v': order} for order in order_list]
+            filters_dict[str(type_id)] = [
+                {'key': 'class', 'name': '类型', 'value': cate_values},
+                {'key': 'area', 'name': '地区', 'value': area_values},
+                {'key': 'year', 'name': '年份', 'value': year_values},
+                {'key': 'sort', 'name': '排序', 'value': order_values}
+            ]
+        return {'class': class_list, 'filters': filters_dict}
 
     def homeVideoContent(self):
         if not self.host: return None
         headers = self.headers.copy()
         headers['timestamp'] = self.timestamp()
-        response = self.post(f'{self.host}/api/nav/list', headers=headers, verify=False).json()
+        response = self.post(f'{self.host}/api/nav/list', headers=headers,verify=False).json()
         data = self.des3(response['data'])
         result = json.loads(data)['result']
         if not result: return None
@@ -90,7 +107,7 @@ class Spider(Spider):
                     recommend_id = i.get('nav_id')
                     break
         headers['timestamp'] = self.timestamp()
-        response2 = self.post(f'{self.host}/api/nav/index', data={'nav_id': recommend_id or '253'}, headers=headers, verify=False).json()
+        response2 = self.post(f'{self.host}/api/nav/index',data={'nav_id': recommend_id or '253'}, headers=headers, verify=False).json()
         data2 = self.des3(response2['data'])
         result2 = json.loads(data2)['result']
         for item in result2:
@@ -112,23 +129,23 @@ class Spider(Spider):
                     })
         return {'list': videos}
 
-    def categoryContent(self, tid, pg, filter, extend):
+    def categoryContent(self, tid, pg, filter, ext):
         if not self.host: return None
         headers = self.headers.copy()
         headers['timestamp'] = self.timestamp()
         payload = {
-            'area': "全部",
-            'cate': "全部",
+            'area': ext.get('area','全部'),
+            'cate': ext.get('class','全部'),
             'type_pid': tid,
-            'year': "全部",
-            'length': "12",
+            'year': ext.get('year','全部'),
+            'length': '12',
             'page': pg,
-            'order': "最热"
+            'order': ext.get('sort','最热')
         }
         response = self.post(f'{self.host}/api/block/category', data=payload, headers=headers, verify=False).json()
         data = json.loads(self.des3(response['data']))
         videos = []
-        for i in data.get('result', []):
+        for i in data.get('result',[]):
             if i.get('type_pid') != 1:
                 remark = f"{i['serial']}集全" if i.get('is_end') == 1 else f"更新至{i['serial']}集"
             else:
@@ -145,15 +162,11 @@ class Spider(Spider):
         if not self.host: return None
         headers = self.headers.copy()
         headers['timestamp'] = self.timestamp()
-        payload = {
-            'type_pid': "0",
-            'kw': key,
-            'pn': pg
-        }
+        payload = {'type_pid': "0", 'kw': key, 'pn': pg}
         response = self.post(f'{self.host}/api/search/result', data=payload, headers=headers, verify=False).json()
         data = json.loads(self.des3(response['data']))
         videos = []
-        for i in data.get('result', []):
+        for i in data.get('result',[]):
             vod_remarks = f"{i['serial']}集" if i['type_pid'] != '1' else i['tags']
             if i['short_video'] == 1:
                 vod_remarks += ',短剧'
@@ -236,7 +249,7 @@ class Spider(Spider):
             self.host = ''
             return
         headers['timestamp'] = self.timestamp()
-        self.post(f'{self.host}/api/stats/login', data={'action': '6'}, headers=headers, verify=False).json()
+        self.post(f'{self.host}/api/stats/login', data={'action': '6'}, headers=headers, verify=False)
 
     def hema_m3u8_proxy(self, params):
         url = unquote(params['url'])
@@ -277,13 +290,14 @@ class Spider(Spider):
             cipher = DES3.new(key_bytes, DES3.MODE_CBC, iv_bytes)
             plaintext_bytes = unpad(cipher.decrypt(ciphertext), DES3.block_size)
             return plaintext_bytes.decode('utf-8')
-        except Exception:
+        except Exception as e:
             return None
 
     def hls_sign(self, url):
+        replaceDomain = self.play_domain
         hex_time = self.hex_time()
         if '?' in url: url = url.split('?')[0]
-        data = url.replace(self.play_domain, self.encrypt_domain) + hex_time
+        data = url.replace(replaceDomain, self.encrypt_domain) + hex_time
         data_hash = hashlib.md5()
         data_hash.update(data.encode('utf-8'))
         return f"&wsSecret={data_hash.hexdigest()}&wsTime={hex_time}"
