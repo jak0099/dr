@@ -13,9 +13,7 @@ var rule = {
       'User-Agent':'MOBILE_UA',
   },
   timeout:5000,
-  class_parse:'#side-menu li;a&&Text;a&&href;/(.*?)\.html',//二选一，要么'class_parse'，要么'class_name'和class_url'
-  class_name:'',
-  class_url:'',
+  class_parse:'#side-menu li;a&&Text;a&&href;/(.*?)\.html',
   cate_exclude:'',
   play_parse:true,
   double:true,

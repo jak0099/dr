@@ -230,7 +230,7 @@ var rule = {
         });
         setResult(d);
     }),*/            
-    一级: $js.toString(() => {
+    /*一级: $js.toString(() => {
         const url = MY_URL || input;        
         const isVodshowPage = url.includes('/vodshow/');        
         if (isVodshowPage) {
@@ -248,6 +248,21 @@ var rule = {
         });            
             setResult(d);
         }
+    }),*/
+    一级: $js.toString(() => {
+        let html = globalThis.yanzheng(input, rule);            
+        let d = [];
+        let p = rule.一级二.split(';');
+        let arr = pdfa(html, p[0]);//列表
+        arr.forEach(it => {
+            d.push({
+                title: pdfh(it, p[1]),//标题
+                pic_url: pdfh(it, p[2]),//图片
+                desc: pdfh(it, p[3]),//描述
+                url: pdfh(it, p[4]),//链接                
+            });
+        });            
+        setResult(d);
     }),
     搜索: $js.toString(() => {
     let html = post(input.split('?')[0], { body: input.split('?')[1] });

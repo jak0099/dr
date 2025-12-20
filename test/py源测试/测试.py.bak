@@ -11,6 +11,7 @@
 from base.spider import Spider
 import requests
 import sys
+import json
 
 sys.path.append('..')
 
@@ -165,36 +166,26 @@ class Spider(Spider):
                 "userId": "223664"
             }
 
-            print(f"详情请求参数: {payload}")
-            
             url = f"{xurl}/api/v1/app/play/movieDetails"
             response = requests.post(url=url, headers=headers, json=payload, timeout=10)
-            print(f"详情请求状态码: {response.status_code}")
             
             if response.status_code == 200:
                 data = response.json()
-                print(f"详情请求返回数据: {data}")
-                
                 vod_data = data.get('data', {})
                 
                 content = vod_data.get('introduce', '暂无剧情介绍')
                 vod_name = vod_data.get('name', '未知名称')
                 vod_pic = vod_data.get('cover', '')
                 
-                # 按照聚合规则的格式构造播放地址
                 if 'episodeList' in vod_data and vod_data['episodeList']:
-                    episode_list = []
                     for episode in vod_data['episodeList']:
                         episode_name = episode.get('episode', '')
                         episode_id = episode.get('id', '')
-                        if episode_name and episode_id:
-                            # 格式：剧集名称$视频ID@集ID
-                            episode_list.append(f"{episode_name}${did}@{episode_id}")
+                        bofang += f"{episode_name}${did}@{episode_id}#"
                     
-                    if episode_list:
-                        bofang = "#".join(episode_list)
+                    if bofang:
+                        bofang = bofang[:-1]
                         xianlu = '牛牛短剧'
-                        print(f"构造的播放列表: {bofang}")
             
             videos.append({
                 "vod_id": did,
@@ -208,9 +199,7 @@ class Spider(Spider):
             result['list'] = videos
             return result
         except Exception as e:
-            print(f"详情加载异常: {e}")
-            import traceback
-            traceback.print_exc()
+            print(f"详情加载失败: {e}")
             videos.append({
                 "vod_id": did,
                 "vod_name": "加载失败",
@@ -224,7 +213,6 @@ class Spider(Spider):
 
     def playerContent(self, flag, id, vipFlags):
         try:
-            # 根据聚合规则，id 的格式是 "videoId@episodeId"
             fenge = id.split("@")
             
             if len(fenge) < 2:
@@ -235,7 +223,6 @@ class Spider(Spider):
                     "header": headerx
                 }
 
-            # 根据聚合规则构造请求体
             payload = {
                 "episodeId": fenge[1],
                 "id": fenge[0],
@@ -244,43 +231,25 @@ class Spider(Spider):
                 "userId": "223664"
             }
 
-            print(f"请求播放地址参数: {payload}")
-            
             url = f"{xurl}/api/v1/app/play/movieDetails"
             response = requests.post(url=url, headers=headers, json=payload, timeout=10)
-            print(f"播放请求状态码: {response.status_code}")
-            
             if response.status_code == 200:
                 data = response.json()
-                print(f"播放请求返回数据: {data}")
-                
-                # 根据聚合规则，播放地址在 data.data.url
                 if data.get('data') and data['data'].get('url'):
-                    play_url = data['data']['url']
-                    print(f"获取到播放地址: {play_url}")
-                    
-                    result = {}
-                    result["parse"] = 0
-                    result["playUrl"] = ''
-                    result["url"] = play_url
-                    result["header"] = headerx
-                    return result
+                    url = data['data']['url']
                 else:
-                    print(f"播放地址不存在: {data}")
+                    url = ''
             else:
-                print(f"播放请求失败: {response.status_code} - {response.text}")
-            
-            # 如果获取失败，返回空结果
-            return {
-                "parse": 0,
-                "playUrl": '',
-                "url": '',
-                "header": headerx
-            }
+                url = ''
+
+            result = {}
+            result["parse"] = 0
+            result["playUrl"] = ''
+            result["url"] = url
+            result["header"] = headerx
+            return result
         except Exception as e:
-            print(f"播放地址获取异常: {e}")
-            import traceback
-            traceback.print_exc()
+            print(f"播放地址获取失败: {e}")
             return {
                 "parse": 0,
                 "playUrl": '',

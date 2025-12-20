@@ -34,7 +34,7 @@ var rule = {
                 return null;
             }
         }
-        //1.原正则：/a0_0x2a54\s*=\s*\['([^']+)'/  2.针对十六进制正则：/a0_0x2a54\s*=\s*\[['"]([A-F0-9]+)['"]/  3.通用性强正则：/a0_0x2a54\s*=\s*\[['"]([^'"]+)['"]/
+        //1.原正则：/a0_0x2a54\s*=\s*\['([^']+)'/    2.通用性强正则：/a0_0x2a54\s*=\s*\[['"]([^'"]+)['"]/
         let hashPre = request(HOST)?.match(/a0_0x2a54\s*=\s*\[['"]([^'"]+)['"]/)?.[1]?.trim() ?? '';
         if (hashPre != '' && hashPre != getItem('hashpre')) {
             setItem('tgcookie', '');
