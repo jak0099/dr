@@ -13,15 +13,7 @@
 {"key":"csp_Aid","name":"🚑急救教学┃SP","type":3,"api":"csp_FirstAid","searchable":0,"quickSearch":0,"changeable":0,"style":{"type":"rect","ratio":3.8}},
 //{"key": "csp_LocalFile","name": "💻本地视频","type": 3,"api": "csp_LocalFile","jar":"./sp/XYQ.jar?md5=07f7e56adbda0c328398d7d663ff75a5"},
 {"key": "csp_接口信息","name": "🍔本地包拉取🍔","type": 3,"api": "csp_Market","searchable": 0,"changeable": 0,"indexs": 0,"ext": "./market/market.json","jar": "./sp/mk.jar?md5=5400486b7884dd01de5a306e34724c3c"},
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./test/js源测试/测试.js"},
-=======
 //{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","ext": "./test/js源测试/测试.js"},
->>>>>>> Stashed changes
-=======
-//{"key": "dr_测试","name": "🌐测试[DR]","type": 3,"api": "./libs/drpy2.min.js","ext": "./test/js源测试/测试.js"},
->>>>>>> Stashed changes
 //{"key": "py_测试","name": "🌐测试[PY]","type": 3,"api": "./test/py源测试/测试.py","searchable": 1,"quickSearch": 1,"filterable": 1},
 
 //{"key": "dr_模板[优]","name": "🍒模板[影][DR]","type": 3,"api": "./libs/drpy2.min.js","ext": "./js/影视/模板[优].js"},
