@@ -1,4 +1,4 @@
-globalThis.yanzheng = function(HOST, rule) {
+globalThis.verifyBox = function(HOST, rule) {
     const firstRes = request(HOST, {
         headers: rule.headers,
         withHeaders: true,
@@ -118,7 +118,7 @@ var rule = {
     double: false,
     推荐: '.lazyload;.lazyload&&title;.lazyload&&data-original;.text-right&&Text;a&&href',    
     一级: $js.toString(() => {
-        let html = globalThis.yanzheng(input, rule);
+        let html = globalThis.verifyBox(input, rule);
         let d = [];
         let list = pdfa(html, '.ewave-vodlist li');
         list.forEach(it => {

@@ -1,4 +1,4 @@
-globalThis.yanzheng = function(HOST, rule) {
+globalThis.verifyBox = function(HOST, rule) {
     const firstRes = request(HOST, {
         headers: rule.headers,
         withHeaders: true,
@@ -112,7 +112,7 @@ var rule = {
     推荐: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href',
     一级二: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href',
     一级: $js.toString(() => {
-        let html = globalThis.yanzheng(MY_URL, rule);            
+        let html = globalThis.verifyBox(MY_URL, rule);            
         let d = [];
         let p = rule.一级二.split(';');
         let arr = pdfa(html, p[0]);//列表
@@ -138,7 +138,7 @@ var rule = {
         list_url: 'a&&href',
     },    
     搜索: $js.toString(() => {
-        let html = globalThis.yanzheng(MY_URL, rule);
+        let html = globalThis.verifyBox(MY_URL, rule);
         let d = [];
         let list = pdfa(html, '.module-card-item');
         list.forEach(it => {

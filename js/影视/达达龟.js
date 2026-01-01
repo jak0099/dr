@@ -1,4 +1,4 @@
-globalThis.yanzheng = function(HOST, rule) {
+globalThis.verifyBox = function(HOST, rule) {
     const firstRes = request(HOST, {
         headers: rule.headers,
         withHeaders: true,
@@ -250,7 +250,7 @@ var rule = {
         }
     }),*/
     一级: $js.toString(() => {
-        let html = globalThis.yanzheng(input, rule);            
+        let html = globalThis.verifyBox(input, rule);            
         let d = [];
         let p = rule.一级二.split(';');
         let arr = pdfa(html, p[0]);//列表

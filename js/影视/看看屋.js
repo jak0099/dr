@@ -1,4 +1,4 @@
-globalThis.yanzheng = function(HOST, rule) {
+globalThis.verifyBox = function(HOST, rule) {
     const firstRes = request(HOST, {
         headers: rule.headers,
         withHeaders: true,
@@ -95,7 +95,7 @@ var rule = {
   host:'https://www.kankanwu.vip',
   hostJs: $js.toString(() => {
         rule.headers = rule.headers || {};
-        let Html = globalThis.yanzheng(HOST, rule);
+        let Html = globalThis.verifyBox(HOST, rule);
         let url = jsp.pdfh(Html, "ul li:first-child a&&href");
         HOST = url;
     }),

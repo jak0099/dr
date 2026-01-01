@@ -215,7 +215,7 @@ class Spider(Spider):
         name = self.extract_middle_text(code, "s1='", "'", 0)
         Jumps = self.extract_middle_text(code, "s2='", "'", 0)
 
-        content = f"😸丢丢为您介绍剧情📢{fenge[1]}"
+        content = f"{fenge[1]}"
 
         if name not in content:
             bofang = Jumps

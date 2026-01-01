@@ -23,9 +23,9 @@ class Spider(Spider):
         else:
             arr = json.loads(ext)
             host = arr['host']
-            self.ver = 2 if arr.get('ver') == 2 else self.ver
+            self.ver = 2 if arr.get('ver',2) == 2 else self.ver
             cms = arr.get('cms', '').rstrip('/')
-            if re.match(r'^https?:\/\/.*\/vod', cms):
+            if re.match(r'^https?://.*/vod', cms):
                 if '?' in cms:
                     cms += '&'
                 else:
@@ -44,7 +44,7 @@ class Spider(Spider):
                                 'category': ua.get('category'),'search': ua.get('search'), 'parse': ua.get('parse'),
                                 'player': ua.get('player')}
             self.timeout = arr.get('timeout', 5)
-        if not re.match(r'^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?(\/)?$', host):
+        if not re.match(r'^https?://[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(:\d+)?(/)?$', host):
             headers = self.headers.copy()
             custom_ua = self.uas.get('host')
             if custom_ua: headers['User-Agent'] = custom_ua

@@ -1,7 +1,8 @@
 //发布页https://www.ddys.site
 var rule = {
     title: '低端影视',
-    host: 'https://ddys.pro',
+    //host: 'https://ddys.pro',
+    host: 'https://ddys.io',
     url: '/fyclass$fypage',
     searchUrl: '/?s=**&post_type=post',
     searchable: 2,
@@ -161,22 +162,22 @@ setResult(d)
                 }
             }
 
-           if (/夸克网盘|视频下载/.test(html)) {
+            if (/夸克网盘|视频下载/.test(html)) {
 
                 var b = [];
-                var quark=pdfa(html,'body&&a[href*="pan.quark.cn"]');
-                var uc=pdfa(html,'body&&a[href*="drive.uc"]');
+                var quark = pdfa(html, 'body&&a[href*="pan.quark.cn"]');
+                var uc = pdfa(html, 'body&&a[href*="drive.uc"]');
                 log(quark)
-                 if(quark.length>=1){
-                b.push("夸克网盘$"+pdfh(quark[0],"a&&href"))
+                if (quark.length >= 1) {
+                    b.push("夸克网盘$" + pdfh(quark[0], "a&&href"))
                 }
-                if(uc.length>=1){
-                b.push("UC网盘$"+pdfh(uc[0],"a&&href"))
+                if (uc.length >= 1) {
+                    b.push("UC网盘$" + pdfh(uc[0], "a&&href"))
                 }
-                
-                 
-                
-                
+
+
+
+
                 LISTS.push(b);
             }
 

@@ -2,10 +2,10 @@
 // 地址发布页 https://cz01.vip
 var rule = {
     title: '厂长资源',
-    //host: 'https://www.czzy88.com',
-    host:'https://www.czzy.site',
+    host: 'https://www.czzymovie.com',
+    //host:'https://www.czzy.site',
     //hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});HOST = html.match(/推荐访问<a href="(.*)"/)[1];print("厂长跳转地址 =====> " + HOST)',
-	hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"li:eq(3)&&a&&href");print(src);HOST=src',
+	//hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"li:eq(3)&&a&&href");print(src);HOST=src',
     url: '/fyclassfyfilter',
     filterable: 1,//是否启用分类筛选,
     filter_url: '{{fl.cateId}}{{fl.class}}{{fl.area}}/page/fypage',
