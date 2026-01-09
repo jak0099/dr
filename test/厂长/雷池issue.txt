@@ -1,0 +1,35 @@
+Request
+POST https://www.cz4k.com/.safeline/challenge/v2/api/issue HTTP/2
+content-length: 61
+sec-ch-ua-platform: "Android"
+user-agent: Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36
+sec-ch-ua: "Android WebView";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+content-type: application/json
+sec-ch-ua-mobile: ?1
+accept: */*
+origin: https://www.cz4k.com
+x-requested-with: com.example.hikerview
+sec-fetch-site: same-origin
+sec-fetch-mode: cors
+sec-fetch-dest: empty
+referer: https://www.cz4k.com/
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+priority: u=1, i
+
+
+{"client_id":"2f3b32367b1041518cb02747d04f72bf_16","level":1}
+--------------------------------------------------------
+
+Response
+HTTP/2 200
+server: Tengine
+date: Wed, 10 Dec 2025 02:13:22 GMT
+content-type: application/json
+content-length: 152
+access-control-allow-headers: Content-Type, Origin, Accept
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-origin: *
+
+{"message":"ok","code":200,"data":{"data":[11,33,90,21,79,36,39,24,37,85,12,41,57,4,29,20,12,95,25,81,96,63,50,70,6,72],"issue_id":"rYgruK7f5CSNxDjU"}}
+

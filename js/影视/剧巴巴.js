@@ -1,100 +1,109 @@
-globalThis.verifyBox = function(HOST, rule) {
-    const firstRes = request(HOST, {
-        headers: rule.headers,
-        withHeaders: true,
-        redirect: false,
-        method: 'GET'
-    });    
-    const res = typeof firstRes === 'string' ? JSON.parse(firstRes) : firstRes;
-    const html = res.body || firstRes;    
-    if (!html.includes('人机验证') && !html.includes('防火墙正在检查您的访问')) {
-        return html;
-    }    
-    const setCookie = res['set-cookie'] || '';
-    let phpsessid = '';    
-    if (Array.isArray(setCookie)) {
-        for (const c of setCookie) {
-            if (c.includes('PHPSESSID')) {
-                phpsessid = c.split(';')[0].trim();
-                break;
-            }
-        }
-    } else if (setCookie.includes('PHPSESSID')) {
-        phpsessid = setCookie.split(';')[0].trim();
-    }    
-    if (phpsessid) {
-        rule.headers.cookie = phpsessid;
-        if (typeof rule_fetch_params !== 'undefined') {
-            rule_fetch_params.headers = {...rule.headers};
-        }
-    }    
-    const tokenMatch = html.match(/var token = encrypt\("([^"]+)"\)/);
-    if (!tokenMatch) return html;    
+globalThis.verifyBox = function(url) {
+    const sendRequest = (requestUrl, options = {}) => {
+        const res = request(requestUrl, {
+            headers: rule.headers,
+            withHeaders: true,
+            redirect: false,
+            method: 'GET',
+            ...options
+        });
+        return typeof res === 'string' ? JSON.parse(res) : res;
+    };
+    
+    const firstRes = sendRequest(url);
+    const html = firstRes.body || firstRes;
+
     const encrypt = (str) => {
-        const staticchars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
-        let encodechars = "";        
-        for (let i = 0; i < str.length; i++) {
-            const idx = staticchars.indexOf(str[i]);
-            const code = idx === -1 ? str[i] : staticchars[(idx + 3) % 62];
-            encodechars += staticchars[Math.floor(Math.random() * 62)] + 
-                          code + 
-                          staticchars[Math.floor(Math.random() * 62)];
-        }        
-        try {
-            return btoa(encodechars);
-        } catch (e) {
-            if (typeof Buffer !== 'undefined') {
-                return Buffer.from(encodechars).toString('base64');
-            }
-            return encodechars;
+        const chars = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN";
+        const len = chars.length;
+        const result = new Array(str.length * 3);
+
+        for (let i = 0, j = 0; i < str.length; i++, j += 3) {
+            const char = str[i];
+            const idx = chars.indexOf(char);
+
+            const r1 = Math.random() * len | 0;
+            const r2 = Math.random() * len | 0;
+
+            result[j] = chars[r1];
+            result[j + 1] = idx === -1 ? char : chars[(idx + 3) % len];
+            result[j + 2] = chars[r2];
         }
-    };    
-    const value = encrypt(HOST);
-    const token = encrypt(tokenMatch[1]);
-    const postData = `value=${value}&token=${token}`;    
-    const verifyRes = request(`${rule.host}/robot.php`, {
+
+        return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(result.join('')));
+    };
+  
+    if (!/人机验证|防火墙正在检查/.test(html)) return html;
+
+    const cookies = firstRes['set-cookie'] || [];
+    const cookieArr = Array.isArray(cookies) ? cookies : [cookies];
+    const phpsessid = cookieArr.find(c => c?.includes('PHPSESSID'))?.split(';')[0]?.trim();
+
+    const tokenMatch = html.match(/var token = encrypt\("([^"]+)"\)/);
+    const key = tokenMatch ? tokenMatch[1] : '';
+
+    const value = encrypt(url);
+    const token = encrypt(key);
+    const data = 'value=' + value + "&token=" + token;
+    const yz_url = rule.host + '/robot.php';
+
+    const verifyRes = sendRequest(yz_url, {
         headers: {
-            ...rule.headers,
             'content-type': 'application/x-www-form-urlencoded',
             'origin': rule.host,
-            'referer': HOST
+            'referer': rule.host,
+            'cookie': phpsessid || ''
         },
         withHeaders: true,
         method: 'POST',
-        body: postData
-    });    
-    const verifyJson = typeof verifyRes === 'string' ? JSON.parse(verifyRes) : verifyRes;
-    let verifyBody;    
-    if (typeof verifyJson.body === 'string') {
-        try {
-            verifyBody = JSON.parse(verifyJson.body);
-        } catch {
-            verifyBody = {msg: 'error'};
-        }
-    } else {
-        verifyBody = verifyJson.body || verifyJson;
-    }    
-    if (verifyBody.msg === 'ok') {
+        body: data
+    });
+
+    const verifyData = verifyRes.body || verifyRes;
+    let verifyMsg = verifyData;  
+    if (typeof verifyData === 'string') {
+        verifyMsg = JSON.parse(verifyData);
+    }
+
+    if (verifyMsg.msg === 'ok') {
         const start = Date.now();
-        while (Date.now() - start < 1500) {}        
-        const finalRes = request(HOST, {
-            headers: rule.headers,
+        while (Date.now() - start < 1000) {
+            // 空循环，等待1秒
+        }
+
+        const finalRes = request(url, {
+            headers: {
+                'cookie': phpsessid || ''
+            },
             withHeaders: false,
             redirect: false,
             method: 'GET'
-        });        
+        });
+
         return typeof finalRes === 'string' ? finalRes : (finalRes.body || finalRes);
-    }    
+    }
+
     return html;
 };
+
 
 var rule = {
     类型: '影视',
     title: '剧巴巴',
-    //host: 'https://www.jubaba.vip',
-    host: 'https://www.jubaba.cc',
+    host: 'https://www.jubaba.vip',
+    //host: 'https://www.jubaba.cc',
     //hostJs: 'let html=request(HOST,{headers:{"User-Agent":MOBILE_UA}}); let src= jsp.pdfh(html,".content-top&&a:eq(0)&&href");HOST=src',
-    headers: {'User-Agent': 'MOBILE_UA'},
+    hostJs: $js.toString(() => {
+        rule.headers = rule.headers || {};
+        let Html = globalThis.verifyBox(HOST);
+        const src = jsp.pdfh(Html, "a&&href");
+        if (src && src.startsWith("http")) {
+            HOST = src;
+        }
+    }),
+    headers: {
+        'User-Agent': 'MOBILE_UA'
+    },
     编码: 'utf-8',
     timeout: 5000,
     homeUrl: '/',
@@ -118,12 +127,12 @@ var rule = {
             click: pclick
         }
     }),*/
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",    
+    lazy: "js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     limit: 9,
     double: false,
     推荐: '.lazyload;.lazyload&&title;.lazyload&&data-original;.text-right&&Text;a&&href',
     一级: $js.toString(() => {
-        let html = globalThis.verifyBox(input, rule);
+        let html = globalThis.verifyBox(MY_URL);
         let d = [];
         let list = pdfa(html, '.ewave-vodlist li');
         list.forEach(it => {
@@ -131,7 +140,7 @@ var rule = {
             let href = pdfh(it, 'a.thumb-link&&href');
             let pic = pdfh(it, '.ewave-vodlist__thumb&&data-original');
             let remark = pdfh(it, '.pic-text&&Text') || '';
-            let score = pdfh(it, '.pic-tag-h&&Text') || '';            
+            let score = pdfh(it, '.pic-tag-h&&Text') || '';
             d.push({
                 title: title,
                 img: pic,

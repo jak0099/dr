@@ -10,6 +10,7 @@ var rule = {
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
+    limit: 9,
     filter: {
         "1": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部", "v": "" }, { "n": "科幻", "v": "科幻" }, { "n": "剧情", "v": "剧情" }, { "n": "惊悚", "v": "惊悚" }, { "n": "爱情", "v": "爱情" }, { "n": "古装", "v": "古装" }, { "n": "动作", "v": "动作" }, { "n": "伦理", "v": "伦理" }, { "n": "悬疑", "v": "悬疑" }, { "n": "犯罪", "v": "犯罪" }, { "n": "谍战", "v": "谍战" }, { "n": "历史", "v": "历史" }, { "n": "喜剧", "v": "喜剧" }, { "n": "奇幻", "v": "奇幻" }, { "n": "家庭", "v": "家庭" }, { "n": "青春", "v": "青春" }, { "n": "冒险", "v": "冒险" }, { "n": "纪录", "v": "纪录" }, { "n": "动画", "v": "动画" }, { "n": "人物", "v": "人物" }, { "n": "文化", "v": "文化" }, { "n": "其他", "v": "其他" }] }, { "key": "地区", "name": "地区", "value": [{ "n": "全部", "v": "" }, { "n": "中国大陆", "v": "中国大陆" }, { "n": "中国香港", "v": "中国香港" }, { "n": "中国台湾", "v": "中国台湾" }, { "n": "美国", "v": "美国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "泰国", "v": "泰国" }, { "n": "英国", "v": "英国" }, { "n": "法国", "v": "法国" }, { "n": "德国", "v": "德国" }, { "n": "意大利", "v": "意大利" }, { "n": "印度", "v": "印度" }, { "n": "马来西亚", "v": "马来西亚" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }, { "n": "2009", "v": "2009" }, { "n": "2008", "v": "2008" }, { "n": "2007", "v": "2007" }, { "n": "2006", "v": "2006" }, { "n": "2005", "v": "2005" }, { "n": "2004", "v": "2004" }, { "n": "2003", "v": "2003" }, { "n": "2002", "v": "2002" }, { "n": "2001", "v": "2001" }, { "n": "2000", "v": "2000" }, { "n": "90年代", "v": "90年代" }, { "n": "80年代", "v": "80年代" }, { "n": "70年代", "v": "70年代" }, { "n": "其他", "v": "其他" }] }, { "key": "语言", "name": "语言", "value": [{ "n": "全部", "v": "" }, { "n": "普通话", "v": "普通话" }, { "n": "粤语", "v": "粤语" }, { "n": "英语", "v": "英语" }, { "n": "日语", "v": "日语" }, { "n": "韩语", "v": "韩语" }, { "n": "泰语", "v": "泰语" }, { "n": "法语", "v": "法语" }, { "n": "俄语", "v": "俄语" }, { "n": "德语", "v": "德语" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "最新", "v": "time" }, { "n": "最热", "v": "hits_week" }, { "n": "高分", "v": "score" }] }],
         "2": [{ "key": "类型", "name": "类型", "value": [{ "n": "全部", "v": "" }, { "n": "爱情", "v": "爱情" }, { "n": "古装", "v": "古装" }, { "n": "悬疑", "v": "悬疑" }, { "n": "都市", "v": "都市" }, { "n": "喜剧", "v": "喜剧" }, { "n": "战争", "v": "战争" }, { "n": "剧情", "v": "剧情" }, { "n": "青春", "v": "青春" }, { "n": "历史", "v": "历史" }, { "n": "网剧", "v": "网剧" }, { "n": "奇幻", "v": "奇幻" }, { "n": "冒险", "v": "冒险" }, { "n": "励志", "v": "励志" }, { "n": "犯罪", "v": "犯罪" }, { "n": "商战", "v": "商战" }, { "n": "恐怖", "v": "恐怖" }, { "n": "穿越", "v": "穿越" }, { "n": "农村", "v": "农村" }, { "n": "人物", "v": "人物" }, { "n": "商业", "v": "商业" }, { "n": "生活", "v": "生活" }, { "n": "其他", "v": "其他" }] }, { "key": "地区", "name": "地区", "value": [{ "n": "全部", "v": "" }, { "n": "中国大陆", "v": "中国大陆" }, { "n": "中国香港", "v": "中国香港" }, { "n": "中国台湾", "v": "中国台湾" }, { "n": "美国", "v": "美国" }, { "n": "日本", "v": "日本" }, { "n": "韩国", "v": "韩国" }, { "n": "泰国", "v": "泰国" }, { "n": "英国", "v": "英国" }, { "n": "法国", "v": "法国" }, { "n": "德国", "v": "德国" }, { "n": "意大利", "v": "意大利" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }, { "n": "2019", "v": "2019" }, { "n": "2018", "v": "2018" }, { "n": "2017", "v": "2017" }, { "n": "2016", "v": "2016" }, { "n": "2015", "v": "2015" }, { "n": "2014", "v": "2014" }, { "n": "2013", "v": "2013" }, { "n": "2012", "v": "2012" }, { "n": "2011", "v": "2011" }, { "n": "2010", "v": "2010" }, { "n": "2009", "v": "2009" }, { "n": "2008", "v": "2008" }, { "n": "2007", "v": "2007" }, { "n": "2006", "v": "2006" }, { "n": "2005", "v": "2005" }, { "n": "2004", "v": "2004" }, { "n": "2003", "v": "2003" }, { "n": "2002", "v": "2002" }, { "n": "2001", "v": "2001" }, { "n": "2000", "v": "2000" }, { "n": "90年代", "v": "90年代" }, { "n": "80年代", "v": "80年代" }, { "n": "70年代", "v": "70年代" }, { "n": "其他", "v": "其他" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "最新", "v": "time" }, { "n": "最热", "v": "hits_week" }, { "n": "高分", "v": "score" }] }],
@@ -26,9 +27,33 @@ var rule = {
     class_parse: '.head-nav li;a&&Text;a&&href;/(\\d+)\.html',
     play_parse: true,
     lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input;\n  }",  
-    double: true,
-    //推荐: '.box-width .public-list-box;body;.public-list-div a&&title;.public-list-div img&&data-src;.public-list-div .public-list-prb&&Text;.public-list-div a&&href',
-    推荐: '.slide-time-bj;body;.this-desc-title&&Text;.slide-time-img3&&style;.this-desc-info span:eq(3)&&Text;a&&href;.this-desc-item&&Text',
+    double: false,
+    预处理: $js.toString(() => {
+        rule_fetch_params.headers.Cookie = 'cookie';
+        let new_html = request(MY_URL);
+        if (/安全防护系统|本网站目前正遭受CC攻击/.test(new_html)) {
+                let new_src = pd(new_html,'script&&src',HOST);        
+                let hhtml = request(new_src, {withHeaders: true});
+                let json = JSON.parse(hhtml);
+                let scriptHtml = json.body;
+                let key = scriptHtml.split('key="')[1]?.split('"')[0] || '';
+                let value = scriptHtml.split('value="')[1]?.split('"')[0] || '';
+                let val = '';
+                for (let i = 0; i < value.length; i++) {
+                    val += (value.charCodeAt(i) + 1).toString();
+                }
+                let md5value = md5(val);
+                let yz_url = HOST + '/_waf/_6dfde0453966df39eb204b4ed05b317a.sjs?type=ad82060c2e67cc7e2cc47552a4fc1242&key=' + key + '&value=' + md5value;
+                hhtml = request(yz_url, { withHeaders: true});
+                json = JSON.parse(hhtml);
+                let setCk = Object.keys(json).find(it => it.toLowerCase() === 'set-cookie');
+                let cookie = setCk ? json[setCk].split(';')[0] : '';
+                rule_fetch_params.headers.Cookie = cookie;                
+                setItem(RULE_CK, cookie);
+            }
+    }),
+    推荐: '.public-list-div.public-list-bj;.public-list-div a&&title;.public-list-div img&&data-src;.public-list-div .public-list-prb&&Text;.public-list-div a&&href',
+    //推荐: '.slide-time-bj;body;.this-desc-title&&Text;.slide-time-img3&&style;.this-desc-info span:eq(3)&&Text;a&&href;.this-desc-item&&Text',
     一级: '.flex.wrap.border-box.public-r .public-list-box;.public-list-button a.time-title&&Text;.public-list-bj img&&data-src;.public-list-bj .public-list-prb&&Text;.public-list-button a.time-title&&href',
     二级: {
         title: '.slide-desc-box .this-desc-title&&Text;.gen-search-form li:eq(6)&&Text',

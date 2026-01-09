@@ -1,0 +1,1395 @@
+Request
+GET https://www.cz4k.com/ HTTP/2
+cache-control: max-age=0
+sec-ch-ua: "Android WebView";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+sec-ch-ua-mobile: ?1
+sec-ch-ua-platform: "Android"
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+x-requested-with: com.example.hikerview
+sec-fetch-site: same-origin
+sec-fetch-mode: navigate
+sec-fetch-dest: document
+referer: https://www.cz4k.com/
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+cookie: sl-challenge-server=local
+cookie: myannoun=1
+cookie: sl-session=vjONU8AoOmnBY38cqqcjZg==
+cookie: sl-challenge-jwt=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiIyZjNiMzIzNjdiMTA0MTUxOGNiMDI3NDdkMDRmNzJiZl8xNiIsImlhdCI6MTc2NTMzMjgwMywibGV2ZWwiOjF9.fMebmfap1uGuxehXtWGIkhRzfYhSO_yKYXZy5bu9lKgcR5I7hxH_4IE-jncGhN9BhOkiajxNClhIw0qkRgCgCQ
+priority: u=0, i
+
+
+
+--------------------------------------------------------
+
+Response
+HTTP/2 200
+server: Tengine
+date: Wed, 10 Dec 2025 02:13:26 GMT
+content-type: text/html;charset=UTF-8
+last-modified: Tue, 09 Dec 2025 16:17:18 GMT
+vary: Accept-Encoding
+cache-control: public, max-age=3600
+x-hyper-cache: hit - gzip
+content-encoding: gzip
+strict-transport-security: max-age=31536000
+strict-transport-security: max-age=15768000;
+set-cookie: sl_jwt_session=okolaIZKzP+4ji7nGjxckqOHXqKAGZNPgTcUe5GNRGLqxKrg9GFLOMtJe8AoCO9s;SameSite=None; Secure; Path=/; Max-Age=86400; HttpOnly
+set-cookie: sl_jwt_sign=okolaIZKzP+4ji7nGjxcksh/pe5lYsX1YIWahbt6z37y0YT3oBrkiDayGx8vrKbS5MQJolc9JtltRk9jUNnanvrutxfu4pBzOl2F100z7qlk38L6c5vHCb7sh/Fo5cqe;SameSite=None; Secure; Path=/; Max-Age=86400; HttpOnly
+set-cookie: sl-challenge-jwt=; Domain=; Path=/; Max-Age=1
+
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="format-detection" content="telephone=no"/>
+<!--<meta name="apple-mobile-app-status-bar-style" content="black" />-->
+<!--<meta name="apple-touch-fullscreen" content="YES" />-->
+<!--<meta name="apple-mobile-web-app-capable" content="yes" />-->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="keywords" content="厂长资源,厂长资源官网">
+<meta name="description" content="厂长资源(CZZY)为您提供海量1080p经典影视免费观看！">
+<link rel="icon" href="https://cf.hbcn.fun/wp-content/uploads/2021/10/5c7a67356cec28.ico" type="image/x-icon" />
+<title>厂长资源 &#8211; 厂长影视官网 | 超清视频站</title>
+<link rel='dns-prefetch' href='//cf.hbcn.fun' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://cf.hbcn.fun/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ele-index-css-css'  href='https://cf.hbcn.fun/wp-content/themes/mibt/assets/css/index.css?ver=1.26' type='text/css' media='' />
+<link rel='stylesheet' id='style-css'  href='https://cf.hbcn.fun/wp-content/themes/mibt/style.css?ver=2.2' type='text/css' media='' />
+<link rel='stylesheet' id='flaticon-css'  href='https://cf.hbcn.fun/wp-content/themes/mibt/assets/fonts/flaticon.css' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css'  href='https://cf.hbcn.fun/wp-content/themes/mibt/assets/css/swiper.min.css' type='text/css' media='' />
+<script type='text/javascript' src='https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.js?ver=3.6.0-cdn'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/vue.min.js'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/index.js'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/axios.min.js'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/qs.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var um = {"wp_url":"https:\/\/www.cz4k.com","endpoint_value":"slug","endpoint":"download","ajax_url":"https:\/\/www.cz4k.com\/wp-admin\/admin-ajax.php","zhuce":"\u6ce8\u518c","denglu":"\u767b\u5f55","congzhimima":"\u91cd\u7f6e\u5bc6\u7801","wangjimima":"\u5fd8\u8bb0\u5bc6\u7801\uff1f","member":"\u8fd8\u6ca1\u6709\u5e10\u6237\uff1f","member_yy":"\u5df2\u6709\u5e10\u6237\uff1f","email":"\u90ae\u7bb1","username":"\u7528\u6237\u540d","success":"\u6210\u529f","password":"\u5bc6\u7801","password_em":"\u8bf7\u8f93\u5165\u4f60\u7684\u5bc6\u7801","password_le":"\u5bc6\u7801\u4e0d\u80fd\u5c11\u4e8e6\u4f4d","password_le_c":"\u5bc6\u7801\u4e0d\u80fd\u5927\u4e8e16\u4f4d","password_zhi":"\u4e24\u6b21\u5bc6\u7801\u4e0d\u4e00\u81f4","invitecode":"\u9080\u8bf7\u7801","invitecode_cd":"\u8bf7\u8f93\u5165\u9080\u8bf7\u7801","invitecode_er":"\u9080\u8bf7\u7801\u9519\u8bef","sendtips":"\u8bf7\u8f93\u5165\u90ae\u7bb1\u5730\u5740\uff0c\u6211\u4eec\u5c06\u53d1\u9001\u91cd\u8bbe\u5bc6\u7801\u94fe\u63a5\u81f3\u8be5\u90ae\u7bb1\u3002","tips_email":"\u8bf7\u8f93\u5165\u90ae\u7bb1","tips_email_c":"\u90ae\u7bb1\u5730\u5740\u4e0d\u6b63\u786e","tips_username":"\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a","tips_username_le":"\u7528\u6237\u540d\u4e0d\u80fd\u5c11\u4e8e4\u4e2a\u5b57\u7b26","tips_username_le_not":"\u7528\u6237\u540d\u4e0d\u80fd\u8d85\u8fc718\u4e2a\u5b57\u7b26","tips_username_le_zi":"\u7528\u6237\u540d\u53ea\u80fd\u662f\u82f1\u6587\u5b57\u6bcd\u6216\u6570\u5b57","tips_username_le_zf":"\u7528\u6237\u540d\u5305\u542b\u975e\u6cd5\u5b57\u7b26","sendemali":"\u90ae\u4ef6\u5df2\u53d1\u9001\u6210\u529f","watch":"\u89c2\u770b\u81f3","clear":"\u6e05\u7a7a\u8bb0\u5f55","part":"\u7b2c","ji":"\u96c6","loadingmessage":"\u4e0b\u8f7d\u5730\u5740\u9519\u8bef\uff0c\u5237\u65b0\u9875\u9762\u91cd\u8bd5\uff01"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/components.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/jquery.lazyload.min.js'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/swiper.min.js'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/assets/js/mibt_mi.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='https://www.cz4k.com/api/' />
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #222222; }
+</style>
+	<link rel="icon" href="https://gimg0.baidu.com/gimg/app=2001&#038;n=0&#038;g=0n&#038;fmt=jpeg&#038;src=img.czzy66.com/2020/05/cropped-90b07fe57d6142-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://gimg0.baidu.com/gimg/app=2001&#038;n=0&#038;g=0n&#038;fmt=jpeg&#038;src=img.czzy66.com/2020/05/cropped-90b07fe57d6142-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://gimg0.baidu.com/gimg/app=2001&#038;n=0&#038;g=0n&#038;fmt=jpeg&#038;src=img.czzy66.com/2020/05/cropped-90b07fe57d6142-180x180.png" />
+<meta name="msapplication-TileImage" content="https://gimg0.baidu.com/gimg/app=2001&#038;n=0&#038;g=0n&#038;fmt=jpeg&#038;src=img.czzy66.com/2020/05/cropped-90b07fe57d6142-270x270.png" />
+<style type="text/css" media="screen">
+            html { margin-top: 0px !important; }
+            * html body { margin-top: 0px !important; }
+            </style>
+ <style type="text/css">.zoom-icon{display:none !important;}
+.dm_barrage_play{display:none;} </style> <style type="text/css">	
+ .ad iframe{margin:0 auto !important;display:block;}
+  .ad .mi_ne_kd>div>div{max-width: 100%;}
+  .adbar{top: 13px;}
+ </style>
+</head>
+<body class="home blog custom-background">
+	<header id="header" class="nav">
+		<div class="mikd">
+			<template>
+			<el-row>
+			 <el-col :xs="3" :sm="3" :md="16" :lg="16" :xl="16">
+					<div class="navtop">
+						<div class="logo hidden-md-and-down">
+							<a href="https://www.cz4k.com/">
+														<img src="https://cf.hbcn.fun/wp-content/uploads/2021/08/19dc1c424e7c33-e1695868187732.png" alt="厂长资源">
+							</a>
+						</div>
+					   <div class="caidan" v-on:click="caidanshow" v-bind:class="{xxc:caidan_visi}">
+						   	<div class="liange">
+						   		<img src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/caid.png">
+						   	</div>
+					   		<div class="chage"><i class="glyph-icon flaticon-cancel30"></i></div>
+					    </div>
+
+						<ul class="navlist hidden-md-and-down" ref="navlist" v-bind:class="{ navshow: caidan_visi }">
+											      		<!-- Nav cached 2025-12-09 18:20:43 --><li id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-33"><a href="/" aria-current="page">首页</a></li>
+<li id="menu-item-7375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7375"><a href="/dbtop250">豆瓣电影Top250</a></li>
+<li id="menu-item-6889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6889"><a href="/zuixindianying">最新电影</a></li>
+<li id="menu-item-17798" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17798"><a href="/dongmanjuchangban">剧场版</a></li>
+<li id="menu-item-17795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17795"><a href="/gcj">国产剧</a></li>
+<li id="menu-item-16951" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16951"><a href="/meijutt">美剧</a></li>
+<li id="menu-item-16950" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16950"><a href="/hanjutv">韩剧</a></li>
+<li id="menu-item-8161" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8161"><a href="/fanju">番剧</a></li>
+<!-- Nav cache end -->				        </ul>
+					</div>
+			</el-col>
+			<el-col :xs="15" :sm="16" :md="5" :lg="5" :xl="5">
+				<div class="souuo">
+					 			<div id="sosuobox">
+			<form class="w-search-form show_hidden" action="https://www.cz4k.com/boss1O1" style="margin-top:4px;">
+				<input class="soiput" type="text" value="" id="s" name="q" placeholder="电影名称/明星/导演/年份">
+			<button type="submit" class="souicon"><i class="glyph-icon flaticon-magnifying-glass32"></i></button>
+			</form>
+		</div>
+
+
+				</div>
+			</el-col>
+
+					<el-col :xs="6" :sm="5" :md="3" :lg="3" :xl="3">
+			<div class="topuserbox">
+				
+				<div class="dla ndb">
+						<history-wc></history-wc>
+					<a class="updlbox" v-on:click="dlbox('dl')">登录</a>
+					
+				</div>
+
+				
+
+			
+			</div>
+		</el-col>
+			
+	</el-row>
+	</template>
+		</div>
+			<template>
+				<login-register v-bind:loginvisible="loginvisible" v-bind:loginfo="loginfo" @change-visible="changeLoginVisible"></login-register>
+			</template>
+
+	
+			<el-dialog
+			title="公告通知-最新发布页www.cz01.vip"			  :visible.sync="dialogVisible"
+			  :append-to-body=true
+			  :center=true
+			  custom-class="biggaonggao"
+			  :before-close="closeannoun(0)"
+			  :close-on-click-modal=false
+			  width="30%">
+			  <div class="gongcont"><div class="popup-main">
+<p style="font-size:18px;color:red"><b>以往的域名都已失效，由于不可避免，部分域名已被劫持、污染、损坏等！</b></p>
+<p>易记域名CZ01.TV
+<p>推荐访问:www.cz4k.com
+<p>推荐访问:www.czzymovie.com
+<p>近期可能有一些动漫访问不了，在维护中
+<p>本站部分地区已被恶意劫持跳转，为保证正常访问本站，请将本地DNS设为223.5.5.5与119.29.29.29</p>
+</div></div>
+			</el-dialog>
+			
+		
+	</header>
+<style type="text/css">
+	.biggaonggao{background-color:#010101;}
+	.biggaonggao .el-dialog__title{color:#FFFFFF;}
+	.biggaonggao .gongcont{color:#FFFFFF;}
+	
+</style>
+
+<script type="text/javascript">
+		
+	 new Vue({
+	      el: '#header',
+	      data: function() {
+	        return { 
+	        	visible: false,
+	        	caidan_visi:false,
+	        	loginvisible:{isregister:false,status:false,invitecode:false},
+	        	loginfo:{
+	        		cant_register:true,
+	        		wpnonce:"67c05192d5",
+	        		is_invitecode: false,
+	        	},
+	        	dialogVisible:true,
+	        	sosodata:'',
+	        	soselect:'2',
+	         }
+	     	},
+	     	components:{'login-register':loginRegister,'history-wc':historywc},
+	     	created:function(){
+	     		var myck=this.getCookie('myannoun')
+	     		if(myck==1){
+	     			this.dialogVisible=false
+	     		}
+	     	},
+	     	methods:{
+		        dlbox(type){
+            	   if(type=='zc'){
+	                  this.loginvisible.isregister=true;
+	              }
+	              this.loginvisible.status=true;
+	            },
+		        changeLoginVisible(status){
+            		this.loginvisible.status=status;
+           		},
+		          handleCommand(command) {
+				        window.location.href = command;
+				 },
+				caidanshow(){
+				 	if(this.caidan_visi){
+				 		this.caidan_visi=false;
+				 	}else{
+				 		this.caidan_visi=true;
+				 	}
+					 	
+				},
+				closeannoun(ex){
+					//var tt=(new Date()).valueOf();//当前时间戳	
+					var c=this.getCookie('myannoun')
+					if(c != 1){
+						if(ex==0){
+				        	ex=24*365;
+				        }
+						this.setCookie('myannoun','1',ex*1000*60*60)
+					}
+					
+				},
+				setCookie(name, val, et){
+					//et 单位为秒
+			        var exp = new Date();
+			        exp.setTime(exp.getTime() + et);
+			        document.cookie = name + "=" + val + ";expires=" + exp.toUTCString() + ";path=/"
+				},
+				getCookie(name) {
+			        var cookies = document.cookie.split(";");
+			        for (var i = 0; i < cookies.length; i++) {
+			            var cookieArray = cookies[i].split("=");
+			            if (cookieArray[0].trim() == name) {
+			                return cookieArray[1]
+			            }
+			        }
+			        return ""
+			    }
+
+			}
+	});
+
+</script>
+<script type="text/javascript">
+<!--
+if (top.location != self.location)top.location=self.location;
+// -->
+</script>
+<div class="top_hdp" style="margin-top: 50px;">
+	<div class="mikd" id="hdphome">
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+						    	<div class="swiper-slide">
+		    		<a href="/movie/20294.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/02/f62e5c62006861-360x528.jpeg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="https://www.kw59.me" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=imgfs.oppo.cn/uploads/thread/attachment/2025/07/10/1752159162495765651.gif" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/9164.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2021/01/41abe4d0564168-360x528.jpeg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/20271.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/02/6b95d607968473-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/11030.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/01/098330dbcc8f70-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/20027.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/01/086504aed2828728707a6e7779a30c80-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/11176.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/01/6061afa65f8d51-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/7546.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/10/d63bbfddce036-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/9244.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/10/8e4c7ef40c4061-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    	<div class="swiper-slide">
+		    		<a href="/movie/886.html" target="_blank" rel="nofollow">
+		    			<img class="coveimg swiper-lazy" data-src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/09/b81569ce398051-360x528.jpg" >
+		    			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		    					    		</a>
+		    	</div>
+						    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination swiper-pagination-white"></div>
+		    
+		    <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev swiper-button-white"></div>
+		    <div class="swiper-button-next swiper-button-white"></div>
+		</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 6,
+      spaceBetween: 5,
+      // centeredSlidesBounds: true,
+      // centeredSlides : true,
+      lazy: {
+	    loadPrevNext: true,
+	  },
+	  autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      // init: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 5,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 5,
+        },
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 5,
+        },
+      }
+    });
+</script>
+<style>
+  .swiper-slide{
+    width:auto;/*根据内容调整宽度*/
+  }
+</style>
+
+<!-- <div class="heishou"></div> -->
+	<div class="mi_tag mikd">
+	<div class="v-sort-nav">
+		<div class="ct follow-align">
+				<ul class="submenu_mi">
+				<!-- Nav cached 2025-12-09 18:20:43 --><li id="menu-item-6881" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6881"><a href="/gonggao">关于本站-公告</a></li>
+<li id="menu-item-21542" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21542"><a href="/movie_bt/">分类筛选</a></li>
+<li id="menu-item-6885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6885"><a href="/meijutt">美剧</a></li>
+<li id="menu-item-6884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6884"><a href="/riju">日剧</a></li>
+<li id="menu-item-6883" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6883"><a href="/hanjutv">韩剧</a></li>
+<li id="menu-item-7733" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7733"><a href="/fanju">番剧</a></li>
+<li id="menu-item-16949" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16949"><a href="/gcj">国产剧</a></li>
+<li id="menu-item-17797" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17797"><a href="/dongmanjuchangban">剧场版</a></li>
+<li id="menu-item-6882" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6882"><a href="/haiwaijuqita">海外剧</a></li>
+<li id="menu-item-18767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18767"><a href="/wangzhanliuyan">求片须知</a></li>
+<li id="menu-item-12859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12859"><a href="https://www.czzy.site/">厂长资源备用地址：www.czzy.site 欢迎大家分享给身边朋友！为确保正常观看，请使用谷歌浏览器。</a></li>
+<li id="menu-item-13714" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13714"><a href="https://t.me/+jY1P9DyaMNozN2M1">Telegram 官方群：点此加入（需魔法）</a></li>
+<!-- Nav cache end -->				</ul>
+			</div>
+	      	</div>
+	</div>
+<div class="mikd">
+  <div class="mi_cont">
+    <div class="mi_btcon ad" style="padding-bottom:0; border-bottom: none;">
+        <div class="mi_ne_kd">
+	      <div class="module-adslist module-wrapper ads_w">
+<a target="_blank" href="https://www.kw59.me"><img src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=imgfs.oppo.cn/uploads/thread/attachment/2025/07/10/1752158924166771148.gif" alt="CC" width="85%">
+<i class="gg-icon"></i></a></div>	</div>
+    </div>
+     </div>
+</div>
+
+<div class="mikd">
+	<div class="mi_cont">
+		
+	
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="/movie_bt">厂长推荐</a><i class="fa"></i></h2>
+														<a href="/movie_bt" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/20294.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="峡谷" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/02/f62e5c62006861-270x380.jpeg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20294.html">峡谷</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20271.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="善意的竞争" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/02/6b95d607968473-270x380.jpg">	 <div class="jidi"><span>全16集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+<div class="rating">9.3</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20271.html">善意的竞争</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/9164.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="人生切割术第二季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2021/01/41abe4d0564168-270x380.jpeg">	 <div class="jidi"><span>全10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/9164.html">人生切割术第二季</a></h3>
+            <p class="inzhuy">
+            主演：            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20447.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="苦尽柑来遇见你" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/03/a2b4a81644f579e51514ce2320e8c8bc-270x380.jpg">	 <div class="jidi"><span>全16集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+<div class="rating">9.3</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20447.html">苦尽柑来遇见你</a></h3>
+            <p class="inzhuy">
+            主演：李知恩,朴宝剑,文素利,朴解浚,廉惠兰,吴正世,罗文姬,金容琳,吴敏爱,郑海钧,金宣虎,金成铃,金太延,李天茂,严志媛,车美京,白智媛,崔代勋,张慧珍,郑熙俊,安津罗森,李濬荣,郑伊书,尹瑞妍,文宇振,李秀卿,李秀美,徐惠媛,柳炳勋,黃在烈,姜末琴,申美英,金佳熙,李美度            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20034.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="我独自升级第二季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/01/0d5066c68f3a36-270x380.jpg">	 <div class="jidi"><span>全13集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20034.html">我独自升级第二季</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/19042.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="京城怪物第二季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2024/09/0b210d9122dd6c1dc034df8e00761ca8-270x380.jpg">	 <div class="jidi"><span>全7集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/19042.html">京城怪物第二季</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="/movie_bt">近日更新</a><i class="fa"></i></h2>
+														<a href="/movie_bt" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd newindex">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/22856.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="风与潮" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/61f4109eaf04b5ff9c8fa233cab4dc80-270x380.jpg">	 <div class="jidi"><span>更新至4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22856.html">风与潮</a></h3>
+            <p class="inzhuy">
+            主演：任嘉伦,蓝盈莹,李纯,谭凯,马启越,王放,赵润南,梁大维,宋文作,谭泉,李嘉鑫,王艺蒙 ,浩歌,胡明,朱铁,徐嘉雯,王今心,韩立,楚布花羯,果靖霖,高捷,姚安濂,刘思翰,聂子一,姜寒,金梦翼,周洛欣,邱云鹤            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22854.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="超感迷宫" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/ca7ffa32623134ee20886358312afb56-270x380.jpg">	 <div class="jidi"><span>更新至4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22854.html">超感迷宫</a></h3>
+            <p class="inzhuy">
+            主演：段奕宏,窦骁,王佳佳,吕星辰,安悦溪,李晟,胡海锋,张兆辉,刘金山,马吟吟,郑湫泓,李逸男,郑楚一,蔡心,丹琳,牛飘,马柏全,赵润南            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/5834.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="链锯人 剧场版：蕾塞篇" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2021/02/ae3906c5235b7-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">剧场版</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/5834.html">链锯人 剧场版：蕾塞篇</a></h3>
+            <p class="inzhuy">
+            主演：            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8941.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="陆海之战" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2015/12/506275b1428e3-270x380.jpg">	 <div class="jidi"><span>更新至2集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8941.html">陆海之战</a></h3>
+            <p class="inzhuy">
+            主演：拉塞尔·托维,古古·姆巴塔-劳,柯林·麦克法兰,吉玛·雷德格里夫,鲁思·马德利,亚历山大・德弗伦特,帕特里克·巴拉迪,乔治·罗宾森,弗朗西斯卡·科尼,Mei Mac,John Addison,Shanice Archer,曼普利特·巴楚,Quanna Luo Masterson,Alex Jaden Lee            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22849.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="斯巴达克斯：亚述家族" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/c1053ce15b699382fd8ef714e1b38141-270x380.jpg">	 <div class="jidi"><span>更新至2集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22849.html">斯巴达克斯：亚述家族</a></h3>
+            <p class="inzhuy">
+            主演：尼克·塔拉贝,格拉汉姆·麦克塔维什,特妮卡·戴维斯,乔·戴维森,卡梅隆·罗德,露西·劳莱丝,伊万娜·巴克罗,乔治·韦伯,克劳迪娅·布莱克,杰克森·加拉格,西蒙·阿布拉斯特,丹尼尔·博斯,迈基·汤普森,斯蒂芬·马德森,伊登·哈特,贾梅卡·沃恩,丹·哈米尔,安德鲁·麦克法兰,印迪娅·肖-史密斯,海梅·斯莱特            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22845.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="狙击蝴蝶" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/da1eae6de8256a7cf5244f4183c35c1c-270x380.jpg">	 <div class="jidi"><span>更新至14集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22845.html">狙击蝴蝶</a></h3>
+            <p class="inzhuy">
+            主演：陈妍希,周柯宇,刘芮麟,陈小纭,谢兴阳,程雅昭,杨昆,施京明            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22544.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="创：战神" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/14891ddd2c73710645ff79e293e84e1e-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">6.2</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22544.html">创：战神</a></h3>
+            <p class="inzhuy">
+            主演：杰瑞德·莱托,格蕾塔·李,埃文·彼得斯,朱迪·特纳-史密斯,吉莲·安德森,杰夫·布里吉斯,哈桑·明哈杰,阿图罗·卡斯特罗,卡梅隆·莫纳汉,莎拉·德贾斯丁,亚伦·保罗·斯图尔特,罗杰·R.克劳斯,罗克·克里切洛,凯瑟琳·伊莎贝尔,加里·维纳查克,科维西·阿梅扬,罗宾·罗伯茨,卡拉·斯威舍,李飞飞,桑迪·罗布森,塞琳娜·云,米卢·金,纳尔莎·金,莎琳·费迪南德,杰森·特朗布莱,卡梅伦·帕克,肯尼斯·塞托·泰南,布拉德·哈德,扎赫拉·阿拉尼,杰伊·杜兰特            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22839.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="即刻上场" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/c2548b3bd0ed17-270x380.jpeg">	 <div class="jidi"><span>全24集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22839.html">即刻上场</a></h3>
+            <p class="inzhuy">
+            主演：胡先煦,周依然,何蓝逗,加奈那,李乐,黄婷婷,王锵,刘海宽,柳岩,袁文康,孙淳,杨玏,张晞临,黄圣池,刘思远            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22836.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="天书黎明" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/2f38c77af6c215-270x380.jpg">	 <div class="jidi"><span>更新至21集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22836.html">天书黎明</a></h3>
+            <p class="inzhuy">
+            主演：李宏毅,苏晓彤,余承恩,王子璇,于翔,彭雅琦,宋家腾,戴燕妮,金珈,钱波,高冬平,孟路明            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8930.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="铁血战士：杀戮之地" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2024/12/ea618f75317f4-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">7.4</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8930.html">铁血战士：杀戮之地</a></h3>
+            <p class="inzhuy">
+            主演：艾丽·范宁,迪米特里乌斯·舒斯特-科洛阿玛坦吉,卡梅伦·布朗,鲁本·德容,迈克尔·霍米克,罗希纳尔·纳亚兰,艾莉森·赖特,罗斯·达菲,马特·达菲,Stefan Grube            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_series/dyy">近日更新(电影)</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_series/dyy" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/5834.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="链锯人 剧场版：蕾塞篇" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2021/02/ae3906c5235b7-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">剧场版</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/5834.html">链锯人 剧场版：蕾塞篇</a></h3>
+            <p class="inzhuy">
+            主演：            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22544.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="创：战神" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/14891ddd2c73710645ff79e293e84e1e-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">6.2</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22544.html">创：战神</a></h3>
+            <p class="inzhuy">
+            主演：杰瑞德·莱托,格蕾塔·李,埃文·彼得斯,朱迪·特纳-史密斯,吉莲·安德森,杰夫·布里吉斯,哈桑·明哈杰,阿图罗·卡斯特罗,卡梅隆·莫纳汉,莎拉·德贾斯丁,亚伦·保罗·斯图尔特,罗杰·R.克劳斯,罗克·克里切洛,凯瑟琳·伊莎贝尔,加里·维纳查克,科维西·阿梅扬,罗宾·罗伯茨,卡拉·斯威舍,李飞飞,桑迪·罗布森,塞琳娜·云,米卢·金,纳尔莎·金,莎琳·费迪南德,杰森·特朗布莱,卡梅伦·帕克,肯尼斯·塞托·泰南,布拉德·哈德,扎赫拉·阿拉尼,杰伊·杜兰特            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8930.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="铁血战士：杀戮之地" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2024/12/ea618f75317f4-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">7.4</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8930.html">铁血战士：杀戮之地</a></h3>
+            <p class="inzhuy">
+            主演：艾丽·范宁,迪米特里乌斯·舒斯特-科洛阿玛坦吉,卡梅伦·布朗,鲁本·德容,迈克尔·霍米克,罗希纳尔·纳亚兰,艾莉森·赖特,罗斯·达菲,马特·达菲,Stefan Grube            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/5274.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="惊天魔盗团3" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2020/11/85279df9d1e4100-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              	</div>
+<div class="rating">5.9</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/5274.html">惊天魔盗团3</a></h3>
+            <p class="inzhuy">
+            主演：杰西·艾森伯格,伍迪·哈里森,戴夫·弗兰科,艾拉·菲舍尔,裴淳华,贾斯蒂斯·史密斯,多米尼克·塞萨,阿丽亚娜·格林布拉特,丽兹·卡潘,摩根·弗里曼,多米尼克·奥伯恩,塔邦·莫拉巴,塞巴斯蒂安·尤金·汉森,佩斯利·戴·埃雷拉,马克·鲁法洛,鲍比·霍兰德·汉顿,莉桑德拉·斯凯·阿里亚斯,迈娅·班顿,亨利·费舍尔,汤姆·约翰逊,玛莉·麦克尤恩,尼克·威特曼,斯特凡·施瓦茨            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22827.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="奇遇" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/25da29397cc285-270x380.jpeg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">7.1</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22827.html">奇遇</a></h3>
+            <p class="inzhuy">
+            主演：贾冰,王皓,李梦,郑合惠子,杨皓宇,翟子路,于洋,费启鸣,李乃文,马旭东,邓帅,李治良,冯满,郝瀚,李飞,小沈阳,徐浩伦,谭湘文,唐香玉,徐进,萧健宇            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22801.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="无可奈何" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/4049ac0706d013-270x380.jpeg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="qb">1080P</span>	</div>
+<div class="rating">7.5</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22801.html">无可奈何</a></h3>
+            <p class="inzhuy">
+            主演：李炳宪,孙艺珍,朴熙顺 ,李星民,廉惠兰,车胜元,柳演锡,尹可而,吴达洙            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_series/guochanju">国产剧集</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_series/guochanju" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/22856.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="风与潮" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/61f4109eaf04b5ff9c8fa233cab4dc80-270x380.jpg">	 <div class="jidi"><span>更新至4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22856.html">风与潮</a></h3>
+            <p class="inzhuy">
+            主演：任嘉伦,蓝盈莹,李纯,谭凯,马启越,王放,赵润南,梁大维,宋文作,谭泉,李嘉鑫,王艺蒙 ,浩歌,胡明,朱铁,徐嘉雯,王今心,韩立,楚布花羯,果靖霖,高捷,姚安濂,刘思翰,聂子一,姜寒,金梦翼,周洛欣,邱云鹤            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22854.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="超感迷宫" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/ca7ffa32623134ee20886358312afb56-270x380.jpg">	 <div class="jidi"><span>更新至4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22854.html">超感迷宫</a></h3>
+            <p class="inzhuy">
+            主演：段奕宏,窦骁,王佳佳,吕星辰,安悦溪,李晟,胡海锋,张兆辉,刘金山,马吟吟,郑湫泓,李逸男,郑楚一,蔡心,丹琳,牛飘,马柏全,赵润南            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22845.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="狙击蝴蝶" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/da1eae6de8256a7cf5244f4183c35c1c-270x380.jpg">	 <div class="jidi"><span>更新至14集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22845.html">狙击蝴蝶</a></h3>
+            <p class="inzhuy">
+            主演：陈妍希,周柯宇,刘芮麟,陈小纭,谢兴阳,程雅昭,杨昆,施京明            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22839.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="即刻上场" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/c2548b3bd0ed17-270x380.jpeg">	 <div class="jidi"><span>全24集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22839.html">即刻上场</a></h3>
+            <p class="inzhuy">
+            主演：胡先煦,周依然,何蓝逗,加奈那,李乐,黄婷婷,王锵,刘海宽,柳岩,袁文康,孙淳,杨玏,张晞临,黄圣池,刘思远            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22836.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="天书黎明" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/2f38c77af6c215-270x380.jpg">	 <div class="jidi"><span>更新至21集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22836.html">天书黎明</a></h3>
+            <p class="inzhuy">
+            主演：李宏毅,苏晓彤,余承恩,王子璇,于翔,彭雅琦,宋家腾,戴燕妮,金珈,钱波,高冬平,孟路明            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22828.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="毒舌家庭" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/d4a939a94d7966-270x380.jpeg">	 <div class="jidi"><span>全24集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国产剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22828.html">毒舌家庭</a></h3>
+            <p class="inzhuy">
+            主演：李雪琴,孟鹤堂,蔡明,杨皓宇,李宗恒,张昌生            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_series/mj">精品美剧</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_series/mj" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/8941.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="陆海之战" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2015/12/506275b1428e3-270x380.jpg">	 <div class="jidi"><span>更新至2集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8941.html">陆海之战</a></h3>
+            <p class="inzhuy">
+            主演：拉塞尔·托维,古古·姆巴塔-劳,柯林·麦克法兰,吉玛·雷德格里夫,鲁思·马德利,亚历山大・德弗伦特,帕特里克·巴拉迪,乔治·罗宾森,弗朗西斯卡·科尼,Mei Mac,John Addison,Shanice Archer,曼普利特·巴楚,Quanna Luo Masterson,Alex Jaden Lee            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22849.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="斯巴达克斯：亚述家族" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/12/c1053ce15b699382fd8ef714e1b38141-270x380.jpg">	 <div class="jidi"><span>更新至2集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22849.html">斯巴达克斯：亚述家族</a></h3>
+            <p class="inzhuy">
+            主演：尼克·塔拉贝,格拉汉姆·麦克塔维什,特妮卡·戴维斯,乔·戴维森,卡梅隆·罗德,露西·劳莱丝,伊万娜·巴克罗,乔治·韦伯,克劳迪娅·布莱克,杰克森·加拉格,西蒙·阿布拉斯特,丹尼尔·博斯,迈基·汤普森,斯蒂芬·马德森,伊登·哈特,贾梅卡·沃恩,丹·哈米尔,安德鲁·麦克法兰,印迪娅·肖-史密斯,海梅·斯莱特            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/4123.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="怪奇物语第五季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2020/09/1a980053437a36-270x380.jpg">	 <div class="jidi"><span>更新至4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/4123.html">怪奇物语第五季</a></h3>
+            <p class="inzhuy">
+            主演：薇诺娜·瑞德,大卫·哈伯,米莉·波比·布朗,菲恩·伍法德,伽塔·马塔拉佐,凯莱布·麦克劳克林,诺亚·施纳普,萨迪·辛克,娜塔莉·戴尔,查理·希顿,乔·基瑞,玛雅·霍克,普莉雅·弗格森,布伦特·吉尔曼,杰米·坎贝尔·鲍尔,卡拉·布欧诺,艾米贝丝·麦克纳尔蒂,内尔·费希尔,杰克·康奈利,琳达·汉密尔顿,马修·莫迪恩,保罗·雷瑟,爱德华多·弗兰科,谢尔曼·奥古斯图斯,汤姆·弗拉席亚            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/5571.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="史前星球：冰川时代" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/03/10cb58cce0cc82-270x380.jpg">	 <div class="jidi"><span>全5集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">纪录片</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/5571.html">史前星球：冰川时代</a></h3>
+            <p class="inzhuy">
+            主演：汤姆·希德勒斯顿            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22764.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="都是她的错" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/2f8d0e48dd73c1309096899358a72ee4-270x380.jpg">	 <div class="jidi"><span>全8集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+<div class="rating">9.1</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22764.html">都是她的错</a></h3>
+            <p class="inzhuy">
+            主演：莎拉·斯努克,杰克·莱西,达科塔·范宁,索菲娅·莉莉丝,艾比·艾略特,罗温·维特,萨钦·乔伯,杜克·麦克劳德,约翰尼·卡尔,乔伊·维埃拉,卡蒂亚·维尔加拉,奥利弗·祖尔佐洛,乔恩·阿尔特林格,杰奎琳·麦根斯,埃罗尔·尚德,格雷格·哈顿,凯特·李斯特,杰姆斯·黄,丹尼尔·蒙克斯,劳伦·格里姆森,迈克尔·佩纳            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22658.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="同乐者第一季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/6edb2ecdec3937-270x380.jpg">	 <div class="jidi"><span>更新至6集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">欧美剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22658.html">同乐者第一季</a></h3>
+            <p class="inzhuy">
+            主演：蕾亚·塞洪,莫奈·洛特,莫妮克·洛特,卡罗利娜·维德拉,米利亚姆·肖尔,麦肯齐·斯科特,帕里斯·梅斯,卡洛斯·曼努埃尔·维斯加,凯文·钱伯斯,耶利米·拉特雷尔·考德威尔,詹妮弗·布拉沃,迈克尔·雷,桑巴·舒特,泽维尔·埃斯特拉达,乔安妮·玛丽            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_series/hj">精品韩剧</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_series/hj" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/4056.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="模范出租车3" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2020/09/37d4df20fda487-270x380.jpg">	 <div class="jidi"><span>更新至6集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/4056.html">模范出租车3</a></h3>
+            <p class="inzhuy">
+            主演：李帝勋,表艺珍,金义城,张赫镇,裴侑蓝,笠松将            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22740.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="一吻爆炸" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/d212ddc5d5519-270x380.jpg">	 <div class="jidi"><span>更新至8集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22740.html">一吻爆炸</a></h3>
+            <p class="inzhuy">
+            主演：张基龙,安恩真,金武俊,禹多备,崔广日,南基爱,郑嘉熙,车美京,金秀雅,崔子允,徐尚沅,徐正妍,定桓,朴智娥,郑秀英,朴淨涓,申周妍,朴镇宇,金珍荣            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/6026.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="你旁观的罪" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2020/11/ddacd750e73560-270x380.jpg">	 <div class="jidi"><span>全8集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/6026.html">你旁观的罪</a></h3>
+            <p class="inzhuy">
+            主演：全素妮,李瑜美,张胜祖,李茂生,李浩贞,金美卿            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/1535.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="亲爱的X" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/b501d5eeeffd37-270x380.jpg">	 <div class="jidi"><span>全12集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/1535.html">亲爱的X</a></h3>
+            <p class="inzhuy">
+            主演：金裕贞,金永大,金道勋,黄寅烨,李烈音,洪宗玄,金志勋,金有美,金智英,洪妃罗,金伊敬,玄瑞河            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22648.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="操控游戏" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/cb1178432c7031-270x380.jpg">	 <div class="jidi"><span>全12集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22648.html">操控游戏</a></h3>
+            <p class="inzhuy">
+            主演：池昌旭,都敬秀,李光洙,赵允秀,杨东根,表艺珍            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22645.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="不幸的幸会" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/26f3cd6427cc89-270x380.jpg">	 <div class="jidi"><span>更新至10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">韩剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22645.html">不幸的幸会</a></h3>
+            <p class="inzhuy">
+            主演：李政宰,林智妍,金志勋,徐智慧,吴涟序,崔奎华,全晟佑,金宰澈,罗映姫,全秀景,金贤镇,陈浩恩,金范来            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_series/rj">精品日剧</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_series/rj" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/2761.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="武士生死斗" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2024/07/5d7c5b651bcc42-270x380.jpg">	 <div class="jidi"><span>全6集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/2761.html">武士生死斗</a></h3>
+            <p class="inzhuy">
+            主演：冈田准一,藤崎由美亚,清原果耶,东出昌大,染谷将太,早乙女太一,远藤雄弥,渊上泰史,二宫和也,城桧吏,山田孝之,一之濑亘,吉冈里帆,玉木宏,伊藤英明,滨田岳,冈崎体育,井浦新,田中哲司,中岛步            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22503.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="浪漫匿名者" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/f038e8b99cb880a6541e5e31ca5bcf4f-270x380.jpg">	 <div class="jidi"><span>全8集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+<div class="rating">6.7</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22503.html">浪漫匿名者</a></h3>
+            <p class="inzhuy">
+            主演：小栗旬,韩孝周,中村友理,赤西仁,宋仲基,成田凌,伊藤步,伊势志摩,东景一朗,福田航也,秋田汐梨,秋谷郁甫,米本学仁,山口纱弥加,原田美枝子,梶芽衣子,奥田瑛二,佐藤浩市            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22410.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="弥留之国的爱丽丝第三季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/09/0cff795c4ea92c829b200f279b24da9f-270x380.jpg">	 <div class="jidi"><span>全6集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22410.html">弥留之国的爱丽丝第三季</a></h3>
+            <p class="inzhuy">
+            主演：山崎贤人,土屋太凤,贺来贤人,矶村勇斗,三吉彩花,每熊克哉,大仓孝二,须藤理彩,池内博之,玉城蒂娜,醍醐虎汰朗,玄理,吉柳咲良,三河悠冴,岩永丞威,池田朱那            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22364.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="请和我的老公结婚" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/08/3302436de14256-270x380.jpg">	 <div class="jidi"><span>全10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+<div class="rating">7.8</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22364.html">请和我的老公结婚</a></h3>
+            <p class="inzhuy">
+            主演：小芝风花,佐藤健,白石圣,横山裕,田畑智子,黑崎蕾娜,七五三掛龙也,津田宽治,清水伸,安部聪子,上远野太洸,山崎翠佳,上原实矩,足立智充,安野澄,古馆宽治,安藤圣,河屋秀俊,中山来未,李千鹤            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22399.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="爱的，学校。" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/08/070fb56296a527-270x380.jpg">	 <div class="jidi"><span>全11集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+<div class="rating">7.8</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22399.html">爱的，学校。</a></h3>
+            <p class="inzhuy">
+            主演：木村文乃,拉乌卢,田中美奈实,中岛步,凉,筒井真理子,酒向芳,泽村一树,味方良介,野波麻帆,早坂美海,坂口涼太郎,荒井启志,别府由来,吉濑美智子            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20520.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="噬亡村第二季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/03/822c972e562be5e2de18574ce0534975-270x380.jpg">	 <div class="jidi"><span>全8集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">日剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20520.html">噬亡村第二季</a></h3>
+            <p class="inzhuy">
+            主演：柳乐优弥,笠松将,吉冈里帆,恒松祐里,高杉真宙,倍赏美津子,北香那,杉田雷麟,山下莉绪,田中俊介,志水心音,吉原光夫,中岛步,岩濑亮,松浦祐也,永田崇人,陈大渊,六角精儿,仓悠贵,福岛莉拉,谷中敦,郑龙进,丰原功补,矢柴俊博,河井青叶,赤堀雅秋,二阶堂智,大鹰明良,利重刚,中村梅雀,桥爪功,酒向芳,中村祐太郎,米本学仁,泽井一希,片冈礼子,三河悠冴,小木茂光,井上肇,和田光沙            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_view_cat/fjj">追番计划(动漫)</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_view_cat/fjj" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/22797.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="武动乾坤第六季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/11/bfaa8657ad8b7642e73400744564180b-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国漫</span><span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22797.html">武动乾坤第六季</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8207.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="一拳超人第三季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/04/b0b1a0cd44413be30c3c073a9c849d7f-270x380.jpg">	 <div class="jidi"><span>更新至10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8207.html">一拳超人第三季</a></h3>
+            <p class="inzhuy">
+            主演：古川慎,石川界人,悠木碧,山路和弘,津田健次郎,高山南,安元洋贵,樱井孝宏,浪川大辅,日野聪,鸟海浩辅,小野坂昌也,宫野真守,早见沙织,绿川光,斧笃,子安武人            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22458.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="致不灭的你第三季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/126b8d7d717f5c41e8710fa9bd23b9e1-270x380.jpg">	 <div class="jidi"><span>更新至10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22458.html">致不灭的你第三季</a></h3>
+            <p class="inzhuy">
+            主演：川岛零士,楠木灯,花守由美里,潘惠美,内田彩,落合福嗣,泽城千春,古贺葵,樫井笙人,子安武人,引坂理绘,八代拓,稻川英里,广桥凉,加濑康之,石川界人,宫下荣治,津田健次郎            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22493.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="间谍过家家第三季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/d6ca621d3e836d2ea01305014fa47c1f-270x380.jpg">	 <div class="jidi"><span>更新至10集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">番剧</span>	</div>
+<div class="rating">8.6</div>
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22493.html">间谍过家家第三季</a></h3>
+            <p class="inzhuy">
+            主演：江口拓也,早见沙织,种崎敦美            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22430.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="谷围南亭第一卷" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/10/48fa5305d7f492-270x380.jpg">	 <div class="jidi"><span>更新至11集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">国漫</span><span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22430.html">谷围南亭第一卷</a></h3>
+            <p class="inzhuy">
+            主演：false            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/22408.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="漫威丧尸" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/09/0079f41ede2dcc60dd0820f4f7e13984-270x380.jpg">	 <div class="jidi"><span>全4集</span></div>	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">番剧</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/22408.html">漫威丧尸</a></h3>
+            <p class="inzhuy">
+            主演：伊曼·韦拉尼,伊丽莎白·奥尔森,托德·威廉姆斯,刘思慕,奥卡菲娜,弗洛伦丝·皮尤,大卫·哈伯,保罗·路德,泰莎·汤普森,多米妮克·索恩,海莉·斯坦菲尔德,兰道尔·朴,怀亚特·罗素,拉玛·瓦卢里,哈德森·汤梅斯,格雷格·弗曼,凯瑞·华格伦,凯瑞·康顿,肯纳·拉姆齐,费奥多尔·钱恩,亚当·赫吉尔,丹尼尔·斯温,希拉·阿蒂姆,F·默里·亚伯拉罕,彼得·迈克尔,黛布拉·威尔逊,大卫·博特,罗宾·阿特金·唐斯,特丽·道格拉斯,马修·杨·金,安德鲁·莫尔加多,艾什丽·佩顿,迈克尔·拉尔夫,弗雷德·塔特西奥,马修·伍德            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+					<div class="mi_btcon">
+						<div class="bt_tit mi_ne_kd">
+							<h2><a target="_blank" href="https://www.cz4k.com/movie_bt_view_cat/pvyugao">PV预告</a><i class="fa"></i></h2>
+														<a href="https://www.cz4k.com/movie_bt_view_cat/pvyugao" class="moreb">更多<i class="el-icon-d-arrow-right"></i></a>
+													</div>
+						<div class="bt_img mi_ne_kd leibox">
+							<ul>
+							  <li><a href="https://www.cz4k.com/movie/8833.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="阿凡达3：火与烬" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2020/01/78c481ca8a5e65-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8833.html">阿凡达3：火与烬</a></h3>
+            <p class="inzhuy">
+            主演：萨姆·沃辛顿,佐伊·索尔达娜,西格妮·韦弗,史蒂芬·朗,奥娜·卓别林,大卫·休里斯,凯特·温斯莱特,贝利·巴斯,吉奥瓦尼·瑞比西,杰梅奈·克莱门特,杰米·福雷特斯,埃迪·法可,克利夫·柯蒂斯,乔·大卫·摩尔 ,杰克·尚皮永,马特·杰拉德,科斯顿·约翰,菲利普·盖廖,布里坦·道尔顿,特里尼蒂·布利斯,小杜安·埃文斯            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20362.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="剑来第二季" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/01/ea9b36f6553c15-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20362.html">剑来第二季</a></h3>
+            <p class="inzhuy">
+            主演：陈张太康,李敏            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20223.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="御赐小仵作2" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc002004qhfta91733128327700/0?max_age=7776000">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20223.html">御赐小仵作2</a></h3>
+            <p class="inzhuy">
+            主演：王子奇,苏晓彤,杨廷东,赵尧珂,张宸逍            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/20219.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="人之初" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc002002yfzpaf1729219688563/0?max_age=7776000">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/20219.html">人之初</a></h3>
+            <p class="inzhuy">
+            主演：张若昀,马思纯,王景春,唐嫣,杨玏,萨日娜,任彬,冯雷,王菊,洪浚嘉,徐百慧,程潇,雷佳,焦刚,张可盈,方悦乔,王秀竹            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8365.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="新蝙蝠侠2" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2024/02/cd79e60c42f583-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8365.html">新蝙蝠侠2</a></h3>
+            <p class="inzhuy">
+            主演：罗伯特·帕丁森,佐伊·克罗维兹,巴里·基奥恩,安迪·瑟金斯,杰弗里·怀特            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>  <li><a href="https://www.cz4k.com/movie/8765.html"  target="_blank">
+	<img class="thumb lazy" src="https://cf.hbcn.fun/wp-content/themes/mibt/assets/img/blank.gif"  alt="猎杀游戏" data-original="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2022/01/754520543da326-270x380.jpg">	 	         <span class="zoom-icon"></span>
+    </a>
+  
+                        <div class="hdinfo">
+	              <span class="furk">PV预告</span>	</div>
+
+	
+            <h3 class="dytit"><a  target="_blank" href="https://www.cz4k.com/movie/8765.html">猎杀游戏</a></h3>
+            <p class="inzhuy">
+            主演：格伦·鲍威尔,乔什·布洛林,迈克尔·塞拉,科尔曼·多明戈,凯蒂·M·奥布莱恩,李·佩斯,威廉·H·梅西,西恩·海耶斯,大卫·札亚斯,杰米·劳森,艾米莉亚·琼斯,卡尔·格洛斯曼,丹尼尔·埃兹拉,李·查尔斯,桑德拉·迪金森,乔治·卡罗尔,索菲·西蒙特,奥妮克·阿德莉,乔伊·安沙,布兰登·伯克,阿尔弗雷多·塔瓦雷斯,Angelo Gray,劳恩·X            </p>
+            <p class="nostag" style="display: none;"></p>
+</li>							
+							</ul>
+						</div>
+					</div>
+			
+
+	</div>
+</div>
+
+<div class="mikd">
+  <div class="mi_cont">
+		<div class="ad footerad">
+			 <style>
+  .ads {
+    bottom: 1%;
+    position: fixed;
+    display: none;
+  }
+
+  .left-ad {
+    left: 0;
+  }
+
+  .right-ad {
+    right: 0;
+  }
+
+  .ads a img:not(.close-ads) {
+    width: 13rem;
+  }
+
+  .close-ads {
+    cursor: pointer;
+    position: absolute;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 1156px) {
+    .ads a img:not(.close-ads) {
+      width:7rem;
+    }
+  }
+</style>
+<!-- 右边广告 -->
+<div class="ads right-ad">
+    <div>
+         <img src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/09/a86fa96deaaa26.png" class="close-ads right-ad" alt="">
+        <a target="_blank" href="https://www.kw59.me">
+            <img src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=imgfs.oppo.cn/uploads/thread/attachment/2025/07/10/1752159232545098112.gif">
+    </div>
+    <div>
+        <!-- <img src="https://gimg0.baidu.com/gimg/app=2001&n=0&g=0n&fmt=jpeg&src=img.czzy66.com/2025/09/a86fa96deaaa26.png" class="close-ads right-ad" alt="">
+        <a target="_blank" href="https://">
+            <img src="https://"> -->
+        </a>
+        </a>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        var ads = document.querySelectorAll('.ads')[0];
+        const adsTime = localStorage.getItem('adsTime')
+        const time = new Date().getTime()
+        const oneday = 24*60*60*1000
+        if (!adsTime || parseInt(adsTime)+oneday < time) {
+            ads.style.display = 'block'
+        }
+        var close = document.querySelectorAll('.close-ads');
+        close.forEach(function (element, index) {
+            element.addEventListener("click", (e) => {
+                element.parentNode.style.display = "none";
+                localStorage.setItem('adsTime', time)
+            })
+        })
+  }
+</script>		</div>
+	</div>
+</div>
+
+
+<div class="mikd">
+	<div class="footer">
+	      <div class="footnav">
+		<div class="foobg">
+			<div class="footer_nav">
+				<a href="/gaofenyingshi">高分影视</a>
+<a href="/huayudianying">华语电影</a>
+<a href="/oumeidianying">欧美电影</a>
+<a href="/hanguodianying">韩国电影</a>
+<a href="/ribendianying">日本电影</a>
+<a href="/yindudianying">印度电影</a>
+<a href="/eluosidianying">俄罗斯电影</a>
+<a href="/jianadadianying">加拿大电影</a>
+<a href="/meijutt">美剧</a>
+<a href="/hanjutv">韩剧</a>
+<a href="/movie_bt/movie_bt_series/rj">日剧</a>
+<a href="/movie_bt/movie_bt_series/hwj">海外剧</a>
+				
+			</div>
+			<div class="shaerd_wb">
+							</div>
+			<div class="bansheming">
+								本站资源均网络搜集，如有关视频侵犯了你的权益，请联系邮箱：壹零零零玖捌@tutanota.com(大写转换数字）确认后，我们会尽快删除！											</div>
+			
+		</div>
+				<div class="footer_link">
+			<div class="fbtit">友情链接</div>
+			<div class="linka">
+							</div>
+		</div> 
+			    </div>
+		
+	</div>
+</div>
+	<div  class="shuoming">  Copyright &copy;
+             			<a href="https://www.cz4k.com" target="_blank">2025年CZZY</a>
+						All Rights Reserved.
+            | THEME DESIGN BY &nbsp;<a target="_blank" href="">厂长资源</a>
+            </div>
+
+
+<script type="text/javascript">
+function gohome(){
+	window.location.href='https://www.cz4k.com';
+}
+</script>
+<div class="right_btn">
+	<div class="btncc" onclick="gohome();"><i class="glyph-icon flaticon-house204"></i></div>
+		<div class="to-top topbtnshow btncc"><i class="glyph-icon flaticon-navigate6"></i></div>
+</div>
+
+
+   <div class="weixinimg_bg"></div>
+   <div class="weixinimg">
+	<!-- <p>微信扫一扫，关注公众号</p> -->
+	<img src="">
+
+</div>
+
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/plugins/beautiful-taxonomy-filters/public/js/select2/select2.full.min.js?ver=2.4.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var btf_localization = {"ajaxurl":"https:\/\/www.cz4k.com\/wp-admin\/admin-ajax.php","min_search":"8","allow_clear":"","show_description":"","disable_select2":"","conditional_dropdowns":"","language":"","rtl":"","disable_fuzzy":"","show_count":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/plugins/beautiful-taxonomy-filters/public/js/beautiful-taxonomy-filters-public.js?ver=2.4.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajaxcomment = {"ajax_url":"https:\/\/www.cz4k.com\/wp-admin\/admin-ajax.php","order":"desc","formpostion":"bottom"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-content/themes/mibt/comments-ajax.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://cf.hbcn.fun/wp-includes/js/wp-embed.min.js'></script>
+<!-- 159 queries in 0.645 seconds -->
+ 
+</body>
+</html><!-- hyper cache gzip 2025-12-09 16:17:18 -->

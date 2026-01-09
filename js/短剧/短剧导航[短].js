@@ -5,6 +5,7 @@ var rule = {
   url: '/show/fyclass-fyfilter.html',
   searchUrl: '/search/**----------fypage---.html',
   filterable: 1,
+  图片来源:'@Referer=https://www.duanjutj.com/@User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/113.0.0.0%20Safari/537.36',    
   class_parse: '.navbar-items li:gt(0):lt(10);a&&Text;a&&href;.*/(.*?).html',
   filter: {
     "duanju": [{ "key": "剧情", "name": "剧情", "value": [{ "n": "全部", "v": "" }, { "n": "女频恋爱", "v": "女频恋爱" }, { "n": "反转爽剧", "v": "反转爽剧" }, { "n": "古装仙侠", "v": "古装仙侠" }, { "n": "年代穿越", "v": "年代穿越" }, { "n": "悬疑脑洞", "v": "悬疑脑洞" }, { "n": "都市伦理", "v": "都市伦理" }] }, { "key": "年份", "name": "年份", "value": [{ "n": "全部", "v": "" }, { "n": "2025", "v": "2025" }, { "n": "2024", "v": "2024" }, { "n": "2023", "v": "2023" }, { "n": "2022", "v": "2022" }, { "n": "2021", "v": "2021" }, { "n": "2020", "v": "2020" }] }, { "key": "排序", "name": "排序", "value": [{ "n": "时间排序", "v": "time" }, { "n": "人气排序", "v": "hits" }, { "n": "评分排序", "v": "score" }] }],

@@ -1,0 +1,35 @@
+Request
+POST https://www.cz4k.com/.safeline/challenge/v2/api/verify HTTP/2
+content-length: 437
+sec-ch-ua-platform: "Android"
+user-agent: Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36
+sec-ch-ua: "Android WebView";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+content-type: application/json
+sec-ch-ua-mobile: ?1
+accept: */*
+origin: https://www.cz4k.com
+x-requested-with: com.example.hikerview
+sec-fetch-site: same-origin
+sec-fetch-mode: cors
+sec-fetch-dest: empty
+referer: https://www.cz4k.com/
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+priority: u=1, i
+
+
+{"issue_id":"rYgruK7f5CSNxDjU","result":[28,15,34,42],"serials":[],"client":{"userAgent":"Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36","platform":"Linux aarch64","language":"zh-CN,en-US","vendor":"Google Inc.","screen":[370,822],"visitorId":"3d2736145e9b5639e1b4713c73206bcf","score":30,"target":["0","29","32","39"]}}
+--------------------------------------------------------
+
+Response
+HTTP/2 200
+server: Tengine
+date: Wed, 10 Dec 2025 02:13:23 GMT
+content-type: application/json
+content-length: 290
+access-control-allow-headers: Content-Type, Origin, Accept
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-origin: *
+
+{"message":"ok","code":200,"data":{"jwt":"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiIyZjNiMzIzNjdiMTA0MTUxOGNiMDI3NDdkMDRmNzJiZl8xNiIsImlhdCI6MTc2NTMzMjgwMywibGV2ZWwiOjF9.fMebmfap1uGuxehXtWGIkhRzfYhSO_yKYXZy5bu9lKgcR5I7hxH_4IE-jncGhN9BhOkiajxNClhIw0qkRgCgCQ","verified":true}}
+

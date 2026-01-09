@@ -78,6 +78,10 @@ var rule = {
         let data1 = data.urls;
         let d = []
         data1.forEach(it => {
+            const blockKeywords = ['及时雨', '及时雨2', '及时雨3'];
+            if (it.key && blockKeywords.some(keyword => it.key.includes(keyword))) {
+                return;
+            }
             d.push(it.key + "$" + `http://c.xpgtv.net/m3u8/${it.url}.m3u8`)
         })
         VOD = {        

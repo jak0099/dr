@@ -1,0 +1,34 @@
+Request
+GET https://www.cz4k.com/.safeline/challenge/v2/calc.js HTTP/2
+sec-ch-ua-platform: "Android"
+user-agent: Mozilla/5.0 (Linux; Android 16; 24129PN74C Build/BP2A.250605.031.A3) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.115 Mobile Safari/537.36
+sec-ch-ua: "Android WebView";v="137", "Chromium";v="137", "Not/A)Brand";v="24"
+sec-ch-ua-mobile: ?1
+accept: */*
+x-requested-with: com.example.hikerview
+sec-fetch-site: same-origin
+sec-fetch-mode: cors
+sec-fetch-dest: empty
+referer: https://www.cz4k.com/
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+cookie: sl-challenge-server=local
+cookie: myannoun=1
+cookie: sl-session=vjONU8AoOmnBY38cqqcjZg==
+priority: u=1, i
+
+
+
+--------------------------------------------------------
+
+Response
+HTTP/2 200
+server: Tengine
+date: Wed, 10 Dec 2025 02:13:21 GMT
+content-type: text/javascript; charset=utf-8
+access-control-allow-headers: Content-Type, Origin, Accept
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-origin: *
+content-encoding: br
+
+!function(e,t,n,r,o){var f="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{},u="function"==typeof f[r]&&f[r],i=u.cache||{},s="undefined"!=typeof module&&"function"==typeof module.require&&module.require.bind(module);function a(t,n){if(!i[t]){if(!e[t]){var o="function"==typeof f[r]&&f[r];if(!n&&o)return o(t,!0);if(u)return u(t,!0);if(s&&"string"==typeof t)return s(t);var c=Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}d.resolve=function(n){var r=e[t][1][n];return null!=r?r:n},d.cache={};var l=i[t]=new a.Module(t);e[t][0].call(l.exports,d,l,l.exports,f)}return i[t].exports;function d(e){var t=d.resolve(e);return!1===t?{}:a(t)}}a.isParcelRequire=!0,a.Module=function(e){this.id=e,this.bundle=a,this.exports={}},a.modules=e,a.cache=i,a.parent=u,a.register=function(t,n){e[t]=[function(e,t){t.exports=n},{}]},Object.defineProperty(a,"root",{get:function(){return f[r]}}),f[r]=a;for(var c=0;c<t.length;c++)a(t[c]);if(n){var l=a(n);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd&&define(function(){return l})}}({f8At3:[function(e,t,n,r){var o=e("@swc/helpers/_/_type_of");function f(e){for(var t=1,n=e.reduce(function(e,t){return e+t},0),r=(6+e.length+n)%6+6;r--;)t*=6;t<6666&&(t*=e.length),t>0x3f940aa&&(t=Math.floor(t/e.length));for(var o=0;o<e.length;o++)t+=Math.pow(e[o],3),t^=o,t^=e[o]+o;for(var f=[];t>0;)f.unshift(63&t),t>>=6;return f}function u(e,t){self.postMessage({status:"finish",issue_id:t.issue_id,result:e(t.data)})}self.onmessage=function(e){"calc"===e.data.action&&(("undefined"==typeof WebAssembly?"undefined":(0,o._)(WebAssembly))==="object"&&"function"==typeof WebAssembly.instantiate?WebAssembly.instantiate(e.data.wasm).then(function(t){u(function(e){return t.instance.exports.reset(),e.map(function(e){return t.instance.exports.arg(e)}),Array(t.instance.exports.calc()).fill(-1).map(function(){return t.instance.exports.ret()})},e.data.data)}).catch(function(e){self.postMessage({status:"error",message:"wasm: "+e.toString()})}):u(f,e.data.data))}},{"@swc/helpers/_/_type_of":"hqpwe"}],hqpwe:[function(e,t,n,r){var o=e("@parcel/transformer-js/src/esmodule-helpers.js");function f(e){return e&&"undefined"!=typeof Symbol&&e.constructor===Symbol?"symbol":typeof e}o.defineInteropFlag(n),o.export(n,"_",function(){return f})},{"@parcel/transformer-js/src/esmodule-helpers.js":"bsf6d"}],bsf6d:[function(e,t,n,r){n.interopDefault=function(e){return e&&e.__esModule?e:{default:e}},n.defineInteropFlag=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.exportAll=function(e,t){return Object.keys(e).forEach(function(n){"default"===n||"__esModule"===n||Object.prototype.hasOwnProperty.call(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:function(){return e[n]}})}),t},n.export=function(e,t,n){Object.defineProperty(e,t,{enumerable:!0,get:n})}},{}]},["f8At3"],"f8At3","parcelRequire94c2");

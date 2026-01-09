@@ -1,6 +1,6 @@
 预处理: $js.toString(() => {
-        let slidecookie = getItem('slidecookie');        
-        let new_html = request(HOST,{Headers:{Cookie:slidecookie}});
+        rule_fetch_params.headers.Cookie = 'slidecookie';
+        let new_html = request(HOST);
         if (/滑动验证|人机身份验证/.test(new_html)) {
             let new_src = pdfh(new_html, 'script[src*="huadong"]&&src');
             if (new_src) {
@@ -23,7 +23,8 @@
                 hhtml = request(yz_url, { withHeaders: true});
                 json = JSON.parse(hhtml);
                 let setCk = Object.keys(json).find(it => it.toLowerCase() === 'set-cookie');
-                slidecookie = setCk ? json[setCk].split(';')[0] : '';                               
+                let slidecookie = setCk ? json[setCk].split(';')[0] : '';
+                rule_fetch_params.headers.Cookie = slidecookie;                
                 setItem(RULE_CK, slidecookie);
             }
         }

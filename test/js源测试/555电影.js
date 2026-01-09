@@ -1,7 +1,47 @@
+//一级&搜索数字验证未解决，应该是cookie与预处理中cookie冲突所至， 经测OK影视识别不了源，zfun可识别，easybox容错率最好，可直接出数据，有能力可试一下解决
+function verifyLogin(url) {
+  let cnt = 0;
+  let cookie = '';
+  let r = Math.random();
+  let yzm_url = getHome(url) + '/index.php/verify/index.html';
+  log(`验证码链接:${yzm_url}`);
+  let submit_url = getHome(url) + '/index.php/ajax/verify_check';
+  log(`post登录链接:${submit_url}`);
+  while (cnt < OCR_RETRY) {
+    try {
+      let { cookie, html } = reqCookie(yzm_url + '?r=' + r, { toBase64: true });
+      let code = OcrApi.classification(html);
+      log(`第${cnt + 1}次验证码识别结果:${code}`);
+      html = post(submit_url, {
+        headers: { Cookie: cookie },
+        body: 'type=show&verify=' + code,
+      });
+      html = JSON.parse(html);
+
+      if (html.code === 1) {
+        log(`第${cnt + 1}次验证码提交成功`);
+        log(cookie);
+        return cookie // 需要返回cookie
+      } else if (html.code !== 1 && cnt + 1 >= OCR_RETRY) {
+        cookie = ''; // 需要清空返回cookie
+      }
+    } catch (e) {
+      log(`第${cnt + 1}次验证码提交失败:${e.message}`);
+      if (cnt + 1 >= OCR_RETRY) {
+        cookie = '';
+      }
+    }
+    cnt += 1
+  }
+  return cookie
+}
+
+globalThis.verifyLogin = verifyLogin;
+
 var rule = {
   title: '555电影',
   host: 'https://www.555gy.cc',
-  url: '/vod/type/id/fyclass/page/fypage.html',
+  url: '/vod/show/id/fyclass/page/fypage.html',
   searchUrl: '/vod/search/page/fypage/wd/**.html',
   searchable: 2,
   quickSearch: 0,
@@ -19,7 +59,7 @@ var rule = {
     rule_fetch_params.headers.Cookie = 'cookie';
     let new_html = request(MY_URL);
     if (/滑动验证|人机身份验证/.test(new_html)) {
-      let new_src = pd(new_html, "script&&src", HOST);
+      let new_src = pd(new_html, "script&&src", rule.host);
       let hhtml = request(new_src, { withHeaders: true });
       let json = JSON.parse(hhtml);
       let scriptHtml = json.body;
@@ -33,13 +73,53 @@ var rule = {
       json = JSON.parse(hhtml);
       let setCk = Object.keys(json).find(it => it.toLowerCase() === 'set-cookie');
       let cookie = setCk ? json[setCk].split(';')[0] : '';
-      //log('cookie:' + cookie);
       rule_fetch_params.headers.Cookie = cookie;
       setItem(RULE_CK, cookie);
     }
   }),
   推荐: '.tab-list.active;a.module-poster-item.module-item;.module-poster-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-  一级: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+  一级二: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+  一级: $js.toString(() => {
+    let cookie = getItem(RULE_CK, '');
+    //log('储存的cookie:' + cookie);        
+    let ret = request(MY_URL, {
+      headers: {
+        Referer: encodeUrl(MY_URL),
+        Cookie: cookie,
+      }
+    });
+    if (/系统安全验证/.test(ret)) {
+      //log(ret);
+      cookie = verifyLogin(MY_URL);
+      if (cookie) {
+        log(`本次成功过验证,cookie:${cookie}`);
+        setItem(RULE_CK, cookie);
+      } else {
+        log(`本次验证失败,cookie:${cookie}`);
+      }
+      ret = request(MY_URL, {
+        headers: {
+          Referer: encodeUrl(MY_URL),
+          Cookie: cookie,
+        }
+      });
+    }
+    //log(ret);
+    let d = [];
+    let p = rule.一级二.split(';');
+    let arr = pdfa(ret, p[0]);//列表
+    arr.forEach(it => {
+      d.push({
+        title: pdfh(it, p[1]),//标题
+        pic_url: pdfh(it, p[2]),//图片
+        desc: pdfh(it, p[3]),//描述
+        url: pdfh(it, p[4]),//链接
+
+      });
+
+    });
+    setResult(d);
+  }),
   二级: {
     title: 'h1&&Text;.module-info-tag-link:eq(-1)&&Text',
     img: '.lazyload&&data-original||data-src||src',
